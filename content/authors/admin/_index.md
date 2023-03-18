@@ -28,15 +28,16 @@ interests:
 
 
 education:
- courses:
-  - course: MS in Mechanical Engineering
-   institution: Carnegie Mellon University
-   year: 2023
-   url: "https://www.cmu.edu/"
- - course: BSc in Mechanical Engineering
-   institution: University of Cincinnati
-   year: 2021
-   url: "https://www.uc.edu/"
+  courses:
+    - course: PhD in Artificial Intelligence
+      institution: Stanford University
+      year: 2012
+    - course: MEng in Artificial Intelligence
+      institution: Massachusetts Institute of Technology
+      year: 2009
+    - course: BSc in Artificial Intelligence
+      institution: Massachusetts Institute of Technology
+      year: 2008
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons

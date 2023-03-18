@@ -85,11 +85,45 @@ sections:
           company_url: 'https://www.cmu.edu/'
           company_logo: cerlab
           location: Pittsburgh
-          date_start: '2022-09-01'
+          date_start: '2022-01-01'
           date_end: ''
           description: |2-
-              * Machine Learning
-              * Deep Learning
+              * Computer Vision
+              * Augmented Reality
+              * 3D Scene Understanding
+- block: experience
+  content:
+    title: education
+    # Date format for experience
+    #   Refer to https://wowchemy.com/docs/customization/#date-format
+    date_format: Jan 2006
+    # Experiences.
+    #   Add/remove as many `experience` items below as you like.
+    #   Required fields are `title`, `company`, and `date_start`.
+    #   Leave `date_end` empty if it's your current employer.
+    #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
+    items:
+      - title: MS in Mechanical Engineering
+        company: Carnegie Mellon University
+        company_url: 'https://www.cmu.edu/'
+        company_logo: cmu
+        location: Pittsburgh, PA
+        date_start: '2022-09-01'
+        date_end: ''
+        description: |2-
+            * Machine Learning
+            * Deep Learning
+      - title: BS in Mechanical Engineering
+        company: University of Cincinnati
+        company_url: 'https://www.cmu.edu/'
+        company_logo: cerlab
+        location: Cincinnati, OH
+        date_start: '2022-01-01'
+        date_end: ''
+        description: |2-
+            * Computer Vision
+            * Augmented Reality
+            * 3D Scene Understanding
   #       - title: Professor of Semiconductor Physics
   #         company: University X
   #         company_url: ''

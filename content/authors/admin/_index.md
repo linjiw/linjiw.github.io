@@ -18,27 +18,25 @@ organizations:
   url: "https://www.cmu.edu/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: MS student at CMU
+bio: My research interests include computer vision, machine learning and reinforcement learning.
 
 interests:
 - Artificial Intelligence
-- Robotics
 - Computer Vision
 - Reinforcement Learning
+- Robotics
+
 
 education:
  courses:
-#  - course: PhD in Computer Science
-#    institution: To Be Determined
-#    year: 2027
- - course: MS in Mechanical Engineering
-   institution: Carnegie Mellon University
-   year: 2023
-   url: "https://www.cmu.edu/"
- - course: BSc in Mechanical Engineering
-   institution: University of Cincinnati
-   year: 2021
-   url: "https://www.uc.edu/"
+    - course: MS in Mechanical Engineering
+     institution: Carnegie Mellon University
+     year: 2023
+     url: "https://www.cmu.edu/"
+   - course: BSc in Mechanical Engineering
+     institution: University of Cincinnati
+     year: 2021
+     url: "https://www.uc.edu/"
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -47,32 +45,33 @@ education:
 
 
 social:
-- icon: envelope
-  icon_pack: fas
-  link: 'mailto:joewwang@outlook.com'  # For a direct email link, use "mailto:test@example.org".
-# - icon: twitter
-#   icon_pack: fab
-#   link: https://twitter.com/wowchemy
-- icon: linkedin
-  icon_pack: fab
-  link: https://www.linkedin.com/in/linjiw/
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:joewwang@outlook.com'  # For a direct email link, use "mailto:test@example.org".
+  # - icon: twitter
+  #   icon_pack: fab
+  #   link: https://twitter.com/wowchemy
+  - icon: linkedin
+    icon_pack: fab
+    link: https://www.linkedin.com/in/linjiw/
 
-# Uncomment below for Github link
-- icon: github
-  icon_pack: fab
-  link: https://github.com/linjiw
+  # Uncomment below for Github link
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/linjiw
 
-# Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-- icon: cv
-  icon_pack: ai
-  link: files/cv.pdf
+  # Link to a PDF of your resume/CV from the About widget.
+  # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
+  - icon: cv
+    icon_pack: ai
+    link: files/cv.pdf
 # - icon: :open_book:
 #   # icon_pack: fas
 #   link: 'https://joewang.notion.site/f9e58b77b242444abea672542d537866?v=ff94b5d39c174fb6a99a54ffaf7f5a35'
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 #email: ""
+highlight_name: true
 ---
 
 ## Current
@@ -81,4 +80,5 @@ I'm looking for Ph.D. position in computer science.
 ## Short Bio
 
 Linji Wang is a second-year master student at the [**Mechanical Engineering Department, Carnegie Mellon University**](https://www.meche.engineering.cmu.edu/), researching AI and ML problems. Linji's primary research interests are on machine learning, computer vision, reinforcement learning and their intersections.
+{style="text-align: justify;"}
 

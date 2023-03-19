@@ -171,9 +171,22 @@ Implemented the training loop for the DCGAN by filling in the indicated parts of
 
 ### Experiment with DCGANs
 INSERT IMAGE: Screenshots of discriminator and generator training loss with --data_preprocess=basic, --data_preprocess=deluxe.
-{{< figure src="./data/grumpifyBprocessed_basic/sample-006400.png" title="data_preprocess=basic, iter = 6400" >}}
+{{< figure src="./data/grumpifyBprocessed_basic/sample-006400.png" title="sample: data_preprocess=basic, iter = 6400" >}}
+{{< figure src="./data/grumpifyBprocessed_basic/D_fake_loss.png" title="D_fake_loss: data_preprocess=basic, iter = 6400" >}}
+{{< figure src="./data/grumpifyBprocessed_basic/D_real_loss.png" title="D_real_loss: data_preprocess=basic, iter = 6400" >}}
+{{< figure src="./data/grumpifyBprocessed_basic/D_total_loss.png" title="D_total_loss: data_preprocess=basic, iter = 6400" >}}
+{{< figure src="./data/grumpifyBprocessed_basic/G_loss.png" title="G_loss: data_preprocess=basic, iter = 6400" >}}
+
 {{< figure src="./data/grumpifyBprocessed_deluxe/sample-006400.png" title="data_preprocess=deluxe, iter = 6400" >}}
+{{< figure src="./data/grumpifyBprocessed_deluxe/D_fake_loss.png" title="D_fake_loss: data_preprocess=deluxe, iter = 6400" >}}
+{{< figure src="./data/grumpifyBprocessed_deluxe/D_real_loss.png" title="D_real_loss: data_preprocess=deluxe, iter = 6400" >}}
+{{< figure src="./data/grumpifyBprocessed_deluxe/D_total_loss.png" title="D_total_loss: data_preprocess=deluxe, iter = 6400" >}}
+{{< figure src="./data/grumpifyBprocessed_deluxe/G_loss.png" title="G_loss: data_preprocess=deluxe, iter = 6400" >}}
 {{< figure src="./data/grumpifyBprocessed_deluxe_diffaug/sample-006400.png" title="data_preprocess=deluxe, iter = 6400, diff_aug = True" >}}
+{{< figure src="./data/grumpifyBprocessed_deluxe_diffaug/D_fake_loss.png" title="D_fake_loss: data_preprocess=deluxe, iter = 6400, diff_aug = True" >}}
+{{< figure src="./data/grumpifyBprocessed_deluxe_diffaug/D_real_loss.png" title="D_real_loss: data_preprocess=deluxe, iter = 6400, diff_aug = True" >}}
+{{< figure src="./data/grumpifyBprocessed_deluxe_diffaug/D_total_loss.png" title="D_total_loss: data_preprocess=deluxe, iter = 6400, diff_aug = True" >}}
+{{< figure src="./data/grumpifyBprocessed_deluxe_diffaug/G_loss.png" title="G_loss: data_preprocess=deluxe, iter = 6400, diff_aug = True" >}}
 
 
 (Brief explanation of what the curves should look like if GAN manages to train)

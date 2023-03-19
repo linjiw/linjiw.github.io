@@ -170,12 +170,15 @@ Implemented the training loop for the DCGAN by filling in the indicated parts of
 (Discussion of results with and without applying differentiable augmentations, and the difference between two augmentation schemes in terms of implementation and effects)
 
 ### Experiment with DCGANs
-INSERT IMAGE: Screenshots of discriminator and generator training loss with --data_preprocess=basic, --data_preprocess=deluxe.
+We've been experimenting with different data preprocessing techniques, and we've found that the choice of preprocessing can have a significant impact on the performance of the GAN. To demonstrate this, we've included screenshots of the training loss for both the discriminator and generator with two different preprocessing options: basic, deluxe and diff_aug.
+
+#### grumpifyBprocessed_basic
 {{< figure src="./data/grumpifyBprocessed_basic/sample-006400.png" title="sample: data_preprocess=basic, iter = 6400" >}}
 {{< figure src="./data/grumpifyBprocessed_basic/D_fake_loss.png" title="D_fake_loss: data_preprocess=basic, iter = 6400" >}}
 {{< figure src="./data/grumpifyBprocessed_basic/D_real_loss.png" title="D_real_loss: data_preprocess=basic, iter = 6400" >}}
 {{< figure src="./data/grumpifyBprocessed_basic/D_total_loss.png" title="D_total_loss: data_preprocess=basic, iter = 6400" >}}
 {{< figure src="./data/grumpifyBprocessed_basic/G_loss.png" title="G_loss: data_preprocess=basic, iter = 6400" >}}
+#### grumpifyBprocessed_deluxe
 
 {{< figure src="./data/grumpifyBprocessed_deluxe/sample-006400.png" title="data_preprocess=deluxe, iter = 6400" >}}
 {{< figure src="./data/grumpifyBprocessed_deluxe/D_fake_loss.png" title="D_fake_loss: data_preprocess=deluxe, iter = 6400" >}}
@@ -183,6 +186,9 @@ INSERT IMAGE: Screenshots of discriminator and generator training loss with --da
 {{< figure src="./data/grumpifyBprocessed_deluxe/D_total_loss.png" title="D_total_loss: data_preprocess=deluxe, iter = 6400" >}}
 {{< figure src="./data/grumpifyBprocessed_deluxe/G_loss.png" title="G_loss: data_preprocess=deluxe, iter = 6400" >}}
 {{< figure src="./data/grumpifyBprocessed_deluxe_diffaug/sample-006400.png" title="data_preprocess=deluxe, iter = 6400, diff_aug = True" >}}
+
+#### grumpifyBprocessed_deluxe_diffaug
+
 {{< figure src="./data/grumpifyBprocessed_deluxe_diffaug/D_fake_loss.png" title="D_fake_loss: data_preprocess=deluxe, iter = 6400, diff_aug = True" >}}
 {{< figure src="./data/grumpifyBprocessed_deluxe_diffaug/D_real_loss.png" title="D_real_loss: data_preprocess=deluxe, iter = 6400, diff_aug = True" >}}
 {{< figure src="./data/grumpifyBprocessed_deluxe_diffaug/D_total_loss.png" title="D_total_loss: data_preprocess=deluxe, iter = 6400, diff_aug = True" >}}

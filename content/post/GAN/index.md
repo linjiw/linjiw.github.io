@@ -171,6 +171,10 @@ Implemented the training loop for the DCGAN by filling in the indicated parts of
 
 ### Experiment with DCGANs
 INSERT IMAGE: Screenshots of discriminator and generator training loss with --data_preprocess=basic, --data_preprocess=deluxe.
+{{< figure src="./data/grumpifyBprocessed_basic/sample-006400.png" title="data_preprocess=basic, iter = 6400" >}}
+{{< figure src="./data/grumpifyBprocessed_deluxe/sample-006400.png" title="data_preprocess=deluxe, iter = 6400" >}}
+{{< figure src="./data/grumpifyBprocessed_deluxe_diffaug/sample-006400.png" title="data_preprocess=deluxe, iter = 6400, diff_aug = True" >}}
+
 
 (Brief explanation of what the curves should look like if GAN manages to train)
 

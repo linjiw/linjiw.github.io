@@ -340,9 +340,14 @@ else:
 ### Experiment with CycleGAN
 INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats, and two example images of generated Russian Blue cats from Grumpy cats.
 
-| D_fake_loss         | D_real_loss                                      | D_X_loss                                           | D_Y_loss | G_loss   |
-|----------------------------|---------------------------------------------------------|----------------------------------------------------------|------------------|-------------|
-| {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_fake_loss.png" >}}                     | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_real_loss.png"  >}}              | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_X_loss.png"  >}}            | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_Y_loss.png" >}} | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/G_loss.png"  >}} |
+|  Title     |    Image      |
+|----------------------------|---------------------------------------------------------|
+|D_fake_loss |{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_fake_loss.png" >}}                     |
+|D_real_loss |{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_real_loss.png" >}}                     |
+|D_X_loss |{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_X_loss.png" >}}                     |
+|D_Y_loss |{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_Y_loss.png" >}}                     |
+|G_loss |{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/G_loss.png" >}}                     |
+
 
 
 #### cat_10deluxe_instance_dc_cycle_naive

@@ -344,8 +344,8 @@ INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats
 
 #### cat_10deluxe_instance_dc_cycle_naive
 
-{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-01000-X-Y.png" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
-{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-01000-Y-X.png" title="sample Y to X: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
+{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
+{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-Y-X.png" title="sample Y to X: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
 {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_fake_loss.png" title="D_fake_loss: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
 {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_real_loss.png" title="D_real_loss: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
 {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_X_loss.png" title="D_X_loss: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}

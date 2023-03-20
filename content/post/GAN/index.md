@@ -342,15 +342,15 @@ INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats
 
 
 
-#### cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug
+#### cat_10deluxe_instance_dc_cycle_naive
 
-{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/sample-010000-X-Y.png" title="sample X to Y: cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug, iter = 10000" >}}
-{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/sample-010000-Y-X.png" title="sample Y to X: cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug, iter = 10000" >}}
-{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_fake_loss.png" title="D_fake_loss: data_preprocess=deluxe, iter = 10000" >}}
-{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_real_loss.png" title="D_real_loss: data_preprocess=deluxe, iter = 10000" >}}
-{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_X_loss.png" title="D_X_loss: data_preprocess=deluxe, iter = 10000" >}}
-{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_Y_loss.png" title="D_Y_loss: data_preprocess=deluxe, iter = 10000" >}}
-{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/G_loss.png" title="G_loss: cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug, iter = 10000" >}}
+{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-010000-X-Y.png" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
+{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-010000-Y-X.png" title="sample Y to X: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
+{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_fake_loss.png" title="D_fake_loss: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
+{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_real_loss.png" title="D_real_loss: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
+{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_X_loss.png" title="D_X_loss: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
+{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_Y_loss.png" title="D_Y_loss: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
+{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/G_loss.png" title="G_loss: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
 
 #### cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug
 

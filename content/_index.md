@@ -281,8 +281,8 @@ sections:
       title: Contact
       subtitle:
       text: |-
-Looking to get in touch? Whether you have a question, comment, or just want to say hello, I'd love to hear from you! Visit my website and click on the 'Contact' page to send me a message. I'll get back to you as soon as possible.      
-# Contact (add or remove contact options as necessary)
+        Looking to get in touch? Whether you have a question, comment, or just want to say hello, I'd love to hear from you!
+      # Contact (add or remove contact options as necessary)
       email: joewwang@outlook.com
       phone: +1 412-888-6071
       appointment_url: 'https://calendly.com/linjiw'

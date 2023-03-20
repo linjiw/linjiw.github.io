@@ -400,6 +400,53 @@ We also observed that the DCDiscriminator resulted in better quality translation
 #### Conclusion:
 
 In conclusion, we have trained CycleGAN from scratch with and without the cycle-consistency loss, and have compared the results using the DCDiscriminator and the PatchDiscriminator. We have observed that the cycle-consistency loss and the DCDiscriminator resulted in better quality translations between the two domains. These observations can help in improving the translation quality between different domains in image processing applications.
+
+## Bells & Whistles
+
+### Implement and train a diffusion model
+
+#### Training Diffusion Models with Hugging Face's Diffusers
+
+#### Introduction
+
+In this project, we train a simple diffusion model using the Hugging Face's Diffusers library. Diffusion models have become state-of-the-art generative models in recent times.
+
+#### Key Parts of the Code
+
+##### Configuration:
+
+We define a 'TrainingConfig' class that holds all the training hyperparameters.
+Hyperparameters include 'image_size', 'train_batch_size', 'eval_batch_size', 'num_epochs', 'gradient_accumulation_steps', 'learning_rate', and 'lr_warmup_steps', among others.
+##### Data Preprocessing:
+
+We use the datasets library to load our dataset and apply data transformations.
+The dataset is preprocessed using the transforms.Compose function from torchvision.
+The dataset is then transformed on-the-fly during training.
+##### Model Definition:
+
+We define our model using the 'UNet2DModel' class from the diffusers library.
+The model has various hyperparameters such as 'sample_size', 'in_channels', 'out_channels', 'layers_per_block', 'block_out_channels', 'down_block_types', and 'up_block_types'.
+##### Noise Scheduler:
+
+We use the 'DDPMScheduler' class from the diffusers library to define the noise scheduler for our model.
+The scheduler takes a batch of images, a batch of random noise, and the timesteps for each image.
+#### Training Setup:
+
+We use an AdamW optimizer and a cosine learning rate schedule for training.
+We use the DDPMPipeline class from the diffusers library for end-to-end inference during evaluation.
+The training function train_loop is defined, which includes gradient accumulation, mixed precision training, and multi-GPU or TPU training using the Accelerator class from the accelerate library.
+#### Training Execution:
+
+We use the 'notebook_launcher' function from the accelerate library to launch the training from the notebook.
+#### Key Functions
+
+*transform(examples)*: Applies the image transformations on the fly during training.
+*evaluate(config, epoch, pipeline)*: Generates a batch of sample images during evaluation and saves them as a grid to the disk.
+*train_loop(config, model, noise_scheduler, optimizer, train_dataloader, lr_scheduler)*: The main training loop, which includes the forward diffusion process, loss calculation, and backpropagation.
+Insert Results
+
+Sample images generated during evaluation can be inserted here.
+Training metrics such as loss and learning rate can be inserted here.
 <!-- 
 #### cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug
 

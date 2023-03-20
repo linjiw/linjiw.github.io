@@ -339,7 +339,7 @@ else:
 
 ### Experiment with CycleGAN
 INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats, and two example images of generated Russian Blue cats from Grumpy cats.
-```
+<!-- ``` -->
 ## cat_10deluxe_instance_dc_cycle_naive
 
 |  Title     |    Image      |
@@ -351,7 +351,7 @@ INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats
 |D_X_loss |{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_X_loss.png" >}}                     |
 |D_Y_loss |{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_Y_loss.png" >}}                     |
 |G_loss |{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/G_loss.png" >}}                     |
-```
+<!-- ``` -->
 
 
 #### cat_10deluxe_instance_dc_cycle_naive

@@ -341,7 +341,7 @@ else:
 INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats, and two example images of generated Russian Blue cats from Grumpy cats.
 
 |  Title     |    Image      |
-|----------------------------|---------------------------------------------------------|
+| :------: | :------: |
 |D_fake_loss |{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_fake_loss.png" >}}                     |
 |D_real_loss |{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_real_loss.png" >}}                     |
 |D_X_loss |{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_X_loss.png" >}}                     |

@@ -6,7 +6,7 @@ title: Linji Wang (王琳箕)
 superuser: true
 
 # Role/position
-role: Incoming CS PhD Student
+role: Incoming PhD Student
 
 # Status emoji
 status:
@@ -75,8 +75,8 @@ social:
 highlight_name: true
 ---
 
-## Current
-I'm looking for Ph.D. position in computer science.
+<!-- ## Current
+I'm looking for Ph.D. position in computer science. -->
 
 ## Short Bio
 

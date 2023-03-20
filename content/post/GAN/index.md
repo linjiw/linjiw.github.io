@@ -443,10 +443,20 @@ We use the 'notebook_launcher' function from the accelerate library to launch th
 *transform(examples)*: Applies the image transformations on the fly during training.
 *evaluate(config, epoch, pipeline)*: Generates a batch of sample images during evaluation and saves them as a grid to the disk.
 *train_loop(config, model, noise_scheduler, optimizer, train_dataloader, lr_scheduler)*: The main training loop, which includes the forward diffusion process, loss calculation, and backpropagation.
-Insert Results
+#### Diffusion Results
 
-Sample images generated during evaluation can be inserted here.
-Training metrics such as loss and learning rate can be inserted here.
+|  Title     |    Image      |
+| :------: | :------: |
+|Apple |{{< figure src="./data/difussion/apple.png" >}}                     |
+|sample Y to X |{{< figure src="./data/difussion/cat.png"  >}}                 |
+<!-- |D_fake_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_fake_loss.png" >}}                     |
+|D_real_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_real_loss.png" >}}                     |
+|D_X_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_X_loss.png" >}}                     |
+|D_Y_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_Y_loss.png" >}}                     |
+|G_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/G_loss.png" >}}                     | -->
+
+<!-- Sample images generated during evaluation can be inserted here.
+Training metrics such as loss and learning rate can be inserted here. -->
 <!-- 
 #### cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug
 

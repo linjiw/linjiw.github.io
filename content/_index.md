@@ -93,7 +93,7 @@ sections:
               * 3D Scene Understanding
   - block: experience
     content:
-      title: education
+      title: Education
       # Date format for experience
       #   Refer to https://wowchemy.com/docs/customization/#date-format
       date_format: Jan 2006
@@ -108,22 +108,22 @@ sections:
           company_url: 'https://www.cmu.edu/'
           company_logo: cmu
           location: Pittsburgh, PA
-          date_start: '2022-09-01'
-          date_end: ''
-          description: |2-
-              * Machine Learning
-              * Deep Learning
+          date_start: '2021-09-01'
+          date_end: '2023-05-01'
+          # description: |2-
+          #     * Machine Learning
+          #     * Deep Learning
         - title: BS in Mechanical Engineering
           company: University of Cincinnati
-          company_url: 'https://www.cmu.edu/'
+          company_url: 'https://www.uc.edu/'
           company_logo: cerlab
           location: Cincinnati, OH
-          date_start: '2022-01-01'
-          date_end: ''
-          description: |2-
-              * Computer Vision
-              * Augmented Reality
-              * 3D Scene Understanding
+          date_start: '2021-05-01'
+          date_end: '2016-09-01'
+          # description: |2-
+          #     * Computer Vision
+          #     * Augmented Reality
+          #     * 3D Scene Understanding
   #       - title: Professor of Semiconductor Physics
   #         company: University X
   #         company_url: ''

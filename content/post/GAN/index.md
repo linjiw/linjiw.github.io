@@ -340,9 +340,9 @@ else:
 ### Experiment with CycleGAN
 INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats, and two example images of generated Russian Blue cats from Grumpy cats.
 
-| Data Preprocessing         | Discriminator Loss                                      | Generator Loss                                           | Convergence Rate | Stability   |
+| D_fake_loss         | D_real_loss                                      | D_X_loss                                           | D_Y_loss | G_loss   |
 |----------------------------|---------------------------------------------------------|----------------------------------------------------------|------------------|-------------|
-| {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="200px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}                      | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="200px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}                    | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="200px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}       | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="200px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}             | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="200px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}} |
+| {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_fake_loss.png" >}}                     | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_real_loss.png"  >}}              | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_X_loss.png"  >}}            | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_Y_loss.png" >}} | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/G_loss.png"  >}} |
 
 
 #### cat_10deluxe_instance_dc_cycle_naive

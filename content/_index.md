@@ -232,7 +232,7 @@ sections:
       title: Gallery
       subtitle: ''
       text: |-
-        {{< gallery album="demo" >}}
+        {{< gallery album="instagram" >}}
     design:
       columns: '1'
   # - block: collection

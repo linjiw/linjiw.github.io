@@ -340,11 +340,14 @@ else:
 ### Experiment with CycleGAN
 INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats, and two example images of generated Russian Blue cats from Grumpy cats.
 
+| Data Preprocessing         | Discriminator Loss                                      | Generator Loss                                           | Convergence Rate | Stability   |
+|----------------------------|---------------------------------------------------------|----------------------------------------------------------|------------------|-------------|
+| {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="200px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}                      | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="200px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}                    | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="200px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}       | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="200px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}             | {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="200px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}} |
 
 
 #### cat_10deluxe_instance_dc_cycle_naive
 
-{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="10px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
+{{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png" width="200px" title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
 {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-Y-X.png" title="sample Y to X: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
 {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_fake_loss.png" title="D_fake_loss: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
 {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/D_real_loss.png" title="D_real_loss: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}

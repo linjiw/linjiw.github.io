@@ -57,11 +57,32 @@ taxonomies:
   publication_type: publication_types
   author: authors
 markup:
-  _merge: deep
+  # _merge: deep
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+      wrapStandAloneImageWithinParagraph: true
+    renderer:
+      hardWraps: false
+      unsafe: false
+      xhtml: false
   tableOfContents:
-  endLevel: 3
-  ordered: false
-  startLevel: 2
+    endLevel: 3
+    ordered: false
+    startLevel: 2
 related:
   threshold: 80
   includeNewer: true

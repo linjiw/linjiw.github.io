@@ -370,8 +370,8 @@ INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats
 
 |  Title     |    Image      |
 | :------: | :------: |
-|sample X to Y |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle/sample-001000-X-Y.png" >}}                     |
-|sample Y to X |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle/sample-001000-Y-X.png"  >}}                 |
+|sample X to Y |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle/sample-010000-X-Y.png" >}}                     |
+|sample Y to X |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle/sample-010000-Y-X.png"  >}}                 |
 |D_fake_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle/D_fake_loss.png" >}}                     |
 |D_real_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle/D_real_loss.png" >}}                     |
 |D_X_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle/D_X_loss.png" >}}                     |

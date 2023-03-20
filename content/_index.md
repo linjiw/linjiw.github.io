@@ -116,10 +116,10 @@ sections:
         - title: BS in Mechanical Engineering
           company: University of Cincinnati
           company_url: 'https://www.uc.edu/'
-          company_logo: cerlab
+          company_logo: uc
           location: Cincinnati, OH
-          date_start: '2021-05-01'
-          date_end: '2016-09-01'
+          date_start: '2016-09-01'
+          date_end: '2021-05-01'
           # description: |2-
           #     * Computer Vision
           #     * Augmented Reality

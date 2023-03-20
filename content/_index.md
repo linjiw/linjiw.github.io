@@ -120,6 +120,13 @@ sections:
           location: Cincinnati, OH
           date_start: '2016-09-01'
           date_end: '2021-05-01'
+        - title: BS in Mechanical Engineering
+          company: Chongqing University
+          company_url: 'http://english.cqu.edu.cn/'
+          company_logo: cqu
+          location: Chongqing, China
+          date_start: '2016-09-01'
+          date_end: '2021-05-01'
           # description: |2-
           #     * Computer Vision
           #     * Augmented Reality

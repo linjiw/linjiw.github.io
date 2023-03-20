@@ -342,7 +342,7 @@ INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats
 
 
 
-#### cat_10deluxe_instance_dc_cycle_naive
+<!-- #### cat_10deluxe_instance_dc_cycle_naive
 
 {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-X-Y.png"  title="sample X to Y: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" > }}
 {{< figure src="./data/cat_10deluxe_instance_dc_cycle_naive/sample-001000-Y-X.png" title="sample Y to X: cat_10deluxe_instance_dc_cycle_naive, iter = 1000" >}}
@@ -380,7 +380,7 @@ INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats
 {{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_real_loss.png" title="D_real_loss: data_preprocess=deluxe, iter = 10000" >}}
 {{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_X_loss.png" title="D_X_loss: data_preprocess=deluxe, iter = 10000" >}}
 {{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_Y_loss.png" title="D_Y_loss: data_preprocess=deluxe, iter = 10000" >}}
-{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/G_loss.png" title="G_loss: cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug, iter = 10000" >}}
+{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/G_loss.png" title="G_loss: cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug, iter = 10000" >}} -->
 
 
 (Brief comment on the quality of the generated images, and whether the CycleGAN has captured the main differences between the two domains)

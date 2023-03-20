@@ -391,7 +391,15 @@ INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats
 |D_Y_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_Y_loss.png" >}}                     |
 |G_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/G_loss.png" >}}                     |
 <!-- ``` -->
+#### Observations:
 
+We observed that the results with the cycle-consistency loss were better than the results without it. The translations between the two domains were more accurate and realistic. This is because the cycle-consistency loss enforces the consistency between the two translations, which helps the model to learn better.
+
+We also observed that the DCDiscriminator resulted in better quality translations than the PatchDiscriminator. This is because the DCDiscriminator has a larger receptive field, which enables it to capture more global features of the image.
+
+#### Conclusion:
+
+In conclusion, we have trained CycleGAN from scratch with and without the cycle-consistency loss, and have compared the results using the DCDiscriminator and the PatchDiscriminator. We have observed that the cycle-consistency loss and the DCDiscriminator resulted in better quality translations between the two domains. These observations can help in improving the translation quality between different domains in image processing applications.
 <!-- 
 #### cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug
 

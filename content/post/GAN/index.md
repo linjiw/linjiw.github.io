@@ -49,8 +49,8 @@ Implementing a more complex GAN architecture called CycleGAN for the task of ima
 
 For the first part of this assignment, we implement a slightly modified version of Deep Convolutional GAN (DCGAN).
 
-### Implement Data Augmentation
-Implemented the deluxe version of data augmentation in 'data_loader.py'.
+<!-- ### Implement Data Augmentation -->
+<!-- Implemented the deluxe version of data augmentation in 'data_loader.py'. -->
 
 <!-- ```python
 elif opts.data_preprocess == 'deluxe':
@@ -67,10 +67,10 @@ elif opts.data_preprocess == 'deluxe':
     pass
 ```  -->
 
-# <!-- ### Implement the Discriminator of the DCGAN
+<!-- # <!-- ### Implement the Discriminator of the DCGAN
 # (Answer for padding calculation goes here)
 
-# Implemented the architecture by filling in the '__init__' and 'forward' method of the 'DCDiscriminator' class in 'models.py'.
+# Implemented the architecture by filling in the '__init__' and 'forward' method of the 'DCDiscriminator' class in 'models.py'. -->
 
 <!-- # ```python
 # def __init__(self, conv_dim=64, norm='instance'):
@@ -171,8 +171,8 @@ elif opts.data_preprocess == 'deluxe':
 
 # ``` -->
 
-#### Differentiable Augmentation
-(Discussion of results with and without applying differentiable augmentations, and the difference between two augmentation schemes in terms of implementation and effects)
+<!-- #### Differentiable Augmentation
+(Discussion of results with and without applying differentiable augmentations, and the difference between two augmentation schemes in terms of implementation and effects) -->
 
 ### Experiment with DCGANs
 We've been experimenting with different data preprocessing techniques, and we've found that the choice of preprocessing can have a significant impact on the performance of the GAN. To demonstrate this, we've included screenshots of the training loss for both the discriminator and generator with two different preprocessing options: basic, deluxe and diff_aug.
@@ -396,7 +396,7 @@ else:
 |D_Y_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_Y_loss.png" >}}                     |
 |G_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/G_loss.png" >}}                     |
 
-#### apple2orange_10deluxe_instance_patch_cycle_naive_cycle
+<!-- #### apple2orange_10deluxe_instance_patch_cycle_naive_cycle
 
 |  Title     |    Image      |
 | :------: | :------: |
@@ -406,7 +406,7 @@ else:
 |D_real_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/D_real_loss.png" >}}                     |
 |D_X_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/D_X_loss.png" >}}                     |
 |D_Y_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/D_Y_loss.png" >}}                     |
-|G_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/G_loss.png" >}}                     |
+|G_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/G_loss.png" >}}                     | -->
 
 
 #### apple2orange_10deluxe_instance_patch_cycle_naive_cycle_diffaug

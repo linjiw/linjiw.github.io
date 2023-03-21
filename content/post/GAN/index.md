@@ -52,7 +52,7 @@ For the first part of this assignment, we implement a slightly modified version 
 ### Implement Data Augmentation
 Implemented the deluxe version of data augmentation in 'data_loader.py'.
 
-```python
+<!-- ```python
 elif opts.data_preprocess == 'deluxe':
         load_size = int(1.1 * opts.image_size)
         osize = [load_size, load_size]
@@ -65,111 +65,111 @@ elif opts.data_preprocess == 'deluxe':
         ])
         train_transform = deluxe_transform
     pass
-``` -->
+```  -->
 
-<!-- ### Implement the Discriminator of the DCGAN
-(Answer for padding calculation goes here)
+# <!-- ### Implement the Discriminator of the DCGAN
+# (Answer for padding calculation goes here)
 
-Implemented the architecture by filling in the '__init__' and 'forward' method of the 'DCDiscriminator' class in 'models.py'.
+# Implemented the architecture by filling in the '__init__' and 'forward' method of the 'DCDiscriminator' class in 'models.py'.
 
-```python
-def __init__(self, conv_dim=64, norm='instance'):
-    super().__init__()
-    self.conv1 = conv(3, 32, 4, 2, 1, norm, False, 'relu')
-    self.conv2 = conv(32, 64, 4, 2, 1, norm, False, 'relu')
-    self.conv3 = conv(64, 128, 4, 2, 1, norm, False, 'relu')
-    self.conv4 = conv(128, 256, 4, 2, 1, norm, False, 'relu')
-    self.conv5 = conv(256, 1, 4, 2, 0, None, False)
+<!-- # ```python
+# def __init__(self, conv_dim=64, norm='instance'):
+#     super().__init__()
+#     self.conv1 = conv(3, 32, 4, 2, 1, norm, False, 'relu')
+#     self.conv2 = conv(32, 64, 4, 2, 1, norm, False, 'relu')
+#     self.conv3 = conv(64, 128, 4, 2, 1, norm, False, 'relu')
+#     self.conv4 = conv(128, 256, 4, 2, 1, norm, False, 'relu')
+#     self.conv5 = conv(256, 1, 4, 2, 0, None, False)
 
-def forward(self, x):
-    """Forward pass, x is (B, C, H, W)."""
-    x = self.conv1(x)
-    x = self.conv2(x)
-    x = self.conv3(x)
-    x = self.conv4(x)
-    x = self.conv5(x)
-    return x.squeeze()
-``` -->
+# def forward(self, x):
+#     """Forward pass, x is (B, C, H, W)."""
+#     x = self.conv1(x)
+#     x = self.conv2(x)
+#     x = self.conv3(x)
+#     x = self.conv4(x)
+#     x = self.conv5(x)
+#     return x.squeeze()
+# ``` --> -->
 
-<!-- ### Generator
-Implemented the generator of the DCGAN by filling in the '__init__' and 'forward' method of the 'DCGenerator' class in 'models.py'.
+<!-- # <!-- ### Generator
+# Implemented the generator of the DCGAN by filling in the '__init__' and 'forward' method of the 'DCGenerator' class in 'models.py'.
 
-```python
-def __init__(self, noise_size, conv_dim=64):
-    super().__init__()
+# ```python
+# def __init__(self, noise_size, conv_dim=64):
+#     super().__init__()
 
-    self.up_conv1 = conv(100, 256, 2, 1, 2, 'instance', False,'relu' )
-    self.up_conv2 = up_conv(256, 128, 3, stride=1, padding=1, scale_factor=2, norm='instance', activ='relu')
-    self.up_conv3 = up_conv(128, 64, 3, stride=1, padding=1, scale_factor=2, norm='instance', activ='relu')
-    self.up_conv4 = up_conv(64, 32, 3, stride=1, padding=1, scale_factor=2, norm='instance', activ='relu')
-    self.up_conv5 = up_conv(32, 3, 3, stride=1, padding=1, scale_factor=2, norm= None, activ='tanh')
+#     self.up_conv1 = conv(100, 256, 2, 1, 2, 'instance', False,'relu' )
+#     self.up_conv2 = up_conv(256, 128, 3, stride=1, padding=1, scale_factor=2, norm='instance', activ='relu')
+#     self.up_conv3 = up_conv(128, 64, 3, stride=1, padding=1, scale_factor=2, norm='instance', activ='relu')
+#     self.up_conv4 = up_conv(64, 32, 3, stride=1, padding=1, scale_factor=2, norm='instance', activ='relu')
+#     self.up_conv5 = up_conv(32, 3, 3, stride=1, padding=1, scale_factor=2, norm= None, activ='tanh')
 
-def forward(self, z):
-    """
-    Generate an image given a sample of random noise.
+# def forward(self, z):
+#     """
+#     Generate an image given a sample of random noise.
 
-    Input
-    -----
-        z: BS x noise_size x 1 x 1   --  16x100x1x1
+#     Input
+#     -----
+#         z: BS x noise_size x 1 x 1   --  16x100x1x1
 
-    Output
-    ------
-        out: BS x channels x image_width x image_height  --  16x3x64x64
-    """
+#     Output
+#     ------
+#         out: BS x channels x image_width x image_height  --  16x3x64x64
+#     """
 
-    z = self.up_conv1(z)
-    z = self.up_conv2(z)
-    z = self.up_conv3(z)
-    z = self.up_conv4(z)
-    z = self.up_conv5(z)
-    return z
-```
+#     z = self.up_conv1(z)
+#     z = self.up_conv2(z)
+#     z = self.up_conv3(z)
+#     z = self.up_conv4(z)
+#     z = self.up_conv5(z)
+#     return z
+# ```
 
-### Training Loop
-Implemented the training loop for the DCGAN by filling in the indicated parts of the training_loop function in vanilla_gan.py.
+# ### Training Loop
+# Implemented the training loop for the DCGAN by filling in the indicated parts of the training_loop function in vanilla_gan.py.
 
-```python
-            # TRAIN THE DISCRIMINATOR
-            # 1. Compute the discriminator loss on real images
-            if opts.use_diffaug:
-                D_real_loss = torch.mean((D(DiffAugment(real_images, policy='color,translation,cutout', channels_first=False )) - 1) ** 2)
-            else:
-                D_real_loss = torch.mean((D(real_images) - 1) ** 2)
+# ```python
+#             # TRAIN THE DISCRIMINATOR
+#             # 1. Compute the discriminator loss on real images
+#             if opts.use_diffaug:
+#                 D_real_loss = torch.mean((D(DiffAugment(real_images, policy='color,translation,cutout', channels_first=False )) - 1) ** 2)
+#             else:
+#                 D_real_loss = torch.mean((D(real_images) - 1) ** 2)
 
 
-            # 2. Sample noise
-            noise = sample_noise(opts.batch_size, opts.noise_size)
+#             # 2. Sample noise
+#             noise = sample_noise(opts.batch_size, opts.noise_size)
 
-            # 3. Generate fake images from the noise
-            fake_images = G(noise)
+#             # 3. Generate fake images from the noise
+#             fake_images = G(noise)
 
-            # 4. Compute the discriminator loss on the fake images
-            if opts.use_diffaug:
+#             # 4. Compute the discriminator loss on the fake images
+#             if opts.use_diffaug:
 
-                D_fake_loss = torch.mean((D(DiffAugment(fake_images.detach(), policy='color,translation,cutout', channels_first=False ))) ** 2)
-            else:
-                D_real_loss = torch.mean((D(fake_images.detach())) ** 2)
-            D_total_loss = (D_real_loss + D_fake_loss) / 2
+#                 D_fake_loss = torch.mean((D(DiffAugment(fake_images.detach(), policy='color,translation,cutout', channels_first=False ))) ** 2)
+#             else:
+#                 D_real_loss = torch.mean((D(fake_images.detach())) ** 2)
+#             D_total_loss = (D_real_loss + D_fake_loss) / 2
 
-            # update the discriminator D
-            d_optimizer.zero_grad()
-            D_total_loss.backward()
-            d_optimizer.step()
+#             # update the discriminator D
+#             d_optimizer.zero_grad()
+#             D_total_loss.backward()
+#             d_optimizer.step()
 
-            # TRAIN THE GENERATOR
-            # 1. Sample noise
-            noise = sample_noise(opts.batch_size, opts.noise_size)
+#             # TRAIN THE GENERATOR
+#             # 1. Sample noise
+#             noise = sample_noise(opts.batch_size, opts.noise_size)
 
-            # 2. Generate fake images from the noise
-            fake_images = G(noise)
+#             # 2. Generate fake images from the noise
+#             fake_images = G(noise)
 
-            # 3. Compute the generator loss
-            if opts.use_diffaug:
-                G_loss = torch.mean((D(DiffAugment(fake_images, policy='color,translation,cutout', channels_first=False ))-1) ** 2)
-            else:
-                G_loss = torch.mean((D(fake_images)-1) ** 2)
+#             # 3. Compute the generator loss
+#             if opts.use_diffaug:
+#                 G_loss = torch.mean((D(DiffAugment(fake_images, policy='color,translation,cutout', channels_first=False ))-1) ** 2)
+#             else:
+#                 G_loss = torch.mean((D(fake_images)-1) ** 2)
 
-```
+# ``` -->
 
 #### Differentiable Augmentation
 (Discussion of results with and without applying differentiable augmentations, and the difference between two augmentation schemes in terms of implementation and effects)
@@ -218,7 +218,7 @@ Set the --data_preprocess flag to deluxe.
 ### Generator
 Implemented the generator architecture by completing the __init__ method of the CycleGenerator class in models.py.
 
-```python
+<!-- ```python
 def __init__(self, conv_dim=64, init_zero_weights=False, norm='instance'):
     super().__init__()
 
@@ -340,7 +340,7 @@ if not opts.use_diffaug:
 else:
     g_loss += torch.mean((D_Y(DiffAugment(fake_Y, policy='color,translation,cutout', channels_first=False )) - 1 ) ** 2)
 
-```
+``` -->
 
 ### Experiment with CycleGAN
 
@@ -395,6 +395,31 @@ else:
 |D_X_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_X_loss.png" >}}                     |
 |D_Y_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_Y_loss.png" >}}                     |
 |G_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/G_loss.png" >}}                     |
+
+#### apple2orange_10deluxe_instance_patch_cycle_naive_cycle
+
+|  Title     |    Image      |
+| :------: | :------: |
+|sample X to Y |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/sample-001600-X-Y.png" >}}                     |
+|sample Y to X |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/sample-001600-Y-X.png"  >}}                 |
+|D_fake_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/D_fake_loss.png" >}}                     |
+|D_real_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/D_real_loss.png" >}}                     |
+|D_X_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/D_X_loss.png" >}}                     |
+|D_Y_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/D_Y_loss.png" >}}                     |
+|G_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle/G_loss.png" >}}                     |
+
+
+#### apple2orange_10deluxe_instance_patch_cycle_naive_cycle_diffaug
+
+|  Title     |    Image      |
+| :------: | :------: |
+|sample X to Y |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle_diffaug/sample-010000-X-Y.png" >}}                     |
+|sample Y to X |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle_diffaug/sample-010000-Y-X.png"  >}}                 |
+|D_fake_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_fake_loss.png" >}}                     |
+|D_real_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_real_loss.png" >}}                     |
+|D_X_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_X_loss.png" >}}                     |
+|D_Y_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_Y_loss.png" >}}                     |
+|G_loss |{{< figure src="./data/apple2orange_10deluxe_instance_patch_cycle_naive_cycle_diffaug/G_loss.png" >}}                     |
 <!-- ``` -->
 #### Observations:
 
@@ -431,7 +456,7 @@ The dataset is then transformed on-the-fly during training.
 
 We define our model using the 'UNet2DModel' class from the diffusers library.
 The model has various hyperparameters such as 'sample_size', 'in_channels', 'out_channels', 'layers_per_block', 'block_out_channels', 'down_block_types', and 'up_block_types'.
-```python
+<!-- ```python
 from diffusers import UNet2DModel
 
 
@@ -457,7 +482,7 @@ model = UNet2DModel(
         "UpBlock2D", 
         "UpBlock2D"  
       ),
-)
+) -->
 ```
 ##### Noise Scheduler:
 
@@ -473,7 +498,7 @@ noise_scheduler = DDPMScheduler(num_train_timesteps=1000)
 We use an AdamW optimizer and a cosine learning rate schedule for training.
 We use the DDPMPipeline class from the diffusers library for end-to-end inference during evaluation.
 The training function train_loop is defined, which includes gradient accumulation, mixed precision training, and multi-GPU or TPU training using the Accelerator class from the accelerate library.
-
+<!-- 
 ```python
 for step, batch in enumerate(train_dataloader):
     clean_images = batch['images']
@@ -500,7 +525,7 @@ for step, batch in enumerate(train_dataloader):
         optimizer.zero_grad()
             
 ```
-#### Training Execution:
+#### Training Execution: -->
 
 We use the 'notebook_launcher' function from the accelerate library to launch the training from the notebook.
 #### Key Functions

@@ -514,6 +514,8 @@ We use the 'notebook_launcher' function from the accelerate library to launch th
 | :------: | :------: |
 |Apple |{{< figure src="./data/difussion/apple.png" >}}                     |
 |Cat |{{< figure src="./data/difussion/cat.png"  >}}                 |
+
+The quality of the generated images and how well the DCGAN has captured the main differences between the two domains depend on factors such as the quality of the training data, hyperparameters used during training, and complexity of image domains. If the diffusion results look unrealistic compared to the DCGAN results, it could be due to factors such as dataset quality, model complexity, hyperparameter tuning, or training time. Further analysis and experimentation would be necessary to pinpoint the specific reason for the difference in image quality.
 <!-- |D_fake_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_fake_loss.png" >}}                     |
 |D_real_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_real_loss.png" >}}                     |
 |D_X_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_X_loss.png" >}}                     |

@@ -23,6 +23,10 @@ draft: false
 # Show this page in the Featured widget?
 featured: false
 
+design:
+  spacing:
+    # Customize the section spacing. Order is top, right, bottom, left.
+    padding: ["20px", "0", "20px", "0"]
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
 image:

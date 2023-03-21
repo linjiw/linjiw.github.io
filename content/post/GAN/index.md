@@ -49,7 +49,7 @@ Implementing a more complex GAN architecture called CycleGAN for the task of ima
 
 For the first part of this assignment, we implement a slightly modified version of Deep Convolutional GAN (DCGAN).
 
-<!-- ### Implement Data Augmentation
+### Implement Data Augmentation
 Implemented the deluxe version of data augmentation in 'data_loader.py'.
 
 ```python
@@ -172,7 +172,7 @@ Implemented the training loop for the DCGAN by filling in the indicated parts of
 ```
 
 #### Differentiable Augmentation
-(Discussion of results with and without applying differentiable augmentations, and the difference between two augmentation schemes in terms of implementation and effects) -->
+(Discussion of results with and without applying differentiable augmentations, and the difference between two augmentation schemes in terms of implementation and effects)
 
 ### Experiment with DCGANs
 We've been experimenting with different data preprocessing techniques, and we've found that the choice of preprocessing can have a significant impact on the performance of the GAN. To demonstrate this, we've included screenshots of the training loss for both the discriminator and generator with two different preprocessing options: basic, deluxe and diff_aug.
@@ -212,7 +212,7 @@ The table above highlights the key differences in the loss curves for a DCGAN tr
 ## Part 2: CycleGAN
 Implemented the CycleGAN architecture.
 
-<!-- ### Data Augmentation
+### Data Augmentation
 Set the --data_preprocess flag to deluxe.
 
 ### Generator
@@ -340,7 +340,7 @@ if not opts.use_diffaug:
 else:
     g_loss += torch.mean((D_Y(DiffAugment(fake_Y, policy='color,translation,cutout', channels_first=False )) - 1 ) ** 2)
 
-``` -->
+```
 
 ### Experiment with CycleGAN
 
@@ -431,7 +431,7 @@ The dataset is then transformed on-the-fly during training.
 
 We define our model using the 'UNet2DModel' class from the diffusers library.
 The model has various hyperparameters such as 'sample_size', 'in_channels', 'out_channels', 'layers_per_block', 'block_out_channels', 'down_block_types', and 'up_block_types'.
-<!-- ```python
+```python
 from diffusers import UNet2DModel
 
 
@@ -458,23 +458,23 @@ model = UNet2DModel(
         "UpBlock2D"  
       ),
 )
-``` -->
+```
 ##### Noise Scheduler:
 
 We use the 'DDPMScheduler' class from the diffusers library to define the noise scheduler for our model.
 The scheduler takes a batch of images, a batch of random noise, and the timesteps for each image.
-<!-- ```python
+```python
 from diffusers import DDPMScheduler
 
 noise_scheduler = DDPMScheduler(num_train_timesteps=1000)
-``` -->
+```
 #### Training Setup:
 
 We use an AdamW optimizer and a cosine learning rate schedule for training.
 We use the DDPMPipeline class from the diffusers library for end-to-end inference during evaluation.
 The training function train_loop is defined, which includes gradient accumulation, mixed precision training, and multi-GPU or TPU training using the Accelerator class from the accelerate library.
 
-<!-- ```python
+```python
 for step, batch in enumerate(train_dataloader):
     clean_images = batch['images']
     # Sample noise to add to the images
@@ -499,7 +499,7 @@ for step, batch in enumerate(train_dataloader):
         lr_scheduler.step()
         optimizer.zero_grad()
             
-``` -->
+```
 #### Training Execution:
 
 We use the 'notebook_launcher' function from the accelerate library to launch the training from the notebook.

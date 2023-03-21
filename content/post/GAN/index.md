@@ -474,7 +474,7 @@ We use an AdamW optimizer and a cosine learning rate schedule for training.
 We use the DDPMPipeline class from the diffusers library for end-to-end inference during evaluation.
 The training function train_loop is defined, which includes gradient accumulation, mixed precision training, and multi-GPU or TPU training using the Accelerator class from the accelerate library.
 
-```python
+<!-- ```python
 for step, batch in enumerate(train_dataloader):
     clean_images = batch['images']
     # Sample noise to add to the images
@@ -499,7 +499,7 @@ for step, batch in enumerate(train_dataloader):
         lr_scheduler.step()
         optimizer.zero_grad()
             
-```
+``` -->
 #### Training Execution:
 
 We use the 'notebook_launcher' function from the accelerate library to launch the training from the notebook.

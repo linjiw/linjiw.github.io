@@ -49,7 +49,7 @@ Implementing a more complex GAN architecture called CycleGAN for the task of ima
 
 For the first part of this assignment, we implement a slightly modified version of Deep Convolutional GAN (DCGAN).
 
-### Implement Data Augmentation
+<!-- ### Implement Data Augmentation
 Implemented the deluxe version of data augmentation in 'data_loader.py'.
 
 ```python
@@ -65,9 +65,9 @@ elif opts.data_preprocess == 'deluxe':
         ])
         train_transform = deluxe_transform
     pass
-```
+``` -->
 
-### Implement the Discriminator of the DCGAN
+<!-- ### Implement the Discriminator of the DCGAN
 (Answer for padding calculation goes here)
 
 Implemented the architecture by filling in the '__init__' and 'forward' method of the 'DCDiscriminator' class in 'models.py'.
@@ -89,9 +89,9 @@ def forward(self, x):
     x = self.conv4(x)
     x = self.conv5(x)
     return x.squeeze()
-```
+``` -->
 
-### Generator
+<!-- ### Generator
 Implemented the generator of the DCGAN by filling in the '__init__' and 'forward' method of the 'DCGenerator' class in 'models.py'.
 
 ```python
@@ -110,11 +110,11 @@ def forward(self, z):
 
     Input
     -----
-        z: BS x noise_size x 1 x 1   -->  16x100x1x1
+        z: BS x noise_size x 1 x 1   --  16x100x1x1
 
     Output
     ------
-        out: BS x channels x image_width x image_height  -->  16x3x64x64
+        out: BS x channels x image_width x image_height  --  16x3x64x64
     """
 
     z = self.up_conv1(z)
@@ -172,7 +172,7 @@ Implemented the training loop for the DCGAN by filling in the indicated parts of
 ```
 
 #### Differentiable Augmentation
-(Discussion of results with and without applying differentiable augmentations, and the difference between two augmentation schemes in terms of implementation and effects)
+(Discussion of results with and without applying differentiable augmentations, and the difference between two augmentation schemes in terms of implementation and effects) -->
 
 ### Experiment with DCGANs
 We've been experimenting with different data preprocessing techniques, and we've found that the choice of preprocessing can have a significant impact on the performance of the GAN. To demonstrate this, we've included screenshots of the training loss for both the discriminator and generator with two different preprocessing options: basic, deluxe and diff_aug.
@@ -212,7 +212,7 @@ The table above highlights the key differences in the loss curves for a DCGAN tr
 ## Part 2: CycleGAN
 Implemented the CycleGAN architecture.
 
-### Data Augmentation
+<!-- ### Data Augmentation
 Set the --data_preprocess flag to deluxe.
 
 ### Generator
@@ -254,11 +254,11 @@ def forward(self, x):
     x = self.up_conv2(x)
 
     return x
-```
-### Training Loop
-Implemented the training loop for the CycleGAN by filling in the indicated parts of the training_loop function in cycle_gan.py.
+``` -->
+<!-- ### Training Loop
+Implemented the training loop for the CycleGAN by filling in the indicated parts of the training_loop function in cycle_gan.py. -->
 
-```python
+<!-- ```python
 # TRAIN THE DISCRIMINATORS
 # 1. Compute the discriminator losses on real images
 if not opts.use_diffaug:
@@ -329,7 +329,7 @@ if opts.use_cycle_consistency_loss:
     g_loss += opts.lambda_cycle * cycle_consistency_loss
     logger.add_scalar('G/XY/cycle', opts.lambda_cycle * cycle_consistency_loss, iteration)
 
-# X--Y-->X CYCLE
+# X--Y--X CYCLE
 # 1. Generate domain-Y-like images based on real images in domain X
 fake_Y = G_XtoY(images_X)
 
@@ -340,10 +340,10 @@ if not opts.use_diffaug:
 else:
     g_loss += torch.mean((D_Y(DiffAugment(fake_Y, policy='color,translation,cutout', channels_first=False )) - 1 ) ** 2)
 
-```
+``` -->
 
 ### Experiment with CycleGAN
-INSERT IMAGE: Two example images of generated Grumpy cats from Russian Blue cats, and two example images of generated Russian Blue cats from Grumpy cats.
+
 <!-- ``` -->
 #### cat_10deluxe_instance_dc_cycle_naive
 
@@ -431,7 +431,7 @@ The dataset is then transformed on-the-fly during training.
 
 We define our model using the 'UNet2DModel' class from the diffusers library.
 The model has various hyperparameters such as 'sample_size', 'in_channels', 'out_channels', 'layers_per_block', 'block_out_channels', 'down_block_types', and 'up_block_types'.
-```python
+<!-- ```python
 from diffusers import UNet2DModel
 
 
@@ -458,16 +458,16 @@ model = UNet2DModel(
         "UpBlock2D"  
       ),
 )
-```
+``` -->
 ##### Noise Scheduler:
 
 We use the 'DDPMScheduler' class from the diffusers library to define the noise scheduler for our model.
 The scheduler takes a batch of images, a batch of random noise, and the timesteps for each image.
-```python
+<!-- ```python
 from diffusers import DDPMScheduler
 
 noise_scheduler = DDPMScheduler(num_train_timesteps=1000)
-```
+``` -->
 #### Training Setup:
 
 We use an AdamW optimizer and a cosine learning rate schedule for training.

@@ -555,12 +555,12 @@ Training metrics such as loss and learning rate can be inserted here. -->
 {{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_Y_loss.png" title="D_Y_loss: data_preprocess=deluxe, iter = 10000" >}}
 {{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/G_loss.png" title="G_loss: cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug, iter = 10000" >}} --> -->
 
-
+<!-- 
 (Brief comment on the quality of the generated images, and whether the CycleGAN has captured the main differences between the two domains)
 
 INSERT IMAGE: Two example images of generated apples from oranges, and two example images of generated oranges from apples.
 
-(Brief comment on the quality of the generated images, and whether the CycleGAN has captured the main differences between the two domains)
+(Brief comment on the quality of the generated images, and whether the CycleGAN has captured the main differences between the two domains) -->
 
 ## Conclusion
 This report presents our implementation of DCGAN and CycleGAN for various image generation tasks. Through these experiments, we have observed the impact of data augmentation and differentiable augmentation on the training process and final results. We have also seen the capabilities of CycleGAN in generating realistic images for domain-to-domain translation tasks, such as converting Grumpy cats to Russian Blue cats and vice versa, and converting apples to oranges and vice versa.

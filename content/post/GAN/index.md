@@ -427,15 +427,75 @@ The dataset is then transformed on-the-fly during training.
 
 We define our model using the 'UNet2DModel' class from the diffusers library.
 The model has various hyperparameters such as 'sample_size', 'in_channels', 'out_channels', 'layers_per_block', 'block_out_channels', 'down_block_types', and 'up_block_types'.
+```python
+from diffusers import UNet2DModel
+
+
+model = UNet2DModel(
+    sample_size=config.image_size,  # the target image resolution
+    in_channels=3,  # the number of input channels, 3 for RGB images
+    out_channels=3,  # the number of output channels
+    layers_per_block=2,  # how many ResNet layers to use per UNet block
+    block_out_channels=(128, 128, 256, 256, 512, 512),  # the number of output channes for each UNet block
+    down_block_types=( 
+        "DownBlock2D",  # a regular ResNet downsampling block
+        "DownBlock2D", 
+        "DownBlock2D", 
+        "DownBlock2D", 
+        "AttnDownBlock2D",  # a ResNet downsampling block with spatial self-attention
+        "DownBlock2D",
+    ), 
+    up_block_types=(
+        "UpBlock2D",  # a regular ResNet upsampling block
+        "AttnUpBlock2D",  # a ResNet upsampling block with spatial self-attention
+        "UpBlock2D", 
+        "UpBlock2D", 
+        "UpBlock2D", 
+        "UpBlock2D"  
+      ),
+)
+```
 ##### Noise Scheduler:
 
 We use the 'DDPMScheduler' class from the diffusers library to define the noise scheduler for our model.
 The scheduler takes a batch of images, a batch of random noise, and the timesteps for each image.
+```python
+from diffusers import DDPMScheduler
+
+noise_scheduler = DDPMScheduler(num_train_timesteps=1000)
+```
 #### Training Setup:
 
 We use an AdamW optimizer and a cosine learning rate schedule for training.
 We use the DDPMPipeline class from the diffusers library for end-to-end inference during evaluation.
 The training function train_loop is defined, which includes gradient accumulation, mixed precision training, and multi-GPU or TPU training using the Accelerator class from the accelerate library.
+
+```python
+for step, batch in enumerate(train_dataloader):
+    clean_images = batch['images']
+    # Sample noise to add to the images
+    noise = torch.randn(clean_images.shape).to(clean_images.device)
+    bs = clean_images.shape[0]
+
+    # Sample a random timestep for each image
+    timesteps = torch.randint(0, noise_scheduler.num_train_timesteps, (bs,), device=clean_images.device).long()
+
+    # Add noise to the clean images according to the noise magnitude at each timestep
+    # (this is the forward diffusion process)
+    noisy_images = noise_scheduler.add_noise(clean_images, noise, timesteps)
+    
+    with accelerator.accumulate(model):
+        # Predict the noise residual
+        noise_pred = model(noisy_images, timesteps, return_dict=False)[0]
+        loss = F.mse_loss(noise_pred, noise)
+        accelerator.backward(loss)
+
+        accelerator.clip_grad_norm_(model.parameters(), 1.0)
+        optimizer.step()
+        lr_scheduler.step()
+        optimizer.zero_grad()
+            
+```
 #### Training Execution:
 
 We use the 'notebook_launcher' function from the accelerate library to launch the training from the notebook.
@@ -449,7 +509,7 @@ We use the 'notebook_launcher' function from the accelerate library to launch th
 |  Title     |    Image      |
 | :------: | :------: |
 |Apple |{{< figure src="./data/difussion/apple.png" >}}                     |
-|sample Y to X |{{< figure src="./data/difussion/cat.png"  >}}                 |
+|Cat |{{< figure src="./data/difussion/cat.png"  >}}                 |
 <!-- |D_fake_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_fake_loss.png" >}}                     |
 |D_real_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_real_loss.png" >}}                     |
 |D_X_loss |{{< figure src="./data/cat_10deluxe_instance_patch_cycle_naive_cycle_diffaug/D_X_loss.png" >}}                     |

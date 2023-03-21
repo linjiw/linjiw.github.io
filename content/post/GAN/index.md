@@ -483,8 +483,8 @@ model = UNet2DModel(
         "UpBlock2D"  
       ),
 ) -->
-```
-##### Noise Scheduler:
+<!-- ``` -->
+<!-- ##### Noise Scheduler:
 
 We use the 'DDPMScheduler' class from the diffusers library to define the noise scheduler for our model.
 The scheduler takes a batch of images, a batch of random noise, and the timesteps for each image.
@@ -492,7 +492,7 @@ The scheduler takes a batch of images, a batch of random noise, and the timestep
 from diffusers import DDPMScheduler
 
 noise_scheduler = DDPMScheduler(num_train_timesteps=1000)
-```
+``` -->
 #### Training Setup:
 
 We use an AdamW optimizer and a cosine learning rate schedule for training.

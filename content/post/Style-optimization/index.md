@@ -1,15 +1,7 @@
 ---
 title: Neural Style Transfer
 subtitle: A Comprehensive Study on Neural Style Transfer.
-summary: I'm excited to share my recent project on Neural Style Transfer, which is a fascinating technique that combines the content of one image with the artistic style of another, resulting in a stunning and unique blend of the two. For this project, I used an image of Fallingwater, a famous architectural marvel, and the iconic painting Self-Portrait with Thorn Necklace and Hummingbird by Frida Kahlo as my style inspiration.
-
-In this project, I started by optimizing random noise in content space, which helped me understand the concept of optimizing pixels based on specific losses. Then, I focused on generating textures by optimizing the style only, which allowed me to grasp the connection between style-space distance and the gram matrix. Finally, I combined all these elements to perform the Neural Style Transfer, creating a beautiful, Frida-Kahlo-inspired rendition of Fallingwater.
-
-Feel free to explore the images below to see the original content image, the style image, and the final Neural Style Transfer output. Let your imagination run wild as you discover the endless possibilities of blending art and technology!
-
-🖼️ Content Image: Fallingwater
-🎨 Style Image: Self-Portrait with Thorn Necklace and Hummingbird by Frida Kahlo
-🌟 Output: Frida-Kahlo-ized Fallingwater
+summary: I'm excited to share my recent project on Neural Style Transfer, which is a fascinating technique that combines the content of one image with the artistic style of another, resulting in a stunning and unique blend of the two. 
 authors:
 - admin
 tags:
@@ -48,10 +40,15 @@ image:
 ## Introduction
 
 
-In this assignment, we get hands-on experience coding and training GANs. This assignment includes two parts:
+- In this project, I started by optimizing random noise in content space, which helped me understand the concept of optimizing pixels based on specific losses. 
+- Then, I focused on generating textures by optimizing the style only, which allowed me to grasp the connection between style-space distance and the gram matrix. 
+- Finally, I combined all these elements to perform the Neural Style Transfer, creating a beautiful, Frida-Kahlo-inspired rendition of Fallingwater.
 
-Implementing a Deep Convolutional GAN (DCGAN) to generate grumpy cats from samples of random noise.
-Implementing a more complex GAN architecture called CycleGAN for the task of image-to-image translation. We train the CycleGAN to convert between different types of two kinds of cats (Grumpy and Russian Blue) and between apples and oranges.
+Feel free to explore the images below to see the original content image, the style image, and the final Neural Style Transfer output. Let your imagination run wild as you discover the endless possibilities of blending art and technology!
+
+🖼️ Content Image: Fallingwater
+🎨 Style Image: Self-Portrait with Thorn Necklace and Hummingbird by Frida Kahlo
+🌟 Output: Frida-Kahlo-ized Fallingwater
 
 ## Part 1: Deep Convolutional GAN
 

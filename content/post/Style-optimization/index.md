@@ -8,6 +8,7 @@ tags:
 - Computer Vision
 - Image Generation
 - Deep Learning
+- Style Image
 # - 开源
 
 categories:
@@ -68,11 +69,12 @@ Feel free to explore the images below to see the original content image, the sty
    {{< figure src="./data/reconstruct/reconstruct_fallingwater.png" title="Reconstruct: Falling Water, Content Layer[1]" >}}
 
 ## Part 1: Texture Synthesis
+In this project, we implemented a texture synthesis method using style-space loss, inspired by the Gram matrix. By measuring the distance between the styles of two images, we aimed to optimize and predict features that closely resemble the target style.
 
 ### Experiments
 
-1. **Effect of optimizing style loss at different layers:** Explored the impact of optimizing content loss at various layers and chose the best one.
-   {{< figure src="./data/reconstruct/content_4_style_11-1.png.png" title="Reconstruct, Content Layer [1-5 to 11-15], Top Left (11-15), Bottom Right (1-5)" >}}
+1. **Effect of optimizing texture loss at different layers:** Explored the impact of optimizing style loss at various layers and chose the best one. We discovered that the textures generated when optimizing style layers 1 to 5 exhibited the highest similarity with the original image. In contrast, the results became increasingly noisy and less visually coherent when the optimization was performed on later layers, such as layers 11 to 15. This observation suggests that earlier layers play a more significant role in capturing and reproducing the style features of the original image.
+   {{< figure src="./data/synthesis/content_4_style_11-1.png" title="Synthesis, Style Layer [1-5 to 11-15], Top Left (11-15), Bottom Right (1-5)" >}}
 
 2. **Comparison of two random noise input images:** Optimized two random noise input images with content loss and compared their results with the content image.
     {{< figure src="./data/reconstruct/content_wally.png.png" title="Wally" >}}

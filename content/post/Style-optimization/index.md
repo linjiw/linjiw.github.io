@@ -62,6 +62,8 @@ Feel free to explore the images below to see the original content image, the sty
    {{< figure src="./data/reconstruct/content_16-1_style_1.png" title="Reconstruct, Content Layer [1 to 16]" >}}
 
 2. **Comparison of two random noise input images:** Optimized two random noise input images with content loss and compared their results with the content image.
+   {{< figure src="./data/reconstruct/reconstruct_wally.png" title="Reconstruct, Wally, Content Layer [1]" >}}
+   {{< figure src="./data/reconstruct/reconstruct_fallingwater.png" title="Reconstruct, Falling Water [1]" >}}
 
 
 

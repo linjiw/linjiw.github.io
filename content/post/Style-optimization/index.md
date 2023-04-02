@@ -77,10 +77,10 @@ In this project, we implemented a texture synthesis method using style-space los
    {{< figure src="./data/synthesis/content_4_style_11-1.png" title="Synthesis, Style Layer [1-5 to 11-15], Top Left (11-15), Bottom Right (1-5)" >}}
 
 2. **Comparison of two random noise input images:** Optimized two random noise input images with content loss and compared their results with the content image.
-    {{< figure src="./data/reconstruct/content_wally.png.png" title="Wally" >}}
-   {{< figure src="./data/reconstruct/reconstruct_wally.png" title="Reconstruct: Wally, Content Layer [1]" >}}
-   {{< figure src="./data/reconstruct/content_fallingwater.png" title="Falling Water" >}}
-   {{< figure src="./data/reconstruct/reconstruct_fallingwater.png" title="Reconstruct: Falling Water, Content Layer[1]" >}}
+    {{< figure src="./data/synthesis/style_1.png" title="Frida Kahlo" >}}
+   {{< figure src="./data/synthesis/synthesis_content_4_style_1_4.png" title="Synthesis: Frida Kahlo, Style Layer [1-5]" >}}
+   {{< figure src="./data/synthesis/style_2.png" title="Picasso" >}}
+   {{< figure src="./data/synthesis/synthesis_content_4_style_1_4_picasso.png" title="Synthesis: Picasso, Style Layer [1-5]" >}}
 
 
 

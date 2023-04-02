@@ -47,7 +47,9 @@ image:
 Feel free to explore the images below to see the original content image, the style image, and the final Neural Style Transfer output. Let your imagination run wild as you discover the endless possibilities of blending art and technology!
 
 🖼️ Content Image: Fallingwater
+
 🎨 Style Image: Self-Portrait with Thorn Necklace and Hummingbird by Frida Kahlo
+
 🌟 Output: Frida-Kahlo-ized Fallingwater
 
 ## Part 1: Deep Convolutional GAN

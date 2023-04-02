@@ -88,14 +88,14 @@ In the final part of this project, we combined content and style loss to perform
 
 
 ### Experiments
-1. **Hyper-parameter tuning:** Explored the impact of optimizing style loss at various layers and chose the best one. We discovered that the textures generated when optimizing style layers 1 to 5 exhibited the highest similarity with the original image. In contrast, the results became increasingly noisy and less visually coherent when the optimization was performed on later layers, such as layers 11 to 15. This observation suggests that earlier layers play a more significant role in capturing and reproducing the style features of the original image.
+1. **Hyper-parameter tuning:** We carefully tuned the hyper-parameters to achieve satisfactory results, paying special attention to the normalization of the Gram matrix over feature pixels. This normalization influenced the choice of hyper-parameters by a factor of 4-5.
    {{< figure src="./data/synthesis/content_4_style_11-1.png" title="Synthesis, Style Layer [1-5 to 11-15], Top Left (11-15), Bottom Right (1-5)" >}}
-2. **Gram Matrix Implementation:** Explored the impact of optimizing style loss at various layers and chose the best one. We discovered that the textures generated when optimizing style layers 1 to 5 exhibited the highest similarity with the original image. In contrast, the results became increasingly noisy and less visually coherent when the optimization was performed on later layers, such as layers 11 to 15. This observation suggests that earlier layers play a more significant role in capturing and reproducing the style features of the original image.
+2. **Gram Matrix Implementation:** We inserted both content and style loss at certain layers in the neural network, effectively combining them to achieve style transfer. This was done using the Gram matrix, which calculates the correlation of two vectors on every dimension, helping to measure the style difference between the two images.
    {{< figure src="./data/synthesis/content_4_style_11-1.png" title="Synthesis, Style Layer [1-5 to 11-15], Top Left (11-15), Bottom Right (1-5)" >}}
-3. **3 by 3 Image Grid:** Explored the impact of optimizing style loss at various layers and chose the best one. We discovered that the textures generated when optimizing style layers 1 to 5 exhibited the highest similarity with the original image. In contrast, the results became increasingly noisy and less visually coherent when the optimization was performed on later layers, such as layers 11 to 15. This observation suggests that earlier layers play a more significant role in capturing and reproducing the style features of the original image.
+3. **3 by 3 Image Grid:** We generated a 3x3 grid of images, showcasing the results of style transfer with two content images mixed with two style images. The grid also includes the original content and style images.
    {{< figure src="./data/synthesis/content_4_style_11-1.png" title="Synthesis, Style Layer [1-5 to 11-15], Top Left (11-15), Bottom Right (1-5)" >}}
 
-4. **Style Transfer on My Favorite Image:** Optimized two random noise input images with content loss and compared their results with the content image.
+4. **Style Transfer on My Favorite Image:** We applied style transfer to some of our favorite images and observed the results.
     {{< figure src="./data/synthesis/style_1.png" title="Frida Kahlo" >}}
    {{< figure src="./data/synthesis/synthesis_content_4_style_1_4.png" title="Synthesis: Frida Kahlo, Style Layer [1-5]" >}}
    {{< figure src="./data/synthesis/style_2.png" title="Picasso" >}}

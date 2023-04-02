@@ -59,11 +59,14 @@ Feel free to explore the images below to see the original content image, the sty
 ### Experiments
 
 1. **Effect of optimizing content loss at different layers:** Explored the impact of optimizing content loss at various layers and chose the best one.
-   {{< figure src="./data/reconstruct/content_16-1_style_1.png" title="Reconstruct, Content Layer [1 to 16]" >}}
+   {{< figure src="./data/reconstruct/content_16-1_style_1.png" title="Reconstruct, Content Layer [1 to 16], Top Left (16), Bottom Right (1)" >}}
 
 2. **Comparison of two random noise input images:** Optimized two random noise input images with content loss and compared their results with the content image.
-   {{< figure src="./data/reconstruct/reconstruct_wally.png" title="Reconstruct, Wally, Content Layer [1]" >}}
-   {{< figure src="./data/reconstruct/reconstruct_fallingwater.png" title="Reconstruct, Falling Water [1]" >}}
+    {{< figure src="./data/reconstruct/content_wally.png.png" title="Wally" >}}
+
+   {{< figure src="./data/reconstruct/reconstruct_wally.png" title="Reconstruct: Wally, Content Layer [1]" >}}
+   {{< figure src="./data/reconstruct/content_fallingwater.png" title="Falling Water" >}}
+   {{< figure src="./data/reconstruct/reconstruct_fallingwater.png" title="Reconstruct: Falling Water, Content Layer[1]" >}}
 
 
 

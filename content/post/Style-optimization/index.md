@@ -88,8 +88,12 @@ In the final part of this project, we combined content and style loss to perform
 
 
 ### Experiments
-1. **Hyper-parameter tuning:** We carefully tuned the hyper-parameters to achieve satisfactory results, paying special attention to the normalization of the Gram matrix over feature pixels. This normalization influenced the choice of hyper-parameters by a factor of 4-5.
-   {{< figure src="./data/synthesis/content_4_style_11-1.png" title="Synthesis, Style Layer [1-5 to 11-15], Top Left (11-15), Bottom Right (1-5)" >}}
+1. **Hyper-parameter tuning:** We carefully tuned the hyper-parameters to achieve satisfactory results。We ran two for loops, one to traverse content from [1 to 16] and another one to traverse style [1-5 to 11-15]. Each row uses a fixed content layer, each column shares a fixed style layer.
+   {{< figure src="./data/transfer/15-13.png" title="Transfer, content layer from 15-13.png" >}}
+   {{< figure src="./data/transfer/12-10.png" title="Transfer, content layer from 12-10.png" >}}
+   {{< figure src="./data/transfer/9-7.png" title="Transfer, content layer from 9-7.png" >}}
+   {{< figure src="./data/transfer/6-4.png" title="Transfer, content layer from 6-4.png" >}}
+   {{< figure src="./data/transfer/3-1.png" title="Transfer, content layer from 3-1.png" >}}
 2. **Gram Matrix Implementation:** We inserted both content and style loss at certain layers in the neural network, effectively combining them to achieve style transfer. This was done using the Gram matrix, which calculates the correlation of two vectors on every dimension, helping to measure the style difference between the two images.
    {{< figure src="./data/synthesis/content_4_style_11-1.png" title="Synthesis, Style Layer [1-5 to 11-15], Top Left (11-15), Bottom Right (1-5)" >}}
 3. **3 by 3 Image Grid:** We generated a 3x3 grid of images, showcasing the results of style transfer with two content images mixed with two style images. The grid also includes the original content and style images.

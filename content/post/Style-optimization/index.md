@@ -104,10 +104,10 @@ In the final part of this project, we combined content and style loss to perform
    {{< figure src="./data/transfer/2by2Grid.png" title="Style Transfer: Mixed 2 By 2" >}}
 
 4. **Style Transfer on My Favorite Image:** We applied style transfer to some of our favorite images and observed the results.
-    {{< figure src="./data/synthesis/style_1.png" title="Frida Kahlo" >}}
-   {{< figure src="./data/synthesis/synthesis_content_4_style_1_4.png" title="Synthesis: Frida Kahlo, Style Layer [1-5]" >}}
-   {{< figure src="./data/synthesis/style_2.png" title="Picasso" >}}
-   {{< figure src="./data/synthesis/synthesis_content_4_style_1_4_picasso.png" title="Synthesis: Picasso, Style Layer [1-5]" >}}
+    {{< figure src="./data/transfer/style_andy.png" title="Style: Untitled (Beauty Products) by Andy Warhol" >}}
+   {{< figure src="./data/transfer/content_laguna_beach.png" title="Content: Laguna Beach by Linji Wang" >}}
+   {{< figure src="./data/transfer/style_laguna_beach.png" title="Andy Warhol Styled Laguna Beach" >}}
+   {{< figure src="./data/transfer/untitled-beauty-productsLarge_laguna_beach_2023-04-03-02-04-02.gif" title="Style Transfer Process" >}}
 
 #### Observations:
 

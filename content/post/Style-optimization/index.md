@@ -98,8 +98,10 @@ In the final part of this project, we combined content and style loss to perform
 
    {{< figure src="./data/transfer/gram_matrix.png" title="Gram Matrix, source from cloudxlab.com " >}}
    <!-- https://cloudxlab.com/assessment/displayslide/5648/calculating-style -->
-3. **3 by 3 Image Grid:** We generated a 3x3 grid of images, showcasing the results of style transfer with two content images mixed with two style images. The grid also includes the original content and style images.
-   {{< figure src="./data/synthesis/content_4_style_11-1.png" title="Synthesis, Style Layer [1-5 to 11-15], Top Left (11-15), Bottom Right (1-5)" >}}
+3. **Image Grid:** We generated a grid of images, showcasing the results of style transfer with two content images mixed with two style images. The grid also includes the original content and style images.
+   {{< figure src="./data/transfer/content2.png" title="Content Images" >}}
+   {{< figure src="./data/transfer/style_2.png" title="Style Images" >}}
+   {{< figure src="./data/transfer/2by2Grid.png" title="Style Transfer: Mixed 2 By 2" >}}
 
 4. **Style Transfer on My Favorite Image:** We applied style transfer to some of our favorite images and observed the results.
     {{< figure src="./data/synthesis/style_1.png" title="Frida Kahlo" >}}

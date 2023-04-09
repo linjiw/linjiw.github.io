@@ -77,20 +77,20 @@ Show example outputs of image reconstruction efforts and provide comments on why
 - different generative models including vanilla GAN, StyleGAN
 - different latent space (latent code in z space, w space, and w+ space)
 
-| Python Script       | Loss Combination       | Architecture | Latent Space | Experiment Results (Images) |
-|---------------------|------------------------|--------------|--------------|-----------------------------|
-| `main.py`           | Lp Loss                | Vanilla GAN  | z            | {{< figure src="./data/reconstruct/content_wally.png" >}}   |
-| `main.py`           | Perceptual Loss        | Vanilla GAN  | z            | [Image 2](link-to-image2)   |
-| `main.py`           | Lp + Perceptual Loss   | Vanilla GAN  | z            | [Image 3](link-to-image3)   |
-| `main.py`           | Lp Loss                | StyleGAN     | z            | [Image 4](link-to-image4)   |
-| `main.py`           | Perceptual Loss        | StyleGAN     | z            | [Image 5](link-to-image5)   |
-| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | z            | [Image 6](link-to-image6)   |
-| `main.py`           | Lp Loss                | StyleGAN     | w            | [Image 7](link-to-image7)   |
-| `main.py`           | Perceptual Loss        | StyleGAN     | w            | [Image 8](link-to-image8)   |
-| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | w            | [Image 9](link-to-image9)   |
-| `main.py`           | Lp Loss                | StyleGAN     | w+           | [Image 10](link-to-image10) |
-| `main.py`           | Perceptual Loss        | StyleGAN     | w+           | [Image 11](link-to-image11) |
-| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | w+           | [Image 12](link-to-image12) |
+| Loss Combination       | Architecture | Latent Space |  Results  |
+|------------------------|--------------|--------------|-----------------------------|
+| Lp Loss                | Vanilla   | z            | {{< figure src="./data/reconstruct/content_wally.png" >}}   |
+| Perceptual Loss        | Vanilla   | z            | [Image 2](link-to-image2)   |
+| Lp + Perceptual Loss   | Vanilla   | z            | [Image 3](link-to-image3)   |
+| Lp Loss                | Style     | z            | [Image 4](link-to-image4)   |
+| Perceptual Loss        | Style     | z            | [Image 5](link-to-image5)   |
+| Lp + Perceptual Loss   | Style     | z            | [Image 6](link-to-image6)   |
+| Lp Loss                | Style     | w            | [Image 7](link-to-image7)   |
+| Perceptual Loss        | Style     | w            | [Image 8](link-to-image8)   |
+| Lp + Perceptual Loss   | Style     | w            | [Image 9](link-to-image9)   |
+| Lp Loss                | Style     | w+           | [Image 10](link-to-image10) |
+| Perceptual Loss        | Style     | w+           | [Image 11](link-to-image11) |
+| Lp + Perceptual Loss   | Style     | w+           | [Image 12](link-to-image12) |
 
 
 

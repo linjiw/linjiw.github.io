@@ -79,7 +79,7 @@ Show example outputs of image reconstruction efforts and provide comments on why
 
 | Python Script       | Loss Combination       | Architecture | Latent Space | Experiment Results (Images) |
 |---------------------|------------------------|--------------|--------------|-----------------------------|
-| `main.py`           | Lp Loss                | Vanilla GAN  | z            | [Image 1](link-to-image1)   |
+| `main.py`           | Lp Loss                | Vanilla GAN  | z            | [Image 1](./data/transfer/15-13.png)   |
 | `main.py`           | Perceptual Loss        | Vanilla GAN  | z            | [Image 2](link-to-image2)   |
 | `main.py`           | Lp + Perceptual Loss   | Vanilla GAN  | z            | [Image 3](link-to-image3)   |
 | `main.py`           | Lp Loss                | StyleGAN     | z            | [Image 4](link-to-image4)   |

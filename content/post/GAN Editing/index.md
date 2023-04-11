@@ -45,6 +45,18 @@ In this assignment, we implement a few different techniques that require manipul
 - First, we invert a pre-trained generator to find a latent variable that closely reconstructs a given real image. 
 - In the second part of the assignment, we take a hand-drawn sketch and generate an image that fits the sketch accordingly.
 
+## Setup
+
+To set up the environment for this project, create a new virtual environment and install the required dependencies:
+
+```python
+conda create -n 16726_hw5
+conda activate 16726_hw5
+pip3 install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
+pip3 install click requests tqdm pyspng ninja matplotlib imageio imageio-ffmpeg==0.4.3
+pip install wandb # weight and bias is used in this blog for logging experiments.
+```
+
 
 ## Part 1: Inverting the Generator [30 pts]
 
@@ -78,6 +90,19 @@ Show example outputs of image reconstruction efforts and provide comments on why
 | `main.py`           | Lp Loss                | StyleGAN     | w+           | [Image 10](link-to-image10) |
 | `main.py`           | Perceptual Loss        | StyleGAN     | w+           | [Image 11](link-to-image11) |
 | `main.py`           | Lp + Perceptual Loss   | StyleGAN     | w+           | [Image 12](link-to-image12) |
+
+
+| L1 Loss | Perceptual Loss | Regularization Loss |    Model    | Latent Space | Results |
+|:-------:|:---------------:|:-------------------:|:-----------:|:------------:|:-------:|
+|    ON   |        ON       |          ON         | Model 1     |      LS1     |         |
+|    ON   |        ON       |         OFF         | Model 2     |      LS1     |         |
+|    ON   |       OFF       |          ON         | Model 3     |      LS1     |         |
+|    ON   |       OFF       |         OFF         | Model 4     |      LS1     |         |
+|   OFF   |        ON       |          ON         | Model 5     |      LS1     |         |
+|   OFF   |        ON       |         OFF         | Model 6     |      LS1     |         |
+|   OFF   |       OFF       |          ON         | Model 7     |      LS1     |         |
+|   OFF   |       OFF       |         OFF         | Model 8     |      LS1     |         |
+
 ## Part 1: Content Reconstruction
 
 ### Experiments

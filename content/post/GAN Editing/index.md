@@ -1,7 +1,7 @@
 ---
-title: Neural Style Transfer
-subtitle: A Comprehensive Study on Neural Style Transfer.
-summary: I'm excited to share my recent project on Neural Style Transfer, which is a fascinating technique that combines the content of one image with the artistic style of another, resulting in a stunning and unique blend of the two. 
+title: GAN Photo Editing
+subtitle: A Journey Through Generative AI Techniques
+summary: In this project, we explore the applications of Generative Adversarial Networks (GANs) for photo editing tasks such as image reconstruction, interpolation, and synthesis.
 authors:
 - admin
 tags:
@@ -41,20 +41,43 @@ image:
 ## Introduction
 
 
-- In this project, I started by optimizing random noise in content space, which helped me understand the concept of optimizing pixels based on specific losses. 
-- Then, I focused on generating textures by optimizing the style only, which allowed me to grasp the connection between style-space distance and the gram matrix. 
-- Finally, I combined all these elements to perform the Neural Style Transfer, creating a beautiful, Frida-Kahlo-inspired rendition of Fallingwater.
-
-Feel free to explore the images below to see the original content image, the style image, and the final Neural Style Transfer output. Let your imagination run wild as you discover the endless possibilities of blending art and technology!
-
-<!-- 🖼️ Content Image: Fallingwater
-
-🎨 Style Image: Self-Portrait with Thorn Necklace and Hummingbird by Frida Kahlo
-
-🌟 Output: Frida-Kahlo-ized Fallingwater -->
+In this assignment, we implement a few different techniques that require manipulating images on the manifold of natural images. 
+- First, we invert a pre-trained generator to find a latent variable that closely reconstructs a given real image. 
+- In the second part of the assignment, we take a hand-drawn sketch and generate an image that fits the sketch accordingly.
 
 
+## Part 1: Inverting the Generator [30 pts]
 
+In the first part of the assignment, we solve an optimization problem to reconstruct the image from a particular latent code. We use different combinations of loss functions, generative models, and latent spaces to find the best result.
+
+### Implementation Details
+
+1. Implement the forward function in the `Criterion` class.
+2. Implement `sample_noise` for StyleGAN2, including w and w+.
+3. Implement the optimization step using LBFGS or other optimizers.
+4. Implement the whole functionality in `project()`.
+
+### Deliverables
+
+Show example outputs of image reconstruction efforts and provide comments on why the various outputs look how they do.
+- Various combinations of the losses including Lp loss, Preceptual loss and/or regularization loss that penalizes L2 norm of delta.
+- different generative models including vanilla GAN, StyleGAN
+- different latent space (latent code in z space, w space, and w+ space)
+
+| Python Script       | Loss Combination       | Architecture | Latent Space | Experiment Results (Images) |
+|---------------------|------------------------|--------------|--------------|-----------------------------|
+| `main.py`           | Lp Loss                | Vanilla GAN  | z            | [Image 1](./data/transfer/15-13.png)   |
+| `main.py`           | Perceptual Loss        | Vanilla GAN  | z            | [Image 2](link-to-image2)   |
+| `main.py`           | Lp + Perceptual Loss   | Vanilla GAN  | z            | [Image 3](link-to-image3)   |
+| `main.py`           | Lp Loss                | StyleGAN     | z            | [Image 4](link-to-image4)   |
+| `main.py`           | Perceptual Loss        | StyleGAN     | z            | [Image 5](link-to-image5)   |
+| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | z            | [Image 6](link-to-image6)   |
+| `main.py`           | Lp Loss                | StyleGAN     | w            | [Image 7](link-to-image7)   |
+| `main.py`           | Perceptual Loss        | StyleGAN     | w            | [Image 8](link-to-image8)   |
+| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | w            | [Image 9](link-to-image9)   |
+| `main.py`           | Lp Loss                | StyleGAN     | w+           | [Image 10](link-to-image10) |
+| `main.py`           | Perceptual Loss        | StyleGAN     | w+           | [Image 11](link-to-image11) |
+| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | w+           | [Image 12](link-to-image12) |
 ## Part 1: Content Reconstruction
 
 ### Experiments

@@ -94,9 +94,10 @@ Show example outputs of image reconstruction efforts and provide comments on why
 
 | L1 Loss | Perceptual Loss | Regularization Loss |    Model    | Latent Space | Results |
 |:-------:|:---------------:|:-------------------:|:-----------:|:------------:|:-------:|
-|    ON   |        ON       |          ON         | Vanilla GAN    |      z     |     {{< figure src="./data/reconstruct/content_wally.png" title="Wally" >}}     |
-|    ON   |        ON       |         OFF         | Vanilla GAN     |      z     |    {{< figure src="./data/project/vanilla_z_1_100_1e_06.png" title="Wally">}}     |
-
+|    ON   |        ON       |          ON         | Vanilla GAN    |      z     |     {{< figure src="./data/project/vanilla_z_1_100_1e_06.png" title="Wally" >}}     |
+|    ON   |        ON       |         OFF         | Vanilla GAN     |      z     |    {{< figure src="./data/project/vanilla_z_1_100_0.png" title="Wally">}}     |
+|    ON   |       OFF       |          ON         | Vanilla GAN     |      z     |    {{< figure src="./data/project/vanilla_z_1_0_1e-06.png" title="Wally">}}     |
+|    ON   |       OFF       |         OFF         | Vanilla GAN     |      z     |   {{< figure src="./data/project/vanilla_z_1_0_0.png" title="Wally">}}      |
 ## Part 1: Content Reconstruction
 
 ### Experiments

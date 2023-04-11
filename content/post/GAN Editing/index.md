@@ -129,7 +129,22 @@ We first generate in the interpolation in 64 by 64.
 {{< figure src="./data/interpolate/2.gif">}}
 {{< figure src="./data/interpolate/03.gif">}}
 
+But we found 64 by 64 resolution is not enough for website view experience. So we edit part of the code to enable higher resolution (512 by 512).
 
+{{< figure src="./data/interpolate/5.gif">}}
+{{< figure src="./data/interpolate/06.gif">}}
+{{< figure src="./data/interpolate/07.gif">}}
+
+And I tried to test the interpolation on some cute cats images.
+
+{{< figure src="./data/interpolate/8.gif">}}
+{{< figure src="./data/interpolate/9.gif">}}
+{{< figure src="./data/interpolate/10.gif">}}
+{{< figure src="./data/interpolate/11.gif">}}
+{{< figure src="./data/interpolate/12.gif">}}
+{{< figure src="./data/interpolate/13.gif">}}
+{{< figure src="./data/interpolate/14.gif">}}
+{{< figure src="./data/interpolate/15.gif">}}
 ## Part 1: Content Reconstruction
 
 ### Experiments

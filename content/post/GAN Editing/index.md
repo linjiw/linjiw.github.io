@@ -84,6 +84,12 @@ Show example outputs of image reconstruction efforts and provide comments on why
 |    ON   |       OFF       |         OFF         | Vanilla GAN     |      z     |   {{< figure src="./data/project/vanilla_z_1_0_0.png" >}}      |
 |   OFF   |        ON       |          ON         | Vanilla GAN    |      z     |    {{< figure src="./data/project/media_images_output_project_0_vanilla_z_0_100_1e-06.png" >}}     |
 |   OFF   |        ON       |         OFF         | Vanilla GAN     |      z     |     {{< figure src="./data/project/media_images_output_project_0_vanilla_z_0_100_0.png">}}    |
+|    ON   |        ON       |          ON         | StyleGAN|      z     |     {{< figure src="./data/project/media_images_output_project_0_stylegan_z_1_100_1e-06_4004_bebeb425d957dbef4f9c.png" >}}     |
+|    ON   |        ON       |         OFF         | StyleGAN     |      z     |    {{< figure src="./data/project/media_images_output_project_0_stylegan_z_1_100_0_4004_415e536104247044383b.png" >}}     |
+|    ON   |       OFF       |          ON         | StyleGAN    |      z     |    {{< figure src="./data/project/vanilla_z_1_0_1e-06.png" >}}     |
+|    ON   |       OFF       |         OFF         | StyleGAN     |      z     |   {{< figure src="./data/project/vanilla_z_1_0_0.png" >}}      |
+|   OFF   |        ON       |          ON         | StyleGAN    |      z     |    {{< figure src="./data/project/media_images_output_project_0_vanilla_z_0_100_1e-06.png" >}}     |
+|   OFF   |        ON       |         OFF         | StyleGAN     |      z     |     {{< figure src="./data/project/media_images_output_project_0_vanilla_z_0_100_0.png">}}    |
 ## Part 1: Content Reconstruction
 
 ### Experiments

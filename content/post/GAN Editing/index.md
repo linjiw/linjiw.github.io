@@ -76,30 +76,14 @@ Show example outputs of image reconstruction efforts and provide comments on why
 - different generative models including vanilla GAN, StyleGAN
 - different latent space (latent code in z space, w space, and w+ space)
 
-| Python Script       | Loss Combination       | Architecture | Latent Space | Experiment Results (Images) |
-|---------------------|------------------------|--------------|--------------|-----------------------------|
-| `main.py`           | Lp Loss                | Vanilla GAN  | z            | [Image 1](./data/transfer/15-13.png)   |
-| `main.py`           | Perceptual Loss        | Vanilla GAN  | z            | [Image 2](link-to-image2)   |
-| `main.py`           | Lp + Perceptual Loss   | Vanilla GAN  | z            | [Image 3](link-to-image3)   |
-| `main.py`           | Lp Loss                | StyleGAN     | z            | [Image 4](link-to-image4)   |
-| `main.py`           | Perceptual Loss        | StyleGAN     | z            | [Image 5](link-to-image5)   |
-| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | z            | [Image 6](link-to-image6)   |
-| `main.py`           | Lp Loss                | StyleGAN     | w            | [Image 7](link-to-image7)   |
-| `main.py`           | Perceptual Loss        | StyleGAN     | w            | [Image 8](link-to-image8)   |
-| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | w            | [Image 9](link-to-image9)   |
-| `main.py`           | Lp Loss                | StyleGAN     | w+           | [Image 10](link-to-image10) |
-| `main.py`           | Perceptual Loss        | StyleGAN     | w+           | [Image 11](link-to-image11) |
-| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | w+           | [Image 12](link-to-image12) |
-
-
 | L1 Loss | Perceptual Loss | Regularization Loss |    Model    | Latent Space | Results |
 |:-------:|:---------------:|:-------------------:|:-----------:|:------------:|:-------:|
-|    ON   |        ON       |          ON         | Vanilla GAN    |      z     |     {{< figure src="./data/project/vanilla_z_1_100_1e_06.png" title="Wally" >}}     |
-|    ON   |        ON       |         OFF         | Vanilla GAN     |      z     |    {{< figure src="./data/project/vanilla_z_1_100_0.png" title="Wally">}}     |
-|    ON   |       OFF       |          ON         | Vanilla GAN     |      z     |    {{< figure src="./data/project/vanilla_z_1_0_1e-06.png" title="Wally">}}     |
-|    ON   |       OFF       |         OFF         | Vanilla GAN     |      z     |   {{< figure src="./data/project/vanilla_z_1_0_0.png" title="Wally">}}      |
-|   OFF   |        ON       |          ON         | Vanilla GAN    |      z     |    {{< figure src="./data/project/media_images_output_project_0_vanilla_z_0_100_1e-06.png" title="Wally">}}     |
-|   OFF   |        ON       |         OFF         | Vanilla GAN     |      z     |     {{< figure src="./data/project/media_images_output_project_0_vanilla_z_0_100_0.png" title="Wally">}}    |
+|    ON   |        ON       |          ON         | Vanilla GAN    |      z     |     {{< figure src="./data/project/vanilla_z_1_100_1e_06.png" >}}     |
+|    ON   |        ON       |         OFF         | Vanilla GAN     |      z     |    {{< figure src="./data/project/vanilla_z_1_100_0.png" >}}     |
+|    ON   |       OFF       |          ON         | Vanilla GAN     |      z     |    {{< figure src="./data/project/vanilla_z_1_0_1e-06.png" >}}     |
+|    ON   |       OFF       |         OFF         | Vanilla GAN     |      z     |   {{< figure src="./data/project/vanilla_z_1_0_0.png" >}}      |
+|   OFF   |        ON       |          ON         | Vanilla GAN    |      z     |    {{< figure src="./data/project/media_images_output_project_0_vanilla_z_0_100_1e-06.png" >}}     |
+|   OFF   |        ON       |         OFF         | Vanilla GAN     |      z     |     {{< figure src="./data/project/media_images_output_project_0_vanilla_z_0_100_0.png">}}    |
 ## Part 1: Content Reconstruction
 
 ### Experiments

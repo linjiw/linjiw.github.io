@@ -147,7 +147,7 @@ In this part, we generate an image subject to constraints, like color scribble c
 1. Implement the code for synthesizing images from drawings to realistic ones using the optimization procedure in `draw()`.
 
 ### Deliverables
-<div class="text-center"> Draw some cats and experiment with sparser and denser sketches and the use of color. Show example outputs along with commentary on what seems to have happened and why. </div>
+Draw some cats and experiment with sparser and denser sketches and the use of color. Show example outputs along with commentary on what seems to have happened and why. 
 
 | Target | Results | 
 |:-------:|:---------------:|
@@ -161,4 +161,8 @@ In this part, we generate an image subject to constraints, like color scribble c
 |  {{< figure src="./data/draw/media_images_output_draw_7_data_84230_062814c6a7cee9aa5e24.png">}}      |    {{< figure src="./data/draw/media_images_output_project_7_stylegan_w+_1_10_1e-06_96243_2946dc0f8311277108e4.png">}}           |
 |  {{< figure src="./data/draw/media_images_output_draw_8_data_96248_0e319a9a812700472a55.png">}}      |    {{< figure src="./data/draw/media_images_output_project_8_stylegan_w+_1_10_1e-06_108261_fa18dcf2db0b95732dfe.png">}}           |
 
+I also add some DIY mask for fun.
 
+| Target | Results | 
+|:-------:|:---------------:|
+|  {{< figure src="./data/draw/media_images_output_draw_0_data_0_685759aa7ccdce514a24.png">}}      |    {{< figure src="./data/draw/media_images_output_project_0_stylegan_w+_1_10_1e-06_12013_08c54f90bce097455075.png">}}          |

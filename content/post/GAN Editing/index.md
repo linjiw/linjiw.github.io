@@ -96,12 +96,12 @@ Show example outputs of image reconstruction efforts and provide comments on why
 |    ON   |       OFF       |         OFF         | StyleGAN     |      w     |   {{< figure src="./data/project/media_images_output_project_0_stylegan_w_1_0_0_4004_a0048096f02d312a464c.png" >}}      |
 |   OFF   |        ON       |          ON         | StyleGAN    |      w     |    {{< figure src="./data/project/media_images_output_project_0_stylegan_w_0_100_1e-06_4004_0011bfc0a88246482962.png" >}}     |
 |   OFF   |        ON       |         OFF         | StyleGAN     |      w     |     {{< figure src="./data/project/media_images_output_project_0_stylegan_w_0_100_0_4004_b9fc403d056cb3d20782.png">}}    |
-|    ON   |        ON       |          ON         | StyleGAN|      w+     |     {{< figure src="./data/project/media_images_output_project_0_stylegan_z_1_100_1e-06_4004_bebeb425d957dbef4f9c.png" >}}     |
-|    ON   |        ON       |         OFF         | StyleGAN     |      w+     |    {{< figure src="./data/project/media_images_output_project_0_stylegan_z_1_100_0_4004_415e536104247044383b.png" >}}     |
-|    ON   |       OFF       |          ON         | StyleGAN    |      w+     |    {{< figure src="./data/project/media_images_output_project_0_stylegan_z_1_0_1e-06_4004_c94a7b60cb156f074e48.png" >}}     |
-|    ON   |       OFF       |         OFF         | StyleGAN     |      w+     |   {{< figure src="./data/project/media_images_output_project_0_stylegan_z_1_0_0_4004_dd13a0dc4a4ab66f66e3.png" >}}      |
-|   OFF   |        ON       |          ON         | StyleGAN    |      w+     |    {{< figure src="./data/project/media_images_output_project_0_stylegan_z_0_100_1e-06_4004_bc0458e560bd161434dc.png" >}}     |
-|   OFF   |        ON       |         OFF         | StyleGAN     |      w+     |     {{< figure src="./data/project/media_images_output_project_0_stylegan_z_0_100_0_4004_72dbd55809d60c6aadf5.png">}}    |
+|    ON   |        ON       |          ON         | StyleGAN|      w+     |     {{< figure src="./data/project/media_images_output_project_0_stylegan_w+_1_100_1e-06_4004_d5cb1908a90fef931d42.png" >}}     |
+|    ON   |        ON       |         OFF         | StyleGAN     |      w+     |    {{< figure src="./data/project/media_images_output_project_0_stylegan_w+_1_100_0_4004_520c171b3be96c12ec9a.png" >}}     |
+|    ON   |       OFF       |          ON         | StyleGAN    |      w+     |    {{< figure src="./data/project/media_images_output_project_0_stylegan_w+_1_0_1e-06_4004_96571a7039c51c03e1a9.png" >}}     |
+|    ON   |       OFF       |         OFF         | StyleGAN     |      w+     |   {{< figure src="./data/project/0_stylegan_w+_1_0_0_4004_98a74167d8cdde94f7b3.png" >}}      |
+|   OFF   |        ON       |          ON         | StyleGAN    |      w+     |    {{< figure src="./data/project/0_stylegan_w+_0_100_1e-06_4004_0011bfc0a88246482962.png" >}}     |
+|   OFF   |        ON       |         OFF         | StyleGAN     |      w+     |     {{< figure src="./data/project/media_images_output_project_0_stylegan_w+_0_100_0_4004_b9fc403d056cb3d20782.png">}}    |
 ## Part 1: Content Reconstruction
 
 ### Experiments

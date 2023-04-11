@@ -86,10 +86,10 @@ Show example outputs of image reconstruction efforts and provide comments on why
 |   OFF   |        ON       |         OFF         | Vanilla GAN     |      z     |     {{< figure src="./data/project/media_images_output_project_0_vanilla_z_0_100_0.png">}}    |
 |    ON   |        ON       |          ON         | StyleGAN|      z     |     {{< figure src="./data/project/media_images_output_project_0_stylegan_z_1_100_1e-06_4004_bebeb425d957dbef4f9c.png" >}}     |
 |    ON   |        ON       |         OFF         | StyleGAN     |      z     |    {{< figure src="./data/project/media_images_output_project_0_stylegan_z_1_100_0_4004_415e536104247044383b.png" >}}     |
-|    ON   |       OFF       |          ON         | StyleGAN    |      z     |    {{< figure src="./data/project/vanilla_z_1_0_1e-06.png" >}}     |
-|    ON   |       OFF       |         OFF         | StyleGAN     |      z     |   {{< figure src="./data/project/vanilla_z_1_0_0.png" >}}      |
-|   OFF   |        ON       |          ON         | StyleGAN    |      z     |    {{< figure src="./data/project/media_images_output_project_0_vanilla_z_0_100_1e-06.png" >}}     |
-|   OFF   |        ON       |         OFF         | StyleGAN     |      z     |     {{< figure src="./data/project/media_images_output_project_0_vanilla_z_0_100_0.png">}}    |
+|    ON   |       OFF       |          ON         | StyleGAN    |      z     |    {{< figure src="./data/project/media_images_output_project_0_stylegan_z_1_0_1e-06_4004_c94a7b60cb156f074e48.png" >}}     |
+|    ON   |       OFF       |         OFF         | StyleGAN     |      z     |   {{< figure src="./data/project/media_images_output_project_0_stylegan_z_1_0_0_4004_dd13a0dc4a4ab66f66e3.png" >}}      |
+|   OFF   |        ON       |          ON         | StyleGAN    |      z     |    {{< figure src="./data/project/media_images_output_project_0_stylegan_z_0_100_1e-06_4004_bc0458e560bd161434dc.png" >}}     |
+|   OFF   |        ON       |         OFF         | StyleGAN     |      z     |     {{< figure src="./data/project/media_images_output_project_0_stylegan_z_0_100_0_4004_72dbd55809d60c6aadf5.png">}}    |
 ## Part 1: Content Reconstruction
 
 ### Experiments

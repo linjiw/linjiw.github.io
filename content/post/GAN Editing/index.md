@@ -31,7 +31,7 @@ design:
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
 image:
-  caption: 'Style Transfer with Falling Water'
+  caption: 'Style Interpolation'
   focal_point: ""
   placement: 2
   preview_only: false
@@ -165,4 +165,4 @@ I also add some DIY mask for fun.
 
 | Target | Results | 
 |:-------:|:---------------:|
-|  {{< figure src="./data/draw/media_images_output_draw_0_data_0_685759aa7ccdce514a24.png">}}      |    {{< figure src="./data/draw/media_images_output_project_0_stylegan_w+_1_10_1e-06_12013_08c54f90bce097455075.png">}}          |
+|  {{< figure src="./data/draw/media_images_output_draw_diy_data_0_7b736518cfeab1bf8f0f.png">}}      |    {{< figure src="./data/draw/media_images_output_project_diy_stylegan_w+_1_10_1e-06_12013_f20ce2182199539dfb88.png">}}          |

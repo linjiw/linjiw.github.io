@@ -51,13 +51,13 @@ In this assignment, we implement a few different techniques that require manipul
 
 To set up the environment for this project, create a new virtual environment and install the required dependencies:
 
-```python
+<!-- ```python
 conda create -n 16726_hw5
 conda activate 16726_hw5
 pip3 install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
 pip3 install click requests tqdm pyspng ninja matplotlib imageio imageio-ffmpeg==0.4.3
 pip install wandb # weight and bias is used in this blog for logging experiments.
-```
+``` -->
 
 ## Part 1: Inverting the Generator [30 pts]
 

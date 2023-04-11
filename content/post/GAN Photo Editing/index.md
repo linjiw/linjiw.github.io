@@ -77,20 +77,17 @@ Show example outputs of image reconstruction efforts and provide comments on why
 - different generative models including vanilla GAN, StyleGAN
 - different latent space (latent code in z space, w space, and w+ space)
 
-| Loss Combination       | Architecture | Latent Space |  Results  |
-|------------------------|--------------|--------------|-----------------------------|
-| Lp Loss                | Vanilla   | z            | {{< figure src="./data/reconstruct/content_wally.png" >}}   |
-| Perceptual Loss        | Vanilla   | z            | [Image 2](link-to-image2)   |
-| Lp + Perceptual Loss   | Vanilla   | z            | [Image 3](link-to-image3)   |
-| Lp Loss                | Style     | z            | [Image 4](link-to-image4)   |
-| Perceptual Loss        | Style     | z            | [Image 5](link-to-image5)   |
-| Lp + Perceptual Loss   | Style     | z            | [Image 6](link-to-image6)   |
-| Lp Loss                | Style     | w            | [Image 7](link-to-image7)   |
-| Perceptual Loss        | Style     | w            | [Image 8](link-to-image8)   |
-| Lp + Perceptual Loss   | Style     | w            | [Image 9](link-to-image9)   |
-| Lp Loss                | Style     | w+           | [Image 10](link-to-image10) |
-| Perceptual Loss        | Style     | w+           | [Image 11](link-to-image11) |
-| Lp + Perceptual Loss   | Style     | w+           | [Image 12](link-to-image12) |
+| L1 Loss | Perceptual Loss | Regularization Loss |    Model    | Latent Space | Results |
+|:-------:|:---------------:|:-------------------:|:-----------:|:------------:|:-------:|
+|    ON   |        ON       |          ON         | vanilla     |      z     |    {{< figure src="./data/project/media_images_output_project_0_vanilla_z_1_100_1e-06_4004_cbc8823413b95b832b4a.png"     }} |
+|    ON   |        ON       |         OFF         | vanilla     |      z     |         |
+|    ON   |       OFF       |          ON         | vanilla     |      z     |         |
+|    ON   |       OFF       |         OFF         | vanilla     |      z     |         |
+|   OFF   |        ON       |          ON         | vanilla     |      z     |         |
+|   OFF   |        ON       |         OFF         | vanilla     |      z     |         |
+|   OFF   |       OFF       |          ON         | vanilla     |      z     |         |
+|   OFF   |       OFF       |         OFF         | vanilla     |      z     |         |
+
 
 
 

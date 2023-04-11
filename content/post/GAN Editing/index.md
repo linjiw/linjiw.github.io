@@ -131,19 +131,38 @@ We first generate in the interpolation in 64 by 64.
 But we found 64 by 64 resolution is not enough for website view experience. So we edit part of the code to enable higher resolution (512 by 512).
 {{< figure src="./data/interpolate/03.gif">}}
 {{< figure src="./data/interpolate/5.gif">}}
-{{< figure src="./data/interpolate/06.gif">}}
-{{< figure src="./data/interpolate/07.gif">}}
+
 
 And I tried to test the interpolation on some cute cats images.
 
-{{< figure src="./data/interpolate/8.gif">}}
-{{< figure src="./data/interpolate/9.gif">}}
-{{< figure src="./data/interpolate/10.gif">}}
 {{< figure src="./data/interpolate/11.gif">}}
-{{< figure src="./data/interpolate/12.gif">}}
-{{< figure src="./data/interpolate/13.gif">}}
-{{< figure src="./data/interpolate/14.gif">}}
 {{< figure src="./data/interpolate/15.gif">}}
+
+
+## Part 3: Scribble to Image [40 Points]
+
+In this part, we generate an image subject to constraints, like color scribble constraints, using a penalized nonconvex optimization problem.
+
+### Implementation Details
+
+1. Implement the code for synthesizing images from drawings to realistic ones using the optimization procedure in `draw()`.
+
+### Deliverables
+
+Draw some cats and experiment with sparser and denser sketches and the use of color. Show example outputs along with commentary on what seems to have happened and why.
+
+| Target | Results | 
+|:-------:|:---------------:|
+|  {{< figure src="./data/draw/media_images_output_draw_0_data_0_685759aa7ccdce514a24.png">}}      |    {{< figure src="./data/draw/media_images_output_project_0_stylegan_w+_1_10_1e-06_12013_08c54f90bce097455075.png">}}          |
+|  {{< figure src="./data/draw/media_images_output_draw_1_data_12062_00e0913765996185883b.png">}}      |    {{< figure src="./data/draw/media_images_output_project_1_stylegan_w+_1_10_1e-06_24075_c541cd2f1e2be1d82034.png">}}           |
+|  {{< figure src="./data/draw/2_data_24100_d786d60d1e48ec2aebf2.png">}}      |    {{< figure src="./data/draw/media_images_output_project_2_stylegan_w+_1_10_1e-06_36113_f03f9cffdc953145278d.png">}}           |
+|  {{< figure src="./data/draw/media_images_output_draw_3_data_36130_6976808218d3e438a312.png">}}      |    {{< figure src="./data/draw/media_images_output_project_3_stylegan_w+_1_10_1e-06_48143_1be8665e33a1bf3150e8.png">}}           |
+|  {{< figure src="./data/draw/media_images_output_draw_4_data_48152_554a7c1d62c815e83243.png">}}      |    {{< figure src="./data/draw/media_images_output_project_4_stylegan_w+_1_10_1e-06_60165_e3516c0d8ce51c0011fc.png">}}           |
+|  {{< figure src="./data/draw/media_images_output_draw_5_data_60178_bd3aaa9115213ce0d768.png">}}      |    {{< figure src="./data/draw/media_images_output_project_5_stylegan_w+_1_10_1e-06_72191_f2ed53d8e93e33c07ba8.png">}}           |
+|  {{< figure src="./data/draw/media_images_output_draw_6_data_72196_e294ed27fb37e4e191cf.png">}}      |    {{< figure src="./data/draw/media_images_output_project_6_stylegan_w+_1_10_1e-06_84209_fd14e62000b27732a369.png">}}           |
+|  {{< figure src="./data/draw/media_images_output_draw_7_data_84230_062814c6a7cee9aa5e24.png">}}      |    {{< figure src="./data/draw/media_images_output_project_7_stylegan_w+_1_10_1e-06_96243_2946dc0f8311277108e4.png">}}           |
+|  {{< figure src="./data/draw/media_images_output_draw_8_data_96248_0e319a9a812700472a55.png">}}      |    {{< figure src="./data/draw/media_images_output_project_8_stylegan_w+_1_10_1e-06_108261_fa18dcf2db0b95732dfe.png">}}           |
+
 ## Part 1: Content Reconstruction
 
 ### Experiments

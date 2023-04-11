@@ -103,13 +103,12 @@ Show example outputs of image reconstruction efforts and provide comments on why
 |   OFF   |        ON       |          ON         | StyleGAN    |      w+     |    {{< figure src="./data/project/0_stylegan_w+_0_100_1e-06_4004_0011bfc0a88246482962.png" >}}     |
 |   OFF   |        ON       |         OFF         | StyleGAN     |      w+     |     {{< figure src="./data/project/media_images_output_project_0_stylegan_w+_0_100_0_4004_b9fc403d056cb3d20782.png">}}    |
 
-In our recent experiments, we compared the performance of different GAN architectures and loss functions to understand their impact on the generated images. We observed that StyleGAN, combined with L1 loss, Perceptual loss, and Regularization loss, consistently delivered the best results. This combination of loss functions allowed the network to generate high-quality images with rich details, closely resembling the target distribution.
+Our experiments compared **GAN architectures** and **loss functions** to assess their impact on generated images. We found that **StyleGAN** with **L1 loss**, **Perceptual loss**, and **Regularization loss** consistently delivered superior results, generating high-quality images closely resembling the target distribution.
 
-On the other hand, we noticed that training without Perceptual loss could be challenging at times. In such cases, the model struggled to converge, and the overall training process became less stable. Therefore, incorporating Perceptual loss proved to be an essential factor in achieving better performance.
+We observed challenges in training without **Perceptual loss**, resulting in less stable training processes. In contrast, **Vanilla GAN** generated plausible images but lacked the fine-grained detail present in **StyleGAN** outputs.
 
-Furthermore, we also experimented with the Vanilla GAN architecture. While it was able to generate plausible images, it fell short when compared to StyleGAN in terms of capturing fine-grained details. StyleGAN's multi-scale approach and improved generator architecture allowed for a more intricate synthesis of images, making it a superior choice for our experiments.
+In conclusion, **StyleGAN** combined with **L1**, **Perceptual**, and **Regularization losses** outperformed other configurations, demonstrating its effectiveness in generating high-quality, detailed images.
 
-In conclusion, our experiments demonstrated the effectiveness of StyleGAN with a combination of L1, Perceptual, and Regularization losses. This setup outperformed other configurations, making it a powerful tool for generating high-quality images with impressive detail.
 
 ## Part 2: Interpolate your Cats [10 pts]
 

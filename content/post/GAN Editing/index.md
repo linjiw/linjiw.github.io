@@ -166,3 +166,23 @@ I also add some DIY mask for fun.
 | Target | Results | 
 |:-------:|:---------------:|
 |  {{< figure src="./data/draw/media_images_output_draw_diy_data_0_7b736518cfeab1bf8f0f.png">}}      |    {{< figure src="./data/draw/media_images_output_project_diy_stylegan_w+_1_10_1e-06_12013_f20ce2182199539dfb88.png">}}          |
+
+Our recent experiments explored the capability of our implementation to generate **intriguing images** that closely conform to the **target drawing masks**. The results showed that our approach successfully produced visually appealing images that adhered to the provided masks.
+
+However, we observed that some generated images appeared dark due to the darkness of the corresponding masks. While the overall results were impressive, it's worth noting that the **mask's darkness** can impact the final image's brightness and contrast.
+
+In conclusion, our experiments demonstrated that our implementation could effectively generate interesting images that align with the target drawing masks, though the mask's darkness may **influence the resulting image's appearance**.
+
+
+## Conlusions
+
+Throughout this project, we have investigated various aspects of image generation using **GAN architectures**. 🖼️
+
+**Part 1** focused on comparing different GAN architectures and loss functions, where **StyleGAN** with **L1 loss**, **Perceptual loss**, and **Regularization loss** proved to be the most effective in generating high-quality, detailed images. We also observed challenges in training without **Perceptual loss** 😅, and found that **Vanilla GAN** could not match the fine-grained detail present in **StyleGAN** outputs.
+
+In **Part 2**, we showcased several interpolations between grumpy cat images 🐱, initially at a resolution of 64x64, which was later increased to 512x512 for a better web viewing experience. The interpolations demonstrated the smooth transitions between images and highlighted the potential of high-resolution image generation 🌟.
+
+**Part 3** explored generating intriguing images that closely conform to target drawing masks ✍️. While our implementation successfully produced visually appealing images, we observed that the mask's darkness could impact the final image's brightness and contrast.
+
+Overall, this project has demonstrated the power of GANs, particularly **StyleGAN**, in generating high-quality images and interpolations 🔥. We have also shown the potential of using target drawing masks for image generation, opening up possibilities for further exploration and improvement in image manipulation techniques 💡.
+

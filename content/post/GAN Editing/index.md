@@ -147,7 +147,7 @@ In this part, we generate an image subject to constraints, like color scribble c
 1. Implement the code for synthesizing images from drawings to realistic ones using the optimization procedure in `draw()`.
 
 ### Deliverables
-<p style="text-align: center;"> Draw some cats and experiment with sparser and denser sketches and the use of color. Show example outputs along with commentary on what seems to have happened and why. </p>
+<div class="text-center"> Draw some cats and experiment with sparser and denser sketches and the use of color. Show example outputs along with commentary on what seems to have happened and why. </div>
 
 | Target | Results | 
 |:-------:|:---------------:|

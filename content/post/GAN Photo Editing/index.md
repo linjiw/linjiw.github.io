@@ -77,7 +77,7 @@ Show example outputs of image reconstruction efforts and provide comments on why
 - different generative models including vanilla GAN, StyleGAN
 - different latent space (latent code in z space, w space, and w+ space)
 
-| L1 Loss | Perceptual Loss | Regularization Loss |    Model    | Latent Space | Results |
+<!-- | L1 Loss | Perceptual Loss | Regularization Loss |    Model    | Latent Space | Results |
 |:-------:|:---------------:|:-------------------:|:-----------:|:------------:|:-------:|
 |    ON   |        ON       |          ON         | vanilla     |      z     |     |
 |    ON   |        ON       |         OFF         | vanilla     |      z     |         |
@@ -86,7 +86,7 @@ Show example outputs of image reconstruction efforts and provide comments on why
 |   OFF   |        ON       |          ON         | vanilla     |      z     |         |
 |   OFF   |        ON       |         OFF         | vanilla     |      z     |         |
 |   OFF   |       OFF       |          ON         | vanilla     |      z     |         |
-|   OFF   |       OFF       |         OFF         | vanilla     |      z     |         |
+|   OFF   |       OFF       |         OFF         | vanilla     |      z     |         | -->
 
 <!-- {{< figure src="./data/project/media_images_output_project_0_vanilla_z_1_100_1e-06_4004_cbc8823413b95b832b4a.png"     }} -->
 

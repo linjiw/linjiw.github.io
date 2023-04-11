@@ -123,7 +123,11 @@ In this part, we perform interpolation between latent vectors found in Part 1 us
 
 Show a few interpolations between grumpy cats and comment on the quality of the images and the interpolation process.
 
-{{< figure src="./data/project/media_images_output_project_0_stylegan_w+_0_100_0_4004_b9fc403d056cb3d20782.png">}}
+We first generate in the interpolation in 64 by 64.
+
+{{< figure src="./data/interpolate/01.gif">}}
+{{< figure src="./data/interpolate/2.gif">}}
+{{< figure src="./data/interpolate/03.gif">}}
 
 
 ## Part 1: Content Reconstruction

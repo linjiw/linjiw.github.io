@@ -77,6 +77,7 @@ Show example outputs of image reconstruction efforts and provide comments on why
 - different generative models including vanilla GAN, StyleGAN
 - different latent space (latent code in z space, w space, and w+ space)
 
+<<<<<<< HEAD
 <!-- | L1 Loss | Perceptual Loss | Regularization Loss |    Model    | Latent Space | Results |
 |:-------:|:---------------:|:-------------------:|:-----------:|:------------:|:-------:|
 |    ON   |        ON       |          ON         | vanilla     |      z     |     |
@@ -87,6 +88,22 @@ Show example outputs of image reconstruction efforts and provide comments on why
 |   OFF   |        ON       |         OFF         | vanilla     |      z     |         |
 |   OFF   |       OFF       |          ON         | vanilla     |      z     |         |
 |   OFF   |       OFF       |         OFF         | vanilla     |      z     |         | -->
+=======
+| Python Script       | Loss Combination       | Architecture | Latent Space | Experiment Results (Images) |
+|---------------------|------------------------|--------------|--------------|-----------------------------|
+| `main.py`           | Lp Loss                | Vanilla GAN  | z            | {{< figure src="./data/reconstruct/content_wally.png" >}}   |
+| `main.py`           | Perceptual Loss        | Vanilla GAN  | z            | [Image 2](link-to-image2)   |
+| `main.py`           | Lp + Perceptual Loss   | Vanilla GAN  | z            | [Image 3](link-to-image3)   |
+| `main.py`           | Lp Loss                | StyleGAN     | z            | [Image 4](link-to-image4)   |
+| `main.py`           | Perceptual Loss        | StyleGAN     | z            | [Image 5](link-to-image5)   |
+| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | z            | [Image 6](link-to-image6)   |
+| `main.py`           | Lp Loss                | StyleGAN     | w            | [Image 7](link-to-image7)   |
+| `main.py`           | Perceptual Loss        | StyleGAN     | w            | [Image 8](link-to-image8)   |
+| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | w            | [Image 9](link-to-image9)   |
+| `main.py`           | Lp Loss                | StyleGAN     | w+           | [Image 10](link-to-image10) |
+| `main.py`           | Perceptual Loss        | StyleGAN     | w+           | [Image 11](link-to-image11) |
+| `main.py`           | Lp + Perceptual Loss   | StyleGAN     | w+           | [Image 12](link-to-image12) |
+>>>>>>> parent of b859d36 (edit table layout)
 
 <!-- {{< figure src="./data/project/media_images_output_project_0_vanilla_z_1_100_1e-06_4004_cbc8823413b95b832b4a.png"     }} -->
 

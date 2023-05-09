@@ -114,7 +114,7 @@ Wow, I believe that is a huge performance increase. But the image quality seems 
 
 The following are the results with the Pyramid method.
 
-### Pyramid Results
+<!-- ### Pyramid Results
 
 ![cathedral](./data/04_11PM_February_14_2023/cathedral.jpg_square_limit25_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[0,%20-16],[6,%20-16]]_time_cost%200.7590944766998291.jpg)
 
@@ -154,7 +154,7 @@ Figure 16. turkmen: Shift: [64, -77],[64, -60], time cost: 64.72s
 
 ![village](./data/village.tifsquare_limit1_CROPTrue_CannyTrue_PyramidTrue_searchTrue_methodNCC.jpg)
 
-Figure 17. village: Shift: [17, -80],[64, -80], time cost: 61.30s
+Figure 17. village: Shift: [17, -80],[64, -80], time cost: 61.30s -->
 
 ### Bells & Whistles
 

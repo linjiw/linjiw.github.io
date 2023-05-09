@@ -14,11 +14,11 @@ status:
 
 # Organizations/Affiliations
 organizations:
-- name: George Mason University
+- name: CS PhD at George Mason University
   url: "https://www.gmu.edu/"
-- name: Carnegie Mellon University
+- name: MechE MS at Carnegie Mellon University
   url: "https://www.cmu.edu/"
-- name: University of Cincinnati
+- name: MechE BS at University of Cincinnati
   url: "https://www.uc.edu/"
 
 # Short bio (displayed in user profile at end of posts)

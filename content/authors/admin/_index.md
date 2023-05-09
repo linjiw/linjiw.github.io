@@ -14,8 +14,12 @@ status:
 
 # Organizations/Affiliations
 organizations:
+- name: George Mason University
+  url: "https://www.gmu.edu/"
 - name: Carnegie Mellon University
   url: "https://www.cmu.edu/"
+- name: University of Cincinnati
+  url: "https://www.uc.edu/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include computer vision, machine learning and reinforcement learning.
@@ -29,15 +33,15 @@ interests:
 
 education:
   courses:
-    - course: PhD in Artificial Intelligence
-      institution: Stanford University
-      year: 2012
-    - course: MEng in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2009
-    - course: BSc in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2008
+    - course: PhD in Computer Science
+      institution: George Mason University
+      year: 2023
+    - course: MSc in Mechanical Engineering
+      institution: Carnegie Mellon University
+      year: 2023
+    - course: BSc in Mechanical Engineering
+      institution: University of Cincinnati
+      year: 2021
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons

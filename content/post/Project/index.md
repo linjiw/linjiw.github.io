@@ -1,7 +1,7 @@
 ---
-title: When Cats meet GANs 
-subtitle: A Comprehensive Study on DCGANs and CycleGANs with Advanced Augmentation Techniques
-summary: In this assignment, we implemented two types of GANs - a Deep Convolutional GAN (DCGAN) and a CycleGAN. The DCGAN was trained to generate grumpy cats from random noise, while the CycleGAN was trained to convert between two types of cats (Grumpy and Russian Blue) and between apples and oranges. Both GANs were implemented with data augmentation and differentiable augmentation techniques.
+title: Explore Test 2 Image Generating 
+subtitle: Project Report - Test 2 Image Generating Task 🎨🖼️
+summary: In this project, we first attempted to reproduce and explore the GigaGAN model, uncovering its remarkable text-to-image processing techniques. Subsequently, we shifted our focus to the MinImagen2 architecture, an efficient text-to-image generation model capable of producing high-quality images. Our goal is to experiment with these two models, comparing their strengths and weaknesses, and ultimately share our findings and experiences in the world of image generation.
 authors:
 - admin
 tags:

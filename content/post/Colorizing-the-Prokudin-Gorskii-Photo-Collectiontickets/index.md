@@ -6,8 +6,10 @@ authors:
 - admin
 tags:
 - Computer Vision
-- Image Generation
-- Deep Learning
+- Image Editing
+- Color
+- Optimization
+# - Deep Learning
 # - 开源
 
 categories:
@@ -62,7 +64,7 @@ Image matching means to manipulate image to ensure the best results for your sim
 
 where _I_ and _H_ are function of two images and x,y are pixels positions.
 
-![cathedral_ssd](.\data\11_13PM_February_14_2023\cathedral.jpg_square_limit25_CROPFalse_CannyTrue_PyramidFalse_CMEASFalse_methodSSD_shift[[0, -25],[7, -25]]_time_cost 2.1364333629608154.jpg)
+![cathedral_ssd](./data/11_13PM_February_14_2023/cathedral.jpg_square_limit25_CROPFalse_CannyTrue_PyramidFalse_CMEASFalse_methodSSD_shift[[0,%20-25],[7,%20-25]]_time_cost%202.1364333629608154.jpg)
 
 Figure 2. Cathedral: SSD, Shift:[0, -25],[7, -25] time cost: 2.13s
 
@@ -72,7 +74,7 @@ Figure 2. Cathedral: SSD, Shift:[0, -25],[7, -25] time cost: 2.13s
 
 where \\mu I and\\mu H are the luminance of each image.
 
-![cathedral_ncc](.\data\11_13PM_February_14_2023\cathedral.jpg_square_limit25_CROPFalse_CannyTrue_PyramidFalse_CMEASFalse_methodNCC_shift[[0, -25],[7, -25]]_time_cost 9.591359376907349.jpg)
+![cathedral_ncc](./data/11_13PM_February_14_2023/cathedral.jpg_square_limit25_CROPFalse_CannyTrue_PyramidFalse_CMEASFalse_methodNCC_shift%5B%5B0%2C%20-25%5D%2C%5B7%2C%20-25%5D%5D_time_cost%209.591359376907349.jpg)
 
 Figure 3. Cathedral: NCC, Shift:[0, -25],[7, -25] time cost: 9.59s
 

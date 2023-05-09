@@ -116,43 +116,43 @@ The following are the results with the Pyramid method.
 
 ### Pyramid Results
 
-![](.\data\04_11PM_February_14_2023\cathedral.jpg_square_limit25_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[0, -16],[6, -16]]_time_cost 0.7590944766998291.jpg)
+![cathedral](./data/04_11PM_February_14_2023/cathedral.jpg_square_limit25_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[0,%20-16],[6,%20-16]]_time_cost%200.7590944766998291.jpg)
 
 Figure 8. cathedral: Shift: [0, -16],[6, -16], time cost: 0.75s
 
-![](.\data\04_11PM_February_14_2023\emir.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[-9, -78],[64, -35]]_time_cost 55.55182671546936.jpg)
+![emir](./data/04_11PM_February_14_2023/emir.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[-9,%20-78],[64,%20-35]]_time_cost%2055.55182671546936.jpg)
 
 Figure 9. emir: Shift: [-9, -78],[64, -35], time cost: 55.55s
 
-![harvesters](.\data\04_11PM_February_14_2023\harvesters.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[64, -80],[64, -65]]_time_cost 56.50710463523865.jpg)
+![harvesters](./data/04_11PM_February_14_2023/harvesters.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[64,%20-80],[64,%20-65]]_time_cost%2056.50710463523865.jpg)
 
 Figure 10. harvesters: Shift: [64, -80],[64, -65], time cost: 56.50s
 
-![icon](.\data\04_11PM_February_14_2023\icon.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[64, -80],[64, -80]]_time_cost 57.38401412963867.jpg)
+![icon](./data/04_11PM_February_14_2023/icon.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[64,%20-80],[64,%20-80]]_time_cost%2057.38401412963867.jpg)
 
 Figure 11. icon: Shift: [64, -80],[64, -80], time cost: 57.38s
 
-![lady](.\data\04_11PM_February_14_2023\lady.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[64, -80],[64, -80]]_time_cost 57.11059498786926.jpg)
+![lady](./data/04_11PM_February_14_2023/lady.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[64,%20-80],[64,%20-80]]_time_cost%2057.11059498786926.jpg)
 
 Figure 12. lady: Shift: [64, -80],[64, -80], time cost: 57.11s
 
-![self_portrait](.\data\04_11PM_February_14_2023\self_portrait.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[42, -80],[64, -80]]_time_cost 58.938451290130615.jpg)
+![self_portrait](./data/04_11PM_February_14_2023/self_portrait.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[42,%20-80],[64,%20-80]]_time_cost%2058.938451290130615.jpg)
 
 Figure 13. self_portrait: Shift: [42, -80],[64, -80], time cost: 58.93s
 
-![three_generations](.\data\04_11PM_February_14_2023\three_generations.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[52, -80],[64, -80]]_time_cost 56.76436400413513.jpg)
+![three_generations](./data/three_generations.tifsquare_limit1_CROPTrue_CannyTrue_PyramidTrue_searchTrue_methodNCC.jpg)
 
 Figure 14. three_generations: Shift: [52, -80],[64, -80], time cost: 56.76s
 
-![train](.\data\04_11PM_February_14_2023\train.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[0, -65],[64, -70]]_time_cost 56.692832708358765.jpg)
+![train](./data/04_11PM_February_14_2023/train.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[0,%20-65],[64,%20-70]]_time_cost%2056.692832708358765.jpg)
 
 Figure 15. train: Shift: [0, -65],[64, -70], time cost: 56.69s
 
-![turkmen](.\data\04_11PM_February_14_2023\turkmen.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[64, -77],[64, -60]]_time_cost 64.7242820262909.jpg)
+![turkmen](./data/04_11PM_February_14_2023/turkmen.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[64,%20-77],[64,%20-60]]_time_cost%2064.7242820262909.jpg)
 
 Figure 16. turkmen: Shift: [64, -77],[64, -60], time cost: 64.72s
 
-![village](.\data\04_11PM_February_14_2023\village.tif_square_limit50_CROPFalse_CannyFalse_PyramidTrue_CMEASFalse_methodNCC_shift[[17, -80],[64, -80]]_time_cost 61.3076376914978.jpg)
+![village](./data/village.tifsquare_limit1_CROPTrue_CannyTrue_PyramidTrue_searchTrue_methodNCC.jpg)
 
 Figure 17. village: Shift: [17, -80],[64, -80], time cost: 61.30s
 

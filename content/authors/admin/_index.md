@@ -6,7 +6,7 @@ title: Linji Wang (王琳箕)
 superuser: true
 
 # Role/position
-role: Incoming PhD Student
+role: Incoming PhD Student @ [GMU](https://www.gmu.edu/)
 
 # Status emoji
 status:

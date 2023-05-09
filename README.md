@@ -2,7 +2,7 @@
 
 Hello there! 👋 I'm Linji Wang, an incoming PhD student at **George Mason University** with a passion for AI. This is a brief introduction to my personal website, where you can find more about my work, experience, and projects. Let's get started!
 
-## Personal Website 🌐
+## Personal Website 🌐 (👈 click this)
 
 ### Short Bio 📝
 

@@ -8,6 +8,7 @@ tags:
 - Computer Vision
 - Image Generation
 - Deep Learning
+- Diffusion
 # - 开源
 
 categories:
@@ -30,7 +31,7 @@ design:
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
 image:
-  caption: 'DCGAN Results'
+  caption: 'Imagen Results'
   focal_point: ""
   placement: 2
   preview_only: false
@@ -41,6 +42,7 @@ image:
 # Project Report: Test 2 Image Generating Task 🎨🖼️
 
 Author: Zhiyi Shi ([zhiyis](zhiyis@andrew.cmu.edu)), Linji Wang ([linjiw](linjiw@andrew.cmu.edu))
+Github: [Github Page](https://linjiw.github.io/Explore_Text2Image/), [Github repository](https://github.com/linjiw/MinImagen)
 
 ## Start with GigaGAN
 

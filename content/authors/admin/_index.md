@@ -84,6 +84,6 @@ I'm looking for Ph.D. position in computer science. -->
 
 ## Short Bio
 
-Linji Wang is a second-year master student at the [**Mechanical Engineering Department, Carnegie Mellon University**](https://www.meche.engineering.cmu.edu/), researching AI and ML problems. Linji's primary research interests are on machine learning, computer vision, reinforcement learning and their intersections.
+Linji Wang is an incoming CS PhD student at [George Mason University](https://www.gmu.edu/), researching **Artificial Intelligence** and **Computer Vision**. He was a MS student in Mechanical Engineering at [Carnegie Mellon University](https://www.cmu.edu/) and he recieve a BS degree in Mechanical Engineering from [University of Cincinnati](https://www.uc.edu/).
 <!-- {style="text-align: justify;"} -->
 

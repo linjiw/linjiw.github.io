@@ -32,7 +32,7 @@ design:
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
 image:
-  caption: 'With CMEAS'
+  caption: 'Mixed Fusion'
   focal_point: ""
   placement: 2
   preview_only: false

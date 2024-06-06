@@ -70,6 +70,24 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: Research Assistant
+          company: Robotixx Lab, George Mason University
+          company_url: 'https://cs.gmu.edu/~xiao/RobotiXX/lab.html'
+          company_logo: cmu
+          location: Fairfax, VA
+          date_start: '2023-09-01'
+          date_end: '2024-05-01'
+          description: |2-
+              * Adaptive Curriculum Learning for Efficient Robot Navigation in Complex Environments
+        - title: Teaching Assistant
+          company: George Mason University
+          company_url: 'https://www.gmu.edu/'
+          company_logo: cmu
+          location: Fairfax, VA
+          date_start: '2023-09-01'
+          date_end: '2024-05-01'
+          description: |2-
+              * Introduction to Programming
         - title: Teaching Assistant
           company: Carnegie Mellon University
           company_url: 'https://www.cmu.edu/'
@@ -103,6 +121,13 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: PhD in Computer Science
+          company: George Mason University
+          company_url: 'https://www.gmu.edu/'
+          company_logo: cmu
+          location: Pittsburgh, PA
+          date_start: '2023-09-01'
+          date_end: '2027-05-01'
         - title: MS in Mechanical Engineering
           company: Carnegie Mellon University
           company_url: 'https://www.cmu.edu/'

@@ -6,7 +6,7 @@ title: Linji Wang (王琳箕)
 superuser: true
 
 # Role/position
-role: Incoming PhD Student @ [GMU](https://www.gmu.edu/)
+role: PhD Student @ [GMU](https://www.gmu.edu/)
 
 # Status emoji
 status:
@@ -22,7 +22,9 @@ organizations:
   url: "https://www.uc.edu/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include computer vision, machine learning and reinforcement learning.
+bio: Linji Wang is an incoming CS PhD student at George Mason University, conducting cutting-edge research in Artificial Intelligence, Computer Vision, and Robotics. His research focuses on developing state-of-the-art algorithms for autonomous systems, leveraging advanced techniques in deep learning, reinforcement learning, and visual perception.
+Prior to joining George Mason University, Linji earned his MS degree in Mechanical Engineering from Carnegie Mellon University, where he worked on projects involving intelligent control systems and robotic manipulation. He also holds a BS degree in Mechanical Engineering from University of Cincinnati, where he gained a strong foundation in engineering principles and applied mathematics.
+Linji's interdisciplinary background in computer science, mechanical engineering, and robotics enables him to approach complex problems from multiple perspectives and develop innovative solutions at the forefront of AI and autonomous systems research. His ultimate goal is to create intelligent machines that can perceive, reason, and interact with the world in a robust and efficient manner, pushing the boundaries of what is possible with AI and robotics technologies.
 
 interests:
 - Artificial Intelligence

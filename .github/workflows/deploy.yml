@@ -1,7 +1,9 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
@@ -15,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,17 +32,38 @@ jobs:
           hugo-version: '0.108.0'
           extended: true
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install Hugo modules
+        run: |
+          hugo mod get -u
+          hugo mod tidy
+
       - name: Build Hugo Site
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
           # Build for GitHub Pages with correct base URL
-          hugo --gc --minify --baseURL "https://linjiw.github.io/"
+          # Using github.io subdirectory since custom domain is on Netlify
+          hugo --gc --minify --baseURL "https://linjiw.github.io/linjiwang/"
           
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          cname: linjiwang.com  # Optional: if you want to use custom domain on GitHub Pages too
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

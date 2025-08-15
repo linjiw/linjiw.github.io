@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Style Image | Linji Wang</title><link>https://linjiw.github.io/tag/style-image/</link><atom:link href="https://linjiw.github.io/tag/style-image/index.xml" rel="self" type="application/rss+xml"/><description>Style Image</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 05 Feb 2019 00:00:00 +0000</lastBuildDate><image><url>https://linjiw.github.io/media/icon_hub02f11719440bf94480d1ab9e24c040b_151872_512x512_fill_lanczos_center_3.png</url><title>Style Image</title><link>https://linjiw.github.io/tag/style-image/</link></image><item><title>GAN Photo Editing</title><link>https://linjiw.github.io/post/gan-editing/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://linjiw.github.io/post/gan-editing/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;details class="toc-inpage d-print-none " open>
+&lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#setup">Setup&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#part-1-inverting-the-generator-30-pts">Part 1: Inverting the Generator [30 pts]&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#implementation-details">Implementation Details&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#deliverables">Deliverables&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#part-2-interpolate-your-cats-10-pts">Part 2: Interpolate your Cats [10 pts]&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#implementation">Implementation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#deliverables-1">Deliverables&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#part-3-scribble-to-image-40-points">Part 3: Scribble to Image [40 Points]&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#implementation-details-1">Implementation Details&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#deliverables-2">Deliverables&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#conlusions">Conlusions&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>In this assignment, we implement a few different techniques that require manipulating images on the manifold of natural images.&lt;/p>
+&lt;ul>
+&lt;li>First, we invert a pre-trained generator to find a latent variable that closely reconstructs a given real image.&lt;/li>
+&lt;li>In the second part of the assignment, we take a hand-drawn sketch and generate an image that fits the sketch accordingly.&lt;/li>
+&lt;/ul>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;p>To set up the environment for this project, create a new virtual environment and install the required dependencies:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>conda create &lt;span style="color:#f92672">-&lt;/span>n &lt;span style="color:#ae81ff">16726&lt;/span>_hw5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>conda activate &lt;span style="color:#ae81ff">16726&lt;/span>_hw5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip3 install torch&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">1.12.1&lt;/span>&lt;span style="color:#f92672">+&lt;/span>cu113 torchvision&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">0.13.1&lt;/span>&lt;span style="color:#f92672">+&lt;/span>cu113 torchaudio&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">0.12.1&lt;/span> &lt;span style="color:#f92672">--&lt;/span>extra&lt;span style="color:#f92672">-&lt;/span>index&lt;span style="color:#f92672">-&lt;/span>url https:&lt;span style="color:#f92672">//&lt;/span>download&lt;span style="color:#f92672">.&lt;/span>pytorch&lt;span style="color:#f92672">.&lt;/span>org&lt;span style="color:#f92672">/&lt;/span>whl&lt;span style="color:#f92672">/&lt;/span>cu113
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip3 install click requests tqdm pyspng ninja matplotlib imageio imageio&lt;span style="color:#f92672">-&lt;/span>ffmpeg&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">0.4.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install wandb &lt;span style="color:#75715e"># weight and bias is used in this blog for logging experiments.&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="part-1-inverting-the-generator-30-pts">Part 1: Inverting the Generator [30 pts]&lt;/h2>
+&lt;p>In the first part of the assignment, we solve an optimization problem to reconstruct the image from a particular latent code. We use different combinations of loss functions, generative models, and latent spaces to find the best result.&lt;/p>
+&lt;h3 id="implementation-details">Implementation Details&lt;/h3>
+&lt;ol>
+&lt;li>Implement the forward function in the &lt;code>Criterion&lt;/code> class.&lt;/li>
+&lt;li>Implement &lt;code>sample_noise&lt;/code> for StyleGAN2, including w and w+.&lt;/li>
+&lt;li>Implement the optimization step using LBFGS or other optimizers.&lt;/li>
+&lt;li>Implement the whole functionality in &lt;code>project()&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h3 id="deliverables">Deliverables&lt;/h3>
+&lt;p>Show example outputs of image reconstruction efforts and provide comments on why the various outputs look how they do.&lt;/p>
+&lt;ul>
+&lt;li>Various combinations of the losses including Lp loss, Preceptual loss and/or regularization loss that penalizes L2 norm of delta.&lt;/li>
+&lt;li>different generative models including vanilla GAN, StyleGAN&lt;/li>
+&lt;li>different latent space (latent code in z space, w space, and w+ space)&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">L1 Loss&lt;/th>
+&lt;th style="text-align:center">Perceptual Loss&lt;/th>
+&lt;th style="text-align:center">Regularization Loss&lt;/th>
+&lt;th style="text-align:center">Model&lt;/th>
+&lt;th style="text-align:center">Latent Space&lt;/th>
+&lt;th style="text-align:center">Results&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">Vanilla GAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/vanilla_z_1_100_1e_06.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">Vanilla GAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/vanilla_z_1_100_0.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">Vanilla GAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/vanilla_z_1_0_1e-06.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">Vanilla GAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/vanilla_z_1_0_0.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">Vanilla GAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_vanilla_z_0_100_1e-06.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">Vanilla GAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_vanilla_z_0_100_0.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_z_1_100_1e-06_4004_bebeb425d957dbef4f9c.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_z_1_100_0_4004_415e536104247044383b.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_z_1_0_1e-06_4004_c94a7b60cb156f074e48.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_z_1_0_0_4004_dd13a0dc4a4ab66f66e3.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_z_0_100_1e-06_4004_bc0458e560bd161434dc.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">z&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_z_0_100_0_4004_72dbd55809d60c6aadf5.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_w_1_100_1e-06_4004_b631e25d5521c00718d4.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_w_1_100_0_4004_829d13f5a063b2c278d0.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_w_1_0_1e-06_4004_068ef97c4f13a85ca22b.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_w_1_0_0_4004_a0048096f02d312a464c.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_w_0_100_1e-06_4004_0011bfc0a88246482962.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_w_0_100_0_4004_b9fc403d056cb3d20782.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_w&amp;#43;_1_100_1e-06_4004_d5cb1908a90fef931d42.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_w&amp;#43;_1_100_0_4004_520c171b3be96c12ec9a.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_w&amp;#43;_1_0_1e-06_4004_96571a7039c51c03e1a9.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/0_stylegan_w&amp;#43;_1_0_0_4004_98a74167d8cdde94f7b3.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/0_stylegan_w&amp;#43;_0_100_1e-06_4004_0011bfc0a88246482962.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">ON&lt;/td>
+&lt;td style="text-align:center">OFF&lt;/td>
+&lt;td style="text-align:center">StyleGAN&lt;/td>
+&lt;td style="text-align:center">w+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/project/media_images_output_project_0_stylegan_w&amp;#43;_0_100_0_4004_b9fc403d056cb3d20782.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Our experiments compared &lt;strong>GAN architectures&lt;/strong> and &lt;strong>loss functions&lt;/strong> to assess their impact on generated images. We found that &lt;strong>StyleGAN&lt;/strong> with &lt;strong>L1 loss&lt;/strong>, &lt;strong>Perceptual loss&lt;/strong>, and &lt;strong>Regularization loss&lt;/strong> consistently delivered superior results, generating high-quality images closely resembling the target distribution.&lt;/p>
+&lt;p>We observed challenges in training without &lt;strong>Perceptual loss&lt;/strong>, resulting in less stable training processes. In contrast, &lt;strong>Vanilla GAN&lt;/strong> generated plausible images but lacked the fine-grained detail present in &lt;strong>StyleGAN&lt;/strong> outputs.&lt;/p>
+&lt;p>In conclusion, &lt;strong>StyleGAN&lt;/strong> combined with &lt;strong>L1&lt;/strong>, &lt;strong>Perceptual&lt;/strong>, and &lt;strong>Regularization losses&lt;/strong> outperformed other configurations, demonstrating its effectiveness in generating high-quality, detailed images.&lt;/p>
+&lt;h2 id="part-2-interpolate-your-cats-10-pts">Part 2: Interpolate your Cats [10 pts]&lt;/h2>
+&lt;p>In this part, we perform interpolation between latent vectors found in Part 1 using different generative models and latent spaces.&lt;/p>
+&lt;h3 id="implementation">Implementation&lt;/h3>
+&lt;ol>
+&lt;li>Implement the interpolation step in &lt;code>interpolate()&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h3 id="deliverables-1">Deliverables&lt;/h3>
+&lt;p>Show a few interpolations between grumpy cats and comment on the quality of the images and the interpolation process.&lt;/p>
+&lt;p>We first generate in the interpolation in 64 by 64.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/interpolate/01.gif" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/interpolate/2.gif" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>But we found 64 by 64 resolution is not enough for website view experience. So we edit part of the code to enable higher resolution (512 by 512).
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/interpolate/03.gif" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/interpolate/5.gif" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>And I tried to test the interpolation on some cute cats images.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/interpolate/11.gif" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/interpolate/15.gif" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h2 id="part-3-scribble-to-image-40-points">Part 3: Scribble to Image [40 Points]&lt;/h2>
+&lt;p>In this part, we generate an image subject to constraints, like color scribble constraints, using a penalized nonconvex optimization problem.&lt;/p>
+&lt;h3 id="implementation-details-1">Implementation Details&lt;/h3>
+&lt;ol>
+&lt;li>Implement the code for synthesizing images from drawings to realistic ones using the optimization procedure in &lt;code>draw()&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h3 id="deliverables-2">Deliverables&lt;/h3>
+&lt;p>Draw some cats and experiment with sparser and denser sketches and the use of color. Show example outputs along with commentary on what seems to have happened and why.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Target&lt;/th>
+&lt;th style="text-align:center">Results&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_draw_0_data_0_685759aa7ccdce514a24.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_project_0_stylegan_w&amp;#43;_1_10_1e-06_12013_08c54f90bce097455075.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_draw_1_data_12062_00e0913765996185883b.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_project_1_stylegan_w&amp;#43;_1_10_1e-06_24075_c541cd2f1e2be1d82034.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/2_data_24100_d786d60d1e48ec2aebf2.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_project_2_stylegan_w&amp;#43;_1_10_1e-06_36113_f03f9cffdc953145278d.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_draw_3_data_36130_6976808218d3e438a312.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_project_3_stylegan_w&amp;#43;_1_10_1e-06_48143_1be8665e33a1bf3150e8.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_draw_4_data_48152_554a7c1d62c815e83243.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_project_4_stylegan_w&amp;#43;_1_10_1e-06_60165_e3516c0d8ce51c0011fc.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_draw_5_data_60178_bd3aaa9115213ce0d768.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_project_5_stylegan_w&amp;#43;_1_10_1e-06_72191_f2ed53d8e93e33c07ba8.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_draw_6_data_72196_e294ed27fb37e4e191cf.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_project_6_stylegan_w&amp;#43;_1_10_1e-06_84209_fd14e62000b27732a369.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_draw_7_data_84230_062814c6a7cee9aa5e24.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_project_7_stylegan_w&amp;#43;_1_10_1e-06_96243_2946dc0f8311277108e4.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_draw_8_data_96248_0e319a9a812700472a55.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_project_8_stylegan_w&amp;#43;_1_10_1e-06_108261_fa18dcf2db0b95732dfe.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>I also add some DIY mask for fun.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Target&lt;/th>
+&lt;th style="text-align:center">Results&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_draw_diy_data_0_7b736518cfeab1bf8f0f.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/draw/media_images_output_project_diy_stylegan_w&amp;#43;_1_10_1e-06_12013_f20ce2182199539dfb88.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Our recent experiments explored the capability of our implementation to generate &lt;strong>intriguing images&lt;/strong> that closely conform to the &lt;strong>target drawing masks&lt;/strong>. The results showed that our approach successfully produced visually appealing images that adhered to the provided masks.&lt;/p>
+&lt;p>However, we observed that some generated images appeared dark due to the darkness of the corresponding masks. While the overall results were impressive, it&amp;rsquo;s worth noting that the &lt;strong>mask&amp;rsquo;s darkness&lt;/strong> can impact the final image&amp;rsquo;s brightness and contrast.&lt;/p>
+&lt;p>In conclusion, our experiments demonstrated that our implementation could effectively generate interesting images that align with the target drawing masks, though the mask&amp;rsquo;s darkness may &lt;strong>influence the resulting image&amp;rsquo;s appearance&lt;/strong>.&lt;/p>
+&lt;h2 id="conlusions">Conlusions&lt;/h2>
+&lt;p>Throughout this project, we have investigated various aspects of image generation using &lt;strong>GAN architectures&lt;/strong>. 🖼️&lt;/p>
+&lt;p>&lt;strong>Part 1&lt;/strong> focused on comparing different GAN architectures and loss functions, where &lt;strong>StyleGAN&lt;/strong> with &lt;strong>L1 loss&lt;/strong>, &lt;strong>Perceptual loss&lt;/strong>, and &lt;strong>Regularization loss&lt;/strong> proved to be the most effective in generating high-quality, detailed images. We also observed challenges in training without &lt;strong>Perceptual loss&lt;/strong> 😅, and found that &lt;strong>Vanilla GAN&lt;/strong> could not match the fine-grained detail present in &lt;strong>StyleGAN&lt;/strong> outputs.&lt;/p>
+&lt;p>In &lt;strong>Part 2&lt;/strong>, we showcased several interpolations between grumpy cat images 🐱, initially at a resolution of 64x64, which was later increased to 512x512 for a better web viewing experience. The interpolations demonstrated the smooth transitions between images and highlighted the potential of high-resolution image generation 🌟.&lt;/p>
+&lt;p>&lt;strong>Part 3&lt;/strong> explored generating intriguing images that closely conform to target drawing masks ✍️. While our implementation successfully produced visually appealing images, we observed that the mask&amp;rsquo;s darkness could impact the final image&amp;rsquo;s brightness and contrast.&lt;/p>
+&lt;p>Overall, this project has demonstrated the power of GANs, particularly &lt;strong>StyleGAN&lt;/strong>, in generating high-quality images and interpolations 🔥. We have also shown the potential of using target drawing masks for image generation, opening up possibilities for further exploration and improvement in image manipulation techniques 💡.&lt;/p></description></item><item><title>Neural Style Transfer</title><link>https://linjiw.github.io/post/style-optimization/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://linjiw.github.io/post/style-optimization/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;details class="toc-inpage d-print-none " open>
+&lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#part-1-content-reconstruction">Part 1: Content Reconstruction&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#experiments">Experiments&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#part-1-texture-synthesis">Part 1: Texture Synthesis&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#experiments-1">Experiments&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#part-2-style-transfer">Part 2: Style Transfer&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#experiments-2">Experiments&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#conclusion">Conclusion&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;ul>
+&lt;li>In this project, I started by optimizing random noise in content space, which helped me understand the concept of optimizing pixels based on specific losses.&lt;/li>
+&lt;li>Then, I focused on generating textures by optimizing the style only, which allowed me to grasp the connection between style-space distance and the gram matrix.&lt;/li>
+&lt;li>Finally, I combined all these elements to perform the Neural Style Transfer, creating a beautiful, Frida-Kahlo-inspired rendition of Fallingwater.&lt;/li>
+&lt;/ul>
+&lt;p>Feel free to explore the images below to see the original content image, the style image, and the final Neural Style Transfer output. Let your imagination run wild as you discover the endless possibilities of blending art and technology!&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="part-1-content-reconstruction">Part 1: Content Reconstruction&lt;/h2>
+&lt;h3 id="experiments">Experiments&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Effect of optimizing content loss at different layers:&lt;/strong> Explored the impact of optimizing content loss at various layers and chose the best one.
+&lt;figure id="figure-reconstruct-content-layer-1-to-16-top-left-16-bottom-right-1">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/reconstruct/content_16-1_style_1.png" alt="Reconstruct, Content Layer [1 to 16], Top Left (16), Bottom Right (1)" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Reconstruct, Content Layer [1 to 16], Top Left (16), Bottom Right (1)
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Comparison of two random noise input images:&lt;/strong> Optimized two random noise input images with content loss and compared their results with the content image.
+&lt;figure id="figure-wally">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/reconstruct/content_wally.png" alt="Wally" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Wally
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-reconstruct-wally-content-layer-1">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/reconstruct/reconstruct_wally.png" alt="Reconstruct: Wally, Content Layer [1]" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Reconstruct: Wally, Content Layer [1]
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-falling-water">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/reconstruct/content_fallingwater.png" alt="Falling Water" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Falling Water
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-reconstruct-falling-water-content-layer1">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/reconstruct/reconstruct_fallingwater.png" alt="Reconstruct: Falling Water, Content Layer[1]" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Reconstruct: Falling Water, Content Layer[1]
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="part-1-texture-synthesis">Part 1: Texture Synthesis&lt;/h2>
+&lt;p>In this project, we implemented a texture synthesis method using style-space loss, inspired by the Gram matrix. By measuring the distance between the styles of two images, we aimed to optimize and predict features that closely resemble the target style.&lt;/p>
+&lt;h3 id="experiments-1">Experiments&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Effect of optimizing texture loss at different layers:&lt;/strong> Explored the impact of optimizing style loss at various layers and chose the best one. We discovered that the textures generated when optimizing style layers 1 to 5 exhibited the highest similarity with the original image. In contrast, the results became increasingly noisy and less visually coherent when the optimization was performed on later layers, such as layers 11 to 15. This observation suggests that earlier layers play a more significant role in capturing and reproducing the style features of the original image.
+&lt;figure id="figure-synthesis-style-layer-1-5-to-11-15-top-left-11-15-bottom-right-1-5">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/synthesis/content_4_style_11-1.png" alt="Synthesis, Style Layer [1-5 to 11-15], Top Left (11-15), Bottom Right (1-5)" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Synthesis, Style Layer [1-5 to 11-15], Top Left (11-15), Bottom Right (1-5)
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Comparison of two random noise input images:&lt;/strong> Optimized two random noise input images with content loss and compared their results with the content image.
+&lt;figure id="figure-frida-kahlo">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/synthesis/style_1.png" alt="Frida Kahlo" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Frida Kahlo
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-synthesis-frida-kahlo-style-layer-1-5">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/synthesis/synthesis_content_4_style_1_4.png" alt="Synthesis: Frida Kahlo, Style Layer [1-5]" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Synthesis: Frida Kahlo, Style Layer [1-5]
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-picasso">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/synthesis/style_2.png" alt="Picasso" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Picasso
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-synthesis-picasso-style-layer-1-5">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/synthesis/synthesis_content_4_style_1_4_picasso.png" alt="Synthesis: Picasso, Style Layer [1-5]" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Synthesis: Picasso, Style Layer [1-5]
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="part-2-style-transfer">Part 2: Style Transfer&lt;/h2>
+&lt;p>In the final part of this project, we combined content and style loss to perform style transfer. By applying both losses to specific layers, we were able to generate stylized images that maintain the content of the original image while adopting the style of a reference image.&lt;/p>
+&lt;h3 id="experiments-2">Experiments&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Hyper-parameter tuning:&lt;/strong> We carefully tuned the hyper-parameters to achieve satisfactory results。We ran two for loops, one to traverse content from [1 to 16] and another one to traverse style [1-5 to 11-15]. Each row uses a fixed content layer, each column shares a fixed style layer.
+&lt;figure id="figure-transfer-content-layer-from-15-13">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/15-13.png" alt="Transfer, content layer from 15-13" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Transfer, content layer from 15-13
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-transfer-content-layer-from-12-10">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/12-10.png" alt="Transfer, content layer from 12-10" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Transfer, content layer from 12-10
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-transfer-content-layer-from-9-7">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/9-7.png" alt="Transfer, content layer from 9-7" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Transfer, content layer from 9-7
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-transfer-content-layer-from-6-4">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/6-4.png" alt="Transfer, content layer from 6-4" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Transfer, content layer from 6-4
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-transfer-content-layer-from-3-1">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/3-1.png" alt="Transfer, content layer from 3-1" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Transfer, content layer from 3-1
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Gram Matrix Implementation:&lt;/strong> The Gram matrix is a crucial component in style transfer, as it helps capture and quantify the style of an image. It works by computing the correlation between different feature maps in a given layer of a neural network, thus providing a representation of the style information contained in that layer.&lt;/p>
+&lt;figure id="figure-gram-matrix-source-from-cloudxlabcom">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/gram_matrix.png" alt="Gram Matrix, source from cloudxlab.com " loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Gram Matrix, source from cloudxlab.com
+&lt;/figcaption>&lt;/figure>
+&lt;!-- raw HTML omitted -->
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Image Grid:&lt;/strong> We generated a grid of images, showcasing the results of style transfer with two content images mixed with two style images. The grid also includes the original content and style images.
+&lt;figure id="figure-content-images">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/content2.png" alt="Content Images" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Content Images
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-style-images">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/style_2.png" alt="Style Images" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Style Images
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-style-transfer-mixed-2-by-2">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/2by2Grid.png" alt="Style Transfer: Mixed 2 By 2" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Style Transfer: Mixed 2 By 2
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Style Transfer on My Favorite Image:&lt;/strong> We applied style transfer to some of our favorite images and observed the results.
+&lt;figure id="figure-style-untitled-beauty-products-by-andy-warhol">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/style_andy.png" alt="Style: Untitled (Beauty Products) by Andy Warhol" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Style: Untitled (Beauty Products) by Andy Warhol
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-content-laguna-beach-by-linji-wang">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/content_laguna_beach.png" alt="Content: Laguna Beach by Linji Wang" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Content: Laguna Beach by Linji Wang
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-andy-warhol-styled-laguna-beach">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/style_laguna_beach.png" alt="Andy Warhol Styled Laguna Beach" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Andy Warhol Styled Laguna Beach
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-style-transfer-process">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./data/transfer/untitled-beauty-productsLarge_laguna_beach_2023-04-03-02-04-02.gif" alt="Style Transfer Process" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Style Transfer Process
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>In conclusion, this project has successfully demonstrated the implementation of neural style transfer using content and style losses. The assignment began with content reconstruction, where the content loss was calculated as the squared L2-distance between the features of the input and content images at a certain layer. Different layers were evaluated for their effect on content optimization, and the results were analyzed and presented.&lt;/p>
+&lt;p>The second part of the assignment focused on texture synthesis using style loss, which was computed based on the Gram matrices of the input and style images. The effect of optimizing texture loss at different layers was explored, and synthesized textures were generated and compared.&lt;/p>
+&lt;p>Finally, both content and style losses were integrated to perform neural style transfer. Hyperparameters were tuned, and a 3x3 grid of results, including content and style images, was generated. The quality and running time of the style transfer were compared when using random noise and a content image as input. Furthermore, the style transfer technique was applied to a variety of favorite images, showcasing its versatility.&lt;/p>
+&lt;p>Overall, this project has deepened the understanding of neural style transfer, optimization of pixel values, and the role of content and style losses in producing visually appealing and artistic results. The experiments carried out and the results obtained provide valuable insights into the workings of neural style transfer and its potential applications in the creative domain.&lt;/p></description></item></channel></rss>

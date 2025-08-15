@@ -78,20 +78,25 @@ experience:
       - "Reduced perception latency by 40% through algorithm optimization"
 
 research_projects:
-  - title: "Curriculum Learning for Robotic Manipulation"
-    date: "2023 - Present"
-    description: "Developing adaptive curriculum generation methods for training robotic policies"
-    technologies: ["PyTorch", "IsaacGym", "ROS2"]
+  - title: "When Cats meet GANs"
+    date: "2023"
+    description: "Implemented DCGANs and CycleGANs with advanced augmentation for generating grumpy cats and image-to-image translation"
+    technologies: ["PyTorch", "GANs", "Deep Learning"]
     
-  - title: "Vision-based 3D Scene Understanding"
-    date: "2021 - 2023"
-    description: "Real-time 3D reconstruction and semantic segmentation for AR applications"
-    technologies: ["OpenCV", "PCL", "CUDA", "Unity"]
+  - title: "Gradient Domain Fusion (Poisson Blending)"
+    date: "2023"
+    description: "Seamless image blending using gradient domain techniques and optimization methods"
+    technologies: ["Python", "OpenCV", "NumPy", "Optimization"]
     
-  - title: "GAN-based Image Style Transfer"
-    date: "2022"
-    description: "Implemented and optimized various GAN architectures for artistic style transfer"
-    technologies: ["PyTorch", "Jupyter", "Docker"]
+  - title: "Colorizing the Prokudin-Gorskii Photo Collection"
+    date: "2023"
+    description: "Automatic alignment and colorization of historical Russian Empire photographs using computer vision"
+    technologies: ["Python", "Image Processing", "Computer Vision"]
+    
+  - title: "Neural Style Transfer & Optimization"
+    date: "2023"
+    description: "Style transfer implementation using content and style loss optimization"
+    technologies: ["PyTorch", "Deep Learning", "CNN"]
 
 publications:
   - authors: "**L. Wang**, J. Smith, A. Johnson"

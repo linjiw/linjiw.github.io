@@ -1,178 +1,96 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code (claude.ai/code) when working with this repository.
 
 ## Repository Overview
 
-This is a multi-purpose personal website for Linji Wang with specialized sections for AI, Robotics, Software Development, and Reinforcement Learning. Built with Hugo and featuring context-aware resume generation.
+Personal academic website for Linji Wang built with Jekyll using the al-folio theme - a simple, clean, and responsive Jekyll theme for academics.
 
 ## Quick Commands
 
 ### Development
 ```bash
+# Install dependencies
+bundle install
+
 # Start local server
-hugo server -D
+bundle exec jekyll serve
 
 # Build for production
-hugo --gc --minify
-
-# Generate all resume versions
-python3 scripts/build-contextual-resume.py --context all
-
-# Generate specific resume
-python3 scripts/build-contextual-resume.py --context ai    # AI-focused
-python3 scripts/build-contextual-resume.py --context sde   # Software engineering
-python3 scripts/build-contextual-resume.py --context robotics # Robotics
-python3 scripts/build-contextual-resume.py --context rl    # Reinforcement learning
+bundle exec jekyll build
 ```
 
 ### Deployment
 ```bash
-# Deploy to both domains (automatic on push to main)
-git push origin main  # Triggers GitHub Actions for dual deployment
+# Deploy to GitHub Pages (automatic on push to main)
+git push origin main
 ```
 
-## Enhanced Project Structure
+## Project Structure
 
-### Content Sections
 ```
-/content/
-├── ai/           # AI research section (purple theme)
-├── robotics/     # Robotics section (orange theme)
-├── sde/          # Software development (green theme)
-├── rl/           # Reinforcement learning (red theme)
-├── resume/       # Resume data and templates
-├── post/         # Blog posts
-└── project/      # Project showcases
+/
+├── _bibliography/     # BibTeX files for publications
+├── _data/            # Site data (CV, repositories, etc.)
+├── _includes/        # Reusable components
+├── _layouts/         # Page templates
+├── _news/            # News/announcements
+├── _pages/           # Main pages
+├── _posts/           # Blog posts
+├── _projects/        # Project pages
+├── _sass/            # Stylesheets
+├── assets/           # Static assets (images, css, js)
+├── _config.yml       # Jekyll configuration
+└── Gemfile          # Ruby dependencies
 ```
-
-### Configuration Files
-```
-/data/resume/
-├── ai-focus.yaml       # AI resume configuration
-├── sde-focus.yaml      # SDE resume configuration
-├── robotics-focus.yaml # Robotics resume configuration
-└── rl-focus.yaml       # RL resume configuration
-```
-
-### Scripts & Workflows
-```
-/scripts/
-├── build-resume.py           # Basic resume builder
-├── build-contextual-resume.py # Context-aware resume builder
-└── setup-website.sh          # Setup helper
-
-/.github/workflows/
-├── deploy.yml          # GitHub Pages deployment
-├── resume-generator.yml # Automated resume generation
-└── validate.yml        # Content validation
-```
-
-## URL Structure
-
-### Main Sections
-- `linjiwang.com/` - Main portfolio
-- `linjiwang.com/ai` - AI research focus
-- `linjiwang.com/robotics` - Robotics projects
-- `linjiwang.com/sde` - Software development
-- `linjiwang.com/rl` - Reinforcement learning
-
-### Resume Endpoints
-- `/resume/ai` - AI-focused resume
-- `/resume/sde` - SDE-focused resume
-- `/resume/robotics` - Robotics resume
-- `/resume/rl` - RL research resume
 
 ## Key Features
 
-### 1. Context-Aware Resume System
-- Single source of truth in YAML
-- Generates role-specific versions
-- Automatic PDF generation with LaTeX
-- Web-friendly Markdown versions
+- **Publications**: Auto-generated from BibTeX in `_bibliography/`
+- **Projects**: Portfolio items in `_projects/`
+- **Blog**: Posts in `_posts/`
+- **CV**: Data-driven from `_data/cv.yml` or `assets/json/resume.json`
+- **Dark/Light Mode**: Automatic theme switching
+- **Responsive Design**: Mobile-first approach
 
-### 2. Multi-Domain Deployment
-- **Primary**: linjiwang.com (Netlify)
-- **Secondary**: linjiw.github.io (GitHub Pages)
-- Automatic deployment on push to main
+## Content Management
 
-### 3. Specialized Sections
-Each section has:
-- Custom theme colors
-- Filtered content
-- Specific resume version
-- Tailored project emphasis
-
-### 4. Content Validation
-- Link checking
-- Image size validation
-- Hugo build verification
-- Accessibility testing
-
-## Development Workflow
-
-### Adding New Content
+### Adding a Blog Post
 ```bash
-# Create new post
-hugo new post/my-post/index.md
-
-# Create section-specific content
-hugo new ai/projects/new-project.md
-hugo new robotics/research/new-research.md
+# Create new post with date prefix
+touch _posts/YYYY-MM-DD-post-title.md
 ```
 
-### Updating Resume
-1. Edit `/content/resume/data.yaml` for base data
-2. Edit `/data/resume/*-focus.yaml` for context-specific config
-3. Run `python3 scripts/build-contextual-resume.py --context all`
-4. Commit and push changes
-
-### Testing
+### Adding a Project
 ```bash
-# Test locally
-hugo server -D
-
-# Validate content
-find . -name "*.md" | xargs -I {} markdown-link-check {}
-
-# Check build
-hugo --gc --minify --buildDrafts
+# Create new project (numbered for ordering)
+touch _projects/N_project_name.md
 ```
 
-## Architecture Notes
+### Updating CV
+- Edit `_data/cv.yml` for YAML format
+- Or edit `assets/json/resume.json` for JSON format
 
-### Technology Stack
-- **SSG**: Hugo v0.108.0
-- **Theme**: Wowchemy Academic (customized)
-- **Resume**: Python + LaTeX/Pandoc
-- **CI/CD**: GitHub Actions
-- **Hosting**: Netlify + GitHub Pages
+### Adding Publications
+- Add BibTeX entries to `_bibliography/papers.bib`
+- Supports PDF, code, slides, poster links via BibTeX fields
 
-### Design System
-| Section | Color | Focus |
-|---------|-------|-------|
-| Main | Blue | General |
-| AI | Purple | Research |
-| Robotics | Orange | Systems |
-| SDE | Green | Software |
-| RL | Red | Theory |
+## Configuration
 
-## Important Files
-- `MASTER_DESIGN.md` - Complete architecture documentation
-- `WORKFLOW_README.md` - Detailed workflow guide
-- `WEBSITE_ARCHITECTURE.md` - Technical implementation details
+Main settings in `_config.yml`:
+- Site title, description, URL
+- Author information
+- Social media links
+- Google Analytics
+- Theme colors
 
-## Maintenance Commands
-```bash
-# Update dependencies
-hugo mod get -u
+## Deployment
 
-# Clean build cache
-hugo mod clean
+The site automatically deploys to GitHub Pages when pushing to the main branch.
 
-# Check for large files
-find . -size +2M -type f
+## Important Notes
 
-# Generate sitemap
-hugo --gc --minify  # Automatically generates sitemap.xml
-```
+- This is a Jekyll site, not Hugo or Astro
+- Uses al-folio theme (MIT licensed)
+- Optimized for academic portfolios
+- Includes example content that should be customized

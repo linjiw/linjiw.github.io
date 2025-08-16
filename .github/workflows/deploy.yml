@@ -28,7 +28,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true
+          bundler: 'default'
+          bundler-cache: false  # Disable auto cache to handle manually
           
       - name: Install system dependencies
         run: |
@@ -43,6 +44,12 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install jupyter nbconvert
+          
+      - name: Install Ruby dependencies
+        run: |
+          gem install bundler -v 2.4.22
+          bundle config set --local deployment false
+          bundle install
           
       - name: Setup Pages
         id: pages

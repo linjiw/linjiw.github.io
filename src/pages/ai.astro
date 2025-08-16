@@ -1,0 +1,404 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Grid from '../components/Grid.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import Pill from '../components/Pill.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+
+// Get AI projects
+const allProjects = await getCollection('work');
+const aiProjects = allProjects.filter(project => project.data.category === 'ai');
+---
+
+<BaseLayout
+	title="AI Research | Linji Wang"
+	description="Artificial Intelligence research focusing on deep learning, computer vision, and generative models."
+>
+	<div class="stack gap-20 lg:gap-48">
+		<div class="wrapper stack gap-8 lg:gap-20">
+			<header class="hero">
+				<Hero
+					title="AI Research & Development"
+					tagline="Pushing the boundaries of artificial intelligence through innovative research in deep learning, computer vision, and generative models."
+					align="start"
+				>
+					<div class="roles">
+						<Pill><Icon icon="strategy" size="1.33em" /> Deep Learning</Pill>
+						<Pill><Icon icon="pencil-line" size="1.33em" /> Computer Vision</Pill>
+						<Pill><Icon icon="trophy" size="1.33em" /> GANs</Pill>
+					</div>
+				</Hero>
+
+				<div class="hero-image">
+					<div class="ai-visualization">
+						<div class="neural-network">
+							<div class="layer">
+								<div class="neuron"></div>
+								<div class="neuron"></div>
+								<div class="neuron"></div>
+							</div>
+							<div class="layer">
+								<div class="neuron"></div>
+								<div class="neuron"></div>
+								<div class="neuron"></div>
+								<div class="neuron"></div>
+							</div>
+							<div class="layer">
+								<div class="neuron"></div>
+								<div class="neuron"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		</div>
+
+		<main class="wrapper stack gap-20 lg:gap-48">
+			<section class="section with-background with-cta">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Research Focus Areas</h3>
+					<p>My AI research spans multiple domains, from generative models to computer vision applications.</p>
+				</header>
+
+				<div class="focus-areas">
+					<div class="focus-card">
+						<Icon icon="strategy" size="2em" color="var(--accent-regular)" />
+						<h4>Generative Models</h4>
+						<p>Advanced work with GANs, including DCGANs and CycleGANs for image generation and domain translation.</p>
+					</div>
+					<div class="focus-card">
+						<Icon icon="pencil-line" size="2em" color="var(--accent-regular)" />
+						<h4>Computer Vision</h4>
+						<p>Image processing, alignment algorithms, and style transfer using deep convolutional networks.</p>
+					</div>
+					<div class="focus-card">
+						<Icon icon="trophy" size="2em" color="var(--accent-regular)" />
+						<h4>Optimization</h4>
+						<p>Advanced optimization techniques for training stability and convergence in deep learning models.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section with-background bg-variant">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Featured AI Projects</h3>
+					<p>Explore my work in artificial intelligence, from cutting-edge GAN implementations to practical computer vision applications.</p>
+				</header>
+
+				<div class="gallery">
+					<Grid variant="offset">
+						{aiProjects.map((project) => (
+							<li>
+								<PortfolioPreview project={project} />
+							</li>
+						))}
+					</Grid>
+				</div>
+
+				<div class="cta">
+					<a href="/work/" class="btn-primary">
+						View All Projects
+						<Icon icon="arrow-right" size="1.2em" />
+					</a>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Technical Expertise</h3>
+					<p>Core technologies and frameworks I use in AI research and development.</p>
+				</header>
+
+				<div class="tech-grid">
+					<div class="tech-category">
+						<h4>Deep Learning</h4>
+						<div class="tech-tags">
+							<span class="tech-tag">PyTorch</span>
+							<span class="tech-tag">TensorFlow</span>
+							<span class="tech-tag">JAX</span>
+						</div>
+					</div>
+					<div class="tech-category">
+						<h4>Computer Vision</h4>
+						<div class="tech-tags">
+							<span class="tech-tag">OpenCV</span>
+							<span class="tech-tag">PIL</span>
+							<span class="tech-tag">scikit-image</span>
+						</div>
+					</div>
+					<div class="tech-category">
+						<h4>Research Tools</h4>
+						<div class="tech-tags">
+							<span class="tech-tag">Jupyter</span>
+							<span class="tech-tag">Weights & Biases</span>
+							<span class="tech-tag">TensorBoard</span>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.hero-image {
+		width: 100%;
+		max-width: 400px;
+		height: 300px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(135deg, var(--gray-999_40) 0%, var(--gray-999) 100%);
+		border-radius: 1.5rem;
+		overflow: hidden;
+	}
+
+	.ai-visualization {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.neural-network {
+		display: flex;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.layer {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.neuron {
+		width: 12px;
+		height: 12px;
+		background: var(--accent-regular);
+		border-radius: 50%;
+		animation: pulse 2s ease-in-out infinite;
+	}
+
+	.neuron:nth-child(2) {
+		animation-delay: 0.3s;
+	}
+
+	.neuron:nth-child(3) {
+		animation-delay: 0.6s;
+	}
+
+	.neuron:nth-child(4) {
+		animation-delay: 0.9s;
+	}
+
+	@keyframes pulse {
+		0%, 100% {
+			opacity: 0.6;
+			transform: scale(1);
+		}
+		50% {
+			opacity: 1;
+			transform: scale(1.2);
+		}
+	}
+
+	.roles {
+		display: none;
+	}
+
+	.focus-areas {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: 1fr;
+	}
+
+	.focus-card {
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 2rem;
+		text-align: center;
+	}
+
+	.focus-card h4 {
+		margin: 1rem 0 0.5rem;
+		color: var(--gray-0);
+		font-size: var(--text-lg);
+	}
+
+	.focus-card p {
+		color: var(--gray-300);
+		line-height: 1.6;
+	}
+
+	.tech-grid {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: 1fr;
+	}
+
+	.tech-category h4 {
+		color: var(--gray-0);
+		margin-bottom: 1rem;
+		font-size: var(--text-lg);
+	}
+
+	.tech-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tech-tag {
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		padding: 0.5rem 1rem;
+		border-radius: 2rem;
+		font-size: var(--text-sm);
+		font-weight: 500;
+	}
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		padding: 1rem 2rem;
+		border-radius: 999rem;
+		text-decoration: none;
+		font-weight: 600;
+		transition: all 0.2s ease;
+	}
+
+	.btn-primary:hover {
+		background: var(--accent-dark);
+		transform: translateY(-2px);
+	}
+
+	@media (min-width: 50em) {
+		.hero {
+			display: grid;
+			grid-template-columns: 6fr 4fr;
+			padding-inline: 2.5rem;
+			gap: 3.75rem;
+		}
+
+		.roles {
+			margin-top: 0.5rem;
+			display: flex;
+			gap: 0.5rem;
+		}
+
+		.focus-areas {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.tech-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	/* Section styling */
+	.section {
+		display: grid;
+		gap: 2rem;
+	}
+
+	.with-background {
+		position: relative;
+	}
+
+	.with-background::before {
+		--hero-bg: var(--bg-image-subtle-2);
+		content: '';
+		position: absolute;
+		pointer-events: none;
+		left: 50%;
+		width: 100vw;
+		aspect-ratio: calc(2.25 / var(--bg-scale));
+		top: 0;
+		transform: translateY(-75%) translateX(-50%);
+		background:
+			url('/assets/backgrounds/noise.png') top center/220px repeat,
+			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+			var(--gray-999);
+		background-blend-mode: overlay, normal, normal, normal;
+		mix-blend-mode: var(--bg-blend-mode);
+		z-index: -1;
+	}
+
+	.with-background.bg-variant::before {
+		--hero-bg: var(--bg-image-subtle-1);
+	}
+
+	.section-header {
+		justify-self: center;
+		text-align: center;
+		max-width: 50ch;
+		font-size: var(--text-md);
+		color: var(--gray-300);
+	}
+
+	.section-header h3 {
+		font-size: var(--text-2xl);
+		color: var(--gray-0);
+	}
+
+	@media (min-width: 50em) {
+		.section {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
+			gap: 5rem;
+		}
+
+		.section.with-cta {
+			grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
+		}
+
+		.section-header {
+			grid-area: header;
+			font-size: var(--text-lg);
+		}
+
+		.section-header h3 {
+			font-size: var(--text-4xl);
+		}
+
+		.with-cta .section-header {
+			justify-self: flex-start;
+			text-align: left;
+		}
+
+		.gallery {
+			grid-area: gallery;
+		}
+
+		.cta {
+			grid-area: cta;
+		}
+
+		.focus-areas {
+			grid-area: gallery;
+		}
+
+		.tech-grid {
+			grid-area: gallery;
+		}
+	}
+</style>

@@ -1,7 +1,6 @@
 ---
 title: Colorizing the Prokudin-Gorskii Photo Collection
 publishDate: 2023-07-10 00:00:00
-img: /assets/stock-3.jpg
 img_alt: Historical Russian photographs automatically colorized and aligned
 description: |
   Automatic alignment and colorization of historical Russian Empire 

@@ -1,7 +1,6 @@
 ---
 title: Modern Portfolio Website Architecture
 publishDate: 2025-01-15 00:00:00
-img: /assets/stock-4.jpg
 img_alt: Modern responsive website built with Astro and component architecture
 description: |
   Complete migration from Hugo to modern Astro-based architecture with 

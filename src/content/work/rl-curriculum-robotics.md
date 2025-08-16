@@ -1,7 +1,6 @@
 ---
 title: Curriculum Learning for Robotic Manipulation
 publishDate: 2024-01-15 00:00:00
-img: /assets/stock-2.jpg
 img_alt: Robotic arm learning manipulation tasks through curriculum learning
 description: |
   Developing novel curriculum learning algorithms for robotic manipulation tasks 

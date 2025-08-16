@@ -1,7 +1,6 @@
 ---
 title: Neural Style Transfer & Optimization
 publishDate: 2023-06-15 00:00:00
-img: /assets/stock-4.jpg
 img_alt: Artistic style transfer using neural networks and optimization
 description: |
   Style transfer implementation using content and style loss optimization

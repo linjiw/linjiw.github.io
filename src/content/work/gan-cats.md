@@ -1,7 +1,6 @@
 ---
 title: When Cats meet GANs
 publishDate: 2023-09-15 00:00:00
-img: /assets/stock-1.jpg
 img_alt: AI-generated grumpy cat images created using GANs
 description: |
   Comprehensive implementation of DCGANs and CycleGANs with advanced augmentation 

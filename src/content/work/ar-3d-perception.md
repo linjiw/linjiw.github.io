@@ -1,7 +1,6 @@
 ---
 title: Real-time 3D Scene Understanding for AR Applications
 publishDate: 2023-05-20 00:00:00
-img: /assets/stock-3.jpg
 img_alt: Augmented reality system with real-time 3D scene understanding
 description: |
   Developed real-time computer vision pipeline for 3D object detection and tracking

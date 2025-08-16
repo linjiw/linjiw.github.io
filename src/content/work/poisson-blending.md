@@ -1,7 +1,6 @@
 ---
 title: Gradient Domain Fusion (Poisson Blending)
 publishDate: 2023-08-20 00:00:00
-img: /assets/stock-2.jpg
 img_alt: Seamless image blending using gradient domain techniques
 description: |
   Seamless image blending using gradient domain techniques and 

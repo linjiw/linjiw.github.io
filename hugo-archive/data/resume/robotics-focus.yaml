@@ -1,0 +1,67 @@
+# Robotics-Focused Resume Configuration
+context: "robotics"
+title: "Robotics Research Engineer"
+objective: |
+  Passionate robotics engineer focused on developing intelligent autonomous systems
+  through the integration of AI, computer vision, and control theory.
+
+highlight_skills:
+  primary:
+    - Robotic Manipulation
+    - Motion Planning
+    - Computer Vision
+    - Control Systems
+  software:
+    - ROS/ROS2
+    - Gazebo
+    - MoveIt
+    - SLAM
+  programming:
+    - Python
+    - C++
+    - MATLAB
+    - CUDA
+  hardware:
+    - Sensor Integration
+    - Embedded Systems
+    - Real-time Systems
+    - Hardware-in-the-loop
+
+experience_filter:
+  keywords:
+    - Robotics
+    - Autonomous Systems
+    - Control
+    - Perception
+    - Planning
+    - Manipulation
+    - ROS
+  exclude:
+    - Pure Web Development
+    - Database Only
+    - Non-technical
+
+project_emphasis:
+  - title: "Curriculum Learning for Manipulation"
+    relevance: 10
+    description: "Adaptive learning for robotic manipulation tasks"
+  - title: "Vision-based Robot Control"
+    relevance: 9
+    description: "Real-time visual servoing system"
+  - title: "Multi-Robot Coordination"
+    relevance: 8
+    description: "Distributed algorithms for robot swarms"
+
+publication_visibility: high
+academic_focus: true
+industry_focus: true
+
+sections_order:
+  - personal
+  - objective
+  - education
+  - experience
+  - research_projects
+  - publications
+  - skills
+  - awards

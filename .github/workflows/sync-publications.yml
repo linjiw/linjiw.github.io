@@ -1,0 +1,44 @@
+name: Sync Google Scholar Publications
+
+on:
+  schedule:
+    # Run weekly on Sundays at 00:00 UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  sync-publications:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 scholarly
+      
+      - name: Sync publications
+        run: |
+          cd scripts
+          python sync_scholar_advanced.py || python sync_google_scholar.py
+      
+      - name: Check for changes
+        id: verify-changed-files
+        run: |
+          git diff --quiet _bibliography/papers.bib || echo "changed=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push if changed
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add _bibliography/papers.bib
+          git commit -m "Auto-update publications from Google Scholar"
+          git push

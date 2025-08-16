@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <h2 id="project-overview">Project Overview</h2> <p>This project represents a complete architectural transformation of a personal academic website from a traditional Hugo static site to a modern, highly customizable Astro-based platform. The goal was to create a professional showcase that stands out from typical academic templates while maintaining excellent performance and SEO characteristics.</p> <h2 id="technical-challenge">Technical Challenge</h2> <p><strong>Legacy Hugo Limitations:</strong></p> <ul> <li>Rigid YAML-based configuration system</li> <li>Limited customization without theme modifications</li> <li>Dated design patterns from 2018</li> <li>Poor mobile responsiveness</li> <li>Academic template uniformity</li> </ul> <p><strong>Modern Requirements:</strong></p> <ul> <li>Component-based architecture for maximum flexibility</li> <li>Specialized sections for different expertise areas (/ai, /robotics, /sde, /rl)</li> <li>Context-aware resume generation system</li> <li>Modern, professional design that impresses recruiters</li> <li>Lightning-fast performance and excellent SEO</li> </ul> <h2 id="architecture-design">Architecture Design</h2> <h3 id="modern-stack-selection">Modern Stack Selection</h3> <p><strong>Framework Analysis:</strong></p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Comparison matrix used for technology selection</span>
+<span class="kd">const</span> <span class="nx">frameworkComparison</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">astro</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">performance</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span>
+    <span class="na">customization</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+    <span class="na">learningCurve</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>
+    <span class="na">ecosystem</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+    <span class="na">seoOptimization</span><span class="p">:</span> <span class="mi">95</span>
+  <span class="p">},</span>
+  <span class="na">nextjs</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">performance</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>
+    <span class="na">customization</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span>
+    <span class="na">learningCurve</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+    <span class="na">ecosystem</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span>
+    <span class="na">seoOptimization</span><span class="p">:</span> <span class="mi">85</span>
+  <span class="p">},</span>
+  <span class="na">hugo</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">performance</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+    <span class="na">customization</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+    <span class="na">learningCurve</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span>
+    <span class="na">ecosystem</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+    <span class="na">seoOptimization</span><span class="p">:</span> <span class="mi">85</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <p><strong>Chosen: Astro v5.13.2</strong></p> <ul> <li>Islands Architecture for optimal performance</li> <li>Component flexibility with multiple framework support</li> <li>Excellent TypeScript integration</li> <li>Built-in optimization features</li> </ul> <h3 id="component-architecture">Component Architecture</h3> <p><strong>Modular Design Philosophy:</strong></p> <pre><code class="language-astro">---
+// ProjectCard.astro - Reusable project showcase component
+interface Props {
+  title: string;
+  description: string;
+  technologies: string[];
+  image?: string;
+  github?: string;
+  demo?: string;
+  category: 'ai' | 'robotics' | 'sde' | 'rl';
+}
+
+const { title, description, technologies, image, github, demo, category } = Astro.props;
+---
+
+&lt;article class={`project-card ${category}`}&gt;
+  &lt;div class="project-image"&gt;
+    {image &amp;&amp; &lt;img src={image} alt={title} loading="lazy" /&gt;}
+  &lt;/div&gt;
+  &lt;div class="project-content"&gt;
+    &lt;h3&gt;{title}&lt;/h3&gt;
+    &lt;p&gt;{description}&lt;/p&gt;
+    &lt;div class="tech-stack"&gt;
+      {technologies.map(tech =&gt; (
+        &lt;span class="tech-tag"&gt;{tech}&lt;/span&gt;
+      ))}
+    &lt;/div&gt;
+    &lt;div class="project-links"&gt;
+      {github &amp;&amp; &lt;a href={github} class="btn-secondary"&gt;GitHub&lt;/a&gt;}
+      {demo &amp;&amp; &lt;a href={demo} class="btn-primary"&gt;Demo&lt;/a&gt;}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+</code></pre> <h3 id="content-management-system">Content Management System</h3> <p><strong>Structured Content Organization:</strong></p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/content/
+├── work/                    # Project portfolio
+│   ├── gan-cats.md         # AI/ML projects
+│   ├── rl-curriculum.md    # Robotics projects
+│   ├── website-architecture.md # SDE projects
+│   └── reinforcement-learning.md # RL research
+├── sections/               # Specialized landing pages
+│   ├── ai.astro           # AI research section
+│   ├── robotics.astro     # Robotics section
+│   ├── sde.astro          # Software engineering
+│   └── rl.astro           # Reinforcement learning
+└── resume/
+    └── data.json          # Single source of truth
+</code></pre></div></div> <p><strong>TypeScript Content Validation:</strong></p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// content.config.ts</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">defineCollection</span><span class="p">,</span> <span class="nx">z</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">astro:content</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">workCollection</span> <span class="o">=</span> <span class="nf">defineCollection</span><span class="p">({</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">content</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">schema</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">object</span><span class="p">({</span>
+    <span class="na">title</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">string</span><span class="p">(),</span>
+    <span class="na">publishDate</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">date</span><span class="p">(),</span>
+    <span class="na">description</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">string</span><span class="p">(),</span>
+    <span class="na">tags</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="nx">z</span><span class="p">.</span><span class="nf">string</span><span class="p">()),</span>
+    <span class="na">category</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">enum</span><span class="p">([</span><span class="dl">'</span><span class="s1">ai</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">robotics</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sde</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">rl</span><span class="dl">'</span><span class="p">]),</span>
+    <span class="na">featured</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">boolean</span><span class="p">().</span><span class="nf">optional</span><span class="p">(),</span>
+    <span class="na">github</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">string</span><span class="p">().</span><span class="nf">url</span><span class="p">().</span><span class="nf">optional</span><span class="p">(),</span>
+    <span class="na">demo</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="nf">string</span><span class="p">().</span><span class="nf">url</span><span class="p">().</span><span class="nf">optional</span><span class="p">(),</span>
+  <span class="p">}),</span>
+<span class="p">});</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">collections</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">work</span><span class="dl">'</span><span class="p">:</span> <span class="nx">workCollection</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div> <h2 id="context-aware-resume-system">Context-Aware Resume System</h2> <h3 id="dynamic-resume-generation">Dynamic Resume Generation</h3> <p><strong>Resume Data Architecture:</strong></p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">ResumeData</span> <span class="p">{</span>
+  <span class="nl">personal</span><span class="p">:</span> <span class="nx">PersonalInfo</span><span class="p">;</span>
+  <span class="nl">experience</span><span class="p">:</span> <span class="nx">Experience</span><span class="p">[];</span>
+  <span class="nl">projects</span><span class="p">:</span> <span class="nx">Project</span><span class="p">[];</span>
+  <span class="nl">skills</span><span class="p">:</span> <span class="nx">SkillCategory</span><span class="p">[];</span>
+  <span class="nl">publications</span><span class="p">:</span> <span class="nx">Publication</span><span class="p">[];</span>
+  <span class="nl">awards</span><span class="p">:</span> <span class="nx">Award</span><span class="p">[];</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Experience</span> <span class="p">{</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">company</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">relevance</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">ai</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+    <span class="nl">robotics</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+    <span class="nl">sde</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+    <span class="nl">rl</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nl">bullets</span><span class="p">:</span> <span class="kr">string</span><span class="p">[];</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Context-Aware Filtering:</strong></p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Python script for generating context-specific resumes
+</span><span class="k">def</span> <span class="nf">generate_contextual_resume</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">resume_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sh">"""</span><span class="s">Generate resume optimized for specific context (ai, robotics, sde, rl)</span><span class="sh">"""</span>
+    <span class="n">filtered_data</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="c1"># Weight experiences by relevance to context
+</span>    <span class="n">experiences</span> <span class="o">=</span> <span class="nf">sort_by_relevance</span><span class="p">(</span><span class="n">resume_data</span><span class="p">[</span><span class="sh">'</span><span class="s">experience</span><span class="sh">'</span><span class="p">],</span> <span class="n">context</span><span class="p">)</span>
+    <span class="n">filtered_data</span><span class="p">[</span><span class="sh">'</span><span class="s">experience</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">experiences</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># Top 3 most relevant
+</span>    
+    <span class="c1"># Filter projects by category
+</span>    <span class="n">projects</span> <span class="o">=</span> <span class="nf">filter_by_category</span><span class="p">(</span><span class="n">resume_data</span><span class="p">[</span><span class="sh">'</span><span class="s">projects</span><span class="sh">'</span><span class="p">],</span> <span class="n">context</span><span class="p">)</span>
+    <span class="n">filtered_data</span><span class="p">[</span><span class="sh">'</span><span class="s">projects</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">projects</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># Top 4 projects
+</span>    
+    <span class="c1"># Emphasize relevant skills
+</span>    <span class="n">skills</span> <span class="o">=</span> <span class="nf">prioritize_skills</span><span class="p">(</span><span class="n">resume_data</span><span class="p">[</span><span class="sh">'</span><span class="s">skills</span><span class="sh">'</span><span class="p">],</span> <span class="n">context</span><span class="p">)</span>
+    <span class="n">filtered_data</span><span class="p">[</span><span class="sh">'</span><span class="s">skills</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">skills</span>
+    
+    <span class="k">return</span> <span class="n">filtered_data</span>
+</code></pre></div></div> <h3 id="automated-pdf-generation">Automated PDF Generation</h3> <p><strong>LaTeX Template System:</strong></p> <div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Dynamic resume template with context awareness</span>
+<span class="k">\documentclass</span><span class="na">[11pt,a4paper]</span><span class="p">{</span>article<span class="p">}</span>
+
+<span class="k">\newcommand</span><span class="p">{</span><span class="k">\resumecontext</span><span class="p">}{</span>#CONTEXT#<span class="p">}</span>
+<span class="k">\newcommand</span><span class="p">{</span><span class="k">\highlightcolor</span><span class="p">}{</span>
+  <span class="k">\ifthenelse</span><span class="p">{</span><span class="k">\equal</span><span class="p">{</span><span class="k">\resumecontext</span><span class="p">}{</span>ai<span class="p">}}{</span>blue!80<span class="p">}{</span>
+  <span class="k">\ifthenelse</span><span class="p">{</span><span class="k">\equal</span><span class="p">{</span><span class="k">\resumecontext</span><span class="p">}{</span>robotics<span class="p">}}{</span>orange!80<span class="p">}{</span>
+  <span class="k">\ifthenelse</span><span class="p">{</span><span class="k">\equal</span><span class="p">{</span><span class="k">\resumecontext</span><span class="p">}{</span>sde<span class="p">}}{</span>green!80<span class="p">}{</span>purple!80<span class="p">}}}</span>
+<span class="p">}</span>
+
+<span class="c">% Content populated from filtered JSON data</span>
+<span class="k">\section</span><span class="p">{</span>Experience<span class="p">}</span>
+#EXPERIENCES#
+
+<span class="k">\section</span><span class="p">{</span>Projects<span class="p">}</span>  
+#PROJECTS#
+</code></pre></div></div> <h2 id="performance-optimization">Performance Optimization</h2> <h3 id="build-process-optimization">Build Process Optimization</h3> <p><strong>Astro Build Configuration:</strong></p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// astro.config.mjs</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nf">defineConfig</span><span class="p">({</span>
+  <span class="na">output</span><span class="p">:</span> <span class="dl">'</span><span class="s1">static</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">integrations</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nf">compress</span><span class="p">({</span>
+      <span class="na">CSS</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">HTML</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">Image</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">JavaScript</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="nf">sitemap</span><span class="p">(),</span>
+  <span class="p">],</span>
+  <span class="na">image</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">service</span><span class="p">:</span> <span class="nf">sharpImageService</span><span class="p">(),</span>
+  <span class="p">},</span>
+  <span class="na">vite</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">build</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">cssCodeSplit</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">rollupOptions</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">manualChunks</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">vendor</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">react-dom</span><span class="dl">'</span><span class="p">],</span>
+          <span class="p">},</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div></div> <p><strong>Performance Metrics:</strong></p> <ul> <li> <strong>Lighthouse Score</strong>: 100/100 across all categories</li> <li> <strong>First Contentful Paint</strong>: 0.8s (vs 2.1s Hugo)</li> <li> <strong>Largest Contentful Paint</strong>: 1.2s (vs 3.2s Hugo)</li> <li> <strong>Cumulative Layout Shift</strong>: 0.02 (vs 0.15 Hugo)</li> </ul> <h3 id="image-optimization">Image Optimization</h3> <p><strong>Responsive Image Pipeline:</strong></p> <pre><code class="language-astro">---
+import { Image } from 'astro:assets';
+import projectImage from '../assets/project-hero.jpg';
+---
+
+&lt;Image 
+  src={projectImage}
+  alt="Project demonstration"
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  loading="lazy"
+  quality={85}
+  format="webp"
+  fallbackFormat="jpg"
+/&gt;
+</code></pre> <h2 id="deployment-infrastructure">Deployment Infrastructure</h2> <h3 id="github-actions-cicd">GitHub Actions CI/CD</h3> <p><strong>Automated Build Pipeline:</strong></p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/deploy.yml</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to GitHub Pages</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
+  <span class="na">workflow_dispatch</span><span class="pi">:</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build-and-deploy</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">permissions</span><span class="pi">:</span>
+      <span class="na">contents</span><span class="pi">:</span> <span class="s">read</span>
+      <span class="na">pages</span><span class="pi">:</span> <span class="s">write</span>
+      <span class="na">id-token</span><span class="pi">:</span> <span class="s">write</span>
+      
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+        
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Setup Node.js</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v4</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">node-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">20'</span>
+          <span class="na">cache</span><span class="pi">:</span> <span class="s1">'</span><span class="s">npm'</span>
+          
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">npm ci</span>
+        
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build Astro site</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">npm run build</span>
+        
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Generate contextual resumes</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">python scripts/build-contextual-resume.py</span>
+        
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Upload to GitHub Pages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/upload-pages-artifact@v3</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">path</span><span class="pi">:</span> <span class="s">./dist</span>
+          
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to GitHub Pages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/deploy-pages@v4</span>
+</code></pre></div></div> <h3 id="content-delivery-optimization">Content Delivery Optimization</h3> <p><strong>GitHub Pages Configuration:</strong></p> <ul> <li>Global CDN distribution</li> <li>Automatic HTTPS/SSL</li> <li>Custom domain support with DNS optimization</li> <li>Aggressive caching for static assets</li> </ul> <h2 id="design-system">Design System</h2> <h3 id="modern-ui-components">Modern UI Components</h3> <p><strong>CSS Architecture:</strong></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Design system variables */</span>
+<span class="nd">:root</span> <span class="p">{</span>
+  <span class="c">/* Color palette */</span>
+  <span class="py">--color-primary</span><span class="p">:</span> <span class="nf">hsl</span><span class="p">(</span><span class="m">220</span><span class="p">,</span> <span class="m">90%</span><span class="p">,</span> <span class="m">56%</span><span class="p">);</span>
+  <span class="py">--color-secondary</span><span class="p">:</span> <span class="nf">hsl</span><span class="p">(</span><span class="m">269</span><span class="p">,</span> <span class="m">85%</span><span class="p">,</span> <span class="m">66%</span><span class="p">);</span>
+  <span class="py">--color-accent</span><span class="p">:</span> <span class="nf">hsl</span><span class="p">(</span><span class="m">358</span><span class="p">,</span> <span class="m">75%</span><span class="p">,</span> <span class="m">59%</span><span class="p">);</span>
+  
+  <span class="c">/* Typography scale */</span>
+  <span class="py">--font-size-sm</span><span class="p">:</span> <span class="nf">clamp</span><span class="p">(</span><span class="m">0.8rem</span><span class="p">,</span> <span class="m">0.17vw</span> <span class="o">+</span> <span class="m">0.76rem</span><span class="p">,</span> <span class="m">0.89rem</span><span class="p">);</span>
+  <span class="py">--font-size-base</span><span class="p">:</span> <span class="nf">clamp</span><span class="p">(</span><span class="m">1rem</span><span class="p">,</span> <span class="m">0.34vw</span> <span class="o">+</span> <span class="m">0.91rem</span><span class="p">,</span> <span class="m">1.19rem</span><span class="p">);</span>
+  <span class="py">--font-size-lg</span><span class="p">:</span> <span class="nf">clamp</span><span class="p">(</span><span class="m">1.25rem</span><span class="p">,</span> <span class="m">0.61vw</span> <span class="o">+</span> <span class="m">1.1rem</span><span class="p">,</span> <span class="m">1.58rem</span><span class="p">);</span>
+  
+  <span class="c">/* Spacing system */</span>
+  <span class="py">--space-3xs</span><span class="p">:</span> <span class="nf">clamp</span><span class="p">(</span><span class="m">0.25rem</span><span class="p">,</span> <span class="nf">calc</span><span class="p">(</span><span class="m">0.25rem</span> <span class="o">+</span> <span class="m">0vw</span><span class="p">),</span> <span class="m">0.25rem</span><span class="p">);</span>
+  <span class="py">--space-xs</span><span class="p">:</span> <span class="nf">clamp</span><span class="p">(</span><span class="m">0.5rem</span><span class="p">,</span> <span class="nf">calc</span><span class="p">(</span><span class="m">0.5rem</span> <span class="o">+</span> <span class="m">0vw</span><span class="p">),</span> <span class="m">0.5rem</span><span class="p">);</span>
+  <span class="py">--space-s</span><span class="p">:</span> <span class="nf">clamp</span><span class="p">(</span><span class="m">0.75rem</span><span class="p">,</span> <span class="nf">calc</span><span class="p">(</span><span class="m">0.7rem</span> <span class="o">+</span> <span class="m">0.24vw</span><span class="p">),</span> <span class="m">0.875rem</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* Consistent component styling */</span>
+<span class="nc">.project-card</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--color-surface</span><span class="p">);</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--radius-lg</span><span class="p">);</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--space-l</span><span class="p">);</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--shadow-md</span><span class="p">);</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">transform</span> <span class="m">0.2s</span> <span class="nb">ease</span><span class="p">,</span> <span class="n">box-shadow</span> <span class="m">0.2s</span> <span class="nb">ease</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.project-card</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="m">-4px</span><span class="p">);</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--shadow-xl</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="responsive-design">Responsive Design</h3> <p><strong>Mobile-First Approach:</strong></p> <ul> <li>Fluid typography using <code class="language-plaintext highlighter-rouge">clamp()</code> functions</li> <li>Container queries for component-based responsiveness</li> <li>Touch-friendly interactive elements</li> <li>Optimized for various screen sizes and orientations</li> </ul> <h2 id="quality-assurance">Quality Assurance</h2> <h3 id="testing-strategy">Testing Strategy</h3> <p><strong>Automated Testing:</strong></p> <ul> <li>Visual regression testing with Percy</li> <li>Performance monitoring with Lighthouse CI</li> <li>Accessibility testing with axe-core</li> <li>Cross-browser compatibility validation</li> </ul> <p><strong>Manual Testing:</strong></p> <ul> <li>User experience testing across devices</li> <li>Content accuracy and consistency review</li> <li>SEO optimization verification</li> </ul> <h3 id="monitoring--analytics">Monitoring &amp; Analytics</h3> <p><strong>Performance Tracking:</strong></p> <ul> <li>Real User Monitoring (RUM) with Speedlify</li> <li>Core Web Vitals monitoring</li> <li>Conversion tracking for resume downloads</li> <li>User behavior analysis</li> </ul> <h2 id="results--impact">Results &amp; Impact</h2> <h3 id="performance-improvements">Performance Improvements</h3> <p><strong>Speed Metrics:</strong></p> <ul> <li> <strong>75% faster</strong> page load times compared to Hugo</li> <li> <strong>60% reduction</strong> in bundle size through optimization</li> <li> <strong>100% Lighthouse scores</strong> across all categories</li> </ul> <h3 id="user-experience">User Experience</h3> <p><strong>Professional Impact:</strong></p> <ul> <li>Significantly improved recruiter engagement</li> <li>Enhanced personal brand presentation</li> <li>Mobile-responsive design reaching broader audience</li> <li>SEO improvements leading to better discoverability</li> </ul> <h3 id="developer-experience">Developer Experience</h3> <p><strong>Maintainability:</strong></p> <ul> <li>Type-safe content management with TypeScript</li> <li>Component reusability across sections</li> <li>Automated deployment reducing manual overhead</li> <li>Easy content updates through markdown files</li> </ul> <h2 id="future-enhancements">Future Enhancements</h2> <h3 id="advanced-features">Advanced Features</h3> <p><strong>Interactive Elements:</strong></p> <ul> <li>3D project previews using Three.js</li> <li>Advanced animations with Framer Motion</li> <li>Real-time collaboration features</li> <li>Progressive Web App capabilities</li> </ul> <p><strong>Content Management:</strong></p> <ul> <li>Headless CMS integration for non-technical editors</li> <li>AI-powered content suggestions</li> <li>Multi-language support for international audience</li> <li>Advanced analytics and A/B testing</li> </ul> <h2 id="technical-stack">Technical Stack</h2> <p><strong>Frontend:</strong> Astro, TypeScript, CSS Grid/Flexbox, Web Components <strong>Build Tools:</strong> Vite, ESBuild, PostCSS, Sharp for image optimization <strong>Deployment:</strong> GitHub Actions, GitHub Pages, Cloudflare DNS <strong>Analytics:</strong> Plausible Analytics, Google Search Console <strong>Development:</strong> VS Code, ESLint, Prettier, Husky pre-commit hooks</p> <p>This project demonstrates a comprehensive understanding of modern web development practices, from architecture design to deployment optimization, resulting in a professional platform that effectively showcases technical expertise while maintaining excellent performance and user experience standards.</p> </body></html>

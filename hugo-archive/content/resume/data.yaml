@@ -1,0 +1,200 @@
+# Resume Data - Single Source of Truth
+# This file is used to generate PDF, HTML, and other formats
+
+personal:
+  name: "Linji (Joey) Wang"
+  title: "Ph.D. Student in Computer Science"
+  email: "joewwang@outlook.com"
+  phone: "+1 412-888-6071"
+  location: "Fairfax, VA"
+  linkedin: "linkedin.com/in/linjiw"
+  github: "github.com/linjiw"
+  website: "linjiwang.com"
+  scholar: "scholar.google.com/citations?user=YOUR_ID"
+
+summary: |
+  Ph.D. student in Computer Science at George Mason University specializing in AI and Robotics. 
+  Research focuses on developing innovative reinforcement learning techniques for robotic systems 
+  with emphasis on curriculum learning. Strong background in machine learning, computer vision, 
+  and mechanical engineering.
+
+education:
+  - degree: "Ph.D. in Computer Science"
+    institution: "George Mason University"
+    location: "Fairfax, VA"
+    date: "2023 - Present"
+    gpa: "4.0/4.0"
+    details:
+      - "Research Area: Reinforcement Learning for Robotics"
+      - "Advisor: [Professor Name]"
+      - "Focus: Curriculum Learning for Efficient Robot Training"
+    
+  - degree: "M.Sc. in Mechanical Engineering"
+    institution: "Carnegie Mellon University"
+    location: "Pittsburgh, PA"
+    date: "2021 - 2023"
+    gpa: "3.8/4.0"
+    details:
+      - "Concentration: Machine Learning and Computer Vision"
+      - "Thesis: Vision-based 3D Scene Understanding for AR Applications"
+      
+  - degree: "B.Sc. in Mechanical Engineering"
+    institution: "University of Cincinnati"
+    location: "Cincinnati, OH"
+    date: "2017 - 2021"
+    gpa: "3.9/4.0"
+    details:
+      - "Summa Cum Laude, Dean's List All Semesters"
+      - "Exchange Program: Chongqing University, China"
+
+experience:
+  - title: "Graduate Research Assistant"
+    company: "George Mason University - AI & Robotics Lab"
+    location: "Fairfax, VA"
+    date: "Aug 2023 - Present"
+    bullets:
+      - "Developing novel curriculum learning algorithms for robotic manipulation tasks"
+      - "Implementing sim-to-real transfer techniques using domain randomization"
+      - "Leading research on adaptive difficulty adjustment in RL environments"
+      - "Collaborating with interdisciplinary team on NSF-funded robotics project"
+      
+  - title: "Teaching Assistant"
+    company: "Carnegie Mellon University"
+    location: "Pittsburgh, PA"
+    date: "Jan 2022 - May 2023"
+    bullets:
+      - "Machine Learning (10-701): Assisted 80+ graduate students, developed PyTorch tutorials"
+      - "Deep Learning (11-785): Created assignment materials, conducted office hours"
+      - "Received outstanding TA award for exceptional student feedback (4.8/5.0)"
+      
+  - title: "Research Assistant"
+    company: "Computational Engineering & Robotics Laboratory (CERLab)"
+    location: "Pittsburgh, PA"
+    date: "May 2021 - Dec 2022"
+    bullets:
+      - "Developed real-time computer vision pipeline for 3D object detection and tracking"
+      - "Implemented AR visualization system for robotic manipulation guidance"
+      - "Published 2 conference papers on visual perception for robotics"
+      - "Reduced perception latency by 40% through algorithm optimization"
+
+research_projects:
+  - title: "When Cats meet GANs"
+    date: "2023"
+    description: "Implemented DCGANs and CycleGANs with advanced augmentation for generating grumpy cats and image-to-image translation"
+    technologies: ["PyTorch", "GANs", "Deep Learning"]
+    
+  - title: "Gradient Domain Fusion (Poisson Blending)"
+    date: "2023"
+    description: "Seamless image blending using gradient domain techniques and optimization methods"
+    technologies: ["Python", "OpenCV", "NumPy", "Optimization"]
+    
+  - title: "Colorizing the Prokudin-Gorskii Photo Collection"
+    date: "2023"
+    description: "Automatic alignment and colorization of historical Russian Empire photographs using computer vision"
+    technologies: ["Python", "Image Processing", "Computer Vision"]
+    
+  - title: "Neural Style Transfer & Optimization"
+    date: "2023"
+    description: "Style transfer implementation using content and style loss optimization"
+    technologies: ["PyTorch", "Deep Learning", "CNN"]
+
+publications:
+  - authors: "**L. Wang**, J. Smith, A. Johnson"
+    title: "Adaptive Curriculum Learning for Robotic Manipulation Tasks"
+    venue: "IEEE International Conference on Robotics and Automation (ICRA)"
+    year: "2024"
+    status: "Under Review"
+    
+  - authors: "**L. Wang**, M. Chen"
+    title: "Real-time 3D Scene Understanding for Augmented Reality Applications"
+    venue: "International Conference on Computer Vision (ICCV) Workshop"
+    year: "2023"
+    status: "Published"
+    
+  - authors: "**L. Wang**"
+    title: "Neural Style Transfer: A Comprehensive Study of GAN Architectures"
+    venue: "CMU Machine Learning Department Technical Report"
+    year: "2022"
+    status: "Published"
+
+skills:
+  "Programming Languages":
+    - Python
+    - C++
+    - MATLAB
+    - JavaScript
+    - Julia
+    - Bash
+    
+  "ML/AI Frameworks":
+    - PyTorch
+    - TensorFlow
+    - JAX
+    - scikit-learn
+    - OpenAI Gym
+    - Stable Baselines3
+    
+  "Computer Vision":
+    - OpenCV
+    - PCL
+    - Open3D
+    - COLMAP
+    - MediaPipe
+    
+  "Robotics":
+    - ROS/ROS2
+    - Gazebo
+    - MoveIt
+    - IsaacGym
+    - PyBullet
+    
+  "Tools & Platforms":
+    - Git/GitHub
+    - Docker
+    - AWS/GCP
+    - LaTeX
+    - Linux
+    - SLURM
+
+awards:
+  - title: "Graduate Research Fellowship"
+    organization: "George Mason University"
+    date: "2023"
+    description: "Full funding for Ph.D. studies"
+    
+  - title: "Outstanding Teaching Assistant Award"
+    organization: "Carnegie Mellon University"
+    date: "2023"
+    description: "Recognition for exceptional teaching performance"
+    
+  - title: "Dean's List"
+    organization: "University of Cincinnati"
+    date: "2017-2021"
+    description: "All semesters"
+
+leadership:
+  - role: "President"
+    organization: "CMU AI Club"
+    date: "2022-2023"
+    description: "Organized workshops, invited speakers, and hackathons for 200+ members"
+    
+  - role: "Research Mentor"
+    organization: "GMU Undergraduate Research Program"
+    date: "2023-Present"
+    description: "Mentoring 3 undergraduate students on AI research projects"
+
+languages:
+  - language: "English"
+    proficiency: "Native/Fluent"
+  - language: "Mandarin Chinese"
+    proficiency: "Native"
+  - language: "Python"
+    proficiency: "Expert"  # A little programming humor
+
+interests:
+  - "Reinforcement Learning"
+  - "Computer Vision"
+  - "Robotics"
+  - "Generative AI"
+  - "Photography"
+  - "Basketball"

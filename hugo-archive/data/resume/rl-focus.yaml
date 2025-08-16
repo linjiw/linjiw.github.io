@@ -1,0 +1,68 @@
+# RL-Focused Resume Configuration
+context: "rl"
+title: "Reinforcement Learning Researcher"
+objective: |
+  Reinforcement learning researcher specializing in curriculum learning, sample efficiency,
+  and real-world applications of RL in robotics and autonomous systems.
+
+highlight_skills:
+  primary:
+    - Reinforcement Learning
+    - Curriculum Learning
+    - Multi-Agent Systems
+    - Deep RL
+  algorithms:
+    - Policy Gradient (PPO, SAC)
+    - Value-Based (DQN, Rainbow)
+    - Model-Based (MBPO, Dreamer)
+    - Meta-Learning
+  frameworks:
+    - PyTorch
+    - Stable Baselines3
+    - RLlib
+    - IsaacGym
+  theory:
+    - MDP/POMDP
+    - Optimization
+    - Game Theory
+    - Probability Theory
+
+experience_filter:
+  keywords:
+    - Reinforcement Learning
+    - RL
+    - Machine Learning
+    - AI
+    - Curriculum Learning
+    - Multi-Agent
+    - Research
+  exclude:
+    - Pure Web Development
+    - Non-ML Software
+    - Administrative
+
+project_emphasis:
+  - title: "Adaptive Curriculum Generation"
+    relevance: 10
+    description: "Automatic curriculum for 3x faster convergence"
+  - title: "Sim-to-Real Transfer"
+    relevance: 9
+    description: "Domain randomization for robust policies"
+  - title: "Hierarchical RL"
+    relevance: 8
+    description: "Temporal abstraction for long-horizon tasks"
+
+publication_visibility: high
+academic_focus: true
+industry_focus: false
+
+sections_order:
+  - personal
+  - objective
+  - education
+  - research_interests
+  - publications
+  - research_projects
+  - experience
+  - skills
+  - awards

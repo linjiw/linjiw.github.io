@@ -9,7 +9,7 @@ group :jekyll_plugins do
     gem 'jekyll-feed'
     gem 'jekyll-get-json'
     gem 'jekyll-imagemagick'
-    gem 'jekyll-jupyter-notebook'
+    # gem 'jekyll-jupyter-notebook'  # Commented - can cause build issues
     gem 'jekyll-link-attributes'
     gem 'jekyll-minifier'
     gem 'jekyll-paginate-v2'
@@ -19,7 +19,7 @@ group :jekyll_plugins do
     gem 'jekyll-tabs'
     # gem 'jekyll-terser', :git => "https://github.com/RobertoJBeltran/jekyll-terser.git"  # Commented out - causing build issues
     gem 'jekyll-toc'
-    gem 'jekyll-twitter-plugin'
+    # gem 'jekyll-twitter-plugin'  # Commented - can cause timeout issues
     gem 'jemoji'
 
     gem 'classifier-reborn'  # used for content categorization during the build

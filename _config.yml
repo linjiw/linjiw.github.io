@@ -227,7 +227,7 @@ sass:
 # -----------------------------------------------------------------------------
 
 jekyll-minifier:
-  compress_javascript: true # enable JS compression since terser is removed
+  compress_javascript: false # disable JS compression - uglifier doesn't support ES6
   exclude: ["robots.txt", "assets/js/search/*.js"]
 
 # -----------------------------------------------------------------------------

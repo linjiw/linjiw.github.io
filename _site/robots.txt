@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://linjiw.github.io/linjiwang/sitemap.xml

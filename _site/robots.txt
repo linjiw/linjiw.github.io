@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: http://localhost:4001/linjiwang/sitemap.xml
+Sitemap: https://linjiw.github.io/linjiwang/sitemap.xml

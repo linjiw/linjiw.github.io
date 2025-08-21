@@ -15,17 +15,9 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Setup TeX Live
-      uses: teatimeguest/setup-texlive-action@v3
-      with:
-        packages: |
-          scheme-basic
-          latexmk
-          enumitem
-          titlesec
-          marvosym
-          fullpage
-          fancyhdr
-          hyperref
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended
     
     - name: Build Resume PDF
       run: |

@@ -16,6 +16,11 @@ jobs:
     
     - name: Setup TeX Live
       run: |
+        # Wait for apt locks to be released
+        while sudo fuser /var/lib/dpkg/lock-frontend >/dev/null 2>&1; do
+          echo "Waiting for dpkg lock..."
+          sleep 1
+        done
         sudo apt-get update
         sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended
     

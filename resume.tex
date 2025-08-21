@@ -1,0 +1,179 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-8pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    #1 \vspace{-2pt}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.25in, label=\tiny$\bullet$]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\large LINJI WANG} & Email: \href{mailto:joewwang@outlook.com}{joewwang@outlook.com}\\
+  Fairfax, VA & Mobile: 412-888-6071 \\
+  \href{https://www.linkedin.com/in/yourlinkedin}{LinkedIn} & GitHub: \href{https://github.com/yourGitHub}{github.com/yourGitHub}
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {George Mason University}{Fairfax, VA}
+      {PhD in Computer Science, Specialization in AI and Robotics}{Sep 2023 – May 2027 (Expected)}
+      \resumeItemListStart
+        \resumeItem{Research Focus: Generative AI and Reinforcement Learning for Robotic Systems}
+        \resumeItem{Relevant Coursework: Advanced Machine Learning, Deep Learning, Reinforcement Learning, Computer Vision}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Carnegie Mellon University}{Pittsburgh, PA}
+      {MSc in Mechanical Engineering}{Sep 2021 – May 2023}
+      \resumeItemListStart
+        \resumeItem{GPA: 3.94/4.0 (98.5\%)}
+        \resumeItem{Relevant Coursework: Machine Learning, Deep Learning, Computer Vision, Deep Reinforcement Learning \& Control}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROFESSIONAL EXPERIENCE-----------------
+\section{PROFESSIONAL EXPERIENCE}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Amazon Web Services (AWS)}{Bellevue, WA}
+      {Software Development Engineer Intern - RDS Proxy Team}{May 2025 – Aug 2025}
+      \resumeItemListStart
+        \resumeItem{Developed IPEBench Data Visualization Platform with Streamlit, creating 8 interactive visualization types that reduced engineers' performance regression analysis time from 8 hours to 15 minutes}
+        \resumeItem{Built production-grade Regression Testing Framework (10,000+ lines) with statistical analysis (Welch's t-test, power analysis, Bonferroni correction) achieving 99\% confidence in detecting performance regressions}
+        \resumeItem{Implemented adaptive sampling system using Thompson Sampling and Bayesian optimization for convergence detection, improving test reliability from 47\% to 90\% and eliminating false positives that previously blocked deployments}
+        \resumeItem{Integrated AWS CloudWatch metrics with automated dashboard generation, enabling real-time performance monitoring and data-driven decision making for RDS proxy deployments across multiple regions}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------RESEARCH EXPERIENCE-----------------
+\section{RESEARCH EXPERIENCE}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {RobotiXX Lab, George Mason University}{Fairfax, VA}
+      {Research Project: Grounded Curriculum Learning for Efficient Reinforcement Learning in Robotics}{Aug 2023 – Present}
+      \resumeItemListStart
+        \resumeItem{Developed Grounded Curriculum Learning (GCL), a novel framework integrating real-world data with adaptive simulated task generation for robotic RL}
+        \resumeItem{Implemented and optimized parallel RL algorithms (PPO, SAC) in IsaacGym, achieving 24.58\% higher success rate and 50\% improved sample efficiency}
+        \resumeItem{Designed a fully-informed teacher agent for task generation and curriculum adaptation, demonstrating superior generalization to unseen environments}
+        \resumeItem{Conducted large-scale experiments using the BARN dataset for challenging constrained navigation tasks}
+        \resumeItem{Paper submitted to IEEE International Conference on Robotics and Automation (ICRA) 2024}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Computational Engineering and Robotics Lab, CMU}{Pittsburgh, PA}
+      {Research Assistant: 3D AR Scene Inpainting via Deep Learning}{Jan 2022 – May 2023}
+      \resumeItemListStart
+        \resumeItem{Developed an end-to-end deep learning pipeline for 3D AR scene inpainting, achieving 92\% accuracy in scene completion}
+        \resumeItem{Implemented and fine-tuned a GAN model for image inpainting, improving texture realism by 35\% over baseline methods}
+        \resumeItem{Applied RANSAC and DBSCAN algorithms for efficient 3D point cloud segmentation, reducing processing time by 40\%}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Bio-robotics Lab, CMU}{Pittsburgh, PA}
+      {Research Assistant: Recycled Paper Classification}{Sep 2021 – Dec 2021}
+      \resumeItemListStart
+        \resumeItem{Designed and trained a CNN model using PyTorch for recycled paper-grade classification, achieving 97\% accuracy on a dataset of 10,000+ images}
+        \resumeItem{Implemented data augmentation techniques to improve model generalization and robustness}
+        \resumeItem{Developed real-time image processing pipeline using OpenCV, handling 30 frames per second}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\section{RELEVANT PROJECTS}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Flexible Long-Term Mortality Prediction}{Deep Learning}
+      {Lead Developer}{May 2023 – July 2023}
+      \resumeItemListStart
+        \resumeItem{Developed a survival analysis model integrating CNN (MobileNet v2) with a Cox Proportional Hazards model}
+        \resumeItem{Implemented attention mechanisms to focus on critical areas in radiography images}
+        \resumeItem{Achieved 15\% improvement in prediction accuracy compared to traditional statistical methods}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------TEACHING EXPERIENCE-----------------
+\section{TEACHING EXPERIENCE}
+  \resumeSubHeadingListStart
+    \resumeSubSubheading
+      {Teaching Assistant, Introduction to Programming}{Fall 2023, GMU}
+    \resumeSubSubheading
+      {Teaching Assistant, Artificial Intelligence and Machine Learning}{Fall 2022, CMU}
+    \resumeSubSubheading
+      {Teaching Assistant, System Dynamics, Fluid Dynamics and Engineering Models}{Fall 2020, UC}
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------------
+\section{TECHNICAL SKILLS}
+ \resumeSubHeadingListStart
+   \resumeSubSubheading{Programming Languages:}{Python (Advanced), C++ (Intermediate), SQL, Bash, CUDA}
+   \resumeSubSubheading{ML/DL Frameworks:}{PyTorch, TensorFlow, JAX, Streamlit, Plotly, OpenAI Gym}
+   \resumeSubSubheading{AWS \& Cloud:}{RDS, CloudWatch, EC2, Lambda, S3, Docker, Kubernetes}
+   \resumeSubSubheading{Robotics \& Simulation:}{ROS, IsaacGym, MuJoCo}
+   \resumeSubSubheading{Statistical Analysis:}{Hypothesis Testing, Power Analysis, A/B Testing, Regression Analysis}
+   \resumeSubSubheading{Tools \& Libraries:}{NumPy, Pandas, Matplotlib, OpenCV, Git, CI/CD}
+ \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS & PRESENTATIONS-----------------
+\section{PUBLICATIONS}
+  \resumeSubHeadingListStart
+    \resumeSubSubheading{Wang, L., et al. "Grounded Curriculum Learning for Robotics"}{Submitted to ICRA 2024}
+    % [Add any other relevant publications or preprints]
+  \resumeSubHeadingListEnd
+
+\end{document}

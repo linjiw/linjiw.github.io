@@ -4,7 +4,7 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 5
-cv_pdf: # Link to PDF will be added later
+cv_pdf: resume.pdf
 description: Curriculum Vitae of Linji (Joey) Wang
 toc:
   sidebar: left

@@ -27,12 +27,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Ph.D. student in Computer Science at George Mason University, specializing in Artificial Intelligence and Robotics with a focus on Reinforcement Learning. My research interests lie at the intersection of deep learning, computer vision, and robotic manipulation.
+I am a Ph.D. student in Computer Science at George Mason University, specializing in Artificial Intelligence and Robotics with a focus on Generative AI and Reinforcement Learning for Robotic Systems. My research interests lie at the intersection of deep learning, computer vision, and robotic navigation.
 
-Currently, I am working as a Graduate Research Assistant at the AI & Robotics Lab, where I'm developing curriculum learning approaches for robotic manipulation tasks and exploring sim-to-real transfer techniques. My work aims to bridge the gap between simulated environments and real-world deployment of intelligent robotic systems.
+Currently, I am working as a Graduate Research Assistant at the RobotiXX Lab, where I'm developing Grounded Curriculum Learning (GCL) - a novel framework integrating real-world data with adaptive simulated task generation for robotic RL. My work has achieved 24.58% higher success rate and 50% improved sample efficiency compared to baseline methods.
 
-Prior to my Ph.D., I worked at Carnegie Mellon University's CERLab, where I developed real-time 3D perception pipelines and AR visualization systems for robot guidance. I have published research in top-tier conferences including ICRA and ICCV workshops.
+Prior to my Ph.D., I completed my M.Sc. in Mechanical Engineering at Carnegie Mellon University (GPA: 3.94/4.0), where I worked at the Computational Engineering and Robotics Lab developing 3D AR scene inpainting pipelines achieving 92% accuracy. I have submitted research to top-tier conferences including ICRA 2024.
 
-My technical expertise spans deep learning frameworks (PyTorch, TensorFlow), robotics platforms (ROS/ROS2, MoveIt), and computer vision libraries. I'm particularly interested in generative models (GANs, CycleGANs) and their applications in domain adaptation and style transfer.
+My technical expertise spans deep learning frameworks (PyTorch, TensorFlow, JAX), robotics platforms (ROS, IsaacGym, MuJoCo), and AI techniques including Reinforcement Learning, Imitation Learning, GANs, and Transformer Models. I'm particularly interested in curriculum learning for robotics and sim-to-real transfer techniques.
 
 Feel free to explore my [publications](/linjiwang/publications/), [projects](/linjiwang/projects/), and [CV](/linjiwang/cv/) to learn more about my research and experience.

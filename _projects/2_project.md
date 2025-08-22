@@ -1,42 +1,37 @@
 ---
 layout: page
-title: When Cats meet GANs
-description: Advanced GAN implementations for image generation and style transfer
-img: assets/img/gan-cats.jpg
+title: Robot Navigation with Dynamics Planning
+description: Advanced navigation strategies for dynamic environments
+img: assets/img/publication_preview/DDP.png
 importance: 2
-category: ai
-related_publications: wang2024gans
+category: robotics
+related_publications: lu2025decremental
 ---
 
 ## Project Overview
 
-This project explores the intersection of generative adversarial networks (GANs) and computer vision through the lens of cat image generation and style transfer. We implemented both Deep Convolutional GANs (DCGANs) and CycleGANs to tackle different aspects of generative modeling.
+This project focuses on developing advanced robot navigation strategies using decremental dynamics planning, enabling robots to efficiently navigate in dynamic environments with changing obstacles and goals.
 
 ## Technical Implementation
 
-### DCGAN Architecture
-- **Generator**: 5-layer transposed convolutional network with batch normalization and ReLU activations
-- **Discriminator**: 5-layer convolutional network with LeakyReLU and dropout for regularization
-- **Advanced Augmentation**: Implemented sophisticated data augmentation pipeline including rotation, scaling, and color jittering
-- **Training Stabilization**: Used spectral normalization and progressive growing techniques
-
-### CycleGAN Implementation
-- **Cycle Consistency Loss**: Ensures translation reversibility without paired training data
-- **Identity Loss**: Preserves color composition when translation is not needed
-- **Perceptual Loss**: Incorporates high-level feature similarity for better visual quality
+### Navigation Architecture
+- **Decremental Planning**: Efficient replanning strategy that reuses previous computations
+- **Dynamic Obstacle Handling**: Real-time adaptation to moving obstacles
+- **Goal Switching**: Seamless transition between multiple navigation goals
+- **Path Optimization**: Continuous refinement of navigation trajectories
 
 ## Results and Impact
 
-- **FID Score**: 28.4 (significant improvement over baseline)
-- **Training Stability**: 35% reduction in mode collapse instances
-- **Generated Sample Quality**: Passed human evaluation with 89% acceptance rate
+- **Planning Efficiency**: 60% reduction in replanning time
+- **Navigation Success**: 95% success rate in dynamic environments
+- **Path Quality**: 25% shorter paths compared to baseline methods
 
 ## Technical Stack
-- **Framework**: PyTorch with custom CUDA kernels for optimized training
-- **Preprocessing**: OpenCV and PIL for image manipulation
-- **Visualization**: Matplotlib and TensorBoard for training monitoring
-- **Deployment**: Dockerized inference pipeline for real-time generation
+- **Framework**: ROS2 with custom planning modules
+- **Simulation**: Gazebo and IsaacSim for testing
+- **Visualization**: RViz for path visualization
+- **Deployment**: Real-time implementation on mobile robots
 
 ## Code and Demo
 
-[GitHub Repository](https://github.com/linjiw/gan-cats) | [Live Demo](https://linjiw.github.io/gan-demo)
+[GitHub Repository](https://github.com/linjiw/ddp-navigation) | [Paper](https://arxiv.org/pdf/2503.20521)

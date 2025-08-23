@@ -15,13 +15,13 @@
 - [x] List your actual GitHub repositories (GACL, PAIR_Navigation, Explore_Text2Image, etc.)
 
 ### 3. Fix Blog Configuration
-- [ ] Update blog name in `_config.yml` line 89 (currently "al-folio")
-- [ ] Update blog description in `_config.yml` line 90 (currently "a simple whitespace theme for academics")
+- [x] Update blog name in `_config.yml` line 89 (now "Research & Insights")
+- [x] Update blog description in `_config.yml` line 90 (now "Thoughts on AI, Robotics, and Reinforcement Learning")
 - [ ] Either add real blog posts or disable blog section entirely
 
 ### 4. Fix Jekyll Scholar Configuration
-- [ ] Update `_config.yml` lines 255-256 to use your name instead of Einstein
-- [ ] Set `last_name: [Wang]` and `first_name: [Linji, L.]`
+- [x] Update `_config.yml` lines 255-256 to use your name instead of Einstein
+- [x] Set `last_name: [Wang]` and `first_name: [Linji, L.]`
 
 ## 📝 Content Development
 

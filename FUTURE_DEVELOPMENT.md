@@ -3,7 +3,7 @@
 ## 🚨 Critical Issues (Template Content Still Visible)
 
 ### 1. Fix Publication Years and Links
-- [ ] Update publication years in `_bibliography/papers.bib` to actual publication dates (currently all show 2025)
+- [x] Update publication years in `_bibliography/papers.bib` to actual publication dates (3 papers accepted to IROS 2025)
 - [ ] Replace duplicate PDF links with actual code repository URLs
 - [ ] Add real slide deck URLs or remove slides links if not available
 - [ ] Add poster URLs or remove poster links if not available
@@ -26,9 +26,9 @@
 ## 📝 Content Development
 
 ### 5. News Section
-- [ ] Add actual news items to `_news/` directory or hide news section
-- [ ] Consider adding:
-  - Paper acceptances
+- [x] Add actual news items to `_news/` directory (Added IROS acceptances, PhD start, Amazon internship)
+- [x] Consider adding:
+  - Paper acceptances (IROS 2025)
   - Conference presentations
   - Awards or recognitions
   - Research milestones

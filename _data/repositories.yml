@@ -1,14 +1,12 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - linjiw
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - linjiw/GACL
+  - linjiw/PAIR_Navigation
+  - linjiw/Explore_Text2Image
+  - linjiw/claude-code-but-zelda
+  - linjiw/cyclegan_lunarlander
+  - linjiw/diffusion-study

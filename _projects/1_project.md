@@ -5,7 +5,7 @@ description: Curriculum learning approaches for complex manipulation tasks
 img: assets/img/publication_preview/GACL.png
 importance: 1
 category: robotics
-related_publications: wang2024grounded, wang2025gacl, wang2025reward
+related_publications: wang2025gacl, wang2025reward
 ---
 
 ## Overview

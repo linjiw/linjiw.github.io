@@ -10,4 +10,4 @@ related_posts: false
 - **Reward Training Wheels**: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning  
 - **Decremental Dynamics Planning** for Robot Navigation
 
-Looking forward to presenting our work in Abu Dhabi this October!
+Looking forward to presenting our work in Hangzhou, China this October!

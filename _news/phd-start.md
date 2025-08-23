@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started my PhD journey in Computer Science at **George Mason University**! I'll be working with the robotics and AI labs, focusing on reinforcement learning for robotic systems.
+Began my graduate studies at **George Mason University** as an M.S. student in Computer Science, joining the robotics and AI labs to focus on reinforcement learning for robotic systems.

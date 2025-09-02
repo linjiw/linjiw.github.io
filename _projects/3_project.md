@@ -44,6 +44,11 @@ Successfully tested on:
 - **Drift Reduction**: 45% less drift in long trajectories
 - **Computational Efficiency**: Only 15% overhead compared to baseline
 
+## Publication
+
+This work has been published in IEEE Robotics and Automation Letters (2025):
+- "II-NVM: Enhancing Map Accuracy and Consistency with Normal Vector-Assisted Mapping" by Zhao, Li, Jian, Xu, Wang, Ma, and Jin
+
 ## Resources
 
-[Paper](https://arxiv.org/pdf/2504.08204) | [IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/10966190)
+[Paper PDF](https://arxiv.org/pdf/2504.08204) | [IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/10966190)

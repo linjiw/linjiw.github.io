@@ -47,11 +47,11 @@
       "url": "https://cs.gmu.edu",
       "startDate": "2023-08-01",
       "endDate": "",
-      "summary": "Developing Grounded Curriculum Learning for efficient Reinforcement Learning in Robotics",
+      "summary": "Developed Grounded Adaptive Curriculum Learning for efficient Reinforcement Learning in robotic manipulation",
       "highlights": [
-        "Developed Grounded Curriculum Learning (GCL), integrating real-world data with adaptive simulated task generation",
-        "Achieved 24.58% higher success rate and 50% improved sample efficiency",
-        "Paper submitted to IEEE International Conference on Robotics and Automation (ICRA) 2024"
+        "Developed Grounded Adaptive Curriculum Learning (GACL), a novel framework integrating real-world data with adaptive simulated task generation for robotic manipulation",
+        "Achieved 24.58% higher success rate and 50% improved sample efficiency compared to baseline methods",
+        "Paper accepted at IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025, Hangzhou, China"
       ]
     },
     {
@@ -78,7 +78,12 @@
       "startDate": "2023-09-01",
       "endDate": "2027-05-01",
       "score": "",
-      "courses": ["Advanced Machine Learning", "Deep Learning", "Reinforcement Learning", "Computer Vision"]
+      "courses": [
+        "Advanced Machine Learning",
+        "Deep Learning",
+        "Reinforcement Learning",
+        "Computer Vision"
+      ]
     },
     {
       "institution": "Carnegie Mellon University",
@@ -89,7 +94,12 @@
       "startDate": "2021-09-01",
       "endDate": "2023-05-01",
       "score": "3.94/4.0",
-      "courses": ["Machine Learning", "Deep Learning", "Computer Vision", "Deep Reinforcement Learning & Control"]
+      "courses": [
+        "Machine Learning",
+        "Deep Learning",
+        "Computer Vision",
+        "Deep Reinforcement Learning & Control"
+      ]
     }
   ],
   "skills": [
@@ -97,31 +107,61 @@
       "name": "Programming Languages",
       "level": "Advanced",
       "icon": "fa-solid fa-code",
-      "keywords": ["Python", "C++", "SQL", "Bash", "CUDA"]
+      "keywords": [
+        "Python",
+        "C++",
+        "SQL",
+        "Bash",
+        "CUDA"
+      ]
     },
     {
       "name": "ML/DL Frameworks",
       "level": "Advanced",
       "icon": "fa-solid fa-brain",
-      "keywords": ["PyTorch", "TensorFlow", "JAX", "Streamlit", "Plotly", "OpenAI Gym"]
+      "keywords": [
+        "PyTorch",
+        "TensorFlow",
+        "JAX",
+        "Streamlit",
+        "Plotly",
+        "OpenAI Gym"
+      ]
     },
     {
       "name": "AWS & Cloud",
       "level": "Intermediate",
       "icon": "fa-solid fa-cloud",
-      "keywords": ["RDS", "CloudWatch", "EC2", "Lambda", "S3", "Docker", "Kubernetes"]
+      "keywords": [
+        "RDS",
+        "CloudWatch",
+        "EC2",
+        "Lambda",
+        "S3",
+        "Docker",
+        "Kubernetes"
+      ]
     },
     {
       "name": "Robotics & Simulation",
       "level": "Advanced",
       "icon": "fa-solid fa-robot",
-      "keywords": ["ROS", "IsaacGym", "MuJoCo"]
+      "keywords": [
+        "ROS",
+        "IsaacGym",
+        "MuJoCo"
+      ]
     },
     {
       "name": "Statistical Analysis",
       "level": "Advanced",
       "icon": "fa-solid fa-chart-line",
-      "keywords": ["Hypothesis Testing", "Power Analysis", "A/B Testing", "Regression Analysis"]
+      "keywords": [
+        "Hypothesis Testing",
+        "Power Analysis",
+        "A/B Testing",
+        "Regression Analysis"
+      ]
     }
   ],
   "languages": [
@@ -140,12 +180,20 @@
     {
       "name": "Artificial Intelligence",
       "icon": "fa-solid fa-brain",
-      "keywords": ["Reinforcement Learning", "Generative AI", "Computer Vision"]
+      "keywords": [
+        "Reinforcement Learning",
+        "Generative AI",
+        "Computer Vision"
+      ]
     },
     {
       "name": "Robotics",
       "icon": "fa-solid fa-robot",
-      "keywords": ["Curriculum Learning", "Sim-to-Real Transfer", "Navigation"]
+      "keywords": [
+        "Curriculum Learning",
+        "Sim-to-Real Transfer",
+        "Navigation"
+      ]
     }
   ],
   "projects": [
@@ -160,6 +208,36 @@
       "startDate": "2023-05-01",
       "endDate": "2023-07-01",
       "url": ""
+    }
+  ],
+  "publications": [
+    {
+      "name": "II-NVM: Enhancing Map Accuracy and Consistency with Normal Vector-Assisted Mapping",
+      "publisher": "IEEE Robotics and Automation Letters",
+      "releaseDate": "2025",
+      "url": "https://arxiv.org/pdf/2504.08204",
+      "summary": "Zhao, Chengwei, Li, Yixuan, Jian, Yina, Xu, Jie, **Wang, Linji**, Ma, Yongxin, Jin, Xinglai. "
+    },
+    {
+      "name": "Decremental Dynamics Planning for Robot Navigation",
+      "publisher": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "releaseDate": "2025",
+      "url": "https://arxiv.org/pdf/2503.20521",
+      "summary": "Lu, Yuanjie, Xu, Tong, **Wang, Linji**, Hawes, Nick, Xiao, Xuesu. [Accepted. Submission number: 2899]"
+    },
+    {
+      "name": "GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring",
+      "publisher": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "releaseDate": "2025",
+      "url": "https://arxiv.org/pdf/2508.02988",
+      "summary": "**Wang, Linji**, Xu, Zifan, Stone, Peter, Xiao, Xuesu. [Accepted. Submission number: 1239]"
+    },
+    {
+      "name": "Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning",
+      "publisher": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "releaseDate": "2025",
+      "url": "https://arxiv.org/pdf/2503.15724",
+      "summary": "**Wang, Linji**, Xu, Tong, Lu, Yuanjie, Xiao, Xuesu. [Accepted. Submission number: 2755]"
     }
   ]
 }

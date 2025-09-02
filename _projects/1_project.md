@@ -10,13 +10,13 @@ related_publications: wang2025gacl, wang2025reward
 
 ## Overview
 
-This project focuses on developing reinforcement learning algorithms for robotic manipulation tasks. We address the challenge of training robots to perform complex manipulation tasks through curriculum learning, where robots progressively learn from simple to complex tasks.
+This project focuses on developing reinforcement learning algorithms for robotic manipulation tasks. We address the challenge of training robots to perform complex manipulation tasks through grounded adaptive curriculum learning and reward shaping techniques.
 
 ## Key Contributions
 
-- **Curriculum Learning Framework**: Developed a novel curriculum learning approach that automatically adjusts task difficulty based on robot performance
-- **Sim-to-Real Transfer**: Implemented domain randomization techniques to bridge the reality gap
-- **35% Improvement**: Achieved 35% improvement in training stability compared to baseline methods
+- **Grounded Adaptive Curriculum Learning (GACL)**: Developed a novel framework integrating real-world data with adaptive simulated task generation
+- **Reward Training Wheels**: Implemented adaptive auxiliary rewards that automatically adjust based on learning progress
+- **24.58% Higher Success Rate**: Achieved significant improvement in task success rate with 50% better sample efficiency
 
 ## Technical Stack
 
@@ -34,7 +34,9 @@ Our approach demonstrated significant improvements in:
 
 ## Publications
 
-This work has resulted in publications at ICRA 2024 and is currently under review at IEEE Robotics and Automation Letters.
+This work has resulted in two papers accepted at the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025:
+- GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring
+- Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning
 
 ## Code
 

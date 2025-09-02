@@ -29,9 +29,9 @@ latest_posts:
 
 I am a Ph.D. student in Computer Science at George Mason University, specializing in Artificial Intelligence and Robotics with a focus on Generative AI and Reinforcement Learning for Robotic Systems. My research interests lie at the intersection of deep learning, computer vision, and robotic navigation.
 
-Currently, I am working as a Graduate Research Assistant at the RobotiXX Lab, where I'm developing Grounded Curriculum Learning (GCL) - a novel framework integrating real-world data with adaptive simulated task generation for robotic RL. My work has achieved 24.58% higher success rate and 50% improved sample efficiency compared to baseline methods.
+Currently, I am working as a Graduate Research Assistant at the RobotiXX Lab, where I developed Grounded Adaptive Curriculum Learning (GACL) - a novel framework integrating real-world data with adaptive simulated task generation for robotic manipulation. Our work achieved 24.58% higher success rate and 50% improved sample efficiency compared to baseline methods, and has been accepted to the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025.
 
-Prior to my Ph.D., I completed my M.Sc. in Mechanical Engineering at Carnegie Mellon University (GPA: 3.94/4.0), where I worked at the Computational Engineering and Robotics Lab developing 3D AR scene inpainting pipelines achieving 92% accuracy. I have submitted research to top-tier conferences including ICRA 2024.
+Prior to my Ph.D., I completed my M.Sc. in Mechanical Engineering at Carnegie Mellon University (GPA: 3.94/4.0), where I worked at the Computational Engineering and Robotics Lab developing 3D AR scene inpainting pipelines achieving 92% accuracy. My research has been accepted at top-tier conferences including IROS 2025.
 
 My technical expertise spans deep learning frameworks (PyTorch, TensorFlow, JAX), robotics platforms (ROS, IsaacGym, MuJoCo), and AI techniques including Reinforcement Learning, Imitation Learning, GANs, and Transformer Models. I'm particularly interested in curriculum learning for robotics and sim-to-real transfer techniques.
 

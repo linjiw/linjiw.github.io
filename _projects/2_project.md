@@ -32,6 +32,11 @@ This project focuses on developing advanced robot navigation strategies using de
 - **Visualization**: RViz for path visualization
 - **Deployment**: Real-time implementation on mobile robots
 
-## Code and Demo
+## Publication
 
-[GitHub Repository](https://github.com/linjiw/ddp-navigation) | [Paper](https://arxiv.org/pdf/2503.20521)
+This work has been accepted at the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025:
+- "Decremental Dynamics Planning for Robot Navigation" by Lu, Xu, Wang, Hawes, and Xiao
+
+## Code and Resources
+
+[Paper PDF](https://arxiv.org/pdf/2503.20521) | [arXiv](https://arxiv.org/abs/2503.20521) | [GitHub Repository](https://github.com/linjiw/ddp-navigation)

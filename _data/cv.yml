@@ -45,15 +45,15 @@
 - title: Research Experience
   type: time_table
   contents:
-    - title: Research Project - Grounded Curriculum Learning for Efficient Reinforcement Learning in Robotics
+    - title: Research Project - Grounded Adaptive Curriculum Learning for Efficient Reinforcement Learning in Robotics
       institution: RobotiXX Lab, George Mason University, Fairfax, VA
       year: Aug 2023 - Present
       description:
-        - Developed Grounded Curriculum Learning (GCL), a novel framework integrating real-world data with adaptive simulated task generation for robotic RL
+        - Developed Grounded Adaptive Curriculum Learning (GACL), a novel framework integrating real-world data with adaptive simulated task generation for robotic manipulation
         - Implemented and optimized parallel RL algorithms (PPO, SAC) in IsaacGym, achieving 24.58% higher success rate and 50% improved sample efficiency
         - Designed a fully-informed teacher agent for task generation and curriculum adaptation, demonstrating superior generalization to unseen environments
         - Conducted large-scale experiments using the BARN dataset for challenging constrained navigation tasks
-        - Paper submitted to IEEE International Conference on Robotics and Automation (ICRA) 2024
+        - Paper accepted at IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025
     - title: Research Assistant - 3D AR Scene Inpainting via Deep Learning
       institution: Computational Engineering and Robotics Lab, CMU, Pittsburgh, PA
       year: Jan 2022 - May 2023

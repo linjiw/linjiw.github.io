@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Ph.D. student in Computer Science at George Mason University, where I am pioneering **adaptive learning paradigms for autonomous robotics**. My research addresses a fundamental challenge in robotics: how can robots learn complex behaviors as efficiently as humans do, adapting from simple to complex tasks while maintaining robustness in real-world deployments?
+I am a Ph.D. student in Computer Science at George Mason University, working under the supervision of **[Dr. Xuesu Xiao](https://cs.gmu.edu/~xiao/)** at the **[RobotiXX Lab](https://robotixx.cs.gmu.edu/)**. Our lab pioneers **adaptive learning paradigms for autonomous robotics**, and my research addresses a fundamental challenge in robotics: how can robots learn complex behaviors as efficiently as humans do, adapting from simple to complex tasks while maintaining robustness in real-world deployments?
 
 My work centers on **Curriculum Learning for Robotics** - developing intelligent systems that learn progressively, much like how humans master skills through structured practice. I believe the future of robotics lies not in hand-crafted solutions, but in **self-improving systems** that can adapt their learning strategies based on performance feedback. This vision has led me to develop two complementary frameworks:
 
@@ -39,7 +39,7 @@ My research has been **validated across diverse robotic platforms**:
 - **Off-road autonomous vehicles** handling unpredictable dynamics
 - **Current research:** Extending to **humanoid robots** for manipulation tasks
 
-This work, resulting in **three papers accepted at IROS 2025** and one in **IEEE RA-L**, demonstrates **24.58% higher success rates** and **50% improved sample efficiency** compared to state-of-the-art methods. I collaborate with pioneers in the field including **Peter Stone** (UT Austin) and contribute to advancing **decremental dynamics planning** for efficient robot navigation in dynamic environments.
+This work, resulting in **three papers accepted at IROS 2025** and one in **IEEE RA-L**, demonstrates **24.58% higher success rates** and **50% improved sample efficiency** compared to state-of-the-art methods. Through collaboration with my advisor **Dr. Xuesu Xiao** and renowned researchers including **[Peter Stone](https://www.cs.utexas.edu/~pstone/)** (UT Austin), I am advancing the frontiers of **adaptive curriculum learning** and **decremental dynamics planning** for robust robot autonomy in complex, dynamic environments.
 
 Prior to my Ph.D., I earned my M.Sc. in Mechanical Engineering from Carnegie Mellon University (GPA: 3.94/4.0), where I developed expertise in **3D perception** and **AR-guided robotics**. I also gained industry experience as a **Software Development Engineer Intern at Amazon AWS**, where I built production-grade systems that reduced performance analysis time from 8 hours to 15 minutes.
 

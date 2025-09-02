@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>AI & Robotics Lab</p>
+    <p>RobotiXX Lab</p>
     <p>George Mason University</p>
     <p>Fairfax, VA 22030</p>
 

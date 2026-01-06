@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Began intensive training in AI/ML, taking advanced courses in **Computer Vision, Reinforcement Learning, Machine Learning, and Deep Learning** at UCSB. These courses provided the theoretical foundation for my future research endeavors.
+Completed advanced AI/ML coursework in **Computer Vision, Reinforcement Learning, Machine Learning, and Deep Learning** at Carnegie Mellon University, building the theoretical foundation for my research.

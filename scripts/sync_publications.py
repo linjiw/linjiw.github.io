@@ -265,7 +265,7 @@ def update_cv_page(bibtex_path: Path, cv_path: Path):
             pub_section += "\n"
         pub_section += "\n"
     
-    pub_section += "For more details, see the [Publications](/linjiwang/publications/) page.\n"
+    pub_section += "For more details, see the [Publications](/publications/) page.\n"
     
     # Replace the publications section in CV
     import re

@@ -17,10 +17,10 @@
   contents:
     - title: Ph.D. in Computer Science
       institution: George Mason University, Fairfax, VA
-      year: Sep 2023 - May 2027 (Expected)
+      year: Sep 2023 - Present
       description:
         - Specialization in AI and Robotics
-        - Research Focus - Generative AI and Reinforcement Learning for Robotic Systems
+        - Research Focus - Curriculum Learning and Reinforcement Learning for Robotics
         - Relevant Coursework - Advanced Machine Learning, Deep Learning, Reinforcement Learning, Computer Vision
     - title: M.Sc. in Mechanical Engineering
       institution: Carnegie Mellon University, Pittsburgh, PA
@@ -28,6 +28,9 @@
       description:
         - GPA - 3.94/4.0 (98.5%)
         - Relevant Coursework - Machine Learning, Deep Learning, Computer Vision, Deep Reinforcement Learning & Control
+    - title: B.S. in Mechanical Engineering
+      institution: University of Cincinnati, Cincinnati, OH
+      year: Sep 2016 - May 2021
 
 - title: Professional Experience
   type: time_table
@@ -149,9 +152,12 @@
 - title: Publications & Presentations
   type: time_table
   contents:
-    - year: 2024
+    - year: 2025
       items:
-        - Wang, L., et al. "Grounded Curriculum Learning for Robotics" - Submitted to ICRA 2024
+        - Wang, L., et al. "GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring" - IROS 2025 (Accepted)
+        - Wang, L., et al. "Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning" - IROS 2025 (Accepted)
+        - Lu, Y., et al. "Decremental Dynamics Planning for Robot Navigation" - IROS 2025 (Accepted)
+        - Zhao, C., et al. "II-NVM: Enhancing Map Accuracy and Consistency with Normal Vector-Assisted Mapping" - IEEE RA-L 2025
 
 - title: Academic Interests
   type: nested_list

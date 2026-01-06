@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2023-08-20
+date: 2023-05-15
 inline: true
 related_posts: false
 ---
 
-Started **M.S. in Computer Science** at George Mason University, continuing my research in robotics and reinforcement learning while preparing for doctoral studies.
+Completed my **M.S. in Mechanical Engineering** at Carnegie Mellon University, with research in 3D perception and AR-guided robotics.

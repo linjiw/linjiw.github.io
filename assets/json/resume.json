@@ -5,8 +5,8 @@
     "image": "",
     "email": "joewwang@outlook.com",
     "phone": "(412) 888-6071",
-    "url": "https://linjiw.github.io/linjiwang/",
-    "summary": "Ph.D. Student specializing in AI and Robotics with focus on Generative AI and Reinforcement Learning for Robotic Systems",
+    "url": "https://linjiw.github.io/",
+    "summary": "Ph.D. student in Computer Science (AI and Robotics) focused on curriculum learning and reinforcement learning for robotics; publications at IROS 2025 and IEEE RA-L 2025",
     "location": {
       "city": "Fairfax",
       "countryCode": "US",
@@ -47,11 +47,11 @@
       "url": "https://cs.gmu.edu",
       "startDate": "2023-08-01",
       "endDate": "",
-      "summary": "Developed Grounded Adaptive Curriculum Learning for efficient Reinforcement Learning in robotic manipulation",
+      "summary": "Curriculum learning research for efficient reinforcement learning in robotic manipulation",
       "highlights": [
         "Developed Grounded Adaptive Curriculum Learning (GACL), a novel framework integrating real-world data with adaptive simulated task generation for robotic manipulation",
         "Achieved 24.58% higher success rate and 50% improved sample efficiency compared to baseline methods",
-        "Paper accepted at IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025, Hangzhou, China"
+        "Three papers accepted at IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025"
       ]
     },
     {
@@ -76,7 +76,7 @@
       "area": "Computer Science - AI and Robotics",
       "studyType": "Ph.D.",
       "startDate": "2023-09-01",
-      "endDate": "2027-05-01",
+      "endDate": "",
       "score": "",
       "courses": [
         "Advanced Machine Learning",
@@ -100,6 +100,17 @@
         "Computer Vision",
         "Deep Reinforcement Learning & Control"
       ]
+    },
+    {
+      "institution": "University of Cincinnati",
+      "location": "Cincinnati, OH",
+      "url": "https://www.uc.edu",
+      "area": "Mechanical Engineering",
+      "studyType": "B.S.",
+      "startDate": "2016-09-01",
+      "endDate": "2021-05-01",
+      "score": "",
+      "courses": []
     }
   ],
   "skills": [
@@ -149,7 +160,19 @@
       "keywords": [
         "ROS",
         "IsaacGym",
-        "MuJoCo"
+        "MuJoCo",
+        "OpenAI Gym"
+      ]
+    },
+    {
+      "name": "Reinforcement Learning",
+      "level": "Advanced",
+      "icon": "fa-solid fa-robot",
+      "keywords": [
+        "PPO",
+        "SAC",
+        "Curriculum Learning",
+        "Reward Shaping"
       ]
     },
     {
@@ -216,28 +239,28 @@
       "publisher": "IEEE Robotics and Automation Letters",
       "releaseDate": "2025",
       "url": "https://arxiv.org/pdf/2504.08204",
-      "summary": "Zhao, Chengwei, Li, Yixuan, Jian, Yina, Xu, Jie, **Wang, Linji**, Ma, Yongxin, Jin, Xinglai. "
+      "summary": "Zhao, Chengwei; Li, Yixuan; Jian, Yina; Xu, Jie; Wang, Linji; Ma, Yongxin; Jin, Xinglai."
     },
     {
       "name": "Decremental Dynamics Planning for Robot Navigation",
       "publisher": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
       "releaseDate": "2025",
       "url": "https://arxiv.org/pdf/2503.20521",
-      "summary": "Lu, Yuanjie, Xu, Tong, **Wang, Linji**, Hawes, Nick, Xiao, Xuesu. [Accepted. Submission number: 2899]"
+      "summary": "Lu, Yuanjie; Xu, Tong; Wang, Linji; Hawes, Nick; Xiao, Xuesu."
     },
     {
       "name": "GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring",
       "publisher": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
       "releaseDate": "2025",
       "url": "https://arxiv.org/pdf/2508.02988",
-      "summary": "**Wang, Linji**, Xu, Zifan, Stone, Peter, Xiao, Xuesu. [Accepted. Submission number: 1239]"
+      "summary": "Wang, Linji; Xu, Zifan; Stone, Peter; Xiao, Xuesu."
     },
     {
       "name": "Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning",
       "publisher": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
       "releaseDate": "2025",
       "url": "https://arxiv.org/pdf/2503.15724",
-      "summary": "**Wang, Linji**, Xu, Tong, Lu, Yuanjie, Xiao, Xuesu. [Accepted. Submission number: 2755]"
+      "summary": "Wang, Linji; Xu, Tong; Lu, Yuanjie; Xiao, Xuesu."
     }
   ]
 }

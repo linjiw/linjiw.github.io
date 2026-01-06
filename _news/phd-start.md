@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Began my graduate studies at **George Mason University** as an M.S. student in Computer Science, joining the robotics and AI labs to focus on reinforcement learning for robotic systems.
+Started my Ph.D. in **Computer Science** at George Mason University, joining the RobotiXX Lab to focus on curriculum learning for robotics.

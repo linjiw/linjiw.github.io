@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Made the pivotal decision to **transfer from Mechanical Engineering to Computer Science** at UC Santa Barbara, driven by a newfound passion for robotics and AI discovered through coursework and research experiences.
+Started my M.S. in **Mechanical Engineering** at Carnegie Mellon University, focusing on robotics, computer vision, and machine learning coursework.

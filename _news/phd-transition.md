@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Transitioned from M.S. to **Ph.D. program in Computer Science** at George Mason University, officially beginning my doctoral research journey in robotics and reinforcement learning.
+Formally advanced within the **Ph.D. program in Computer Science** at George Mason University, deepening my research on curriculum learning for robotics.

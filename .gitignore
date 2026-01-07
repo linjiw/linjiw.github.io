@@ -5,6 +5,12 @@ node_modules/
 dist/
 .astro/
 _site/
+.jekyll-cache/
+.sass-cache/
+
+# Ruby / Bundler
+.bundle/
+vendor/
 
 # Environment variables
 .env
@@ -31,9 +37,29 @@ coverage/
 hugo-archive/
 personal-archive/
 
+# Personal/job search artifacts (kept private)
+jobs/
+resumes/
+CANDIDATE_PROFILE_LINJI_WANG.md
+FAR-resume-*.pdf
+FAR-resume-*.tex
+FAR-resume.pdf
+FAR-resume.tex
+linji-amazon-robotics-latex.*
+generate_tailored_resumes.py
+
 # Temporary files
 *.tmp
 *.bak
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
 
 # Old Hugo files
 resources/

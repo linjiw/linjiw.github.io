@@ -1,0 +1,1002 @@
+---
+layout: none
+title: canvas
+permalink: /canvas/
+nav: false
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Canvas — Linji Wang</title>
+<meta name="description" content="An interactive research map of Linji Wang's robotics work: curriculum learning, reinforcement learning, IROS 2025 papers, connected on an infinite canvas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream: #fcfbf8;
+  --cream-dark: #f5f2ea;
+  --ink: #1a1a2e;
+  --ink-light: #4a4a5a;
+  --ink-faint: #8a8a9a;
+  --blue: #2b7fd8;
+  --blue-deep: #1e5ba8;
+  --blue-border: rgba(43,127,216,0.35);
+  --yellow: #f4d758;
+  --red: #e84a5f;
+  --grid-dot: rgba(43,127,216,0.18);
+  --card-bg: #ffffff;
+  --card-shadow: 0 2px 10px rgba(30,91,168,0.07);
+  --card-shadow-hover: 0 8px 28px rgba(30,91,168,0.14);
+  --radius: 12px;
+}
+
+html, body { height: 100%; overflow: hidden; }
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* ===== TOOLBAR ===== */
+.toolbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 48px;
+  background: var(--cream);
+  border-bottom: 2px dashed var(--blue-border);
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 14px;
+  z-index: 100;
+}
+.toolbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 14px;
+  border-right: 2px dashed var(--blue-border);
+}
+.toolbar-logo .logo-icon {
+  width: 26px; height: 26px;
+  background: var(--yellow);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.toolbar-logo .logo-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 15px; color: var(--blue-deep); }
+.toolbar-sub { font-family: 'Fira Code', monospace; font-size: 11px; color: var(--ink-faint); }
+.toolbar-exit {
+  margin-left: auto;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  color: var(--blue);
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px dashed var(--blue-border);
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.toolbar-exit:hover { background: rgba(43,127,216,0.08); }
+
+/* ===== NAV PANEL (tour) ===== */
+.nav-panel {
+  position: fixed;
+  top: 62px; left: 14px;
+  width: 200px;
+  background: rgba(252,251,248,0.94);
+  backdrop-filter: blur(8px);
+  border: 1px dashed var(--blue-border);
+  border-radius: 12px;
+  padding: 12px;
+  z-index: 90;
+}
+.nav-panel h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue-deep);
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  font-family: 'Fira Code', monospace;
+  font-size: 11.5px;
+  color: var(--ink-light);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-item:hover { background: rgba(43,127,216,0.08); color: var(--ink); }
+.nav-item.active { background: var(--yellow); color: var(--blue-deep); font-weight: 500; }
+.nav-item .nav-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+.nav-item.yellow .nav-dot { background: #e0b400; }
+.nav-item.red .nav-dot { background: var(--red); }
+
+.nav-toggle { display: none; }
+
+/* ===== CANVAS ===== */
+.canvas-area {
+  position: fixed;
+  inset: 48px 0 0 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+.canvas-area:active { cursor: grabbing; }
+.canvas-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--grid-dot) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+.canvas-transform {
+  position: absolute;
+  top: 0; left: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+.connections-svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 2600px; height: 1700px;
+  pointer-events: none;
+  overflow: visible;
+}
+.conn-line {
+  fill: none;
+  stroke: rgba(43,127,216,0.3);
+  stroke-width: 2.5;
+  stroke-dasharray: 7 6;
+}
+.conn-line.yellow-line { stroke: rgba(224,180,0,0.55); stroke-width: 3; }
+.conn-line.blue-line { stroke: rgba(43,127,216,0.45); stroke-width: 3; }
+
+/* ===== CARDS ===== */
+.card {
+  position: absolute;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 2px dashed var(--blue-border);
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.25s;
+  cursor: grab;
+}
+.card:hover { box-shadow: var(--card-shadow-hover); }
+.card.dragging {
+  transform: scale(1.03);
+  box-shadow: 0 12px 40px rgba(30,91,168,0.2), 0 0 0 2px var(--blue);
+  z-index: 999 !important;
+  cursor: grabbing;
+}
+.card.focused { box-shadow: 0 10px 36px rgba(30,91,168,0.22), 0 0 0 3px var(--yellow); }
+
+.card-tag-strip {
+  position: absolute;
+  top: -8px; left: 18px;
+  width: 44px; height: 14px;
+  border-radius: 3px;
+  transform: rotate(-2deg);
+  opacity: 0.85;
+}
+.card-tag-strip.blue { background: var(--blue); }
+.card-tag-strip.yellow { background: var(--yellow); }
+.card-tag-strip.red { background: var(--red); }
+
+.card-inner { padding: 20px 22px; }
+.card-kicker {
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+.card-kicker.award { color: #c09000; }
+.card h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.card p { font-size: 12.5px; line-height: 1.65; color: var(--ink-light); }
+.card .metrics { list-style: none; margin-top: 10px; }
+.card .metrics li {
+  font-family: 'Fira Code', monospace;
+  font-size: 10.5px;
+  line-height: 1.8;
+  color: var(--ink-light);
+  padding-left: 14px;
+  position: relative;
+}
+.card .metrics li::before { content: '▸'; position: absolute; left: 0; color: var(--blue); }
+.card .card-links { margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap; }
+.card .card-links a {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--blue-border);
+}
+.card .card-links a:hover { color: var(--blue-deep); border-bottom-style: solid; }
+.card .paper-fig {
+  width: 100%;
+  max-height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px 0 4px;
+  border: 1px solid rgba(0,0,0,0.08);
+  pointer-events: none;
+}
+
+/* profile card */
+.card-profile { width: 300px; }
+.card-profile img.avatar {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px 10px 0 0;
+  pointer-events: none;
+  display: block;
+}
+.card-profile .card-inner { padding-top: 16px; }
+.card-profile .tagline {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: var(--blue-deep);
+  background: rgba(244,215,88,0.35);
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+/* timeline card */
+.card-timeline { width: 320px; }
+.tl-item { position: relative; padding: 0 0 16px 20px; border-left: 2px solid rgba(43,127,216,0.25); }
+.tl-item:last-child { border-left-color: transparent; padding-bottom: 0; }
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -6px; top: 3px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2px solid #fff;
+}
+.tl-year { font-family: 'Fira Code', monospace; font-size: 10px; color: #c09000; background: rgba(244,215,88,0.3); padding: 1px 6px; border-radius: 3px; }
+.tl-what { font-size: 12.5px; font-weight: 500; color: var(--ink); margin-top: 3px; }
+.tl-sub { font-size: 11px; color: var(--ink-faint); }
+
+/* paper cards */
+.card-paper { width: 330px; }
+
+/* sticky notes */
+.card-sticky {
+  width: 210px;
+  background: var(--yellow);
+  border: none;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  transform: rotate(-1.5deg);
+}
+.card-sticky .card-inner { padding: 16px 18px; }
+.card-sticky h3 { font-size: 15px; }
+.card-sticky p { color: rgba(26,26,46,0.75); font-size: 12px; }
+.card-sticky.blue-sticky { background: var(--blue-deep); transform: rotate(1.2deg); }
+.card-sticky.blue-sticky h3, .card-sticky.blue-sticky p { color: #fff; }
+.card-sticky.blue-sticky p { opacity: 0.85; }
+
+/* quote card */
+.card-quote { width: 250px; background: var(--cream-dark); }
+.card-quote .card-inner { padding: 18px 20px; }
+.card-quote p {
+  font-family: 'Fraunces', serif;
+  font-size: 14.5px;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.card-quote .who { font-family: 'Fira Code', monospace; font-size: 10px; color: var(--ink-faint); margin-top: 8px; font-style: normal; }
+
+/* skills + robots */
+.card-skills { width: 280px; }
+.chipset { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.chip {
+  font-family: 'Fira Code', monospace;
+  font-size: 10.5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(43,127,216,0.1);
+  color: var(--blue-deep);
+}
+.chip.gold { background: rgba(244,215,88,0.4); color: #7a6200; }
+
+/* ===== MINIMAP ===== */
+.minimap {
+  position: fixed;
+  bottom: 14px; left: 14px;
+  width: 170px; height: 110px;
+  background: rgba(252,251,248,0.94);
+  border: 1px dashed var(--blue-border);
+  border-radius: 10px;
+  z-index: 90;
+  overflow: hidden;
+  cursor: pointer;
+}
+.minimap-dot { position: absolute; background: var(--blue); opacity: 0.45; border-radius: 2px; pointer-events: none; }
+.minimap-viewport {
+  position: absolute;
+  border: 1.5px solid var(--blue-deep);
+  border-radius: 3px;
+  background: rgba(43,127,216,0.08);
+  pointer-events: none;
+}
+
+/* ===== ZOOM CONTROLS + HINT ===== */
+.zoom-controls {
+  position: fixed;
+  bottom: 14px; right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(252,251,248,0.94);
+  border: 1px dashed var(--blue-border);
+  border-radius: 10px;
+  padding: 5px;
+  z-index: 90;
+  font-family: 'Fira Code', monospace;
+}
+.zoom-controls button {
+  width: 30px; height: 30px;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--blue-deep);
+  cursor: pointer;
+  border-radius: 7px;
+}
+.zoom-controls button:hover { background: rgba(43,127,216,0.1); }
+.zoom-pct { font-size: 11px; color: var(--ink-faint); min-width: 40px; text-align: center; }
+
+.hint-bar {
+  position: fixed;
+  bottom: 14px; left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: var(--ink-faint);
+  background: rgba(252,251,248,0.94);
+  border: 1px dashed var(--blue-border);
+  border-radius: 999px;
+  padding: 7px 16px;
+  z-index: 90;
+  white-space: nowrap;
+}
+.hint-bar kbd {
+  font-family: inherit;
+  background: rgba(43,127,216,0.1);
+  color: var(--blue-deep);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+/* ===== MOBILE FALLBACK: vertical scroll of cards ===== */
+.mobile-list { display: none; }
+
+@media (max-width: 768px), (pointer: coarse) and (max-width: 900px) {
+  html, body { overflow: auto; }
+  .canvas-area, .minimap, .zoom-controls, .hint-bar, .nav-panel { display: none; }
+  .mobile-list {
+    display: block;
+    padding: 62px 16px 40px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .mobile-list .card {
+    position: static;
+    width: 100% !important;
+    margin-bottom: 18px;
+    cursor: default;
+    transform: none;
+  }
+  .mobile-list .card-sticky { transform: rotate(-1deg); }
+  .mobile-note {
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    text-align: center;
+    margin-bottom: 18px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-logo">
+    <div class="logo-icon">🗺️</div>
+    <div class="logo-name">Research Canvas</div>
+  </div>
+  <div class="toolbar-sub">linji · robots that learn, one task at a time</div>
+  <a class="toolbar-exit" href="{{ '/os/' | relative_url }}">↩ linji OS</a>
+</div>
+
+<!-- tour nav: click = camera flies to the card -->
+<nav class="nav-panel" aria-label="Canvas tour">
+  <h2>✦ Tour</h2>
+  <button class="nav-item" data-target="card-profile"><span class="nav-dot"></span>who am I</button>
+  <button class="nav-item" data-target="card-timeline"><span class="nav-dot"></span>timeline</button>
+  <button class="nav-item yellow" data-target="card-gacl"><span class="nav-dot"></span>GACL · IROS'25</button>
+  <button class="nav-item yellow" data-target="card-rtw"><span class="nav-dot"></span>RTW · IROS'25</button>
+  <button class="nav-item" data-target="card-ddp"><span class="nav-dot"></span>DDP · BARN 🏆</button>
+  <button class="nav-item" data-target="card-iinvm"><span class="nav-dot"></span>II-NVM · RA-L</button>
+  <button class="nav-item" data-target="card-robots"><span class="nav-dot"></span>robot platforms</button>
+  <button class="nav-item red" data-target="card-now"><span class="nav-dot"></span>now: humanoids</button>
+  <button class="nav-item" data-target="card-contact"><span class="nav-dot"></span>say hi</button>
+</nav>
+
+<div class="canvas-area" id="canvasArea">
+  <div class="canvas-grid" id="canvasGrid"></div>
+  <div class="canvas-transform" id="canvasTransform">
+    <svg class="connections-svg" id="connectionsSvg"></svg>
+
+    <!-- ============ CARDS ============ -->
+    <div class="card card-profile" id="card-profile" style="left:80px; top:120px;">
+      <div class="card-tag-strip yellow"></div>
+      <img class="avatar" src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Linji Wang">
+      <div class="card-inner">
+        <div class="card-kicker">WHOAMI</div>
+        <h3>Linji (Joey) Wang</h3>
+        <p>Robotics Ph.D. student @ George Mason University · RobotiXX Lab, advised by Xuesu Xiao. Curriculum learning × reinforcement learning.</p>
+        <span class="tagline">robots that learn, one task at a time</span>
+      </div>
+    </div>
+
+    <div class="card card-timeline" id="card-timeline" style="left:500px; top:80px;">
+      <div class="card-tag-strip blue"></div>
+      <div class="card-inner">
+        <div class="card-kicker">TIMELINE</div>
+        <h3>The path so far</h3>
+        <div class="tl-item">
+          <span class="tl-year">2023 — now</span>
+          <div class="tl-what">Ph.D. Computer Science, George Mason</div>
+          <div class="tl-sub">RobotiXX Lab · curriculum learning for robots</div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-year">2025 summer</span>
+          <div class="tl-what">SDE Intern, AWS (RDS Proxy)</div>
+          <div class="tl-sub">statistical performance-regression testing</div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-year">2021 — 2023</span>
+          <div class="tl-what">M.S. Mechanical Engineering, CMU</div>
+          <div class="tl-sub">3D perception · AR-guided robotics · GPA 3.94</div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-year">2016 — 2021</span>
+          <div class="tl-what">B.S. Mechanical Engineering, U. Cincinnati</div>
+          <div class="tl-sub">where the robots started</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-paper" id="card-gacl" style="left:960px; top:60px;">
+      <div class="card-tag-strip yellow"></div>
+      <div class="card-inner">
+        <div class="card-kicker">IROS 2025 · FIRST AUTHOR</div>
+        <h3>GACL: Grounded Adaptive Curriculum Learning</h3>
+        <img class="paper-fig" src="{{ '/assets/img/projects/gacl_framework.jpg' | relative_url }}" alt="GACL framework" loading="lazy">
+        <p>A teacher generates training tasks from the robot's live performance, grounded in real-world task distributions. With Zifan Xu, Peter Stone, Xuesu Xiao.</p>
+        <ul class="metrics">
+          <li>+6.8% success · wheeled navigation</li>
+          <li>+6.1% success · quadruped locomotion</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://arxiv.org/abs/2508.02988" target="_blank" rel="noopener">arXiv</a>
+          <a href="{{ '/projects/1_project/' | relative_url }}">project</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-paper" id="card-rtw" style="left:1380px; top:160px;">
+      <div class="card-tag-strip yellow"></div>
+      <div class="card-inner">
+        <div class="card-kicker">IROS 2025 · FIRST AUTHOR</div>
+        <h3>Reward Training Wheels</h3>
+        <img class="paper-fig" src="{{ '/assets/img/projects/rtw_framework.jpg' | relative_url }}" alt="RTW framework" loading="lazy">
+        <p>Auxiliary rewards that adapt as the robot learns — training wheels that fade away. With Tong Xu, Yuanjie Lu, Xuesu Xiao.</p>
+        <ul class="metrics">
+          <li>+122.6% off-road mobility · 3× faster training</li>
+          <li>5/5 physical trials vs 2/5 baseline</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://arxiv.org/abs/2503.15724" target="_blank" rel="noopener">arXiv</a>
+          <a href="{{ '/projects/1_project/' | relative_url }}">project</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-paper" id="card-ddp" style="left:1000px; top:620px;">
+      <div class="card-tag-strip blue"></div>
+      <div class="card-inner">
+        <div class="card-kicker award">🏆 IROS 2025 · 1ST PLACE BARN CHALLENGE (SIM)</div>
+        <h3>Decremental Dynamics Planning</h3>
+        <p>Full robot dynamics near the robot, progressively simpler along the horizon. Led by Yuanjie Lu; with Tong Xu, Nick Hawes, Xuesu Xiao (3rd author).</p>
+        <ul class="metrics">
+          <li>improved 3 planners across the board</li>
+          <li>won the 2025 BARN Challenge sim phase</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://arxiv.org/abs/2503.20521" target="_blank" rel="noopener">arXiv</a>
+          <a href="{{ '/projects/2_project/' | relative_url }}">project</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-paper" id="card-iinvm" style="left:1460px; top:680px;">
+      <div class="card-tag-strip blue"></div>
+      <div class="card-inner">
+        <div class="card-kicker">IEEE RA-L 2025</div>
+        <h3>II-NVM: Normal Vector-Assisted Mapping</h3>
+        <p>Surface-normal consistency fixes double-sided mapping of thin structures in SLAM. Led by Chengwei Zhao (5th of 7 authors).</p>
+        <div class="card-links">
+          <a href="https://arxiv.org/abs/2504.08204" target="_blank" rel="noopener">arXiv</a>
+          <a href="https://github.com/chengwei0427/II-NVM" target="_blank" rel="noopener">code</a>
+          <a href="{{ '/projects/3_project/' | relative_url }}">project</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-skills" id="card-skills" style="left:120px; top:700px;">
+      <div class="card-tag-strip blue"></div>
+      <div class="card-inner">
+        <div class="card-kicker">TOOLBOX</div>
+        <h3>Skills &amp; stack</h3>
+        <div class="chipset">
+          <span class="chip gold">Curriculum Learning</span>
+          <span class="chip gold">Reward Design</span>
+          <span class="chip">PPO / SAC</span>
+          <span class="chip">IsaacGym</span>
+          <span class="chip">MuJoCo</span>
+          <span class="chip">ROS</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">C++ / CUDA</span>
+          <span class="chip">AWS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-skills" id="card-robots" style="left:520px; top:640px;">
+      <div class="card-tag-strip yellow"></div>
+      <div class="card-inner">
+        <div class="card-kicker">HARDWARE</div>
+        <h3>Robot platforms</h3>
+        <div class="chipset">
+          <span class="chip">🛞 wheeled UGV — constrained navigation</span>
+          <span class="chip">🐕 quadruped — confined 3D spaces</span>
+          <span class="chip">🏔️ off-road vehicle — vertical terrain</span>
+          <span class="chip gold">🤖 humanoid — ongoing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-sticky" id="card-award" style="left:880px; top:430px;">
+      <div class="card-inner">
+        <h3>🏆 1st place</h3>
+        <p>2025 BARN Challenge, simulation phase — our DDP navigation system</p>
+      </div>
+    </div>
+
+    <div class="card card-sticky blue-sticky" id="card-now" style="left:1850px; top:420px;">
+      <div class="card-inner">
+        <h3>now →</h3>
+        <p>extending curriculum learning to humanoid robots: whole-body skills, one task at a time</p>
+      </div>
+    </div>
+
+    <div class="card card-quote" id="card-quote" style="left:170px; top:520px;">
+      <div class="card-inner">
+        <p>“Start simple. Build competence. Master the complex.”</p>
+        <div class="who">— every good curriculum</div>
+      </div>
+    </div>
+
+    <div class="card card-skills" id="card-contact" style="left:1900px; top:640px;">
+      <div class="card-tag-strip red"></div>
+      <div class="card-inner">
+        <div class="card-kicker">SAY HI</div>
+        <h3>Let's talk robots</h3>
+        <div class="card-links" style="flex-direction:column; gap:8px; margin-top:8px;">
+          <a href="mailto:joewwang@outlook.com">📮 joewwang@outlook.com</a>
+          <a href="https://scholar.google.com/citations?user=VURUgFMAAAAJ" target="_blank" rel="noopener">🎓 Google Scholar</a>
+          <a href="https://github.com/linjiw" target="_blank" rel="noopener">💻 github.com/linjiw</a>
+          <a href="{{ '/' | relative_url }}">🏠 classic site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- mobile fallback: same story, vertical -->
+<div class="mobile-list" id="mobileList">
+  <div class="mobile-note">// the interactive canvas needs a bigger screen — here's the tour, in order</div>
+</div>
+
+<div class="minimap" id="minimap" aria-hidden="true">
+  <div class="minimap-viewport" id="minimapViewport"></div>
+</div>
+
+<div class="zoom-controls">
+  <button id="zoomOut" aria-label="Zoom out">−</button>
+  <span class="zoom-pct" id="zoomPct">100%</span>
+  <button id="zoomIn" aria-label="Zoom in">+</button>
+  <button id="zoomFit" aria-label="Fit all" title="fit everything">⤢</button>
+</div>
+
+<div class="hint-bar"><kbd>scroll</kbd> zoom · <kbd>drag</kbd> pan · cards are draggable · <kbd>tour</kbd> flies the camera</div>
+
+<script>
+(function() {
+  'use strict';
+  var area = document.getElementById('canvasArea');
+  var transform = document.getElementById('canvasTransform');
+  var grid = document.getElementById('canvasGrid');
+  var zoomPct = document.getElementById('zoomPct');
+  var connectionsSvg = document.getElementById('connectionsSvg');
+  var minimap = document.getElementById('minimap');
+  var mmViewport = document.getElementById('minimapViewport');
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var isMobileLayout = getComputedStyle(area).display === 'none';
+  if (isMobileLayout) {
+    // move cards into the vertical list in tour order and stop
+    var order = ['card-profile', 'card-timeline', 'card-gacl', 'card-rtw',
+                 'card-award', 'card-ddp', 'card-iinvm', 'card-robots',
+                 'card-skills', 'card-quote', 'card-now', 'card-contact'];
+    var list = document.getElementById('mobileList');
+    order.forEach(function(id) {
+      var c = document.getElementById(id);
+      if (c) { c.style.left = ''; c.style.top = ''; list.appendChild(c); }
+    });
+    return;
+  }
+
+  var scale = 1, panX = 0, panY = 0;
+  var MIN_SCALE = 0.15, MAX_SCALE = 3;
+  var WORLD = { w: 2350, h: 1000 };
+
+  function applyTransform() {
+    transform.style.transform = 'translate(' + panX + 'px, ' + panY + 'px) scale(' + scale + ')';
+    grid.style.backgroundSize = (28 * scale) + 'px ' + (28 * scale) + 'px';
+    grid.style.backgroundPosition = (panX % (28 * scale)) + 'px ' + (panY % (28 * scale)) + 'px';
+    zoomPct.textContent = Math.round(scale * 100) + '%';
+    updateMinimap();
+  }
+
+  /* ===== connections (cubic Bézier between card edge points) ===== */
+  var connections = [
+    ['card-profile', 'card-timeline', 'yellow-line'],
+    ['card-profile', 'card-quote', ''],
+    ['card-timeline', 'card-gacl', 'blue-line'],
+    ['card-timeline', 'card-skills', ''],
+    ['card-gacl', 'card-rtw', 'yellow-line'],
+    ['card-rtw', 'card-robots', ''],
+    ['card-gacl', 'card-ddp', 'blue-line'],
+    ['card-ddp', 'card-award', 'yellow-line'],
+    ['card-ddp', 'card-iinvm', 'blue-line'],
+    ['card-rtw', 'card-now', 'blue-line'],
+    ['card-now', 'card-contact', 'yellow-line'],
+  ];
+
+  function cardCenter(card) {
+    var l = parseFloat(card.style.left) || 0;
+    var t = parseFloat(card.style.top) || 0;
+    return { x: l + card.offsetWidth / 2, y: t + card.offsetHeight / 2 };
+  }
+
+  function edgePoint(card, tx, ty) {
+    var l = parseFloat(card.style.left) || 0;
+    var t = parseFloat(card.style.top) || 0;
+    var w = card.offsetWidth, h = card.offsetHeight;
+    var cx = l + w / 2, cy = t + h / 2;
+    var dx = tx - cx, dy = ty - cy;
+    if (dx === 0 && dy === 0) return { x: cx, y: cy };
+    var hw = w / 2, hh = h / 2, sx, sy;
+    if (Math.abs(dx) / hw > Math.abs(dy) / hh) {
+      sx = dx > 0 ? hw : -hw;
+      sy = (sx / dx) * dy;
+    } else {
+      sy = dy > 0 ? hh : -hh;
+      sx = (sy / dy) * dx;
+    }
+    return { x: cx + sx, y: cy + sy };
+  }
+
+  function updateConnections() {
+    var svg = '';
+    connections.forEach(function(c) {
+      var a = document.getElementById(c[0]);
+      var b = document.getElementById(c[1]);
+      if (!a || !b) return;
+      var ac = cardCenter(a), bc = cardCenter(b);
+      var s = edgePoint(a, bc.x, bc.y);
+      var e = edgePoint(b, ac.x, ac.y);
+      var dx = e.x - s.x, dy = e.y - s.y;
+      var off = Math.min(60, Math.sqrt(dx * dx + dy * dy) * 0.25);
+      var cp1x = s.x + dx * 0.3 + (dy > 0 ? off : -off) * 0.3;
+      var cp1y = s.y + dy * 0.3 - (dx > 0 ? off : -off) * 0.3;
+      var cp2x = e.x - dx * 0.3 - (dy > 0 ? off : -off) * 0.3;
+      var cp2y = e.y - dy * 0.3 + (dx > 0 ? off : -off) * 0.3;
+      svg += '<path class="conn-line ' + c[2] + '" d="M' + s.x + ',' + s.y +
+             ' C' + cp1x + ',' + cp1y + ' ' + cp2x + ',' + cp2y + ' ' + e.x + ',' + e.y + '"/>';
+    });
+    connectionsSvg.innerHTML = svg;
+  }
+
+  /* ===== pan (blank area) ===== */
+  var isPanning = false, startX = 0, startY = 0;
+  area.addEventListener('pointerdown', function(e) {
+    if (e.target.closest('.card')) return;
+    if (e.pointerType === 'touch') return; // touch handled below
+    isPanning = true;
+    startX = e.clientX - panX;
+    startY = e.clientY - panY;
+  });
+  window.addEventListener('pointermove', function(e) {
+    if (!isPanning) return;
+    cancelFly();
+    panX = e.clientX - startX;
+    panY = e.clientY - startY;
+    applyTransform();
+  });
+  function endPan() { isPanning = false; }
+  window.addEventListener('pointerup', endPan);
+  window.addEventListener('pointercancel', endPan);
+
+  /* ===== zoom at cursor ===== */
+  area.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    cancelFly();
+    var rect = area.getBoundingClientRect();
+    var mx = e.clientX - rect.left;
+    var my = e.clientY - rect.top;
+    var old = scale;
+    var delta = e.deltaY > 0 ? 0.92 : 1.08;
+    scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale * delta));
+    panX = mx - (mx - panX) * (scale / old);
+    panY = my - (my - panY) * (scale / old);
+    applyTransform();
+  }, { passive: false });
+
+  function zoomAtCenter(factor) {
+    cancelFly();
+    var rect = area.getBoundingClientRect();
+    var cx = rect.width / 2, cy = rect.height / 2;
+    var old = scale;
+    scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale * factor));
+    panX = cx - (cx - panX) * (scale / old);
+    panY = cy - (cy - panY) * (scale / old);
+    applyTransform();
+  }
+  document.getElementById('zoomIn').addEventListener('click', function() { zoomAtCenter(1.2); });
+  document.getElementById('zoomOut').addEventListener('click', function() { zoomAtCenter(0.8); });
+
+  function fitAll(animate) {
+    var rect = area.getBoundingClientRect();
+    var s = Math.min(rect.width / WORLD.w, rect.height / WORLD.h) * 0.92;
+    var px = (rect.width - WORLD.w * s) / 2;
+    var py = (rect.height - WORLD.h * s) / 2;
+    if (animate) flyTo(px, py, s);
+    else { scale = s; panX = px; panY = py; applyTransform(); }
+  }
+  document.getElementById('zoomFit').addEventListener('click', function() { fitAll(true); });
+
+  /* ===== touch: one-finger pan, two-finger pinch ===== */
+  var lastTouchDist = 0, touchPanning = false;
+  area.addEventListener('touchstart', function(e) {
+    cancelFly();
+    if (e.touches.length === 1 && !e.target.closest('.card')) {
+      touchPanning = true;
+      startX = e.touches[0].clientX - panX;
+      startY = e.touches[0].clientY - panY;
+    } else if (e.touches.length === 2) {
+      touchPanning = false;
+      var dx = e.touches[0].clientX - e.touches[1].clientX;
+      var dy = e.touches[0].clientY - e.touches[1].clientY;
+      lastTouchDist = Math.sqrt(dx * dx + dy * dy);
+    }
+  }, { passive: true });
+  area.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    if (e.touches.length === 1 && touchPanning) {
+      panX = e.touches[0].clientX - startX;
+      panY = e.touches[0].clientY - startY;
+      applyTransform();
+    } else if (e.touches.length === 2) {
+      var dx = e.touches[0].clientX - e.touches[1].clientX;
+      var dy = e.touches[0].clientY - e.touches[1].clientY;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (lastTouchDist > 0) {
+        var rect = area.getBoundingClientRect();
+        var cx = (e.touches[0].clientX + e.touches[1].clientX) / 2 - rect.left;
+        var cy = (e.touches[0].clientY + e.touches[1].clientY) / 2 - rect.top;
+        var old = scale;
+        scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale * (dist / lastTouchDist)));
+        panX = cx - (cx - panX) * (scale / old);
+        panY = cy - (cy - panY) * (scale / old);
+        applyTransform();
+      }
+      lastTouchDist = dist;
+    }
+  }, { passive: false });
+  area.addEventListener('touchend', function() { touchPanning = false; lastTouchDist = 0; }, { passive: true });
+
+  /* ===== card dragging ===== */
+  var dragCard = null, dragStartCardX = 0, dragStartCardY = 0, dragMouseX = 0, dragMouseY = 0;
+  var maxZ = 10;
+  document.querySelectorAll('.card').forEach(function(card) {
+    card.addEventListener('pointerdown', function(e) {
+      if (e.target.closest('a')) return;
+      e.preventDefault();
+      dragCard = card;
+      dragStartCardX = parseFloat(card.style.left) || 0;
+      dragStartCardY = parseFloat(card.style.top) || 0;
+      dragMouseX = e.clientX;
+      dragMouseY = e.clientY;
+      card.classList.add('dragging');
+      maxZ++;
+      card.style.zIndex = maxZ;
+    });
+    card.addEventListener('mouseenter', function() {
+      if (dragCard) return;
+      maxZ++;
+      card.style.zIndex = maxZ;
+    });
+  });
+  window.addEventListener('pointermove', function(e) {
+    if (!dragCard) return;
+    dragCard.style.left = (dragStartCardX + (e.clientX - dragMouseX) / scale) + 'px';
+    dragCard.style.top = (dragStartCardY + (e.clientY - dragMouseY) / scale) + 'px';
+    updateConnections();
+    updateMinimapDots();
+  });
+  function endCardDrag() {
+    if (!dragCard) return;
+    dragCard.classList.remove('dragging');
+    dragCard = null;
+  }
+  window.addEventListener('pointerup', endCardDrag);
+  window.addEventListener('pointercancel', endCardDrag);
+
+  /* ===== camera fly-to (the tour) ===== */
+  var flyRAF = null;
+  function cancelFly() { if (flyRAF) { cancelAnimationFrame(flyRAF); flyRAF = null; } }
+  function easeInOut(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+
+  function flyTo(targetPanX, targetPanY, targetScale, done) {
+    cancelFly();
+    if (reducedMotion) {
+      panX = targetPanX; panY = targetPanY; scale = targetScale;
+      applyTransform();
+      if (done) done();
+      return;
+    }
+    var sp = { x: panX, y: panY, s: scale };
+    var t0 = performance.now();
+    var DUR = 750;
+    function step(now) {
+      var t = Math.min(1, (now - t0) / DUR);
+      var k = easeInOut(t);
+      panX = sp.x + (targetPanX - sp.x) * k;
+      panY = sp.y + (targetPanY - sp.y) * k;
+      scale = sp.s + (targetScale - sp.s) * k;
+      applyTransform();
+      if (t < 1) flyRAF = requestAnimationFrame(step);
+      else { flyRAF = null; if (done) done(); }
+    }
+    flyRAF = requestAnimationFrame(step);
+  }
+
+  function flyToCard(cardId) {
+    var card = document.getElementById(cardId);
+    if (!card) return;
+    var rect = area.getBoundingClientRect();
+    var w = card.offsetWidth, h = card.offsetHeight;
+    var l = parseFloat(card.style.left) || 0;
+    var t = parseFloat(card.style.top) || 0;
+    // frame the card with generous margin
+    var targetScale = Math.min(1.4, Math.min(rect.width / (w + 260), rect.height / (h + 200)));
+    var cx = l + w / 2, cy = t + h / 2;
+    var px = rect.width / 2 - cx * targetScale;
+    var py = rect.height / 2 - cy * targetScale;
+    document.querySelectorAll('.card.focused').forEach(function(c) { c.classList.remove('focused'); });
+    flyTo(px, py, targetScale, function() {
+      card.classList.add('focused');
+      setTimeout(function() { card.classList.remove('focused'); }, 1600);
+    });
+  }
+
+  document.querySelectorAll('.nav-item').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.nav-item.active').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      flyToCard(btn.dataset.target);
+    });
+  });
+
+  /* ===== minimap ===== */
+  var minimapDots = [];
+  function initMinimapDots() {
+    document.querySelectorAll('.canvas-transform .card').forEach(function(card) {
+      var dot = document.createElement('div');
+      dot.className = 'minimap-dot';
+      dot.dataset.cardId = card.id;
+      minimap.appendChild(dot);
+      minimapDots.push(dot);
+    });
+    updateMinimapDots();
+  }
+  function updateMinimapDots() {
+    var mmW = minimap.offsetWidth, mmH = minimap.offsetHeight;
+    minimapDots.forEach(function(dot) {
+      var card = document.getElementById(dot.dataset.cardId);
+      if (!card) return;
+      var l = parseFloat(card.style.left) || 0;
+      var t = parseFloat(card.style.top) || 0;
+      dot.style.left = (l / WORLD.w * mmW) + 'px';
+      dot.style.top = (t / WORLD.h * mmH) + 'px';
+      dot.style.width = Math.max(4, card.offsetWidth / WORLD.w * mmW) + 'px';
+      dot.style.height = Math.max(3, card.offsetHeight / WORLD.h * mmH) + 'px';
+    });
+  }
+  function updateMinimap() {
+    var rect = area.getBoundingClientRect();
+    var mmW = minimap.offsetWidth, mmH = minimap.offsetHeight;
+    mmViewport.style.left = (-panX / scale / WORLD.w * mmW) + 'px';
+    mmViewport.style.top = (-panY / scale / WORLD.h * mmH) + 'px';
+    mmViewport.style.width = (rect.width / scale / WORLD.w * mmW) + 'px';
+    mmViewport.style.height = (rect.height / scale / WORLD.h * mmH) + 'px';
+  }
+  minimap.addEventListener('click', function(e) {
+    var rect = minimap.getBoundingClientRect();
+    var cx = ((e.clientX - rect.left) / minimap.offsetWidth) * WORLD.w;
+    var cy = ((e.clientY - rect.top) / minimap.offsetHeight) * WORLD.h;
+    var areaRect = area.getBoundingClientRect();
+    flyTo(areaRect.width / 2 - cx * scale, areaRect.height / 2 - cy * scale, scale);
+  });
+
+  /* ===== boot: fit everything, then fly to the profile ===== */
+  initMinimapDots();
+  updateConnections();
+  fitAll(false);
+  window.addEventListener('resize', function() { applyTransform(); });
+  setTimeout(function() { flyToCard('card-profile'); }, 600);
+})();
+</script>
+</body>
+</html>

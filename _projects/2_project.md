@@ -17,6 +17,17 @@ planning with full dynamics near the robot — where fidelity matters most — a
 progressively simplifies the dynamics model along the horizon, spending compute
 where it buys the most safety and performance.
 
+<div class="row justify-content-center">
+    <div class="col-sm-9 mt-3 mb-3">
+        {% include figure.liquid loading="eager" path="assets/img/projects/ddp_comparison.jpg" title="DDP vs decomposed planning" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Top: a conventional global + local planner. Bottom: DDP plans one trajectory with dynamics fidelity that decreases along the horizon.
+</div>
+
+<!-- TODO: replace with BARN Challenge run video / navigation GIF -->
+
 ## My contribution
 
 This is a collaboration led by my labmate Yuanjie Lu (with Tong Xu, Nick Hawes of

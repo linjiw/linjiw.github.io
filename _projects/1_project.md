@@ -24,6 +24,17 @@ training tasks by monitoring student performance in real time, while grounding
 the curriculum in real-world task distributions so training remains relevant to
 deployment.
 
+<div class="row justify-content-center">
+    <div class="col-sm-10 mt-3 mb-3">
+        {% include figure.liquid loading="eager" path="assets/img/projects/gacl_framework.jpg" title="GACL framework" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    The GACL teacher adapts task difficulty from live student performance while grounding tasks in the target distribution.
+</div>
+
+<!-- TODO: replace with short GIF/video of the wheeled robot and quadruped executing learned policies -->
+
 **Published results:** 6.8% higher success rate than state-of-the-art curriculum
 methods on wheeled navigation in constrained environments, and 6.1% higher on
 quadruped locomotion in challenging 3D confined spaces.
@@ -33,6 +44,17 @@ quadruped locomotion in challenging 3D confined spaces.
 RTW {% cite wang2025reward %} automates auxiliary reward shaping: a teacher
 adaptively weights auxiliary reward components as the robot's proficiency grows,
 so guidance fades out exactly like training wheels on a bicycle.
+
+<div class="row justify-content-center">
+    <div class="col-sm-10 mt-3 mb-3">
+        {% include figure.liquid loading="eager" path="assets/img/projects/rtw_framework.jpg" title="RTW teacher-student framework" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    The RTW teacher observes the student's reward history and re-weights auxiliary rewards each iteration.
+</div>
+
+<!-- TODO: replace with GIF/video of the off-road vehicle physical trials (5/5 success) -->
 
 **Published results:** 2.35% higher navigation success rate than expert-designed
 rewards and a 122.62% improvement in off-road mobility on vertically challenging

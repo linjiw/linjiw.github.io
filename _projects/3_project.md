@@ -15,6 +15,17 @@ incorporating surface normal vector information into the mapping process,
 addressing the double-sided mapping problem that arises when both sides of a
 thin surface (walls, doors) are observed.
 
+<div class="row justify-content-center">
+    <div class="col-sm-10 mt-3 mb-3">
+        {% include figure.liquid loading="eager" path="assets/img/projects/iinvm_system.jpg" title="II-NVM system overview" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    II-NVM pipeline: adaptive-radius normal calculation, normal-aware data association, and voxel map management.
+</div>
+
+<!-- TODO: add mapping result comparison GIF (with/without normal vectors) -->
+
 ## My contribution
 
 This is a collaboration led by Chengwei Zhao; I am a co-author (5th of 7) and

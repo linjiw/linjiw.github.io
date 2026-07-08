@@ -53,7 +53,7 @@ Note: on /cv/, the `volunteer` key of resume.json renders under the heading
 - **Private material never enters this repo** (it is public and served verbatim):
   no tailored resumes, no employer-internal notes, no job-search artifacts.
   See `.gitignore` for the private paths.
-- Google Scholar ID is `qc6CJjYAAAAJ` (in `_data/socials.yml`).
+- Google Scholar ID is `VURUgFMAAAAJ` (in `_data/socials.yml`).
 
 ## Publications (papers.bib)
 

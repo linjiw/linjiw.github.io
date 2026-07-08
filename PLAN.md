@@ -130,3 +130,29 @@ Guiding principles:
 After each phase: `bundle exec jekyll build` clean, spot-check the live pages
 (`/`, `/publications/`, `/cv/`, `/projects/`), confirm the resume PDF matches
 `resume.tex`, and confirm no private artifact is reachable on the live site.
+
+## Future TODOs (content, needs owner input)
+
+- [ ] Robot media: short square GIFs/videos of the wheeled UGV, quadruped, and
+      off-road runs for the three project pages (HTML TODO comments mark the
+      spots in `_projects/*.md`).
+- [ ] Register the site in Google Search Console + Bing Webmaster and add the
+      verification IDs to `_config.yml`.
+- [ ] Purpose-made 1200x630 og-card (name + "Robotics · RL · GMU RobotiXX" +
+      robot photo) to replace the headshot in `og_image`.
+- [ ] Decide whether the phone number stays in the public resume PDF
+      (`resume.tex` header).
+- [ ] Fresh 2026 news item on current humanoid curriculum-learning work.
+- [ ] Ask GitHub Support to GC unreachable objects (old commit SHAs from the
+      history purge are still served from cache).
+
+## Phase 5 — linji OS interactive page (added July 2026)
+
+- [x] Reverse-engineer hiesther.me's design system (terminal hero in a MacBook
+      frame, zoom-into-screen transition, macOS desktop with draggable windows,
+      menubar + clock, star wallpaper, $-prompt section labels, goodbye
+      terminal) and adapt it as an optional `/os/` page introducing the
+      research: paper windows with verified results, projects folder, news.log,
+      Say Hi window, resume icon.
+- [ ] Future: replace the emoji robot sticker with a custom robot illustration;
+      add real robot GIFs inside the paper windows.

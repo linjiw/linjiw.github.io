@@ -1,0 +1,1192 @@
+---
+layout: none
+title: os
+permalink: /os/
+nav: true
+nav_order: 5
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>linji OS — Linji Wang</title>
+<meta name="description" content="An interactive OS-style tour of Linji Wang's robotics research: curriculum learning, reinforcement learning, IROS 2025 papers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream: #fcfbf8;
+  --cream-dark: #f5f2ea;
+  --ink: #1a1a2e;
+  --ink-light: #4a4a5a;
+  --ink-faint: #8a8a9a;
+  --blue: #2b7fd8;
+  --blue-deep: #1e5ba8;
+  --yellow: #f4d758;
+  --red: #e84a5f;
+  --term-bg: #151821;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { overflow: hidden; }
+html.scroll-unlocked { overflow: auto; overflow-x: hidden; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* ===== HERO: terminal inside a MacBook ===== */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  z-index: 10;
+  overflow: hidden;
+}
+.macbook-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  will-change: transform, opacity;
+}
+.macbook-wrapper.zoom-transition {
+  transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+.macbook-screen-bezel {
+  position: relative;
+  background: #2a2a30;
+  border-radius: 14px 14px 0 0;
+  padding: 14px;
+  padding-top: 0;
+  width: 708px;
+  cursor: pointer;
+}
+.macbook-notch {
+  width: 130px; height: 14px;
+  background: #2a2a30;
+  border-radius: 0 0 10px 10px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.macbook-screen {
+  width: 680px; height: 440px;
+  background: var(--term-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.macbook-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 3px);
+  pointer-events: none;
+  z-index: 1;
+}
+.macbook-hinge { width: 720px; height: 3px; background: linear-gradient(180deg, #8a8a8e 0%, #6e6e72 100%); border-radius: 0 0 2px 2px; }
+.macbook-base { width: 760px; height: 14px; background: linear-gradient(180deg, #c8c8cc 0%, #a8a8ac 30%, #b8b8bc 70%, #9a9a9e 100%); border-radius: 0 0 10px 10px; }
+.macbook-shadow { width: 700px; height: 40px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, transparent 70%); margin-top: 4px; }
+
+@media (max-width: 820px) {
+  .macbook-wrapper { transform: scale(calc((100vw - 24px) / 760)); }
+}
+
+/* ===== Terminal ===== */
+.terminal {
+  padding: 16px 20px;
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.terminal.scale-through {
+  transform: scale(1.15);
+  opacity: 0;
+  filter: blur(2px);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  margin-bottom: 14px;
+}
+.terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+.terminal-dot.red { background: #ff5f57; }
+.terminal-dot.yellow { background: #ffbd2e; }
+.terminal-dot.green { background: #28ca41; }
+.terminal-title { color: rgba(255,255,255,0.5); font-size: 11px; margin: 0 auto; font-family: sans-serif; }
+
+.term-line { opacity: 0; transform: translateY(6px); white-space: pre-wrap; word-break: break-word; }
+.term-line.visible { animation: lineReveal 0.35s ease forwards; }
+@keyframes lineReveal { to { opacity: 1; transform: translateY(0); } }
+.term-prompt { color: var(--yellow); font-weight: 700; }
+.term-cmd { color: #fff; font-weight: 500; }
+.term-output { color: rgba(255,255,255,0.85); }
+.term-gold { background: var(--yellow); color: var(--blue-deep); font-weight: 700; font-size: 14px; padding: 2px 8px; border-radius: 3px; }
+.cursor {
+  display: inline-block;
+  width: 9px; height: 17px;
+  background: #fff;
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+.hero-cta { margin-top: 36px; text-align: center; opacity: 0; transition: opacity 0.6s ease; cursor: pointer; }
+.hero-cta.visible { opacity: 1; }
+.hero-cta.hidden { opacity: 0; pointer-events: none; }
+.hero-cta .cta-text { font-family: 'Fira Code', monospace; font-size: 13px; color: var(--ink-faint); letter-spacing: 1px; }
+.hero-cta .cta-arrow { font-size: 18px; color: var(--ink-faint); margin-top: 8px; animation: bounce 1.6s ease infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+.transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--blue-deep);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+.transition-overlay.active { opacity: 1; pointer-events: auto; }
+
+/* ===== DESKTOP ===== */
+.desktop { position: relative; background: var(--blue-deep); display: none; }
+.desktop.revealed { display: block; }
+
+.desktop-menubar {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 30px;
+  padding: 0 16px;
+  background: rgba(30, 91, 168, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.92);
+}
+.desktop-menubar .mb-logo { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 900; color: var(--yellow); }
+.desktop-menubar a.mb-item { opacity: 0.65; color: inherit; text-decoration: none; }
+.desktop-menubar a.mb-item:hover { opacity: 1; }
+.desktop-menubar .mb-clock { margin-left: auto; font-family: 'Fira Code', monospace; font-size: 11px; opacity: 0.55; }
+.desktop-menubar .mb-exit { font-family: 'Fira Code', monospace; font-size: 11px; opacity: 0.65; color: inherit; text-decoration: none; }
+.desktop-menubar .mb-exit:hover { opacity: 1; }
+
+.desktop-surface {
+  position: relative;
+  height: calc(100vh - 30px);
+  overflow: hidden;
+  background: var(--blue-deep);
+}
+
+/* star wallpaper */
+.wp-star {
+  position: absolute;
+  color: var(--yellow);
+  font-size: var(--size, 14px);
+  opacity: var(--op, 0.7);
+  animation: wp-twinkle var(--dur, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes wp-twinkle { 0%, 100% { opacity: var(--op, 0.7); } 50% { opacity: calc(var(--op, 0.7) * 0.25); } }
+
+.click-star {
+  position: fixed;
+  pointer-events: none;
+  color: var(--yellow);
+  z-index: 9999;
+  animation: starPop 0.7s ease-out forwards;
+}
+@keyframes starPop {
+  0% { transform: scale(0) rotate(0deg); opacity: 0.9; }
+  30% { transform: scale(1.2) rotate(10deg); opacity: 0.85; }
+  100% { transform: scale(0.8) rotate(0deg); opacity: 0; }
+}
+
+/* draggable robot sticker */
+.desktop-sticker {
+  position: absolute;
+  bottom: 40px;
+  right: 26%;
+  font-size: 120px;
+  line-height: 1;
+  cursor: grab;
+  z-index: 5;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
+  transition: filter 0.2s;
+}
+.desktop-sticker:active { cursor: grabbing; }
+
+/* desktop icons */
+.desktop-icons { position: absolute; inset: 0; z-index: 2; }
+.dicon {
+  position: absolute;
+  width: 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 4px;
+  border-radius: 10px;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s;
+}
+.dicon:hover { background: rgba(255,255,255,0.1); }
+.dicon:active { background: rgba(255,255,255,0.15); }
+.dicon-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  line-height: 1.3;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.dicon-art { width: 48px; height: 48px; position: relative; border-radius: 10px; overflow: hidden; }
+.dicon-art.folder { background: linear-gradient(180deg, #f8e07a, var(--yellow)); box-shadow: 0 2px 5px rgba(0,0,0,0.18); }
+.dicon-art.folder::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 4px;
+  width: 18px; height: 8px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 3px 3px 0 0;
+}
+.dicon-art.file { background: #fff; border: 1.5px solid rgba(43,127,216,0.3); box-shadow: 0 2px 5px rgba(30,91,168,0.15); }
+.dicon-art.file img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.dicon-art.file::after {
+  content: attr(data-ext);
+  position: absolute;
+  bottom: 3px; left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Fira Code', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: var(--blue-deep);
+  color: #fff8e1;
+  z-index: 1;
+}
+.dicon-art.file.ext-pdf::after { background: var(--red); }
+.dicon-art.file.ext-log::after { background: var(--blue); }
+.dicon-art.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  background: #fff8f0;
+  border: 1.5px solid rgba(43,127,216,0.25);
+  box-shadow: 0 2px 6px rgba(30,91,168,0.12);
+}
+
+/* ===== OS WINDOWS ===== */
+.os-window {
+  position: absolute;
+  width: min(540px, 90vw);
+  background: var(--cream);
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 10px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.18), 0 0 0 0.5px rgba(0,0,0,0.06);
+  overflow: hidden;
+  animation: winPop 0.25s var(--ease-out);
+  z-index: 100;
+}
+@keyframes winPop { from { transform: scale(0.92) translateY(8px); opacity: 0; } }
+.os-dragbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 36px;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  z-index: 10;
+}
+.os-dragbar:active { cursor: grabbing; }
+.os-traffic { position: absolute; top: 12px; left: 12px; display: flex; gap: 7px; z-index: 11; }
+.os-traffic span { width: 12px; height: 12px; border-radius: 50%; display: block; }
+.os-traffic .tl-close { background: #ff5f56; cursor: pointer; transition: transform 0.15s; }
+.os-traffic .tl-close:hover { transform: scale(1.2); }
+.os-traffic .tl-min { background: #ffbd2e; }
+.os-traffic .tl-max { background: #27c93f; }
+.os-title-hint {
+  position: absolute;
+  top: 11px; left: 0; right: 0;
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  color: var(--ink-faint);
+  pointer-events: none;
+  z-index: 10;
+}
+.os-body { padding: 42px 26px 24px; max-height: min(60vh, 500px); overflow: auto; }
+.os-resize { position: absolute; bottom: 0; right: 0; width: 16px; height: 16px; cursor: nwse-resize; z-index: 10; touch-action: none; }
+.os-resize::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; right: 4px;
+  width: 8px; height: 8px;
+  border-right: 2px solid rgba(0,0,0,0.15);
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+
+/* paper window */
+.paper-venue {
+  display: inline-block;
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: var(--blue-deep);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.paper-venue.award { background: var(--yellow); color: var(--blue-deep); }
+.paper-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.paper-authors { font-size: 12px; color: var(--ink-faint); margin-bottom: 14px; }
+.paper-authors b { color: var(--ink-light); }
+.paper-fig { width: 100%; border-radius: 8px; margin-bottom: 14px; border: 1px solid rgba(0,0,0,0.08); }
+.paper-what { font-size: 13.5px; line-height: 1.7; color: var(--ink-light); margin-bottom: 12px; }
+.paper-results { list-style: none; margin-bottom: 16px; }
+.paper-results li {
+  font-family: 'Fira Code', monospace;
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--ink-light);
+  padding-left: 16px;
+  position: relative;
+}
+.paper-results li::before { content: '▸'; position: absolute; left: 0; color: var(--blue); }
+.paper-links { display: flex; gap: 14px; flex-wrap: wrap; }
+.paper-links a {
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(43,127,216,0.4);
+}
+.paper-links a:hover { color: var(--blue-deep); border-bottom-style: solid; }
+
+/* folder window */
+.os-body.win-folder {
+  padding: 48px 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 88px);
+  gap: 14px 10px;
+  justify-content: center;
+}
+.folder-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 8px 4px;
+  border-radius: 6px;
+  transition: background 0.15s;
+  color: var(--ink);
+}
+.folder-icon:hover { background: rgba(43,127,216,0.08); }
+.folder-icon-art {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  background: #fff;
+  border: 1.5px solid #ddd;
+  position: relative;
+}
+.folder-icon-art::after {
+  content: attr(data-ext);
+  position: absolute;
+  bottom: 2px; left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Fira Code', monospace;
+  font-size: 7px;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: var(--blue-deep);
+  color: #fff8e1;
+}
+.folder-icon-label { font-size: 10.5px; font-family: 'Fira Code', monospace; text-align: center; line-height: 1.3; }
+
+/* say-hi window */
+.os-body.win-sayhi { position: relative; }
+.os-body.win-sayhi::before {
+  content: '';
+  position: absolute;
+  top: 30px; right: 30px;
+  width: 50px; height: 14px;
+  background: repeating-linear-gradient(90deg, var(--yellow) 0px, var(--yellow) 4px, rgba(244,215,88,0.35) 4px, rgba(244,215,88,0.35) 8px);
+  border-radius: 1px;
+  transform: rotate(2deg);
+}
+.sayhi-heading { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 900; color: var(--ink); line-height: 1.1; }
+.sayhi-sub { font-family: 'Fira Code', monospace; font-size: 10px; color: var(--ink-faint); margin: 4px 0 20px; }
+.sayhi-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+.sayhi-card { border: 1px dashed rgba(43,127,216,0.35); padding: 14px; border-radius: 2px; }
+.sayhi-card:first-child { transform: rotate(-0.3deg); }
+.sayhi-card:last-child { transform: rotate(0.4deg); }
+.sayhi-card .sc-icon { font-size: 20px; margin-bottom: 6px; }
+.sayhi-card .sc-title { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 600; color: var(--blue-deep); margin-bottom: 4px; }
+.sayhi-card .sc-desc { font-size: 11px; color: #666; line-height: 1.6; }
+.sayhi-links { display: flex; flex-direction: column; gap: 6px; font-size: 12.5px; color: var(--ink-faint); }
+.sayhi-links a { color: var(--blue); text-decoration: none; }
+.sayhi-links a:hover { text-decoration: underline; }
+
+/* news window */
+.win-news .os-body { font-family: 'Fira Code', monospace; font-size: 12px; line-height: 2; color: var(--ink-light); }
+.win-news .news-date { color: var(--blue); font-weight: 500; margin-right: 8px; }
+
+/* ===== BELOW-DESKTOP CONTENT (inside the OS) ===== */
+.scroll-on-hint {
+  text-align: center;
+  padding: 60px 0 30px;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 2px;
+}
+.scroll-on-hint .down { display: block; font-size: 16px; margin-top: 6px; animation: bounce 1.6s ease infinite; }
+
+.home-content { max-width: 720px; margin: 0 auto; padding: 0 24px 40px; }
+.home-section { padding: clamp(50px, 8vh, 90px) 0 0; }
+.section-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  color: var(--yellow);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.section-label::before { content: '$ '; color: var(--red); }
+.section-heading {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  line-height: 1.3;
+  margin-bottom: 24px;
+  color: #fff;
+}
+.os-card {
+  background: var(--cream);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.os-card p { font-size: 14px; line-height: 1.8; color: var(--ink-light); }
+.os-card .big-num {
+  position: absolute;
+  top: -12px; right: -2px;
+  font-family: 'Fraunces', serif;
+  font-size: 4.2rem;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(43,127,216,0.08);
+  pointer-events: none;
+}
+.os-card .card-title { font-family: 'Fraunces', serif; font-size: 15.5px; font-weight: 600; margin-bottom: 4px; color: var(--ink); position: relative; }
+.os-card .card-sub { font-size: 12px; color: var(--ink-faint); position: relative; }
+
+.todo-note {
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.06);
+  border: 1px dashed rgba(255,255,255,0.25);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 16px;
+}
+.todo-note::before { content: '// TODO: '; color: var(--yellow); }
+
+/* goodbye terminal */
+.goodbye-wrap { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+.goodbye-window {
+  background: var(--term-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.3);
+}
+.goodbye-body { padding: 18px 22px 22px; font-family: 'Fira Code', monospace; font-size: 13px; line-height: 2; }
+.gt-prompt { color: var(--yellow); font-weight: 700; }
+.gt-cmd { color: #fff; font-weight: 500; }
+.gt-output { color: rgba(255,255,255,0.85); padding-left: 16px; display: block; }
+.gt-output::before { content: '> '; color: var(--yellow); }
+.gt-dim { color: rgba(255,255,255,0.55); font-style: italic; padding-left: 16px; font-size: 12px; display: block; }
+.gt-gold { background: var(--yellow); color: var(--blue-deep); font-weight: 700; padding: 1px 6px; border-radius: 3px; font-size: 12px; }
+.goodbye-body a { color: var(--yellow); text-decoration: none; }
+.goodbye-body a:hover { text-decoration: underline; }
+.goodbye-footer {
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+@media (max-width: 640px) {
+  .dicon { width: 72px; }
+  .desktop-sticker { font-size: 80px; right: 12%; }
+  .sayhi-cards { grid-template-columns: 1fr; }
+  .os-body.win-folder { grid-template-columns: repeat(3, 80px); }
+}
+</style>
+</head>
+<body>
+
+<div class="transition-overlay" id="transitionOverlay"></div>
+
+<!-- ===== HERO ===== -->
+<section class="hero-section" id="heroSection">
+  <div class="macbook-wrapper" id="macbookWrapper">
+    <div class="macbook-screen-bezel" id="macbookBezel">
+      <div class="macbook-notch"></div>
+      <div class="macbook-screen" id="macbookScreen">
+        <div class="terminal" id="terminal">
+          <div class="terminal-titlebar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">linji@robotixx ~ zsh</span>
+          </div>
+          <div id="terminalLines"></div>
+        </div>
+      </div>
+    </div>
+    <div class="macbook-hinge"></div>
+    <div class="macbook-base"></div>
+    <div class="macbook-shadow"></div>
+  </div>
+  <div class="hero-cta" id="heroCta">
+    <div class="cta-text">Press Enter to Launch</div>
+    <div class="cta-arrow">↓</div>
+  </div>
+</section>
+
+<!-- ===== DESKTOP ===== -->
+<div class="desktop" id="desktop">
+  <div class="desktop-menubar">
+    <span class="mb-logo">linji OS</span>
+    <a class="mb-item" href="#about">About</a>
+    <a class="mb-item" href="#research">Research</a>
+    <a class="mb-item" href="#now">Now</a>
+    <a class="mb-exit" href="{{ '/' | relative_url }}">↩ classic site</a>
+    <span class="mb-clock" id="mbClock">--:--</span>
+  </div>
+
+  <div class="desktop-surface" id="desktopSurface">
+    <!-- star wallpaper (generated by JS) -->
+    <div id="starfield"></div>
+
+    <!-- draggable robot sticker -->
+    <div class="desktop-sticker" id="robotSticker">🤖</div>
+
+    <div class="desktop-icons">
+      <div class="dicon" data-win="win-gacl" style="top:24px;right:24px;">
+        <div class="dicon-art file ext-pdf" data-ext=".pdf"><img src="{{ '/assets/img/publication_preview/GACL_sq.jpg' | relative_url }}" alt="" loading="lazy"></div>
+        <div class="dicon-label">GACL.pdf</div>
+      </div>
+      <div class="dicon" data-win="win-rtw" style="top:118px;right:24px;">
+        <div class="dicon-art file ext-pdf" data-ext=".pdf"><img src="{{ '/assets/img/publication_preview/RTW_sq.jpg' | relative_url }}" alt="" loading="lazy"></div>
+        <div class="dicon-label">RTW.pdf</div>
+      </div>
+      <div class="dicon" data-win="win-ddp" style="top:212px;right:24px;">
+        <div class="dicon-art file ext-pdf" data-ext=".pdf"><img src="{{ '/assets/img/publication_preview/DDP_sq.jpg' | relative_url }}" alt="" loading="lazy"></div>
+        <div class="dicon-label">DDP.pdf</div>
+      </div>
+      <div class="dicon" data-win="win-iinvm" style="top:306px;right:24px;">
+        <div class="dicon-art file ext-pdf" data-ext=".pdf"><img src="{{ '/assets/img/publication_preview/II-NVM_sq.jpg' | relative_url }}" alt="" loading="lazy"></div>
+        <div class="dicon-label">II-NVM.pdf</div>
+      </div>
+      <div class="dicon" data-href="{{ '/assets/pdf/resume.pdf' | relative_url }}" style="top:400px;right:24px;">
+        <div class="dicon-art file ext-pdf" data-ext=".pdf"></div>
+        <div class="dicon-label">resume.pdf</div>
+      </div>
+      <div class="dicon" data-win="win-projects" style="top:24px;right:124px;">
+        <div class="dicon-art folder"></div>
+        <div class="dicon-label">projects/</div>
+      </div>
+      <div class="dicon" data-win="win-news" style="top:118px;right:124px;">
+        <div class="dicon-art file ext-log" data-ext=".log"></div>
+        <div class="dicon-label">news.log</div>
+      </div>
+      <div class="dicon" data-win="win-sayhi" style="top:212px;right:124px;">
+        <div class="dicon-art folder"></div>
+        <div class="dicon-label">Say Hi</div>
+      </div>
+      <div class="dicon" data-href="{{ '/publications/' | relative_url }}" style="top:306px;right:124px;">
+        <div class="dicon-art app">📚</div>
+        <div class="dicon-label">publications</div>
+      </div>
+    </div>
+
+    <!-- window templates -->
+    <template id="win-gacl">
+      <div class="os-window" data-title="GACL — IROS 2025">
+        <div class="os-body">
+          <span class="paper-venue">IROS 2025 · FIRST AUTHOR</span>
+          <div class="paper-title">GACL: Grounded Adaptive Curriculum Learning</div>
+          <div class="paper-authors"><b>Linji Wang</b>, Zifan Xu, Peter Stone, Xuesu Xiao</div>
+          <img class="paper-fig" src="{{ '/assets/img/projects/gacl_framework.jpg' | relative_url }}" alt="GACL framework" loading="lazy">
+          <p class="paper-what">A teacher agent generates training tasks by monitoring the robot's live performance, while grounding the curriculum in real-world task distributions.</p>
+          <ul class="paper-results">
+            <li>+6.8% success — wheeled navigation in constrained environments</li>
+            <li>+6.1% success — quadruped locomotion in confined 3D spaces</li>
+          </ul>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2508.02988" target="_blank" rel="noopener">arXiv</a>
+            <a href="{{ '/projects/1_project/' | relative_url }}">project page</a>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="win-rtw">
+      <div class="os-window" data-title="RTW — IROS 2025">
+        <div class="os-body">
+          <span class="paper-venue">IROS 2025 · FIRST AUTHOR</span>
+          <div class="paper-title">Reward Training Wheels: Adaptive Auxiliary Rewards</div>
+          <div class="paper-authors"><b>Linji Wang</b>, Tong Xu, Yuanjie Lu, Xuesu Xiao</div>
+          <img class="paper-fig" src="{{ '/assets/img/projects/rtw_framework.jpg' | relative_url }}" alt="RTW framework" loading="lazy">
+          <p class="paper-what">A teacher re-weights auxiliary rewards as the robot's proficiency grows — training wheels that fade away on their own.</p>
+          <ul class="paper-results">
+            <li>+122.62% off-road mobility, 3× faster training</li>
+            <li>5/5 physical off-road trials vs 2/5 for expert-designed rewards</li>
+          </ul>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2503.15724" target="_blank" rel="noopener">arXiv</a>
+            <a href="{{ '/projects/1_project/' | relative_url }}">project page</a>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="win-ddp">
+      <div class="os-window" data-title="DDP — IROS 2025">
+        <div class="os-body">
+          <span class="paper-venue award">🏆 1ST PLACE · 2025 BARN CHALLENGE (SIM)</span>
+          <div class="paper-title">Decremental Dynamics Planning for Robot Navigation</div>
+          <div class="paper-authors">Yuanjie Lu, Tong Xu, <b>Linji Wang</b>, Nick Hawes, Xuesu Xiao</div>
+          <img class="paper-fig" src="{{ '/assets/img/projects/ddp_comparison.jpg' | relative_url }}" alt="DDP comparison" loading="lazy">
+          <p class="paper-what">Plan with full robot dynamics near the robot, and progressively simpler dynamics along the horizon — full fidelity exactly where it matters.</p>
+          <ul class="paper-results">
+            <li>Improved performance across three augmented planners</li>
+            <li>Won the simulation phase of the 2025 BARN Challenge</li>
+          </ul>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2503.20521" target="_blank" rel="noopener">arXiv</a>
+            <a href="{{ '/projects/2_project/' | relative_url }}">project page</a>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="win-iinvm">
+      <div class="os-window" data-title="II-NVM — IEEE RA-L 2025">
+        <div class="os-body">
+          <span class="paper-venue">IEEE RA-L 2025</span>
+          <div class="paper-title">II-NVM: Normal Vector-Assisted SLAM Mapping</div>
+          <div class="paper-authors">Chengwei Zhao, Yixuan Li, Yina Jian, Jie Xu, <b>Linji Wang</b>, Yongxin Ma, Xinglai Jin</div>
+          <img class="paper-fig" src="{{ '/assets/img/projects/iinvm_system.jpg' | relative_url }}" alt="II-NVM system" loading="lazy">
+          <p class="paper-what">Surface normal consistency resolves the double-sided mapping problem for thin structures like walls and doors.</p>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2504.08204" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://github.com/chengwei0427/II-NVM" target="_blank" rel="noopener">code</a>
+            <a href="{{ '/projects/3_project/' | relative_url }}">project page</a>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="win-projects">
+      <div class="os-window" data-title="projects/" style="width:340px;">
+        <div class="os-body win-folder">
+          <a class="folder-icon" href="{{ '/projects/1_project/' | relative_url }}">
+            <div class="folder-icon-art" data-ext=".html"></div>
+            <div class="folder-icon-label">curriculum &amp; rewards</div>
+          </a>
+          <a class="folder-icon" href="{{ '/projects/2_project/' | relative_url }}">
+            <div class="folder-icon-art" data-ext=".html"></div>
+            <div class="folder-icon-label">dynamics planning</div>
+          </a>
+          <a class="folder-icon" href="{{ '/projects/3_project/' | relative_url }}">
+            <div class="folder-icon-art" data-ext=".html"></div>
+            <div class="folder-icon-label">SLAM mapping</div>
+          </a>
+        </div>
+      </div>
+    </template>
+
+    <template id="win-news">
+      <div class="os-window win-news" data-title="news.log">
+        <div class="os-body">
+          <div><span class="news-date">2025-10</span>Presented GACL &amp; RTW at IROS 2025, Hangzhou 🇨🇳</div>
+          <div><span class="news-date">2025-06</span>3 papers accepted to IROS 2025</div>
+          <div><span class="news-date">2025-05</span>🏆 1st place, 2025 BARN Challenge (simulation)</div>
+          <div><span class="news-date">2025-05</span>SDE intern @ AWS (RDS Proxy team)</div>
+          <div><span class="news-date">2025-04</span>II-NVM published in IEEE RA-L</div>
+          <div><span class="news-date">2023-08</span>Started Ph.D. @ GMU RobotiXX Lab</div>
+        </div>
+      </div>
+    </template>
+
+    <template id="win-sayhi">
+      <div class="os-window" data-title="Say Hi">
+        <div class="os-body win-sayhi">
+          <div class="sayhi-heading">Say Hi ✨</div>
+          <div class="sayhi-sub">robots that learn, one task at a time</div>
+          <div class="sayhi-cards">
+            <div class="sayhi-card">
+              <div class="sc-icon">🔬</div>
+              <div class="sc-title">Research</div>
+              <div class="sc-desc">Curriculum learning / RL for robot navigation &amp; locomotion; ongoing humanoid work</div>
+            </div>
+            <div class="sayhi-card">
+              <div class="sc-icon">🤝</div>
+              <div class="sc-title">Collaborate</div>
+              <div class="sc-desc">Open to research collaborations, internships, and teaching opportunities</div>
+            </div>
+          </div>
+          <div class="sayhi-links">
+            <span>📮 <a href="mailto:joewwang@outlook.com">joewwang@outlook.com</a></span>
+            <span>🎓 <a href="https://scholar.google.com/citations?user=VURUgFMAAAAJ" target="_blank" rel="noopener">Google Scholar</a></span>
+            <span>💻 <a href="https://github.com/linjiw" target="_blank" rel="noopener">github.com/linjiw</a></span>
+            <span>💼 <a href="https://linkedin.com/in/linjiw" target="_blank" rel="noopener">LinkedIn</a></span>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <!-- scrollable OS content below the desktop -->
+  <div class="scroll-on-hint">scroll to read<span class="down">↓</span></div>
+
+  <div class="home-content">
+    <section class="home-section" id="about">
+      <div class="section-label">cat about.md</div>
+      <h2 class="section-heading">Who am I</h2>
+      <div class="os-card">
+        <p>Ph.D. student in Computer Science at George Mason University's RobotiXX Lab, advised by Dr. Xuesu Xiao. I study how robots can learn complex behaviors efficiently — by training on the right task, at the right difficulty, at the right time. Before this: M.S. at Carnegie Mellon, B.S. at Cincinnati, and a summer building statistical testing infrastructure at AWS.</p>
+      </div>
+    </section>
+
+    <section class="home-section" id="research">
+      <div class="section-label">ls research/</div>
+      <h2 class="section-heading">What I build</h2>
+      <div class="os-card">
+        <span class="big-num">01</span>
+        <div class="card-title">Adaptive curricula (GACL)</div>
+        <div class="card-sub">a teacher that picks the next training task from the robot's live performance — IROS 2025, with Peter Stone</div>
+      </div>
+      <div class="os-card">
+        <span class="big-num">02</span>
+        <div class="card-title">Self-fading reward shaping (RTW)</div>
+        <div class="card-sub">auxiliary rewards that decay as proficiency grows — 5/5 physical off-road trials, IROS 2025</div>
+      </div>
+      <div class="os-card">
+        <span class="big-num">03</span>
+        <div class="card-title">Dynamics-aware planning (DDP)</div>
+        <div class="card-sub">full dynamics near the robot, simpler further out — 1st place, 2025 BARN Challenge (simulation)</div>
+      </div>
+    </section>
+
+    <section class="home-section" id="now">
+      <div class="section-label">cat now.md</div>
+      <h2 class="section-heading">Now</h2>
+      <div class="os-card">
+        <div class="card-title">Extending curriculum learning to humanoid robots</div>
+        <div class="card-sub">whole-body skills are the next frontier for adaptive training</div>
+      </div>
+      <div class="todo-note">robot videos coming to the project pages soon</div>
+    </section>
+  </div>
+
+  <!-- goodbye terminal -->
+  <div class="goodbye-wrap">
+    <div class="goodbye-window">
+      <div class="terminal-titlebar" style="padding:12px 20px 10px;margin:0;">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-title">linji@robotixx ~ zsh</span>
+      </div>
+      <div class="goodbye-body">
+        <div><span class="gt-prompt">$ </span><span class="gt-cmd">echo "thanks for visiting"</span></div>
+        <span class="gt-output">See you at the next conference.</span>
+        <div>&nbsp;</div>
+        <div><span class="gt-prompt">$ </span><span class="gt-cmd">cat contact.md</span></div>
+        <span class="gt-output">📮 <a href="mailto:joewwang@outlook.com">joewwang@outlook.com</a></span>
+        <span class="gt-output">🎓 <a href="https://scholar.google.com/citations?user=VURUgFMAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://github.com/linjiw" target="_blank" rel="noopener">GitHub</a> · <a href="https://linkedin.com/in/linjiw" target="_blank" rel="noopener">LinkedIn</a></span>
+        <div>&nbsp;</div>
+        <div><span class="gt-prompt">$ </span><span class="gt-cmd">fortune</span></div>
+        <span class="gt-dim">"Start simple. Build competence. Master the complex." — every good curriculum</span>
+        <div>&nbsp;</div>
+        <div><span class="gt-prompt">$ </span><span class="gt-cmd">exit</span></div>
+        <span class="gt-output"><span class="gt-gold">[Process completed]</span> — <a href="{{ '/' | relative_url }}">↩ back to the classic site</a></span>
+      </div>
+      <div class="goodbye-footer">© 2026 Linji Wang · linji OS v1.0 · built on al-folio</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
+  var launched = false;
+  var typingDone = false;
+
+  /* ===== menubar clock ===== */
+  var mbClock = document.getElementById('mbClock');
+  function tickClock() {
+    var d = new Date();
+    mbClock.textContent = String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+  }
+  tickClock();
+  setInterval(tickClock, 30000);
+
+  /* ===== star wallpaper (procedural) ===== */
+  var starfield = document.getElementById('starfield');
+  for (var i = 0; i < 70; i++) {
+    var s = document.createElement('span');
+    s.className = 'wp-star';
+    s.textContent = '✦';
+    var size = 5 + Math.random() * 13;
+    s.style.top = (Math.random() * 94) + '%';
+    s.style.left = (Math.random() * 96) + '%';
+    s.style.setProperty('--size', size.toFixed(0) + 'px');
+    s.style.setProperty('--op', (0.35 + Math.random() * 0.5).toFixed(2));
+    s.style.setProperty('--dur', (2.2 + Math.random() * 1.9).toFixed(1) + 's');
+    s.style.setProperty('--delay', (Math.random() * 3).toFixed(1) + 's');
+    starfield.appendChild(s);
+  }
+
+  /* ===== terminal boot ===== */
+  var terminalData = [
+    { type: 'cmd', prompt: '$ ', text: 'whoami' },
+    { type: 'output', prefix: '> ', text: 'Linji (Joey) Wang' },
+    { type: 'blank' },
+    { type: 'cmd', prompt: '$ ', text: 'cat about.md' },
+    { type: 'output', prefix: '> ', text: 'Robotics Ph.D. student @ George Mason · RobotiXX Lab' },
+    { type: 'output', prefix: '  ', text: 'curriculum learning × reinforcement learning' },
+    { type: 'output', prefix: '  ', text: '2× first-author papers @ IROS 2025' },
+    { type: 'output', prefix: '  ', text: '🏆 1st place · 2025 BARN Challenge (simulation)' },
+    { type: 'blank' },
+    { type: 'cmd', prompt: '$ ', text: 'echo "robots that learn, one task at a time"' },
+    { type: 'gold', prefix: '> ', text: 'robots that learn, one task at a time' },
+    { type: 'blank' },
+    { type: 'cmd', prompt: '$ ', text: 'open linji-os.app', cursor: true }
+  ];
+
+  var container = document.getElementById('terminalLines');
+  var heroCta = document.getElementById('heroCta');
+
+  function renderLine(item) {
+    var div = document.createElement('div');
+    div.className = 'term-line';
+    if (item.type === 'blank') {
+      div.innerHTML = '&nbsp;';
+    } else if (item.type === 'cmd') {
+      var html = '<span class="term-prompt">' + item.prompt + '</span><span class="term-cmd">' + item.text + '</span>';
+      if (item.cursor) html += '<span class="cursor" id="mainCursor"></span>';
+      div.innerHTML = html;
+    } else if (item.type === 'output') {
+      div.innerHTML = '<span class="term-output">' + item.prefix + item.text + '</span>';
+    } else if (item.type === 'gold') {
+      div.innerHTML = '<span class="term-gold">' + item.prefix + item.text + '</span>';
+    }
+    container.appendChild(div);
+    return div;
+  }
+
+  function finishIntro() {
+    typingDone = true;
+    heroCta.classList.add('visible');
+  }
+
+  var VISITED_KEY = 'linji_os_visited';
+  var isReturnVisitor = false;
+  try { isReturnVisitor = !!localStorage.getItem(VISITED_KEY); } catch (e) {}
+
+  if (isReturnVisitor) {
+    terminalData.forEach(function(item) { renderLine(item).classList.add('visible'); });
+    finishIntro();
+  } else {
+    var divs = [];
+    var lineDelay = 0;
+    terminalData.forEach(function(item) {
+      var div = renderLine(item);
+      if (item.type === 'blank') { lineDelay += 200; }
+      else if (item.type === 'cmd') { lineDelay += 400; div.style.animationDelay = lineDelay + 'ms'; lineDelay += 600; }
+      else { lineDelay += 150; div.style.animationDelay = lineDelay + 'ms'; lineDelay += 300; }
+      divs.push(div);
+      setTimeout(function() { div.classList.add('visible'); }, 50);
+    });
+    var typingTimeout = setTimeout(finishIntro, lineDelay + 600);
+    var skipTyping = function() {
+      if (typingDone) return;
+      clearTimeout(typingTimeout);
+      divs.forEach(function(d) { d.style.animationDelay = '0ms'; d.classList.add('visible'); });
+      finishIntro();
+    };
+    document.getElementById('heroSection').addEventListener('click', function() { if (!typingDone) skipTyping(); });
+    document.addEventListener('keydown', function(e) { if (!typingDone && e.key !== 'Enter') skipTyping(); });
+  }
+
+  /* ===== launch: progress bar → zoom into the screen ===== */
+  function launch() {
+    if (launched || !typingDone) return;
+    launched = true;
+    try { localStorage.setItem(VISITED_KEY, '1'); } catch (e) {}
+
+    heroCta.classList.remove('visible');
+    heroCta.classList.add('hidden');
+    var cursorEl = document.getElementById('mainCursor');
+    if (cursorEl) cursorEl.remove();
+
+    var launchLine = document.createElement('div');
+    launchLine.className = 'term-line';
+    launchLine.innerHTML = '<span class="term-output">> launching...</span>';
+    container.appendChild(launchLine);
+    setTimeout(function() { launchLine.classList.add('visible'); }, 50);
+
+    var progressLine = document.createElement('div');
+    progressLine.className = 'term-line';
+    progressLine.innerHTML = '<span class="term-prompt" id="progressText">[░░░░░░░░░░░░] 0%</span>';
+    container.appendChild(progressLine);
+    setTimeout(function() { progressLine.classList.add('visible'); }, 300);
+
+    var progress = 0;
+    var barLength = 12;
+    setTimeout(function() {
+      var progressText = document.getElementById('progressText');
+      var interval = setInterval(function() {
+        progress += 1;
+        if (progress > barLength) { clearInterval(interval); beginZoom(); return; }
+        var filled = '', empty = '';
+        for (var i = 0; i < barLength; i++) { if (i < progress) filled += '█'; else empty += '░'; }
+        if (progressText) progressText.textContent = '[' + filled + empty + '] ' + Math.round((progress / barLength) * 100) + '%';
+      }, 80);
+    }, 400);
+  }
+
+  function beginZoom() {
+    var wrapper = document.getElementById('macbookWrapper');
+    var screen = document.getElementById('macbookScreen');
+    var terminal = document.getElementById('terminal');
+    var overlay = document.getElementById('transitionOverlay');
+
+    var screenRect = screen.getBoundingClientRect();
+    var vw = window.innerWidth, vh = window.innerHeight;
+    var scale = Math.max(vw / screenRect.width, vh / screenRect.height) * 1.05;
+    var screenCenterX = screenRect.left + screenRect.width / 2;
+    var screenCenterY = screenRect.top + screenRect.height / 2;
+    var wrapperRect = wrapper.getBoundingClientRect();
+    var wrapperCenterX = wrapperRect.left + wrapperRect.width / 2;
+    var wrapperCenterY = wrapperRect.top + wrapperRect.height / 2;
+    var offsetX = screenCenterX - wrapperCenterX;
+    var offsetY = screenCenterY - wrapperCenterY;
+    var tx = vw / 2 - (wrapperCenterX + offsetX * scale);
+    var ty = vh / 2 - (wrapperCenterY + offsetY * scale);
+
+    setTimeout(function() { terminal.classList.add('scale-through'); }, 200);
+    wrapper.classList.add('zoom-transition');
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        wrapper.style.transform = 'translate(' + tx + 'px, ' + ty + 'px) scale(' + scale + ')';
+      });
+    });
+
+    setTimeout(function() { overlay.classList.add('active'); }, 1200);
+    setTimeout(function() {
+      document.getElementById('heroSection').style.display = 'none';
+      document.getElementById('desktop').classList.add('revealed');
+      document.documentElement.classList.add('scroll-unlocked');
+      window.scrollTo(0, 0);
+      setTimeout(function() { overlay.classList.remove('active'); }, 250);
+    }, 1800);
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && !launched) launch();
+    if (e.key === 'Escape' && launched) window.location.href = '{{ "/" | relative_url }}';
+  });
+  document.getElementById('macbookBezel').addEventListener('click', function() { if (typingDone) launch(); });
+  heroCta.addEventListener('click', launch);
+
+  /* ===== window manager ===== */
+  var surface = document.getElementById('desktopSurface');
+  var winZ = 100;
+  var openCount = 0;
+
+  function addResize(win) {
+    var handle = document.createElement('div');
+    handle.className = 'os-resize';
+    win.appendChild(handle);
+    handle.addEventListener('pointerdown', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var startX = e.clientX, startY = e.clientY;
+      var startW = win.offsetWidth, startH = win.offsetHeight;
+      function onMove(ev) {
+        win.style.width = Math.max(280, startW + ev.clientX - startX) + 'px';
+        win.style.height = Math.max(200, startH + ev.clientY - startY) + 'px';
+      }
+      function onUp() {
+        document.removeEventListener('pointermove', onMove);
+        document.removeEventListener('pointerup', onUp);
+      }
+      document.addEventListener('pointermove', onMove);
+      document.addEventListener('pointerup', onUp);
+    });
+  }
+
+  function openWindow(tplId) {
+    var existing = surface.querySelector('.os-window[data-from="' + tplId + '"]');
+    if (existing) { existing.style.zIndex = ++winZ; return; }
+    var tpl = document.getElementById(tplId);
+    if (!tpl) return;
+    var win = tpl.content.firstElementChild.cloneNode(true);
+    win.dataset.from = tplId;
+
+    var dragbar = document.createElement('div');
+    dragbar.className = 'os-dragbar';
+    win.insertBefore(dragbar, win.firstChild);
+
+    var traffic = document.createElement('div');
+    traffic.className = 'os-traffic';
+    traffic.innerHTML = '<span class="tl-close"></span><span class="tl-min"></span><span class="tl-max"></span>';
+    win.insertBefore(traffic, win.firstChild);
+
+    if (win.dataset.title) {
+      var hint = document.createElement('div');
+      hint.className = 'os-title-hint';
+      hint.textContent = win.dataset.title;
+      win.insertBefore(hint, win.firstChild);
+    }
+
+    var isSmall = window.innerWidth <= 768;
+    var baseX = isSmall ? 10 : 120;
+    var baseY = isSmall ? 46 : 52;
+    var offset = (openCount % 5) * (isSmall ? 14 : 34);
+    win.style.left = (baseX + offset) + 'px';
+    win.style.top = (baseY + offset) + 'px';
+    win.style.zIndex = ++winZ;
+    openCount++;
+
+    traffic.querySelector('.tl-close').addEventListener('click', function(e) {
+      e.stopPropagation();
+      win.remove();
+    });
+    win.addEventListener('pointerdown', function() { win.style.zIndex = ++winZ; });
+    dragbar.addEventListener('pointerdown', function(e) {
+      e.preventDefault();
+      var startX = e.clientX, startY = e.clientY;
+      var origX = win.offsetLeft, origY = win.offsetTop;
+      function onMove(ev) {
+        win.style.left = (origX + ev.clientX - startX) + 'px';
+        win.style.top = (origY + ev.clientY - startY) + 'px';
+      }
+      function onUp() {
+        document.removeEventListener('pointermove', onMove);
+        document.removeEventListener('pointerup', onUp);
+      }
+      document.addEventListener('pointermove', onMove);
+      document.addEventListener('pointerup', onUp);
+    });
+    addResize(win);
+    surface.appendChild(win);
+  }
+
+  /* ===== desktop icons ===== */
+  document.querySelectorAll('.dicon').forEach(function(icon) {
+    icon.addEventListener('click', function() {
+      if (icon.dataset.win) openWindow(icon.dataset.win);
+      else if (icon.dataset.href) window.open(icon.dataset.href, '_blank');
+    });
+  });
+
+  /* ===== draggable robot sticker ===== */
+  var sticker = document.getElementById('robotSticker');
+  sticker.addEventListener('pointerdown', function(e) {
+    e.preventDefault();
+    var startX = e.clientX, startY = e.clientY;
+    var rect = sticker.getBoundingClientRect();
+    var surfRect = surface.getBoundingClientRect();
+    var origLeft = rect.left - surfRect.left, origTop = rect.top - surfRect.top;
+    sticker.style.right = 'auto';
+    sticker.style.bottom = 'auto';
+    sticker.style.left = origLeft + 'px';
+    sticker.style.top = origTop + 'px';
+    function onMove(ev) {
+      sticker.style.left = (origLeft + ev.clientX - startX) + 'px';
+      sticker.style.top = (origTop + ev.clientY - startY) + 'px';
+    }
+    function onUp() {
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerup', onUp);
+    }
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', onUp);
+  });
+
+  /* ===== click stars on the desktop ===== */
+  surface.addEventListener('click', function(e) {
+    if (e.target !== surface && !e.target.classList.contains('wp-star') && e.target.id !== 'starfield') return;
+    var star = document.createElement('span');
+    star.className = 'click-star';
+    star.textContent = '✦';
+    star.style.left = (e.clientX - 8) + 'px';
+    star.style.top = (e.clientY - 8) + 'px';
+    star.style.fontSize = (12 + Math.random() * 14) + 'px';
+    document.body.appendChild(star);
+    setTimeout(function() { star.remove(); }, 700);
+  });
+})();
+</script>
+</body>
+</html>

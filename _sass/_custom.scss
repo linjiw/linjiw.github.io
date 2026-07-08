@@ -98,8 +98,7 @@
 
 // ---- News table: monospace dates ---------------------------------------------
 
-.news table .date-column,
-.news .table td:first-child {
+.news table th[scope="row"] {
   font-family: "Fira Code", monospace;
   font-size: 0.8rem;
 }

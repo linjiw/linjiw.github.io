@@ -43,4 +43,4 @@ I am first author of two IROS 2025 papers. [GACL](https://arxiv.org/abs/2508.029
 
 Before my Ph.D., I completed an M.S. in Mechanical Engineering at Carnegie Mellon University (GPA 3.94/4.0) working on 3D perception and AR-guided robotics, and a B.S. in Mechanical Engineering at the University of Cincinnati. In summer 2025 I was a Software Development Engineer Intern at AWS, where I built a statistical regression-testing and visualization platform that cut performance analysis time from 8 hours to 15 minutes.
 
-Explore my [publications]({{ "/publications/" | relative_url }}), [projects]({{ "/projects/" | relative_url }}), and [CV]({{ "/cv/" | relative_url }}).
+Explore my [publications]({{ "/publications/" | relative_url }}), [projects]({{ "/projects/" | relative_url }}), and [CV]({{ "/cv/" | relative_url }}) — or take the interactive tour: [**launch linji OS**]({{ "/os/" | relative_url }}) ✨

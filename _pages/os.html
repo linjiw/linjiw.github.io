@@ -59,6 +59,7 @@ body {
   flex-direction: column;
   align-items: center;
   will-change: transform, opacity;
+  transform: scale(var(--mb-scale, 1));
 }
 .macbook-wrapper.zoom-transition {
   transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
@@ -99,9 +100,8 @@ body {
 .macbook-base { width: 760px; height: 14px; background: linear-gradient(180deg, #c8c8cc 0%, #a8a8ac 30%, #b8b8bc 70%, #9a9a9e 100%); border-radius: 0 0 10px 10px; }
 .macbook-shadow { width: 700px; height: 40px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, transparent 70%); margin-top: 4px; }
 
-@media (max-width: 820px) {
-  .macbook-wrapper { transform: scale(calc((100vw - 24px) / 760)); }
-}
+/* mobile/short-viewport scale is set from JS via --mb-scale (CSS calc cannot
+   divide a length by a length, so a pure-CSS scale rule silently fails) */
 
 /* ===== Terminal ===== */
 .terminal {
@@ -175,7 +175,8 @@ body {
 .desktop-menubar {
   position: sticky;
   top: 0;
-  z-index: 900;
+  z-index: 1500; /* always above windows (winZ grows from 100) */
+  white-space: nowrap;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -197,7 +198,7 @@ body {
 
 .desktop-surface {
   position: relative;
-  height: calc(100vh - 30px);
+  height: calc(100vh - 96px); /* leaves the scroll hint peeking above the fold */
   overflow: hidden;
   background: var(--blue-deep);
 }
@@ -244,6 +245,26 @@ body {
   transition: filter 0.2s;
 }
 .desktop-sticker:active { cursor: grabbing; }
+
+/* sticky-note hint pointing at the icons */
+.desktop-hint {
+  position: absolute;
+  top: 40px;
+  right: 224px;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  color: var(--blue-deep);
+  background: var(--yellow);
+  padding: 8px 12px;
+  border-radius: 2px;
+  transform: rotate(-3deg);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  z-index: 3;
+  pointer-events: none;
+  animation: hintNudge 2.4s ease-in-out infinite;
+}
+@keyframes hintNudge { 0%, 100% { transform: rotate(-3deg) translateX(0); } 50% { transform: rotate(-3deg) translateX(6px); } }
+@media (prefers-reduced-motion: reduce) { .desktop-hint { animation: none; } }
 
 /* desktop icons */
 .desktop-icons { position: absolute; inset: 0; z-index: 2; }
@@ -320,6 +341,9 @@ body {
   overflow: hidden;
   animation: winPop 0.25s var(--ease-out);
   z-index: 100;
+  display: flex;
+  flex-direction: column;
+  outline: none;
 }
 @keyframes winPop { from { transform: scale(0.92) translateY(8px); opacity: 0; } }
 .os-dragbar {
@@ -334,8 +358,9 @@ body {
 }
 .os-dragbar:active { cursor: grabbing; }
 .os-traffic { position: absolute; top: 12px; left: 12px; display: flex; gap: 7px; z-index: 11; }
-.os-traffic span { width: 12px; height: 12px; border-radius: 50%; display: block; }
-.os-traffic .tl-close { background: #ff5f56; cursor: pointer; transition: transform 0.15s; }
+.os-traffic span, .os-traffic button { width: 12px; height: 12px; border-radius: 50%; display: block; border: none; padding: 0; }
+.os-traffic .tl-close { background: #ff5f56; cursor: pointer; transition: transform 0.15s; position: relative; }
+.os-traffic .tl-close::after { content: ''; position: absolute; inset: -10px; } /* 32px touch target */
 .os-traffic .tl-close:hover { transform: scale(1.2); }
 .os-traffic .tl-min { background: #ffbd2e; }
 .os-traffic .tl-max { background: #27c93f; }
@@ -349,7 +374,7 @@ body {
   pointer-events: none;
   z-index: 10;
 }
-.os-body { padding: 42px 26px 24px; max-height: min(60vh, 500px); overflow: auto; }
+.os-body { padding: 42px 26px 24px; max-height: min(60vh, 500px); overflow: auto; flex: 1; min-height: 0; overscroll-behavior: contain; }
 .os-resize { position: absolute; bottom: 0; right: 0; width: 16px; height: 16px; cursor: nwse-resize; z-index: 10; touch-action: none; }
 .os-resize::after {
   content: '';
@@ -383,7 +408,7 @@ body {
 }
 .paper-authors { font-size: 12px; color: var(--ink-faint); margin-bottom: 14px; }
 .paper-authors b { color: var(--ink-light); }
-.paper-fig { width: 100%; border-radius: 8px; margin-bottom: 14px; border: 1px solid rgba(0,0,0,0.08); }
+.paper-fig { width: 100%; max-height: 190px; object-fit: cover; border-radius: 8px; margin-bottom: 14px; border: 1px solid rgba(0,0,0,0.08); }
 .paper-what { font-size: 13.5px; line-height: 1.7; color: var(--ink-light); margin-bottom: 12px; }
 .paper-results { list-style: none; margin-bottom: 16px; }
 .paper-results li {
@@ -566,7 +591,20 @@ body {
   border-top: 1px solid rgba(255,255,255,0.15);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .wp-star, .cta-arrow, .cursor, .scroll-on-hint .down { animation: none !important; }
+  .term-line { animation-duration: 0.01s !important; }
+}
+
+@media (max-height: 700px) {
+  .paper-fig { max-height: 110px; }
+  .os-body { max-height: 74vh; }
+}
+
 @media (max-width: 640px) {
+  .desktop-hint { top: auto; bottom: 16px; left: 14px; right: auto; }
+  .desktop-menubar { gap: 10px; padding: 0 10px; }
+  .desktop-menubar a.mb-item { display: none; }
   .dicon { width: 72px; }
   .desktop-sticker { font-size: 80px; right: 12%; }
   .sayhi-cards { grid-template-columns: 1fr; }
@@ -600,7 +638,7 @@ body {
     <div class="macbook-shadow"></div>
   </div>
   <div class="hero-cta" id="heroCta">
-    <div class="cta-text">Press Enter to Launch</div>
+    <div class="cta-text" id="ctaText">Press Enter to Launch</div>
     <div class="cta-arrow">↓</div>
   </div>
 </section>
@@ -622,6 +660,8 @@ body {
 
     <!-- draggable robot sticker -->
     <div class="desktop-sticker" id="robotSticker">🤖</div>
+
+    <div class="desktop-hint">open a paper →</div>
 
     <div class="desktop-icons">
       <div class="dicon" data-win="win-gacl" style="top:24px;right:24px;">
@@ -667,7 +707,7 @@ body {
       <div class="os-window" data-title="GACL — IROS 2025">
         <div class="os-body">
           <span class="paper-venue">IROS 2025 · FIRST AUTHOR</span>
-          <div class="paper-title">GACL: Grounded Adaptive Curriculum Learning</div>
+          <div class="paper-title">GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring</div>
           <div class="paper-authors"><b>Linji Wang</b>, Zifan Xu, Peter Stone, Xuesu Xiao</div>
           <img class="paper-fig" src="{{ '/assets/img/projects/gacl_framework.jpg' | relative_url }}" alt="GACL framework" loading="lazy">
           <p class="paper-what">A teacher agent generates training tasks by monitoring the robot's live performance, while grounding the curriculum in real-world task distributions.</p>
@@ -687,7 +727,7 @@ body {
       <div class="os-window" data-title="RTW — IROS 2025">
         <div class="os-body">
           <span class="paper-venue">IROS 2025 · FIRST AUTHOR</span>
-          <div class="paper-title">Reward Training Wheels: Adaptive Auxiliary Rewards</div>
+          <div class="paper-title">Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning</div>
           <div class="paper-authors"><b>Linji Wang</b>, Tong Xu, Yuanjie Lu, Xuesu Xiao</div>
           <img class="paper-fig" src="{{ '/assets/img/projects/rtw_framework.jpg' | relative_url }}" alt="RTW framework" loading="lazy">
           <p class="paper-what">A teacher re-weights auxiliary rewards as the robot's proficiency grows — training wheels that fade away on their own.</p>
@@ -727,7 +767,7 @@ body {
       <div class="os-window" data-title="II-NVM — IEEE RA-L 2025">
         <div class="os-body">
           <span class="paper-venue">IEEE RA-L 2025</span>
-          <div class="paper-title">II-NVM: Normal Vector-Assisted SLAM Mapping</div>
+          <div class="paper-title">II-NVM: Enhancing Map Accuracy and Consistency with Normal Vector-Assisted Mapping</div>
           <div class="paper-authors">Chengwei Zhao, Yixuan Li, Yina Jian, Jie Xu, <b>Linji Wang</b>, Yongxin Ma, Xinglai Jin</div>
           <img class="paper-fig" src="{{ '/assets/img/projects/iinvm_system.jpg' | relative_url }}" alt="II-NVM system" loading="lazy">
           <p class="paper-what">Surface normal consistency resolves the double-sided mapping problem for thin structures like walls and doors.</p>
@@ -766,7 +806,7 @@ body {
           <div><span class="news-date">2025-06</span>3 papers accepted to IROS 2025</div>
           <div><span class="news-date">2025-05</span>🏆 1st place, 2025 BARN Challenge (simulation)</div>
           <div><span class="news-date">2025-05</span>SDE intern @ AWS (RDS Proxy team)</div>
-          <div><span class="news-date">2025-04</span>II-NVM published in IEEE RA-L</div>
+          <div><span class="news-date">2025-06</span>II-NVM published in IEEE RA-L</div>
           <div><span class="news-date">2023-08</span>Started Ph.D. @ GMU RobotiXX Lab</div>
         </div>
       </div>
@@ -866,7 +906,7 @@ body {
         <div><span class="gt-prompt">$ </span><span class="gt-cmd">exit</span></div>
         <span class="gt-output"><span class="gt-gold">[Process completed]</span> — <a href="{{ '/' | relative_url }}">↩ back to the classic site</a></span>
       </div>
-      <div class="goodbye-footer">© 2026 Linji Wang · linji OS v1.0 · built on al-folio</div>
+      <div class="goodbye-footer">© 2026 Linji Wang · linji OS v1.0 · design inspired by <a href="https://hiesther.me" target="_blank" rel="noopener" style="color:inherit;">hiesther.me</a></div>
     </div>
   </div>
 </div>
@@ -879,6 +919,19 @@ body {
 
   var launched = false;
   var typingDone = false;
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isTouch = window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0;
+
+  /* ===== responsive MacBook scale (CSS calc cannot divide lengths) ===== */
+  var mbScale = 1;
+  function fitMacbook() {
+    var byWidth = (window.innerWidth - 24) / 760;
+    var byHeight = (window.innerHeight - 140) / 560;
+    mbScale = Math.min(1, byWidth, byHeight);
+    document.documentElement.style.setProperty('--mb-scale', mbScale);
+  }
+  fitMacbook();
+  window.addEventListener('resize', function() { if (!launched) fitMacbook(); });
 
   /* ===== menubar clock ===== */
   var mbClock = document.getElementById('mbClock');
@@ -914,7 +967,7 @@ body {
     { type: 'output', prefix: '> ', text: 'Robotics Ph.D. student @ George Mason · RobotiXX Lab' },
     { type: 'output', prefix: '  ', text: 'curriculum learning × reinforcement learning' },
     { type: 'output', prefix: '  ', text: '2× first-author papers @ IROS 2025' },
-    { type: 'output', prefix: '  ', text: '🏆 1st place · 2025 BARN Challenge (simulation)' },
+    { type: 'output', prefix: '  ', text: '🏆 team won 1st place · 2025 BARN Challenge (sim)' },
     { type: 'blank' },
     { type: 'cmd', prompt: '$ ', text: 'echo "robots that learn, one task at a time"' },
     { type: 'gold', prefix: '> ', text: 'robots that learn, one task at a time' },
@@ -945,6 +998,7 @@ body {
 
   function finishIntro() {
     typingDone = true;
+    if (isTouch) document.getElementById('ctaText').textContent = 'Tap to Launch';
     heroCta.classList.add('visible');
   }
 
@@ -952,7 +1006,8 @@ body {
   var isReturnVisitor = false;
   try { isReturnVisitor = !!localStorage.getItem(VISITED_KEY); } catch (e) {}
 
-  if (isReturnVisitor) {
+  var skipTyping = null;
+  if (isReturnVisitor || reducedMotion) {
     terminalData.forEach(function(item) { renderLine(item).classList.add('visible'); });
     finishIntro();
   } else {
@@ -960,20 +1015,19 @@ body {
     var lineDelay = 0;
     terminalData.forEach(function(item) {
       var div = renderLine(item);
-      if (item.type === 'blank') { lineDelay += 200; }
-      else if (item.type === 'cmd') { lineDelay += 400; div.style.animationDelay = lineDelay + 'ms'; lineDelay += 600; }
-      else { lineDelay += 150; div.style.animationDelay = lineDelay + 'ms'; lineDelay += 300; }
+      if (item.type === 'blank') { lineDelay += 120; }
+      else if (item.type === 'cmd') { lineDelay += 240; div.style.animationDelay = lineDelay + 'ms'; lineDelay += 360; }
+      else { lineDelay += 90; div.style.animationDelay = lineDelay + 'ms'; lineDelay += 180; }
       divs.push(div);
       setTimeout(function() { div.classList.add('visible'); }, 50);
     });
-    var typingTimeout = setTimeout(finishIntro, lineDelay + 600);
-    var skipTyping = function() {
+    var typingTimeout = setTimeout(finishIntro, lineDelay + 500);
+    skipTyping = function() {
       if (typingDone) return;
       clearTimeout(typingTimeout);
       divs.forEach(function(d) { d.style.animationDelay = '0ms'; d.classList.add('visible'); });
       finishIntro();
     };
-    document.getElementById('heroSection').addEventListener('click', function() { if (!typingDone) skipTyping(); });
     document.addEventListener('keydown', function(e) { if (!typingDone && e.key !== 'Enter') skipTyping(); });
   }
 
@@ -1020,9 +1074,25 @@ body {
     var terminal = document.getElementById('terminal');
     var overlay = document.getElementById('transitionOverlay');
 
+    if (reducedMotion) {
+      // skip the zoom entirely: fade through the overlay
+      overlay.classList.add('active');
+      setTimeout(function() {
+        document.getElementById('heroSection').style.display = 'none';
+        document.getElementById('desktop').classList.add('revealed');
+        document.documentElement.classList.add('scroll-unlocked');
+        window.scrollTo(0, 0);
+        setTimeout(function() { overlay.classList.remove('active'); }, 250);
+        setTimeout(function() { openWindow('win-gacl'); }, 600);
+      }, 500);
+      return;
+    }
+
     var screenRect = screen.getBoundingClientRect();
     var vw = window.innerWidth, vh = window.innerHeight;
-    var scale = Math.max(vw / screenRect.width, vh / screenRect.height) * 1.05;
+    // zoomScale is measured on the already-scaled rect; compose the base
+    // --mb-scale into the final transform since it gets overwritten below
+    var zoomScale = Math.max(vw / screenRect.width, vh / screenRect.height) * 1.08;
     var screenCenterX = screenRect.left + screenRect.width / 2;
     var screenCenterY = screenRect.top + screenRect.height / 2;
     var wrapperRect = wrapper.getBoundingClientRect();
@@ -1030,14 +1100,15 @@ body {
     var wrapperCenterY = wrapperRect.top + wrapperRect.height / 2;
     var offsetX = screenCenterX - wrapperCenterX;
     var offsetY = screenCenterY - wrapperCenterY;
-    var tx = vw / 2 - (wrapperCenterX + offsetX * scale);
-    var ty = vh / 2 - (wrapperCenterY + offsetY * scale);
+    var tx = vw / 2 - (wrapperCenterX + offsetX * zoomScale);
+    var ty = vh / 2 - (wrapperCenterY + offsetY * zoomScale);
+    var finalScale = mbScale * zoomScale;
 
-    setTimeout(function() { terminal.classList.add('scale-through'); }, 200);
+    setTimeout(function() { terminal.classList.add('scale-through'); }, 500);
     wrapper.classList.add('zoom-transition');
     requestAnimationFrame(function() {
       requestAnimationFrame(function() {
-        wrapper.style.transform = 'translate(' + tx + 'px, ' + ty + 'px) scale(' + scale + ')';
+        wrapper.style.transform = 'translate(' + tx + 'px, ' + ty + 'px) scale(' + finalScale + ')';
       });
     });
 
@@ -1048,20 +1119,51 @@ body {
       document.documentElement.classList.add('scroll-unlocked');
       window.scrollTo(0, 0);
       setTimeout(function() { overlay.classList.remove('active'); }, 250);
+      setTimeout(function() { openWindow('win-gacl'); }, 700); // show, don't tell
     }, 1800);
   }
 
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' && !launched) launch();
-    if (e.key === 'Escape' && launched) window.location.href = '{{ "/" | relative_url }}';
+    if (e.key === 'Enter' && !launched) {
+      // Enter during boot skips the typing, then launches
+      if (!typingDone && skipTyping) skipTyping();
+      launch();
+    }
+    if (e.key === 'Escape' && launched && !surface.querySelector('.os-window')) {
+      window.location.href = '{{ "/" | relative_url }}';
+    }
   });
-  document.getElementById('macbookBezel').addEventListener('click', function() { if (typingDone) launch(); });
-  heroCta.addEventListener('click', launch);
+  // the whole hero is a launch target once typing is done; before that, a
+  // click/tap anywhere skips the typing
+  document.getElementById('heroSection').addEventListener('click', function() {
+    if (!typingDone) { if (skipTyping) skipTyping(); return; }
+    launch();
+  });
 
   /* ===== window manager ===== */
   var surface = document.getElementById('desktopSurface');
   var winZ = 100;
   var openCount = 0;
+
+  // shared drag session: cleans up on pointerup AND pointercancel
+  function dragSession(onMove) {
+    function end() {
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerup', end);
+      document.removeEventListener('pointercancel', end);
+    }
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', end);
+    document.addEventListener('pointercancel', end);
+  }
+
+  // keep at least the dragbar reachable inside the surface
+  function clampWin(win, left, top) {
+    var maxLeft = surface.offsetWidth - 60;
+    var maxTop = surface.offsetHeight - 40;
+    win.style.left = Math.min(maxLeft, Math.max(60 - win.offsetWidth, left)) + 'px';
+    win.style.top = Math.min(maxTop, Math.max(0, top)) + 'px';
+  }
 
   function addResize(win) {
     var handle = document.createElement('div');
@@ -1069,25 +1171,23 @@ body {
     win.appendChild(handle);
     handle.addEventListener('pointerdown', function(e) {
       e.preventDefault();
-      e.stopPropagation();
+      win.style.zIndex = ++winZ;
       var startX = e.clientX, startY = e.clientY;
       var startW = win.offsetWidth, startH = win.offsetHeight;
-      function onMove(ev) {
-        win.style.width = Math.max(280, startW + ev.clientX - startX) + 'px';
-        win.style.height = Math.max(200, startH + ev.clientY - startY) + 'px';
-      }
-      function onUp() {
-        document.removeEventListener('pointermove', onMove);
-        document.removeEventListener('pointerup', onUp);
-      }
-      document.addEventListener('pointermove', onMove);
-      document.addEventListener('pointerup', onUp);
+      dragSession(function(ev) {
+        win.style.width = Math.max(300, startW + ev.clientX - startX) + 'px';
+        win.style.height = Math.max(220, startH + ev.clientY - startY) + 'px';
+      });
     });
   }
 
   function openWindow(tplId) {
     var existing = surface.querySelector('.os-window[data-from="' + tplId + '"]');
-    if (existing) { existing.style.zIndex = ++winZ; return; }
+    if (existing) {
+      existing.style.zIndex = ++winZ;
+      clampWin(existing, existing.offsetLeft, existing.offsetTop); // recover if off-screen
+      return;
+    }
     var tpl = document.getElementById(tplId);
     if (!tpl) return;
     var win = tpl.content.firstElementChild.cloneNode(true);
@@ -1099,7 +1199,7 @@ body {
 
     var traffic = document.createElement('div');
     traffic.className = 'os-traffic';
-    traffic.innerHTML = '<span class="tl-close"></span><span class="tl-min"></span><span class="tl-max"></span>';
+    traffic.innerHTML = '<button class="tl-close" aria-label="Close window"></button><span class="tl-min"></span><span class="tl-max"></span>';
     win.insertBefore(traffic, win.firstChild);
 
     if (win.dataset.title) {
@@ -1123,30 +1223,38 @@ body {
       win.remove();
     });
     win.addEventListener('pointerdown', function() { win.style.zIndex = ++winZ; });
+    win.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { e.stopPropagation(); win.remove(); }
+    });
+    win.setAttribute('tabindex', '-1');
     dragbar.addEventListener('pointerdown', function(e) {
       e.preventDefault();
       var startX = e.clientX, startY = e.clientY;
       var origX = win.offsetLeft, origY = win.offsetTop;
-      function onMove(ev) {
-        win.style.left = (origX + ev.clientX - startX) + 'px';
-        win.style.top = (origY + ev.clientY - startY) + 'px';
-      }
-      function onUp() {
-        document.removeEventListener('pointermove', onMove);
-        document.removeEventListener('pointerup', onUp);
-      }
-      document.addEventListener('pointermove', onMove);
-      document.addEventListener('pointerup', onUp);
+      dragSession(function(ev) {
+        clampWin(win, origX + ev.clientX - startX, origY + ev.clientY - startY);
+      });
     });
     addResize(win);
     surface.appendChild(win);
+    win.focus({ preventScroll: true });
   }
 
-  /* ===== desktop icons ===== */
+  /* ===== desktop icons (mouse + keyboard) ===== */
+  function activateIcon(icon) {
+    if (icon.dataset.win) openWindow(icon.dataset.win);
+    else if (icon.dataset.href) {
+      // PDFs in a new tab; internal pages navigate in place
+      if (/\.pdf$/.test(icon.dataset.href)) window.open(icon.dataset.href, '_blank', 'noopener');
+      else window.location.href = icon.dataset.href;
+    }
+  }
   document.querySelectorAll('.dicon').forEach(function(icon) {
-    icon.addEventListener('click', function() {
-      if (icon.dataset.win) openWindow(icon.dataset.win);
-      else if (icon.dataset.href) window.open(icon.dataset.href, '_blank');
+    icon.setAttribute('tabindex', '0');
+    icon.setAttribute('role', 'button');
+    icon.addEventListener('click', function() { activateIcon(icon); });
+    icon.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateIcon(icon); }
     });
   });
 
@@ -1162,21 +1270,20 @@ body {
     sticker.style.bottom = 'auto';
     sticker.style.left = origLeft + 'px';
     sticker.style.top = origTop + 'px';
-    function onMove(ev) {
-      sticker.style.left = (origLeft + ev.clientX - startX) + 'px';
-      sticker.style.top = (origTop + ev.clientY - startY) + 'px';
-    }
-    function onUp() {
-      document.removeEventListener('pointermove', onMove);
-      document.removeEventListener('pointerup', onUp);
-    }
-    document.addEventListener('pointermove', onMove);
-    document.addEventListener('pointerup', onUp);
+    dragSession(function(ev) {
+      var left = origLeft + ev.clientX - startX;
+      var top = origTop + ev.clientY - startY;
+      sticker.style.left = Math.min(surface.offsetWidth - 40, Math.max(-40, left)) + 'px';
+      sticker.style.top = Math.min(surface.offsetHeight - 40, Math.max(-20, top)) + 'px';
+    });
   });
 
   /* ===== click stars on the desktop ===== */
   surface.addEventListener('click', function(e) {
-    if (e.target !== surface && !e.target.classList.contains('wp-star') && e.target.id !== 'starfield') return;
+    var t = e.target;
+    var isEmpty = t === surface || t.id === 'starfield' ||
+      t.classList.contains('wp-star') || t.classList.contains('desktop-icons');
+    if (!isEmpty) return;
     var star = document.createElement('span');
     star.className = 'click-star';
     star.textContent = '✦';

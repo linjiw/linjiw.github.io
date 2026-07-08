@@ -2,39 +2,38 @@ name: Build Resume PDF
 
 on:
   push:
+    branches: [main]
     paths:
       - 'resume.tex'
       - '.github/workflows/build-resume.yml'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v3
-    
+    - uses: actions/checkout@v4
+
     - name: Setup TeX Live
       run: |
-        # Wait for apt locks to be released
-        while sudo fuser /var/lib/dpkg/lock-frontend >/dev/null 2>&1; do
-          echo "Waiting for dpkg lock..."
-          sleep 1
-        done
         sudo apt-get update
         sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended
-    
+
     - name: Build Resume PDF
       run: |
         mkdir -p assets/pdf
         pdflatex -output-directory=assets/pdf resume.tex
         pdflatex -output-directory=assets/pdf resume.tex
         rm -f assets/pdf/*.aux assets/pdf/*.log assets/pdf/*.out
-    
+
     - name: Commit PDF
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add assets/pdf/resume.pdf
         git diff --staged --quiet || git commit -m "Update resume PDF"
-        git push || echo "No changes to push"
+        git push

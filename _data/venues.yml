@@ -1,9 +1,8 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+# Venue links and colors for publication badges (matched against abbr field)
+"IROS":
+  url: https://www.ieee-ras.org/conferences-workshops/fully-sponsored/iros
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
-
-"Vision":
-  color: "#009f36"
+"RA-L":
+  url: https://www.ieee-ras.org/publications/ra-l
+  color: "#00629b"

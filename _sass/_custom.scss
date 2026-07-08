@@ -1,0 +1,112 @@
+/*******************************************************************************
+ * Site-specific design layer (loaded after all theme partials).
+ *
+ * Design direction (inspired by editorial/portfolio sites like hiesther.me):
+ * - Fraunces (high-contrast serif) for display headings, Roboto for body
+ * - Fira Code for small technical labels (dates, badges, section eyebrows)
+ * - one accent hue (engineering blue) in two lightness steps across modes
+ * - a "research highlights" stat strip on the homepage
+ ******************************************************************************/
+
+// ---- Typography -------------------------------------------------------------
+
+.post-title,
+.post header h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.post article h2,
+.post article h3,
+.card-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+// homepage section headings get a small monospace "eyebrow" feel on hover
+.post article > h2 > a {
+  text-decoration: none;
+
+  &:hover {
+    color: var(--global-theme-color) !important;
+  }
+}
+
+// subtitle under the name
+.post header .desc {
+  font-family: "Fira Code", monospace;
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+
+// ---- Research highlights strip ----------------------------------------------
+
+.research-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin: 1.75rem 0 2rem;
+
+  .highlight-tile {
+    border: 1px solid var(--global-divider-color);
+    border-left: 3px solid var(--global-theme-color);
+    border-radius: 6px;
+    padding: 0.9rem 1rem 0.8rem;
+    background: var(--global-card-bg-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  .highlight-value {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    line-height: 1.1;
+    color: var(--global-theme-color);
+  }
+
+  .highlight-label {
+    font-family: "Fira Code", monospace;
+    font-size: 0.72rem;
+    line-height: 1.35;
+    color: var(--global-text-color-light);
+  }
+}
+
+// ---- Publications polish ------------------------------------------------------
+
+// venue abbreviation badges: monospace, subtle
+.publications .abbr .badge {
+  font-family: "Fira Code", monospace;
+  letter-spacing: 0.02em;
+}
+
+// award line under a publication stands out slightly
+.publications ol.bibliography li .award {
+  color: var(--global-theme-color);
+  font-weight: 500;
+}
+
+// ---- News table: monospace dates ---------------------------------------------
+
+.news table .date-column,
+.news .table td:first-child {
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+}
+
+// ---- Navbar: slightly stronger brand ------------------------------------------
+
+.navbar-brand {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+}

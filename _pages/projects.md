@@ -4,7 +4,7 @@ title: projects
 permalink: /projects/
 description: Research projects in robotics, reinforcement learning, and autonomous systems.
 nav: true
-nav_order: 3
+nav_order: 2
 display_categories: [robotics]
 horizontal: false
 ---

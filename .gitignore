@@ -66,3 +66,6 @@ resources/
 jsconfig.json
 go.sum
 .hugo_build.lock
+
+# Private internship notes (must never be tracked)
+assets/amazon_intern/

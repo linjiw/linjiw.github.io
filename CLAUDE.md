@@ -4,179 +4,74 @@ This file provides guidance to Claude Code (claude.ai/code) when working with th
 
 ## Repository Overview
 
-Personal academic website for Linji Wang built with Jekyll using the al-folio theme - a simple, clean, and responsive Jekyll theme for academics.
+Personal academic website for Linji Wang (robotics Ph.D. student, RobotiXX Lab,
+George Mason University), built with Jekyll using the al-folio theme.
 
-**Website URL**: https://linjiw.github.io/  
+**Website URL**: https://linjiw.github.io/
 **Repository**: https://github.com/linjiw/linjiw.github.io
 
 ## Quick Commands
 
-### Development
 ```bash
-# Install dependencies
-bundle install
-
-# Start local server
-bundle exec jekyll serve
-
-# Build for production
-bundle exec jekyll build
-
-# Sync publications from BibTeX to resume and CV
-python3 scripts/sync_publications.py
+bundle install               # install dependencies
+bundle exec jekyll serve     # local server
+bundle exec jekyll build     # production build
 ```
 
-### Deployment
-```bash
-# Deploy to GitHub Pages (automatic on push to main)
-git push origin main
-```
+Deployment is automatic via GitHub Actions on push to `main`
+(`.github/workflows/deploy.yml`). The resume PDF is rebuilt automatically from
+`resume.tex` by `.github/workflows/build-resume.yml`.
 
-## Project Structure
+## Content architecture — one source of truth per artifact
 
-```
-/
-├── _bibliography/     # BibTeX files for publications (SOURCE OF TRUTH)
-├── _data/            # Site data (CV, repositories, etc.)
-├── _includes/        # Reusable components
-├── _layouts/         # Page templates
-├── _news/            # News/announcements
-├── _pages/           # Main pages
-├── _posts/           # Blog posts
-├── _projects/        # Project pages
-├── _sass/            # Stylesheets
-├── assets/           # Static assets (images, css, js)
-│   └── json/         # Contains resume.json (synced from BibTeX)
-├── scripts/          # Utility scripts
-│   └── sync_publications.py  # Syncs publications across site
-├── _config.yml       # Jekyll configuration
-└── Gemfile          # Ruby dependencies
-```
+| Artifact | Source of truth | Renders as |
+|---|---|---|
+| Publications | `_bibliography/papers.bib` | /publications/, homepage selected papers |
+| Site CV | `assets/json/resume.json` | /cv/ (via `_layouts/cv.liquid`) |
+| PDF resume | `resume.tex` | `assets/pdf/resume.pdf` (built by CI) |
+| Homepage bio | `_pages/about.md` | / |
+| News | `_news/*.md` | homepage announcements |
+| Projects | `_projects/*.md` | /projects/ |
 
-## Key Features
+There is intentionally **no** `_data/cv.yml` (removed — it was dead code) and
+**no** publication-sync script. When publications change, update `papers.bib`,
+`resume.json`, and `resume.tex` by hand — all three are small.
 
-- **Publications**: Auto-generated from BibTeX in `_bibliography/`
-- **Projects**: Portfolio items in `_projects/`
-- **Blog**: Posts in `_posts/`
-- **CV**: Data-driven from `_data/cv.yml` or `assets/json/resume.json`
-- **Dark/Light Mode**: Automatic theme switching
-- **Responsive Design**: Mobile-first approach
-- **Publication Sync**: Automatic syncing from BibTeX to resume and CV
+Note: on /cv/, the `volunteer` key of resume.json renders under the heading
+"Teaching" and `work` renders as "Experience" (mapped in `_layouts/cv.liquid`).
 
-## Content Management
+## Content rules (important)
 
-### Publications Synchronization
+- **Every quantitative claim must come from a published paper's abstract or a
+  verifiable source.** Current canonical numbers: GACL +6.8%/+6.1% success;
+  RTW +2.35% navigation, +122.62% off-road mobility, 3× faster training, 5/5 vs
+  2/5 physical trials; DDP: 1st place, simulation phase, 2025 BARN Challenge.
+- Wang's published research is **navigation and locomotion** (wheeled UGV,
+  quadruped, off-road). Manipulation/humanoids only as clearly-labeled ongoing work.
+- First-authorship matters: GACL and RTW are first-author; DDP (3rd author) and
+  II-NVM (5th author) are collaborations and described as such.
+- **Private material never enters this repo** (it is public and served verbatim):
+  no tailored resumes, no employer-internal notes, no job-search artifacts.
+  See `.gitignore` for the private paths.
+- Google Scholar ID is `qc6CJjYAAAAJ` (in `_data/socials.yml`).
 
-The site maintains publication data in multiple formats for different purposes:
-- **Source of Truth**: `_bibliography/papers.bib` (BibTeX format)
-- **Resume**: `assets/json/resume.json` (JSON Resume format)
-- **CV Page**: `_pages/cv.md` (Markdown format)
+## Publications (papers.bib)
 
-To sync publications across all formats:
-```bash
-python3 scripts/sync_publications.py
-```
+Four entries, each with `abbr` (IROS/RA-L badge), `arxiv`, `pdf`, `abstract`,
+`preview` image; DDP carries the BARN Challenge `award`/`award_name`; II-NVM has
+`doi`, `html` (IEEE Xplore) and the real `code` repo. Do not add `code=`/`slides=`
+fields pointing at PDFs, and do not put submission numbers in `note=`.
 
-This script:
-1. Parses the BibTeX file
-2. Updates resume.json with formatted publications
-3. Updates the CV page with publication list
-4. Generates a reference markdown file
+## Key config facts
 
-### Adding a Blog Post
-```bash
-# Create new post with date prefix
-touch _posts/YYYY-MM-DD-post-title.md
-```
+- `title: blank` in `_config.yml` is the al-folio sentinel meaning "use the full
+  name" — do NOT change it to an empty string (that breaks every `<title>`).
+- `max_author_limit` is intentionally blank so "Wang, Linji" is always visible.
+- Working files (CLAUDE.md, AGENTS.md, PLAN.md, resume.tex) are in the Jekyll
+  `exclude:` list so they are not served on the live site.
 
-### Adding a Project
-```bash
-# Create new project (numbered for ordering)
-touch _projects/N_project_name.md
-```
+## Overhaul plan
 
-### Updating CV
-- Edit `_data/cv.yml` for YAML format
-- Or edit `assets/json/resume.json` for JSON format
-- Run `python3 scripts/sync_publications.py` after updating publications in BibTeX
-
-### Adding Publications
-- Add BibTeX entries to `_bibliography/papers.bib`
-- Run `python3 scripts/sync_publications.py` to sync to resume and CV
-- Supports PDF, code, slides, poster links via BibTeX fields
-
-## Configuration
-
-Main settings in `_config.yml`:
-- Site title, description, URL
-- Author information
-- Social media links
-- Google Analytics
-- Theme colors
-
-## Deployment
-
-The site automatically deploys to GitHub Pages when pushing to the main branch.
-
-## Current Content Status
-
-### Publications (`_bibliography/papers.bib`)
-Current papers with preview images:
-- **II-NVM** (2025) - Enhanced SLAM mapping with normal vectors → `II-NVM.png`
-- **DDP** (2025) - Decremental Dynamics Planning → `DDP.png` [IROS 2025 Accepted]
-- **GACL** (2025) - Grounded Adaptive Curriculum Learning → `GACL.png` [IROS 2025 Accepted]
-- **RTW** (2025) - Reward Training Wheels → `RTW.png` [IROS 2025 Accepted]
-
-### Projects (`_projects/`)
-1. **RL for Robotic Manipulation** - Links to GACL & RTW papers
-2. **Robot Navigation with Dynamics Planning** - Links to DDP paper
-3. **Enhanced SLAM with Normal Vectors** - Links to II-NVM paper
-
-### Publication Preview Images
-Located in `assets/img/publication_preview/`:
-- DDP.png
-- GACL.png
-- II-NVM.png
-- RTW.png
-- brownian-motion.gif (available for use)
-- wave-mechanics.gif (available for use)
-
-## Important Configuration Notes
-
-### GitHub Pages Setup
-- **Repository Name**: Must be `linjiw.github.io` for user site
-- **Base URL**: Leave empty in `_config.yml` (no subpath needed)
-- **Deployment**: Automatic via GitHub Actions on push to main branch
-
-### Key Files to Remember
-- `_config.yml`: Main site configuration (URL, baseurl, etc.)
-- `_bibliography/papers.bib`: All publications in BibTeX format (SOURCE OF TRUTH)
-- `_projects/*.md`: Individual project pages with `related_publications` field
-- `assets/json/resume.json`: Resume data in JSON Resume format (auto-synced)
-- `_data/cv.yml`: Alternative CV data location
-- `_pages/cv.md`: CV page (auto-updated with publications)
-- `scripts/sync_publications.py`: Script to sync publications across formats
-
-## Recent Updates (August 2025)
-
-1. **Repository Migration**: Renamed from `linjiwang` to `linjiw.github.io` for cleaner URL
-2. **Publication Previews**: Added preview images for all papers
-3. **Project Updates**: Aligned projects with actual publications
-4. **Resume Integration**: Updated with actual experience including Amazon SDE internship
-5. **Base URL Fix**: Corrected baseurl configuration for proper GitHub Pages deployment
-6. **Publication Sync**: Created automatic sync mechanism for publications across BibTeX, resume.json, and CV page
-7. **IROS 2025 Updates**: Updated GACL status from submitted to accepted at IROS 2025
-
-## Important Notes
-
-- This is a Jekyll site, not Hugo or Astro
-- Uses al-folio theme (MIT licensed)
-- Optimized for academic portfolios
-- Publication previews should be square images for best display
-- The site supports both light and dark modes automatically
-- Publications are synced automatically from BibTeX to other formats
-# important-instruction-reminders
-Do what has been asked; nothing more, nothing less.
-NEVER create files unless they're absolutely necessary for achieving your goal.
-ALWAYS prefer editing an existing file to creating a new one.
-NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
+`PLAN.md` tracks the phased website/resume overhaul (content accuracy → resume
+consolidation → publications presentation → visual identity → SEO). Check items
+off as they are completed.

@@ -1,43 +1,57 @@
 ---
 layout: page
-title: RL for Robotic Manipulation
-description: Curriculum learning approaches for complex manipulation tasks
-img: assets/img/publication_preview/GACL.png
+title: Curriculum & Reward Learning for Robot Navigation and Locomotion
+description: GACL and Reward Training Wheels — adaptive training for RL robots (IROS 2025)
+img: assets/img/publication_preview/GACL_sq.jpg
 importance: 1
 category: robotics
-related_publications: wang2025gacl, wang2025reward
+related_publications: true
 ---
 
 ## Overview
 
-This project focuses on developing reinforcement learning algorithms for robotic manipulation tasks. We address the challenge of training robots to perform complex manipulation tasks through grounded adaptive curriculum learning and reward shaping techniques.
+Reinforcement learning for robots is bottlenecked by *how* we train, not just what
+we train: fixed task curricula and hand-designed rewards require expert effort and
+still leave performance on the table. This project develops two complementary
+frameworks — both first-author papers accepted at IROS 2025 — that adapt the
+training process itself to the robot's learning progress.
 
-## Key Contributions
+## Grounded Adaptive Curriculum Learning (GACL)
 
-- **Grounded Adaptive Curriculum Learning (GACL)**: Developed a novel framework integrating real-world data with adaptive simulated task generation
-- **Reward Training Wheels**: Implemented adaptive auxiliary rewards that automatically adjust based on learning progress
-- **24.58% Higher Success Rate**: Achieved significant improvement in task success rate with 50% better sample efficiency
+GACL {% cite wang2025gacl %} (with Zifan Xu, Peter Stone, and Xuesu Xiao)
+introduces a teacher-student paradigm in which an informed teacher generates
+training tasks by monitoring student performance in real time, while grounding
+the curriculum in real-world task distributions so training remains relevant to
+deployment.
 
-## Technical Stack
+**Published results:** 6.8% higher success rate than state-of-the-art curriculum
+methods on wheeled navigation in constrained environments, and 6.1% higher on
+quadruped locomotion in challenging 3D confined spaces.
 
-- **Simulation**: IsaacGym, PyBullet
-- **Robot Platform**: Franka Emika Panda
-- **Deep Learning**: PyTorch, Stable Baselines3
-- **Perception**: Intel RealSense D435
+## Reward Training Wheels (RTW)
 
-## Results
+RTW {% cite wang2025reward %} automates auxiliary reward shaping: a teacher
+adaptively weights auxiliary reward components as the robot's proficiency grows,
+so guidance fades out exactly like training wheels on a bicycle.
 
-Our approach demonstrated significant improvements in:
-- Sample efficiency: 40% reduction in training samples required
-- Success rate: 85% on complex manipulation tasks
-- Generalization: Successfully transferred to real robot with minimal fine-tuning
+**Published results:** 2.35% higher navigation success rate than expert-designed
+rewards and a 122.62% improvement in off-road mobility on vertically challenging
+terrain, with 35% and 3× faster training respectively. On the physical off-road
+robot, RTW achieved 5/5 successful trials versus 2/5 for expert-designed rewards,
+with up to 47.4% reduction in orientation angles (more stable poses).
 
-## Publications
+## Platforms
 
-This work has resulted in two papers accepted at the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025:
-- GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring
-- Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning
+- Wheeled ground robots navigating highly constrained spaces
+- Quadruped locomotion in confined 3D environments
+- Off-road vehicles on vertically challenging terrain
+- **Ongoing:** extending curriculum learning to humanoid robots
 
-## Code
+## Papers
 
-The implementation will be made available upon paper acceptance at: [GitHub Repository](https://github.com/linjiw/rl-manipulation)
+- L. Wang, Z. Xu, P. Stone, X. Xiao. "GACL: Grounded Adaptive Curriculum Learning
+  with Active Task and Performance Monitoring," IROS 2025.
+  [arXiv](https://arxiv.org/abs/2508.02988)
+- L. Wang, T. Xu, Y. Lu, X. Xiao. "Reward Training Wheels: Adaptive Auxiliary
+  Rewards for Robotics Reinforcement Learning," IROS 2025.
+  [arXiv](https://arxiv.org/abs/2503.15724)

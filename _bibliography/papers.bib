@@ -2,71 +2,64 @@
 ---
 
 % Publications - Linji Wang
-% Google Scholar: https://scholar.google.com/citations?user=VURUgFMAAAAJ
-% Note: Run scripts/sync_google_scholar.py to update from Google Scholar
-
-
-% Note: This bibliography will be automatically updated by running:
-% cd scripts && python sync_google_scholar.py
-% or
-% cd scripts && python sync_scholar_advanced.py (requires: pip install scholarly)
-
-@article{zhao2025ii,
-  title={II-NVM: Enhancing Map Accuracy and Consistency with Normal Vector-Assisted Mapping},
-  author={Zhao, Chengwei and Li, Yixuan and Jian, Yina and Xu, Jie and Wang, Linji and Ma, Yongxin and Jin, Xinglai},
-  journal={IEEE Robotics and Automation Letters},
-  year={2025},
-  publisher={IEEE},
-  bibtex_show={true},
-  selected={false},
-  preview={II-NVM.png},
-  pdf={https://arxiv.org/pdf/2504.08204},
-  code={https://ieeexplore.ieee.org/abstract/document/10966190},
-  slides={https://ieeexplore.ieee.org/abstract/document/10966190}
-}
-
-
-@inproceedings{lu2025decremental,
-  title={Decremental Dynamics Planning for Robot Navigation},
-  author={Lu, Yuanjie and Xu, Tong and Wang, Linji and Hawes, Nick and Xiao, Xuesu},
-  booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year={2025},
-  note={Accepted. Submission number: 2899},
-  arxiv={2503.20521},
-  bibtex_show={true},
-  selected={true},
-  preview={DDP.png},
-  pdf={https://arxiv.org/pdf/2503.20521},
-  code={https://arxiv.org/pdf/2503.20521},
-  slides={https://arxiv.org/pdf/2503.20521}
-}
+% Source of truth for all publication data on the site.
 
 @inproceedings{wang2025gacl,
+  abbr={IROS},
   title={GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring},
   author={Wang, Linji and Xu, Zifan and Stone, Peter and Xiao, Xuesu},
   booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
   year={2025},
-  note={Accepted. Submission number: 1239},
   arxiv={2508.02988},
   bibtex_show={true},
   selected={true},
-  preview={GACL.png},
+  preview={GACL_sq.jpg},
   pdf={https://arxiv.org/pdf/2508.02988},
-  code={https://arxiv.org/pdf/2508.02988},
-  slides={https://arxiv.org/pdf/2508.02988}
+  abstract={Curriculum learning has emerged as a promising approach for training complex robotics tasks, yet current applications predominantly rely on manually designed curricula, which demand significant engineering effort and can suffer from subjective and suboptimal human design choices. While automated curriculum learning has shown success in simple domains like grid worlds and games where task distributions can be easily specified, robotics tasks present unique challenges: they require handling complex task spaces while maintaining relevance to target domain distributions that are only partially known through limited samples. To this end, we propose Grounded Adaptive Curriculum Learning, a framework specifically designed for robotics curriculum learning with three key innovations: (1) a task representation that consistently handles complex robot task design, (2) an active performance tracking mechanism that allows adaptive curriculum generation appropriate for the robot's current capabilities, and (3) a grounding approach that maintains target domain relevance through alternating sampling between reference and synthetic tasks. We validate GACL on wheeled navigation in constrained environments and quadruped locomotion in challenging 3D confined spaces, achieving 6.8% and 6.1% higher success rates, respectively, than state-of-the-art methods in each domain.}
 }
 
 @inproceedings{wang2025reward,
+  abbr={IROS},
   title={Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning},
   author={Wang, Linji and Xu, Tong and Lu, Yuanjie and Xiao, Xuesu},
   booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
   year={2025},
-  note={Accepted. Submission number: 2755},
   arxiv={2503.15724},
   bibtex_show={true},
   selected={true},
-  preview={RTW.png},
+  preview={RTW_sq.jpg},
   pdf={https://arxiv.org/pdf/2503.15724},
-  code={https://arxiv.org/pdf/2503.15724},
-  slides={https://arxiv.org/pdf/2503.15724}
+  abstract={Robotics Reinforcement Learning (RL) often relies on carefully engineered auxiliary rewards to supplement sparse primary learning objectives to compensate for the lack of large-scale, real-world, trial-and-error data. While these auxiliary rewards accelerate learning, they require significant engineering effort, may introduce human biases, and cannot adapt to the robot's evolving capabilities during training. In this paper, we introduce Reward Training Wheels (RTW), a teacher-student framework that automates auxiliary reward adaptation for robotics RL. To be specific, the RTW teacher dynamically adjusts auxiliary reward weights based on the student's evolving capabilities to determine which auxiliary reward aspects require more or less emphasis to improve the primary objective. We demonstrate RTW on two challenging robot tasks: navigation in highly constrained spaces and off-road vehicle mobility on vertically challenging terrain. In simulation, RTW outperforms expert-designed rewards by 2.35% in navigation success rate and improves off-road mobility performance by 122.62%, while achieving 35% and 3X faster training efficiency, respectively. Physical robot experiments further validate RTW's effectiveness, achieving a perfect success rate (5/5 trials vs. 2/5 for expert-designed rewards) and improving vehicle stability with up to 47.4% reduction in orientation angles.}
+}
+
+@inproceedings{lu2025decremental,
+  abbr={IROS},
+  title={Decremental Dynamics Planning for Robot Navigation},
+  author={Lu, Yuanjie and Xu, Tong and Wang, Linji and Hawes, Nick and Xiao, Xuesu},
+  booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year={2025},
+  award={Winner of the simulation phase of the 2025 BARN Challenge (Benchmark Autonomous Robot Navigation) at ICRA 2025.},
+  award_name={1st Place, 2025 BARN Challenge (Simulation)},
+  arxiv={2503.20521},
+  bibtex_show={true},
+  selected={true},
+  preview={DDP_sq.jpg},
+  pdf={https://arxiv.org/pdf/2503.20521},
+  abstract={Most, if not all, robot navigation systems employ a decomposed planning framework that includes global and local planning. To trade-off between efficiency and efficacy, current systems have to balance the complexity of the dynamics model and the horizon of the planner. In this paper, we present Decremental Dynamics Planning (DDP), which incorporates dynamics into the global planning process near the robot and gradually simplifies the dynamics model along the planning horizon, allowing the planner to consider full dynamics where they matter the most. We augment three different planners with DDP and observe improved planning performance overall. We also build a new DDP-based navigation system that achieves first place in the simulation phase of the 2025 BARN Challenge, validated in both simulated and physical experiments.}
+}
+
+@article{zhao2025ii,
+  abbr={RA-L},
+  title={II-NVM: Enhancing Map Accuracy and Consistency with Normal Vector-Assisted Mapping},
+  author={Zhao, Chengwei and Li, Yixuan and Jian, Yina and Xu, Jie and Wang, Linji and Ma, Yongxin and Jin, Xinglai},
+  journal={IEEE Robotics and Automation Letters},
+  year={2025},
+  doi={10.1109/LRA.2025.3561568},
+  bibtex_show={true},
+  selected={false},
+  preview={II-NVM_sq.jpg},
+  pdf={https://arxiv.org/pdf/2504.08204},
+  html={https://ieeexplore.ieee.org/document/10966190},
+  code={https://github.com/chengwei0427/II-NVM},
+  abstract={SLAM technology plays a crucial role in indoor mapping and localization. A common challenge in indoor environments is the "double-sided mapping issue", where closely positioned walls, doors, and other surfaces are mistakenly identified as a single plane, significantly hindering map accuracy and consistency. To address this issue, this letter introduces a novel approach that leverages normal vector consistency to enhance map accuracy and consistency, integrating normal vector information into the mapping and localization process.}
 }

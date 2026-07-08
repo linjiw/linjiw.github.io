@@ -4,7 +4,7 @@ permalink: /publications/
 title: publications
 description: Peer-reviewed and preprint publications in robotics and AI.
 nav: true
-nav_order: 2
+nav_order: 1
 ---
 
 <!-- _pages/publications.md -->

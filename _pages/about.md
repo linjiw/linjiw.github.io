@@ -16,6 +16,16 @@ profile:
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
+highlights:
+  - value: "2×"
+    label: first-author papers at IROS 2025
+  - value: "1st"
+    label: place, 2025 BARN Challenge (simulation)
+  - value: "5/5"
+    label: physical off-road trials (RTW) vs 2/5 baseline
+  - value: "3×"
+    label: faster training with adaptive rewards
+
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
@@ -27,22 +37,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Ph.D. student in Computer Science at George Mason University, working under the supervision of **[Dr. Xuesu Xiao](https://cs.gmu.edu/~xiao/)** at the **[RobotiXX Lab](https://robotixx.cs.gmu.edu/)**. Our lab pioneers **adaptive learning paradigms for autonomous robotics**, and my research addresses a fundamental challenge in robotics: how can robots learn complex behaviors as efficiently as humans do, adapting from simple to complex tasks while maintaining robustness in real-world deployments?
+I am a Ph.D. student in Computer Science at George Mason University, advised by [Dr. Xuesu Xiao](https://cs.gmu.edu/~xiao/) at the [RobotiXX Lab](https://robotixx.cs.gmu.edu/). I study **curriculum learning for robotics**: how robots can learn complex behaviors efficiently by training on the right task, at the right difficulty, at the right time.
 
-My work centers on **Curriculum Learning for Robotics** - developing intelligent systems that learn progressively, much like how humans master skills through structured practice. I believe the future of robotics lies not in hand-crafted solutions, but in **self-improving systems** that can adapt their learning strategies based on performance feedback. This vision has led me to develop two complementary frameworks:
+I am first author of two IROS 2025 papers. [GACL](https://arxiv.org/abs/2508.02988) (with [Peter Stone](https://www.cs.utexas.edu/~pstone/), UT Austin) grounds automatic curriculum generation in real robot performance, improving success rates by 6.8% on wheeled navigation and 6.1% on quadruped locomotion over state-of-the-art methods. [Reward Training Wheels](https://arxiv.org/abs/2503.15724) adapts auxiliary rewards as the robot learns — like training wheels that fade away — cutting training time by 3× and succeeding in 5/5 physical off-road trials versus 2/5 for the baseline. I also co-authored [DDP](https://arxiv.org/abs/2503.20521) (IROS 2025), a navigation planner that won **1st place in the simulation phase of the 2025 BARN Challenge**, and [II-NVM](https://arxiv.org/abs/2504.08204) (IEEE RA-L 2025) on normal-vector-assisted SLAM. My current research extends curriculum learning to humanoid robots.
 
-**[Grounded Adaptive Curriculum Learning (GACL)](https://arxiv.org/pdf/2508.02988)** introduces a **teacher-student paradigm** where an informed teacher agent automatically generates training curricula by monitoring student performance in real-time. This approach bridges the gap between simulation and reality by grounding curriculum generation in actual robot capabilities. **[Reward Training Wheels](https://arxiv.org/pdf/2503.15724)** complements this by providing **adaptive auxiliary rewards** that guide robots through challenging learning phases - like training wheels that automatically adjust and eventually disappear as proficiency increases.
+Before my Ph.D., I completed an M.S. in Mechanical Engineering at Carnegie Mellon University (GPA 3.94/4.0) working on 3D perception and AR-guided robotics, and a B.S. in Mechanical Engineering at the University of Cincinnati. In summer 2025 I was a Software Development Engineer Intern at AWS, where I built a statistical regression-testing and visualization platform that cut performance analysis time from 8 hours to 15 minutes.
 
-My research has been **validated across diverse robotic platforms**:
-- **Quadrupedal robots** navigating complex terrains
-- **Ground navigation vehicles** in constrained environments  
-- **Off-road autonomous vehicles** handling unpredictable dynamics
-- **Current research:** Extending to **humanoid robots** for manipulation tasks
-
-This work, resulting in **three papers accepted at IROS 2025** and one in **IEEE RA-L**, demonstrates **24.58% higher success rates** and **50% improved sample efficiency** compared to state-of-the-art methods. Through collaboration with my advisor **Dr. Xuesu Xiao** and renowned researchers including **[Peter Stone](https://www.cs.utexas.edu/~pstone/)** (UT Austin), I am advancing the frontiers of **adaptive curriculum learning** and **decremental dynamics planning** for robust robot autonomy in complex, dynamic environments.
-
-Prior to my Ph.D., I earned my M.S. in Mechanical Engineering from Carnegie Mellon University (GPA: 3.94/4.0), where I developed expertise in **3D perception** and **AR-guided robotics**. I completed my B.S. in Mechanical Engineering at the University of Cincinnati (2016–2021). I also gained industry experience as a **Software Development Engineer Intern at Amazon AWS**, where I built production-grade systems that reduced performance analysis time from 8 hours to 15 minutes.
-
-My vision is to create **robots that learn like we do** - starting simple, building competence, and ultimately mastering complex real-world tasks through intelligent curriculum design. This research has profound implications for **service robotics**, **industrial automation**, and **human-robot collaboration**.
-
-Feel free to explore my [publications]({{ "/publications/" | relative_url }}), [projects]({{ "/projects/" | relative_url }}), and [CV]({{ "/cv/" | relative_url }}) to learn more about my research and experience.
+Explore my [publications]({{ "/publications/" | relative_url }}), [projects]({{ "/projects/" | relative_url }}), and [CV]({{ "/cv/" | relative_url }}).

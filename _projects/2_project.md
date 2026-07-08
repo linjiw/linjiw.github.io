@@ -1,42 +1,48 @@
 ---
 layout: page
-title: Robot Navigation with Dynamics Planning
-description: Advanced navigation strategies for dynamic environments
-img: assets/img/publication_preview/DDP.png
+title: Decremental Dynamics Planning
+description: Robot navigation that plans with full dynamics only where it matters — 1st place, 2025 BARN Challenge (simulation)
+img: assets/img/publication_preview/DDP_sq.jpg
 importance: 2
 category: robotics
-related_publications: lu2025decremental
+related_publications: true
 ---
 
-## Project Overview
+## Overview
 
-This project focuses on developing advanced robot navigation strategies using decremental dynamics planning, enabling robots to efficiently navigate in dynamic environments with changing obstacles and goals.
+Most navigation planners either pay the full computational cost of planning with
+complete robot dynamics everywhere, or ignore dynamics and suffer in difficult
+terrain. Decremental Dynamics Planning (DDP) {% cite lu2025decremental %} starts
+planning with full dynamics near the robot — where fidelity matters most — and
+progressively simplifies the dynamics model along the horizon, spending compute
+where it buys the most safety and performance.
 
-## Technical Implementation
+<div class="row justify-content-center">
+    <div class="col-sm-9 mt-3 mb-3">
+        {% include figure.liquid loading="eager" path="assets/img/projects/ddp_comparison.jpg" title="DDP vs decomposed planning" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Top: a conventional global + local planner. Bottom: DDP plans one trajectory with dynamics fidelity that decreases along the horizon.
+</div>
 
-### Navigation Architecture
-- **Decremental Planning**: Efficient replanning strategy that reuses previous computations
-- **Dynamic Obstacle Handling**: Real-time adaptation to moving obstacles
-- **Goal Switching**: Seamless transition between multiple navigation goals
-- **Path Optimization**: Continuous refinement of navigation trajectories
+<!-- TODO: replace with BARN Challenge run video / navigation GIF -->
 
-## Results and Impact
+## My contribution
 
-- **Planning Efficiency**: 60% reduction in replanning time
-- **Navigation Success**: 95% success rate in dynamic environments
-- **Path Quality**: 25% shorter paths compared to baseline methods
+This is a collaboration led by my labmate Yuanjie Lu (with Tong Xu, Nick Hawes of
+Oxford, and our advisor Xuesu Xiao); I am third author and contributed to the
+planning framework and experimental evaluation.
 
-## Technical Stack
-- **Framework**: ROS2 with custom planning modules
-- **Simulation**: Gazebo and IsaacSim for testing
-- **Visualization**: RViz for path visualization
-- **Deployment**: Real-time implementation on mobile robots
+## Published results
 
-## Publication
+- Augmenting three different existing planners with DDP improved planning
+  performance across the board.
+- A new DDP-based navigation system won **1st place in the simulation phase of
+  the 2025 BARN Challenge** (Benchmark Autonomous Robot Navigation), validated in
+  both simulated and physical experiments.
 
-This work has been accepted at the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025:
-- "Decremental Dynamics Planning for Robot Navigation" by Lu, Xu, Wang, Hawes, and Xiao
+## Paper
 
-## Code and Resources
-
-[Paper PDF](https://arxiv.org/pdf/2503.20521) | [arXiv](https://arxiv.org/abs/2503.20521) | [GitHub Repository](https://github.com/linjiw/ddp-navigation)
+Y. Lu, T. Xu, L. Wang, N. Hawes, X. Xiao. "Decremental Dynamics Planning for
+Robot Navigation," IROS 2025. [arXiv](https://arxiv.org/abs/2503.20521)

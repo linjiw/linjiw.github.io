@@ -35,15 +35,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y imagemagick libmagickwand-dev
           
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          
-      - name: Install Python dependencies
-        run: |
-          pip install jupyter nbconvert
-          
       - name: Configure Bundler
         run: |
           bundle config set --local retry 5

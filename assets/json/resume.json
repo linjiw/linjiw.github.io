@@ -4,9 +4,8 @@
     "label": "Ph.D. Student in Computer Science",
     "image": "",
     "email": "joewwang@outlook.com",
-    "phone": "(412) 888-6071",
     "url": "https://linjiw.github.io/",
-    "summary": "Ph.D. student in Computer Science (AI and Robotics) focused on curriculum learning and reinforcement learning for robotics; publications at IROS 2025 and IEEE RA-L 2025",
+    "summary": "Ph.D. student in Computer Science (AI and Robotics) at George Mason University, focused on curriculum learning and reinforcement learning for robot navigation and locomotion; first author of two IROS 2025 papers, co-author of a third IROS 2025 paper and an IEEE RA-L 2025 article",
     "location": {
       "city": "Fairfax",
       "countryCode": "US",
@@ -25,49 +24,6 @@
       }
     ]
   },
-  "work": [
-    {
-      "name": "Amazon Web Services (AWS)",
-      "position": "Software Development Engineer Intern - RDS Proxy Team",
-      "location": "Bellevue, WA",
-      "url": "https://aws.amazon.com",
-      "startDate": "2025-05-01",
-      "endDate": "2025-08-01",
-      "summary": "Developed performance testing and visualization tools for RDS Proxy deployments",
-      "highlights": [
-        "Developed IPEBench Data Visualization Platform with Streamlit, creating 8 interactive visualization types that reduced engineers' performance regression analysis time from 8 hours to 15 minutes",
-        "Built production-grade Regression Testing Framework (10,000+ lines) with statistical analysis (Welch's t-test, power analysis, Bonferroni correction) achieving 99% confidence in detecting performance regressions",
-        "Implemented adaptive sampling system using Thompson Sampling and Bayesian optimization for convergence detection, improving test reliability from 47% to 90% and eliminating false positives that previously blocked deployments",
-        "Integrated AWS CloudWatch metrics with automated dashboard generation, enabling real-time performance monitoring and data-driven decision making for RDS proxy deployments across multiple regions"
-      ]
-    },
-    {
-      "name": "RobotiXX Lab, George Mason University",
-      "position": "Graduate Research Assistant",
-      "url": "https://cs.gmu.edu",
-      "startDate": "2023-08-01",
-      "endDate": "",
-      "summary": "Curriculum learning research for efficient reinforcement learning in robotic manipulation",
-      "highlights": [
-        "Developed Grounded Adaptive Curriculum Learning (GACL), a novel framework integrating real-world data with adaptive simulated task generation for robotic manipulation",
-        "Achieved 24.58% higher success rate and 50% improved sample efficiency compared to baseline methods",
-        "Three papers accepted at IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025"
-      ]
-    },
-    {
-      "name": "Computational Engineering and Robotics Lab, CMU",
-      "position": "Research Assistant",
-      "url": "https://www.cmu.edu",
-      "startDate": "2022-01-01",
-      "endDate": "2023-05-01",
-      "summary": "3D AR Scene Inpainting via Deep Learning",
-      "highlights": [
-        "Developed end-to-end deep learning pipeline achieving 92% accuracy in scene completion",
-        "Implemented GAN model improving texture realism by 35% over baseline",
-        "Applied RANSAC and DBSCAN algorithms reducing processing time by 40%"
-      ]
-    }
-  ],
   "education": [
     {
       "institution": "George Mason University",
@@ -113,77 +69,175 @@
       "courses": []
     }
   ],
+  "publications": [
+    {
+      "name": "GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring",
+      "publisher": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "releaseDate": "2025-10-01",
+      "url": "https://arxiv.org/abs/2508.02988",
+      "summary": "First author, with Zifan Xu, Peter Stone, and Xuesu Xiao. Grounded automatic curriculum generation for robotics; +6.8% success on wheeled navigation and +6.1% on quadruped locomotion over state of the art."
+    },
+    {
+      "name": "Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning",
+      "publisher": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "releaseDate": "2025-10-01",
+      "url": "https://arxiv.org/abs/2503.15724",
+      "summary": "First author, with Tong Xu, Yuanjie Lu, and Xuesu Xiao. Teacher-adapted auxiliary rewards; +2.35% navigation success, +122.62% off-road mobility, 3x faster training, 5/5 vs 2/5 physical-robot trials."
+    },
+    {
+      "name": "Decremental Dynamics Planning for Robot Navigation",
+      "publisher": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "releaseDate": "2025-10-01",
+      "url": "https://arxiv.org/abs/2503.20521",
+      "summary": "With Yuanjie Lu, Tong Xu, Nick Hawes, and Xuesu Xiao. Full-dynamics planning near the robot, simplified along the horizon; 1st place, simulation phase, 2025 BARN Challenge."
+    },
+    {
+      "name": "II-NVM: Enhancing Map Accuracy and Consistency with Normal Vector-Assisted Mapping",
+      "publisher": "IEEE Robotics and Automation Letters (RA-L)",
+      "releaseDate": "2025-04-01",
+      "url": "https://arxiv.org/abs/2504.08204",
+      "summary": "With Chengwei Zhao, Yixuan Li, Yina Jian, Jie Xu, Yongxin Ma, and Xinglai Jin. Normal-vector-consistent SLAM mapping resolving the double-sided mapping issue."
+    }
+  ],
+  "work": [
+    {
+      "name": "RobotiXX Lab, George Mason University",
+      "position": "Graduate Research Assistant",
+      "url": "https://cs.gmu.edu/~xiao/",
+      "startDate": "2023-08-01",
+      "endDate": "",
+      "summary": "Curriculum learning and reinforcement learning for robot navigation and locomotion, advised by Dr. Xuesu Xiao",
+      "highlights": [
+        "First author of two IROS 2025 papers (GACL, with Peter Stone; Reward Training Wheels); co-author of a third IROS 2025 paper (DDP) and an IEEE RA-L 2025 article (II-NVM)",
+        "Developed GACL, a grounded adaptive curriculum framework improving success rates by 6.8% (wheeled navigation) and 6.1% (quadruped locomotion in confined 3D spaces) over state-of-the-art methods",
+        "Designed Reward Training Wheels, teacher-adapted auxiliary rewards achieving 122.62% off-road mobility improvement, 3x faster training, and 5/5 vs 2/5 success in physical off-road trials",
+        "Contributed to the DDP navigation system that won 1st place in the simulation phase of the 2025 BARN Challenge",
+        "Trained massively parallel RL policies (PPO, SAC) in IsaacGym across wheeled, quadruped, and off-road platforms; ongoing work extends curriculum learning to humanoid robots"
+      ]
+    },
+    {
+      "name": "Amazon Web Services (AWS)",
+      "position": "Software Development Engineer Intern - RDS Proxy Team",
+      "location": "Bellevue, WA",
+      "url": "https://aws.amazon.com",
+      "startDate": "2025-05-01",
+      "endDate": "2025-08-01",
+      "summary": "Performance testing and visualization infrastructure for RDS Proxy",
+      "highlights": [
+        "Built a Streamlit performance-analysis platform with 8 interactive visualization types, reducing regression analysis time from 8 hours to 15 minutes",
+        "Developed a regression testing framework with rigorous statistics (Welch's t-test, power analysis, Bonferroni correction) for high-confidence regression detection",
+        "Implemented adaptive sampling with Thompson Sampling and Bayesian optimization, improving test reliability from 47% to 90% and reducing false positives",
+        "Integrated CloudWatch metrics into automated dashboards for multi-region performance monitoring"
+      ]
+    },
+    {
+      "name": "Computational Engineering and Robotics Lab, CMU",
+      "position": "Research Assistant",
+      "url": "https://www.cmu.edu",
+      "startDate": "2022-01-01",
+      "endDate": "2023-05-01",
+      "summary": "3D AR scene inpainting via deep learning",
+      "highlights": [
+        "Developed an end-to-end deep learning pipeline for 3D AR scene inpainting achieving 92% scene-completion accuracy",
+        "Fine-tuned a GAN-based image inpainting model, improving texture realism by 35% over baseline",
+        "Applied RANSAC and DBSCAN for 3D point cloud segmentation, reducing processing time by 40%"
+      ]
+    },
+    {
+      "name": "Bio-robotics Lab, CMU",
+      "position": "Research Assistant",
+      "url": "https://www.cmu.edu",
+      "startDate": "2021-09-01",
+      "endDate": "2021-12-01",
+      "summary": "Recycled paper classification with deep learning",
+      "highlights": [
+        "Trained a CNN classifier for recycled paper grading (97% accuracy on 10,000+ images) with a real-time OpenCV processing pipeline"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "George Mason University",
+      "position": "Teaching Assistant — Introduction to Programming",
+      "url": "https://www.gmu.edu",
+      "startDate": "2023-08-01",
+      "endDate": "2023-12-15",
+      "summary": "Fall 2023",
+      "highlights": []
+    },
+    {
+      "organization": "Carnegie Mellon University",
+      "position": "Teaching Assistant — Artificial Intelligence and Machine Learning",
+      "url": "https://www.cmu.edu",
+      "startDate": "2022-08-01",
+      "endDate": "2022-12-15",
+      "summary": "Fall 2022",
+      "highlights": []
+    },
+    {
+      "organization": "University of Cincinnati",
+      "position": "Teaching Assistant — System Dynamics, Fluid Dynamics and Engineering Models",
+      "url": "https://www.uc.edu",
+      "startDate": "2020-08-01",
+      "endDate": "2020-12-15",
+      "summary": "Fall 2020",
+      "highlights": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "1st Place, Simulation Phase — 2025 BARN Challenge (Benchmark Autonomous Robot Navigation)",
+      "date": "2025-05-23",
+      "awarder": "ICRA 2025",
+      "summary": "DDP-based navigation system won the simulation phase of the BARN Challenge."
+    }
+  ],
   "skills": [
     {
-      "name": "Programming Languages",
-      "level": "Advanced",
+      "name": "Programming",
+      "level": "",
       "icon": "fa-solid fa-code",
       "keywords": [
         "Python",
         "C++",
-        "SQL",
-        "Bash",
-        "CUDA"
+        "CUDA",
+        "Bash"
       ]
     },
     {
-      "name": "ML/DL Frameworks",
-      "level": "Advanced",
+      "name": "Robot Learning",
+      "level": "",
       "icon": "fa-solid fa-brain",
       "keywords": [
         "PyTorch",
-        "TensorFlow",
-        "JAX",
-        "Streamlit",
-        "Plotly",
-        "OpenAI Gym"
-      ]
-    },
-    {
-      "name": "AWS & Cloud",
-      "level": "Intermediate",
-      "icon": "fa-solid fa-cloud",
-      "keywords": [
-        "RDS",
-        "CloudWatch",
-        "EC2",
-        "Lambda",
-        "S3",
-        "Docker",
-        "Kubernetes"
+        "PPO / SAC",
+        "Curriculum Learning",
+        "Reward Design",
+        "Sim-to-Real"
       ]
     },
     {
       "name": "Robotics & Simulation",
-      "level": "Advanced",
+      "level": "",
       "icon": "fa-solid fa-robot",
       "keywords": [
-        "ROS",
         "IsaacGym",
         "MuJoCo",
-        "OpenAI Gym"
+        "ROS",
+        "Wheeled UGV",
+        "Quadruped",
+        "Off-road vehicle"
       ]
     },
     {
-      "name": "Reinforcement Learning",
-      "level": "Advanced",
-      "icon": "fa-solid fa-robot",
+      "name": "Engineering & Cloud",
+      "level": "",
+      "icon": "fa-solid fa-cloud",
       "keywords": [
-        "PPO",
-        "SAC",
-        "Curriculum Learning",
-        "Reward Shaping"
-      ]
-    },
-    {
-      "name": "Statistical Analysis",
-      "level": "Advanced",
-      "icon": "fa-solid fa-chart-line",
-      "keywords": [
-        "Hypothesis Testing",
-        "Power Analysis",
-        "A/B Testing",
-        "Regression Analysis"
+        "AWS",
+        "Docker",
+        "Git / CI-CD",
+        "Statistical Analysis"
       ]
     }
   ],
@@ -201,66 +255,14 @@
   ],
   "interests": [
     {
-      "name": "Artificial Intelligence",
-      "icon": "fa-solid fa-brain",
-      "keywords": [
-        "Reinforcement Learning",
-        "Generative AI",
-        "Computer Vision"
-      ]
-    },
-    {
-      "name": "Robotics",
+      "name": "Robot Learning",
       "icon": "fa-solid fa-robot",
       "keywords": [
         "Curriculum Learning",
+        "Reinforcement Learning",
         "Sim-to-Real Transfer",
-        "Navigation"
+        "Humanoid Robots"
       ]
-    }
-  ],
-  "projects": [
-    {
-      "name": "Flexible Long-Term Mortality Prediction",
-      "summary": "Developed survival analysis model integrating CNN with Cox Proportional Hazards model",
-      "highlights": [
-        "Integrated MobileNet v2 with Cox Proportional Hazards model",
-        "Implemented attention mechanisms for critical area focus",
-        "Achieved 15% improvement over traditional methods"
-      ],
-      "startDate": "2023-05-01",
-      "endDate": "2023-07-01",
-      "url": ""
-    }
-  ],
-  "publications": [
-    {
-      "name": "II-NVM: Enhancing Map Accuracy and Consistency with Normal Vector-Assisted Mapping",
-      "publisher": "IEEE Robotics and Automation Letters",
-      "releaseDate": "2025",
-      "url": "https://arxiv.org/pdf/2504.08204",
-      "summary": "Zhao, Chengwei; Li, Yixuan; Jian, Yina; Xu, Jie; Wang, Linji; Ma, Yongxin; Jin, Xinglai."
-    },
-    {
-      "name": "Decremental Dynamics Planning for Robot Navigation",
-      "publisher": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
-      "releaseDate": "2025",
-      "url": "https://arxiv.org/pdf/2503.20521",
-      "summary": "Lu, Yuanjie; Xu, Tong; Wang, Linji; Hawes, Nick; Xiao, Xuesu."
-    },
-    {
-      "name": "GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring",
-      "publisher": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
-      "releaseDate": "2025",
-      "url": "https://arxiv.org/pdf/2508.02988",
-      "summary": "Wang, Linji; Xu, Zifan; Stone, Peter; Xiao, Xuesu."
-    },
-    {
-      "name": "Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning",
-      "publisher": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
-      "releaseDate": "2025",
-      "url": "https://arxiv.org/pdf/2503.15724",
-      "summary": "Wang, Linji; Xu, Tong; Lu, Yuanjie; Xiao, Xuesu."
     }
   ]
 }

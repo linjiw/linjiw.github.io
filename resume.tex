@@ -67,15 +67,15 @@
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{\large LINJI WANG} & Email: \href{mailto:joewwang@outlook.com}{joewwang@outlook.com}\\
   Fairfax, VA & Mobile: 412-888-6071 \\
-  \href{https://www.linkedin.com/in/linjiw}{LinkedIn} | \href{https://linjiw.github.io}{linjiw.github.io} & GitHub: \href{https://github.com/linjiw}{github.com/linjiw}
+  \href{https://www.linkedin.com/in/linjiw}{LinkedIn} | \href{https://linjiw.github.io}{linjiw.github.io} | \href{https://scholar.google.com/citations?user=VURUgFMAAAAJ}{Google Scholar} & GitHub: \href{https://github.com/linjiw}{github.com/linjiw}
 \end{tabular*}
 
 %-----------SUMMARY-----------------
 \section{SUMMARY}
   \resumeSubHeadingListStart
-    \resumeItem{Ph.D. student in Computer Science (AI and Robotics) focused on curriculum learning and reinforcement learning for robot manipulation and navigation.}
-    \resumeItem{Developed GACL and Reward Training Wheels; 3 papers accepted at IROS 2025 and 1 paper in IEEE RA-L 2025.}
-    \resumeItem{Engineering experience at AWS building production-grade testing and monitoring systems that cut regression analysis time from 8 hours to 15 minutes.}
+    \resumeItem{Ph.D. student in Computer Science (AI and Robotics) focused on curriculum learning and reinforcement learning for robot navigation and locomotion; ongoing work on humanoid robots.}
+    \resumeItem{First author of two IROS 2025 papers (GACL, with Peter Stone; Reward Training Wheels); co-author of a third IROS 2025 paper and an IEEE RA-L 2025 article. Team won 1st place in the simulation phase of the 2025 BARN Challenge.}
+    \resumeItem{Engineering experience at AWS building production-grade statistical testing and monitoring systems that cut regression analysis time from 8 hours to 15 minutes.}
   \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
@@ -83,21 +83,16 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {George Mason University}{Fairfax, VA}
-      {PhD in Computer Science, Specialization in AI and Robotics}{Sep 2023 – Present}
+      {PhD in Computer Science, Specialization in AI and Robotics}{Sep 2023 -- Present}
       \resumeItemListStart
-        \resumeItem{Research Focus: Curriculum Learning and Reinforcement Learning for Robotics}
-        \resumeItem{Relevant Coursework: Advanced Machine Learning, Deep Learning, Reinforcement Learning, Computer Vision}
+        \resumeItem{Research: Curriculum Learning and Reinforcement Learning for Robotics, advised by Dr. Xuesu Xiao (RobotiXX Lab)}
       \resumeItemListEnd
     \resumeSubheading
       {Carnegie Mellon University}{Pittsburgh, PA}
-      {MSc in Mechanical Engineering}{Sep 2021 – May 2023}
-      \resumeItemListStart
-        \resumeItem{GPA: 3.94/4.0 (98.5\%)}
-        \resumeItem{Relevant Coursework: Machine Learning, Deep Learning, Computer Vision, Deep Reinforcement Learning \& Control}
-      \resumeItemListEnd
+      {MSc in Mechanical Engineering, GPA: 3.94/4.0}{Sep 2021 -- May 2023}
     \resumeSubheading
       {University of Cincinnati}{Cincinnati, OH}
-      {BS in Mechanical Engineering}{Sep 2016 – May 2021}
+      {BS in Mechanical Engineering}{Sep 2016 -- May 2021}
   \resumeSubHeadingListEnd
 
 %-----------RESEARCH EXPERIENCE-----------------
@@ -105,20 +100,19 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {RobotiXX Lab, George Mason University}{Fairfax, VA}
-      {Graduate Research Assistant, Curriculum Learning for Robotics}{Aug 2023 – Present}
+      {Graduate Research Assistant, Curriculum Learning for Robotics}{Aug 2023 -- Present}
       \resumeItemListStart
-        \resumeItem{Developed Grounded Adaptive Curriculum Learning (GACL) to generate task curricula grounded in robot performance feedback.}
-        \resumeItem{Implemented PPO and SAC in IsaacGym, achieving 24.58\% higher success rate and 50\% improved sample efficiency.}
-        \resumeItem{Designed Reward Training Wheels to adapt auxiliary rewards through learning for robust policy training.}
-        \resumeItem{Co-authored 3 IROS 2025 accepted papers and 1 IEEE RA-L 2025 publication.}
+        \resumeItem{Developed GACL (first author, IROS 2025, with Peter Stone), a grounded adaptive curriculum framework: +6.8\% success on wheeled navigation in constrained environments, +6.1\% on quadruped locomotion in confined 3D spaces vs. state of the art.}
+        \resumeItem{Designed Reward Training Wheels (first author, IROS 2025), teacher-adapted auxiliary rewards: +122.62\% off-road mobility, 3$\times$ faster training, and 5/5 vs. 2/5 success in physical off-road robot trials vs. expert-designed rewards.}
+        \resumeItem{Contributed to Decremental Dynamics Planning (IROS 2025): navigation system won 1st place in the simulation phase of the 2025 BARN Challenge.}
+        \resumeItem{Trained massively parallel RL policies (PPO, SAC) in IsaacGym across wheeled, quadruped, and off-road platforms; extending curriculum learning to humanoid robots.}
       \resumeItemListEnd
     \resumeSubheading
       {Computational Engineering and Robotics Lab, CMU}{Pittsburgh, PA}
-      {Research Assistant: 3D AR Scene Inpainting via Deep Learning}{Jan 2022 – May 2023}
+      {Research Assistant: 3D AR Scene Inpainting via Deep Learning}{Jan 2022 -- May 2023}
       \resumeItemListStart
         \resumeItem{Developed an end-to-end deep learning pipeline for 3D AR scene inpainting, achieving 92\% accuracy in scene completion.}
-        \resumeItem{Implemented and fine-tuned a GAN model for image inpainting, improving texture realism by 35\% over baseline methods.}
-        \resumeItem{Applied RANSAC and DBSCAN algorithms for efficient 3D point cloud segmentation, reducing processing time by 40\%.}
+        \resumeItem{Fine-tuned a GAN model for image inpainting, improving texture realism by 35\% over baseline methods.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -127,33 +121,44 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Amazon Web Services (AWS)}{Bellevue, WA}
-      {Software Development Engineer Intern - RDS Proxy Team}{May 2025 – Aug 2025}
+      {Software Development Engineer Intern - RDS Proxy Team}{May 2025 -- Aug 2025}
       \resumeItemListStart
-        \resumeItem{Built IPEBench Streamlit visualization suite (8 interactive views) cutting regression analysis time from 8 hours to 15 minutes.}
-        \resumeItem{Developed regression testing framework (10,000+ lines) with Welch's t-test, power analysis, and Bonferroni correction for 99\% confidence detection.}
+        \resumeItem{Built a Streamlit performance-analysis suite (8 interactive views) cutting regression analysis time from 8 hours to 15 minutes.}
+        \resumeItem{Developed a statistical regression testing framework (Welch's t-test, power analysis, Bonferroni correction) for high-confidence detection.}
         \resumeItem{Implemented adaptive sampling with Thompson Sampling and Bayesian optimization, improving test reliability from 47\% to 90\% and reducing false positives.}
-        \resumeItem{Integrated CloudWatch metrics into automated dashboards for multi-region RDS Proxy performance monitoring.}
       \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------------
+\section{PUBLICATIONS}
+  \resumeSubHeadingListStart
+    \resumeSubSubheading{\textbf{Wang, L.}, Xu, Z., Stone, P., Xiao, X. ``GACL: Grounded Adaptive Curriculum Learning''}{IROS 2025}
+    \resumeSubSubheading{\textbf{Wang, L.}, Xu, T., Lu, Y., Xiao, X. ``Reward Training Wheels: Adaptive Auxiliary Rewards''}{IROS 2025}
+    \resumeSubSubheading{Lu, Y., Xu, T., \textbf{Wang, L.}, Hawes, N., Xiao, X. ``Decremental Dynamics Planning''}{IROS 2025}
+    \resumeSubSubheading{Zhao, C., Li, Y., Jian, Y., Xu, J., \textbf{Wang, L.}, et al. ``II-NVM: Normal Vector-Assisted Mapping''}{IEEE RA-L 2025}
+  \resumeSubHeadingListEnd
+
+%-----------AWARDS-----------------
+\section{AWARDS}
+  \resumeSubHeadingListStart
+    \resumeSubSubheading{1st Place, Simulation Phase --- 2025 BARN Challenge (Benchmark Autonomous Robot Navigation)}{ICRA 2025}
+  \resumeSubHeadingListEnd
+
+%-----------TEACHING-----------------
+\section{TEACHING EXPERIENCE}
+  \resumeSubHeadingListStart
+    \resumeSubSubheading{Teaching Assistant, Introduction to Programming --- George Mason University}{Fall 2023}
+    \resumeSubSubheading{Teaching Assistant, Artificial Intelligence and Machine Learning --- Carnegie Mellon University}{Fall 2022}
+    \resumeSubSubheading{Teaching Assistant, System Dynamics, Fluid Dynamics \& Engineering Models --- University of Cincinnati}{Fall 2020}
   \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------------
 \section{TECHNICAL SKILLS}
  \resumeSubHeadingListStart
-   \resumeSubSubheading{Programming Languages:}{Python (Advanced), C++ (Intermediate), CUDA, SQL, Bash}
-   \resumeSubSubheading{Robotics \& Simulation:}{ROS, IsaacGym, MuJoCo, OpenAI Gym}
-   \resumeSubSubheading{ML/RL:}{PyTorch, TensorFlow, JAX, PPO, SAC, Curriculum Learning}
-   \resumeSubSubheading{Systems \& Cloud:}{AWS (RDS, CloudWatch, EC2, Lambda, S3), Docker, Kubernetes}
-   \resumeSubSubheading{Tools \& Libraries:}{NumPy, Pandas, Matplotlib, OpenCV, Git, CI/CD}
-   \resumeSubSubheading{Statistical Analysis:}{Hypothesis Testing, Power Analysis, A/B Testing, Regression Analysis}
+   \resumeSubSubheading{Programming:}{Python, C++, CUDA, Bash}
+   \resumeSubSubheading{Robot Learning:}{PyTorch, PPO/SAC, Curriculum Learning, Reward Design, Sim-to-Real}
+   \resumeSubSubheading{Robotics \& Simulation:}{IsaacGym, MuJoCo, ROS; wheeled UGV, quadruped, off-road platforms}
+   \resumeSubSubheading{Engineering \& Cloud:}{AWS, Docker, Git/CI-CD, Statistical Analysis}
  \resumeSubHeadingListEnd
-
-%-----------PUBLICATIONS & PRESENTATIONS-----------------
-\section{PUBLICATIONS}
-  \resumeSubHeadingListStart
-    \resumeSubSubheading{\textbf{Wang, L.}, et al. "GACL: Grounded Adaptive Curriculum Learning"}{IROS 2025 (Accepted)}
-    \resumeSubSubheading{\textbf{Wang, L.}, et al. "Reward Training Wheels: Adaptive Auxiliary Rewards"}{IROS 2025 (Accepted)}
-    \resumeSubSubheading{Lu, Y., et al. "Decremental Dynamics Planning for Robot Navigation"}{IROS 2025 (Accepted)}
-    \resumeSubSubheading{Zhao, C., et al. "II-NVM: Normal Vector-Assisted Mapping"}{IEEE RA-L 2025}
-  \resumeSubHeadingListEnd
 
 \end{document}

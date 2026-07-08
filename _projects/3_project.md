@@ -1,54 +1,39 @@
 ---
 layout: page
-title: Enhanced SLAM with Normal Vectors
-description: II-NVM - Improving map accuracy and consistency
-img: assets/img/publication_preview/II-NVM.png
+title: Normal Vector-Assisted SLAM Mapping
+description: II-NVM — more accurate, more consistent maps (IEEE RA-L 2025)
+img: assets/img/publication_preview/II-NVM_sq.jpg
 importance: 3
 category: robotics
-related_publications: zhao2025ii
+related_publications: true
 ---
 
 ## Overview
 
-This project introduces II-NVM (Improved Iterative Normal Vector Mapping), a novel approach to enhance SLAM accuracy and consistency by incorporating normal vector information into the mapping process.
+II-NVM {% cite zhao2025ii %} improves SLAM map accuracy and consistency by
+incorporating surface normal vector information into the mapping process,
+addressing the double-sided mapping problem that arises when both sides of a
+thin surface (walls, doors) are observed.
 
-## Key Features
+<div class="row justify-content-center">
+    <div class="col-sm-10 mt-3 mb-3">
+        {% include figure.liquid loading="eager" path="assets/img/projects/iinvm_system.jpg" title="II-NVM system overview" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    II-NVM pipeline: adaptive-radius normal calculation, normal-aware data association, and voxel map management.
+</div>
 
-### Normal Vector Integration
-- **Improved Accuracy**: Enhanced map precision through normal vector constraints
-- **Consistency Maintenance**: Better loop closure with geometric constraints
-- **Real-time Performance**: Efficient computation suitable for online SLAM
+<!-- TODO: add mapping result comparison GIF (with/without normal vectors) -->
 
-### Mapping Enhancement
-- **Surface Reconstruction**: Better planar surface detection and representation
-- **Noise Reduction**: Robust to sensor noise through normal vector filtering
-- **Drift Correction**: Improved long-term mapping consistency
+## My contribution
 
-## Technical Implementation
-
-- **SLAM Framework**: Extended ORB-SLAM3 with normal vector support
-- **Point Cloud Processing**: PCL for efficient normal computation
-- **Optimization**: g2o for graph optimization with normal constraints
-- **Communication**: ROS for modular system integration
-
-## Applications
-
-Successfully tested on:
-- Indoor mapping scenarios
-- Outdoor navigation tasks
-- Long-corridor environments with feature scarcity
-
-## Impact
-
-- **Mapping Accuracy**: 30% improvement in map consistency
-- **Drift Reduction**: 45% less drift in long trajectories
-- **Computational Efficiency**: Only 15% overhead compared to baseline
-
-## Publication
-
-This work has been published in IEEE Robotics and Automation Letters (2025):
-- "II-NVM: Enhancing Map Accuracy and Consistency with Normal Vector-Assisted Mapping" by Zhao, Li, Jian, Xu, Wang, Ma, and Jin
+This is a collaboration led by Chengwei Zhao; I am a co-author (5th of 7) and
+contributed to the mapping methodology and evaluation. The work was published in
+IEEE Robotics and Automation Letters (2025).
 
 ## Resources
 
-[Paper PDF](https://arxiv.org/pdf/2504.08204) | [IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/10966190)
+- [arXiv](https://arxiv.org/abs/2504.08204)
+- [IEEE Xplore](https://ieeexplore.ieee.org/document/10966190)
+- [Code (official open-source release)](https://github.com/chengwei0427/II-NVM)

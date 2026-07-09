@@ -2,8 +2,7 @@
 layout: none
 title: os
 permalink: /os/
-nav: true
-nav_order: 5
+nav: false
 ---
 <!doctype html>
 <html lang="en">
@@ -15,6 +14,12 @@ nav_order: 5
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/world-nav.css' | relative_url }}">
+<style>
+/* pill hidden during the hero boot; revealed with the desktop */
+.world-nav { opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+.desktop-revealed .world-nav { opacity: 1; pointer-events: auto; }
+</style>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -915,6 +920,8 @@ body {
   </div>
 </div>
 
+{% include world_nav.liquid active='os' %}
+
 <script>
 (function() {
   'use strict';
@@ -1084,6 +1091,7 @@ body {
       setTimeout(function() {
         document.getElementById('heroSection').style.display = 'none';
         document.getElementById('desktop').classList.add('revealed');
+        document.body.classList.add('desktop-revealed');
         document.documentElement.classList.add('scroll-unlocked');
         window.scrollTo(0, 0);
         setTimeout(function() { overlay.classList.remove('active'); }, 250);
@@ -1120,6 +1128,7 @@ body {
     setTimeout(function() {
       document.getElementById('heroSection').style.display = 'none';
       document.getElementById('desktop').classList.add('revealed');
+      document.body.classList.add('desktop-revealed');
       document.documentElement.classList.add('scroll-unlocked');
       window.scrollTo(0, 0);
       setTimeout(function() { overlay.classList.remove('active'); }, 250);

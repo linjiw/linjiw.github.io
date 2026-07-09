@@ -50,6 +50,10 @@
     <!-- Footer -->
     {% include footer.liquid %}
 
+    <!-- World switcher -->
+    <link rel="stylesheet" href="{{ '/assets/css/world-nav.css' | relative_url }}">
+    {% include world_nav.liquid active='classic' %}
+
     <!-- JavaScripts -->
     {% include scripts.liquid %}
   </body>

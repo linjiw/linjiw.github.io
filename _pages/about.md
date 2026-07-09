@@ -1,7 +1,7 @@
 ---
 layout: about
 title: about
-permalink: /
+permalink: /classic/
 subtitle: Ph.D. Student in Computer Science at <a href='https://cs.gmu.edu/'>George Mason University</a>
 
 profile:
@@ -43,4 +43,4 @@ I am first author of two IROS 2025 papers. [GACL](https://arxiv.org/abs/2508.029
 
 Before my Ph.D., I completed an M.S. in Mechanical Engineering at Carnegie Mellon University (GPA 3.94/4.0) working on 3D perception and AR-guided robotics, and a B.S. in Mechanical Engineering at the University of Cincinnati. In summer 2025 I was a Software Development Engineer Intern at AWS, where I built a statistical regression-testing and visualization platform that cut performance analysis time from 8 hours to 15 minutes.
 
-Explore my [publications]({{ "/publications/" | relative_url }}), [projects]({{ "/projects/" | relative_url }}), and [CV]({{ "/cv/" | relative_url }}). This site also has two other worlds — [**linji OS**]({{ "/os/" | relative_url }}), a terminal-and-desktop tour, and the [**research canvas**]({{ "/canvas/" | relative_url }}), an infinite map of how everything connects — switch anytime with the pill at the bottom of the screen ✨
+Explore my [publications]({{ "/publications/" | relative_url }}), [projects]({{ "/projects/" | relative_url }}), and [CV]({{ "/cv/" | relative_url }}). This is the classic view — you can also switch to [**linji OS**]({{ "/" | relative_url }}), the terminal-and-desktop tour, or the [**research canvas**]({{ "/canvas/" | relative_url }}) using the pill at the bottom of the screen ✨

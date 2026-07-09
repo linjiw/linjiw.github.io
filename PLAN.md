@@ -187,6 +187,20 @@ Adaptations for our site (view-first portfolio, not an editor):
 - [x] Entry points: `canvas.app` desktop icon inside /os/ (deliberately no
       navbar entry); mobile fallback = vertical scroll of the same cards.
 
+## Phase 7 — OS as front door (July 2026)
+
+- [x] Make `_pages/os.html` the site root (`permalink: /`); move the classic
+      al-folio about page to `/classic/`; repoint the navbar brand + About link
+      + active-state logic to `/classic/`.
+- [x] Give the OS root real SEO: title, description, canonical, Open Graph +
+      Twitter card, JSON-LD Person block, and a `<noscript>` fallback with the
+      key facts + a link into the classic site (crawlers/no-JS see content).
+- [x] Persistent "classic site →" escape hatch on the OS hero (hidden once the
+      desktop reveals) so the conventional site is always one click away.
+- [x] Pill order → 01 os · 02 canvas · 03 classic; fix all cross-links
+      (mb-exit, goodbye terminal, canvas contact card, about.md copy).
+- [x] `/os/` redirect stub → `/` so old links survive.
+
 ## Future TODOs (content, needs owner input)
 
 - [ ] A sharp, recent headshot from the owner (current prof_pic.jpg is the

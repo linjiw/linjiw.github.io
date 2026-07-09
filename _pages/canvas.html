@@ -14,6 +14,7 @@ nav: false
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/world-nav.css' | relative_url }}">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -385,7 +386,7 @@ body {
 
 .hint-bar {
   position: fixed;
-  bottom: 14px; left: 50%;
+  bottom: 66px; left: 50%;
   transform: translateX(-50%);
   font-family: 'Fira Code', monospace;
   font-size: 11px;
@@ -415,6 +416,7 @@ body {
 @media (max-width: 768px), (pointer: coarse) and (max-width: 900px) {
   html, body { overflow: auto; }
   .canvas-area, .minimap, .zoom-controls, .hint-bar, .nav-panel { display: none; }
+  .mobile-list { padding-bottom: 90px; } /* clearance for the world pill */
   .toolbar { height: auto; min-height: 48px; flex-wrap: nowrap; }
   .toolbar-sub { display: none; }
   .toolbar-exit { white-space: nowrap; }
@@ -667,6 +669,8 @@ body {
 </div>
 
 <div class="hint-bar"><kbd>scroll</kbd> zoom · <kbd>drag</kbd> pan · cards are draggable · <kbd>tour</kbd> flies the camera</div>
+
+{% include world_nav.liquid active='canvas' %}
 
 <script>
 (function() {

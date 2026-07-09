@@ -151,44 +151,46 @@ Same engine mechanics as ESTHER Canvas, restyled to the linji OS identity and
 with editing tools stripped down for a portfolio (view-focused, not a builder).
 
 Engine mechanics (understood from the source):
-- [ ] Single transformed div: `translate(panX,panY) scale(s)` with
+- [x] Single transformed div: `translate(panX,panY) scale(s)` with
       `transform-origin: 0 0`; dot-grid background scales via
       `background-size: 28px*s` and `background-position: pan % (28*s)`.
-- [ ] Zoom-at-cursor: `pan = mouse - (mouse - pan) * (newScale/oldScale)`,
+- [x] Zoom-at-cursor: `pan = mouse - (mouse - pan) * (newScale/oldScale)`,
       wheel factor 0.92/1.08, clamp 0.15–3.
-- [ ] Pan on blank-area mousedown (skip `.card`), pinch zoom on touch
+- [x] Pan on blank-area mousedown (skip `.card`), pinch zoom on touch
       (two-finger distance ratio, midpoint as anchor).
-- [ ] Cards: absolutely positioned; drag divides mouse delta by scale;
+- [x] Cards: absolutely positioned; drag divides mouse delta by scale;
       hover bring-to-front; `.dragging` scale(1.04) lift.
-- [ ] Connections: static id-pair list, cubic Bézier between card *edge
+- [x] Connections: static id-pair list, cubic Bézier between card *edge
       points* (edge intersection math), redrawn on card drag; yellow/blue
       line classes.
-- [ ] Minimap: fixed-bounds projection of cards + viewport rect,
+- [x] Minimap: fixed-bounds projection of cards + viewport rect,
       click-to-navigate.
-- [ ] Zoom-fit button computes scale from canvas bounds; toolbar +/- zoom
+- [x] Zoom-fit button computes scale from canvas bounds; toolbar +/- zoom
       to viewport center; keyboard hint bar at the bottom.
 
 Adaptations for our site (view-first portfolio, not an editor):
-- [ ] Keep: pan/zoom/pinch, card drag (playful), connections, minimap,
+- [x] Keep: pan/zoom/pinch, card drag (playful), connections, minimap,
       zoom controls, hint bar, layer list as a *navigation* panel
       (click → smooth-pan camera to that card, à la "camera move").
-- [ ] Drop: template panel, editing, delete, undo, save-layout, connect
+- [x] Drop: template panel, editing, delete, undo, save-layout, connect
       mode (portfolio visitors don't author).
-- [ ] Add: smooth animated camera transitions (lerp pan/zoom) when
+- [x] Add: smooth animated camera transitions (lerp pan/zoom) when
       clicking a layer/nav item — the "camera move to focused card" feel.
-- [ ] Cards: profile+photo, education timeline (UC→CMU→GMU), 4 paper cards
+- [x] Cards: profile+photo, education timeline (UC→CMU→GMU), 4 paper cards
       (figure + verified numbers), skills card, robot-platforms card,
       BARN award sticky, "now: humanoids" sticky, quote card, contact card.
-- [ ] Connections express the research narrative: profile→timeline,
+- [x] Connections express the research narrative: profile→timeline,
       timeline→GACL/RTW (first-author), GACL→RTW (siblings), DDP→BARN
       award, RTW→off-road robot, profile→now.
-- [ ] Style: linji OS palette (cream board, engineering-blue dashed
+- [x] Style: linji OS palette (cream board, engineering-blue dashed
       borders, yellow accents), Fraunces card titles, Fira Code labels.
-- [ ] Entry points: `canvas.app` desktop icon inside /os/ + nav entry;
-      mobile fallback = vertical scroll of the same cards.
+- [x] Entry points: `canvas.app` desktop icon inside /os/ (deliberately no
+      navbar entry); mobile fallback = vertical scroll of the same cards.
 
 ## Future TODOs (content, needs owner input)
 
+- [ ] A sharp, recent headshot from the owner (current prof_pic.jpg is the
+      real photo but only a 150px source upscaled to 450px).
 - [ ] Robot media: short square GIFs/videos of the wheeled UGV, quadruped, and
       off-road runs for the three project pages (HTML TODO comments mark the
       spots in `_projects/*.md`).

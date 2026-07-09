@@ -20,7 +20,7 @@
     var fade = document.getElementById('worldFade');
     document.querySelectorAll('#worldNav .world-pill:not(.active)').forEach(function(pill) {
       pill.addEventListener('click', function(e) {
-        if (reduced || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        if (reduced || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
         e.preventDefault();
         fade.classList.add('active');
         setTimeout(function() { window.location.href = pill.href; }, 260);

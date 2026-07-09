@@ -69,3 +69,14 @@
 
 /* room under classic pages so the pill never covers the footer text */
 footer.sticky-bottom { padding-bottom: 64px !important; }
+
+/* short pages: push the in-flow footer to the bottom of the viewport */
+body.sticky-bottom-footer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+body.sticky-bottom-footer footer.sticky-bottom { margin-top: auto !important; } /* beat Bootstrap .mt-5 */
+
+/* keep the ctrl+k search modal above the pill */
+html { --ninja-z-index: 1700; }

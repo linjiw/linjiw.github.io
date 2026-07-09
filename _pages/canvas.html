@@ -416,13 +416,12 @@ body {
 @media (max-width: 768px), (pointer: coarse) and (max-width: 900px) {
   html, body { overflow: auto; }
   .canvas-area, .minimap, .zoom-controls, .hint-bar, .nav-panel { display: none; }
-  .mobile-list { padding-bottom: 90px; } /* clearance for the world pill */
   .toolbar { height: auto; min-height: 48px; flex-wrap: nowrap; }
   .toolbar-sub { display: none; }
   .toolbar-exit { white-space: nowrap; }
   .mobile-list {
     display: block;
-    padding: 62px 16px 40px;
+    padding: 62px 16px 96px; /* bottom clearance for the world pill */
     max-width: 480px;
     margin: 0 auto;
   }

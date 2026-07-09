@@ -184,8 +184,8 @@ Adaptations for our site (view-first portfolio, not an editor):
       award, RTW→off-road robot, profile→now.
 - [x] Style: linji OS palette (cream board, engineering-blue dashed
       borders, yellow accents), Fraunces card titles, Fira Code labels.
-- [x] Entry points: `canvas.app` desktop icon inside /os/ + nav entry;
-      mobile fallback = vertical scroll of the same cards.
+- [x] Entry points: `canvas.app` desktop icon inside /os/ (deliberately no
+      navbar entry); mobile fallback = vertical scroll of the same cards.
 
 ## Future TODOs (content, needs owner input)
 

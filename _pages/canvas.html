@@ -405,12 +405,19 @@ body {
   padding: 1px 6px;
 }
 
+@media (max-width: 1000px) {
+  .hint-bar { display: none; }
+}
+
 /* ===== MOBILE FALLBACK: vertical scroll of cards ===== */
 .mobile-list { display: none; }
 
 @media (max-width: 768px), (pointer: coarse) and (max-width: 900px) {
   html, body { overflow: auto; }
   .canvas-area, .minimap, .zoom-controls, .hint-bar, .nav-panel { display: none; }
+  .toolbar { height: auto; min-height: 48px; flex-wrap: nowrap; }
+  .toolbar-sub { display: none; }
+  .toolbar-exit { white-space: nowrap; }
   .mobile-list {
     display: block;
     padding: 62px 16px 40px;
@@ -472,7 +479,7 @@ body {
       <div class="card-inner">
         <div class="card-kicker">WHOAMI</div>
         <h3>Linji (Joey) Wang</h3>
-        <p>Robotics Ph.D. student @ George Mason University · RobotiXX Lab, advised by Xuesu Xiao. Curriculum learning × reinforcement learning.</p>
+        <p>CS Ph.D. student @ George Mason University · RobotiXX Lab, advised by Xuesu Xiao. Curriculum learning × reinforcement learning for robots.</p>
         <span class="tagline">robots that learn, one task at a time</span>
       </div>
     </div>
@@ -544,11 +551,11 @@ body {
     <div class="card card-paper" id="card-ddp" style="left:1000px; top:620px;">
       <div class="card-tag-strip blue"></div>
       <div class="card-inner">
-        <div class="card-kicker award">🏆 IROS 2025 · 1ST PLACE BARN CHALLENGE (SIM)</div>
+        <div class="card-kicker award">IROS 2025 · 🏆 1ST PLACE, 2025 BARN CHALLENGE (SIM)</div>
         <h3>Decremental Dynamics Planning</h3>
-        <p>Full robot dynamics near the robot, progressively simpler along the horizon. Led by Yuanjie Lu; with Tong Xu, Nick Hawes, Xuesu Xiao (3rd author).</p>
+        <p>Full robot dynamics near the robot, progressively simpler along the horizon. Led by Yuanjie Lu; I'm 3rd author, with Tong Xu, Nick Hawes, and Xuesu Xiao.</p>
         <ul class="metrics">
-          <li>improved 3 planners across the board</li>
+          <li>improved 3 planners overall</li>
           <li>won the 2025 BARN Challenge sim phase</li>
         </ul>
         <div class="card-links">
@@ -563,7 +570,8 @@ body {
       <div class="card-inner">
         <div class="card-kicker">IEEE RA-L 2025</div>
         <h3>II-NVM: Normal Vector-Assisted Mapping</h3>
-        <p>Surface-normal consistency fixes double-sided mapping of thin structures in SLAM. Led by Chengwei Zhao (5th of 7 authors).</p>
+        <img class="paper-fig" src="{{ '/assets/img/projects/iinvm_system.jpg' | relative_url }}" alt="II-NVM system overview" loading="lazy">
+        <p>Surface-normal consistency fixes double-sided mapping of thin structures in SLAM. Led by Chengwei Zhao; I'm 5th of 7 authors.</p>
         <div class="card-links">
           <a href="https://arxiv.org/abs/2504.08204" target="_blank" rel="noopener">arXiv</a>
           <a href="https://github.com/chengwei0427/II-NVM" target="_blank" rel="noopener">code</a>
@@ -605,7 +613,7 @@ body {
       </div>
     </div>
 
-    <div class="card card-sticky" id="card-award" style="left:880px; top:430px;">
+    <div class="card card-sticky" id="card-award" style="left:820px; top:490px;">
       <div class="card-inner">
         <h3>🏆 1st place</h3>
         <p>2025 BARN Challenge, simulation phase — our DDP navigation system</p>
@@ -619,7 +627,7 @@ body {
       </div>
     </div>
 
-    <div class="card card-quote" id="card-quote" style="left:170px; top:520px;">
+    <div class="card card-quote" id="card-quote" style="left:170px; top:560px;">
       <div class="card-inner">
         <p>“Start simple. Build competence. Master the complex.”</p>
         <div class="who">— every good curriculum</div>
@@ -647,7 +655,7 @@ body {
   <div class="mobile-note">// the interactive canvas needs a bigger screen — here's the tour, in order</div>
 </div>
 
-<div class="minimap" id="minimap" aria-hidden="true">
+<div class="minimap" id="minimap" role="button" aria-label="Minimap: click to move the view">
   <div class="minimap-viewport" id="minimapViewport"></div>
 </div>
 
@@ -672,11 +680,16 @@ body {
   var mmViewport = document.getElementById('minimapViewport');
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  var layoutQuery = window.matchMedia('(max-width: 768px), (pointer: coarse) and (max-width: 900px)');
+  // the page initializes for exactly one layout; if the breakpoint flips
+  // (window resize across 768px, tablet rotation), reinitialize cleanly
+  layoutQuery.addEventListener('change', function() { window.location.reload(); });
+
   var isMobileLayout = getComputedStyle(area).display === 'none';
   if (isMobileLayout) {
     // move cards into the vertical list in tour order and stop
     var order = ['card-profile', 'card-timeline', 'card-gacl', 'card-rtw',
-                 'card-award', 'card-ddp', 'card-iinvm', 'card-robots',
+                 'card-ddp', 'card-award', 'card-iinvm', 'card-robots',
                  'card-skills', 'card-quote', 'card-now', 'card-contact'];
     var list = document.getElementById('mobileList');
     order.forEach(function(id) {
@@ -685,6 +698,15 @@ body {
     });
     return;
   }
+
+  // keyboard focus on a link inside an off-screen card makes the browser
+  // scroll this overflow:hidden container, desyncing all pan math — reset
+  // the scroll and fly the camera to the focused card instead
+  area.addEventListener('scroll', function() { area.scrollLeft = 0; area.scrollTop = 0; });
+  area.addEventListener('focusin', function(e) {
+    var card = e.target.closest('.card');
+    if (card && card.id) flyToCard(card.id);
+  });
 
   var scale = 1, panX = 0, panY = 0;
   var MIN_SCALE = 0.15, MAX_SCALE = 3;
@@ -761,6 +783,7 @@ body {
   /* ===== pan (blank area) ===== */
   var isPanning = false, startX = 0, startY = 0;
   area.addEventListener('pointerdown', function(e) {
+    if (e.button !== 0) return;
     if (e.target.closest('.card')) return;
     if (e.pointerType === 'touch') return; // touch handled below
     isPanning = true;
@@ -808,8 +831,12 @@ body {
 
   function fitAll(animate) {
     var rect = area.getBoundingClientRect();
-    var s = Math.min(rect.width / WORLD.w, rect.height / WORLD.h) * 0.92;
-    var px = (rect.width - WORLD.w * s) / 2;
+    // the fixed tour panel covers the left edge; fit into the space right of it
+    var navEl = document.querySelector('.nav-panel');
+    var navInset = navEl ? navEl.getBoundingClientRect().right + 10 : 0;
+    var availW = rect.width - navInset;
+    var s = Math.max(MIN_SCALE, Math.min(availW / WORLD.w, rect.height / WORLD.h) * 0.92);
+    var px = navInset + (availW - WORLD.w * s) / 2;
     var py = (rect.height - WORLD.h * s) / 2;
     if (animate) flyTo(px, py, s);
     else { scale = s; panX = px; panY = py; applyTransform(); }
@@ -861,7 +888,10 @@ body {
   var maxZ = 10;
   document.querySelectorAll('.card').forEach(function(card) {
     card.addEventListener('pointerdown', function(e) {
+      if (e.button !== 0) return;
       if (e.target.closest('a')) return;
+      if (dragCard) return; // second finger of a pinch must not start a drag
+      cancelFly();
       e.preventDefault();
       dragCard = card;
       dragStartCardX = parseFloat(card.style.left) || 0;
@@ -926,13 +956,16 @@ body {
     var card = document.getElementById(cardId);
     if (!card) return;
     var rect = area.getBoundingClientRect();
+    var navEl = document.querySelector('.nav-panel');
+    var navInset = navEl ? navEl.getBoundingClientRect().right + 10 : 0;
+    var availW = rect.width - navInset;
     var w = card.offsetWidth, h = card.offsetHeight;
     var l = parseFloat(card.style.left) || 0;
     var t = parseFloat(card.style.top) || 0;
-    // frame the card with generous margin
-    var targetScale = Math.min(1.4, Math.min(rect.width / (w + 260), rect.height / (h + 200)));
+    // frame the card with generous margin, centered in the space right of the panel
+    var targetScale = Math.min(1.4, Math.min(availW / (w + 260), rect.height / (h + 200)));
     var cx = l + w / 2, cy = t + h / 2;
-    var px = rect.width / 2 - cx * targetScale;
+    var px = navInset + availW / 2 - cx * targetScale;
     var py = rect.height / 2 - cy * targetScale;
     document.querySelectorAll('.card.focused').forEach(function(c) { c.classList.remove('focused'); });
     flyTo(px, py, targetScale, function() {
@@ -995,7 +1028,19 @@ body {
   updateConnections();
   fitAll(false);
   window.addEventListener('resize', function() { applyTransform(); });
-  setTimeout(function() { flyToCard('card-profile'); }, 600);
+  // card heights change when lazy figures arrive; keep edges/dots in sync
+  window.addEventListener('load', function() { updateConnections(); updateMinimapDots(); });
+  document.querySelectorAll('.paper-fig').forEach(function(img) {
+    img.addEventListener('load', function() { updateConnections(); updateMinimapDots(); });
+  });
+  // boot flight to the profile — but never fight the user's own input
+  var bootFlight = setTimeout(function() { bootFlight = null; flyToCard('card-profile'); }, 600);
+  function cancelBootFlight() {
+    if (bootFlight) { clearTimeout(bootFlight); bootFlight = null; }
+  }
+  area.addEventListener('pointerdown', cancelBootFlight);
+  area.addEventListener('wheel', cancelBootFlight);
+  area.addEventListener('touchstart', cancelBootFlight);
 })();
 </script>
 </body>

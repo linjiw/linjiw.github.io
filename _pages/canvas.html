@@ -704,6 +704,7 @@ body {
   // the scroll and fly the camera to the focused card instead
   area.addEventListener('scroll', function() { area.scrollLeft = 0; area.scrollTop = 0; });
   area.addEventListener('focusin', function(e) {
+    if (!e.target.matches(':focus-visible')) return; // keyboard focus only, not mouse clicks
     var card = e.target.closest('.card');
     if (card && card.id) flyToCard(card.id);
   });

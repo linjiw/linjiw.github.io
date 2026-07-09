@@ -24,13 +24,22 @@ Deployment is automatic via GitHub Actions on push to `main`
 
 ## Content architecture — one source of truth per artifact
 
+**Three "worlds", one site.** The front door (`/`) is the interactive **linji
+OS** page (`_pages/os.html`); the conventional al-folio academic site lives at
+`/classic/` (`_pages/about.md`); the infinite research map is `/canvas/`. A
+persistent bottom-center pill (`_includes/world_nav.liquid`) switches between
+them in order **01 os · 02 canvas · 03 classic**. Old `/os/` links redirect to
+`/` (`_pages/os_redirect.md`). The al-folio navbar (brand + About link) points
+at `/classic/`, not `/`.
+
 | Artifact | Source of truth | Renders as |
 |---|---|---|
-| Publications | `_bibliography/papers.bib` | /publications/, homepage selected papers |
+| Front door (OS) | `_pages/os.html` | / (layout: none; has its own SEO/OG/JSON-LD) |
+| Publications | `_bibliography/papers.bib` | /publications/, classic selected papers |
 | Site CV | `assets/json/resume.json` | /cv/ (via `_layouts/cv.liquid`) |
 | PDF resume | `resume.tex` | `assets/pdf/resume.pdf` (built by CI) |
-| Homepage bio | `_pages/about.md` | / |
-| News | `_news/*.md` | homepage announcements |
+| Classic bio | `_pages/about.md` | /classic/ |
+| News | `_news/*.md` | classic announcements |
 | Projects | `_projects/*.md` | /projects/ |
 
 There is intentionally **no** `_data/cv.yml` (removed — it was dead code) and

@@ -1,16 +1,16 @@
-<!-- World switcher: persistent pill nav across classic / os / canvas -->
+<!-- World switcher: persistent pill nav across os / canvas / classic -->
 <nav class="world-nav" id="worldNav" aria-label="Site worlds">
-  <a href="{{ '/' | relative_url }}" class="world-pill {% if include.active == 'classic' %}active{% endif %}"
-     {% if include.active == 'classic' %}aria-current="page"{% endif %}>
-    <span class="world-num">01</span>classic
-  </a>
-  <a href="{{ '/os/' | relative_url }}" class="world-pill {% if include.active == 'os' %}active{% endif %}"
+  <a href="{{ '/' | relative_url }}" class="world-pill {% if include.active == 'os' %}active{% endif %}"
      {% if include.active == 'os' %}aria-current="page"{% endif %}>
-    <span class="world-num">02</span>os
+    <span class="world-num">01</span>os
   </a>
   <a href="{{ '/canvas/' | relative_url }}" class="world-pill {% if include.active == 'canvas' %}active{% endif %}"
      {% if include.active == 'canvas' %}aria-current="page"{% endif %}>
-    <span class="world-num">03</span>canvas
+    <span class="world-num">02</span>canvas
+  </a>
+  <a href="{{ '/classic/' | relative_url }}" class="world-pill {% if include.active == 'classic' %}active{% endif %}"
+     {% if include.active == 'classic' %}aria-current="page"{% endif %}>
+    <span class="world-num">03</span>classic
   </a>
 </nav>
 <div class="world-fade" id="worldFade" aria-hidden="true"></div>

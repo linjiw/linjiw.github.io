@@ -1,7 +1,7 @@
 ---
 layout: none
 title: os
-permalink: /os/
+permalink: /
 nav: false
 ---
 <!doctype html>
@@ -9,8 +9,42 @@ nav: false
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>linji OS — Linji Wang</title>
-<meta name="description" content="An interactive OS-style tour of Linji Wang's robotics research: curriculum learning, reinforcement learning, IROS 2025 papers.">
+<title>Linji (Joey) Wang — Robotics Ph.D. · curriculum learning for robots</title>
+<meta name="description" content="Linji Wang — robotics Ph.D. student at George Mason University (RobotiXX Lab). Curriculum learning and reinforcement learning for robot navigation and locomotion; first author of two IROS 2025 papers.">
+<link rel="canonical" href="https://linjiw.github.io/">
+<!-- Open Graph / Twitter (front-door share card) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Linji (Joey) Wang">
+<meta property="og:title" content="Linji (Joey) Wang — Robotics Ph.D.">
+<meta property="og:description" content="Curriculum learning and reinforcement learning for robot navigation and locomotion. First author of two IROS 2025 papers; 1st place, 2025 BARN Challenge (simulation).">
+<meta property="og:url" content="https://linjiw.github.io/">
+<meta property="og:image" content="https://linjiw.github.io/assets/img/prof_pic.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linji (Joey) Wang — Robotics Ph.D.">
+<meta name="twitter:description" content="Curriculum learning and reinforcement learning for robots. First author of two IROS 2025 papers; 1st place, 2025 BARN Challenge (simulation).">
+<meta name="twitter:image" content="https://linjiw.github.io/assets/img/prof_pic.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Linji Wang",
+  "alternateName": "Linji (Joey) Wang",
+  "url": "https://linjiw.github.io/",
+  "image": "https://linjiw.github.io/assets/img/prof_pic.jpg",
+  "jobTitle": "Ph.D. Student in Computer Science",
+  "affiliation": { "@type": "Organization", "name": "George Mason University" },
+  "alumniOf": [
+    { "@type": "Organization", "name": "Carnegie Mellon University" },
+    { "@type": "Organization", "name": "University of Cincinnati" }
+  ],
+  "knowsAbout": ["Robotics", "Reinforcement Learning", "Curriculum Learning", "Robot Navigation"],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=VURUgFMAAAAJ",
+    "https://github.com/linjiw",
+    "https://linkedin.com/in/linjiw"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -155,6 +189,24 @@ body {
 }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
+.hero-skip {
+  position: fixed;
+  top: 18px; right: 20px;
+  z-index: 50;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--blue-deep);
+  text-decoration: none;
+  padding: 7px 14px;
+  border: 1px solid rgba(30,91,168,0.35);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 10px rgba(30,91,168,0.1);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.hero-skip:hover { background: #1e5ba8; color: #fff; box-shadow: 0 4px 14px rgba(30,91,168,0.25); }
+.desktop-revealed .hero-skip { display: none; }
 .hero-cta { margin-top: 36px; text-align: center; opacity: 0; transition: opacity 0.6s ease; cursor: pointer; }
 .hero-cta.visible { opacity: 1; }
 .hero-cta.hidden { opacity: 0; pointer-events: none; }
@@ -619,7 +671,18 @@ body {
 </head>
 <body>
 
+<noscript>
+  <div style="max-width:640px;margin:80px auto;padding:0 24px;font-family:Georgia,serif;color:#1a1a2e;">
+    <h1 style="font-size:28px;margin-bottom:12px;">Linji (Joey) Wang</h1>
+    <p style="font-size:15px;line-height:1.7;color:#4a4a5a;">Robotics Ph.D. student at George Mason University (RobotiXX Lab). Curriculum learning and reinforcement learning for robot navigation and locomotion; first author of two IROS 2025 papers and 1st place in the simulation phase of the 2025 BARN Challenge.</p>
+    <p style="margin-top:20px;font-size:15px;"><a href="{{ '/classic/' | relative_url }}" style="color:#1e5ba8;">Enter the site →</a></p>
+  </div>
+</noscript>
+
 <div class="transition-overlay" id="transitionOverlay"></div>
+
+<!-- persistent escape hatch: the conventional site is always one click away -->
+<a class="hero-skip" href="{{ '/classic/' | relative_url }}">skip intro · classic site →</a>
 
 <!-- ===== HERO ===== -->
 <section class="hero-section" id="heroSection">
@@ -643,7 +706,7 @@ body {
     <div class="macbook-shadow"></div>
   </div>
   <div class="hero-cta" id="heroCta">
-    <div class="cta-text" id="ctaText">Press Enter to Launch</div>
+    <div class="cta-text" id="ctaText">Press Enter or click to launch</div>
     <div class="cta-arrow">↓</div>
   </div>
 </section>
@@ -655,7 +718,7 @@ body {
     <a class="mb-item" href="#about">About</a>
     <a class="mb-item" href="#research">Research</a>
     <a class="mb-item" href="#now">Now</a>
-    <a class="mb-exit" href="{{ '/' | relative_url }}">↩ classic site</a>
+    <a class="mb-exit" href="{{ '/classic/' | relative_url }}">↩ classic site</a>
     <span class="mb-clock" id="mbClock">--:--</span>
   </div>
 
@@ -913,7 +976,7 @@ body {
         <span class="gt-dim">"Start simple. Build competence. Master the complex." — every good curriculum</span>
         <div>&nbsp;</div>
         <div><span class="gt-prompt">$ </span><span class="gt-cmd">exit</span></div>
-        <span class="gt-output"><span class="gt-gold">[Process completed]</span> — <a href="{{ '/' | relative_url }}">↩ back to the classic site</a></span>
+        <span class="gt-output"><span class="gt-gold">[Process completed]</span> — <a href="{{ '/classic/' | relative_url }}">↩ back to the classic site</a></span>
       </div>
       <div class="goodbye-footer">© 2026 Linji Wang · linji OS v1.0 · design inspired by <a href="https://hiesther.me" target="_blank" rel="noopener" style="color:inherit;">hiesther.me</a></div>
     </div>

@@ -1,0 +1,207 @@
+/* Shared embodied-learning motif used by OS, Canvas, and Classic. */
+.learning-loop {
+  --loop-bg: #fcfbf8;
+  --loop-panel: rgba(255, 255, 255, 0.8);
+  --loop-ink: #1a1a2e;
+  --loop-muted: #6f7180;
+  --loop-blue: #1e5ba8;
+  --loop-blue-soft: rgba(43, 127, 216, 0.2);
+  --loop-yellow: #f4d758;
+  width: 100%;
+  margin: 0;
+  color: var(--loop-ink);
+  font-family: "Fira Code", monospace;
+}
+
+.learning-loop--dark {
+  --loop-bg: #151821;
+  --loop-panel: rgba(24, 29, 42, 0.88);
+  --loop-ink: #f7f6f1;
+  --loop-muted: rgba(255, 255, 255, 0.58);
+  --loop-blue: #7ab8f5;
+  --loop-blue-soft: rgba(122, 184, 245, 0.24);
+}
+
+.learning-loop__viewport {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--loop-blue-soft);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 14px 14px, var(--loop-blue-soft) 1px, transparent 1.2px) 0 0 / 28px 28px,
+    var(--loop-bg);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.learning-loop__status {
+  position: absolute;
+  top: 9px;
+  left: 11px;
+  right: 11px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--loop-muted);
+  font-size: 8.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.learning-loop__status > span:last-child {
+  margin-left: auto;
+}
+
+.learning-loop__live {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--loop-yellow);
+  box-shadow: 0 0 0 3px rgba(244, 215, 88, 0.18);
+}
+
+.learning-loop__scene {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 128px;
+}
+
+.learning-loop__course {
+  fill: none;
+  stroke: var(--loop-blue);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 7 7;
+  opacity: 0.55;
+  animation: learningLoopCourse 8s linear 1 both;
+}
+
+.learning-loop__checkpoint circle {
+  fill: var(--loop-panel);
+  stroke: var(--loop-blue);
+  stroke-width: 2;
+}
+
+.learning-loop__checkpoint text {
+  fill: var(--loop-muted);
+  font-family: "Fira Code", monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+.learning-loop__checkpoint--goal circle {
+  fill: var(--loop-yellow);
+  stroke: var(--loop-yellow);
+  filter: drop-shadow(0 3px 5px rgba(103, 82, 0, 0.2));
+}
+
+.learning-loop__checkpoint--goal path {
+  fill: var(--loop-blue);
+}
+
+.learning-loop__agent {
+  color: var(--loop-blue);
+  transform-box: view-box;
+  transform-origin: 0 0;
+  animation: learningLoopAgent 8s cubic-bezier(0.45, 0, 0.2, 1) 1 both;
+  filter: drop-shadow(0 4px 4px rgba(30, 91, 168, 0.18));
+}
+
+.learning-loop__agent rect {
+  fill: var(--loop-panel);
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+.learning-loop__eye,
+.learning-loop__antenna-tip {
+  fill: var(--loop-yellow);
+  stroke: currentColor;
+  stroke-width: 1.2;
+}
+
+.learning-loop__limb,
+.learning-loop__antenna {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.learning-loop__policy-pulse {
+  fill: none;
+  stroke: var(--loop-yellow);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: learningLoopPolicy 1.9s ease-out 4 both;
+}
+
+.learning-loop__sensor path,
+.learning-loop__sensor circle {
+  fill: none;
+  stroke: var(--loop-blue);
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.68;
+}
+
+.learning-loop__sensor circle {
+  fill: var(--loop-yellow);
+  stroke-width: 1;
+}
+
+.learning-loop__legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 8px 1px;
+  color: var(--loop-muted);
+  font-size: 9.5px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.learning-loop__legend span {
+  color: var(--loop-ink);
+}
+
+.learning-loop__legend i {
+  color: var(--loop-blue);
+  font-style: normal;
+}
+
+@keyframes learningLoopCourse {
+  to { stroke-dashoffset: -84; }
+}
+
+@keyframes learningLoopPolicy {
+  0% { opacity: 0.9; transform: scale(0.55); }
+  75%, 100% { opacity: 0; transform: scale(1.35); }
+}
+
+@keyframes learningLoopAgent {
+  0%, 8% { transform: translate(34px, 114px) rotate(-3deg); }
+  34% { transform: translate(122px, 80px) rotate(-1deg); }
+  63% { transform: translate(208px, 94px) rotate(2deg); }
+  94%, 100% { transform: translate(284px, 42px) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .learning-loop__live,
+  .learning-loop__course,
+  .learning-loop__policy-pulse,
+  .learning-loop__agent {
+    animation: none !important;
+  }
+
+  .learning-loop__agent {
+    transform: translate(208px, 94px);
+  }
+}
+
+@media (max-width: 480px) {
+  .learning-loop__legend { gap: 5px; font-size: 8.5px; }
+}

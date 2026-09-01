@@ -26,3 +26,12 @@
     </tr>
   {% endfor %}
 </table>
+{% if data[1].profiles and data[1].profiles.size > 0 %}
+  <div class="d-flex flex-wrap gap-3 mt-2">
+    {% for profile in data[1].profiles %}
+      <a class="mr-3" href="{{ profile.url }}" target="_blank" rel="noopener noreferrer">
+        {{ profile.network }}{% if profile.username and profile.username != '' %}: {{ profile.username }}{% endif %}
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}

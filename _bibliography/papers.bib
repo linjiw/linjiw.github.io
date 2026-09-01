@@ -4,12 +4,56 @@
 % Publications - Linji Wang
 % Source of truth for all publication data on the site.
 
+@article{wang2026moving,
+  abbr={arXiv},
+  title={Moving Through Clutter: Scaling Data Collection and Benchmarking for 3D Scene-Aware Humanoid Locomotion via Virtual Reality},
+  author={Wang, Beichen and Lu, Yuanjie and Wang, Linji and Yu, Liuchuan and Xiao, Xuesu},
+  journal={arXiv preprint arXiv:2603.05993},
+  year={2026},
+  arxiv={2603.05993},
+  bibtex_show={true},
+  selected={true},
+  pdf={https://arxiv.org/pdf/2603.05993},
+  abstract={Recent humanoid locomotion systems demonstrate dynamic behaviors primarily in open, obstacle-free settings, while homes and workplaces require scene-aware whole-body coordination in dense three-dimensional clutter. Moving Through Clutter (MTC) is an open-source virtual-reality data collection and evaluation framework that procedurally generates scenes, captures embodiment-consistent whole-body motion, and automatically retargets that motion to a humanoid model. The resulting dataset contains 348 trajectories across 145 diverse cluttered scenes, together with benchmarks for clutter, stability, and collision safety.}
+}
+
+@inproceedings{lu2026adaptive,
+  abbr={ICRA},
+  title={Adaptive Dynamics Planning for Robot Navigation},
+  author={Lu, Yuanjie and Mao, Mingyang and Xu, Tong and Wang, Linji and Lin, Xiaomin and Xiao, Xuesu},
+  booktitle={2026 IEEE International Conference on Robotics and Automation (ICRA)},
+  year={2026},
+  arxiv={2510.05330},
+  bibtex_show={true},
+  selected={true},
+  pdf={https://arxiv.org/pdf/2510.05330},
+  abstract={Autonomous navigation systems commonly separate dynamics-free global planning from dynamics-aware local control, which can cause tracking failures in constrained environments. Adaptive Dynamics Planning (ADP) uses reinforcement learning to adjust dynamics fidelity from current environmental observations, allocating modeling effort where it is most useful. Across three augmented planners and a standalone system, experiments in simulation and on a physical robot show consistent improvements in navigation success, safety, and efficiency.}
+}
+
+@article{xu2026colormap,
+  abbr={RA-L},
+  title={{ColorMap-VIO}: A Drift-Free Visual-Inertial Odometry in a Prior Colored Point Cloud Map},
+  author={Xu, Jie and Zhang, Xuanxuan and Ma, Yongxin and Li, Yixuan and Wang, Linji and Xu, Xinhang and Yuan, Shenghai and Xie, Lihua},
+  journal={IEEE Robotics and Automation Letters},
+  volume={11},
+  number={2},
+  pages={1570--1577},
+  year={2026},
+  doi={10.1109/LRA.2025.3643289},
+  html={https://ieeexplore.ieee.org/document/11297796},
+  bibtex_show={true},
+  selected={false},
+  abstract={Visual-inertial odometry estimates robot poses at high frequency but accumulates drift over time. ColorMap-VIO localizes against a prior colored point cloud using gradient-aware map sparsification and image-pyramid visual-photometric filtering, bounding drift by map precision while improving efficiency and robustness over existing map-based approaches.}
+}
+
 @inproceedings{wang2025gacl,
   abbr={IROS},
   title={GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring},
   author={Wang, Linji and Xu, Zifan and Stone, Peter and Xiao, Xuesu},
   booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
   year={2025},
+  pages={591--596},
+  doi={10.1109/IROS60139.2025.11246910},
   arxiv={2508.02988},
   bibtex_show={true},
   selected={true},
@@ -24,6 +68,9 @@
   author={Wang, Linji and Xu, Tong and Lu, Yuanjie and Xiao, Xuesu},
   booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
   year={2025},
+  pages={15262--15267},
+  doi={10.1109/IROS60139.2025.11247039},
+  annotation={* Linji Wang and Tong Xu contributed equally.},
   arxiv={2503.15724},
   bibtex_show={true},
   selected={true},
@@ -38,14 +85,16 @@
   author={Lu, Yuanjie and Xu, Tong and Wang, Linji and Hawes, Nick and Xiao, Xuesu},
   booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
   year={2025},
-  award={Winner of the simulation phase of the 2025 BARN Challenge (Benchmark Autonomous Robot Navigation) at ICRA 2025.},
-  award_name={1st Place, 2025 BARN Challenge (Simulation)},
+  pages={4559--4565},
+  doi={10.1109/IROS60139.2025.11246580},
+  award={The RobotiXX navigation system placed second in both the simulation qualifier and physical finals of the 2025 BARN Challenge at ICRA 2025.},
+  award_name={2nd Place in Both Phases, 2025 BARN Challenge},
   arxiv={2503.20521},
   bibtex_show={true},
   selected={true},
   preview={DDP_sq.jpg},
   pdf={https://arxiv.org/pdf/2503.20521},
-  abstract={Most, if not all, robot navigation systems employ a decomposed planning framework that includes global and local planning. To trade-off between efficiency and efficacy, current systems have to balance the complexity of the dynamics model and the horizon of the planner. In this paper, we present Decremental Dynamics Planning (DDP), which incorporates dynamics into the global planning process near the robot and gradually simplifies the dynamics model along the planning horizon, allowing the planner to consider full dynamics where they matter the most. We augment three different planners with DDP and observe improved planning performance overall. We also build a new DDP-based navigation system that achieves first place in the simulation phase of the 2025 BARN Challenge, validated in both simulated and physical experiments.}
+  abstract={Most robot navigation systems separate dynamics-free global planning from dynamics-aware local planning, which can create infeasible paths in constrained environments. Decremental Dynamics Planning (DDP) integrates dynamics across the planning horizon, using high-fidelity modeling near the robot and progressively simplifying it farther away. DDP improved planning performance overall when applied to three planners, and the resulting navigation system placed second in both the simulation and real-world phases of the 2025 BARN Challenge.}
 }
 
 @article{zhao2025ii,
@@ -54,6 +103,9 @@
   author={Zhao, Chengwei and Li, Yixuan and Jian, Yina and Xu, Jie and Wang, Linji and Ma, Yongxin and Jin, Xinglai},
   journal={IEEE Robotics and Automation Letters},
   year={2025},
+  volume={10},
+  number={6},
+  pages={5465--5472},
   doi={10.1109/LRA.2025.3561568},
   bibtex_show={true},
   selected={false},

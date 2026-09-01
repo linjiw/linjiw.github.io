@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Peer-reviewed and preprint publications in robotics and AI.
+description: Publications in curriculum learning, reinforcement learning, humanoid locomotion, navigation, SLAM, and visual-inertial odometry.
 nav: true
 nav_order: 1
 ---

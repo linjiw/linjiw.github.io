@@ -9,19 +9,22 @@ nav: false
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Linji (Joey) Wang — Robotics Ph.D. · curriculum learning for robots</title>
-<meta name="description" content="Linji Wang — robotics Ph.D. student at George Mason University (RobotiXX Lab). Curriculum learning and reinforcement learning for robot navigation and locomotion; first author of two IROS 2025 papers.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%A4%96%3C/text%3E%3C/svg%3E">
+<title>Linji (Joey) Wang — AI Robotics Engineer · Robot Learning Researcher</title>
+<meta name="description" content="Linji Wang is an AI robotics engineer and Computer Science Ph.D. researcher developing automatic curriculum-learning and reinforcement-learning systems for embodied robots, including humanoid benchmarking and policy inference.">
 <link rel="canonical" href="https://linjiw.github.io/">
+<link rel="alternate" type="application/atom+xml" title="Linji (Joey) Wang" href="https://linjiw.github.io/feed.xml">
 <!-- Open Graph / Twitter (front-door share card) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Linji (Joey) Wang">
-<meta property="og:title" content="Linji (Joey) Wang — Robotics Ph.D.">
-<meta property="og:description" content="Curriculum learning and reinforcement learning for robot navigation and locomotion. First author of two IROS 2025 papers; 1st place, 2025 BARN Challenge (simulation).">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Linji (Joey) Wang — AI Robotics Engineer">
+<meta property="og:description" content="Automatic curriculum learning, deep reinforcement learning, and embodied AI across wheeled, quadruped, off-road, and humanoid systems.">
 <meta property="og:url" content="https://linjiw.github.io/">
 <meta property="og:image" content="https://linjiw.github.io/assets/img/prof_pic.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linji (Joey) Wang — Robotics Ph.D.">
-<meta name="twitter:description" content="Curriculum learning and reinforcement learning for robots. First author of two IROS 2025 papers; 1st place, 2025 BARN Challenge (simulation).">
+<meta name="twitter:title" content="Linji (Joey) Wang — AI Robotics Engineer">
+<meta name="twitter:description" content="Curriculum learning, reinforcement learning, and embodied AI for robot navigation and locomotion.">
 <meta name="twitter:image" content="https://linjiw.github.io/assets/img/prof_pic.jpg">
 <script type="application/ld+json">
 {
@@ -31,17 +34,18 @@ nav: false
   "alternateName": "Linji (Joey) Wang",
   "url": "https://linjiw.github.io/",
   "image": "https://linjiw.github.io/assets/img/prof_pic.jpg",
-  "jobTitle": "Ph.D. Student in Computer Science",
+  "jobTitle": "AI Robotics Engineer and Ph.D. Researcher",
   "affiliation": { "@type": "Organization", "name": "George Mason University" },
   "alumniOf": [
     { "@type": "Organization", "name": "Carnegie Mellon University" },
     { "@type": "Organization", "name": "University of Cincinnati" }
   ],
-  "knowsAbout": ["Robotics", "Reinforcement Learning", "Curriculum Learning", "Robot Navigation"],
+  "knowsAbout": ["AI Robotics", "Robot Learning", "Embodied AI", "Reinforcement Learning", "Curriculum Learning", "Humanoid Locomotion", "Robot Navigation"],
   "sameAs": [
     "https://scholar.google.com/citations?user=VURUgFMAAAAJ",
     "https://github.com/linjiw",
-    "https://linkedin.com/in/linjiw"
+    "https://linkedin.com/in/linjiw",
+    "https://orcid.org/0009-0002-2255-3434"
   ]
 }
 </script>
@@ -49,11 +53,7 @@ nav: false
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/world-nav.css' | relative_url }}">
-<style>
-/* pill hidden during the hero boot; revealed with the desktop */
-.world-nav { opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
-.desktop-revealed .world-nav { opacity: 1; pointer-events: auto; }
-</style>
+<link rel="stylesheet" href="{{ '/assets/css/embodied-loop.css' | relative_url }}">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -62,9 +62,9 @@ nav: false
   --cream-dark: #f5f2ea;
   --ink: #1a1a2e;
   --ink-light: #4a4a5a;
-  --ink-faint: #8a8a9a;
-  --blue: #2b7fd8;
-  --blue-deep: #1e5ba8;
+  --ink-faint: #686a78;
+  --blue: #1e5ba8;
+  --blue-deep: #16477f;
   --yellow: #f4d758;
   --red: #e84a5f;
   --term-bg: #151821;
@@ -79,6 +79,18 @@ body {
   -webkit-font-smoothing: antialiased;
   background: var(--cream);
   color: var(--ink);
+}
+.world-nav--os { bottom: 4px; }
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 /* ===== HERO: terminal inside a MacBook ===== */
@@ -206,8 +218,62 @@ body {
   transition: background 0.2s, box-shadow 0.2s;
 }
 .hero-skip:hover { background: #1e5ba8; color: #fff; box-shadow: 0 4px 14px rgba(30,91,168,0.25); }
-.desktop-revealed .hero-skip { display: none; }
-.hero-cta { margin-top: 36px; text-align: center; opacity: 0; transition: opacity 0.6s ease; cursor: pointer; }
+.hero-skip:focus-visible,
+.hero-position a:focus-visible,
+.hero-cta:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+.hero-position {
+  position: fixed;
+  top: 18px; left: 20px;
+  z-index: 50;
+  max-width: 330px;
+  padding: 12px 14px;
+  border: 1px solid rgba(30,91,168,0.18);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.88);
+  box-shadow: 0 2px 12px rgba(30,91,168,0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-family: 'Fira Code', monospace;
+}
+.hero-position::before {
+  content: 'CHOOSE A ROUTE';
+  display: block;
+  margin-bottom: 5px;
+  color: var(--blue-deep);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.hero-position strong { display: block; color: var(--ink); font-size: 13.5px; margin-bottom: 3px; }
+.hero-position > span { display: block; color: var(--ink-faint); font-size: 10px; line-height: 1.45; }
+.hero-position nav { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+.hero-position a {
+  color: var(--blue-deep);
+  font-size: 9.5px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 5px 8px;
+  border: 1px solid rgba(30,91,168,0.2);
+  border-radius: 999px;
+  background: rgba(30,91,168,0.04);
+}
+.hero-position a:hover { color: #fff; background: var(--blue-deep); }
+.desktop-revealed .hero-skip, .desktop-revealed .hero-position { display: none; }
+.hero-cta {
+  /* Keep the launch target comfortably above the persistent world switcher,
+     including short laptop viewports. */
+  margin-top: -4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  cursor: pointer;
+}
 .hero-cta.visible { opacity: 1; }
 .hero-cta.hidden { opacity: 0; pointer-events: none; }
 .hero-cta .cta-text { font-family: 'Fira Code', monospace; font-size: 13px; color: var(--ink-faint); letter-spacing: 1px; }
@@ -247,15 +313,26 @@ body {
   color: rgba(255,255,255,0.92);
 }
 .desktop-menubar .mb-logo { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 900; color: var(--yellow); }
-.desktop-menubar a.mb-item { opacity: 0.65; color: inherit; text-decoration: none; }
-.desktop-menubar a.mb-item:hover { opacity: 1; }
+.desktop-menubar .mb-item {
+  opacity: 0.68;
+  color: inherit;
+  text-decoration: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+.desktop-menubar .mb-item:hover { opacity: 1; }
+.desktop-menubar .mb-item:focus-visible,
+.desktop-menubar .mb-exit:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 .desktop-menubar .mb-clock { margin-left: auto; font-family: 'Fira Code', monospace; font-size: 11px; opacity: 0.55; }
 .desktop-menubar .mb-exit { font-family: 'Fira Code', monospace; font-size: 11px; opacity: 0.65; color: inherit; text-decoration: none; }
 .desktop-menubar .mb-exit:hover { opacity: 1; }
 
 .desktop-surface {
   position: relative;
-  height: calc(100vh - 96px); /* leaves the scroll hint peeking above the fold */
+  height: max(480px, calc(100vh - 190px));
   overflow: hidden;
   background: var(--blue-deep);
 }
@@ -286,22 +363,28 @@ body {
   100% { transform: scale(0.8) rotate(0deg); opacity: 0; }
 }
 
-/* draggable robot sticker */
+/* draggable embodied-learning lab */
 .desktop-sticker {
   position: absolute;
-  bottom: 40px;
-  right: 26%;
-  font-size: 120px;
-  line-height: 1;
+  width: min(300px, 24vw);
+  min-width: 250px;
+  bottom: 34px;
+  right: 25%;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+  background: rgba(21,24,33,0.86);
+  box-shadow: 0 16px 42px rgba(8,18,38,0.28);
   cursor: grab;
   z-index: 5;
   user-select: none;
   -webkit-user-select: none;
   touch-action: none;
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
-  transition: filter 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
-.desktop-sticker:active { cursor: grabbing; }
+.desktop-sticker:hover { box-shadow: 0 20px 52px rgba(8,18,38,0.38); }
+.desktop-sticker:active { cursor: grabbing; transform: scale(1.01); }
+.desktop-sticker .learning-loop__viewport { border-color: rgba(122,184,245,0.22); }
 
 /* sticky-note hint pointing at the icons */
 .desktop-hint {
@@ -341,6 +424,7 @@ body {
 }
 .dicon:hover { background: rgba(255,255,255,0.1); }
 .dicon:active { background: rgba(255,255,255,0.15); }
+.dicon:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; background: rgba(255,255,255,0.12); }
 .dicon-label {
   font-family: 'Fira Code', monospace;
   font-size: 11px;
@@ -487,6 +571,53 @@ body {
 }
 .paper-links a:hover { color: var(--blue-deep); border-bottom-style: solid; }
 
+/* recruiter-first start window */
+.start-kicker {
+  font-family: 'Fira Code', monospace;
+  color: var(--blue-deep);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 7px;
+}
+.start-title {
+  max-width: 470px;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+.start-sub { margin: 9px 0 15px; color: var(--ink-light); font-size: 13px; line-height: 1.55; }
+.start-proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 15px;
+}
+.start-proof > div {
+  padding: 9px 10px;
+  border: 1px solid rgba(43,127,216,0.16);
+  border-radius: 9px;
+  background: rgba(43,127,216,0.04);
+}
+.start-proof strong { display: block; color: var(--blue-deep); font-family: 'Fraunces', serif; font-size: 18px; }
+.start-proof span { color: var(--ink-faint); font-family: 'Fira Code', monospace; font-size: 8.5px; line-height: 1.35; }
+.start-routes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.start-route {
+  display: block;
+  padding: 10px 12px;
+  border: 1px solid rgba(43,127,216,0.24);
+  border-radius: 10px;
+  color: var(--ink) !important;
+  text-decoration: none !important;
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+}
+.start-route:hover { transform: translateY(-2px); border-color: var(--blue); background: rgba(43,127,216,0.05); }
+.start-route:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.start-route span { display: block; color: var(--blue-deep); font-family: 'Fira Code', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; }
+.start-route strong { display: block; margin-top: 2px; font-size: 12px; }
+
 /* folder window */
 .os-body.win-folder {
   padding: 48px 20px 20px;
@@ -561,7 +692,7 @@ body {
 /* ===== BELOW-DESKTOP CONTENT (inside the OS) ===== */
 .scroll-on-hint {
   text-align: center;
-  padding: 60px 0 30px;
+  padding: 22px 0 72px;
   font-family: 'Fira Code', monospace;
   font-size: 12px;
   color: rgba(255,255,255,0.5);
@@ -596,6 +727,20 @@ body {
   position: relative;
   overflow: hidden;
 }
+a.os-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.18s var(--ease-out), box-shadow 0.18s ease, border-color 0.18s ease;
+}
+a.os-card:hover {
+  color: inherit;
+  transform: translateY(-3px);
+  border-color: rgba(244,215,88,0.7);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+a.os-card:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
 .os-card p { font-size: 14px; line-height: 1.8; color: var(--ink-light); }
 .os-card .big-num {
   position: absolute;
@@ -609,6 +754,20 @@ body {
 }
 .os-card .card-title { font-family: 'Fraunces', serif; font-size: 15.5px; font-weight: 600; margin-bottom: 4px; color: var(--ink); position: relative; }
 .os-card .card-sub { font-size: 12px; color: var(--ink-faint); position: relative; }
+.os-card .role-chip {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 8px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(30,91,168,0.08);
+  color: var(--blue-deep);
+  font-family: 'Fira Code', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.os-card .card-evidence { margin-top: 7px; color: var(--blue-deep); font-family: 'Fira Code', monospace; font-size: 10px; position: relative; }
 
 .todo-note {
   font-family: 'Fira Code', monospace;
@@ -651,6 +810,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .wp-star, .cta-arrow, .cursor, .scroll-on-hint .down { animation: none !important; }
   .term-line { animation-duration: 0.01s !important; }
+  .os-window, .click-star { animation: none !important; }
+  *, *::before, *::after { scroll-behavior: auto !important; }
 }
 
 @media (max-height: 700px) {
@@ -659,13 +820,20 @@ body {
 }
 
 @media (max-width: 640px) {
+  .hero-position { top: 12px; left: 12px; max-width: calc(100vw - 24px); padding: 8px 10px; }
+  .hero-position > span { display: none; }
+  .hero-position nav { gap: 8px; }
+  .hero-skip { top: 94px; right: 12px; padding: 6px 10px; font-size: 10px; }
   .desktop-hint { top: auto; bottom: 16px; left: 14px; right: auto; }
   .desktop-menubar { gap: 10px; padding: 0 10px; }
-  .desktop-menubar a.mb-item { display: none; }
+  .desktop-menubar .mb-item:not(#openStart) { display: none; }
   .dicon { width: 72px; }
-  .desktop-sticker { font-size: 80px; right: 12%; }
+  .desktop-sticker { width: 210px; min-width: 0; left: 12px; right: auto; bottom: 30px; padding: 7px; }
+  .desktop-sticker .learning-loop__legend { display: none; }
+  .start-proof { grid-template-columns: 1fr; }
+  .start-routes { grid-template-columns: 1fr; }
   .sayhi-cards { grid-template-columns: 1fr; }
-  .os-body.win-folder { grid-template-columns: repeat(3, 80px); }
+  .os-body.win-folder { grid-template-columns: repeat(2, 80px); }
 }
 </style>
 </head>
@@ -673,16 +841,28 @@ body {
 
 <noscript>
   <div style="max-width:640px;margin:80px auto;padding:0 24px;font-family:Georgia,serif;color:#1a1a2e;">
-    <h1 style="font-size:28px;margin-bottom:12px;">Linji (Joey) Wang</h1>
-    <p style="font-size:15px;line-height:1.7;color:#4a4a5a;">Robotics Ph.D. student at George Mason University (RobotiXX Lab). Curriculum learning and reinforcement learning for robot navigation and locomotion; first author of two IROS 2025 papers and 1st place in the simulation phase of the 2025 BARN Challenge.</p>
+    <h2 style="font-size:28px;margin-bottom:12px;">Linji (Joey) Wang</h2>
+    <p style="font-size:15px;line-height:1.7;color:#4a4a5a;">AI robotics engineer and Computer Science Ph.D. researcher at George Mason University's RobotiXX Lab, developing automatic curriculum-learning and reinforcement-learning systems for embodied robots. First author on GACL, co-first author on Reward Training Wheels, and co-author of current work in humanoid locomotion benchmarking.</p>
     <p style="margin-top:20px;font-size:15px;"><a href="{{ '/classic/' | relative_url }}" style="color:#1e5ba8;">Enter the site →</a></p>
   </div>
 </noscript>
 
 <div class="transition-overlay" id="transitionOverlay"></div>
 
-<!-- persistent escape hatch: the conventional site is always one click away -->
-<a class="hero-skip" href="{{ '/classic/' | relative_url }}">skip intro · classic site →</a>
+<main id="portfolioExperience">
+<h1 class="sr-only">Linji Wang — AI robotics engineer specializing in curriculum learning and embodied reinforcement learning</h1>
+
+<!-- the conventional recruiter view is always one click away -->
+<a class="hero-skip" href="{{ '/classic/' | relative_url }}">open classic →</a>
+<aside class="hero-position" aria-label="Professional focus and quick links">
+  <strong>AI robotics engineer</strong>
+  <span>automatic curriculum learning · deep RL · embodied agents</span>
+  <nav aria-label="Quick links">
+    <a href="{{ '/classic/' | relative_url }}">recruiter brief</a>
+    <a href="{{ '/canvas/' | relative_url }}">research map</a>
+    <a href="{{ '/assets/pdf/resume.pdf' | relative_url }}">one-page resume</a>
+  </nav>
+</aside>
 
 <!-- ===== HERO ===== -->
 <section class="hero-section" id="heroSection">
@@ -705,20 +885,23 @@ body {
     <div class="macbook-base"></div>
     <div class="macbook-shadow"></div>
   </div>
-  <div class="hero-cta" id="heroCta">
+  <button class="hero-cta" id="heroCta" type="button" aria-label="Launch the interactive OS portfolio">
     <div class="cta-text" id="ctaText">Press Enter or click to launch</div>
     <div class="cta-arrow">↓</div>
-  </div>
+  </button>
 </section>
 
 <!-- ===== DESKTOP ===== -->
 <div class="desktop" id="desktop">
   <div class="desktop-menubar">
     <span class="mb-logo">linji OS</span>
+    <button class="mb-item" id="openStart" type="button">Start here</button>
     <a class="mb-item" href="#about">About</a>
     <a class="mb-item" href="#research">Research</a>
+    <a class="mb-item" href="#experience">Experience</a>
     <a class="mb-item" href="#now">Now</a>
-    <a class="mb-exit" href="{{ '/classic/' | relative_url }}">↩ classic site</a>
+    <a class="mb-item" href="{{ '/assets/pdf/resume.pdf' | relative_url }}" target="_blank" rel="noopener">Resume</a>
+    <a class="mb-exit" href="{{ '/classic/' | relative_url }}">↩ classic</a>
     <span class="mb-clock" id="mbClock">--:--</span>
   </div>
 
@@ -726,8 +909,10 @@ body {
     <!-- star wallpaper (generated by JS) -->
     <div id="starfield"></div>
 
-    <!-- draggable robot sticker -->
-    <div class="desktop-sticker" id="robotSticker">🤖</div>
+    <!-- draggable embodied-learning simulation -->
+    <div class="desktop-sticker" id="robotSticker" aria-label="Drag the embodied-learning simulation">
+      {% include embodied_loop.liquid variant='dark' %}
+    </div>
 
     <div class="desktop-hint">open a paper →</div>
 
@@ -744,9 +929,9 @@ body {
         <div class="dicon-art file ext-pdf" data-ext=".pdf"><img src="{{ '/assets/img/publication_preview/DDP_sq.jpg' | relative_url }}" alt="" loading="lazy"></div>
         <div class="dicon-label">DDP.pdf</div>
       </div>
-      <div class="dicon" data-win="win-iinvm" style="top:306px;right:24px;">
-        <div class="dicon-art file ext-pdf" data-ext=".pdf"><img src="{{ '/assets/img/publication_preview/II-NVM_sq.jpg' | relative_url }}" alt="" loading="lazy"></div>
-        <div class="dicon-label">II-NVM.pdf</div>
+      <div class="dicon" data-win="win-mtc" style="top:306px;right:24px;">
+        <div class="dicon-art file ext-pdf" data-ext=".pdf"></div>
+        <div class="dicon-label">MTC.pdf</div>
       </div>
       <div class="dicon" data-href="{{ '/assets/pdf/resume.pdf' | relative_url }}" style="top:400px;right:24px;">
         <div class="dicon-art file ext-pdf" data-ext=".pdf"></div>
@@ -775,6 +960,35 @@ body {
     </div>
 
     <!-- window templates -->
+    <template id="win-start">
+      <div class="os-window" data-title="Start here — Linji Wang" style="width:min(600px, 92vw);">
+        <div class="os-body">
+          <div class="start-kicker">AI ROBOTICS ENGINEER · ROBOT LEARNING</div>
+          <div class="start-title">I build adaptive training systems for embodied robots.</div>
+          <p class="start-sub">Computer Science Ph.D. researcher at George Mason's RobotiXX Lab, focused on automatic curricula, adaptive rewards, and reliable policy inference.</p>
+          <div class="start-proof">
+            <div><strong>2</strong><span>first / co-first IROS 2025 papers</span></div>
+            <div><strong>5/5</strong><span>RTW physical trials vs 2/5 baseline</span></div>
+            <div><strong>348</strong><span>humanoid trajectories across 145 scenes</span></div>
+          </div>
+          <div class="start-routes">
+            <a class="start-route" href="{{ '/assets/pdf/resume.pdf' | relative_url }}" target="_blank" rel="noopener">
+              <span>HIRING PATH</span><strong>Open the one-page resume →</strong>
+            </a>
+            <a class="start-route" href="{{ '/canvas/' | relative_url }}">
+              <span>TECHNICAL PATH</span><strong>Tour the research canvas →</strong>
+            </a>
+            <a class="start-route" href="{{ '/publications/' | relative_url }}">
+              <span>EVIDENCE</span><strong>Methods, papers, and exact results →</strong>
+            </a>
+            <a class="start-route" href="mailto:joewwang@outlook.com">
+              <span>CONTACT</span><strong>Discuss AI robotics roles →</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </template>
+
     <template id="win-gacl">
       <div class="os-window" data-title="GACL — IROS 2025">
         <div class="os-body">
@@ -782,7 +996,7 @@ body {
           <div class="paper-title">GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring</div>
           <div class="paper-authors"><b>Linji Wang</b>, Zifan Xu, Peter Stone, Xuesu Xiao</div>
           <img class="paper-fig" src="{{ '/assets/img/projects/gacl_framework.jpg' | relative_url }}" alt="GACL framework" loading="lazy">
-          <p class="paper-what">A teacher agent generates training tasks by monitoring the robot's live performance, while grounding the curriculum in real-world task distributions.</p>
+          <p class="paper-what">A teacher generates training tasks from online learner performance while grounding the curriculum in limited reference samples from the target task distribution.</p>
           <ul class="paper-results">
             <li>+6.8% success — wheeled navigation in constrained environments</li>
             <li>+6.1% success — quadruped locomotion in confined 3D spaces</li>
@@ -798,14 +1012,14 @@ body {
     <template id="win-rtw">
       <div class="os-window" data-title="RTW — IROS 2025">
         <div class="os-body">
-          <span class="paper-venue">IROS 2025 · FIRST AUTHOR</span>
+          <span class="paper-venue">IROS 2025 · CO-FIRST AUTHOR</span>
           <div class="paper-title">Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning</div>
           <div class="paper-authors"><b>Linji Wang</b>, Tong Xu, Yuanjie Lu, Xuesu Xiao</div>
           <img class="paper-fig" src="{{ '/assets/img/projects/rtw_framework.jpg' | relative_url }}" alt="RTW framework" loading="lazy">
           <p class="paper-what">A teacher re-weights auxiliary rewards as the robot's proficiency grows — training wheels that fade away on their own.</p>
           <ul class="paper-results">
-            <li>+122.62% off-road mobility, 3× faster training</li>
-            <li>5/5 physical off-road trials vs 2/5 for expert-designed rewards</li>
+            <li>Simulation: +122.62% off-road mobility; same threshold 3× faster</li>
+            <li>Physical: 5/5 trials vs 2/5 for expert-designed rewards</li>
           </ul>
           <div class="paper-links">
             <a href="https://arxiv.org/abs/2503.15724" target="_blank" rel="noopener">arXiv</a>
@@ -818,14 +1032,14 @@ body {
     <template id="win-ddp">
       <div class="os-window" data-title="DDP — IROS 2025">
         <div class="os-body">
-          <span class="paper-venue award">🏆 1ST PLACE · 2025 BARN CHALLENGE (SIM)</span>
+          <span class="paper-venue award">🏆 2ND PLACE · BARN 2025 (SIM + REAL)</span>
           <div class="paper-title">Decremental Dynamics Planning for Robot Navigation</div>
           <div class="paper-authors">Yuanjie Lu, Tong Xu, <b>Linji Wang</b>, Nick Hawes, Xuesu Xiao</div>
           <img class="paper-fig" src="{{ '/assets/img/projects/ddp_comparison.jpg' | relative_url }}" alt="DDP comparison" loading="lazy">
           <p class="paper-what">Plan with full robot dynamics near the robot, and progressively simpler dynamics along the horizon — full fidelity exactly where it matters.</p>
           <ul class="paper-results">
             <li>Improved performance across three augmented planners</li>
-            <li>Won the simulation phase of the 2025 BARN Challenge</li>
+            <li>RobotiXX placed 2nd in both simulation and physical phases</li>
           </ul>
           <div class="paper-links">
             <a href="https://arxiv.org/abs/2503.20521" target="_blank" rel="noopener">arXiv</a>
@@ -835,25 +1049,27 @@ body {
       </div>
     </template>
 
-    <template id="win-iinvm">
-      <div class="os-window" data-title="II-NVM — IEEE RA-L 2025">
+    <template id="win-mtc">
+      <div class="os-window" data-title="MTC — Humanoid Locomotion 2026">
         <div class="os-body">
-          <span class="paper-venue">IEEE RA-L 2025</span>
-          <div class="paper-title">II-NVM: Enhancing Map Accuracy and Consistency with Normal Vector-Assisted Mapping</div>
-          <div class="paper-authors">Chengwei Zhao, Yixuan Li, Yina Jian, Jie Xu, <b>Linji Wang</b>, Yongxin Ma, Xinglai Jin</div>
-          <img class="paper-fig" src="{{ '/assets/img/projects/iinvm_system.jpg' | relative_url }}" alt="II-NVM system" loading="lazy">
-          <p class="paper-what">Surface normal consistency resolves the double-sided mapping problem for thin structures like walls and doors.</p>
+          <span class="paper-venue">ARXIV 2026 · HUMANOID LOCOMOTION</span>
+          <div class="paper-title">Moving Through Clutter: 3D Scene-Aware Humanoid Locomotion via Virtual Reality</div>
+          <div class="paper-authors">Beichen Wang, Yuanjie Lu, <b>Linji Wang</b>, Liuchuan Yu, Xuesu Xiao</div>
+          <p class="paper-what">A VR data-collection and evaluation framework that captures whole-body motion in procedurally generated clutter and automatically retargets it to a humanoid model.</p>
+          <ul class="paper-results">
+            <li>348 trajectories across 145 diverse 3D scenes</li>
+            <li>Benchmarks stability, collision safety, and scene clutter</li>
+          </ul>
           <div class="paper-links">
-            <a href="https://arxiv.org/abs/2504.08204" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://github.com/chengwei0427/II-NVM" target="_blank" rel="noopener">code</a>
-            <a href="{{ '/projects/3_project/' | relative_url }}">project page</a>
+            <a href="https://arxiv.org/abs/2603.05993" target="_blank" rel="noopener">arXiv</a>
+            <a href="{{ '/projects/4_project/' | relative_url }}">project page</a>
           </div>
         </div>
       </div>
     </template>
 
     <template id="win-projects">
-      <div class="os-window" data-title="projects/" style="width:340px;">
+      <div class="os-window" data-title="projects/" style="width:min(440px, 90vw);">
         <div class="os-body win-folder">
           <a class="folder-icon" href="{{ '/projects/1_project/' | relative_url }}">
             <div class="folder-icon-art" data-ext=".html"></div>
@@ -867,6 +1083,10 @@ body {
             <div class="folder-icon-art" data-ext=".html"></div>
             <div class="folder-icon-label">SLAM mapping</div>
           </a>
+          <a class="folder-icon" href="{{ '/projects/4_project/' | relative_url }}">
+            <div class="folder-icon-art" data-ext=".html"></div>
+            <div class="folder-icon-label">humanoid locomotion</div>
+          </a>
         </div>
       </div>
     </template>
@@ -874,12 +1094,14 @@ body {
     <template id="win-news">
       <div class="os-window win-news" data-title="news.log">
         <div class="os-body">
+          <div><span class="news-date">2026-08</span>SDE intern @ AWS (Aurora PostgreSQL)</div>
+          <div><span class="news-date">2026-06</span>Adaptive Dynamics Planning @ ICRA 2026</div>
+          <div><span class="news-date">2026-03</span>Moving Through Clutter humanoid benchmark released</div>
+          <div><span class="news-date">2026-02</span>ColorMap-VIO published in IEEE RA-L</div>
           <div><span class="news-date">2025-10</span>Presented GACL &amp; RTW at IROS 2025, Hangzhou 🇨🇳</div>
-          <div><span class="news-date">2025-06</span>3 papers accepted to IROS 2025</div>
-          <div><span class="news-date">2025-05</span>🏆 1st place, 2025 BARN Challenge (simulation)</div>
-          <div><span class="news-date">2025-05</span>SDE intern @ AWS (RDS Proxy team)</div>
           <div><span class="news-date">2025-06</span>II-NVM published in IEEE RA-L</div>
-          <div><span class="news-date">2023-08</span>Started Ph.D. @ GMU RobotiXX Lab</div>
+          <div><span class="news-date">2025-05</span>🏆 2nd in both phases, 2025 BARN Challenge</div>
+          <div><span class="news-date">2025-05</span>SDE intern @ AWS (RDS Proxy team)</div>
         </div>
       </div>
     </template>
@@ -893,12 +1115,12 @@ body {
             <div class="sayhi-card">
               <div class="sc-icon">🔬</div>
               <div class="sc-title">Research</div>
-              <div class="sc-desc">Curriculum learning / RL for robot navigation &amp; locomotion; ongoing humanoid work</div>
+              <div class="sc-desc">Curriculum learning and RL across navigation, locomotion, and scene-aware humanoid systems</div>
             </div>
             <div class="sayhi-card">
               <div class="sc-icon">🤝</div>
               <div class="sc-title">Collaborate</div>
-              <div class="sc-desc">Open to research collaborations, internships, and teaching opportunities</div>
+              <div class="sc-desc">Open to AI robotics engineering opportunities and research collaborations</div>
             </div>
           </div>
           <div class="sayhi-links">
@@ -920,38 +1142,74 @@ body {
       <div class="section-label">cat about.md</div>
       <h2 class="section-heading">Who am I</h2>
       <div class="os-card">
-        <p>Ph.D. student in Computer Science at George Mason University's RobotiXX Lab, advised by Dr. Xuesu Xiao. I study how robots can learn complex behaviors efficiently — by training on the right task, at the right difficulty, at the right time. Before this: M.S. at Carnegie Mellon, B.S. at Cincinnati, and a summer building statistical testing infrastructure at AWS.</p>
+        <p>I am an AI robotics and systems engineer and Computer Science Ph.D. researcher at George Mason University's RobotiXX Lab, advised by Dr. Xuesu Xiao. I build automatic curriculum-learning and reinforcement-learning systems for embodied robots — from GPU-parallel simulation and physical off-road validation to humanoid locomotion benchmarking and policy inference. My systems work also includes Aurora PostgreSQL query-performance and compatibility engineering at AWS.</p>
       </div>
     </section>
 
     <section class="home-section" id="research">
       <div class="section-label">ls research/</div>
       <h2 class="section-heading">What I build</h2>
-      <div class="os-card">
+      <a class="os-card" href="{{ '/projects/1_project/' | relative_url }}">
         <span class="big-num">01</span>
+        <span class="role-chip">FIRST AUTHOR · IROS 2025</span>
         <div class="card-title">Adaptive curricula (GACL)</div>
-        <div class="card-sub">a teacher that picks the next training task from the robot's live performance — IROS 2025, with Peter Stone</div>
-      </div>
-      <div class="os-card">
+        <div class="card-sub">a teacher that picks the next training task from live learner performance while staying grounded in the target distribution</div>
+        <div class="card-evidence">+6.8% wheeled navigation · +6.1% quadruped locomotion</div>
+      </a>
+      <a class="os-card" href="{{ '/projects/1_project/' | relative_url }}">
         <span class="big-num">02</span>
+        <span class="role-chip">CO-FIRST AUTHOR · IROS 2025</span>
         <div class="card-title">Self-fading reward shaping (RTW)</div>
-        <div class="card-sub">auxiliary rewards that decay as proficiency grows — 5/5 physical off-road trials, IROS 2025</div>
+        <div class="card-sub">teacher–student RL that changes auxiliary rewards with proficiency and removes hand-tuned training wheels</div>
+        <div class="card-evidence">simulation: 3× faster to threshold · physical: 5/5 vs 2/5</div>
+      </a>
+      <a class="os-card" href="{{ '/projects/4_project/' | relative_url }}">
+        <span class="big-num">03</span>
+        <span class="role-chip">THIRD AUTHOR · ARXIV 2026</span>
+        <div class="card-title">Humanoid motion data + benchmarking (MTC)</div>
+        <div class="card-sub">VR data collection, automatic retargeting, and benchmarks across 348 trajectories in 145 cluttered scenes</div>
+      </a>
+      <a class="os-card" href="{{ '/projects/2_project/' | relative_url }}">
+        <span class="big-num">04</span>
+        <span class="role-chip">COLLABORATIONS · IROS 2025 / ICRA 2026</span>
+        <div class="card-title">Dynamics-aware navigation (DDP + ADP)</div>
+        <div class="card-sub">DDP decreases dynamics fidelity along the horizon; RL-based ADP adapts fidelity from environmental observations</div>
+        <div class="card-evidence">DDP system: 2nd in both BARN 2025 phases</div>
+      </a>
+    </section>
+
+    <section class="home-section" id="experience">
+      <div class="section-label">cat experience.md</div>
+      <h2 class="section-heading">Research + production engineering</h2>
+      <div class="os-card">
+        <div class="card-title">Graduate Research Assistant · RobotiXX Lab</div>
+        <div class="card-sub">2023 — present · automatic curricula, adaptive rewards, navigation, locomotion, and humanoid benchmarking</div>
       </div>
       <div class="os-card">
-        <span class="big-num">03</span>
-        <div class="card-title">Dynamics-aware planning (DDP)</div>
-        <div class="card-sub">full dynamics near the robot, simpler further out — 1st place, 2025 BARN Challenge (simulation)</div>
+        <div class="card-title">Humanoid policy-inference prototype</div>
+        <div class="card-sub">C++ · ROS 2 · ONNX Runtime · metadata-driven observations · Isaac Lab/MuJoCo parity diagnostics</div>
+      </div>
+      <div class="os-card">
+        <div class="card-title">Software Development Engineer Intern · AWS Aurora PostgreSQL</div>
+        <div class="card-sub">Summer 2026 · Amazon Aurora PostgreSQL · C · database internals · Adaptive Join · query-performance and compatibility engineering</div>
+      </div>
+      <div class="os-card">
+        <div class="card-title">Software Development Engineer Intern · AWS RDS Proxy</div>
+        <div class="card-sub">Summer 2025 · statistical regression testing, adaptive sampling, and performance visualization for Amazon RDS Proxy</div>
+      </div>
+      <div class="os-card">
+        <div class="card-title">Research Assistant · Carnegie Mellon</div>
+        <div class="card-sub">2022 — 2023 · deep learning for 3D perception and AR scene inpainting</div>
       </div>
     </section>
 
     <section class="home-section" id="now">
       <div class="section-label">cat now.md</div>
-      <h2 class="section-heading">Now</h2>
+      <h2 class="section-heading">Current direction</h2>
       <div class="os-card">
-        <div class="card-title">Extending curriculum learning to humanoid robots</div>
-        <div class="card-sub">whole-body skills are the next frontier for adaptive training</div>
+        <div class="card-title">Adaptive curricula for scene-aware humanoid learning</div>
+        <div class="card-sub">exploring controllable scene clutter as a curriculum axis while prototyping testable ROS 2/C++ policy-inference infrastructure</div>
       </div>
-      <div class="todo-note">robot videos coming to the project pages soon</div>
     </section>
   </div>
 
@@ -976,12 +1234,14 @@ body {
         <span class="gt-dim">"Start simple. Build competence. Master the complex." — every good curriculum</span>
         <div>&nbsp;</div>
         <div><span class="gt-prompt">$ </span><span class="gt-cmd">exit</span></div>
-        <span class="gt-output"><span class="gt-gold">[Process completed]</span> — <a href="{{ '/classic/' | relative_url }}">↩ back to the classic site</a></span>
+        <span class="gt-output"><span class="gt-gold">[Process completed]</span> — <a href="{{ '/classic/' | relative_url }}">↩ open classic</a></span>
       </div>
       <div class="goodbye-footer">© 2026 Linji Wang · linji OS v1.0 · design inspired by <a href="https://hiesther.me" target="_blank" rel="noopener" style="color:inherit;">hiesther.me</a></div>
     </div>
   </div>
 </div>
+
+</main>
 
 {% include world_nav.liquid active='os' %}
 
@@ -1018,7 +1278,7 @@ body {
 
   /* ===== star wallpaper (procedural) ===== */
   var starfield = document.getElementById('starfield');
-  for (var i = 0; i < 70; i++) {
+  for (var i = 0; i < 38; i++) {
     var s = document.createElement('span');
     s.className = 'wp-star';
     s.textContent = '✦';
@@ -1038,10 +1298,10 @@ body {
     { type: 'output', prefix: '> ', text: 'Linji (Joey) Wang' },
     { type: 'blank' },
     { type: 'cmd', prompt: '$ ', text: 'cat about.md' },
-    { type: 'output', prefix: '> ', text: 'Robotics Ph.D. student @ George Mason · RobotiXX Lab' },
-    { type: 'output', prefix: '  ', text: 'curriculum learning × reinforcement learning' },
-    { type: 'output', prefix: '  ', text: '2× first-author papers @ IROS 2025' },
-    { type: 'output', prefix: '  ', text: '🏆 team won 1st place · 2025 BARN Challenge (sim)' },
+    { type: 'output', prefix: '> ', text: 'AI robotics engineer · CS Ph.D. researcher @ George Mason' },
+    { type: 'output', prefix: '  ', text: 'curriculum learning × reinforcement learning × embodied AI' },
+    { type: 'output', prefix: '  ', text: 'GACL first author · RTW co-first author @ IROS 2025' },
+    { type: 'output', prefix: '  ', text: 'humanoid benchmarking · policy inference · MTC 2026' },
     { type: 'blank' },
     { type: 'cmd', prompt: '$ ', text: 'echo "robots that learn, one task at a time"' },
     { type: 'gold', prefix: '> ', text: 'robots that learn, one task at a time' },
@@ -1074,11 +1334,13 @@ body {
     typingDone = true;
     if (isTouch) document.getElementById('ctaText').textContent = 'Tap to Launch';
     heroCta.classList.add('visible');
+    if (isSameSiteReturn) setTimeout(launch, 320);
   }
 
   var VISITED_KEY = 'linji_os_visited';
   var isReturnVisitor = false;
   try { isReturnVisitor = !!localStorage.getItem(VISITED_KEY); } catch (e) {}
+  var isSameSiteReturn = isReturnVisitor && document.referrer.indexOf(window.location.origin) === 0;
 
   var skipTyping = null;
   if (isReturnVisitor || reducedMotion) {
@@ -1158,7 +1420,7 @@ body {
         document.documentElement.classList.add('scroll-unlocked');
         window.scrollTo(0, 0);
         setTimeout(function() { overlay.classList.remove('active'); }, 250);
-        setTimeout(function() { openWindow('win-gacl'); }, 600);
+        setTimeout(function() { openWindow('win-start'); }, 600);
       }, 500);
       return;
     }
@@ -1195,7 +1457,7 @@ body {
       document.documentElement.classList.add('scroll-unlocked');
       window.scrollTo(0, 0);
       setTimeout(function() { overlay.classList.remove('active'); }, 250);
-      setTimeout(function() { openWindow('win-gacl'); }, 700); // show, don't tell
+      setTimeout(function() { openWindow('win-start'); }, 700);
     }, 1800);
   }
 
@@ -1212,6 +1474,11 @@ body {
   // the whole hero is a launch target once typing is done; before that, a
   // click/tap anywhere skips the typing
   document.getElementById('heroSection').addEventListener('click', function() {
+    if (!typingDone) { if (skipTyping) skipTyping(); return; }
+    launch();
+  });
+  heroCta.addEventListener('click', function(e) {
+    e.stopPropagation();
     if (!typingDone) { if (skipTyping) skipTyping(); return; }
     launch();
   });
@@ -1257,17 +1524,21 @@ body {
     });
   }
 
-  function openWindow(tplId) {
+  function openWindow(tplId, opener) {
     var existing = surface.querySelector('.os-window[data-from="' + tplId + '"]');
     if (existing) {
+      if (opener) existing._opener = opener;
       existing.style.zIndex = ++winZ;
       clampWin(existing, existing.offsetLeft, existing.offsetTop); // recover if off-screen
+      existing.focus({ preventScroll: true });
       return;
     }
     var tpl = document.getElementById(tplId);
     if (!tpl) return;
     var win = tpl.content.firstElementChild.cloneNode(true);
     win.dataset.from = tplId;
+    win._opener = opener || null;
+    win.setAttribute('role', 'dialog');
 
     var dragbar = document.createElement('div');
     dragbar.className = 'os-dragbar';
@@ -1281,8 +1552,12 @@ body {
     if (win.dataset.title) {
       var hint = document.createElement('div');
       hint.className = 'os-title-hint';
+      hint.id = tplId + '-title';
       hint.textContent = win.dataset.title;
+      win.setAttribute('aria-labelledby', hint.id);
       win.insertBefore(hint, win.firstChild);
+    } else {
+      win.setAttribute('aria-label', 'Portfolio window');
     }
 
     var isSmall = window.innerWidth <= 768;
@@ -1297,10 +1572,15 @@ body {
     traffic.querySelector('.tl-close').addEventListener('click', function(e) {
       e.stopPropagation();
       win.remove();
+      if (win._opener) win._opener.focus({ preventScroll: true });
     });
     win.addEventListener('pointerdown', function() { win.style.zIndex = ++winZ; });
     win.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') { e.stopPropagation(); win.remove(); }
+      if (e.key === 'Escape') {
+        e.stopPropagation();
+        win.remove();
+        if (win._opener) win._opener.focus({ preventScroll: true });
+      }
     });
     win.setAttribute('tabindex', '-1');
     dragbar.addEventListener('pointerdown', function(e) {
@@ -1318,13 +1598,14 @@ body {
 
   /* ===== desktop icons (mouse + keyboard) ===== */
   function activateIcon(icon) {
-    if (icon.dataset.win) openWindow(icon.dataset.win);
+    if (icon.dataset.win) openWindow(icon.dataset.win, icon);
     else if (icon.dataset.href) {
       // PDFs in a new tab; internal pages navigate in place
       if (/\.pdf$/.test(icon.dataset.href)) window.open(icon.dataset.href, '_blank', 'noopener');
       else window.location.href = icon.dataset.href;
     }
   }
+  document.getElementById('openStart').addEventListener('click', function() { openWindow('win-start', this); });
   document.querySelectorAll('.dicon').forEach(function(icon) {
     icon.setAttribute('tabindex', '0');
     icon.setAttribute('role', 'button');

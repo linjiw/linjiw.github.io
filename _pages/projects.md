@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Research projects in robotics, reinforcement learning, and autonomous systems.
+description: Robot-learning projects spanning curriculum learning, reinforcement learning, humanoid locomotion, navigation, and embodied AI systems.
 nav: true
 nav_order: 2
 display_categories: [robotics]

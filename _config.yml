@@ -6,14 +6,17 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Linji
 middle_name: (Joey)
 last_name: Wang
+author:
+  name: Linji (Joey) Wang
+  uri: https://linjiw.github.io/
 contact_note: >
-  Feel free to reach out for research collaborations or discussions about AI and Robotics!
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Ph.D. Student in Computer Science at George Mason University, specializing in AI and Robotics with focus on Reinforcement Learning.
+  Open to AI robotics engineering opportunities and research collaborations in robot learning and embodied AI.
+description: >- # fold the text without adding a trailing newline
+  AI robotics engineer and Computer Science Ph.D. researcher developing curriculum-learning and reinforcement-learning systems for embodied robots.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: AI, Robotics, Reinforcement Learning, Curriculum Learning, Sim-to-Real, Robot Navigation, George Mason University, Linji Wang # add your own keywords or leave empty
+keywords: AI Robotics Engineer, Systems Engineer, Robot Learning, Embodied AI, Reinforcement Learning, Curriculum Learning, Adaptive Reward Design, Humanoid Locomotion, Sim-to-Real, Robot Navigation, PostgreSQL, Amazon Aurora, Database Systems, Query Optimization, AWS, George Mason University, Linji Wang # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🤖 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -46,7 +49,7 @@ repo_trophies:
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: false # in-flow footer; the world-switcher pill floats at the bottom
+footer_fixed: false # in-flow footer; the classic world switcher sits beneath it
 search_enabled: true
 socials_in_search: true
 posts_in_search: true
@@ -620,14 +623,13 @@ jekyll_get_json:
 
 jsonresume:
   - basics
+  - skills
   - work
   - education
   - publications
   - projects
-  - volunteer
   - awards
-  - certificates
-  - skills
+  - volunteer
   - languages
   - interests
   - references

@@ -41,7 +41,7 @@ Monitor your coding performance with detailed metrics:
 Building this extension presented several interesting technical challenges:
 
 ### Performance Optimization
-- **Smart sound caching** with 90% hit rate ensures minimal latency
+- **Smart sound caching** reuses audio assets to keep interaction latency low
 - **Async file I/O** prevents blocking the main coding workflow
 - **Intelligent debouncing** avoids sound overlap and maintains smooth experience
 

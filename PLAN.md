@@ -9,8 +9,8 @@ Guiding principles:
 
 - **Every number traceable to a paper.** Claims on the site must match the published
   abstracts (GACL: +6.8%/+6.1% success; RTW: +2.35% navigation, +122.6% off-road
-  mobility, 3× faster training, 5/5 vs 2/5 physical trials; DDP: 1st place,
-  Simulation Phase, 2025 BARN Challenge).
+  mobility, 3× faster training, 5/5 vs 2/5 physical trials; MTC: 348 trajectories
+  across 145 scenes; DDP/RobotiXX: 2nd in both 2025 BARN Challenge phases).
 - **One source of truth per artifact.** `papers.bib` for publications,
   `resume.json` for the site CV, `resume.tex` for the PDF. No parallel copies.
 - **Private material never enters this repo.** Job-search artifacts, tailored
@@ -51,14 +51,14 @@ Guiding principles:
 ## Phase 1 — Resume & CV consolidation
 
 - [x] Add **Teaching Experience** (TA at GMU Fall 2023, CMU Fall 2022, U. Cincinnati
-      Fall 2020) to `resume.json` and `resume.tex` — it currently lives only in the
-      never-rendered `_data/cv.yml`.
-- [x] Add **Awards** (1st Place, Simulation Phase, 2025 BARN Challenge) and a
-      **Professional Service** section (reviewing, mentoring) to both.
+      Fall 2020) to `resume.json` for the full web CV; keep the one-page PDF focused
+      on research and engineering experience.
+- [x] Add the corrected **team result** (2nd Place in both phases, 2025 BARN Challenge)
+      to both resume sources. Professional service remains pending verified details.
 - [x] Reorder `resume.json` so publications render right after education on `/cv/`;
-      list first-author papers first; drop or refresh the 2023 mortality-prediction
+      list first/co-first-author papers first; drop or refresh the 2023 mortality-prediction
       side project.
-- [x] Rewrite research bullets to state first-authorship explicitly and pair every
+- [x] Rewrite research bullets to state first/co-first-authorship explicitly and pair every
       contribution with its published result and venue.
 - [x] Prune skills to what is interview-defensible; add a "Robot Platforms" line
       (wheeled UGV, quadruped, off-road vehicle).
@@ -89,9 +89,8 @@ Guiding principles:
 - [x] Accent color: one hue, two lightness steps (e.g. engineering blue `#0057b8`
       light / `#4d9fff` dark) at `_sass/_themes.scss` lines 13–14 and 85–86,
       replacing the default magenta/cyan pair.
-- [x] Headshot: export a well-lit ~800px image derived from the high-res photo;
-      delete the 14 MB `prof_pic_color.png` original from the repo (current
-      `prof_pic.jpg` is a 150×150 source upscaled to ~280px — blurry everywhere).
+- [x] Headshot: restore the verified owner photo as a compressed 450×450 source and
+      delete the 14 MB `prof_pic_color.png` original from the repo.
 - [x] Replace the four publication preview PNGs with short square GIF/webm clips of
       the real robots (al-folio supports GIF previews) or square-cropped,
       compressed (<300 KB) key figures; remove the baked-in figure caption from the
@@ -108,10 +107,9 @@ Guiding principles:
 
 ## Phase 4 — SEO, hygiene & discoverability
 
-- [x] `_config.yml`: `serve_og_meta: true`, `serve_schema_org: true`, set
-      `og_image` to a purpose-made 1200×630 card; add Google Search Console
-      verification; update `keywords` (drop "GANs", add curriculum learning /
-      sim-to-real).
+- [x] `_config.yml`: enable Open Graph and Schema.org metadata and update `keywords`
+      (drop "GANs", add curriculum learning / sim-to-real). The purpose-made OG card
+      and Search Console verification remain owner-input TODOs below.
 - [x] Delete al-folio demo assets (~21 MB): book cover, demo mp3/mp4,
       `relativity.html`, `plotly/demo.html`, demo bibliography, `table_data.json`.
 - [x] Delete theme leftover docs (`CONTRIBUTING.md`, `CUSTOMIZE.md`, `FAQ.md`,
@@ -180,7 +178,7 @@ Adaptations for our site (view-first portfolio, not an editor):
       (figure + verified numbers), skills card, robot-platforms card,
       BARN award sticky, "now: humanoids" sticky, quote card, contact card.
 - [x] Connections express the research narrative: profile→timeline,
-      timeline→GACL/RTW (first-author), GACL→RTW (siblings), DDP→BARN
+      timeline→GACL/RTW (first/co-first-author), GACL→RTW (siblings), DDP→BARN
       award, RTW→off-road robot, profile→now.
 - [x] Style: linji OS palette (cream board, engineering-blue dashed
       borders, yellow accents), Fraunces card titles, Fira Code labels.
@@ -197,14 +195,14 @@ Adaptations for our site (view-first portfolio, not an editor):
       key facts + a link into the classic site (crawlers/no-JS see content).
 - [x] Persistent "classic site →" escape hatch on the OS hero (hidden once the
       desktop reveals) so the conventional site is always one click away.
-- [x] Pill order → 01 os · 02 canvas · 03 classic; fix all cross-links
+- [x] Pill order → 01 interactive · 02 map · 03 portfolio; fix all cross-links
       (mb-exit, goodbye terminal, canvas contact card, about.md copy).
 - [x] `/os/` redirect stub → `/` so old links survive.
 
 ## Future TODOs (content, needs owner input)
 
-- [ ] A sharp, recent headshot from the owner (current prof_pic.jpg is the
-      real photo but only a 150px source upscaled to 450px).
+- [ ] A sharp, recent headshot from the owner (current `prof_pic.jpg` is the
+      verified photo but only a 450×450 source).
 - [ ] Robot media: short square GIFs/videos of the wheeled UGV, quadruped, and
       off-road runs for the three project pages (HTML TODO comments mark the
       spots in `_projects/*.md`).
@@ -215,5 +213,9 @@ Adaptations for our site (view-first portfolio, not an editor):
 - [ ] Decide whether the phone number stays in the public resume PDF
       (`resume.tex` header).
 - [ ] Fresh 2026 news item on current humanoid curriculum-learning work.
+- [ ] Verified Professional Service details (reviewing, mentoring) for the web CV
+      and one-page resume.
+- [ ] Synchronize the linked Google Scholar and ORCID profiles with the current
+      seven-paper robotics record, especially Moving Through Clutter.
 - [ ] Ask GitHub Support to GC unreachable objects (old commit SHAs from the
       history purge are still served from cache).

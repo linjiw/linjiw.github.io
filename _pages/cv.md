@@ -5,7 +5,7 @@ title: cv
 nav: true
 nav_order: 3
 cv_pdf: resume.pdf
-description: Curriculum Vitae of Linji (Joey) Wang
+description: AI robotics, robot learning, embodied AI, and engineering experience of Linji (Joey) Wang
 toc:
   sidebar: left
 ---

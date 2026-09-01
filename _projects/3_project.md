@@ -3,7 +3,7 @@ layout: page
 title: Normal Vector-Assisted SLAM Mapping
 description: II-NVM — more accurate, more consistent maps (IEEE RA-L 2025)
 img: assets/img/publication_preview/II-NVM_sq.jpg
-importance: 3
+importance: 4
 category: robotics
 related_publications: true
 ---
@@ -17,7 +17,7 @@ thin surface (walls, doors) are observed.
 
 <div class="row justify-content-center">
     <div class="col-sm-10 mt-3 mb-3">
-        {% include figure.liquid loading="eager" path="assets/img/projects/iinvm_system.jpg" title="II-NVM system overview" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/iinvm_system.jpg" title="II-NVM system overview" alt="Overview diagram of the II-NVM normal-vector-assisted mapping pipeline" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -28,9 +28,8 @@ thin surface (walls, doors) are observed.
 
 ## My contribution
 
-This is a collaboration led by Chengwei Zhao; I am a co-author (5th of 7) and
-contributed to the mapping methodology and evaluation. The work was published in
-IEEE Robotics and Automation Letters (2025).
+This is a collaboration led by Chengwei Zhao; I am a co-author (5th of 7). The
+work was published in IEEE Robotics and Automation Letters (2025).
 
 ## Resources
 

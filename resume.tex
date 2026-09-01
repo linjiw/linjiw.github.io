@@ -1,164 +1,112 @@
 \documentclass[letterpaper,10pt]{article}
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[letterpaper,top=0.43in,bottom=0.43in,left=0.52in,right=0.52in]{geometry}
+\usepackage{array}
 \usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
-\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\input{glyphtounicode}
+\pdfgentounicode=1
 
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-0.5in}
-\addtolength{\textheight}{1.0in}
+\definecolor{accent}{HTML}{1E5BA8}
+\definecolor{muted}{HTML}{4A4A5A}
 
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\emergencystretch}{2em}
 \urlstyle{same}
-
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-8pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-% Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    #1 \vspace{-2pt}
-  }
+\hypersetup{
+  pdftitle={Linji Wang - AI Robotics and Systems Engineer - Curriculum Learning and Embodied RL},
+  pdfauthor={Linji Wang},
+  pdfsubject={AI robotics, database systems, and performance engineering},
+  pdfkeywords={AI robotics, robot learning, curriculum learning, reinforcement learning, embodied AI, Aurora PostgreSQL, database systems, query optimization, AWS}
 }
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0pt}{}[\vspace{-4pt}\color{accent}\titlerule]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+\setlist[itemize]{leftmargin=0.17in,itemsep=1.2pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
+
+\newcommand{\role}[4]{%
+  \textbf{#1}\hfill\textbf{#2}\\[-1pt]
+  \textit{#3}\hfill\textit{#4}\par
 }
 
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-    \end{tabular*}\vspace{-7pt}
+\newcommand{\education}[4]{%
+  \textbf{#1}\hfill #2\\[-1pt]
+  \textit{#3}\hfill\textit{#4}\par
 }
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.25in, label=\tiny$\bullet$]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \begin{document}
 
-%----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\large LINJI WANG} & Email: \href{mailto:joewwang@outlook.com}{joewwang@outlook.com}\\
-  Fairfax, VA & Mobile: 412-888-6071 \\
-  \href{https://www.linkedin.com/in/linjiw}{LinkedIn} | \href{https://linjiw.github.io}{linjiw.github.io} | \href{https://scholar.google.com/citations?user=VURUgFMAAAAJ}{Google Scholar} & GitHub: \href{https://github.com/linjiw}{github.com/linjiw}
-\end{tabular*}
+\begin{center}
+  {\fontsize{19}{21}\selectfont\bfseries LINJI (JOEY) WANG}\\[-1pt]
+  {\large\bfseries\color{accent}AI Robotics \& Systems Engineer \textbar{} Curriculum Learning \& Embodied RL}\\[2pt]
+  \small Fairfax, VA \textbar{}
+  \href{mailto:joewwang@outlook.com}{joewwang@outlook.com} \textbar{}
+  412-888-6071 \textbar{}
+  \href{https://linjiw.github.io}{linjiw.github.io} \textbar{}
+  \href{https://www.linkedin.com/in/linjiw}{LinkedIn} \textbar{}
+  \href{https://github.com/linjiw}{GitHub} \textbar{}
+  \href{https://scholar.google.com/citations?user=VURUgFMAAAAJ}{Google Scholar}
+\end{center}
+\vspace{-7pt}
 
-%-----------SUMMARY-----------------
-\section{SUMMARY}
-  \resumeSubHeadingListStart
-    \resumeItem{Ph.D. student in Computer Science (AI and Robotics) focused on curriculum learning and reinforcement learning for robot navigation and locomotion; ongoing work on humanoid robots.}
-    \resumeItem{First author of two IROS 2025 papers (GACL, with Peter Stone; Reward Training Wheels); co-author of a third IROS 2025 paper and an IEEE RA-L 2025 article. Team won 1st place in the simulation phase of the 2025 BARN Challenge.}
-    \resumeItem{Engineering experience at AWS building production-grade statistical testing and monitoring systems that cut regression analysis time from 8 hours to 15 minutes.}
-  \resumeSubHeadingListEnd
+\section{PROFILE}
+\small AI/robotics and systems engineer and Computer Science Ph.D. researcher specializing in automatic curriculum learning, deep reinforcement learning, and embodied-agent training. First/co-first author of two IROS 2025 papers, with systems experience spanning Aurora PostgreSQL query performance at AWS and C++/ROS 2 humanoid policy inference.
 
-%-----------EDUCATION-----------------
+\section{TECHNICAL EXPERTISE}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries}p{1.36in} X}
+Robot learning & Automatic curriculum learning, deep reinforcement learning, PPO, teacher--student learning, reward shaping, VAE task representations, sim-to-real \\
+Robotics systems & PyTorch, Isaac Gym, Isaac Lab, MuJoCo, ROS 2, ONNX Runtime; navigation, quadruped locomotion, off-road mobility, humanoid policy inference \\
+Systems \& software & C, C++, Python, Aurora PostgreSQL, query processing and join optimization, AWS, Docker, Git/CI-CD \\
+\end{tabularx}
+
+\section{RESEARCH \& ENGINEERING EXPERIENCE}
+\small
+\role{RobotiXX Lab, George Mason University}{Fairfax, VA}{Graduate Research Assistant --- Robot Learning}{Aug 2023 -- Present}
+\begin{itemize}
+  \item Developed \textbf{GACL}, an automatic curriculum-learning framework using VAE task representations, performance-history tracking, and target-domain grounding; trained PPO agents in 128 parallel Isaac Gym environments and improved success by 6.8\% on wheeled navigation and 6.1\% on quadruped locomotion versus state-of-the-art methods (first author, IROS 2025).
+  \item Co-developed \textbf{Reward Training Wheels}, a teacher--student framework for proficiency-conditioned auxiliary-reward adaptation; in simulation, improved off-road mobility by 122.62\% and reached the same performance threshold 3$\times$ faster than expert-designed rewards; sim-trained policies achieved 5/5 physical trials versus 2/5 (co-first author, IROS 2025).
+  \item Third author on \textbf{Moving Through Clutter} (2026), a VR data-collection and evaluation framework for scene-aware humanoid locomotion with 348 trajectories across 145 3D scenes.
+  \item Developing a C++/ROS 2 policy-inference stack for Unitree G1 with paired ONNX residual/base policies, metadata-driven observation construction, temporal history, normalization, and Isaac Lab--MuJoCo parity diagnostics.
+  \item Co-authored RL-based \textbf{Adaptive Dynamics Planning} (4th author, ICRA 2026) and \textbf{Decremental Dynamics Planning} (3rd author, IROS 2025); the DDP-based RobotiXX system placed 2nd in both the simulation qualifier and physical finals of the 2025 BARN Challenge.
+\end{itemize}
+
+\role{Amazon Web Services (AWS)}{}{Software Development Engineer Intern --- Amazon RDS \& Aurora}{Summers 2025 \& 2026}
+\begin{itemize}
+  \item \textbf{Aurora PostgreSQL (2026):} Contributed to Adaptive Join, developing mechanisms that adjust join execution to improve query performance.
+  \item Worked in the PostgreSQL-based database engine codebase in C on database internals, join processing, performance analysis, and compatibility improvements.
+  \item \textbf{RDS Proxy (2025):} Built multi-region performance-comparison and regression-analysis tooling using Streamlit, CloudWatch metrics, statistical testing, and adaptive test selection.
+\end{itemize}
+
+\role{Computational Engineering and Robotics Lab, Carnegie Mellon University}{Pittsburgh, PA}{Research Assistant --- 3D Perception and AR}{Jan 2022 -- May 2023}
+\begin{itemize}
+  \item Built an AR scene-inpainting pipeline using GAN image completion plus RANSAC/DBSCAN point-cloud segmentation.
+\end{itemize}
+
+\section{SELECTED PUBLICATIONS}
+\small
+\begin{itemize}
+  \item \textbf{Wang, L.}, Xu, Z., Stone, P., Xiao, X. ``\href{https://doi.org/10.1109/IROS60139.2025.11246910}{GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring}.'' \textit{IROS 2025}. First author.
+  \item \textbf{Wang, L.*}, Xu, T.*, Lu, Y., Xiao, X. ``\href{https://doi.org/10.1109/IROS60139.2025.11247039}{Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning}.'' \textit{IROS 2025}. Co-first author.
+  \item \textbf{Additional robotics publications:} Moving Through Clutter (3rd author, arXiv 2026); DDP (3rd, IROS 2025); Adaptive Dynamics Planning (4th, ICRA 2026); ColorMap-VIO / II-NVM (5th, RA-L 2026 / 2025).
+\end{itemize}
+
 \section{EDUCATION}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {George Mason University}{Fairfax, VA}
-      {PhD in Computer Science, Specialization in AI and Robotics}{Sep 2023 -- Present}
-      \resumeItemListStart
-        \resumeItem{Research: Curriculum Learning and Reinforcement Learning for Robotics, advised by Dr. Xuesu Xiao (RobotiXX Lab)}
-      \resumeItemListEnd
-    \resumeSubheading
-      {Carnegie Mellon University}{Pittsburgh, PA}
-      {MSc in Mechanical Engineering, GPA: 3.94/4.0}{Sep 2021 -- May 2023}
-    \resumeSubheading
-      {University of Cincinnati}{Cincinnati, OH}
-      {BS in Mechanical Engineering}{Sep 2016 -- May 2021}
-  \resumeSubHeadingListEnd
-
-%-----------RESEARCH EXPERIENCE-----------------
-\section{RESEARCH EXPERIENCE}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {RobotiXX Lab, George Mason University}{Fairfax, VA}
-      {Graduate Research Assistant, Curriculum Learning for Robotics}{Aug 2023 -- Present}
-      \resumeItemListStart
-        \resumeItem{Developed GACL (first author, IROS 2025, with Peter Stone), a grounded adaptive curriculum framework: +6.8\% success on wheeled navigation in constrained environments, +6.1\% on quadruped locomotion in confined 3D spaces vs. state of the art.}
-        \resumeItem{Designed Reward Training Wheels (first author, IROS 2025), teacher-adapted auxiliary rewards: +122.62\% off-road mobility, 3$\times$ faster training, and 5/5 vs. 2/5 success in physical off-road robot trials vs. expert-designed rewards.}
-        \resumeItem{Contributed to Decremental Dynamics Planning (IROS 2025): navigation system won 1st place in the simulation phase of the 2025 BARN Challenge.}
-        \resumeItem{Trained massively parallel RL policies (PPO, SAC) in IsaacGym across wheeled, quadruped, and off-road platforms; extending curriculum learning to humanoid robots.}
-      \resumeItemListEnd
-    \resumeSubheading
-      {Computational Engineering and Robotics Lab, CMU}{Pittsburgh, PA}
-      {Research Assistant: 3D AR Scene Inpainting via Deep Learning}{Jan 2022 -- May 2023}
-      \resumeItemListStart
-        \resumeItem{Developed an end-to-end deep learning pipeline for 3D AR scene inpainting, achieving 92\% accuracy in scene completion.}
-        \resumeItem{Fine-tuned a GAN model for image inpainting, improving texture realism by 35\% over baseline methods.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-
-%-----------INDUSTRY EXPERIENCE-----------------
-\section{INDUSTRY EXPERIENCE}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Amazon Web Services (AWS)}{Bellevue, WA}
-      {Software Development Engineer Intern - RDS Proxy Team}{May 2025 -- Aug 2025}
-      \resumeItemListStart
-        \resumeItem{Built a Streamlit performance-analysis suite (8 interactive views) cutting regression analysis time from 8 hours to 15 minutes.}
-        \resumeItem{Developed a statistical regression testing framework (Welch's t-test, power analysis, Bonferroni correction) for high-confidence detection.}
-        \resumeItem{Implemented adaptive sampling with Thompson Sampling and Bayesian optimization, improving test reliability from 47\% to 90\% and reducing false positives.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-
-%-----------PUBLICATIONS-----------------
-\section{PUBLICATIONS}
-  \resumeSubHeadingListStart
-    \resumeSubSubheading{\textbf{Wang, L.}, Xu, Z., Stone, P., Xiao, X. ``GACL: Grounded Adaptive Curriculum Learning''}{IROS 2025}
-    \resumeSubSubheading{\textbf{Wang, L.}, Xu, T., Lu, Y., Xiao, X. ``Reward Training Wheels: Adaptive Auxiliary Rewards''}{IROS 2025}
-    \resumeSubSubheading{Lu, Y., Xu, T., \textbf{Wang, L.}, Hawes, N., Xiao, X. ``Decremental Dynamics Planning''}{IROS 2025}
-    \resumeSubSubheading{Zhao, C., Li, Y., Jian, Y., Xu, J., \textbf{Wang, L.}, et al. ``II-NVM: Normal Vector-Assisted Mapping''}{IEEE RA-L 2025}
-  \resumeSubHeadingListEnd
-
-%-----------AWARDS-----------------
-\section{AWARDS}
-  \resumeSubHeadingListStart
-    \resumeSubSubheading{1st Place, Simulation Phase --- 2025 BARN Challenge (Benchmark Autonomous Robot Navigation)}{ICRA 2025}
-  \resumeSubHeadingListEnd
-
-%-----------TEACHING-----------------
-\section{TEACHING EXPERIENCE}
-  \resumeSubHeadingListStart
-    \resumeSubSubheading{Teaching Assistant, Introduction to Programming --- George Mason University}{Fall 2023}
-    \resumeSubSubheading{Teaching Assistant, Artificial Intelligence and Machine Learning --- Carnegie Mellon University}{Fall 2022}
-    \resumeSubSubheading{Teaching Assistant, System Dynamics, Fluid Dynamics \& Engineering Models --- University of Cincinnati}{Fall 2020}
-  \resumeSubHeadingListEnd
-
-%-----------SKILLS-----------------
-\section{TECHNICAL SKILLS}
- \resumeSubHeadingListStart
-   \resumeSubSubheading{Programming:}{Python, C++, CUDA, Bash}
-   \resumeSubSubheading{Robot Learning:}{PyTorch, PPO/SAC, Curriculum Learning, Reward Design, Sim-to-Real}
-   \resumeSubSubheading{Robotics \& Simulation:}{IsaacGym, MuJoCo, ROS; wheeled UGV, quadruped, off-road platforms}
-   \resumeSubSubheading{Engineering \& Cloud:}{AWS, Docker, Git/CI-CD, Statistical Analysis}
- \resumeSubHeadingListEnd
+\small
+\education{George Mason University}{Fairfax, VA}{Ph.D. in Computer Science --- research focus: curriculum learning and reinforcement learning for robotics}{2023 -- Present}
+\education{Carnegie Mellon University}{Pittsburgh, PA}{M.S. in Mechanical Engineering, GPA: 3.94/4.0}{2021 -- 2023}
+\education{University of Cincinnati}{Cincinnati, OH}{B.S. in Mechanical Engineering, magna cum laude}{2016 -- 2021}
 
 \end{document}

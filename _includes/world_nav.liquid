@@ -1,16 +1,19 @@
 <!-- World switcher: persistent pill nav across os / canvas / classic -->
-<nav class="world-nav" id="worldNav" aria-label="Site worlds">
+<nav class="world-nav world-nav--{{ include.active }}" id="worldNav" aria-label="Site worlds">
   <a href="{{ '/' | relative_url }}" class="world-pill {% if include.active == 'os' %}active{% endif %}"
+     aria-label="OS: interactive portfolio" title="OS · interactive portfolio"
      {% if include.active == 'os' %}aria-current="page"{% endif %}>
-    <span class="world-num">01</span>os
+    <span class="world-num">01</span><span class="world-word">os</span>
   </a>
   <a href="{{ '/canvas/' | relative_url }}" class="world-pill {% if include.active == 'canvas' %}active{% endif %}"
+     aria-label="Canvas: guided research map" title="Canvas · guided research map"
      {% if include.active == 'canvas' %}aria-current="page"{% endif %}>
-    <span class="world-num">02</span>canvas
+    <span class="world-num">02</span><span class="world-word">canvas</span>
   </a>
   <a href="{{ '/classic/' | relative_url }}" class="world-pill {% if include.active == 'classic' %}active{% endif %}"
+     aria-label="Classic: conventional portfolio" title="Classic · conventional portfolio"
      {% if include.active == 'classic' %}aria-current="page"{% endif %}>
-    <span class="world-num">03</span>classic
+    <span class="world-num">03</span><span class="world-word">classic</span>
   </a>
 </nav>
 <div class="world-fade" id="worldFade" aria-hidden="true"></div>

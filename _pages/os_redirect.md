@@ -4,6 +4,8 @@ permalink: /os/
 title: os
 nav: false
 redirect: /
+canonical_url: /
+noindex: true
 sitemap: false
 ---
 

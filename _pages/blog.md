@@ -2,7 +2,7 @@
 layout: default
 permalink: /blog/
 title: blog
-nav: true
+nav: false
 nav_order: 4
 pagination:
   enabled: true
@@ -38,18 +38,18 @@ pagination:
           <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
         </li>
         {% unless forloop.last %}
-          <p>&bull;</p>
+          <li aria-hidden="true">&bull;</li>
         {% endunless %}
       {% endfor %}
       {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
-        <p>&bull;</p>
+        <li aria-hidden="true">&bull;</li>
       {% endif %}
       {% for category in site.display_categories %}
         <li>
           <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">{{ category }}</a>
         </li>
         {% unless forloop.last %}
-          <p>&bull;</p>
+          <li aria-hidden="true">&bull;</li>
         {% endunless %}
       {% endfor %}
     </ul>
@@ -62,7 +62,7 @@ pagination:
 
 <div class="container featured-posts">
 {% assign is_even = featured_posts.size | modulo: 2 %}
-<div class="row row-cols-{% if featured_posts.size <= 2 or is_even == 0 %}2{% else %}3{% endif %}">
+<div class="row row-cols-1 row-cols-md-{% if featured_posts.size <= 2 or is_even == 0 %}2{% else %}3{% endif %}">
 {% for post in featured_posts %}
 <div class="col mb-4">
 <a href="{{ post.url | relative_url }}">
@@ -85,8 +85,7 @@ pagination:
 
                     <p class="post-meta">
                       {{ read_time }} min read &nbsp; &middot; &nbsp;
-                      <a href="{{ year | prepend: '/blog/' | relative_url }}">
-                        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
+                      <span><i class="fa-solid fa-calendar fa-sm"></i> {{ year }}</span>
                     </p>
                   </div>
                 </div>

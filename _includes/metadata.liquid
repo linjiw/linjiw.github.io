@@ -15,6 +15,9 @@
 {% endif %}
 
 {% capture author_name %}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endcapture %}
+{% assign metadata_title = page.seo_title | default: page.title %}
+{% assign metadata_path = page.canonical_url | default: page.url %}
+{% assign metadata_url = metadata_path | replace: 'index.html', '' | absolute_url %}
 
 <!-- Standard metadata -->
 <meta charset="utf-8">
@@ -27,12 +30,12 @@
     {% capture title %}{{ site.title }}{% endcapture %}
   {% endif %}
   {% if page.url == '/blog/index.html' %}
-    {{ page.title }} | {{ title }}
-  {% elsif page.title != 'blank' and page.url != '/' %}
-    {% if page.title == null or page.title == '' %}
+    {{ metadata_title }} | {{ title }}
+  {% elsif metadata_title != 'blank' and page.url != '/' %}
+    {% if metadata_title == null or metadata_title == '' %}
       {{ page.date | date: '%Y' }} | {{ title }}
     {% else %}
-      {{ page.title }} | {{ title }}
+      {{ metadata_title }} | {{ title }}
     {% endif %}
   {% else %}
     {{ title }}
@@ -55,8 +58,8 @@
   <!-- OpenGraph -->
   <meta property="og:site_name" content="{{ title }}">
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{% if page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}">
-  <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
+  <meta property="og:title" content="{% if metadata_title %}{{ title }} | {{ metadata_title }}{% else %}{{ title }}{% endif %}">
+  <meta property="og:url" content="{{ metadata_url }}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
@@ -65,7 +68,7 @@
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}">
+  <meta name="twitter:title" content="{% if metadata_title %}{{ metadata_title }}{% else %}{{ title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
@@ -230,10 +233,10 @@
             "@type": "Person",
             "name": "{{ author_name }}"
         },
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+        "url": "{{ metadata_url }}",
         "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
         "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
-        "headline": "{% if page.title and page.title != 'blank' %}{{ page.title }}{% elsif site.title != 'blank' %}{{ site.title }}{% else %}{{ author_name }}{% endif %}",
+        "headline": "{% if metadata_title and metadata_title != 'blank' %}{{ metadata_title }}{% elsif site.title != 'blank' %}{{ site.title }}{% else %}{{ author_name }}{% endif %}",
         {% if sameaslinks != blank %}
         "sameAs": {{ sameaslinks | jsonify }},
         {% endif %}

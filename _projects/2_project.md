@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Decremental Dynamics Planning
-description: Robot navigation that plans with full dynamics only where it matters — 1st place, 2025 BARN Challenge (simulation)
+description: Robot navigation that plans with full dynamics only where it matters — 2nd place in both phases of the 2025 BARN Challenge
 img: assets/img/publication_preview/DDP_sq.jpg
-importance: 2
+importance: 3
 category: robotics
 related_publications: true
 ---
@@ -19,7 +19,7 @@ where it buys the most safety and performance.
 
 <div class="row justify-content-center">
     <div class="col-sm-9 mt-3 mb-3">
-        {% include figure.liquid loading="eager" path="assets/img/projects/ddp_comparison.jpg" title="DDP vs decomposed planning" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/ddp_comparison.jpg" title="DDP vs decomposed planning" alt="Comparison of conventional decomposed planning and Decremental Dynamics Planning" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -31,16 +31,15 @@ where it buys the most safety and performance.
 ## My contribution
 
 This is a collaboration led by my labmate Yuanjie Lu (with Tong Xu, Nick Hawes of
-Oxford, and our advisor Xuesu Xiao); I am third author and contributed to the
-planning framework and experimental evaluation.
+Oxford, and our advisor Xuesu Xiao); I am third author.
 
 ## Published results
 
 - Augmenting three different existing planners with DDP improved planning
-  performance across the board.
-- A new DDP-based navigation system won **1st place in the simulation phase of
-  the 2025 BARN Challenge** (Benchmark Autonomous Robot Navigation), validated in
-  both simulated and physical experiments.
+  performance overall.
+- The DDP-based RobotiXX navigation system placed **2nd in both the simulation
+  qualifier and physical finals of the 2025 BARN Challenge** (Benchmark
+  Autonomous Robot Navigation).
 
 ## Paper
 

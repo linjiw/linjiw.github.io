@@ -30,6 +30,10 @@
   transition: color 0.2s, background 0.2s;
 }
 .world-pill:hover { color: #1a1a2e; background: rgba(30, 91, 168, 0.07); }
+.world-pill:focus-visible {
+  outline: 3px solid rgba(244, 215, 88, 0.95);
+  outline-offset: 3px;
+}
 .world-pill.active {
   background: #1e5ba8;
   color: #fff;
@@ -38,6 +42,15 @@
   font-size: 9.5px;
   opacity: 0.55;
   margin-right: 5px;
+}
+
+/* Classic already has a full site navbar. Keep the world switcher in-flow
+   beneath its footer so it never covers recruiter-facing copy or controls. */
+.world-nav--classic {
+  position: static;
+  width: max-content;
+  margin: 18px auto;
+  transform: none;
 }
 
 /* cross-world fade */
@@ -52,13 +65,9 @@
 }
 .world-fade.active { opacity: 1; pointer-events: auto; }
 
-/* view-transition progressive enhancement (Chrome 126+) */
-@view-transition {
-  navigation: auto;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .world-fade { transition: none; }
+  .world-pill { transition: none; }
 }
 
 /* small screens: tuck tighter */
@@ -66,9 +75,6 @@
   .world-nav { bottom: 12px; }
   .world-pill { padding: 7px 12px; font-size: 11.5px; }
 }
-
-/* room under classic pages so the pill never covers the footer text */
-footer.sticky-bottom { padding-bottom: 64px !important; }
 
 /* short pages: push the in-flow footer to the bottom of the viewport */
 body.sticky-bottom-footer {

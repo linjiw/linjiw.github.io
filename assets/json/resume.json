@@ -1,17 +1,27 @@
 {
   "basics": {
-    "name": "Linji Wang",
-    "label": "Ph.D. Student in Computer Science",
+    "name": "Linji (Joey) Wang",
+    "label": "AI Robotics & Systems Engineer | Curriculum Learning & Embodied RL",
     "image": "",
     "email": "joewwang@outlook.com",
     "url": "https://linjiw.github.io/",
-    "summary": "Ph.D. student in Computer Science (AI and Robotics) at George Mason University, focused on curriculum learning and reinforcement learning for robot navigation and locomotion; first author of two IROS 2025 papers, co-author of a third IROS 2025 paper and an IEEE RA-L 2025 article",
+    "summary": "AI/robotics and systems engineer and Computer Science Ph.D. researcher specializing in automatic curriculum learning, deep reinforcement learning, and embodied-agent training. First/co-first author of two IROS 2025 papers, with systems experience spanning PostgreSQL query performance at AWS and C++/ROS 2 humanoid policy inference.",
     "location": {
       "city": "Fairfax",
       "countryCode": "US",
       "region": "Virginia"
     },
     "profiles": [
+      {
+        "network": "Google Scholar",
+        "username": "Linji Wang",
+        "url": "https://scholar.google.com/citations?user=VURUgFMAAAAJ"
+      },
+      {
+        "network": "ORCID",
+        "username": "0009-0002-2255-3434",
+        "url": "https://orcid.org/0009-0002-2255-3434"
+      },
       {
         "network": "GitHub",
         "username": "linjiw",
@@ -24,14 +34,82 @@
       }
     ]
   },
+  "work": [
+    {
+      "name": "RobotiXX Lab, George Mason University",
+      "position": "Graduate Research Assistant — Robot Learning",
+      "location": "Fairfax, VA",
+      "url": "https://robotixx.cs.gmu.edu/",
+      "startDate": "2023-08-01",
+      "endDate": "",
+      "summary": "Automatic curriculum learning and deep reinforcement learning for embodied robots, advised by Dr. Xuesu Xiao",
+      "highlights": [
+        "Developed GACL, an automatic curriculum-learning framework using VAE task representations, performance-history tracking, and target-domain grounding; trained PPO agents in 128 parallel Isaac Gym environments and improved success by 6.8% on wheeled navigation and 6.1% on quadruped locomotion versus state-of-the-art methods (first author, IROS 2025)",
+        "Co-developed Reward Training Wheels, a teacher–student framework for proficiency-conditioned auxiliary-reward adaptation; in simulation, improved off-road mobility by 122.62% and reached the same performance threshold 3x faster; sim-trained policies achieved 5/5 physical trials versus 2/5 (co-first author, IROS 2025)",
+        "Third author on Moving Through Clutter (2026), a VR data-collection and evaluation framework for scene-aware humanoid locomotion with 348 trajectories across 145 3D scenes",
+        "Developing a C++/ROS 2 policy-inference stack for Unitree G1 with paired ONNX residual/base policies, metadata-driven observation construction, temporal history, normalization, and Isaac Lab–MuJoCo parity diagnostics",
+        "Co-authored RL-based Adaptive Dynamics Planning (4th author, ICRA 2026) and Decremental Dynamics Planning (3rd author, IROS 2025); the DDP-based RobotiXX system placed 2nd in both the simulation qualifier and physical finals of the 2025 BARN Challenge"
+      ]
+    },
+    {
+      "name": "Amazon Web Services (AWS)",
+      "position": "Software Development Engineer Intern — Amazon Aurora PostgreSQL",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/user-apg-adaptive-join.html",
+      "startDate": "2026-05-01",
+      "endDate": "2026-08-01",
+      "summary": "Aurora PostgreSQL query-execution performance and compatibility",
+      "highlights": [
+        "Contributed to Adaptive Join for Amazon Aurora PostgreSQL, developing mechanisms that adjust join execution to improve query performance",
+        "Worked in the PostgreSQL-based database engine codebase in C on database internals, join processing, performance analysis, and compatibility improvements"
+      ]
+    },
+    {
+      "name": "Amazon Web Services (AWS)",
+      "position": "Software Development Engineer Intern — RDS Proxy",
+      "location": "Bellevue, WA",
+      "url": "https://aws.amazon.com/rds/proxy/",
+      "startDate": "2025-05-01",
+      "endDate": "2025-08-01",
+      "summary": "Statistical performance testing and visualization infrastructure",
+      "highlights": [
+        "Built a Streamlit application that unified multi-region RDS Proxy performance comparisons and regression investigation",
+        "Implemented regression detection using Welch's t-test, power analysis, and Bonferroni correction; integrated CloudWatch metrics into reproducible performance dashboards",
+        "Developed adaptive test selection with Thompson sampling and Bayesian optimization to prioritize informative test configurations"
+      ]
+    },
+    {
+      "name": "Computational Engineering and Robotics Lab, Carnegie Mellon University",
+      "position": "Research Assistant — 3D Perception and AR",
+      "location": "Pittsburgh, PA",
+      "url": "https://www.andrew.cmu.edu/user/shimada/",
+      "startDate": "2022-01-01",
+      "endDate": "2023-05-01",
+      "summary": "Deep learning for 3D augmented-reality scene completion",
+      "highlights": [
+        "Built an AR scene-inpainting pipeline using GAN image completion plus RANSAC and DBSCAN point-cloud segmentation"
+      ]
+    },
+    {
+      "name": "Biorobotics Lab, Carnegie Mellon University",
+      "position": "Research Assistant",
+      "location": "Pittsburgh, PA",
+      "url": "https://www.cmu.edu",
+      "startDate": "2021-09-01",
+      "endDate": "2021-12-01",
+      "summary": "Computer vision for recycled-material classification",
+      "highlights": [
+        "Built a CNN and OpenCV pipeline for real-time recycled-paper classification"
+      ]
+    }
+  ],
   "education": [
     {
       "institution": "George Mason University",
       "location": "Fairfax, VA",
-      "url": "https://www.gmu.edu",
-      "area": "Computer Science - AI and Robotics",
-      "studyType": "Ph.D.",
-      "startDate": "2023-09-01",
+      "url": "https://cs.gmu.edu/academics/graduate-programs",
+      "area": "Research focus: curriculum learning and reinforcement learning for robotics",
+      "studyType": "Ph.D. in Computer Science",
+      "startDate": "2023-08-01",
       "endDate": "",
       "score": "",
       "courses": [
@@ -44,115 +122,105 @@
     {
       "institution": "Carnegie Mellon University",
       "location": "Pittsburgh, PA",
-      "url": "https://www.cmu.edu",
+      "url": "https://meche.engineering.cmu.edu/education/graduate-programs/masters/index.html",
       "area": "Mechanical Engineering",
-      "studyType": "M.Sc.",
+      "studyType": "M.S.",
       "startDate": "2021-09-01",
       "endDate": "2023-05-01",
       "score": "3.94/4.0",
       "courses": [
+        "GPA: 3.94/4.0",
         "Machine Learning",
         "Deep Learning",
         "Computer Vision",
-        "Deep Reinforcement Learning & Control"
+        "Deep Reinforcement Learning and Control"
       ]
     },
     {
       "institution": "University of Cincinnati",
       "location": "Cincinnati, OH",
-      "url": "https://www.uc.edu",
+      "url": "https://ceas.uc.edu/academics/departments/mechanical-materials-engineering.html",
       "area": "Mechanical Engineering",
       "studyType": "B.S.",
       "startDate": "2016-09-01",
       "endDate": "2021-05-01",
       "score": "",
-      "courses": []
+      "courses": [
+        "Magna cum laude"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Humanoid Policy Inference Prototype",
+      "url": "https://github.com/linjiw/motion_tracking_controller_bfm",
+      "startDate": "2025-08-01",
+      "endDate": "",
+      "summary": "Ongoing C++/ROS 2 prototype for Unitree G1 motion-policy inference",
+      "highlights": [
+        "Added paired ONNX residual/base inference, metadata-driven observation assembly, history buffering, normalization, and Isaac Lab–MuJoCo parity diagnostics",
+        "Documented validation gates explicitly; no physical-deployment claim is made"
+      ]
     }
   ],
   "publications": [
     {
       "name": "GACL: Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring",
       "publisher": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
-      "releaseDate": "2025-10-01",
-      "url": "https://arxiv.org/abs/2508.02988",
-      "summary": "First author, with Zifan Xu, Peter Stone, and Xuesu Xiao. Grounded automatic curriculum generation for robotics; +6.8% success on wheeled navigation and +6.1% on quadruped locomotion over state of the art."
+      "releaseDate": "2025-10-19",
+      "url": "https://doi.org/10.1109/IROS60139.2025.11246910",
+      "summary": "First author. Grounded automatic curriculum generation for robotics; 6.8% and 6.1% higher success rates on wheeled navigation and quadruped locomotion than state-of-the-art methods."
     },
     {
       "name": "Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning",
       "publisher": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
-      "releaseDate": "2025-10-01",
-      "url": "https://arxiv.org/abs/2503.15724",
-      "summary": "First author, with Tong Xu, Yuanjie Lu, and Xuesu Xiao. Teacher-adapted auxiliary rewards; +2.35% navigation success, +122.62% off-road mobility, 3x faster training, 5/5 vs 2/5 physical-robot trials."
+      "releaseDate": "2025-10-19",
+      "url": "https://doi.org/10.1109/IROS60139.2025.11247039",
+      "summary": "Co-first author with Tong Xu. In simulation, adaptive auxiliary rewards achieved 122.62% higher off-road mobility and reached the same performance threshold 3x faster; sim-trained policies achieved 5/5 physical trials versus 2/5."
+    },
+    {
+      "name": "Moving Through Clutter: Scaling Data Collection and Benchmarking for 3D Scene-Aware Humanoid Locomotion via Virtual Reality",
+      "publisher": "arXiv preprint",
+      "releaseDate": "2026-03-06",
+      "url": "https://arxiv.org/abs/2603.05993",
+      "summary": "Third author. VR data-collection and evaluation framework and benchmark for scene-aware humanoid locomotion; 348 trajectories across 145 cluttered 3D scenes."
     },
     {
       "name": "Decremental Dynamics Planning for Robot Navigation",
       "publisher": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
-      "releaseDate": "2025-10-01",
-      "url": "https://arxiv.org/abs/2503.20521",
-      "summary": "With Yuanjie Lu, Tong Xu, Nick Hawes, and Xuesu Xiao. Full-dynamics planning near the robot, simplified along the horizon; 1st place, simulation phase, 2025 BARN Challenge."
+      "releaseDate": "2025-10-19",
+      "url": "https://doi.org/10.1109/IROS60139.2025.11246580",
+      "summary": "Third author. Dynamics fidelity decreases along the planning horizon; the resulting system placed 2nd in both phases of the 2025 BARN Challenge."
+    },
+    {
+      "name": "Adaptive Dynamics Planning for Robot Navigation",
+      "publisher": "IEEE International Conference on Robotics and Automation (ICRA)",
+      "releaseDate": "2026-06-02",
+      "url": "https://arxiv.org/abs/2510.05330",
+      "summary": "Fourth author. Reinforcement learning adapts dynamics fidelity to environmental complexity for safer, more efficient navigation."
+    },
+    {
+      "name": "ColorMap-VIO: A Drift-Free Visual-Inertial Odometry in a Prior Colored Point Cloud Map",
+      "publisher": "IEEE Robotics and Automation Letters (RA-L)",
+      "releaseDate": "2026-02-01",
+      "url": "https://doi.org/10.1109/LRA.2025.3643289",
+      "summary": "Fifth author. Drift-bounded visual-inertial localization against a prior colored point-cloud map."
     },
     {
       "name": "II-NVM: Enhancing Map Accuracy and Consistency with Normal Vector-Assisted Mapping",
       "publisher": "IEEE Robotics and Automation Letters (RA-L)",
-      "releaseDate": "2025-04-01",
-      "url": "https://arxiv.org/abs/2504.08204",
-      "summary": "With Chengwei Zhao, Yixuan Li, Yina Jian, Jie Xu, Yongxin Ma, and Xinglai Jin. Normal-vector-consistent SLAM mapping resolving the double-sided mapping issue."
+      "releaseDate": "2025-06-01",
+      "url": "https://doi.org/10.1109/LRA.2025.3561568",
+      "summary": "Fifth author. Normal-vector-consistent SLAM mapping resolves the double-sided mapping issue."
     }
   ],
-  "work": [
+  "awards": [
     {
-      "name": "RobotiXX Lab, George Mason University",
-      "position": "Graduate Research Assistant",
-      "url": "https://cs.gmu.edu/~xiao/",
-      "startDate": "2023-08-01",
-      "endDate": "",
-      "summary": "Curriculum learning and reinforcement learning for robot navigation and locomotion, advised by Dr. Xuesu Xiao",
-      "highlights": [
-        "First author of two IROS 2025 papers (GACL, with Peter Stone; Reward Training Wheels); co-author of a third IROS 2025 paper (DDP) and an IEEE RA-L 2025 article (II-NVM)",
-        "Developed GACL, a grounded adaptive curriculum framework improving success rates by 6.8% (wheeled navigation) and 6.1% (quadruped locomotion in confined 3D spaces) over state-of-the-art methods",
-        "Designed Reward Training Wheels, teacher-adapted auxiliary rewards achieving 122.62% off-road mobility improvement, 3x faster training, and 5/5 vs 2/5 success in physical off-road trials",
-        "Contributed to the DDP navigation system that won 1st place in the simulation phase of the 2025 BARN Challenge",
-        "Trained massively parallel RL policies (PPO, SAC) in IsaacGym across wheeled, quadruped, and off-road platforms; ongoing work extends curriculum learning to humanoid robots"
-      ]
-    },
-    {
-      "name": "Amazon Web Services (AWS)",
-      "position": "Software Development Engineer Intern - RDS Proxy Team",
-      "location": "Bellevue, WA",
-      "url": "https://aws.amazon.com",
-      "startDate": "2025-05-01",
-      "endDate": "2025-08-01",
-      "summary": "Performance testing and visualization infrastructure for RDS Proxy",
-      "highlights": [
-        "Built a Streamlit performance-analysis platform with 8 interactive visualization types, reducing regression analysis time from 8 hours to 15 minutes",
-        "Developed a regression testing framework with rigorous statistics (Welch's t-test, power analysis, Bonferroni correction) for high-confidence regression detection",
-        "Implemented adaptive sampling with Thompson Sampling and Bayesian optimization, improving test reliability from 47% to 90% and reducing false positives",
-        "Integrated CloudWatch metrics into automated dashboards for multi-region performance monitoring"
-      ]
-    },
-    {
-      "name": "Computational Engineering and Robotics Lab, CMU",
-      "position": "Research Assistant",
-      "url": "https://www.cmu.edu",
-      "startDate": "2022-01-01",
-      "endDate": "2023-05-01",
-      "summary": "3D AR scene inpainting via deep learning",
-      "highlights": [
-        "Developed an end-to-end deep learning pipeline for 3D AR scene inpainting achieving 92% scene-completion accuracy",
-        "Fine-tuned a GAN-based image inpainting model, improving texture realism by 35% over baseline",
-        "Applied RANSAC and DBSCAN for 3D point cloud segmentation, reducing processing time by 40%"
-      ]
-    },
-    {
-      "name": "Bio-robotics Lab, CMU",
-      "position": "Research Assistant",
-      "url": "https://www.cmu.edu",
-      "startDate": "2021-09-01",
-      "endDate": "2021-12-01",
-      "summary": "Recycled paper classification with deep learning",
-      "highlights": [
-        "Trained a CNN classifier for recycled paper grading (97% accuracy on 10,000+ images) with a real-time OpenCV processing pipeline"
-      ]
+      "title": "RobotiXX Team — 2nd Place, Simulation and Real-World Phases, 2025 BARN Challenge",
+      "date": "2025-05-22",
+      "awarder": "IEEE ICRA 2025",
+      "url": "https://people.cs.gmu.edu/~xiao/Research/BARN_Challenge/BARN_Challenge25.html#leaderboard",
+      "summary": "Official team result for the DDP-based navigation system."
     }
   ],
   "volunteer": [
@@ -184,60 +252,71 @@
       "highlights": []
     }
   ],
-  "awards": [
-    {
-      "title": "1st Place, Simulation Phase — 2025 BARN Challenge (Benchmark Autonomous Robot Navigation)",
-      "date": "2025-05-23",
-      "awarder": "ICRA 2025",
-      "summary": "DDP-based navigation system won the simulation phase of the BARN Challenge."
-    }
-  ],
   "skills": [
+    {
+      "name": "Robot Learning",
+      "level": "",
+      "icon": "fa-solid fa-brain",
+      "keywords": [
+        "Automatic Curriculum Learning",
+        "Deep Reinforcement Learning",
+        "Teacher–Student Learning",
+        "Reward Shaping",
+        "PPO",
+        "VAE Task Representations",
+        "Sim-to-Real"
+      ]
+    },
+    {
+      "name": "Robotics Systems",
+      "level": "",
+      "icon": "fa-solid fa-robot",
+      "keywords": [
+        "PyTorch",
+        "Isaac Gym",
+        "Isaac Lab",
+        "MuJoCo",
+        "ROS 2",
+        "ONNX Runtime",
+        "Navigation",
+        "Quadruped Locomotion",
+        "Off-Road Mobility",
+        "Humanoid Policy Inference"
+      ]
+    },
     {
       "name": "Programming",
       "level": "",
       "icon": "fa-solid fa-code",
       "keywords": [
         "Python",
+        "C",
         "C++",
-        "CUDA",
         "Bash"
       ]
     },
     {
-      "name": "Robot Learning",
+      "name": "Database Systems",
       "level": "",
-      "icon": "fa-solid fa-brain",
+      "icon": "fa-solid fa-database",
       "keywords": [
-        "PyTorch",
-        "PPO / SAC",
-        "Curriculum Learning",
-        "Reward Design",
-        "Sim-to-Real"
+        "PostgreSQL",
+        "Database Internals",
+        "Query Processing",
+        "Join Optimization",
+        "Performance Analysis"
       ]
     },
     {
-      "name": "Robotics & Simulation",
-      "level": "",
-      "icon": "fa-solid fa-robot",
-      "keywords": [
-        "IsaacGym",
-        "MuJoCo",
-        "ROS",
-        "Wheeled UGV",
-        "Quadruped",
-        "Off-road vehicle"
-      ]
-    },
-    {
-      "name": "Engineering & Cloud",
+      "name": "Software and Experimentation",
       "level": "",
       "icon": "fa-solid fa-cloud",
       "keywords": [
         "AWS",
+        "Streamlit",
+        "Statistical Hypothesis Testing",
         "Docker",
-        "Git / CI-CD",
-        "Statistical Analysis"
+        "Git / CI-CD"
       ]
     }
   ],
@@ -255,13 +334,13 @@
   ],
   "interests": [
     {
-      "name": "Robot Learning",
+      "name": "Embodied AI",
       "icon": "fa-solid fa-robot",
       "keywords": [
         "Curriculum Learning",
         "Reinforcement Learning",
-        "Sim-to-Real Transfer",
-        "Humanoid Robots"
+        "Humanoid Locomotion",
+        "Scene-Aware Whole-Body Control"
       ]
     }
   ]

@@ -27,8 +27,9 @@ Deployment is automatic via GitHub Actions on push to `main`
 **Three "worlds", one site.** The front door (`/`) is the interactive **linji
 OS** page (`_pages/os.html`); the conventional al-folio academic site lives at
 `/classic/` (`_pages/about.md`); the infinite research map is `/canvas/`. A
-persistent bottom-center pill (`_includes/world_nav.liquid`) switches between
-them in order **01 os · 02 canvas · 03 classic**. Old `/os/` links redirect to
+A bottom-center pill (`_includes/world_nav.liquid`) switches between them in
+order **01 os · 02 canvas · 03 classic**. It floats on the OS and canvas views
+and sits beneath the footer in the classic view. Old `/os/` links redirect to
 `/` (`_pages/os_redirect.md`). The al-folio navbar (brand + About link) points
 at `/classic/`, not `/`.
 
@@ -54,11 +55,14 @@ Note: on /cv/, the `volunteer` key of resume.json renders under the heading
 - **Every quantitative claim must come from a published paper's abstract or a
   verifiable source.** Current canonical numbers: GACL +6.8%/+6.1% success;
   RTW +2.35% navigation, +122.62% off-road mobility, 3× faster training, 5/5 vs
-  2/5 physical trials; DDP: 1st place, simulation phase, 2025 BARN Challenge.
+  2/5 physical trials; MTC: 348 trajectories across 145 scenes; DDP/RobotiXX:
+  2nd place in both simulation and physical phases of the 2025 BARN Challenge.
 - Wang's published research is **navigation and locomotion** (wheeled UGV,
-  quadruped, off-road). Manipulation/humanoids only as clearly-labeled ongoing work.
-- First-authorship matters: GACL and RTW are first-author; DDP (3rd author) and
-  II-NVM (5th author) are collaborations and described as such.
+  quadruped, off-road, and scene-aware humanoid locomotion). Humanoid curriculum
+  learning remains clearly labeled as an ongoing direction, not a published result.
+- Authorship matters: GACL is first-author; RTW is co-first-author with Tong Xu;
+  MTC and DDP are 3rd-author, ADP is 4th-author, and II-NVM/ColorMap-VIO are
+  5th-author collaborations.
 - **Private material never enters this repo** (it is public and served verbatim):
   no tailored resumes, no employer-internal notes, no job-search artifacts.
   See `.gitignore` for the private paths.
@@ -66,10 +70,11 @@ Note: on /cv/, the `volunteer` key of resume.json renders under the heading
 
 ## Publications (papers.bib)
 
-Four entries, each with `abbr` (IROS/RA-L badge), `arxiv`, `pdf`, `abstract`,
-`preview` image; DDP carries the BARN Challenge `award`/`award_name`; II-NVM has
-`doi`, `html` (IEEE Xplore) and the real `code` repo. Do not add `code=`/`slides=`
-fields pointing at PDFs, and do not put submission numbers in `note=`.
+Seven robotics entries: GACL, RTW, DDP, II-NVM, Adaptive Dynamics Planning,
+ColorMap-VIO, and Moving Through Clutter. DDP carries the corrected BARN
+Challenge `award`/`award_name`; II-NVM has the real open-source repository. Do
+not add `code=`/`slides=` fields pointing at PDFs, and do not put submission
+numbers in `note=`.
 
 ## Key config facts
 

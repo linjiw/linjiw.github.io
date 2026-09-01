@@ -9,12 +9,42 @@ nav: false
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research Canvas — Linji Wang</title>
-<meta name="description" content="An interactive research map of Linji Wang's robotics work: curriculum learning, reinforcement learning, IROS 2025 papers, connected on an infinite canvas.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%A4%96%3C/text%3E%3C/svg%3E">
+<title>Selected Robot Learning Research Map — Linji Wang</title>
+<meta name="description" content="An interactive map of Linji Wang's work in curriculum learning, reinforcement learning, navigation, and scene-aware humanoid locomotion.">
+<link rel="canonical" href="https://linjiw.github.io/canvas/">
+<link rel="alternate" type="application/atom+xml" title="Linji (Joey) Wang" href="https://linjiw.github.io/feed.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Linji (Joey) Wang">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Robot Learning Research Map — Linji Wang">
+<meta property="og:description" content="Curriculum learning, adaptive rewards, navigation, and scene-aware humanoid locomotion on an interactive canvas.">
+<meta property="og:url" content="https://linjiw.github.io/canvas/">
+<meta property="og:image" content="https://linjiw.github.io/assets/img/prof_pic.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Robot Learning Research Map — Linji Wang">
+<meta name="twitter:description" content="Curriculum learning, adaptive rewards, navigation, and scene-aware humanoid locomotion on an interactive canvas.">
+<meta name="twitter:image" content="https://linjiw.github.io/assets/img/prof_pic.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Selected Robot Learning Research Map",
+  "description": "An interactive map of Linji Wang's work in curriculum learning, reinforcement learning, navigation, and scene-aware humanoid locomotion.",
+  "url": "https://linjiw.github.io/canvas/",
+  "about": {
+    "@type": "Person",
+    "name": "Linji Wang",
+    "alternateName": "Linji (Joey) Wang",
+    "url": "https://linjiw.github.io/"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/world-nav.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/embodied-loop.css' | relative_url }}">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -23,9 +53,9 @@ nav: false
   --cream-dark: #f5f2ea;
   --ink: #1a1a2e;
   --ink-light: #4a4a5a;
-  --ink-faint: #8a8a9a;
-  --blue: #2b7fd8;
-  --blue-deep: #1e5ba8;
+  --ink-faint: #686a78;
+  --blue: #1e5ba8;
+  --blue-deep: #16477f;
   --blue-border: rgba(43,127,216,0.35);
   --yellow: #f4d758;
   --red: #e84a5f;
@@ -42,6 +72,17 @@ body {
   -webkit-font-smoothing: antialiased;
   background: var(--cream);
   color: var(--ink);
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 /* ===== TOOLBAR ===== */
@@ -75,8 +116,26 @@ body {
 }
 .toolbar-logo .logo-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 15px; color: var(--blue-deep); }
 .toolbar-sub { font-family: 'Fira Code', monospace; font-size: 11px; color: var(--ink-faint); }
-.toolbar-exit {
+.toolbar-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   margin-left: auto;
+}
+.toolbar-links a {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  padding: 0 8px;
+  color: var(--blue-deep);
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  text-decoration: none;
+  border-radius: 7px;
+}
+.toolbar-links a:hover { background: rgba(43,127,216,0.08); }
+.toolbar-exit {
+  margin-left: 4px;
   font-family: 'Fira Code', monospace;
   font-size: 12px;
   color: var(--blue);
@@ -87,18 +146,30 @@ body {
   transition: background 0.15s;
 }
 .toolbar-exit:hover { background: rgba(43,127,216,0.08); }
+.toolbar-exit:focus-visible,
+.toolbar-links a:focus-visible,
+.nav-item:focus-visible,
+.tour-actions button:focus-visible,
+.zoom-controls button:focus-visible,
+.minimap:focus-visible,
+.card a:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
 
 /* ===== NAV PANEL (tour) ===== */
 .nav-panel {
   position: fixed;
   top: 62px; left: 14px;
-  width: 200px;
+  width: 218px;
   background: rgba(252,251,248,0.94);
   backdrop-filter: blur(8px);
   border: 1px dashed var(--blue-border);
   border-radius: 12px;
   padding: 12px;
   z-index: 90;
+  max-height: calc(100vh - 150px);
+  overflow: auto;
 }
 .nav-panel h2 {
   font-family: 'Fraunces', serif;
@@ -120,6 +191,7 @@ body {
   background: transparent;
   border: none;
   border-radius: 8px;
+  min-height: 36px;
   padding: 7px 8px;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
@@ -134,6 +206,37 @@ body {
 }
 .nav-item.yellow .nav-dot { background: #e0b400; }
 .nav-item.red .nav-dot { background: var(--red); }
+.nav-step {
+  min-width: 22px;
+  color: var(--ink-faint);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+}
+.nav-item.active .nav-step { color: var(--blue-deep); }
+
+.tour-actions {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 4px;
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 1px dashed var(--blue-border);
+}
+.tour-actions button {
+  min-width: 34px;
+  min-height: 34px;
+  border: 0;
+  border-radius: 7px;
+  background: rgba(43,127,216,0.08);
+  color: var(--blue-deep);
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  cursor: pointer;
+}
+.tour-actions button:hover { background: rgba(43,127,216,0.15); }
+.tour-actions button:disabled { cursor: default; opacity: 0.35; }
+.tour-progress { min-width: 34px; color: var(--ink-faint); font-family: 'Fira Code', monospace; font-size: 9px; text-align: center; }
 
 .nav-toggle { display: none; }
 
@@ -171,6 +274,7 @@ body {
   stroke: rgba(43,127,216,0.3);
   stroke-width: 2.5;
   stroke-dasharray: 7 6;
+  animation: canvasSignal 3.5s linear 1 both;
 }
 .conn-line.yellow-line { stroke: rgba(224,180,0,0.55); stroke-width: 3; }
 .conn-line.blue-line { stroke: rgba(43,127,216,0.45); stroke-width: 3; }
@@ -183,7 +287,7 @@ body {
   border: 2px dashed var(--blue-border);
   box-shadow: var(--card-shadow);
   transition: box-shadow 0.25s;
-  cursor: grab;
+  cursor: default;
 }
 .card:hover { box-shadow: var(--card-shadow-hover); }
 .card.dragging {
@@ -192,7 +296,31 @@ body {
   z-index: 999 !important;
   cursor: grabbing;
 }
+.card-drag-handle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 4;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 7px;
+  background: rgba(30,91,168,0.08);
+  cursor: grab;
+}
+.card-drag-handle::before {
+  content: '⠿';
+  display: block;
+  color: var(--blue-deep);
+  font-family: sans-serif;
+  font-size: 17px;
+  line-height: 28px;
+  text-align: center;
+  opacity: 0.6;
+}
+.card-drag-handle:active { cursor: grabbing; }
 .card.focused { box-shadow: 0 10px 36px rgba(30,91,168,0.22), 0 0 0 3px var(--yellow); }
+.card:focus-within { border-color: rgba(30,91,168,0.7); }
 
 .card-tag-strip {
   position: absolute;
@@ -215,7 +343,7 @@ body {
   color: var(--blue);
   margin-bottom: 6px;
 }
-.card-kicker.award { color: #c09000; }
+.card-kicker.award { color: #765b00; }
 .card h3 {
   font-family: 'Fraunces', serif;
   font-weight: 600;
@@ -289,7 +417,7 @@ body {
   background: var(--blue);
   border: 2px solid #fff;
 }
-.tl-year { font-family: 'Fira Code', monospace; font-size: 10px; color: #c09000; background: rgba(244,215,88,0.3); padding: 1px 6px; border-radius: 3px; }
+.tl-year { font-family: 'Fira Code', monospace; font-size: 10px; color: #765b00; background: rgba(244,215,88,0.3); padding: 1px 6px; border-radius: 3px; }
 .tl-what { font-size: 12.5px; font-weight: 500; color: var(--ink); margin-top: 3px; }
 .tl-sub { font-size: 11px; color: var(--ink-faint); }
 
@@ -325,6 +453,9 @@ body {
 
 /* skills + robots */
 .card-skills { width: 280px; }
+.card-loop { width: 330px; }
+.card-loop .learning-loop { margin-top: 12px; }
+.card-loop .learning-loop__scene { min-height: 116px; }
 .chipset { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .chip {
   font-family: 'Fira Code', monospace;
@@ -372,7 +503,7 @@ body {
   font-family: 'Fira Code', monospace;
 }
 .zoom-controls button {
-  width: 30px; height: 30px;
+  width: 38px; height: 38px;
   border: none;
   background: transparent;
   font-size: 15px;
@@ -406,8 +537,16 @@ body {
   padding: 1px 6px;
 }
 
+@keyframes canvasSignal { to { stroke-dashoffset: -65; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .conn-line { animation: none; }
+  .card { transition: none; }
+}
+
 @media (max-width: 1000px) {
   .hint-bar { display: none; }
+  .toolbar-links a:not(:first-child) { display: none; }
 }
 
 /* ===== MOBILE FALLBACK: vertical scroll of cards ===== */
@@ -418,10 +557,11 @@ body {
   .canvas-area, .minimap, .zoom-controls, .hint-bar, .nav-panel { display: none; }
   .toolbar { height: auto; min-height: 48px; flex-wrap: nowrap; }
   .toolbar-sub { display: none; }
+  .toolbar-links { margin-left: auto; }
   .toolbar-exit { white-space: nowrap; }
   .mobile-list {
     display: block;
-    padding: 62px 16px 96px; /* bottom clearance for the world pill */
+    padding: 62px 16px 128px; /* bottom clearance for the world pill */
     max-width: 480px;
     margin: 0 auto;
   }
@@ -448,25 +588,40 @@ body {
 <div class="toolbar">
   <div class="toolbar-logo">
     <div class="logo-icon">🗺️</div>
-    <div class="logo-name">Research Canvas</div>
+    <div class="logo-name">Selected Research Canvas</div>
   </div>
   <div class="toolbar-sub">linji · robots that learn, one task at a time</div>
-  <a class="toolbar-exit" href="{{ '/os/' | relative_url }}">↩ linji OS</a>
+  <nav class="toolbar-links" aria-label="Professional links">
+    <a href="{{ '/assets/pdf/resume.pdf' | relative_url }}" target="_blank" rel="noopener">resume</a>
+    <a href="https://scholar.google.com/citations?user=VURUgFMAAAAJ" target="_blank" rel="noopener">scholar</a>
+    <a href="mailto:joewwang@outlook.com">email</a>
+  </nav>
+  <a class="toolbar-exit" href="{{ '/' | relative_url }}">↩ OS</a>
 </div>
 
 <!-- tour nav: click = camera flies to the card -->
 <nav class="nav-panel" aria-label="Canvas tour">
-  <h2>✦ Tour</h2>
-  <button class="nav-item" data-target="card-profile"><span class="nav-dot"></span>who am I</button>
-  <button class="nav-item" data-target="card-timeline"><span class="nav-dot"></span>timeline</button>
-  <button class="nav-item yellow" data-target="card-gacl"><span class="nav-dot"></span>GACL · IROS'25</button>
-  <button class="nav-item yellow" data-target="card-rtw"><span class="nav-dot"></span>RTW · IROS'25</button>
-  <button class="nav-item" data-target="card-ddp"><span class="nav-dot"></span>DDP · BARN 🏆</button>
-  <button class="nav-item" data-target="card-iinvm"><span class="nav-dot"></span>II-NVM · RA-L</button>
-  <button class="nav-item" data-target="card-robots"><span class="nav-dot"></span>robot platforms</button>
-  <button class="nav-item red" data-target="card-now"><span class="nav-dot"></span>now: humanoids</button>
-  <button class="nav-item" data-target="card-contact"><span class="nav-dot"></span>say hi</button>
+  <h2>✦ Guided tour</h2>
+  <button class="nav-item" data-target="card-profile"><span class="nav-step">01</span><span class="nav-dot"></span>identity</button>
+  <button class="nav-item yellow" data-target="card-loop"><span class="nav-step">02</span><span class="nav-dot"></span>research thesis</button>
+  <button class="nav-item yellow" data-target="card-gacl"><span class="nav-step">03</span><span class="nav-dot"></span>GACL · IROS'25</button>
+  <button class="nav-item yellow" data-target="card-rtw"><span class="nav-step">04</span><span class="nav-dot"></span>RTW · IROS'25</button>
+  <button class="nav-item red" data-target="card-now"><span class="nav-step">05</span><span class="nav-dot"></span>MTC · humanoid</button>
+  <button class="nav-item" data-target="card-timeline"><span class="nav-step">06</span><span class="nav-dot"></span>experience + education</button>
+  <button class="nav-item" data-target="card-ddp"><span class="nav-step">07</span><span class="nav-dot"></span>DDP · BARN 🏆</button>
+  <button class="nav-item" data-target="card-iinvm"><span class="nav-step">08</span><span class="nav-dot"></span>II-NVM · RA-L</button>
+  <button class="nav-item" data-target="card-robots"><span class="nav-step">09</span><span class="nav-dot"></span>robot platforms</button>
+  <button class="nav-item" data-target="card-contact"><span class="nav-step">10</span><span class="nav-dot"></span>contact</button>
+  <div class="tour-actions">
+    <button id="tourOverview" type="button">overview</button>
+    <button id="tourPrev" type="button" aria-label="Previous tour stop">←</button>
+    <span class="tour-progress" id="tourProgress" aria-live="polite">0/10</span>
+    <button id="tourNext" type="button" aria-label="Next tour stop">→</button>
+  </div>
 </nav>
+
+<main id="researchMap">
+<h1 class="sr-only">Selected robot learning research map for Linji Wang</h1>
 
 <div class="canvas-area" id="canvasArea">
   <div class="canvas-grid" id="canvasGrid"></div>
@@ -480,7 +635,7 @@ body {
       <div class="card-inner">
         <div class="card-kicker">WHOAMI</div>
         <h3>Linji (Joey) Wang</h3>
-        <p>CS Ph.D. student @ George Mason University · RobotiXX Lab, advised by Xuesu Xiao. Curriculum learning × reinforcement learning for robots.</p>
+        <p>AI robotics + systems engineer and CS Ph.D. researcher @ George Mason University · RobotiXX Lab, advised by Xuesu Xiao. Automatic curriculum learning × deep RL × embodied agents.</p>
         <span class="tagline">robots that learn, one task at a time</span>
       </div>
     </div>
@@ -493,7 +648,12 @@ body {
         <div class="tl-item">
           <span class="tl-year">2023 — now</span>
           <div class="tl-what">Ph.D. Computer Science, George Mason</div>
-          <div class="tl-sub">RobotiXX Lab · curriculum learning for robots</div>
+          <div class="tl-sub">RobotiXX Lab · automatic curricula and adaptive rewards</div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-year">2026 summer</span>
+          <div class="tl-what">SDE Intern, AWS (Aurora PostgreSQL)</div>
+          <div class="tl-sub">C · database internals · Adaptive Join</div>
         </div>
         <div class="tl-item">
           <span class="tl-year">2025 summer</span>
@@ -503,7 +663,7 @@ body {
         <div class="tl-item">
           <span class="tl-year">2021 — 2023</span>
           <div class="tl-what">M.S. Mechanical Engineering, CMU</div>
-          <div class="tl-sub">3D perception · AR-guided robotics · GPA 3.94</div>
+          <div class="tl-sub">3D perception · AR scene inpainting · GPA 3.94</div>
         </div>
         <div class="tl-item">
           <span class="tl-year">2016 — 2021</span>
@@ -513,13 +673,23 @@ body {
       </div>
     </div>
 
+    <div class="card card-loop" id="card-loop" style="left:420px; top:470px;">
+      <div class="card-tag-strip yellow"></div>
+      <div class="card-inner">
+        <div class="card-kicker">RESEARCH THESIS</div>
+        <h3>Make training adapt to the learner</h3>
+        <p>Estimate capability online, then change tasks or auxiliary rewards so the robot practices the right challenge at the right time.</p>
+        {% include embodied_loop.liquid variant='light' %}
+      </div>
+    </div>
+
     <div class="card card-paper" id="card-gacl" style="left:960px; top:60px;">
       <div class="card-tag-strip yellow"></div>
       <div class="card-inner">
         <div class="card-kicker">IROS 2025 · FIRST AUTHOR</div>
         <h3>GACL: Grounded Adaptive Curriculum Learning</h3>
         <img class="paper-fig" src="{{ '/assets/img/projects/gacl_framework.jpg' | relative_url }}" alt="GACL framework" loading="lazy">
-        <p>A teacher generates training tasks from the robot's live performance, grounded in real-world task distributions. With Zifan Xu, Peter Stone, Xuesu Xiao.</p>
+        <p>A teacher generates training tasks from online learner performance, grounded in limited reference samples from the target task distribution. With Zifan Xu, Peter Stone, Xuesu Xiao.</p>
         <ul class="metrics">
           <li>+6.8% success · wheeled navigation</li>
           <li>+6.1% success · quadruped locomotion</li>
@@ -534,13 +704,13 @@ body {
     <div class="card card-paper" id="card-rtw" style="left:1380px; top:160px;">
       <div class="card-tag-strip yellow"></div>
       <div class="card-inner">
-        <div class="card-kicker">IROS 2025 · FIRST AUTHOR</div>
+        <div class="card-kicker">IROS 2025 · CO-FIRST AUTHOR</div>
         <h3>Reward Training Wheels</h3>
         <img class="paper-fig" src="{{ '/assets/img/projects/rtw_framework.jpg' | relative_url }}" alt="RTW framework" loading="lazy">
         <p>Auxiliary rewards that adapt as the robot learns — training wheels that fade away. With Tong Xu, Yuanjie Lu, Xuesu Xiao.</p>
         <ul class="metrics">
-          <li>+122.6% off-road mobility · 3× faster training</li>
-          <li>5/5 physical trials vs 2/5 baseline</li>
+          <li>simulation: +122.62% mobility · 3× faster to threshold</li>
+          <li>physical: 5/5 trials vs 2/5 baseline</li>
         </ul>
         <div class="card-links">
           <a href="https://arxiv.org/abs/2503.15724" target="_blank" rel="noopener">arXiv</a>
@@ -549,15 +719,15 @@ body {
       </div>
     </div>
 
-    <div class="card card-paper" id="card-ddp" style="left:1000px; top:620px;">
+    <div class="card card-paper" id="card-ddp" style="left:1000px; top:720px;">
       <div class="card-tag-strip blue"></div>
       <div class="card-inner">
-        <div class="card-kicker award">IROS 2025 · 🏆 1ST PLACE, 2025 BARN CHALLENGE (SIM)</div>
+        <div class="card-kicker award">IROS 2025 · 🏆 2ND PLACE, BARN 2025 (SIM + REAL)</div>
         <h3>Decremental Dynamics Planning</h3>
         <p>Full robot dynamics near the robot, progressively simpler along the horizon. Led by Yuanjie Lu; I'm 3rd author, with Tong Xu, Nick Hawes, and Xuesu Xiao.</p>
         <ul class="metrics">
           <li>improved 3 planners overall</li>
-          <li>won the 2025 BARN Challenge sim phase</li>
+          <li>2nd in both simulation and physical phases</li>
         </ul>
         <div class="card-links">
           <a href="https://arxiv.org/abs/2503.20521" target="_blank" rel="noopener">arXiv</a>
@@ -566,7 +736,7 @@ body {
       </div>
     </div>
 
-    <div class="card card-paper" id="card-iinvm" style="left:1460px; top:680px;">
+    <div class="card card-paper" id="card-iinvm" style="left:1460px; top:720px;">
       <div class="card-tag-strip blue"></div>
       <div class="card-inner">
         <div class="card-kicker">IEEE RA-L 2025</div>
@@ -581,7 +751,7 @@ body {
       </div>
     </div>
 
-    <div class="card card-skills" id="card-skills" style="left:120px; top:700px;">
+    <div class="card card-skills" id="card-skills" style="left:120px; top:790px;">
       <div class="card-tag-strip blue"></div>
       <div class="card-inner">
         <div class="card-kicker">TOOLBOX</div>
@@ -589,18 +759,22 @@ body {
         <div class="chipset">
           <span class="chip gold">Curriculum Learning</span>
           <span class="chip gold">Reward Design</span>
-          <span class="chip">PPO / SAC</span>
-          <span class="chip">IsaacGym</span>
+          <span class="chip">PPO</span>
+          <span class="chip">Isaac Gym / Lab</span>
           <span class="chip">MuJoCo</span>
-          <span class="chip">ROS</span>
+          <span class="chip">ROS / ROS 2</span>
+          <span class="chip">ONNX Runtime</span>
           <span class="chip">PyTorch</span>
-          <span class="chip">C++ / CUDA</span>
+          <span class="chip">C</span>
+          <span class="chip">C++</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Query Optimization</span>
           <span class="chip">AWS</span>
         </div>
       </div>
     </div>
 
-    <div class="card card-skills" id="card-robots" style="left:520px; top:640px;">
+    <div class="card card-skills" id="card-robots" style="left:520px; top:820px;">
       <div class="card-tag-strip yellow"></div>
       <div class="card-inner">
         <div class="card-kicker">HARDWARE</div>
@@ -609,33 +783,36 @@ body {
           <span class="chip">🛞 wheeled UGV — constrained navigation</span>
           <span class="chip">🐕 quadruped — confined 3D spaces</span>
           <span class="chip">🏔️ off-road vehicle — vertical terrain</span>
-          <span class="chip gold">🤖 humanoid — ongoing</span>
+          <span class="chip gold">🤖 humanoid — MTC 2026</span>
         </div>
       </div>
     </div>
 
-    <div class="card card-sticky" id="card-award" style="left:820px; top:490px;">
+    <div class="card card-sticky" id="card-award" style="left:820px; top:680px;">
       <div class="card-inner">
-        <h3>🏆 1st place</h3>
-        <p>2025 BARN Challenge, simulation phase — our DDP navigation system</p>
+        <h3>🏆 2nd in both phases</h3>
+        <p>2025 BARN Challenge — RobotiXX DDP system, simulation qualifier + physical finals</p>
       </div>
     </div>
 
-    <div class="card card-sticky blue-sticky" id="card-now" style="left:1850px; top:420px;">
+    <div class="card card-paper" id="card-now" style="left:1850px; top:360px;">
+      <div class="card-tag-strip red"></div>
       <div class="card-inner">
-        <h3>now →</h3>
-        <p>extending curriculum learning to humanoid robots: whole-body skills, one task at a time</p>
+        <div class="card-kicker">ARXIV 2026 · HUMANOID LOCOMOTION</div>
+        <h3>Moving Through Clutter</h3>
+        <p>VR data collection and benchmarking for scene-aware humanoid locomotion in dense 3D clutter. I am 3rd author, with Beichen Wang, Yuanjie Lu, Liuchuan Yu, and Xuesu Xiao.</p>
+        <ul class="metrics">
+          <li>348 whole-body trajectories</li>
+          <li>145 diverse cluttered scenes</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://arxiv.org/abs/2603.05993" target="_blank" rel="noopener">arXiv</a>
+          <a href="{{ '/projects/4_project/' | relative_url }}">project</a>
+        </div>
       </div>
     </div>
 
-    <div class="card card-quote" id="card-quote" style="left:170px; top:560px;">
-      <div class="card-inner">
-        <p>“Start simple. Build competence. Master the complex.”</p>
-        <div class="who">— every good curriculum</div>
-      </div>
-    </div>
-
-    <div class="card card-skills" id="card-contact" style="left:1900px; top:640px;">
+    <div class="card card-skills" id="card-contact" style="left:1900px; top:720px;">
       <div class="card-tag-strip red"></div>
       <div class="card-inner">
         <div class="card-kicker">SAY HI</div>
@@ -653,10 +830,12 @@ body {
 
 <!-- mobile fallback: same story, vertical -->
 <div class="mobile-list" id="mobileList">
-  <div class="mobile-note">// the interactive canvas needs a bigger screen — here's the tour, in order</div>
+  <div class="mobile-note">// selected research · a linear version of the guided canvas tour</div>
 </div>
 
-<div class="minimap" id="minimap" role="button" aria-label="Minimap: click to move the view">
+</main>
+
+<div class="minimap" id="minimap" role="button" tabindex="0" aria-label="Research-map minimap. Press Enter to return to the overview.">
   <div class="minimap-viewport" id="minimapViewport"></div>
 </div>
 
@@ -667,7 +846,7 @@ body {
   <button id="zoomFit" aria-label="Fit all" title="fit everything">⤢</button>
 </div>
 
-<div class="hint-bar"><kbd>scroll</kbd> zoom · <kbd>drag</kbd> pan · cards are draggable · <kbd>tour</kbd> flies the camera</div>
+<div class="hint-bar"><kbd>wheel</kbd> zoom · <kbd>drag</kbd> pan · <kbd>tour</kbd> guided camera</div>
 
 {% include world_nav.liquid active='canvas' %}
 
@@ -691,9 +870,9 @@ body {
   var isMobileLayout = getComputedStyle(area).display === 'none';
   if (isMobileLayout) {
     // move cards into the vertical list in tour order and stop
-    var order = ['card-profile', 'card-timeline', 'card-gacl', 'card-rtw',
-                 'card-ddp', 'card-award', 'card-iinvm', 'card-robots',
-                 'card-skills', 'card-quote', 'card-now', 'card-contact'];
+    var order = ['card-profile', 'card-loop', 'card-gacl', 'card-rtw',
+                 'card-now', 'card-timeline', 'card-ddp', 'card-award',
+                 'card-iinvm', 'card-robots', 'card-skills', 'card-contact'];
     var list = document.getElementById('mobileList');
     order.forEach(function(id) {
       var c = document.getElementById(id);
@@ -714,7 +893,7 @@ body {
 
   var scale = 1, panX = 0, panY = 0;
   var MIN_SCALE = 0.15, MAX_SCALE = 3;
-  var WORLD = { w: 2350, h: 1000 };
+  var WORLD = { w: 2350, h: 1120 };
 
   function applyTransform() {
     transform.style.transform = 'translate(' + panX + 'px, ' + panY + 'px) scale(' + scale + ')';
@@ -727,9 +906,11 @@ body {
   /* ===== connections (cubic Bézier between card edge points) ===== */
   var connections = [
     ['card-profile', 'card-timeline', 'yellow-line'],
-    ['card-profile', 'card-quote', ''],
+    ['card-profile', 'card-loop', 'yellow-line'],
     ['card-timeline', 'card-gacl', 'blue-line'],
     ['card-timeline', 'card-skills', ''],
+    ['card-loop', 'card-gacl', 'yellow-line'],
+    ['card-loop', 'card-rtw', 'yellow-line'],
     ['card-gacl', 'card-rtw', 'yellow-line'],
     ['card-rtw', 'card-robots', ''],
     ['card-gacl', 'card-ddp', 'blue-line'],
@@ -845,7 +1026,7 @@ body {
     if (animate) flyTo(px, py, s);
     else { scale = s; panX = px; panY = py; applyTransform(); }
   }
-  document.getElementById('zoomFit').addEventListener('click', function() { fitAll(true); });
+  document.getElementById('zoomFit').addEventListener('click', function() { showOverview(true); });
 
   /* ===== touch: one-finger pan, two-finger pinch ===== */
   var lastTouchDist = 0, touchPanning = false;
@@ -891,9 +1072,14 @@ body {
   var dragCard = null, dragStartCardX = 0, dragStartCardY = 0, dragMouseX = 0, dragMouseY = 0;
   var maxZ = 10;
   document.querySelectorAll('.card').forEach(function(card) {
+    var handle = document.createElement('div');
+    handle.className = 'card-drag-handle';
+    handle.setAttribute('aria-hidden', 'true');
+    handle.title = 'Drag card';
+    card.appendChild(handle);
     card.addEventListener('pointerdown', function(e) {
       if (e.button !== 0) return;
-      if (e.target.closest('a')) return;
+      if (!e.target.closest('.card-drag-handle')) return;
       if (dragCard) return; // second finger of a pinch must not start a drag
       cancelFly();
       e.preventDefault();
@@ -978,13 +1164,44 @@ body {
     });
   }
 
-  document.querySelectorAll('.nav-item').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.nav-item.active').forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      flyToCard(btn.dataset.target);
+  var tourButtons = Array.prototype.slice.call(document.querySelectorAll('.nav-item'));
+  var tourIndex = -1;
+  var tourPrev = document.getElementById('tourPrev');
+  var tourNext = document.getElementById('tourNext');
+  var tourProgress = document.getElementById('tourProgress');
+
+  function updateTourState() {
+    tourButtons.forEach(function(button, index) {
+      var active = index === tourIndex;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
+    tourProgress.textContent = tourIndex < 0 ? '0/' + tourButtons.length : (tourIndex + 1) + '/' + tourButtons.length;
+    tourPrev.disabled = tourIndex <= 0;
+    tourNext.disabled = tourIndex >= tourButtons.length - 1;
+  }
+
+  function selectTourStop(index) {
+    if (index < 0 || index >= tourButtons.length) return;
+    tourIndex = index;
+    updateTourState();
+    flyToCard(tourButtons[index].dataset.target);
+  }
+
+  function showOverview(animate) {
+    tourIndex = -1;
+    updateTourState();
+    document.querySelectorAll('.card.focused').forEach(function(card) { card.classList.remove('focused'); });
+    fitAll(animate);
+  }
+
+  tourButtons.forEach(function(button, index) {
+    button.setAttribute('aria-pressed', 'false');
+    button.addEventListener('click', function() { selectTourStop(index); });
   });
+  document.getElementById('tourOverview').addEventListener('click', function() { showOverview(true); });
+  tourPrev.addEventListener('click', function() { selectTourStop(tourIndex - 1); });
+  tourNext.addEventListener('click', function() { selectTourStop(tourIndex + 1); });
 
   /* ===== minimap ===== */
   var minimapDots = [];
@@ -1026,25 +1243,23 @@ body {
     var areaRect = area.getBoundingClientRect();
     flyTo(areaRect.width / 2 - cx * scale, areaRect.height / 2 - cy * scale, scale);
   });
+  minimap.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      showOverview(true);
+    }
+  });
 
-  /* ===== boot: fit everything, then fly to the profile ===== */
+  /* ===== boot: begin with the whole research program in view ===== */
   initMinimapDots();
   updateConnections();
-  fitAll(false);
+  showOverview(false);
   window.addEventListener('resize', function() { applyTransform(); });
   // card heights change when lazy figures arrive; keep edges/dots in sync
   window.addEventListener('load', function() { updateConnections(); updateMinimapDots(); });
   document.querySelectorAll('.paper-fig').forEach(function(img) {
     img.addEventListener('load', function() { updateConnections(); updateMinimapDots(); });
   });
-  // boot flight to the profile — but never fight the user's own input
-  var bootFlight = setTimeout(function() { bootFlight = null; flyToCard('card-profile'); }, 600);
-  function cancelBootFlight() {
-    if (bootFlight) { clearTimeout(bootFlight); bootFlight = null; }
-  }
-  area.addEventListener('pointerdown', cancelBootFlight);
-  area.addEventListener('wheel', cancelBootFlight);
-  area.addEventListener('touchstart', cancelBootFlight);
 })();
 </script>
 </body>

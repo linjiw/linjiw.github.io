@@ -1071,6 +1071,10 @@ a.os-card:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px;
     <template id="win-projects">
       <div class="os-window" data-title="projects/" style="width:min(440px, 90vw);">
         <div class="os-body win-folder">
+          <a class="folder-icon" href="{{ '/kimonav/' | relative_url }}">
+            <div class="folder-icon-art" data-ext=".html"></div>
+            <div class="folder-icon-label">KimoNav research</div>
+          </a>
           <a class="folder-icon" href="{{ '/projects/1_project/' | relative_url }}">
             <div class="folder-icon-art" data-ext=".html"></div>
             <div class="folder-icon-label">curriculum &amp; rewards</div>
@@ -1094,6 +1098,7 @@ a.os-card:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px;
     <template id="win-news">
       <div class="os-window win-news" data-title="news.log">
         <div class="os-body">
+          <div><span class="news-date">2026-09</span><a href="{{ '/kimonav/' | relative_url }}">KimoNav research notebook: motion renders &amp; experiments</a></div>
           <div><span class="news-date">2026-08</span>SDE intern @ AWS (Aurora PostgreSQL)</div>
           <div><span class="news-date">2026-06</span>Adaptive Dynamics Planning @ ICRA 2026</div>
           <div><span class="news-date">2026-03</span>Moving Through Clutter humanoid benchmark released</div>

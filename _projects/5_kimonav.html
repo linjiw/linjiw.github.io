@@ -1,0 +1,73 @@
+---
+layout: none
+title: KimoNav — learning navigation structure from motion
+description: An open research notebook on path-conditioned motion adaptation, with generated motion renders and matched offline experiments.
+permalink: /kimonav/
+importance: 1
+category: robotics
+img: assets/kimonav/native-turns.webp
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KimoNav | Linji Wang</title>
+  <meta name="description" content="Learning navigation structure from generated motion. Explore KimoNav's motion bank, matched experiments, results, and open questions.">
+  <meta property="og:title" content="KimoNav — learning navigation structure from motion">
+  <meta property="og:description" content="A research notebook with real motion renders, measured results, and explicit experimental gates.">
+  <meta property="og:image" content="{{ '/assets/kimonav/native-turns.jpg' | absolute_url }}">
+  <link rel="canonical" href="{{ '/kimonav/' | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/assets/kimonav/research.css' | relative_url }}">
+  <script defer src="{{ '/assets/kimonav/research.js' | relative_url }}"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to research</a>
+<header><a class="wordmark" href="{{ '/classic/' | relative_url }}">LINJI WANG <span>/ RESEARCH</span></a><nav aria-label="Page navigation"><a href="#motion">Motion</a><a href="#results">Results</a><a href="#method">Method</a><a href="#evidence">Evidence</a></nav></header>
+<main id="main">
+<section class="hero">
+  <p class="eyebrow"><span class="dot"></span> ONGOING RESEARCH · SEPTEMBER 2026</p>
+  <h1>Can motion teach<br>navigation <em>structure?</em></h1>
+  <p class="lede">KimoNav studies how a small, path-conditioned adapter can learn from generated humanoid motion. We keep the motion model frozen and ask a harder question: does the adapter use the requested path, or just learn a generic correction?</p>
+  <div class="hero-links"><a class="button" href="#results">Explore the evidence <span>↗</span></a><a href="#motion">Watch the motion bank ↓</a></div>
+  <div class="stat-grid"><div><strong>72</strong><span>generated source clips</span></div><div><strong>36</strong><span>controlled turn programs</span></div><div><strong>78,592</strong><span>trainable parameters / head</span></div><div><strong>3 × 3</strong><span>held-out folds × training seeds</span></div></div>
+  <p class="small">Exploratory offline development results. The navigation objective is longer-term; these experiments measure motion reconstruction, with privileged achieved root trajectories. They do not establish autonomous navigation or physical feasibility.</p>
+</section>
+<section id="motion">
+  <div class="section-label">01 / MOTION AS DATA</div>
+  <div class="section-heading"><h2>Turn the instruction<br>into something measurable.</h2><p>Walk, turn, walk again. Vary the approach distance, speed, and signed angle while keeping the generation procedure fixed. The resulting clips supply motion targets and expose failures worth learning from.</p></div>
+  <figure class="video-frame"><video controls playsinline preload="metadata" poster="{{ '/assets/kimonav/native-turns.jpg' | relative_url }}" aria-label="Native ARDY skeleton motion: matched left and right ninety-degree turns"><source src="{{ '/assets/kimonav/native-turns.mp4' | relative_url }}" type="video/mp4">Your browser cannot play this video. <a href="{{ '/assets/kimonav/native-turns.mp4' | relative_url }}">Download the motion render.</a></video><figcaption>Actual frozen ARDY source motion, rendered from saved joint positions at 25 fps. Middle approach (2.6 m), 0.9 m/s, ±90°, generation seed 307; selected before the latest experiment's outcomes. These are dataset illustrations. <a href="{{ '/assets/kimonav/motion-provenance.json' | relative_url }}">Render provenance ↗</a></figcaption></figure>
+  <div class="two-col"><article><h3>Instructions control geometry.</h3><p>The text prompt describes steady walking. A structured program supplies the requested root path: three approach distances, two speeds, and six signed turn angles (±60°, ±90°, ±120°). Two generation seeds produce 72 clips. Turn-aware windows put the heading change inside the evaluated interval.</p></article><article><h3>Keep the failures visible.</h3><p>All 72 clips have the requested turn sign, but 50 fail the original terminal-speed check. A one-second hold is included; it does not erase those failures. The benchmark retains every program and diagnostic flag (<a href="/assets/kimonav/motion-bank-audit.json">bank audit</a>). The 36 programs share six first-command prefixes, so they are not 36 independent environments.</p></article></div>
+</section>
+<section id="results">
+  <div class="section-label">02 / EXPERIMENTAL PROGRESS</div>
+  <h2>Inspect the gains.<br><em>Then inspect the controls.</em></h2>
+  <div class="finding"><span class="eyebrow">LATEST / TOKEN-LOCAL PATH FEATURES</span><h3 id="latest-title">Matched results</h3><p id="latest-finding">Loading the recorded experimental results…</p><noscript><p>JavaScript is needed for the interactive comparison. The complete <a href="{{ '/assets/kimonav/results-report.md' | relative_url }}">written results report</a> and <a href="{{ '/assets/kimonav/performance.png' | relative_url }}">performance figure</a> are available directly.</p></noscript></div>
+  <div class="controls"><label>Motion windows<select id="stratum"><option value="turn">Requested-turn windows</option><option value="nonturn">Non-turn windows</option><option value="all">All windows</option></select></label><label>Diffusion noise<select id="noise"><option value="all">All three noise levels</option><option value="0">t = 0 · low noise</option><option value="5">t = 5 · middle</option><option value="9">t = 9 · high noise</option></select></label><label>Objective<select id="objective"><option value="balanced">Fixed noise-balanced</option><option value="raw">Raw objective</option></select></label></div>
+  <div class="chart-box"><p class="chart-title">Joint reconstruction error reduction vs. native ARDY</p><p class="small">Positive is better. Aggregate joint MSE reduction (%), not navigation success. Equal-weight training seeds; source windows averaged before programs.</p><div id="chart" role="img" aria-label="Loading performance chart"></div><p id="chart-caption" class="small" aria-live="polite"></p><div class="table-scroll"><table><caption class="sr-only">Performance under the selected settings</caption><thead><tr><th scope="col">Method / control</th><th scope="col">MSE reduction</th><th scope="col">Joint RMSE</th><th scope="col">Contact accuracy</th></tr></thead><tbody id="metrics"></tbody></table></div></div>
+  <p class="small">Joint RMSE is the square root of aggregated coordinate MSE, shown in mm. Contact accuracy compares decoded contact labels to the source motion; it is not physical contact validation. Noise levels are fixed teacher timesteps, not elapsed motion time. The per-example oracle is privileged optimization headroom, not a learned deployable model.</p>
+  <div class="two-col"><article class="gate-card"><h3>Raw objective</h3><div id="raw-gates"></div></article><article class="gate-card"><h3>Fixed balanced objective</h3><div id="balanced-gates"></div></article></div>
+  <p id="compute-record" class="small"></p>
+  <p class="small">All thresholds were fixed before this run. Passing a reconstruction gate would still require separate adapted-generation and navigation evaluations. <a href="{{ '/assets/kimonav/protocol.md' | relative_url }}">Read the frozen execution contract ↗</a></p>
+  <figure><a href="{{ '/assets/kimonav/performance.pdf' | relative_url }}"><img class="plot" src="{{ '/assets/kimonav/performance.png' | relative_url }}" alt="Token-local and global adapter results at all three diffusion noise levels, for turn and non-turn windows" loading="lazy"></a><figcaption>Exportable performance figure. Both objective settings and all noise levels are retained. <a href="{{ '/assets/kimonav/performance.pdf' | relative_url }}">Download PDF ↗</a></figcaption></figure>
+  <details><summary>Inspect every retained program</summary><figure><img class="plot" src="{{ '/assets/kimonav/programs.png' | relative_url }}" alt="All thirty-six retained programs: raw and balanced token-local gains against native, global-path, and time-only controls" loading="lazy"><figcaption>No program is dropped after scoring. <a href="{{ '/assets/kimonav/programs.pdf' | relative_url }}">Download all-program figure ↗</a></figcaption></figure></details>
+</section>
+<section id="method">
+  <div class="section-label">03 / WHAT WE ARE TESTING</div>
+  <h2>A small adapter.<br>A frozen motion prior.</h2>
+  <div class="pipeline" aria-label="Method pipeline"><div><b>01</b><h3>Program → path</h3><p>Metric commands compile into requested position, heading, speed, and goal features.</p></div><span aria-hidden="true">→</span><div><b>02</b><h3>Align to tokens</h3><p>Interpolate eight path nodes to thirteen generated token centers; preserve angle continuity.</p></div><span aria-hidden="true">→</span><div><b>03</b><h3>Learn the residual</h3><p>A 78,592-parameter head changes temporal body features. ARDY parameters stay frozen.</p></div><span aria-hidden="true">→</span><div><b>04</b><h3>Challenge the claim</h3><p>Compare with time-only, TRAIN-mean, shuffled-path, and phase-shifted controls.</p></div></div>
+  <div class="two-col"><article><h3>Why local path features?</h3><p>The earlier head sees the same compressed whole-path vector at every token. The new representation gives each token the path features for its own interval. The head size, 64 active path channels, initialization, draw sequences, and update budget remain matched. Both temporal alignment and geometric scope change, so this experiment cannot isolate their individual effects.</p></article><article><h3>Why two objectives?</h3><p>The raw loss regressed at low noise. A fixed, TRAIN-calibrated weighting repaired that aggregate, but a tiny contact-accuracy decrease kept its repair gate closed. We test local features under both the raw and balanced objectives, without selecting a favorable branch after seeing the outcomes.</p></article></div>
+  <div class="timeline"><article><span>M2m / DATA COVERAGE</span><h3>Put the turn inside the window.</h3><p>Build the 72-clip turn-event bank. Per-example oracle fitting reveals 72.85% turn-joint MSE headroom; this measures fitting potential, not generalization.</p></article><article><span>M2n / AUGMENTATION</span><h3>More relevant data helps, modestly.</h3><p>Turn-joint MSE improves 1.65% over native ARDY. The matched time-only and TRAIN-mean controls prevent a useful-path claim.</p></article><article><span>M2o / OBJECTIVE</span><h3>Repair the low-noise regression.</h3><p>Turn gain at t = 0 changes from −24.00% to +0.61%. Overall turn gain reaches 3.78%; contact accuracy drops 0.011 percentage points vs. the raw head, and the TRAIN-mean control remains stronger.</p></article><article><span>M2p / REPRESENTATION</span><h3>Align path information to token time.</h3><p id="timeline-latest">Nine shared regression prefixes, eighteen matched decoded refinements, and four score modes per objective. Full results above.</p></article></div>
+</section>
+<section id="evidence">
+  <div class="section-label">04 / EVIDENCE & NEXT STEP</div>
+  <h2>Build on what survives<br>the experiment.</h2>
+  <p id="next-step" class="lede">The next method is chosen from the complete matched comparison, with the failed controls retained.</p>
+  <details open><summary>Evaluation scope and reproducibility</summary><p>The latest experiment uses three held-out approach-distance folds and training seeds 17, 29, and 43. Each of 1,020 new teacher examples is held out once per mode and seed. There are 24,480 new score rows and 30,600 cached comparison rows, plus 2,040 cached native/oracle references. This is a development benchmark; the original development partition is excluded and the original test partition remains unused.</p><p>Each shared regression prefix receives 1,000 updates, then branches into two 500-update refinements. Normalizers and templates use fold TRAIN data only. An independent validator reconstructs them and checks saved splits, draws, update counts, and cached aggregates. A 500-update replay reproduced the prior parameters and 312 score rows exactly. All 18 zero/disabled recovery checks are implementation tests, not evidence of better adapted generation.</p><p>The model parameters and recorded diffusion buffers remain unchanged. Historical native references used fresh CPU-computed schedule buffers; a separate audit found negligible aggregate score differences after the CUDA refresh, but replay showed that the distinction matters during fitting. This provenance is preserved in the report.</p></details>
+  <details><summary>What remains unproven</summary><p>These experiments reconstruct held-out generated motion windows with privileged achieved root paths and fixed text. They do not measure scene collision avoidance, navigation success, long-horizon adapted generation, physical stability, hardware transfer, or open-vocabulary instruction understanding. Three training seeds and factorial programs do not establish statistical significance or environmental diversity.</p></details>
+  <div class="resource-grid"><a href="{{ '/assets/kimonav/results-report.md' | relative_url }}"><span>01</span>Results report ↗</a><a href="{{ '/assets/kimonav/results.json' | relative_url }}"><span>02</span>All chart data & gates ↗</a><a href="{{ '/assets/kimonav/protocol.md' | relative_url }}"><span>03</span>Frozen protocol ↗</a><a href="{{ '/assets/kimonav/provenance.json' | relative_url }}"><span>04</span>Checks & provenance ↗</a></div>
+  <p class="small">KimoNav is ongoing work by Linji Wang. It builds on the pretrained motion models and implementations of <a href="https://github.com/nv-tlabs/ardy">ARDY</a> and <a href="https://github.com/nv-tlabs/kimodo">Kimodo</a> from NVIDIA and their collaborators. The motion renders on this page use ARDY. These development results are not a published paper.</p>
+</section>
+</main>
+<footer><a href="{{ '/projects/' | relative_url }}">← All projects</a><span>KimoNav · research notebook · updated 5 September 2026</span><a href="https://github.com/linjiw/linjiw.github.io">Page source ↗</a></footer>
+</body>
+</html>

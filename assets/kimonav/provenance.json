@@ -1,0 +1,190 @@
+{
+  "date": "2026-09-05",
+  "experiment": "M2p token-local representation under raw and fixed balanced objectives",
+  "backbone": "787ae7ddf4cd10c9814313faae6a57fc53442620bd95be424e6f8d57f04ceb45",
+  "ardy_commit": "693f74d13b3d04a0a22ce127ee79c929dd89756b",
+  "counts": {
+    "new_candidate_optimizer_updates": 18000,
+    "separate_preflight_replay_updates": 1000,
+    "new_scores": 24480,
+    "cached_scores": 30600,
+    "cached_native_oracle_references": 2040,
+    "held_out_teachers": 1020,
+    "folds": 3,
+    "training_seeds": [
+      17,
+      29,
+      43
+    ],
+    "generation_seeds": [
+      307,
+      419
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "train_normalization_recomputed_exactly": true,
+    "parent_splits_draws_initializations_exact": true,
+    "runtime_diffusion_buffers_match_m2o": true,
+    "cached_ten_mode_aggregates_match_m2o_exactly": true,
+    "shared_regression_prefixes": 9,
+    "regression_steps_each": 1000,
+    "decoded_endpoints": [
+      {
+        "fold": 0,
+        "seed": 17,
+        "objective": "raw",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 0,
+        "seed": 17,
+        "objective": "balanced",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 0,
+        "seed": 29,
+        "objective": "raw",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 0,
+        "seed": 29,
+        "objective": "balanced",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 0,
+        "seed": 43,
+        "objective": "raw",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 0,
+        "seed": 43,
+        "objective": "balanced",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 1,
+        "seed": 17,
+        "objective": "raw",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 1,
+        "seed": 17,
+        "objective": "balanced",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 1,
+        "seed": 29,
+        "objective": "raw",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 1,
+        "seed": 29,
+        "objective": "balanced",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 1,
+        "seed": 43,
+        "objective": "raw",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 1,
+        "seed": 43,
+        "objective": "balanced",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 2,
+        "seed": 17,
+        "objective": "raw",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 2,
+        "seed": 17,
+        "objective": "balanced",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 2,
+        "seed": 29,
+        "objective": "raw",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 2,
+        "seed": 29,
+        "objective": "balanced",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 2,
+        "seed": 43,
+        "objective": "raw",
+        "decoded_steps": 500
+      },
+      {
+        "fold": 2,
+        "seed": 43,
+        "objective": "balanced",
+        "decoded_steps": 500
+      }
+    ],
+    "new_teachers_held_out_once": 1020,
+    "old_development_participants": 0,
+    "train_template_max_abs_error": 0.0
+  },
+  "runtime": {
+    "runtime_s": 965.026051962981,
+    "peak_cuda_reserved_mib": 1418.0,
+    "backbone_parameters_unchanged": true,
+    "runtime_buffers_unchanged": true,
+    "frozen_model_sha256": "787ae7ddf4cd10c9814313faae6a57fc53442620bd95be424e6f8d57f04ceb45"
+  },
+  "preflight": {
+    "passed": true,
+    "parameter_max_abs_error": 0.0,
+    "score_max_abs_error": 0.0,
+    "updates": 500,
+    "score_rows": 312
+  },
+  "tests": {
+    "passed": 141,
+    "inherited_torchscript_deprecation_warnings": 4
+  },
+  "source_hashes": {
+    "m2p_summary": "3375f4722feb80f7dfb4fde908c5e112b0bf15bb92cbdb6787c3abbdd0031842",
+    "m2p_original_inventory": "b810a607ae9708fdff6d270f879affee80120223ec88c219a57cecf775d10aee",
+    "m2p_frozen_protocol": "4cd717fc5b7dfdb1d5c17590c985a8a37d808d4538133d72ac2247ff73f3f6c9",
+    "m2n_summary": "6484c5bcdd34349e8ea8fb9508e405d72c695d9762514cabd33d59ef37ded231",
+    "m2o_summary": "beb571c3c0775519db4dcd8b4e794a3b3fb82779b181161535fe4d2c1bfd8d95",
+    "motion_bank_audit_summary": "5d4d59def334e20e2c9feca08b4356b3e059e2643dcb6056c992d30b713b6847"
+  },
+  "public_files": {
+    "design.md": "5acf7b764c597a1fceb696e2aab611a68c5d0a3191489c2f3c0ee79d7184da56",
+    "motion-bank-audit.json": "1e3894967a5e95e51f0c9a7344bb6ff20d5262e66d42b89b98fe42d649612caf",
+    "motion-provenance.json": "f3ae08f8ff7d3c2724eb41a3a84fe6fa212f41cd6407446483370de4fc7f1b59",
+    "native-turns.jpg": "b5574335c287d982da8874e141510ecd21f5886c2c983c351e8670e8dd16a9a4",
+    "native-turns.mp4": "89d54b044d62569dd3d6b4980a9cdf8742d1c0e55c1bc8223bd4fd373bc97b72",
+    "native-turns.webp": "40273610081d1f96dfb6c83aa949fe48007ab020def1be6a10b6a6292008d879",
+    "performance.pdf": "820c7796aa0ebd79b75909b535b4e90c81ec2b389bb79eb6aaf697b80718f850",
+    "performance.png": "cfa10e7f73877b2440d3a958b308a29a8b722af67ebacb05a6f27224de16e059",
+    "programs.pdf": "7a624c403d469b7a134539ab0288db9f128900b2e30d96a791b5ec44df9c7474",
+    "programs.png": "e6d2008956bb1b53fc44c1da3ecc54dbbf83921124218c15cf27b9a3dc16b6c1",
+    "protocol.md": "b35ce9a98bfd8c171644e003df0cd736838d2a1ea92caec5ab32f4b7cdb17b23",
+    "research.css": "7dd8a451ff75a82b9f0cef99c0cab69a3f9fa71b82658ea8894fbccdaf75253f",
+    "research.js": "480e8a7dcb45047d1596a51a2695320c952b67748dc5e2a7c41ff8ab6047e7ab",
+    "results-report.md": "d75e864198b2d2a99c4a578bd73e6050f21821b257d6a9def10d06c18e50f52a",
+    "results.json": "1b950dd70ad9d0074887652156d2ed232de5e76cf7b66a0e2985726f2952c79f"
+  },
+  "reproducibility_scope": "Public aggregate data, gates, protocol, rendered clips and source hashes. Training checkpoints and full per-example ledgers remain in the local research artifacts; this page is not a standalone training release."
+}

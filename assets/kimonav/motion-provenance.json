@@ -1,0 +1,25 @@
+{
+  "description": "Native frozen ARDY source clips, selected before M2p outcomes: middle approach, slower speed, \u00b190\u00b0, seed 307.",
+  "model": "ARDY-G1-RP-25FPS-Horizon52",
+  "fps": 25,
+  "frames": 325,
+  "duration_seconds": 13.0,
+  "pose_processing": "Unmodified world-space posed_joints; root-following orthographic camera. Shared top-view scale.",
+  "audio": "none",
+  "sources": [
+    {
+      "file": "turn_event_a1_s0_left_90__307.npz",
+      "sha256": "fe2f89da26c30c3322b7b513af146a797ff16bc7cae54611f057e3e64eac4a46",
+      "prompt": "A person walks forward at a steady pace."
+    },
+    {
+      "file": "turn_event_a1_s0_right_90__307.npz",
+      "sha256": "b0a2f5793ecba0aaa5541f3b25bb25e7a1a303641e0e907812aa5bd1a8234a63",
+      "prompt": "A person walks forward at a steady pace."
+    }
+  ],
+  "outputs": {
+    "native-turns.jpg": "b5574335c287d982da8874e141510ecd21f5886c2c983c351e8670e8dd16a9a4",
+    "native-turns.mp4": "89d54b044d62569dd3d6b4980a9cdf8742d1c0e55c1bc8223bd4fd373bc97b72"
+  }
+}

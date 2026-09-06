@@ -1,0 +1,1181 @@
+{
+  "data_and_teacher_audit_passed": true,
+  "attempted_sources": 72,
+  "completed_sources": 72,
+  "programs": 36,
+  "source_transitions": 340,
+  "requested_turn_transitions": 128,
+  "teacher_examples": 1020,
+  "reference_rows": 2040,
+  "basis_matches_original_exactly": true,
+  "teacher_norm_max": 10.000001907348633,
+  "teacher_body_replay_max_abs_error": 0.0,
+  "frozen_backbone_unchanged": true,
+  "runtime_s": 16.46909603397944,
+  "peak_cuda_reserved_mib": 1022.0,
+  "groups": {
+    "all": {
+      "all": {
+        "programs": 36,
+        "source_transitions": 340,
+        "teacher_examples": 1020,
+        "baseline": {
+          "token_mse": 0.16764662462670388,
+          "joint_mse_m2": 0.00023176103112329354,
+          "contact_mse": 0.04798256641807707,
+          "foot_velocity_m2ps2": 0.04368533101302024,
+          "contact_accuracy": 0.9479667725524418
+        },
+        "oracle": {
+          "token_mse": 0.0721235829482019,
+          "joint_mse_m2": 5.359800067131565e-05,
+          "contact_mse": 0.008139645494533401,
+          "foot_velocity_m2ps2": 0.003060545480911969,
+          "contact_accuracy": 0.9912415585446137
+        },
+        "joint_gain_percent": 76.87359241908003,
+        "contact_change_percentage_points": 4.327478599217194
+      }
+    },
+    "requested_turn": {
+      "False": {
+        "programs": 36,
+        "source_transitions": 212,
+        "teacher_examples": 636,
+        "baseline": {
+          "token_mse": 0.16160487873554458,
+          "joint_mse_m2": 0.000194782653235181,
+          "contact_mse": 0.04098312718426796,
+          "foot_velocity_m2ps2": 0.051907856909015254,
+          "contact_accuracy": 0.9559999969270494
+        },
+        "oracle": {
+          "token_mse": 0.06052211636801705,
+          "joint_mse_m2": 3.807599464338368e-05,
+          "contact_mse": 0.0056949789986105535,
+          "foot_velocity_m2ps2": 0.0030831010059540146,
+          "contact_accuracy": 0.9940849959298416
+        },
+        "joint_gain_percent": 80.45206079136285,
+        "contact_change_percentage_points": 3.8084999002792164
+      },
+      "True": {
+        "programs": 36,
+        "source_transitions": 128,
+        "teacher_examples": 384,
+        "baseline": {
+          "token_mse": 0.17982492562711103,
+          "joint_mse_m2": 0.0002959368040828176,
+          "contact_mse": 0.06104537916921041,
+          "foot_velocity_m2ps2": 0.029008799610892304,
+          "contact_accuracy": 0.9330261995395026
+        },
+        "oracle": {
+          "token_mse": 0.09250810965507601,
+          "joint_mse_m2": 8.034043481830864e-05,
+          "contact_mse": 0.012649522746425258,
+          "foot_velocity_m2ps2": 0.002970292593494782,
+          "contact_accuracy": 0.9860777421681965
+        },
+        "joint_gain_percent": 72.8521651548871,
+        "contact_change_percentage_points": 5.305154262869394
+      }
+    },
+    "timestep": {
+      "0": {
+        "programs": 36,
+        "source_transitions": 340,
+        "teacher_examples": 340,
+        "baseline": {
+          "token_mse": 0.019216225868634255,
+          "joint_mse_m2": 2.1274593248992665e-05,
+          "contact_mse": 0.0014122337965943646,
+          "foot_velocity_m2ps2": 0.0029033951561561683,
+          "contact_accuracy": 0.9983707362578974
+        },
+        "oracle": {
+          "token_mse": 0.01039695037858716,
+          "joint_mse_m2": 1.1733423657586983e-05,
+          "contact_mse": 0.00018760791319607508,
+          "foot_velocity_m2ps2": 0.001563526793769496,
+          "contact_accuracy": 0.9998664541376961
+        },
+        "joint_gain_percent": 44.84771802561936,
+        "contact_change_percentage_points": 0.14957178797987414
+      },
+      "5": {
+        "programs": 36,
+        "source_transitions": 340,
+        "teacher_examples": 340,
+        "baseline": {
+          "token_mse": 0.10161571107908256,
+          "joint_mse_m2": 8.708922863307736e-05,
+          "contact_mse": 0.01994684611295017,
+          "foot_velocity_m2ps2": 0.004149006928411027,
+          "contact_accuracy": 0.9776676372521454
+        },
+        "oracle": {
+          "token_mse": 0.06466973434823255,
+          "joint_mse_m2": 3.413093785285229e-05,
+          "contact_mse": 0.0029036130107272136,
+          "foot_velocity_m2ps2": 0.0021361972246571287,
+          "contact_accuracy": 0.9973891698237922
+        },
+        "joint_gain_percent": 60.809231648322324,
+        "contact_change_percentage_points": 1.9721532571646772
+      },
+      "9": {
+        "programs": 36,
+        "source_transitions": 340,
+        "teacher_examples": 340,
+        "baseline": {
+          "token_mse": 0.3821079369323949,
+          "joint_mse_m2": 0.0005869192714878105,
+          "contact_mse": 0.12258861934468666,
+          "foot_velocity_m2ps2": 0.12400359095449352,
+          "contact_accuracy": 0.8678619441472821
+        },
+        "oracle": {
+          "token_mse": 0.14130406411778595,
+          "joint_mse_m2": 0.00011492964050350766,
+          "contact_mse": 0.021327715559676916,
+          "foot_velocity_m2ps2": 0.005481912424309283,
+          "contact_accuracy": 0.9764690516723528
+        },
+        "joint_gain_percent": 80.41815185039556,
+        "contact_change_percentage_points": 10.860710752507064
+      }
+    },
+    "approach_index": {
+      "0": {
+        "programs": 12,
+        "source_transitions": 104,
+        "teacher_examples": 312,
+        "baseline": {
+          "token_mse": 0.16420883488285146,
+          "joint_mse_m2": 0.00026725091331564324,
+          "contact_mse": 0.0464889439758944,
+          "foot_velocity_m2ps2": 0.039385230701494335,
+          "contact_accuracy": 0.9492788729982243
+        },
+        "oracle": {
+          "token_mse": 0.07372655455546921,
+          "joint_mse_m2": 6.359962967602921e-05,
+          "contact_mse": 0.009118029309014888,
+          "foot_velocity_m2ps2": 0.0029818952198790312,
+          "contact_accuracy": 0.9901509241097504
+        },
+        "joint_gain_percent": 76.20227789421497,
+        "contact_change_percentage_points": 4.087205111152603
+      },
+      "1": {
+        "programs": 12,
+        "source_transitions": 116,
+        "teacher_examples": 348,
+        "baseline": {
+          "token_mse": 0.16474426534389044,
+          "joint_mse_m2": 0.0002179948688055649,
+          "contact_mse": 0.047304303860481574,
+          "foot_velocity_m2ps2": 0.045123212856237334,
+          "contact_accuracy": 0.9488815674351322
+        },
+        "oracle": {
+          "token_mse": 0.06989277679693057,
+          "joint_mse_m2": 4.894343285255016e-05,
+          "contact_mse": 0.006679441047223615,
+          "foot_velocity_m2ps2": 0.0029467071314381132,
+          "contact_accuracy": 0.9928552505456739
+        },
+        "joint_gain_percent": 77.54835555500894,
+        "contact_change_percentage_points": 4.397368311054173
+      },
+      "2": {
+        "programs": 12,
+        "source_transitions": 120,
+        "teacher_examples": 360,
+        "baseline": {
+          "token_mse": 0.17398677365336981,
+          "joint_mse_m2": 0.00021003731124867247,
+          "contact_mse": 0.050154451417855246,
+          "foot_velocity_m2ps2": 0.04654754948132903,
+          "contact_accuracy": 0.9457398772239684
+        },
+        "oracle": {
+          "token_mse": 0.0727514174922059,
+          "joint_mse_m2": 4.825093948536757e-05,
+          "contact_mse": 0.0086214661273617,
+          "foot_velocity_m2ps2": 0.0032530340914187646,
+          "contact_accuracy": 0.9907185009784171
+        },
+        "joint_gain_percent": 77.02744374391598,
+        "contact_change_percentage_points": 4.497862375444872
+      }
+    },
+    "signed_angle_deg": {
+      "-120": {
+        "programs": 6,
+        "source_transitions": 60,
+        "teacher_examples": 180,
+        "baseline": {
+          "token_mse": 0.17303216104499172,
+          "joint_mse_m2": 0.0002562437937361513,
+          "contact_mse": 0.05276112403369856,
+          "foot_velocity_m2ps2": 0.04606999381762256,
+          "contact_accuracy": 0.9422810104158189
+        },
+        "oracle": {
+          "token_mse": 0.07241062232965811,
+          "joint_mse_m2": 5.827847850746872e-05,
+          "contact_mse": 0.009926335254552518,
+          "foot_velocity_m2ps2": 0.0029844329947890298,
+          "contact_accuracy": 0.9891559991571638
+        },
+        "joint_gain_percent": 77.25662828443885,
+        "contact_change_percentage_points": 4.687498874134488
+      },
+      "-90": {
+        "programs": 6,
+        "source_transitions": 56,
+        "teacher_examples": 168,
+        "baseline": {
+          "token_mse": 0.17560205583253666,
+          "joint_mse_m2": 0.0002770347511803569,
+          "contact_mse": 0.047981691624362256,
+          "foot_velocity_m2ps2": 0.043788711001009985,
+          "contact_accuracy": 0.948237204634481
+        },
+        "oracle": {
+          "token_mse": 0.07262954294371109,
+          "joint_mse_m2": 5.72296164180999e-05,
+          "contact_mse": 0.008059838313285028,
+          "foot_velocity_m2ps2": 0.003200835409855548,
+          "contact_accuracy": 0.991052367620998
+        },
+        "joint_gain_percent": 79.34208030788096,
+        "contact_change_percentage_points": 4.2815162986517
+      },
+      "-60": {
+        "programs": 6,
+        "source_transitions": 54,
+        "teacher_examples": 162,
+        "baseline": {
+          "token_mse": 0.17036517724239578,
+          "joint_mse_m2": 0.0002392980531655869,
+          "contact_mse": 0.04388393471000301,
+          "foot_velocity_m2ps2": 0.042333305677069194,
+          "contact_accuracy": 0.9528178676135011
+        },
+        "oracle": {
+          "token_mse": 0.07214890958793048,
+          "joint_mse_m2": 5.650205684572837e-05,
+          "contact_mse": 0.006869845427022862,
+          "foot_velocity_m2ps2": 0.00282441837423701,
+          "contact_accuracy": 0.9929821209775077
+        },
+        "joint_gain_percent": 76.3884176664694,
+        "contact_change_percentage_points": 4.016425336400664
+      },
+      "60": {
+        "programs": 6,
+        "source_transitions": 54,
+        "teacher_examples": 162,
+        "baseline": {
+          "token_mse": 0.162611976519434,
+          "joint_mse_m2": 0.00019970722120206123,
+          "contact_mse": 0.04715440981335759,
+          "foot_velocity_m2ps2": 0.03139487746666419,
+          "contact_accuracy": 0.9490585202972094
+        },
+        "oracle": {
+          "token_mse": 0.0720840629558855,
+          "joint_mse_m2": 5.1489814232910345e-05,
+          "contact_mse": 0.007298707905238189,
+          "foot_velocity_m2ps2": 0.002777797989660434,
+          "contact_accuracy": 0.9921474523842336
+        },
+        "joint_gain_percent": 74.21734981690341,
+        "contact_change_percentage_points": 4.3088932087024245
+      },
+      "90": {
+        "programs": 6,
+        "source_transitions": 56,
+        "teacher_examples": 168,
+        "baseline": {
+          "token_mse": 0.1598322085247168,
+          "joint_mse_m2": 0.00020130649845416176,
+          "contact_mse": 0.04365606801078962,
+          "foot_velocity_m2ps2": 0.05104723185763255,
+          "contact_accuracy": 0.9526976741850376
+        },
+        "oracle": {
+          "token_mse": 0.07149422385652239,
+          "joint_mse_m2": 5.051843615370267e-05,
+          "contact_mse": 0.007982687942348498,
+          "foot_velocity_m2ps2": 0.0038509709988526694,
+          "contact_accuracy": 0.9914863939086596
+        },
+        "joint_gain_percent": 74.90471666755164,
+        "contact_change_percentage_points": 3.8788719723621967
+      },
+      "120": {
+        "programs": 6,
+        "source_transitions": 60,
+        "teacher_examples": 180,
+        "baseline": {
+          "token_mse": 0.16443616859614849,
+          "joint_mse_m2": 0.00021697586900144315,
+          "contact_mse": 0.05245817031625139,
+          "foot_velocity_m2ps2": 0.04747786625812297,
+          "contact_accuracy": 0.942708358168602
+        },
+        "oracle": {
+          "token_mse": 0.07197413601550377,
+          "joint_mse_m2": 4.7569601869983876e-05,
+          "contact_mse": 0.008700458124753318,
+          "foot_velocity_m2ps2": 0.002724817118077125,
+          "contact_accuracy": 0.9906250172191197
+        },
+        "joint_gain_percent": 78.07608648422213,
+        "contact_change_percentage_points": 4.791665905051767
+      }
+    },
+    "program_id": {
+      "turn_event_a0_s0_left_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.20772493568559486,
+          "joint_mse_m2": 0.00036426513752303437,
+          "contact_mse": 0.07526677375923707,
+          "foot_velocity_m2ps2": 0.12239221938652918,
+          "contact_accuracy": 0.9185897668202718
+        },
+        "oracle": {
+          "token_mse": 0.07052152541776498,
+          "joint_mse_m2": 4.7183481698690835e-05,
+          "contact_mse": 0.01171326287233872,
+          "foot_velocity_m2ps2": 0.0028786897659301754,
+          "contact_accuracy": 0.9863782227039337
+        },
+        "joint_gain_percent": 87.0469400339726,
+        "contact_change_percentage_points": 6.778845588366189
+      },
+      "turn_event_a0_s0_left_60": {
+        "programs": 1,
+        "source_transitions": 8,
+        "teacher_examples": 24,
+        "baseline": {
+          "token_mse": 0.15297765156719834,
+          "joint_mse_m2": 0.0001595763623830256,
+          "contact_mse": 0.0476094202472647,
+          "foot_velocity_m2ps2": 0.01822090584998174,
+          "contact_accuracy": 0.948717974126339
+        },
+        "oracle": {
+          "token_mse": 0.06670016434509307,
+          "joint_mse_m2": 3.956479616817887e-05,
+          "contact_mse": 0.0061457051545706545,
+          "foot_velocity_m2ps2": 0.002197642187335684,
+          "contact_accuracy": 0.9937900801499684
+        },
+        "joint_gain_percent": 75.20635539165076,
+        "contact_change_percentage_points": 4.507210602362943
+      },
+      "turn_event_a0_s0_left_90": {
+        "programs": 1,
+        "source_transitions": 8,
+        "teacher_examples": 24,
+        "baseline": {
+          "token_mse": 0.15987220872193575,
+          "joint_mse_m2": 0.00017509493932266196,
+          "contact_mse": 0.043897222982802006,
+          "foot_velocity_m2ps2": 0.034553390607470647,
+          "contact_accuracy": 0.952323742210865
+        },
+        "oracle": {
+          "token_mse": 0.0685576483180436,
+          "joint_mse_m2": 4.213088512490988e-05,
+          "contact_mse": 0.008626043179826109,
+          "foot_velocity_m2ps2": 0.0031525027055370933,
+          "contact_accuracy": 0.9905849546194077
+        },
+        "joint_gain_percent": 75.93826224339254,
+        "contact_change_percentage_points": 3.8261212408542633
+      },
+      "turn_event_a0_s0_right_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.1397023702971637,
+          "joint_mse_m2": 0.0002691417708168349,
+          "contact_mse": 0.04027641667347173,
+          "foot_velocity_m2ps2": 0.01568320822358752,
+          "contact_accuracy": 0.9549679776032766
+        },
+        "oracle": {
+          "token_mse": 0.06621630165415505,
+          "joint_mse_m2": 6.392273635356105e-05,
+          "contact_mse": 0.009023255892861926,
+          "foot_velocity_m2ps2": 0.0025349925000530977,
+          "contact_accuracy": 0.9900641202926636
+        },
+        "joint_gain_percent": 76.24941823056376,
+        "contact_change_percentage_points": 3.509614268938699
+      },
+      "turn_event_a0_s0_right_60": {
+        "programs": 1,
+        "source_transitions": 8,
+        "teacher_examples": 24,
+        "baseline": {
+          "token_mse": 0.149690326070413,
+          "joint_mse_m2": 0.0002635502901284781,
+          "contact_mse": 0.040026811132103525,
+          "foot_velocity_m2ps2": 0.018147686583688483,
+          "contact_accuracy": 0.9555288751920064
+        },
+        "oracle": {
+          "token_mse": 0.08027402579318732,
+          "joint_mse_m2": 7.354330140666813e-05,
+          "contact_mse": 0.009401374498111181,
+          "foot_velocity_m2ps2": 0.0024802747163145495,
+          "contact_accuracy": 0.9901843095819155
+        },
+        "joint_gain_percent": 72.09515445009886,
+        "contact_change_percentage_points": 3.4655434389909145
+      },
+      "turn_event_a0_s0_right_90": {
+        "programs": 1,
+        "source_transitions": 8,
+        "teacher_examples": 24,
+        "baseline": {
+          "token_mse": 0.1710862539863835,
+          "joint_mse_m2": 0.0003143763635762298,
+          "contact_mse": 0.04512719922566551,
+          "foot_velocity_m2ps2": 0.04956483822509957,
+          "contact_accuracy": 0.9507211794455847
+        },
+        "oracle": {
+          "token_mse": 0.07526703875434274,
+          "joint_mse_m2": 7.09373034813628e-05,
+          "contact_mse": 0.00692856588466384,
+          "foot_velocity_m2ps2": 0.0032628466506139375,
+          "contact_accuracy": 0.9919871936241786
+        },
+        "joint_gain_percent": 77.4355480563468,
+        "contact_change_percentage_points": 4.1266014178593995
+      },
+      "turn_event_a0_s1_left_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.15379488583033285,
+          "joint_mse_m2": 0.0002586447526482516,
+          "contact_mse": 0.04407588270335812,
+          "foot_velocity_m2ps2": 0.034960898423256975,
+          "contact_accuracy": 0.9525641302267711
+        },
+        "oracle": {
+          "token_mse": 0.0728016088095804,
+          "joint_mse_m2": 6.408916982157583e-05,
+          "contact_mse": 0.009283059805117469,
+          "foot_velocity_m2ps2": 0.002916100019744287,
+          "contact_accuracy": 0.9907051463921865
+        },
+        "joint_gain_percent": 75.22115984748586,
+        "contact_change_percentage_points": 3.814101616541543
+      },
+      "turn_event_a0_s1_left_60": {
+        "programs": 1,
+        "source_transitions": 8,
+        "teacher_examples": 24,
+        "baseline": {
+          "token_mse": 0.15292508632410318,
+          "joint_mse_m2": 0.0001925412037735441,
+          "contact_mse": 0.04285788704813361,
+          "foot_velocity_m2ps2": 0.010329837910830975,
+          "contact_accuracy": 0.9527243872483571
+        },
+        "oracle": {
+          "token_mse": 0.07685641783367222,
+          "joint_mse_m2": 6.225783310280045e-05,
+          "contact_mse": 0.009000523927473598,
+          "foot_velocity_m2ps2": 0.002351098446524702,
+          "contact_accuracy": 0.9901843046148618
+        },
+        "joint_gain_percent": 67.66518964116142,
+        "contact_change_percentage_points": 3.745991736650478
+      },
+      "turn_event_a0_s1_left_90": {
+        "programs": 1,
+        "source_transitions": 8,
+        "teacher_examples": 24,
+        "baseline": {
+          "token_mse": 0.15012157006034008,
+          "joint_mse_m2": 0.0002549333592014591,
+          "contact_mse": 0.04353268209763428,
+          "foot_velocity_m2ps2": 0.07104233476275112,
+          "contact_accuracy": 0.9531250248352686
+        },
+        "oracle": {
+          "token_mse": 0.07677143232043213,
+          "joint_mse_m2": 6.770670768219134e-05,
+          "contact_mse": 0.007858270036498046,
+          "foot_velocity_m2ps2": 0.004178481438430026,
+          "contact_accuracy": 0.9911859134833019
+        },
+        "joint_gain_percent": 73.441409200321,
+        "contact_change_percentage_points": 3.8060888648033253
+      },
+      "turn_event_a0_s1_right_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.1634485533150534,
+          "joint_mse_m2": 0.00028125039775659386,
+          "contact_mse": 0.04155099152267212,
+          "foot_velocity_m2ps2": 0.01661655190206754,
+          "contact_accuracy": 0.9538461824258169
+        },
+        "oracle": {
+          "token_mse": 0.07165758502669634,
+          "joint_mse_m2": 7.320715740206652e-05,
+          "contact_mse": 0.01333192945051754,
+          "foot_velocity_m2ps2": 0.0023347557696979495,
+          "contact_accuracy": 0.9855769395828247
+        },
+        "joint_gain_percent": 73.97082529091279,
+        "contact_change_percentage_points": 3.1730757157007794
+      },
+      "turn_event_a0_s1_right_60": {
+        "programs": 1,
+        "source_transitions": 8,
+        "teacher_examples": 24,
+        "baseline": {
+          "token_mse": 0.2159653187263757,
+          "joint_mse_m2": 0.0003754403436081096,
+          "contact_mse": 0.05544968257864487,
+          "foot_velocity_m2ps2": 0.06342451952514239,
+          "contact_accuracy": 0.9403045177459717
+        },
+        "oracle": {
+          "token_mse": 0.08435894490685314,
+          "joint_mse_m2": 9.197933379330911e-05,
+          "contact_mse": 0.009539951876130697,
+          "foot_velocity_m2ps2": 0.004331561530610392,
+          "contact_accuracy": 0.9907852709293365
+        },
+        "joint_gain_percent": 75.50094566040603,
+        "contact_change_percentage_points": 5.048075318336487
+      },
+      "turn_event_a0_s1_right_90": {
+        "programs": 1,
+        "source_transitions": 8,
+        "teacher_examples": 24,
+        "baseline": {
+          "token_mse": 0.15319685800932348,
+          "joint_mse_m2": 0.0002981960390494957,
+          "contact_mse": 0.0381963577397452,
+          "foot_velocity_m2ps2": 0.017686377017525956,
+          "contact_accuracy": 0.9579327180981636
+        },
+        "oracle": {
+          "token_mse": 0.07473596148580934,
+          "joint_mse_m2": 6.667285007703565e-05,
+          "contact_mse": 0.008564409130068878,
+          "foot_velocity_m2ps2": 0.0031637969077564776,
+          "contact_accuracy": 0.9903846333424251
+        },
+        "joint_gain_percent": 77.6412690491945,
+        "contact_change_percentage_points": 3.2451915244261498
+      },
+      "turn_event_a1_s0_left_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.14571683816611766,
+          "joint_mse_m2": 0.00011898117234826106,
+          "contact_mse": 0.04958762617094786,
+          "foot_velocity_m2ps2": 0.02307182092918083,
+          "contact_accuracy": 0.9461538712183635
+        },
+        "oracle": {
+          "token_mse": 0.06978723999733727,
+          "joint_mse_m2": 3.222313216610928e-05,
+          "contact_mse": 0.007042489523822345,
+          "foot_velocity_m2ps2": 0.0027599806858537097,
+          "contact_accuracy": 0.9924679636955261
+        },
+        "joint_gain_percent": 72.91745279514366,
+        "contact_change_percentage_points": 4.631409247716267
+      },
+      "turn_event_a1_s0_left_60": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.1441643782891333,
+          "joint_mse_m2": 0.00016388935852470847,
+          "contact_mse": 0.03659083992094263,
+          "foot_velocity_m2ps2": 0.020413765218108892,
+          "contact_accuracy": 0.9602564374605814
+        },
+        "oracle": {
+          "token_mse": 0.058432046820720035,
+          "joint_mse_m2": 3.5304303560224076e-05,
+          "contact_mse": 0.0043580461712129665,
+          "foot_velocity_m2ps2": 0.002201806294033304,
+          "contact_accuracy": 0.9953525801499685
+        },
+        "joint_gain_percent": 78.45845277690712,
+        "contact_change_percentage_points": 3.50961426893871
+      },
+      "turn_event_a1_s0_left_90": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.12838145202646653,
+          "joint_mse_m2": 9.911747486815632e-05,
+          "contact_mse": 0.029856138807099343,
+          "foot_velocity_m2ps2": 0.010912559293986608,
+          "contact_accuracy": 0.9663461744785309
+        },
+        "oracle": {
+          "token_mse": 0.06074083598020176,
+          "joint_mse_m2": 2.8467583562511814e-05,
+          "contact_mse": 0.0034813436031981837,
+          "foot_velocity_m2ps2": 0.0019361311589212466,
+          "contact_accuracy": 0.9969551384449005
+        },
+        "joint_gain_percent": 71.27894591707596,
+        "contact_change_percentage_points": 3.0608963966369584
+      },
+      "turn_event_a1_s0_right_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.1590611450995008,
+          "joint_mse_m2": 0.00015541786209117466,
+          "contact_mse": 0.05187106615230732,
+          "foot_velocity_m2ps2": 0.02333745425955082,
+          "contact_accuracy": 0.9429487427075705
+        },
+        "oracle": {
+          "token_mse": 0.06877133098120491,
+          "joint_mse_m2": 4.224434476327588e-05,
+          "contact_mse": 0.00826828266344819,
+          "foot_velocity_m2ps2": 0.0025370594463311135,
+          "contact_accuracy": 0.9903846283753712
+        },
+        "joint_gain_percent": 72.8188612332773,
+        "contact_change_percentage_points": 4.743588566780077
+      },
+      "turn_event_a1_s0_right_60": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.12833296588311593,
+          "joint_mse_m2": 0.0001271596960881046,
+          "contact_mse": 0.02860298831425704,
+          "foot_velocity_m2ps2": 0.013063945151710261,
+          "contact_accuracy": 0.9695513010025024
+        },
+        "oracle": {
+          "token_mse": 0.0578323092777282,
+          "joint_mse_m2": 4.0416864385406365e-05,
+          "contact_mse": 0.0038964205186554557,
+          "foot_velocity_m2ps2": 0.0017013084900099782,
+          "contact_accuracy": 0.9956730882326762
+        },
+        "joint_gain_percent": 68.21566453147001,
+        "contact_change_percentage_points": 2.6121787230173776
+      },
+      "turn_event_a1_s0_right_90": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.1618462777386109,
+          "joint_mse_m2": 0.00027597061020969706,
+          "contact_mse": 0.052159043014398776,
+          "foot_velocity_m2ps2": 0.03737939522834495,
+          "contact_accuracy": 0.9443910519282024
+        },
+        "oracle": {
+          "token_mse": 0.0652241298307975,
+          "joint_mse_m2": 4.7940492587864966e-05,
+          "contact_mse": 0.00526386368810563,
+          "foot_velocity_m2ps2": 0.002266916745187094,
+          "contact_accuracy": 0.9939102709293366
+        },
+        "joint_gain_percent": 82.62840649899739,
+        "contact_change_percentage_points": 4.951921900113421
+      },
+      "turn_event_a1_s1_left_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.1562504652266701,
+          "joint_mse_m2": 0.00016380177130486117,
+          "contact_mse": 0.04394990372644922,
+          "foot_velocity_m2ps2": 0.02164073643507436,
+          "contact_accuracy": 0.9514423310756683
+        },
+        "oracle": {
+          "token_mse": 0.07453654191146294,
+          "joint_mse_m2": 4.6037051265557236e-05,
+          "contact_mse": 0.007484769536373885,
+          "foot_velocity_m2ps2": 0.0024303852173034103,
+          "contact_accuracy": 0.991666688521703
+        },
+        "joint_gain_percent": 71.8946560230567,
+        "contact_change_percentage_points": 4.02243574460347
+      },
+      "turn_event_a1_s1_left_60": {
+        "programs": 1,
+        "source_transitions": 8,
+        "teacher_examples": 24,
+        "baseline": {
+          "token_mse": 0.1787784427870065,
+          "joint_mse_m2": 0.0002926253405727645,
+          "contact_mse": 0.06128177051914463,
+          "foot_velocity_m2ps2": 0.07233508479354593,
+          "contact_accuracy": 0.934895855685075
+        },
+        "oracle": {
+          "token_mse": 0.07932984227469811,
+          "joint_mse_m2": 7.141324611363112e-05,
+          "contact_mse": 0.008112126000317705,
+          "foot_velocity_m2ps2": 0.0039261289008815465,
+          "contact_accuracy": 0.9919871936241785
+        },
+        "joint_gain_percent": 75.59567261883342,
+        "contact_change_percentage_points": 5.709133793910349
+      },
+      "turn_event_a1_s1_left_90": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.21473508439958094,
+          "joint_mse_m2": 0.00033915371917222126,
+          "contact_mse": 0.05657134516944401,
+          "foot_velocity_m2ps2": 0.11009333034356435,
+          "contact_accuracy": 0.939903869231542
+        },
+        "oracle": {
+          "token_mse": 0.08223148894806703,
+          "joint_mse_m2": 6.366569515800318e-05,
+          "contact_mse": 0.01184035738873111,
+          "foot_velocity_m2ps2": 0.006190242521309605,
+          "contact_accuracy": 0.9873397608598073
+        },
+        "joint_gain_percent": 81.22807106069978,
+        "contact_change_percentage_points": 4.743589162826534
+      },
+      "turn_event_a1_s1_right_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.18980655887474618,
+          "joint_mse_m2": 0.00035272428828344953,
+          "contact_mse": 0.06502137965101915,
+          "foot_velocity_m2ps2": 0.10318106229727467,
+          "contact_accuracy": 0.9286859234174092
+        },
+        "oracle": {
+          "token_mse": 0.07485085679218173,
+          "joint_mse_m2": 6.800787271761996e-05,
+          "contact_mse": 0.009847462303635743,
+          "foot_velocity_m2ps2": 0.004155393837330242,
+          "contact_accuracy": 0.9899038632710775
+        },
+        "joint_gain_percent": 80.71925439311715,
+        "contact_change_percentage_points": 6.12179398536683
+      },
+      "turn_event_a1_s1_right_60": {
+        "programs": 1,
+        "source_transitions": 8,
+        "teacher_examples": 24,
+        "baseline": {
+          "token_mse": 0.19708154792897403,
+          "joint_mse_m2": 0.0002782064550880629,
+          "contact_mse": 0.046810118089903575,
+          "foot_velocity_m2ps2": 0.07690764420840424,
+          "contact_accuracy": 0.9507211769620578
+        },
+        "oracle": {
+          "token_mse": 0.079105318368723,
+          "joint_mse_m2": 5.6812366134787837e-05,
+          "contact_mse": 0.004510441127573965,
+          "foot_velocity_m2ps2": 0.0027980610854380457,
+          "contact_accuracy": 0.99519232660532
+        },
+        "joint_gain_percent": 79.5790625645963,
+        "contact_change_percentage_points": 4.447114964326215
+      },
+      "turn_event_a1_s1_right_90": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.17277602770676215,
+          "joint_mse_m2": 0.00024889067711531725,
+          "contact_mse": 0.045349426789865296,
+          "foot_velocity_m2ps2": 0.02914175611610214,
+          "contact_accuracy": 0.9512820740540823
+        },
+        "oracle": {
+          "token_mse": 0.06787138038004438,
+          "joint_mse_m2": 5.4788241815610184e-05,
+          "contact_mse": 0.006047690041608197,
+          "foot_velocity_m2ps2": 0.002457071194658056,
+          "contact_accuracy": 0.9934295038382213
+        },
+        "joint_gain_percent": 77.98702528732106,
+        "contact_change_percentage_points": 4.2147429784138986
+      },
+      "turn_event_a2_s0_left_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.1418904213545223,
+          "joint_mse_m2": 0.00014449201961118282,
+          "contact_mse": 0.047932815126993475,
+          "foot_velocity_m2ps2": 0.023739574248126397,
+          "contact_accuracy": 0.9456731021404265
+        },
+        "oracle": {
+          "token_mse": 0.07018342317702869,
+          "joint_mse_m2": 4.364971095280149e-05,
+          "contact_mse": 0.00765475250276116,
+          "foot_velocity_m2ps2": 0.0028698671609163283,
+          "contact_accuracy": 0.9921474496523539
+        },
+        "joint_gain_percent": 69.79091920075615,
+        "contact_change_percentage_points": 4.647434751192736
+      },
+      "turn_event_a2_s0_left_60": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.1621324152375261,
+          "joint_mse_m2": 0.000158265864229179,
+          "contact_mse": 0.04527449617914196,
+          "foot_velocity_m2ps2": 0.020430851417283215,
+          "contact_accuracy": 0.9516025900840759
+        },
+        "oracle": {
+          "token_mse": 0.06719584707170725,
+          "joint_mse_m2": 3.196987861429079e-05,
+          "contact_mse": 0.006442532123340546,
+          "foot_velocity_m2ps2": 0.0024539646285120396,
+          "contact_accuracy": 0.992307714621226
+        },
+        "joint_gain_percent": 79.79989003314297,
+        "contact_change_percentage_points": 4.070512453715014
+      },
+      "turn_event_a2_s0_left_90": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.13726273371527592,
+          "joint_mse_m2": 0.00011411573717244513,
+          "contact_mse": 0.04087126344978363,
+          "foot_velocity_m2ps2": 0.011675782385282218,
+          "contact_accuracy": 0.955609001715978
+        },
+        "oracle": {
+          "token_mse": 0.062248704768717286,
+          "joint_mse_m2": 2.976055790592606e-05,
+          "contact_mse": 0.006787053091405444,
+          "foot_velocity_m2ps2": 0.002273616730235517,
+          "contact_accuracy": 0.9929487367471059
+        },
+        "joint_gain_percent": 73.92072413206812,
+        "contact_change_percentage_points": 3.7339735031127974
+      },
+      "turn_event_a2_s0_right_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.18336795357366403,
+          "joint_mse_m2": 0.00020048993401360348,
+          "contact_mse": 0.055896649589521986,
+          "foot_velocity_m2ps2": 0.04749928915019458,
+          "contact_accuracy": 0.9392628510793051
+        },
+        "oracle": {
+          "token_mse": 0.07238948790666958,
+          "joint_mse_m2": 4.791974398964764e-05,
+          "contact_mse": 0.008420748849615241,
+          "foot_velocity_m2ps2": 0.003596096549881622,
+          "contact_accuracy": 0.9907051424185435
+        },
+        "joint_gain_percent": 76.09867835739014,
+        "contact_change_percentage_points": 5.144229133923838
+      },
+      "turn_event_a2_s0_right_60": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.14050386132051546,
+          "joint_mse_m2": 0.00016292056831540926,
+          "contact_mse": 0.04821102041581374,
+          "foot_velocity_m2ps2": 0.019323527246403197,
+          "contact_accuracy": 0.9477564334869385
+        },
+        "oracle": {
+          "token_mse": 0.062322367634624246,
+          "joint_mse_m2": 3.328297629347313e-05,
+          "contact_mse": 0.00770648294219427,
+          "foot_velocity_m2ps2": 0.0024104261285780616,
+          "contact_accuracy": 0.9923077086607615
+        },
+        "joint_gain_percent": 79.57104088353148,
+        "contact_change_percentage_points": 4.455127517382296
+      },
+      "turn_event_a2_s0_right_90": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.1590831653525432,
+          "joint_mse_m2": 0.00017777068032955867,
+          "contact_mse": 0.04291592355239118,
+          "foot_velocity_m2ps2": 0.01608204379832993,
+          "contact_accuracy": 0.9525641262531281
+        },
+        "oracle": {
+          "token_mse": 0.06435293831552069,
+          "joint_mse_m2": 3.674926402557806e-05,
+          "contact_mse": 0.007340492542728802,
+          "foot_velocity_m2ps2": 0.0022172053169924764,
+          "contact_accuracy": 0.9924679676691691
+        },
+        "joint_gain_percent": 79.32771368290274,
+        "contact_change_percentage_points": 3.9903841416040975
+      },
+      "turn_event_a2_s1_left_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.18123946531365315,
+          "joint_mse_m2": 0.00025167036057306783,
+          "contact_mse": 0.053936020410522666,
+          "foot_velocity_m2ps2": 0.05906194812657001,
+          "contact_accuracy": 0.9418269475301106
+        },
+        "oracle": {
+          "token_mse": 0.07401447677984833,
+          "joint_mse_m2": 5.223506531516856e-05,
+          "contact_mse": 0.009024414508106322,
+          "foot_velocity_m2ps2": 0.002493879858714839,
+          "contact_accuracy": 0.9903846323490142
+        },
+        "joint_gain_percent": 79.24464955021865,
+        "contact_change_percentage_points": 4.855768481890355
+      },
+      "turn_event_a2_s1_left_60": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.18469388491163652,
+          "joint_mse_m2": 0.0002313451977291455,
+          "contact_mse": 0.049312044965518,
+          "foot_velocity_m2ps2": 0.04663881961023435,
+          "contact_accuracy": 0.9461538771788279
+        },
+        "oracle": {
+          "token_mse": 0.08399005938942233,
+          "joint_mse_m2": 6.842882783833677e-05,
+          "contact_mse": 0.00973331405451366,
+          "foot_velocity_m2ps2": 0.0035361474806753297,
+          "contact_accuracy": 0.9892628411451976
+        },
+        "joint_gain_percent": 70.42133205701899,
+        "contact_change_percentage_points": 4.310896396636965
+      },
+      "turn_event_a2_s1_left_90": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.16862020222470164,
+          "joint_mse_m2": 0.0002254237609880268,
+          "contact_mse": 0.04720775555797445,
+          "foot_velocity_m2ps2": 0.06800599375274033,
+          "contact_accuracy": 0.9488782326380412
+        },
+        "oracle": {
+          "token_mse": 0.07841523280367255,
+          "joint_mse_m2": 7.137918748867378e-05,
+          "contact_mse": 0.009303060354432091,
+          "foot_velocity_m2ps2": 0.005374851438682526,
+          "contact_accuracy": 0.9899038592974345
+        },
+        "joint_gain_percent": 68.33555292670988,
+        "contact_change_percentage_points": 4.1025626659393355
+      },
+      "turn_event_a2_s1_right_120": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.20280638510982196,
+          "joint_mse_m2": 0.0002784385094552514,
+          "contact_mse": 0.06195024061319903,
+          "foot_velocity_m2ps2": 0.07010239707306028,
+          "contact_accuracy": 0.9339743852615356
+        },
+        "oracle": {
+          "token_mse": 0.08057817161704103,
+          "joint_mse_m2": 5.4369015818641245e-05,
+          "contact_mse": 0.010666332367236464,
+          "foot_velocity_m2ps2": 0.0027482998654401554,
+          "contact_accuracy": 0.9883013010025024
+        },
+        "joint_gain_percent": 80.47360046388302,
+        "contact_change_percentage_points": 5.432691574096671
+      },
+      "turn_event_a2_s1_right_60": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.19061704352498055,
+          "joint_mse_m2": 0.00022851096576535687,
+          "contact_mse": 0.044202987729295276,
+          "foot_velocity_m2ps2": 0.06313251134706661,
+          "contact_accuracy": 0.9530449012915294
+        },
+        "oracle": {
+          "token_mse": 0.06900049154646695,
+          "joint_mse_m2": 4.297749906072568e-05,
+          "contact_mse": 0.0061644015994716025,
+          "foot_velocity_m2ps2": 0.0032248782944710305,
+          "contact_accuracy": 0.9937500218550364
+        },
+        "joint_gain_percent": 81.1923690765648,
+        "contact_change_percentage_points": 4.070512056350695
+      },
+      "turn_event_a2_s1_right_90": {
+        "programs": 1,
+        "source_transitions": 10,
+        "teacher_examples": 30,
+        "baseline": {
+          "token_mse": 0.23562375220159687,
+          "joint_mse_m2": 0.00034700413680184284,
+          "contact_mse": 0.06414219942410758,
+          "foot_velocity_m2ps2": 0.1128778556206574,
+          "contact_accuracy": 0.9325320780277253
+        },
+        "oracle": {
+          "token_mse": 0.08832580889575184,
+          "joint_mse_m2": 6.62895465211477e-05,
+          "contact_mse": 0.01421400859253481,
+          "foot_velocity_m2ps2": 0.005837175643925245,
+          "contact_accuracy": 0.9841346363226573
+        },
+        "joint_gain_percent": 80.8966120311694,
+        "contact_change_percentage_points": 5.160255829493199
+      }
+    },
+    "turn_by_timestep": {
+      "0": {
+        "baseline": {
+          "token_mse": 0.017153725687724847,
+          "joint_mse_m2": 1.702226225259235e-05,
+          "contact_mse": 0.0009182597885657944,
+          "foot_velocity_m2ps2": 0.0022678297637968273,
+          "contact_accuracy": 0.9989984052048789
+        },
+        "oracle": {
+          "token_mse": 0.008560404640674178,
+          "joint_mse_m2": 8.189115759036111e-06,
+          "contact_mse": 8.635303400852636e-05,
+          "foot_velocity_m2ps2": 0.0013144672779566867,
+          "contact_accuracy": 0.9999666135344241
+        },
+        "teacher_examples": 128,
+        "joint_gain_percent": 51.89173073755825
+      },
+      "5": {
+        "baseline": {
+          "token_mse": 0.12129183030790752,
+          "joint_mse_m2": 0.00012278381526205825,
+          "contact_mse": 0.026115623521339632,
+          "foot_velocity_m2ps2": 0.00439730690939339,
+          "contact_accuracy": 0.9709201744861073
+        },
+        "oracle": {
+          "token_mse": 0.07061248326984544,
+          "joint_mse_m2": 4.2517933846081884e-05,
+          "contact_mse": 0.0038284902988721115,
+          "foot_velocity_m2ps2": 0.0021321374689351716,
+          "contact_accuracy": 0.9964944070412053
+        },
+        "teacher_examples": 128,
+        "joint_gain_percent": 65.37171144638599
+      },
+      "9": {
+        "baseline": {
+          "token_mse": 0.40102922088570064,
+          "joint_mse_m2": 0.000748004334733802,
+          "contact_mse": 0.15610225419772583,
+          "foot_velocity_m2ps2": 0.08036126215948672,
+          "contact_accuracy": 0.8291600189275212
+        },
+        "oracle": {
+          "token_mse": 0.19835144105470842,
+          "joint_mse_m2": 0.000190314254849808,
+          "contact_mse": 0.03403372490639514,
+          "foot_velocity_m2ps2": 0.005464273033592488,
+          "contact_accuracy": 0.9617722059289614
+        },
+        "teacher_examples": 128,
+        "joint_gain_percent": 74.55706524514505
+      }
+    }
+  },
+  "generation": {
+    "post_hold_terminal_speed_diagnostic": {
+      "evidence_tier": "post_result_endpoint_timing_audit",
+      "speed_over_0_1_mps": 0,
+      "mean_mps": 0.013240170202973585,
+      "max_mps": 0.027816370825560825,
+      "original_command_endpoint_checks_replaced": false
+    },
+    "direction_matches": 72,
+    "turn_delta_error_deg_mean": 1.0323868382676382,
+    "turn_delta_error_deg_max": 3.5602277496447434,
+    "missing_90pct_crossings": 0,
+    "kinematic_successes": 22,
+    "failed_kinematic_checks": {
+      "terminal_speed": 50
+    },
+    "diagnostic_flag_counts": {
+      "short_contact_run_fraction": 14,
+      "mean_joint_acceleration_mps2": 9,
+      "mean_joint_jerk_mps3": 8,
+      "contact_flips_per_channel_s": 6
+    },
+    "sources_with_diagnostic_flags": 23
+  }
+}

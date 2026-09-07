@@ -1,0 +1,64 @@
+{
+  "claims": {
+    "m3q_prediction_gate_passed": false,
+    "m3q_prediction_improvement_pct": 19.41192160225257,
+    "new_m3q_physics": 0
+  },
+  "date": "2026-09-06",
+  "full_suite_passed": 256,
+  "independent_audit": {
+    "grid_files": 20,
+    "grid_forecasts": 3840,
+    "new_parameter_selections": 0,
+    "new_physics": 0,
+    "outer_forecasts": 384,
+    "passed": true,
+    "result_rows": 12672,
+    "selections": 32,
+    "verified_bundle_sha256": "f892d4f8aca4394a79266ce92e43b8732738199cf9205844dc34a1e2592ba8e6",
+    "verifier_sha256": "6a5d899ffa1bd04a4a9736ba07fb36a5a05249b74033ec446e29c30d75c35160"
+  },
+  "public_asset_sha256": {
+    "executed-path-example.json": "416494ad5cf1d9a75062776717dc368b9134ae0b537affaf19207a977ec9c6be",
+    "executed-path-example.png": "4658babfaea659a735252f7436072afbc0d3ef33e01b4cb5a9d3fe21305d6b86",
+    "executed-path-example.svg": "54ff9b3811083df0a2fbdaf8e693c9ad6ab9d435c3c43632a16a25de1d09172c",
+    "execution-research-report.md": "60e544e3599bd22e389fbe52bf8920b0728b5669a270cbe9563a87339abc8fb2",
+    "m3q-protocol.md": "8d269e64b25ba5b5c79953d1d77a0b8597d664a7c0cfc044f75130282e5e27b6",
+    "next-research-plan.md": "591734a6ee452e763a761c21ba5d4a8b724bd1fa95ac7aeea22628246a5bf9e7",
+    "response-evidence.json": "9a43c7b77b4784f8938b15b610f36c5c8f6bd82104cd9efdc39615dd8327b4e8",
+    "selection-evidence.json": "f141693d41a6b41406657b8c110a88ac311e69d8753c65f42d9b66787387493b"
+  },
+  "schema": "kimonav-public-provenance-v1",
+  "source_identities": {
+    "knav/M3Q_BOUNDED_RESPONSE_RESULT.md": "87b00c77d912db82db4c13e1c3e3e6640fe1e64b1e8a6ce36d76cf12a48f9e44",
+    "knav/M3Q_EXECUTABLE_PROTOCOL.md": "8d269e64b25ba5b5c79953d1d77a0b8597d664a7c0cfc044f75130282e5e27b6",
+    "knav/artifacts/m3o-phase-prediction-v0.1/delivery.json": "90e2a402c686397a671c398178e6bea929e77a6ed0ca11af108dfd3ab2b266d6",
+    "knav/artifacts/m3p-tracker-response-v0.1/delivery.json": "713550c76d0ff4d62b3e1d94c00faa4edeff682d5991f908d8a4d4f4341b2157",
+    "knav/artifacts/m3q-bounded-response-v0.1/gates.json": "05a037d4568333f2983cdf88e673d57d8e445db2bd70c6b9272f724c7b6bd39a",
+    "knav/artifacts/m3q-bounded-response-v0.1/independent_verification.json": "e965edb5c3bb8e47f81549b42c2112bf91d8532939097acf226fb6fb6df6d2cf",
+    "knav/artifacts/m3q-bounded-response-v0.1/summary.json": "b428e51386f02aef8eaef5e5e3532d84967b23d97d333fe7dccd82bcc0d42913",
+    "knav/artifacts/m3q-bounded-response-v0.1/verification.json": "f892d4f8aca4394a79266ce92e43b8732738199cf9205844dc34a1e2592ba8e6",
+    "knav/scripts/export_execution_website.py": "4e2d005d268776fa6fcfdc182218273f30c31ac17caf5dd0b914d50a7a294c44"
+  },
+  "torch_seed": 0,
+  "upstream_sources": [
+    "https://research.nvidia.com/labs/sil/projects/kimodo/",
+    "https://research.nvidia.com/labs/sil/projects/ardy/",
+    "https://nvlabs.github.io/GEAR-SONIC/"
+  ],
+  "verification": {
+    "all_rate_bounds_passed": true,
+    "contexts": 24,
+    "families": 4,
+    "future_label_poison_invariant": true,
+    "grid_forecasts": 3840,
+    "identity_matches_m3p": true,
+    "independent_closed_form_max_error": 2.4868995751603507e-14,
+    "inner_forecast_views": 1152,
+    "new_physics": 0,
+    "outer_forecasts": 384,
+    "parameter_selections": 32,
+    "passed": true,
+    "reserved_programs_executed": 0
+  }
+}

@@ -1,0 +1,1918 @@
+{
+  "candidate_captures": 192,
+  "families": 4,
+  "gates": {
+    "bounded_no_preview": {
+      "checks": {
+        "pivot_walk_stop": true,
+        "primary_channels_do_not_regress": false,
+        "primary_improves_10pct": false,
+        "rate_bounds": true,
+        "same_sign_pair": true,
+        "stop": true,
+        "strafe_walk_stop": true,
+        "turn": true,
+        "walk_pivot_stop": true
+      },
+      "passed": false,
+      "primary_reduction_pct": 4.859202687369313
+    },
+    "bounded_preview": {
+      "checks": {
+        "pivot_walk_stop": true,
+        "primary_channels_do_not_regress": false,
+        "primary_improves_10pct": true,
+        "rate_bounds": true,
+        "same_sign_pair": true,
+        "stop": true,
+        "strafe_walk_stop": true,
+        "turn": true,
+        "walk_pivot_stop": true
+      },
+      "passed": false,
+      "primary_reduction_pct": 19.41192160225257
+    },
+    "preview_additional_value_5pct": true
+  },
+  "independent_contexts": 24,
+  "schema": "kimonav-public-response-v1",
+  "scope": "offline development prediction",
+  "source": {
+    "file": "knav/artifacts/m3q-bounded-response-v0.1/summary.json",
+    "sha256": "b428e51386f02aef8eaef5e5e3532d84967b23d97d333fe7dccd82bcc0d42913"
+  },
+  "summary": {
+    "bounded_no_preview": {
+      "banks": {
+        "fresh": {
+          "composite": 0.5541275532573566,
+          "displacement_rmse_m": 0.10215934847383393,
+          "heading_rmse_deg": 2.272399328172344,
+          "missing_samples": 0,
+          "mse": [
+            0.010436532480598233,
+            0.030371205615532488,
+            0.0015729830383262322
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14496,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.17427336461872905
+        },
+        "original": {
+          "composite": 0.5580685244332615,
+          "displacement_rmse_m": 0.09543596827253303,
+          "heading_rmse_deg": 2.4613408107499297,
+          "missing_samples": 172,
+          "mse": [
+            0.00910802404011593,
+            0.03118326719468074,
+            0.0018454328220248043
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14324,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.17658784554629103
+        }
+      },
+      "endpoint_0.2s": {
+        "composite": 0.34175362252260905,
+        "displacement_rmse_m": 0.037835890101544443,
+        "heading_rmse_deg": 1.187879244429893,
+        "missing_samples": 0,
+        "mse": [
+          0.0014315545797761488,
+          0.02194563222179888,
+          0.0004298325727749019
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.14814058262947016
+      },
+      "endpoint_0.5s": {
+        "composite": 0.36493550807167385,
+        "displacement_rmse_m": 0.056655857599828496,
+        "heading_rmse_deg": 2.193185717472365,
+        "missing_samples": 0,
+        "mse": [
+          0.0032098862003720444,
+          0.02174532149908064,
+          0.001465229160199341
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.14746294958083755
+      },
+      "endpoint_10s": {
+        "composite": 0.30041668791911813,
+        "displacement_rmse_m": 0.17345810189114394,
+        "heading_rmse_deg": 3.4350784018067104,
+        "missing_samples": 0,
+        "mse": [
+          0.030087713111678474,
+          0.0006988409932455718,
+          0.0035944135500154406
+        ],
+        "observed_candidates": 64,
+        "observed_contexts": 8,
+        "observed_samples": 64,
+        "requested_candidates": 64,
+        "requested_samples": 64,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.02643560086787459
+      },
+      "endpoint_1s": {
+        "composite": 0.4864654507407564,
+        "displacement_rmse_m": 0.07892871220775481,
+        "heading_rmse_deg": 2.1849134291362704,
+        "missing_samples": 0,
+        "mse": [
+          0.006229741610774584,
+          0.02825807276305585,
+          0.0014541968620241455
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.16810137644604772
+      },
+      "endpoint_2s": {
+        "composite": 0.6038276413567407,
+        "displacement_rmse_m": 0.12079528030092218,
+        "heading_rmse_deg": 2.8763114584994116,
+        "missing_samples": 2,
+        "mse": [
+          0.014591499742978358,
+          0.030689184474738295,
+          0.0025201509696925663
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.17518328822903825
+      },
+      "endpoint_3s": {
+        "composite": 0.586994230614124,
+        "displacement_rmse_m": 0.13760750677995,
+        "heading_rmse_deg": 2.3208895756607895,
+        "missing_samples": 2,
+        "mse": [
+          0.018935825922193988,
+          0.027758739590176797,
+          0.0016408303896425843
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.16660954231428882
+      },
+      "endpoint_5s": {
+        "composite": 0.34856541215704134,
+        "displacement_rmse_m": 0.14823081718743744,
+        "heading_rmse_deg": 2.6581484588353272,
+        "missing_samples": 1,
+        "mse": [
+          0.021972375164055497,
+          0.009578909814247133,
+          0.0021523515175311354
+        ],
+        "observed_candidates": 127,
+        "observed_contexts": 16,
+        "observed_samples": 127,
+        "requested_candidates": 128,
+        "requested_samples": 128,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.09787190513240832
+      },
+      "families": {
+        "pivot_walk_stop": {
+          "composite": 0.5840780431650429,
+          "displacement_rmse_m": 0.10676949091329724,
+          "heading_rmse_deg": 2.42579756730829,
+          "missing_samples": 0,
+          "mse": [
+            0.011399724189884662,
+            0.031688911943379534,
+            0.001792519329547954
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.1780137970590469
+        },
+        "same_sign_pair": {
+          "composite": 0.4980290544520018,
+          "displacement_rmse_m": 0.09957486902967687,
+          "heading_rmse_deg": 2.182463069619883,
+          "missing_samples": 94,
+          "mse": [
+            0.009915154542277302,
+            0.026967979109171845,
+            0.0014509369552784014
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7154,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.16421930187761682
+        },
+        "strafe_walk_stop": {
+          "composite": 0.6383612671265163,
+          "displacement_rmse_m": 0.10014085621062105,
+          "heading_rmse_deg": 1.508238787605767,
+          "missing_samples": 78,
+          "mse": [
+            0.010028191082596281,
+            0.03693670159298078,
+            0.0006929389058938479
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7170,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.19218923381131622
+        },
+        "walk_pivot_stop": {
+          "composite": 0.5039237906376752,
+          "displacement_rmse_m": 0.08801160847678038,
+          "heading_rmse_deg": 3.0857043699017104,
+          "missing_samples": 0,
+          "mse": [
+            0.00774604322667008,
+            0.027515352974894294,
+            0.00290043652998187
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.16587752401966427
+        }
+      },
+      "primary": {
+        "composite": 0.5560980388453091,
+        "displacement_rmse_m": 0.09885483427914428,
+        "heading_rmse_deg": 2.368754661561771,
+        "missing_samples": 172,
+        "mse": [
+          0.009772278260357078,
+          0.030777236405106614,
+          0.0017092079301755183
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 28820,
+        "requested_candidates": 192,
+        "requested_samples": 28992,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.17543442195050155
+      },
+      "stop": {
+        "composite": 0.28035405472512154,
+        "displacement_rmse_m": 0.15809600225106876,
+        "heading_rmse_deg": 2.8770101289346894,
+        "missing_samples": 102,
+        "mse": [
+          0.024994345927769935,
+          0.0030022119711267353,
+          0.0025213754329320055
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 9530,
+        "requested_candidates": 192,
+        "requested_samples": 9632,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.05479244447117445
+      },
+      "turn": {
+        "composite": 0.35491056546660743,
+        "displacement_rmse_m": 0.10981041512690749,
+        "heading_rmse_deg": 2.4243010000004985,
+        "missing_samples": 29,
+        "mse": [
+          0.012058327270343753,
+          0.01585127612824187,
+          0.0017903082643246355
+        ],
+        "observed_candidates": 144,
+        "observed_contexts": 18,
+        "observed_samples": 11939,
+        "requested_candidates": 144,
+        "requested_samples": 11968,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.12590185117083016
+      },
+      "whole": {
+        "composite": 0.5068440936676051,
+        "displacement_rmse_m": 0.12513286283599512,
+        "heading_rmse_deg": 2.3271260873504027,
+        "missing_samples": 272,
+        "mse": [
+          0.015658233361531965,
+          0.02418572899575559,
+          0.001649660457860215
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 57520,
+        "requested_candidates": 192,
+        "requested_samples": 57792,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.15551761635183195
+      }
+    },
+    "bounded_preview": {
+      "banks": {
+        "fresh": {
+          "composite": 0.4670588149176056,
+          "displacement_rmse_m": 0.09916661249643835,
+          "heading_rmse_deg": 2.272399328172344,
+          "missing_samples": 0,
+          "mse": [
+            0.009834017034018762,
+            0.02483298071630025,
+            0.0015729830383262322
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14496,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.1575848365684346
+        },
+        "original": {
+          "composite": 0.4750159546271275,
+          "displacement_rmse_m": 0.09306850559034112,
+          "heading_rmse_deg": 2.4613408107499297,
+          "missing_samples": 172,
+          "mse": [
+            0.008661746732819357,
+            0.025828249718121015,
+            0.0018454328220248043
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14324,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.16071169751490094
+        }
+      },
+      "endpoint_0.2s": {
+        "composite": 0.3106619032420363,
+        "displacement_rmse_m": 0.01846520114357803,
+        "heading_rmse_deg": 1.187879244429893,
+        "missing_samples": 0,
+        "mse": [
+          0.00034096365327279535,
+          0.02046039856651835,
+          0.0004298325727749019
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.14303984957527868
+      },
+      "endpoint_0.5s": {
+        "composite": 0.34394112253023335,
+        "displacement_rmse_m": 0.05143192917774117,
+        "heading_rmse_deg": 2.193185717472365,
+        "missing_samples": 0,
+        "mse": [
+          0.0026452433389441837,
+          0.020645812084586573,
+          0.001465229160199341
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.14368650627176713
+      },
+      "endpoint_10s": {
+        "composite": 0.30764996890479507,
+        "displacement_rmse_m": 0.17616050639853872,
+        "heading_rmse_deg": 3.4350784018067104,
+        "missing_samples": 0,
+        "mse": [
+          0.031032524014589606,
+          0.0006556313268912542,
+          0.0035944135500154406
+        ],
+        "observed_candidates": 64,
+        "observed_contexts": 8,
+        "observed_samples": 64,
+        "requested_candidates": 64,
+        "requested_samples": 64,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.02560529880495938
+      },
+      "endpoint_1s": {
+        "composite": 0.4563089340549393,
+        "displacement_rmse_m": 0.07586448130109337,
+        "heading_rmse_deg": 2.1849134291362704,
+        "missing_samples": 0,
+        "mse": [
+          0.0057554195230839445,
+          0.026489314061089175,
+          0.0014541968620241455
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.16275538105110127
+      },
+      "endpoint_2s": {
+        "composite": 0.5616446558970672,
+        "displacement_rmse_m": 0.1168973547980952,
+        "heading_rmse_deg": 2.8763114584994116,
+        "missing_samples": 2,
+        "mse": [
+          0.01366499155879175,
+          0.0283629938098153,
+          0.0025201509696925663
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.16841316400393203
+      },
+      "endpoint_3s": {
+        "composite": 0.5924000706097637,
+        "displacement_rmse_m": 0.13539659770911627,
+        "heading_rmse_deg": 2.3208895756607895,
+        "missing_samples": 2,
+        "mse": [
+          0.01833223867120427,
+          0.028463151618564195,
+          0.0016408303896425843
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.16871025937554657
+      },
+      "endpoint_5s": {
+        "composite": 0.3891182063412573,
+        "displacement_rmse_m": 0.15473211948421012,
+        "heading_rmse_deg": 2.6581484588353272,
+        "missing_samples": 1,
+        "mse": [
+          0.023942028800075878,
+          0.011208293251420252,
+          0.0021523515175311354
+        ],
+        "observed_candidates": 127,
+        "observed_contexts": 16,
+        "observed_samples": 127,
+        "requested_candidates": 128,
+        "requested_samples": 128,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.10586922712205021
+      },
+      "families": {
+        "pivot_walk_stop": {
+          "composite": 0.4656083936397819,
+          "displacement_rmse_m": 0.10102045222252813,
+          "heading_rmse_deg": 2.42579756730829,
+          "missing_samples": 0,
+          "mse": [
+            0.010205131767244089,
+            0.024364168838159745,
+            0.001792519329547954
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.15609025862673093
+        },
+        "same_sign_pair": {
+          "composite": 0.45755335050868656,
+          "displacement_rmse_m": 0.10625093729652907,
+          "heading_rmse_deg": 2.182463069619883,
+          "missing_samples": 94,
+          "mse": [
+            0.011289261676390952,
+            0.02346293383005914,
+            0.0014509369552784014
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7154,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.1531761529418308
+        },
+        "strafe_walk_stop": {
+          "composite": 0.524397080118434,
+          "displacement_rmse_m": 0.09145794033431122,
+          "heading_rmse_deg": 1.508238787605767,
+          "missing_samples": 78,
+          "mse": [
+            0.00836455485019443,
+            0.030179914350661263,
+            0.0006929389058938479
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7170,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.17372367239573674
+        },
+        "walk_pivot_stop": {
+          "composite": 0.4365907148225636,
+          "displacement_rmse_m": 0.08445459868975028,
+          "heading_rmse_deg": 3.0857043699017104,
+          "missing_samples": 0,
+          "mse": [
+            0.007132579239846768,
+            0.023315443849962373,
+            0.00290043652998187
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.1526939548572974
+        }
+      },
+      "primary": {
+        "composite": 0.47103738477236656,
+        "displacement_rmse_m": 0.09616590811414959,
+        "heading_rmse_deg": 2.368754661561771,
+        "missing_samples": 172,
+        "mse": [
+          0.009247881883419061,
+          0.02533061521721063,
+          0.0017092079301755183
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 28820,
+        "requested_candidates": 192,
+        "requested_samples": 28992,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.15915594622008514
+      },
+      "stop": {
+        "composite": 0.2822142660073763,
+        "displacement_rmse_m": 0.15934845080556312,
+        "heading_rmse_deg": 2.8770101289346894,
+        "missing_samples": 102,
+        "mse": [
+          0.02539192877413297,
+          0.0029041358815997255,
+          0.0025213754329320055
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 9530,
+        "requested_candidates": 192,
+        "requested_samples": 9632,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.053890035086272915
+      },
+      "turn": {
+        "composite": 0.26090840268352405,
+        "displacement_rmse_m": 0.11010069114466009,
+        "heading_rmse_deg": 2.4243010000004985,
+        "missing_samples": 29,
+        "mse": [
+          0.012122162190531834,
+          0.009470222997777951,
+          0.0017903082643246355
+        ],
+        "observed_candidates": 144,
+        "observed_contexts": 18,
+        "observed_samples": 11939,
+        "requested_candidates": 144,
+        "requested_samples": 11968,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.09731507076387476
+      },
+      "whole": {
+        "composite": 0.45605796166691076,
+        "displacement_rmse_m": 0.12474384641654326,
+        "heading_rmse_deg": 2.3271260873504027,
+        "missing_samples": 272,
+        "mse": [
+          0.015561027218794132,
+          0.020812343540998753,
+          0.001649660457860215
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 57520,
+        "requested_candidates": 192,
+        "requested_samples": 57792,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.1442648382004387
+      }
+    },
+    "no_preview": {
+      "banks": {
+        "fresh": {
+          "composite": 3.694794935507561,
+          "displacement_rmse_m": 0.37579040240741685,
+          "heading_rmse_deg": 3.1232251145058214,
+          "missing_samples": 0,
+          "mse": [
+            0.1412184265415283,
+            0.16776852281607776,
+            0.002971401318218178
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14496,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.40959556005415604
+        },
+        "original": {
+          "composite": 3.7519330241556808,
+          "displacement_rmse_m": 0.37190223220227264,
+          "heading_rmse_deg": 3.2571031484871087,
+          "missing_samples": 172,
+          "mse": [
+            0.13831127031703314,
+            0.17306842737020323,
+            0.0032316011938525358
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14324,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.41601493647488574
+        }
+      },
+      "endpoint_0.2s": {
+        "composite": 1.0330626066961925,
+        "displacement_rmse_m": 0.032441021631095295,
+        "heading_rmse_deg": 1.3825989531840723,
+        "missing_samples": 0,
+        "mse": [
+          0.001052419884469193,
+          0.06870963429727629,
+          0.0005823005262978288
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.262125226365713
+      },
+      "endpoint_0.5s": {
+        "composite": 2.04571440960551,
+        "displacement_rmse_m": 0.12358556131446627,
+        "heading_rmse_deg": 2.641164218500096,
+        "missing_samples": 0,
+        "mse": [
+          0.015273390965411702,
+          0.1279248968337837,
+          0.0021249344875491267
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.35766590113370283
+      },
+      "endpoint_10s": {
+        "composite": 6153.561888610322,
+        "displacement_rmse_m": 16.07159876121608,
+        "heading_rmse_deg": 50.11506083628181,
+        "missing_samples": 0,
+        "mse": [
+          258.2962867415223,
+          269.50867434149995,
+          0.7650525358022541
+        ],
+        "observed_candidates": 64,
+        "observed_contexts": 8,
+        "observed_samples": 64,
+        "requested_candidates": 64,
+        "requested_samples": 64,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 16.416719353802087
+      },
+      "endpoint_1s": {
+        "composite": 1.9680004785727405,
+        "displacement_rmse_m": 0.21759152261744752,
+        "heading_rmse_deg": 4.701508365356265,
+        "missing_samples": 0,
+        "mse": [
+          0.04734607071497917,
+          0.10123442682184335,
+          0.006733318555155062
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.31817357970429183
+      },
+      "endpoint_2s": {
+        "composite": 4.870517470419642,
+        "displacement_rmse_m": 0.41011107745649944,
+        "heading_rmse_deg": 2.959985070221444,
+        "missing_samples": 2,
+        "mse": [
+          0.1681910958525309,
+          0.23218109772269213,
+          0.0026689090618770435
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.4818517383207122
+      },
+      "endpoint_3s": {
+        "composite": 8.754398918189453,
+        "displacement_rmse_m": 0.7064545731931023,
+        "heading_rmse_deg": 2.3850451088722506,
+        "missing_samples": 2,
+        "mse": [
+          0.49907806398544846,
+          0.3089106169474184,
+          0.0017327979676093582
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.5557972804426254
+      },
+      "endpoint_5s": {
+        "composite": 53.30421481857827,
+        "displacement_rmse_m": 2.0413036966414313,
+        "heading_rmse_deg": 5.672413906695543,
+        "missing_samples": 1,
+        "mse": [
+          4.166920781921973,
+          1.2469018975289274,
+          0.009801455248421184
+        ],
+        "observed_candidates": 127,
+        "observed_contexts": 16,
+        "observed_samples": 127,
+        "requested_candidates": 128,
+        "requested_samples": 128,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 1.1166476156464615
+      },
+      "families": {
+        "pivot_walk_stop": {
+          "composite": 2.4469736922498107,
+          "displacement_rmse_m": 0.27753872373125793,
+          "heading_rmse_deg": 2.8874505727373023,
+          "missing_samples": 0,
+          "mse": [
+            0.07702774317037553,
+            0.11996671026127577,
+            0.0025397083839475178
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.34636210858186517
+        },
+        "same_sign_pair": {
+          "composite": 3.356245836642787,
+          "displacement_rmse_m": 0.33778452262663977,
+          "heading_rmse_deg": 1.9432785832943769,
+          "missing_samples": 94,
+          "mse": [
+            0.11409838372610692,
+            0.1615165785056876,
+            0.0011503364041796406
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7154,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.40189125208902915
+        },
+        "strafe_walk_stop": {
+          "composite": 4.901542895036661,
+          "displacement_rmse_m": 0.36780867043955234,
+          "heading_rmse_deg": 4.915976379188594,
+          "missing_samples": 78,
+          "mse": [
+            0.13528321805051122,
+            0.24931979991539546,
+            0.0073616354984368014
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7170,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.49931933661274874
+        },
+        "walk_pivot_stop": {
+          "composite": 4.188693495397225,
+          "displacement_rmse_m": 0.4823381062803655,
+          "heading_rmse_deg": 2.1085506511576404,
+          "missing_samples": 0,
+          "mse": [
+            0.23265004877012918,
+            0.15087081169020317,
+            0.0013543247375774707
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.3884209207679256
+        }
+      },
+      "primary": {
+        "composite": 3.723363979831621,
+        "displacement_rmse_m": 0.3738513721110045,
+        "heading_rmse_deg": 3.1908663428420616,
+        "missing_samples": 172,
+        "mse": [
+          0.13976484842928075,
+          0.17041847509314054,
+          0.0031015012560353574
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 28820,
+        "requested_candidates": 192,
+        "requested_samples": 28992,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.41281772623415836
+      },
+      "stop": {
+        "composite": 1320.398872568862,
+        "displacement_rmse_m": 8.502462046128166,
+        "heading_rmse_deg": 28.114231939788922,
+        "missing_samples": 102,
+        "mse": [
+          72.29186084584994,
+          48.284909914155655,
+          0.24077266621633653
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 9530,
+        "requested_candidates": 192,
+        "requested_samples": 9632,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 6.94873441096691
+      },
+      "turn": {
+        "composite": 511.97984065096534,
+        "displacement_rmse_m": 5.703161172632842,
+        "heading_rmse_deg": 18.30594711400218,
+        "missing_samples": 29,
+        "mse": [
+          32.52604736102681,
+          16.187338370920937,
+          0.10207964284565427
+        ],
+        "observed_candidates": 144,
+        "observed_contexts": 18,
+        "observed_samples": 11939,
+        "requested_candidates": 144,
+        "requested_samples": 11968,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 4.023349148523024
+      },
+      "whole": {
+        "composite": 282.495010848924,
+        "displacement_rmse_m": 4.170782739558798,
+        "heading_rmse_deg": 13.209586824188914,
+        "missing_samples": 272,
+        "mse": [
+          17.395428660601592,
+          9.244223644299174,
+          0.053153663500486746
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 57520,
+        "requested_candidates": 192,
+        "requested_samples": 57792,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 3.0404314898216622
+      }
+    },
+    "persistence": {
+      "banks": {
+        "fresh": {
+          "composite": 10.117373037125402,
+          "displacement_rmse_m": 0.5182920996975056,
+          "heading_rmse_deg": 38.602518730258495,
+          "missing_samples": 0,
+          "mse": [
+            0.2686267006088491,
+            0.1965354091414964,
+            0.4539270043493815
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14496,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.44332314302492304
+        },
+        "original": {
+          "composite": 10.155772881025543,
+          "displacement_rmse_m": 0.5175760730385667,
+          "heading_rmse_deg": 38.56032736539183,
+          "missing_samples": 172,
+          "mse": [
+            0.2678849913820237,
+            0.2002771213484441,
+            0.45293529011263994
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14324,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.44752331933480755
+        }
+      },
+      "endpoint_0.2s": {
+        "composite": 1.1790386466145517,
+        "displacement_rmse_m": 0.03189948380459753,
+        "heading_rmse_deg": 4.5421422511296905,
+        "missing_samples": 0,
+        "mse": [
+          0.0010175770669997798,
+          0.07437073389465794,
+          0.006284579116104027
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.2727099812890206
+      },
+      "endpoint_0.5s": {
+        "composite": 3.778903713448223,
+        "displacement_rmse_m": 0.13791635088488158,
+        "heading_rmse_deg": 13.535038967523475,
+        "missing_samples": 0,
+        "mse": [
+          0.01902091984140178,
+          0.20315734528018128,
+          0.055805082700575236
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.45072979187111795
+      },
+      "endpoint_10s": {
+        "composite": 215.417263747408,
+        "displacement_rmse_m": 4.746665921267846,
+        "heading_rmse_deg": 89.93841238961889,
+        "missing_samples": 0,
+        "mse": [
+          22.53083736812553,
+          0.04706272816727246,
+          2.4640253370827723
+        ],
+        "observed_candidates": 64,
+        "observed_contexts": 8,
+        "observed_samples": 64,
+        "requested_candidates": 64,
+        "requested_samples": 64,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.21693945737756526
+      },
+      "endpoint_1s": {
+        "composite": 4.7373041974778864,
+        "displacement_rmse_m": 0.3090921087887652,
+        "heading_rmse_deg": 27.229415487792824,
+        "missing_samples": 0,
+        "mse": [
+          0.09553793171548584,
+          0.09920370648325494,
+          0.2258558649992252
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.3149661989535622
+      },
+      "endpoint_2s": {
+        "composite": 13.764584096351571,
+        "displacement_rmse_m": 0.5880950549197125,
+        "heading_rmse_deg": 46.337475348088525,
+        "missing_samples": 2,
+        "mse": [
+          0.3458557936210196,
+          0.2514541777240975,
+          0.6540628330474109
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.5014520692190805
+      },
+      "endpoint_3s": {
+        "composite": 23.329183958871926,
+        "displacement_rmse_m": 0.9364125699134745,
+        "heading_rmse_deg": 56.508178490159544,
+        "missing_samples": 2,
+        "mse": [
+          0.8768685010919578,
+          0.3630171821975899,
+          0.9726964967837065
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.602509072294841
+      },
+      "endpoint_5s": {
+        "composite": 56.98905205222024,
+        "displacement_rmse_m": 2.027567956553582,
+        "heading_rmse_deg": 72.54590895289957,
+        "missing_samples": 1,
+        "mse": [
+          4.111031818442869,
+          0.3501511118452138,
+          1.6031737314580152
+        ],
+        "observed_candidates": 127,
+        "observed_contexts": 16,
+        "observed_samples": 127,
+        "requested_candidates": 128,
+        "requested_samples": 128,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.5917356773469162
+      },
+      "families": {
+        "pivot_walk_stop": {
+          "composite": 14.469666753444395,
+          "displacement_rmse_m": 0.3487382127523313,
+          "heading_rmse_deg": 58.38845865997075,
+          "missing_samples": 0,
+          "mse": [
+            0.12161834103369028,
+            0.14121946547144554,
+            1.0385053948354024
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.37579178473118
+        },
+        "same_sign_pair": {
+          "composite": 8.827654080987465,
+          "displacement_rmse_m": 0.36964753496287,
+          "heading_rmse_deg": 39.268832207672006,
+          "missing_samples": 94,
+          "mse": [
+            0.1366393001041262,
+            0.17204777799336576,
+            0.4697326063563822
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7154,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.4147864245528845
+        },
+        "strafe_walk_stop": {
+          "composite": 6.598840037719536,
+          "displacement_rmse_m": 0.48745537482022255,
+          "heading_rmse_deg": 20.23544544176171,
+          "missing_samples": 78,
+          "mse": [
+            0.23761274244112365,
+            0.21963305317197082,
+            0.12473268556491306
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7170,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.46865024610253947
+        },
+        "walk_pivot_stop": {
+          "composite": 10.650130964150497,
+          "displacement_rmse_m": 0.7597058643993776,
+          "heading_rmse_deg": 24.35939362595798,
+          "missing_samples": 0,
+          "mse": [
+            0.5771530004028055,
+            0.26072476434309894,
+            0.18075390216734522
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.5106121466858177
+        }
+      },
+      "primary": {
+        "composite": 10.136572959075473,
+        "displacement_rmse_m": 0.5179342101034035,
+        "heading_rmse_deg": 38.581428815209414,
+        "missing_samples": 172,
+        "mse": [
+          0.26825584599543645,
+          0.19840626524497026,
+          0.45343114723101063
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 28820,
+        "requested_candidates": 192,
+        "requested_samples": 28992,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.4454281819159743
+      },
+      "stop": {
+        "composite": 84.10365869280116,
+        "displacement_rmse_m": 2.860565559633289,
+        "heading_rmse_deg": 67.72300458443348,
+        "missing_samples": 102,
+        "mse": [
+          8.18283532096011,
+          0.04221088998679735,
+          1.3970989637956535
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 9530,
+        "requested_candidates": 192,
+        "requested_samples": 9632,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.20545288994510968
+      },
+      "turn": {
+        "composite": 32.231467506490524,
+        "displacement_rmse_m": 1.6730249010141232,
+        "heading_rmse_deg": 49.373338079996465,
+        "missing_samples": 29,
+        "mse": [
+          2.7990123194133165,
+          0.052691161556753546,
+          0.7425739605849453
+        ],
+        "observed_candidates": 144,
+        "observed_contexts": 18,
+        "observed_samples": 11939,
+        "requested_candidates": 144,
+        "requested_samples": 11968,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.22954555442603009
+      },
+      "whole": {
+        "composite": 40.21749560031308,
+        "displacement_rmse_m": 1.8327976071002043,
+        "heading_rmse_deg": 51.39149879536259,
+        "missing_samples": 272,
+        "mse": [
+          3.3591470685922347,
+          0.23091634354040647,
+          0.8045208479703061
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 57520,
+        "requested_candidates": 192,
+        "requested_samples": 57792,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.48053755684691957
+      }
+    },
+    "preview": {
+      "banks": {
+        "fresh": {
+          "composite": 5.849881856247785,
+          "displacement_rmse_m": 0.5634506326245651,
+          "heading_rmse_deg": 5.941027474428538,
+          "missing_samples": 0,
+          "mse": [
+            0.31747661540502253,
+            0.20834487245471953,
+            0.010751717795290749
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14496,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.45644810488676535
+        },
+        "original": {
+          "composite": 5.8119897803431035,
+          "displacement_rmse_m": 0.5593401366826476,
+          "heading_rmse_deg": 6.031045314700045,
+          "missing_samples": 172,
+          "mse": [
+            0.31286138850416295,
+            0.20814073993227566,
+            0.011080004030038277
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14324,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.456224440305729
+        }
+      },
+      "endpoint_0.2s": {
+        "composite": 1.5394532112551642,
+        "displacement_rmse_m": 0.041553362929156554,
+        "heading_rmse_deg": 2.440687549589661,
+        "missing_samples": 0,
+        "mse": [
+          0.0017266819707222021,
+          0.10160151811537989,
+          0.0018145924796022991
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.3187499303770589
+      },
+      "endpoint_0.5s": {
+        "composite": 4.773600236148898,
+        "displacement_rmse_m": 0.17127250708188144,
+        "heading_rmse_deg": 4.756909590099343,
+        "missing_samples": 0,
+        "mse": [
+          0.02933427168211313,
+          0.3006261456279767,
+          0.006892940501439615
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.5482938497083263
+      },
+      "endpoint_10s": {
+        "composite": 11.844626161011453,
+        "displacement_rmse_m": 1.0690731708357037,
+        "heading_rmse_deg": 23.77630336650662,
+        "missing_samples": 0,
+        "mse": [
+          1.1429174446007058,
+          0.02942586788074155,
+          0.17220406612596312
+        ],
+        "observed_candidates": 64,
+        "observed_contexts": 8,
+        "observed_samples": 64,
+        "requested_candidates": 64,
+        "requested_samples": 64,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.1715396976817365
+      },
+      "endpoint_1s": {
+        "composite": 6.7807180640048195,
+        "displacement_rmse_m": 0.4477035530062133,
+        "heading_rmse_deg": 7.281826951895906,
+        "missing_samples": 0,
+        "mse": [
+          0.20043847137438722,
+          0.333021203326827,
+          0.016152339828746802
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.5770798933655781
+      },
+      "endpoint_2s": {
+        "composite": 6.8581756336497,
+        "displacement_rmse_m": 0.7291447697140155,
+        "heading_rmse_deg": 7.8219808056927755,
+        "missing_samples": 2,
+        "mse": [
+          0.5316520952013047,
+          0.15010629038257994,
+          0.018637524484015733
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.3874355306145526
+      },
+      "endpoint_3s": {
+        "composite": 6.628253757823978,
+        "displacement_rmse_m": 0.6692904598839845,
+        "heading_rmse_deg": 2.7372709750075988,
+        "missing_samples": 2,
+        "mse": [
+          0.44794971969171543,
+          0.19374956453863937,
+          0.0022823924385890885
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.440169926890331
+      },
+      "endpoint_5s": {
+        "composite": 9.475481164742325,
+        "displacement_rmse_m": 1.0239937746765684,
+        "heading_rmse_deg": 5.463545040995661,
+        "missing_samples": 1,
+        "mse": [
+          1.048563250576367,
+          0.04306182717752824,
+          0.009092928803089921
+        ],
+        "observed_candidates": 127,
+        "observed_contexts": 16,
+        "observed_samples": 127,
+        "requested_candidates": 128,
+        "requested_samples": 128,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.2075134385468282
+      },
+      "families": {
+        "pivot_walk_stop": {
+          "composite": 0.5068787724034866,
+          "displacement_rmse_m": 0.11215109634847013,
+          "heading_rmse_deg": 1.810919545841493,
+          "missing_samples": 0,
+          "mse": [
+            0.01257786841216383,
+            0.02640139449505327,
+            0.0009989713835843617
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.16248505929793444
+        },
+        "same_sign_pair": {
+          "composite": 0.4750891484806157,
+          "displacement_rmse_m": 0.10833602574973865,
+          "heading_rmse_deg": 1.6402315999019823,
+          "missing_samples": 94,
+          "mse": [
+            0.011736694475248034,
+            0.024861295947318212,
+            0.0008195304305133296
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7154,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.15767465220294039
+        },
+        "strafe_walk_stop": {
+          "composite": 14.219571479569504,
+          "displacement_rmse_m": 0.8436282177709125,
+          "heading_rmse_deg": 7.0367038927800625,
+          "missing_samples": 78,
+          "mse": [
+            0.7117085698193261,
+            0.5483440839707708,
+            0.015083192974355295
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7170,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.740502588767096
+        },
+        "walk_pivot_stop": {
+          "composite": 8.12220387272817,
+          "displacement_rmse_m": 0.7243292587709218,
+          "heading_rmse_deg": 9.373027211219775,
+          "missing_samples": 0,
+          "mse": [
+            0.5246528751116329,
+            0.23336445036084807,
+            0.026761748862205063
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.4830780996493715
+        }
+      },
+      "primary": {
+        "composite": 5.830935818295445,
+        "displacement_rmse_m": 0.5613991467348278,
+        "heading_rmse_deg": 5.986205602879011,
+        "missing_samples": 172,
+        "mse": [
+          0.31516900195459274,
+          0.20824280619349758,
+          0.010915860912664515
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 28820,
+        "requested_candidates": 192,
+        "requested_samples": 28992,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.45633628629936673
+      },
+      "stop": {
+        "composite": 5.53230455871973,
+        "displacement_rmse_m": 0.7563419635775607,
+        "heading_rmse_deg": 11.047669012962453,
+        "missing_samples": 102,
+        "mse": [
+          0.5720531658683602,
+          0.0241891790231358,
+          0.03717885784506727
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 9530,
+        "requested_candidates": 192,
+        "requested_samples": 9632,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.15552870803531996
+      },
+      "turn": {
+        "composite": 9.539840594639033,
+        "displacement_rmse_m": 1.005722826752932,
+        "heading_rmse_deg": 13.858626836908368,
+        "missing_samples": 29,
+        "mse": [
+          1.011478404251908,
+          0.03176879174038427,
+          0.05850529008632805
+        ],
+        "observed_candidates": 144,
+        "observed_contexts": 18,
+        "observed_samples": 11939,
+        "requested_candidates": 144,
+        "requested_samples": 11968,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.1782380199070453
+      },
+      "whole": {
+        "composite": 7.047287433025449,
+        "displacement_rmse_m": 0.7693090269412612,
+        "heading_rmse_deg": 8.397983306240985,
+        "missing_samples": 272,
+        "mse": [
+          0.5918363789333102,
+          0.12691556076655292,
+          0.021483485802216137
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 57520,
+        "requested_candidates": 192,
+        "requested_samples": 57792,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.35625210282404357
+      }
+    },
+    "reference": {
+      "banks": {
+        "fresh": {
+          "composite": 0.5806537628670603,
+          "displacement_rmse_m": 0.10154234689244127,
+          "heading_rmse_deg": 2.2627711356517914,
+          "missing_samples": 0,
+          "mse": [
+            0.010310848212424875,
+            0.032242246901261325,
+            0.0015596817681069067
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14496,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.17956126225124763
+        },
+        "original": {
+          "composite": 0.5883464022629047,
+          "displacement_rmse_m": 0.0949267782940967,
+          "heading_rmse_deg": 2.433844707659958,
+          "missing_samples": 172,
+          "mse": [
+            0.009011093237296588,
+            0.03331183219304074,
+            0.0018044317664315454
+          ],
+          "observed_candidates": 96,
+          "observed_contexts": 24,
+          "observed_samples": 14324,
+          "requested_candidates": 96,
+          "requested_samples": 14496,
+          "total_candidates": 96,
+          "velocity_rmse_m_s": 0.18251529303880468
+        }
+      },
+      "endpoint_0.2s": {
+        "composite": 0.4078942453878309,
+        "displacement_rmse_m": 0.03358686734630157,
+        "heading_rmse_deg": 0.9905938829346143,
+        "missing_samples": 0,
+        "mse": [
+          0.0011280776581380585,
+          0.026677530726771745,
+          0.000298913836603236
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.16333257705299253
+      },
+      "endpoint_0.5s": {
+        "composite": 0.3449240202913517,
+        "displacement_rmse_m": 0.05403312306652703,
+        "heading_rmse_deg": 2.1405574384112085,
+        "missing_samples": 0,
+        "mse": [
+          0.0029195783883224553,
+          0.02060916164312891,
+          0.0013957527976394839
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.14355891349243666
+      },
+      "endpoint_10s": {
+        "composite": 0.29807064408056255,
+        "displacement_rmse_m": 0.1724056076012884,
+        "heading_rmse_deg": 3.4757346861502754,
+        "missing_samples": 0,
+        "mse": [
+          0.02972369353236943,
+          0.0006820262515658359,
+          0.0036800012917194867
+        ],
+        "observed_candidates": 64,
+        "observed_contexts": 8,
+        "observed_samples": 64,
+        "requested_candidates": 64,
+        "requested_samples": 64,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.026115632321769198
+      },
+      "endpoint_1s": {
+        "composite": 0.45389547400012603,
+        "displacement_rmse_m": 0.07882271371382704,
+        "heading_rmse_deg": 2.1653185549251903,
+        "missing_samples": 0,
+        "mse": [
+          0.006213020197211937,
+          0.026088184634108547,
+          0.00142823058822417
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 192,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.161518372435177
+      },
+      "endpoint_2s": {
+        "composite": 0.5832359822159997,
+        "displacement_rmse_m": 0.11986424843166148,
+        "heading_rmse_deg": 2.9211772659788906,
+        "missing_samples": 2,
+        "mse": [
+          0.014367438052087062,
+          0.029366757655944833,
+          0.0025993847060888555
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.1713673179341523
+      },
+      "endpoint_3s": {
+        "composite": 0.5646474303574683,
+        "displacement_rmse_m": 0.13583101146350954,
+        "heading_rmse_deg": 2.3165475004119407,
+        "missing_samples": 2,
+        "mse": [
+          0.018450063675200058,
+          0.0265281024594545,
+          0.0016346965825887391
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 190,
+        "requested_candidates": 192,
+        "requested_samples": 192,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.16287449910730195
+      },
+      "endpoint_5s": {
+        "composite": 0.3439945999674747,
+        "displacement_rmse_m": 0.14816905553707369,
+        "heading_rmse_deg": 2.5669363304874793,
+        "missing_samples": 1,
+        "mse": [
+          0.021954069018748423,
+          0.009387910196683839,
+          0.0020071735650057316
+        ],
+        "observed_candidates": 127,
+        "observed_contexts": 16,
+        "observed_samples": 127,
+        "requested_candidates": 128,
+        "requested_samples": 128,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.09689122868806979
+      },
+      "families": {
+        "pivot_walk_stop": {
+          "composite": 0.6654569379257607,
+          "displacement_rmse_m": 0.10788079451000615,
+          "heading_rmse_deg": 2.42579756730829,
+          "missing_samples": 0,
+          "mse": [
+            0.011638265824110173,
+            0.03704780767047614,
+            0.0017925193295479534
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.19247807062228192
+        },
+        "same_sign_pair": {
+          "composite": 0.5150454005558661,
+          "displacement_rmse_m": 0.10262440817234776,
+          "heading_rmse_deg": 2.2234615358584957,
+          "missing_samples": 94,
+          "mse": [
+            0.010531769152724637,
+            0.027729093618788853,
+            0.0015059618735733633
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7154,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.16652055013958142
+        },
+        "strafe_walk_stop": {
+          "composite": 0.661919091006174,
+          "displacement_rmse_m": 0.09672346716167055,
+          "heading_rmse_deg": 1.584199308859066,
+          "missing_samples": 78,
+          "mse": [
+            0.009355429099774762,
+            0.03885243009800079,
+            0.0007644945155478221
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7170,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.19711019785389286
+        },
+        "walk_pivot_stop": {
+          "composite": 0.49557890077212935,
+          "displacement_rmse_m": 0.0843707225454029,
+          "heading_rmse_deg": 2.9579560607784545,
+          "missing_samples": 0,
+          "mse": [
+            0.0071184188228333575,
+            0.027478826801338365,
+            0.002665251350407766
+          ],
+          "observed_candidates": 48,
+          "observed_contexts": 6,
+          "observed_samples": 7248,
+          "requested_candidates": 48,
+          "requested_samples": 7248,
+          "total_candidates": 48,
+          "velocity_rmse_m_s": 0.1657673876289856
+        }
+      },
+      "primary": {
+        "composite": 0.5845000825649825,
+        "displacement_rmse_m": 0.09829023717979693,
+        "heading_rmse_deg": 2.3498652379810303,
+        "missing_samples": 172,
+        "mse": [
+          0.009660970724860734,
+          0.03277703954715104,
+          0.0016820567672692268
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 28820,
+        "requested_candidates": 192,
+        "requested_samples": 28992,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.18104430271939254
+      },
+      "stop": {
+        "composite": 0.2774606580932312,
+        "displacement_rmse_m": 0.1572298696096401,
+        "heading_rmse_deg": 2.901085540121551,
+        "missing_samples": 102,
+        "mse": [
+          0.02472123189746443,
+          0.0029292345839713415,
+          0.0025637507710658115
+        ],
+        "observed_candidates": 190,
+        "observed_contexts": 24,
+        "observed_samples": 9530,
+        "requested_candidates": 192,
+        "requested_samples": 9632,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.05412240371575658
+      },
+      "turn": {
+        "composite": 0.4337806295878633,
+        "displacement_rmse_m": 0.10874735649438275,
+        "heading_rmse_deg": 2.6897757172159644,
+        "missing_samples": 29,
+        "mse": [
+          0.011825987544516369,
+          0.021000223486382273,
+          0.0022038745626584933
+        ],
+        "observed_candidates": 144,
+        "observed_contexts": 18,
+        "observed_samples": 11939,
+        "requested_candidates": 144,
+        "requested_samples": 11968,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.1449145385611198
+      },
+      "whole": {
+        "composite": 0.5204702730274938,
+        "displacement_rmse_m": 0.12428828006043044,
+        "heading_rmse_deg": 2.3637522813435456,
+        "missing_samples": 272,
+        "mse": [
+          0.01544757656037999,
+          0.025185333523441805,
+          0.0017019964785729225
+        ],
+        "observed_candidates": 192,
+        "observed_contexts": 24,
+        "observed_samples": 57520,
+        "requested_candidates": 192,
+        "requested_samples": 57792,
+        "total_candidates": 192,
+        "velocity_rmse_m_s": 0.15869887688147577
+      }
+    }
+  }
+}

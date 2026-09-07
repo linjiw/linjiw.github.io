@@ -1,0 +1,57 @@
+{
+  "baseline": {
+    "contexts": 24,
+    "early_endings": 0,
+    "falls": 0,
+    "mean_bounded_loss": 10.639158289484358,
+    "mean_slide_ratio": 0.12251134742374026,
+    "speed_failures": 1,
+    "successes": 6
+  },
+  "leads": [
+    {
+      "contexts": 24,
+      "early_endings": 0,
+      "eligible": false,
+      "falls": 0,
+      "lead_s": 0.2,
+      "mean_bounded_loss": 9.643114519568204,
+      "mean_slide_ratio": 0.12273349402739764,
+      "new_captures": 8,
+      "speed_failures": 1,
+      "successes": 7
+    },
+    {
+      "contexts": 24,
+      "early_endings": 0,
+      "eligible": false,
+      "falls": 0,
+      "lead_s": 0.4,
+      "mean_bounded_loss": 10.125603285909023,
+      "mean_slide_ratio": 0.122508401436762,
+      "new_captures": 8,
+      "speed_failures": 3,
+      "successes": 7
+    },
+    {
+      "contexts": 24,
+      "early_endings": 0,
+      "eligible": false,
+      "falls": 0,
+      "lead_s": 0.6,
+      "mean_bounded_loss": 11.137704394212731,
+      "mean_slide_ratio": 0.12481893502818632,
+      "new_captures": 4,
+      "speed_failures": 2,
+      "successes": 6
+    }
+  ],
+  "status": "killed",
+  "new_physics": 20,
+  "literal_same_initial_state_qualified": false,
+  "evidence_tier": "physics simulation; no hardware",
+  "denominator": "24 development programs per setting; 52 unchanged cached slots across the three leads",
+  "initialization_caveat": "The reset procedure and seed are unchanged, but regenerated first poses change reference-dependent initialization.",
+  "confirmation_status": "R-B registered and running; results pending",
+  "source_decision_sha256": "8fca6b8542aaf903f461378d05680de1d824ed2667c4b02358c1882b9839175a"
+}

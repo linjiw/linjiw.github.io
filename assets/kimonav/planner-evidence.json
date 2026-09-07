@@ -1,0 +1,2122 @@
+{
+  "generation_and_conversion_s": 52.02125298095052,
+  "maximum_projection_rad": 0.30913735169619333,
+  "new_physics": 24,
+  "paired": {
+    "slide_regressions_above_1p1": [
+      "m3k_walk_pivot_stop_right_5s",
+      "m3k_pivot_walk_stop_right_3s",
+      "m3k_pivot_walk_stop_right_5s",
+      "m3k_pivot_walk_stop_right_10s",
+      "m3k_walk_pivot_stop_left_10s",
+      "m3k_walk_pivot_stop_right_10s",
+      "m3k_same_sign_pair_left_10s",
+      "m3k_same_sign_pair_right_10s",
+      "m3k_strafe_walk_stop_left_10s",
+      "m3k_strafe_walk_stop_right_10s"
+    ],
+    "success_gains": [],
+    "success_losses": [
+      "m3k_walk_pivot_stop_left_5s",
+      "m3k_walk_pivot_stop_right_5s",
+      "m3k_walk_pivot_stop_left_3s",
+      "m3k_walk_pivot_stop_left_10s",
+      "m3k_same_sign_pair_left_5s",
+      "m3k_same_sign_pair_right_3s"
+    ]
+  },
+  "per_program": [
+    {
+      "program_id": "m3k_pivot_walk_stop_left_3s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.41591382580043196,
+        "max_heading_error_deg": 16.30946864925435,
+        "max_timed_path_error_m": 0.41591382580043196,
+        "mean_heading_error_deg": 4.648792293382304,
+        "mean_timed_path_error_m": 0.1884563028445304,
+        "p95_timed_path_error_m": 0.40006268938354106,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.9109380797072177,
+            "boundary_position_error_m": 0.09769844358748872,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 14.753787484101053,
+            "boundary_position_error_m": 0.26754942148999467,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 6.070764438151814,
+            "boundary_position_error_m": 0.11325670173365517,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 3.4654182364651565,
+            "boundary_position_error_m": 0.41591382580043196,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 1.138854742050171,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 0.41591382580043196
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 5.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 5.08,
+        "speed_mae_mps": 0.2993963619207186,
+        "terminal_speed_mps": 0.047763656824827194,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 7.739999999999998,
+        "foot_slide_ratio": 0.10852713178294567,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 0.8399999999999993,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_pivot_walk_stop_left_5s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.3713537913568283,
+        "max_heading_error_deg": 27.94092562733971,
+        "max_timed_path_error_m": 0.3988159260005017,
+        "mean_heading_error_deg": 6.249828710921364,
+        "mean_timed_path_error_m": 0.22651944511266758,
+        "p95_timed_path_error_m": 0.37105200348593675,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 3.674500284911093,
+            "boundary_position_error_m": 0.12813812315995982,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 22.65986050531109,
+            "boundary_position_error_m": 0.24493105451831793,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 0.8553162343590766,
+            "boundary_position_error_m": 0.18159796265076697,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.1907156004990913,
+            "boundary_position_error_m": 0.3713537913568283,
+            "captured_dwell_s": 0.96,
+            "complete": false,
+            "max_stop_speed_mps": 0.6033233404159546,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 0.96,
+            "stopping_overshoot_m": 0.37135379135682833
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 7.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 7.08,
+        "speed_mae_mps": 0.2670760554273081,
+        "terminal_speed_mps": 0.04901593551039696,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 10.400000000000002,
+        "foot_slide_ratio": 0.13076923076923072,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 1.3599999999999999,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_pivot_walk_stop_left_10s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 1.4605728360072696,
+        "max_heading_error_deg": 35.12111380477206,
+        "max_timed_path_error_m": 1.461986943878339,
+        "mean_heading_error_deg": 8.282949874603231,
+        "mean_timed_path_error_m": 0.4507242985007711,
+        "p95_timed_path_error_m": 1.4137828385694926,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 3.3000484894036006,
+            "boundary_position_error_m": 0.10881254046624673,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 26.842297468019762,
+            "boundary_position_error_m": 0.14299287206825828,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 5.675100376891981,
+            "boundary_position_error_m": 1.2480460800839592,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 0.29485636098956974,
+            "boundary_position_error_m": 1.4605728360072696,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.7269505262374878,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 1.461986943878339
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 12.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 12.08,
+        "speed_mae_mps": 0.27453312828597176,
+        "terminal_speed_mps": 0.02282845787703991,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 16.94,
+        "foot_slide_ratio": 0.1582054309327035,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 2.6799999999999975,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_pivot_walk_stop_right_3s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.2826252007425189,
+        "max_heading_error_deg": 20.816543164146346,
+        "max_timed_path_error_m": 0.32947217626812936,
+        "mean_heading_error_deg": 4.825304482820395,
+        "mean_timed_path_error_m": 0.17846915940848662,
+        "p95_timed_path_error_m": 0.3250587198052814,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.709275662215077,
+            "boundary_position_error_m": 0.15956794577180247,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 19.274082979306428,
+            "boundary_position_error_m": 0.32777106364678704,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.657544006214455,
+            "boundary_position_error_m": 0.062191096165178414,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.1722419497640335,
+            "boundary_position_error_m": 0.2826252007425189,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.737487256526947,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 0.2850176313366296
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 5.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 5.08,
+        "speed_mae_mps": 0.2781673712315639,
+        "terminal_speed_mps": 0.11080916225910187,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 7.5200000000000005,
+        "foot_slide_ratio": 0.1329787234042554,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 1.0000000000000007,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_pivot_walk_stop_right_5s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.6496552329894635,
+        "max_heading_error_deg": 29.477568740255897,
+        "max_timed_path_error_m": 0.6496552329894635,
+        "mean_heading_error_deg": 6.9833015066695685,
+        "mean_timed_path_error_m": 0.28491981163161595,
+        "p95_timed_path_error_m": 0.6174631567320479,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.361734667396553,
+            "boundary_position_error_m": 0.13303599629108737,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 21.81854087114786,
+            "boundary_position_error_m": 0.12340551482847731,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 7.213744830950277,
+            "boundary_position_error_m": 0.3914221242111267,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.30781998424064,
+            "boundary_position_error_m": 0.6496552329894635,
+            "captured_dwell_s": 0.96,
+            "complete": false,
+            "max_stop_speed_mps": 0.9752072095870972,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 0.96,
+            "stopping_overshoot_m": 0.6496552329894635
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 7.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 7.08,
+        "speed_mae_mps": 0.3137922973210179,
+        "terminal_speed_mps": 0.026781711727380753,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 10.479999999999999,
+        "foot_slide_ratio": 0.12977099236641207,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 1.3599999999999983,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_pivot_walk_stop_right_10s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 1.6740948810533274,
+        "max_heading_error_deg": 36.19233954669992,
+        "max_timed_path_error_m": 1.6740948810533274,
+        "mean_heading_error_deg": 8.87119526710023,
+        "mean_timed_path_error_m": 0.6101682423684792,
+        "p95_timed_path_error_m": 1.571229009802031,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 3.5296161237095074,
+            "boundary_position_error_m": 0.1682241533796578,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 26.746475453930234,
+            "boundary_position_error_m": 0.3095158389317971,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 6.251528844058686,
+            "boundary_position_error_m": 1.3873141346001665,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 4.330954944836404,
+            "boundary_position_error_m": 1.6740948810533274,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.9376087784767151,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 1.6740948810533274
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 12.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 12.08,
+        "speed_mae_mps": 0.279159398092179,
+        "terminal_speed_mps": 0.01360353920608759,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 17.1,
+        "foot_slide_ratio": 0.15789473684210495,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 2.699999999999995,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_left_3s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.30061100994145956,
+        "max_heading_error_deg": 20.50137530600192,
+        "max_timed_path_error_m": 0.30415037128087585,
+        "mean_heading_error_deg": 5.602940312149392,
+        "mean_timed_path_error_m": 0.1838516839863663,
+        "p95_timed_path_error_m": 0.3016930154378733,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.8728622045651317,
+            "boundary_position_error_m": 0.061921497137419054,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 3.189944684850977,
+            "boundary_position_error_m": 0.07891689730141943,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 19.14342664250944,
+            "boundary_position_error_m": 0.30046862057133195,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 8.117172617055614,
+            "boundary_position_error_m": 0.30061100994145956,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.06930895894765854,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 0.3029415578244536
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 5.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 5.08,
+        "speed_mae_mps": 0.22160509064558923,
+        "terminal_speed_mps": 0.012146441265940666,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 7.759999999999999,
+        "foot_slide_ratio": 0.08247422680412363,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 0.6399999999999992,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_left_5s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.506383321228166,
+        "max_heading_error_deg": 28.08448883826163,
+        "max_timed_path_error_m": 0.5361716407344617,
+        "mean_heading_error_deg": 6.469909933715049,
+        "mean_timed_path_error_m": 0.3002746111636355,
+        "p95_timed_path_error_m": 0.5343676874512763,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.669419780109069,
+            "boundary_position_error_m": 0.14669106599831527,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.349569980370906,
+            "boundary_position_error_m": 0.4248616429012658,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 24.512379793867165,
+            "boundary_position_error_m": 0.5254883375097786,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 6.290157485693767,
+            "boundary_position_error_m": 0.506383321228166,
+            "captured_dwell_s": 0.96,
+            "complete": false,
+            "max_stop_speed_mps": 0.08429879695177078,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 0.96,
+            "stopping_overshoot_m": 0.5254883375097786
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 7.080000000000001,
+        "request_tracking_success": false,
+        "scored_end_time_s": 7.08,
+        "speed_mae_mps": 0.2268173714240981,
+        "terminal_speed_mps": 0.04265414923429489,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 10.72,
+        "foot_slide_ratio": 0.09701492537313429,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 1.0399999999999996,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_left_10s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 1.9011146944383983,
+        "max_heading_error_deg": 36.156973303048964,
+        "max_timed_path_error_m": 2.0105336302519845,
+        "mean_heading_error_deg": 8.276707630723285,
+        "mean_timed_path_error_m": 0.9673162616521922,
+        "p95_timed_path_error_m": 1.9976217760984512,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.627257640461061,
+            "boundary_position_error_m": 0.14245525527531455,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 6.606711903808898,
+            "boundary_position_error_m": 1.6902138833331102,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 24.218773643828264,
+            "boundary_position_error_m": 1.921997652854074,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 7.42654720715022,
+            "boundary_position_error_m": 1.9011146944383983,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.1974998414516449,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 1.921997652854074
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 12.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 12.08,
+        "speed_mae_mps": 0.27060779638224536,
+        "terminal_speed_mps": 0.034659188240766525,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 17.0,
+        "foot_slide_ratio": 0.15647058823529414,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 2.6600000000000006,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_right_3s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.17811215043395764,
+        "max_heading_error_deg": 19.60690936644417,
+        "max_timed_path_error_m": 0.3314434356748442,
+        "mean_heading_error_deg": 5.59200066443079,
+        "mean_timed_path_error_m": 0.15068912012780503,
+        "p95_timed_path_error_m": 0.3142525208943091,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.6610916576017103,
+            "boundary_position_error_m": 0.05458734276990071,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.6895439174672187,
+            "boundary_position_error_m": 0.05374409120699003,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 18.976664625140454,
+            "boundary_position_error_m": 0.19777228299791122,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 10.6661501528254,
+            "boundary_position_error_m": 0.17811215043395764,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.09051232039928436,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 0.19777228299791122
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 5.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 5.08,
+        "speed_mae_mps": 0.229547763789278,
+        "terminal_speed_mps": 0.013883814215660095,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 7.92,
+        "foot_slide_ratio": 0.08080808080808079,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 0.6399999999999998,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_right_5s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.5189643627820345,
+        "max_heading_error_deg": 28.769801107609677,
+        "max_timed_path_error_m": 0.5584223134343425,
+        "mean_heading_error_deg": 7.504247813083291,
+        "mean_timed_path_error_m": 0.284500054137699,
+        "p95_timed_path_error_m": 0.553079764043998,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.1038822347831145,
+            "boundary_position_error_m": 0.09757955109175606,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.3060234386950174,
+            "boundary_position_error_m": 0.39692485820311063,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 20.90941105698422,
+            "boundary_position_error_m": 0.5528389723579358,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 9.482456775293453,
+            "boundary_position_error_m": 0.5189643627820345,
+            "captured_dwell_s": 0.96,
+            "complete": false,
+            "max_stop_speed_mps": 0.1435268372297287,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 0.96,
+            "stopping_overshoot_m": 0.5584223134343425
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 7.080000000000001,
+        "request_tracking_success": false,
+        "scored_end_time_s": 7.08,
+        "speed_mae_mps": 0.23350772257673283,
+        "terminal_speed_mps": 0.07155034691095352,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 10.44,
+        "foot_slide_ratio": 0.13409961685823737,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 1.3999999999999981,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_right_10s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 1.986229349773599,
+        "max_heading_error_deg": 34.52359411633093,
+        "max_timed_path_error_m": 2.0209744404619188,
+        "mean_heading_error_deg": 8.613006055157383,
+        "mean_timed_path_error_m": 0.9801742064781965,
+        "p95_timed_path_error_m": 2.012520255675911,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.627257640461061,
+            "boundary_position_error_m": 0.14245525527531455,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 6.312637427524393,
+            "boundary_position_error_m": 1.690553135404366,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 27.130083002475835,
+            "boundary_position_error_m": 2.017905553968159,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 5.746177771880327,
+            "boundary_position_error_m": 1.986229349773599,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.16248257458209991,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 2.017905553968159
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 12.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 12.08,
+        "speed_mae_mps": 0.27266562331202654,
+        "terminal_speed_mps": 0.08421041816473007,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 16.7,
+        "foot_slide_ratio": 0.16646706586826346,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 2.78,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_left_3s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": true,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.2949781283580351,
+        "max_heading_error_deg": 9.756191564554749,
+        "max_timed_path_error_m": 0.3376559357961923,
+        "mean_heading_error_deg": 3.4819244065453097,
+        "mean_timed_path_error_m": 0.2040501571013725,
+        "p95_timed_path_error_m": 0.32381737256178983,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 3.571686492726541,
+            "boundary_position_error_m": 0.1681175792117222,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 8.445702214939457,
+            "boundary_position_error_m": 0.33579304622266243,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 0.13347612982298965,
+            "boundary_position_error_m": 0.12232110185774471,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 7.837991427454387,
+            "boundary_position_error_m": 0.29412172270683967,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 3
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 0.11814719047823251,
+            "boundary_position_error_m": 0.2949781283580351,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.0997680053114891,
+            "op": "STOP",
+            "phase_index": 4,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 0.29832051584163954
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 5.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 5.08,
+        "speed_mae_mps": 0.21783185499228946,
+        "terminal_speed_mps": 0.03650255501270294,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 8.16,
+        "foot_slide_ratio": 0.08578431372549013,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 0.6999999999999994,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_left_5s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.5960344046450884,
+        "max_heading_error_deg": 17.144991215054638,
+        "max_timed_path_error_m": 0.5984865269858864,
+        "mean_heading_error_deg": 5.839577659866046,
+        "mean_timed_path_error_m": 0.2826164655637389,
+        "p95_timed_path_error_m": 0.5976770431591897,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.8721073840576814,
+            "boundary_position_error_m": 0.24467237303063363,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 14.593401903396472,
+            "boundary_position_error_m": 0.3869174266246806,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 9.160844939425647,
+            "boundary_position_error_m": 0.3749855312082984,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 14.35280190559079,
+            "boundary_position_error_m": 0.594913248033834,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 3
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 5.387869742891251,
+            "boundary_position_error_m": 0.5960344046450884,
+            "captured_dwell_s": 0.96,
+            "complete": false,
+            "max_stop_speed_mps": 0.04785410687327385,
+            "op": "STOP",
+            "phase_index": 4,
+            "requested_dwell_s": 0.96,
+            "stopping_overshoot_m": 0.5984865269858864
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 7.079999999999999,
+        "request_tracking_success": false,
+        "scored_end_time_s": 7.08,
+        "speed_mae_mps": 0.2621543049909132,
+        "terminal_speed_mps": 0.0084798913449049,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 10.780000000000001,
+        "foot_slide_ratio": 0.1001855287569573,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 1.0799999999999998,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_left_10s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 1.6034894819041796,
+        "max_heading_error_deg": 32.39011789099775,
+        "max_timed_path_error_m": 1.6875919957851508,
+        "mean_heading_error_deg": 8.073346240511691,
+        "mean_timed_path_error_m": 0.649406309846406,
+        "p95_timed_path_error_m": 1.6694307126735375,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.766108863009277,
+            "boundary_position_error_m": 0.1874145831954064,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 20.332491138929598,
+            "boundary_position_error_m": 0.3078980528621779,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 5.33507277715863,
+            "boundary_position_error_m": 1.3311068683589666,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 27.143906676651255,
+            "boundary_position_error_m": 1.6610950238227462,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 3
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 3.7703094295590436,
+            "boundary_position_error_m": 1.6034894819041796,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.1553218811750412,
+            "op": "STOP",
+            "phase_index": 4,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 1.6610950238227462
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 12.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 12.08,
+        "speed_mae_mps": 0.28212224316012285,
+        "terminal_speed_mps": 0.05970217287540436,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 17.0,
+        "foot_slide_ratio": 0.15529411764705886,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 2.6400000000000006,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_right_3s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.35320876793353423,
+        "max_heading_error_deg": 12.58143479269369,
+        "max_timed_path_error_m": 0.374845801636707,
+        "mean_heading_error_deg": 5.71823719192483,
+        "mean_timed_path_error_m": 0.21462782891820184,
+        "p95_timed_path_error_m": 0.3740004574969473,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.940166879754595,
+            "boundary_position_error_m": 0.1664019975335034,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 11.341318084868337,
+            "boundary_position_error_m": 0.3345963573417928,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 3.576519253670706,
+            "boundary_position_error_m": 0.12618679023705667,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 10.882763349463811,
+            "boundary_position_error_m": 0.3344094560059443,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 3
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 9.942860041943028,
+            "boundary_position_error_m": 0.35320876793353423,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.22086846828460693,
+            "op": "STOP",
+            "phase_index": 4,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 0.374845801636707
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 5.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 5.08,
+        "speed_mae_mps": 0.2310853322923887,
+        "terminal_speed_mps": 0.04447979852557182,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 7.9799999999999995,
+        "foot_slide_ratio": 0.06265664160401001,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 0.4999999999999998,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_right_5s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.5434624949660573,
+        "max_heading_error_deg": 23.743141014396727,
+        "max_timed_path_error_m": 0.5777088564960041,
+        "mean_heading_error_deg": 8.258100452651059,
+        "mean_timed_path_error_m": 0.29389169222005695,
+        "p95_timed_path_error_m": 0.5715817116725468,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.472964284901038,
+            "boundary_position_error_m": 0.1852700733059822,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 21.197396306482776,
+            "boundary_position_error_m": 0.3498547250022116,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 4.457803878257714,
+            "boundary_position_error_m": 0.4043296448588479,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 22.20554121234174,
+            "boundary_position_error_m": 0.5756029695870063,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 3
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 11.747847465014255,
+            "boundary_position_error_m": 0.5434624949660573,
+            "captured_dwell_s": 0.96,
+            "complete": false,
+            "max_stop_speed_mps": 0.08086713403463364,
+            "op": "STOP",
+            "phase_index": 4,
+            "requested_dwell_s": 0.96,
+            "stopping_overshoot_m": 0.5756029695870063
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 7.079999999999999,
+        "request_tracking_success": false,
+        "scored_end_time_s": 7.08,
+        "speed_mae_mps": 0.22688198523532788,
+        "terminal_speed_mps": 0.025705762207508087,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 10.92,
+        "foot_slide_ratio": 0.08058608058608063,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 0.8800000000000006,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_right_10s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 1.3399578678968886,
+        "max_heading_error_deg": 33.23101333394356,
+        "max_timed_path_error_m": 1.3793639967365845,
+        "mean_heading_error_deg": 8.722610083267924,
+        "mean_timed_path_error_m": 0.6085283330231595,
+        "p95_timed_path_error_m": 1.3677023766028942,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.0000125695939555,
+            "boundary_position_error_m": 0.16395858806088054,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 23.281272045904117,
+            "boundary_position_error_m": 0.164332931149003,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 5.969474589458768,
+            "boundary_position_error_m": 1.1978308548783927,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 28.640430011873885,
+            "boundary_position_error_m": 1.3581474877856636,
+            "complete": false,
+            "op": "TURN_IN_PLACE",
+            "phase_index": 3
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 9.07842380911412,
+            "boundary_position_error_m": 1.3399578678968886,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.11776019632816315,
+            "op": "STOP",
+            "phase_index": 4,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 1.3581474877856636
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 12.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 12.08,
+        "speed_mae_mps": 0.25867217300456663,
+        "terminal_speed_mps": 0.034923724830150604,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 17.32,
+        "foot_slide_ratio": 0.14203233256351022,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 2.4599999999999973,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_left_3s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": true,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.263951321227553,
+        "max_heading_error_deg": 5.290674350930711,
+        "max_timed_path_error_m": 0.3362437485916488,
+        "mean_heading_error_deg": 2.2237007690333757,
+        "mean_timed_path_error_m": 0.17684495925819183,
+        "p95_timed_path_error_m": 0.31973009450590867,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.753582553242254,
+            "boundary_position_error_m": 0.15815276094946032,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.4560460071693644,
+            "boundary_position_error_m": 0.13505477646862926,
+            "complete": true,
+            "op": "STRAFE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 2.5286621082676466,
+            "boundary_position_error_m": 0.16649348085351787,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 3.896804110252881,
+            "boundary_position_error_m": 0.263951321227553,
+            "captured_dwell_s": 0.96,
+            "complete": false,
+            "max_stop_speed_mps": 0.49406898021698,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 0.96,
+            "stopping_overshoot_m": 0.26552419934815513
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 5.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 5.08,
+        "speed_mae_mps": 0.24207949657462483,
+        "terminal_speed_mps": 0.027018913999199867,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 7.36,
+        "foot_slide_ratio": 0.0896739130434783,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 0.6600000000000003,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_left_5s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": true,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.3844697822938088,
+        "max_heading_error_deg": 8.441361847836196,
+        "max_timed_path_error_m": 0.5403682482650654,
+        "mean_heading_error_deg": 2.7565377774286715,
+        "mean_timed_path_error_m": 0.28522750507790523,
+        "p95_timed_path_error_m": 0.512934690805752,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.7360592551447858,
+            "boundary_position_error_m": 0.17755767299707978,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.7580394425330321,
+            "boundary_position_error_m": 0.05469860947312338,
+            "complete": true,
+            "op": "STRAFE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 0.40354143057782965,
+            "boundary_position_error_m": 0.2983798059787545,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.242635961049058,
+            "boundary_position_error_m": 0.3844697822938088,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.6596529483795166,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 0.40937838551836214
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 7.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 7.08,
+        "speed_mae_mps": 0.29901469354175747,
+        "terminal_speed_mps": 0.05926452577114105,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 10.1,
+        "foot_slide_ratio": 0.13267326732673257,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 1.339999999999999,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_left_10s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 2.1409399610490465,
+        "max_heading_error_deg": 10.251883184052456,
+        "max_timed_path_error_m": 2.1409399610490465,
+        "mean_heading_error_deg": 3.6448693165983124,
+        "mean_timed_path_error_m": 0.6152200838711517,
+        "p95_timed_path_error_m": 2.050778693652218,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.6098360598015526,
+            "boundary_position_error_m": 0.10889023521746867,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 7.6476483237596256,
+            "boundary_position_error_m": 0.2623217293178484,
+            "complete": false,
+            "op": "STRAFE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 7.332487156231028,
+            "boundary_position_error_m": 1.852992869741788,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 5.516000263416226,
+            "boundary_position_error_m": 2.1409399610490465,
+            "captured_dwell_s": 0.9599999999999991,
+            "complete": false,
+            "max_stop_speed_mps": 1.1818492412567139,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 0.9600000000000009,
+            "stopping_overshoot_m": 2.1409399610490465
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 12.080000000000002,
+        "request_tracking_success": false,
+        "scored_end_time_s": 12.08,
+        "speed_mae_mps": 0.3094343057602323,
+        "terminal_speed_mps": 0.024919409304857254,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 15.56,
+        "foot_slide_ratio": 0.18637532133676096,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 2.900000000000001,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_right_3s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": true,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.6088284484292933,
+        "max_heading_error_deg": 8.172931077197179,
+        "max_timed_path_error_m": 0.6121994960248817,
+        "mean_heading_error_deg": 3.4203142642427964,
+        "mean_timed_path_error_m": 0.3265565604154259,
+        "p95_timed_path_error_m": 0.6095358496365182,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 5.270424826619053,
+            "boundary_position_error_m": 0.2981633344560755,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 4.623518352236172,
+            "boundary_position_error_m": 0.5069928059900973,
+            "complete": false,
+            "op": "STRAFE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 1.6842111474257102,
+            "boundary_position_error_m": 0.47157319228360006,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 6.601188059067663,
+            "boundary_position_error_m": 0.6088284484292933,
+            "captured_dwell_s": 0.96,
+            "complete": false,
+            "max_stop_speed_mps": 0.537047803401947,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 0.96,
+            "stopping_overshoot_m": 0.6121994960248817
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 5.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 5.08,
+        "speed_mae_mps": 0.3020299848994079,
+        "terminal_speed_mps": 0.06015479564666748,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 7.340000000000001,
+        "foot_slide_ratio": 0.10354223433242513,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 0.7600000000000005,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_right_5s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": true,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 0.7414919531747722,
+        "max_heading_error_deg": 8.270461621282228,
+        "max_timed_path_error_m": 0.7414970501010969,
+        "mean_heading_error_deg": 2.8287648304403508,
+        "mean_timed_path_error_m": 0.3333633757157274,
+        "p95_timed_path_error_m": 0.7100627502827656,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 0.6083941536187822,
+            "boundary_position_error_m": 0.1784165655105976,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 0.8074931279425313,
+            "boundary_position_error_m": 0.39525448154168924,
+            "complete": false,
+            "op": "STRAFE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 8.270461621282228,
+            "boundary_position_error_m": 0.492165269566826,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 5.55977772819567,
+            "boundary_position_error_m": 0.7414919531747722,
+            "captured_dwell_s": 1.0,
+            "complete": false,
+            "max_stop_speed_mps": 0.9975371956825256,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 1.0,
+            "stopping_overshoot_m": 0.7414970501010969
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 7.08,
+        "request_tracking_success": false,
+        "scored_end_time_s": 7.08,
+        "speed_mae_mps": 0.30896418774489964,
+        "terminal_speed_mps": 0.028535444289445877,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 9.839999999999998,
+        "foot_slide_ratio": 0.11585365853658518,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 1.139999999999998,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_right_10s",
+      "requested_program": {
+        "checks": {
+          "full_duration": true,
+          "ordered_phases": false,
+          "speed": false,
+          "timed_heading": false,
+          "timed_path": false
+        },
+        "executed_program_success": false,
+        "fell": false,
+        "final_position_error_m": 1.885225587906228,
+        "max_heading_error_deg": 11.992712945262284,
+        "max_timed_path_error_m": 1.8909386880077177,
+        "mean_heading_error_deg": 3.967493378118074,
+        "mean_timed_path_error_m": 0.6325282794458957,
+        "p95_timed_path_error_m": 1.8407049273289249,
+        "phases": [
+          {
+            "available": true,
+            "boundary_heading_error_deg": 0.6785689895030993,
+            "boundary_position_error_m": 0.18036114446195262,
+            "complete": true,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 0
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 6.063824308454735,
+            "boundary_position_error_m": 0.36649652026951285,
+            "complete": false,
+            "op": "STRAFE",
+            "phase_index": 1
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 5.27536368791081,
+            "boundary_position_error_m": 1.7033351199796543,
+            "complete": false,
+            "op": "WALK_STRAIGHT",
+            "phase_index": 2
+          },
+          {
+            "available": true,
+            "boundary_heading_error_deg": 6.111831894161821,
+            "boundary_position_error_m": 1.885225587906228,
+            "captured_dwell_s": 0.9599999999999991,
+            "complete": false,
+            "max_stop_speed_mps": 0.5609578490257263,
+            "op": "STOP",
+            "phase_index": 3,
+            "requested_dwell_s": 0.9600000000000009,
+            "stopping_overshoot_m": 1.8909386880077177
+          }
+        ],
+        "protocol": "m3a-requested-program-v1-provisional",
+        "request_end_time_s": 12.080000000000002,
+        "request_tracking_success": false,
+        "scored_end_time_s": 12.08,
+        "speed_mae_mps": 0.27386536110069176,
+        "terminal_speed_mps": 0.056122422218322754,
+        "thresholds": {
+          "heading_deg": 10.0,
+          "position_m": 0.2,
+          "speed_mae_mps": 0.15,
+          "stop_speed_mps": 0.1
+        }
+      },
+      "slide_ratio": {
+        "contact_foot_seconds": 15.459999999999999,
+        "foot_slide_ratio": 0.1642949547218629,
+        "force_threshold_n": 10.0,
+        "measurement": "horizontal ankle-roll body-center velocity during sustained measured plane contact",
+        "sliding_foot_seconds": 2.54,
+        "speed_threshold_mps": 0.1
+      },
+      "status": "measured"
+    }
+  ],
+  "physics_subprocess_s": 1287.809001290996,
+  "projected_references": 11,
+  "reference_passes": 0,
+  "scope": "Development-only fixed-reference generator comparison under common G1 pose-replay interface; not native C++ deployment parity, same-state tracker isolation or independent confirmation",
+  "source_sha256": {
+    "exporter": "f6979c92d1c6fac7138ce9319d13b53182e905cef11f0517b3e38ad50c04d01f",
+    "registered_result": "2982db5d61e072f60fe536af922a1810bfa514c958f0e62bd741d93825ab8b2d",
+    "registration": "7bc81fbc34daaff6d2c223150b72c2cbe319ecf5d5b2e7f1fbf380171628ed98"
+  },
+  "tables": {
+    "ardy_fixed": {
+      "dtw_m": {
+        "available": 24,
+        "mean": 0.07446855517119781
+      },
+      "early_endings": 0,
+      "failed_checks": {
+        "full_duration": 0,
+        "ordered_phases": 17,
+        "speed": 1,
+        "timed_heading": 2,
+        "timed_path": 12
+      },
+      "falls": 0,
+      "families": {
+        "pivot_walk_stop": {
+          "programs": 6,
+          "successes": 0
+        },
+        "same_sign_pair": {
+          "programs": 6,
+          "successes": 2
+        },
+        "strafe_walk_stop": {
+          "programs": 6,
+          "successes": 0
+        },
+        "walk_pivot_stop": {
+          "programs": 6,
+          "successes": 4
+        }
+      },
+      "frechet_m": {
+        "available": 24,
+        "mean": 0.18268854705095525
+      },
+      "heading_error_deg": {
+        "available": 24,
+        "mean": 1.7358409165631017
+      },
+      "max_stop_speed_mps": {
+        "available": 24,
+        "mean": 0.169776672963053
+      },
+      "mean_bounded_loss": 10.639158289484358,
+      "path_error_m": {
+        "available": 24,
+        "mean": 0.11610841814292507
+      },
+      "programs": 24,
+      "slide_ratio": {
+        "available": 24,
+        "mean": 0.12251134742374026
+      },
+      "stop_failures": 16,
+      "stop_overshoot_m": {
+        "available": 24,
+        "mean": 0.17528916045860565
+      },
+      "successes": 6,
+      "terminal_heading_error_deg": {
+        "available": 24,
+        "mean": 2.067196208261356
+      }
+    },
+    "native_planner_pose_replay": {
+      "dtw_m": {
+        "available": 24,
+        "mean": 0.30361779475511025
+      },
+      "early_endings": 0,
+      "failed_checks": {
+        "full_duration": 0,
+        "ordered_phases": 24,
+        "speed": 24,
+        "timed_heading": 19,
+        "timed_path": 24
+      },
+      "falls": 0,
+      "families": {
+        "pivot_walk_stop": {
+          "programs": 6,
+          "successes": 0
+        },
+        "same_sign_pair": {
+          "programs": 6,
+          "successes": 0
+        },
+        "strafe_walk_stop": {
+          "programs": 6,
+          "successes": 0
+        },
+        "walk_pivot_stop": {
+          "programs": 6,
+          "successes": 0
+        }
+      },
+      "frechet_m": {
+        "available": 24,
+        "mean": 0.8942500437777982
+      },
+      "heading_error_deg": {
+        "available": 24,
+        "mean": 5.868985871474362
+      },
+      "max_stop_speed_mps": {
+        "available": 24,
+        "mean": 0.45919229136779904
+      },
+      "mean_bounded_loss": 106.21052299579468,
+      "path_error_m": {
+        "available": 24,
+        "mean": 0.39287186449456996
+      },
+      "programs": 24,
+      "slide_ratio": {
+        "available": 24,
+        "mean": 0.12310137975940576
+      },
+      "stop_failures": 24,
+      "stop_overshoot_m": {
+        "available": 24,
+        "mean": 0.8878969212796936
+      },
+      "successes": 0,
+      "terminal_heading_error_deg": {
+        "available": 24,
+        "mean": 5.394348532576539
+      }
+    }
+  },
+  "verification": {
+    "all_process_exits_zero": true,
+    "archived_baseline_rescored": 24,
+    "frozen_sources_match": true,
+    "registered_ledger_snapshot": "knav/artifacts/native-planner-baseline-v0.1/registered-PAPER_LEDGER.md",
+    "rescored_captures": 24
+  }
+}

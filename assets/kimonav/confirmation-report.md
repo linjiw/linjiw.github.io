@@ -19,10 +19,12 @@ but regenerated first poses differ, limiting same-state causal attribution.
 
 Reserved confirmation finishes 88 captures: 84 scored and four exact null controls.
 Native/K1/minimum-jerk succeeds on 2/12, 3/12 and 4/12 at simulator seed 1701.
-Native/minimum-jerk succeeds on 2/12 and 2/12 at seed 1702. Repeat candidates are
+Native/minimum-jerk succeeds on 2/12 and 2/12 at seed 1702, and on 1/12 and 3/12 at a
+second repeat seed 1703 registered before its outcomes (26 captures, no falls or early
+endings; two paired gains, no losses, 3 sliding regressions above 1.1× native). Repeat candidates are
 regenerated from that seed's own measured histories. All selected arc outcomes
 fail; successes occur in reverse-pair programs. These are twelve related program
-designs, not 24 independent samples from repeating two seeds.
+designs, not 36 independent samples from repeating three seeds.
 
 Mean sliding improves with minimum jerk in both seeds. Individual sliding
 regressions against native remain on four primary and three repeat programs.

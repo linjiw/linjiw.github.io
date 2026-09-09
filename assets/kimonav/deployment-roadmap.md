@@ -1,17 +1,29 @@
-# Remaining research and deployment work — 9 September 2026
+# KimoNav remaining work — 9 September 2026 continuation
 
-## Remaining work, in order
+Completed: the 24-program live binary implementation check (10/24 versus 8/24
+current, two gains/no losses), with declared recovery accounting; and the 18-case
+reference-envelope grid, which admits16 geometric repairs but no full-task
+nominal forecast. Both saved-output audits pass. These are development studies.
 
-| Priority | Work | Evidence needed to close it |
-| --- | --- | --- |
-| 1 | Reconcile the partial binary live allocation and its unfinished slot under the frozen protocol. Preserve first attempts and failures; version any necessary repair. | A complete 24-slot accounting, causal-input and delivered-reference checks, and an aggregate audit. Missing slots remain missing until actually executed. This resolves whether the saved two-choice rule reproduces live. |
-| 2 | Diagnose prediction of intervention differences on separate development variation. Keep the rejected offset model as a negative result. | Paired current/zero/offset outcomes, STOP-peak residuals, wrong-sign and false-admission rates, censoring and full-task scores. Any empirical margin must be chosen separately from its evaluation set. This tests whether selection errors can be reduced without erasing useful repairs. |
-| 3 | Test one registered geometry/timing ablation after the current collection is reconciled. | All declared proposals and rejection reasons, then matched executions of qualified variants; branch-specific effects and whole-task success. A looser reference prior must not change task tolerances. |
-| 4 | Qualify computation during continuing simulation and repeated updates. | Measured ready/activation times, stale-update rejection, deadline misses, persistent state and original budgets. Report success with actual delay; compare compute-matched baselines. Paused 23–28 s preparation is insufficient. |
-| 5 | Freeze the method, comparator budgets, metrics and analysis before opening final36. | Prospective program-level paired evaluation with all failures, quality regressions and intervals retained. Mirrored pairs and repeats remain dependent units. No final-panel tuning or unseen-family claim from parameter variation. |
-| 6 | Finish the scientific manuscript and author review. | Reconcile all claims with the frozen evaluation, credit upstream systems and related work, complete the factual AI-assistance inventory, and perform a new PDF/venue check on the actual submission candidate. The historical PDF-test receipt does not cover the method draft. |
+1. **Repair stopping and timed progress jointly.** Wider bounds advance the
+   hold but can lose position. Retain all proposals and test all original task
+   constraints; do not promote a candidate solely for low predicted STOP speed.
+   A nominally admitted new proposal needs its own registered matched execution.
+2. **Validate prediction of repair effects.** Use separate development variation
+   to measure false admissions, intervention residuals, gains/losses and quality.
+   Separate margin calibration from evaluation. Keep the wrong-sign pelvis result
+   and rejected offset model visible; do not tune on final36.
+3. **Let simulation continue during computation.** Current binary preparation
+   takes 11–18 s paused despite an event one second before STOP. Measure readiness,
+   activation age, stale rejection and missed deadlines during repeated feedback.
+4. **Freeze before final36.** Fix method, comparator resources, compute budgets
+   and analysis before opening the reserved parameter-variation programs. Preserve
+   program pairing, dependencies, failures, coverage and quality regressions.
+5. **Complete human manuscript review.** Align claims with the actual evidence,
+   complete the assistance inventory and verify the submission candidate against
+   current official venue rules. No paper submission has occurred here.
 
-Hardware, onboard estimation, obstacles, payloads and broad transfer remain later research scopes. They are not demonstrated by the present simulation experiments.
+Hardware, onboard sensing, obstacles, payloads and broad environmental transfer
+are later scopes. They are not implied by the present flat-ground G1 simulation.
 
-
-[Full review](progress-2026-09-09.md) · [Evidence](progress-2026-09-09.json)
+[Completed evidence and accounting](/assets/kimonav/continuation-2026-09-09.md).

@@ -1,0 +1,2604 @@
+{
+  "date": "2026-09-09",
+  "scope": "Offline geometry and nominal prediction on two inspected programs; zero new robot execution.",
+  "summary": {
+    "cold_projection_returns": 308,
+    "completed_forecasts": 18,
+    "eligible": 16,
+    "geometry_slots": 18,
+    "predicted_admissible_candidates": 0,
+    "rejected": 2
+  },
+  "rows": [
+    {
+      "slot": 0,
+      "side": "left",
+      "program_id": "m3k_strafe_walk_stop_left_5s",
+      "tube_m": 0.05,
+      "settle_s": 0.12,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.96,
+      "actual_hold_start_s": 5.96,
+      "repair_start_s": 5.16,
+      "projection_calls": 20,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.17843730522751977,
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_timed_path_error_m": 0.18445559072647147,
+          "mean_heading_error_deg": 1.5322141281044468,
+          "mean_timed_path_error_m": 0.11920628067578469,
+          "p95_timed_path_error_m": 0.1790953138587048,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.1707571197378068,
+              "boundary_position_error_m": 0.13546489826816657,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.9987381941747616,
+              "boundary_position_error_m": 0.032374837921485496,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.0013308905216998,
+              "boundary_position_error_m": 0.17627103194922897,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.5179159421931685,
+              "boundary_position_error_m": 0.17843730522751977,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.12272787477907456,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.17843730522751977
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.10532925377036326,
+          "terminal_speed_mps": 0.010246595210954215,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+          "minimum_root_height_m": 0.6275290250778198,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+            "minimum_root_height_m": 0.6275290250778198
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.12156881226836096,
+            "minimum_root_height_m": 0.7360763386969554
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_position_error_m": 0.18003844317731207,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 21.72809496849774,
+          "speed_error_sum_mps": 31.371905031502262,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.22727874779074542,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 5.914650803206331,
+        "predicted_remaining_speed_budget_mps": 15.813444165291408,
+        "predicted_stop_peak_mps": 0.12272787477907456,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.36916613578796387,
+      "converted_rate_max_ratio": 0.36916613578796387
+    },
+    {
+      "slot": 1,
+      "side": "left",
+      "program_id": "m3k_strafe_walk_stop_left_5s",
+      "tube_m": 0.05,
+      "settle_s": 0.24,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.84,
+      "actual_hold_start_s": 5.84,
+      "repair_start_s": 5.12,
+      "projection_calls": 18,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": false
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": false
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.2119993857389836,
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_timed_path_error_m": 0.21513393594793348,
+          "mean_heading_error_deg": 1.4684337365037838,
+          "mean_timed_path_error_m": 0.12618179475652322,
+          "p95_timed_path_error_m": 0.2114287932791517,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.1707571197378068,
+              "boundary_position_error_m": 0.13546489826816657,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.9987381941747616,
+              "boundary_position_error_m": 0.032374837921485496,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.748468692156975,
+              "boundary_position_error_m": 0.21375832993425462,
+              "complete": false,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.4479503154486692,
+              "boundary_position_error_m": 0.2119993857389836,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.11817943735483902,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.21375832993425462
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.10999969921208522,
+          "terminal_speed_mps": 0.012172708310281036,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+          "minimum_root_height_m": 0.6275290250778198,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+            "minimum_root_height_m": 0.6275290250778198
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.12375393389894072,
+            "minimum_root_height_m": 0.7359430453115927
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_position_error_m": 0.18003844317731207,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 21.72809496849774,
+          "speed_error_sum_mps": 31.371905031502262,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.18179437354839,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 7.567988489575904,
+        "predicted_remaining_speed_budget_mps": 14.160106478921836,
+        "predicted_stop_peak_mps": 0.11817943735483902,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.36916613578796387,
+      "converted_rate_max_ratio": 0.36916613578796387
+    },
+    {
+      "slot": 2,
+      "side": "left",
+      "program_id": "m3k_strafe_walk_stop_left_5s",
+      "tube_m": 0.05,
+      "settle_s": 0.4,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.68,
+      "actual_hold_start_s": 5.84,
+      "repair_start_s": 5.12,
+      "projection_calls": 18,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": false
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": false
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.2119993857389836,
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_timed_path_error_m": 0.21513393594793348,
+          "mean_heading_error_deg": 1.4684337365037838,
+          "mean_timed_path_error_m": 0.12618179475652322,
+          "p95_timed_path_error_m": 0.2114287932791517,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.1707571197378068,
+              "boundary_position_error_m": 0.13546489826816657,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.9987381941747616,
+              "boundary_position_error_m": 0.032374837921485496,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.748468692156975,
+              "boundary_position_error_m": 0.21375832993425462,
+              "complete": false,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.4479503154486692,
+              "boundary_position_error_m": 0.2119993857389836,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.11817943735483902,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.21375832993425462
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.10999969921208522,
+          "terminal_speed_mps": 0.012172708310281036,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+          "minimum_root_height_m": 0.6275290250778198,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+            "minimum_root_height_m": 0.6275290250778198
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.12375393389894072,
+            "minimum_root_height_m": 0.7359430453115927
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_position_error_m": 0.18003844317731207,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 21.72809496849774,
+          "speed_error_sum_mps": 31.371905031502262,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.18179437354839,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 7.567988489575904,
+        "predicted_remaining_speed_budget_mps": 14.160106478921836,
+        "predicted_stop_peak_mps": 0.11817943735483902,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.36916613578796387,
+      "converted_rate_max_ratio": 0.36916613578796387
+    },
+    {
+      "slot": 3,
+      "side": "left",
+      "program_id": "m3k_strafe_walk_stop_left_5s",
+      "tube_m": 0.1,
+      "settle_s": 0.12,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.96,
+      "actual_hold_start_s": 5.96,
+      "repair_start_s": 5.16,
+      "projection_calls": 20,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.19380394497126402,
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_timed_path_error_m": 0.19448837025036797,
+          "mean_heading_error_deg": 1.4533432606065535,
+          "mean_timed_path_error_m": 0.12205272762674665,
+          "p95_timed_path_error_m": 0.19351100431864096,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.1707571197378068,
+              "boundary_position_error_m": 0.13546489826816657,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.9987381941747616,
+              "boundary_position_error_m": 0.032374837921485496,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.4465527635834574,
+              "boundary_position_error_m": 0.1941757874457747,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.19139283701198062,
+              "boundary_position_error_m": 0.19380394497126402,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.12574549176935318,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.1941757874457747
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.10590580366858922,
+          "terminal_speed_mps": 0.011821810260891373,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+          "minimum_root_height_m": 0.6275290250778198,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+            "minimum_root_height_m": 0.6275290250778198
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.12633526419090696,
+            "minimum_root_height_m": 0.73611698359914
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_position_error_m": 0.18003844317731207,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 21.72809496849774,
+          "speed_error_sum_mps": 31.371905031502262,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.2574549176935317,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 6.118749467178323,
+        "predicted_remaining_speed_budget_mps": 15.609345501319417,
+        "predicted_stop_peak_mps": 0.12574549176935318,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.36916613578796387,
+      "converted_rate_max_ratio": 0.36916613578796387
+    },
+    {
+      "slot": 4,
+      "side": "left",
+      "program_id": "m3k_strafe_walk_stop_left_5s",
+      "tube_m": 0.1,
+      "settle_s": 0.24,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.84,
+      "actual_hold_start_s": 5.84,
+      "repair_start_s": 5.12,
+      "projection_calls": 18,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": true,
+          "timed_heading": true,
+          "timed_path": false
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": false
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.22775958368755272,
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_timed_path_error_m": 0.22835172453389668,
+          "mean_heading_error_deg": 1.4146781194006572,
+          "mean_timed_path_error_m": 0.12866392257351908,
+          "p95_timed_path_error_m": 0.22728746812929068,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.1707571197378068,
+              "boundary_position_error_m": 0.13546489826816657,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.9987381941747616,
+              "boundary_position_error_m": 0.032374837921485496,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.3666692834512454,
+              "boundary_position_error_m": 0.22835172453389668,
+              "complete": false,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.28212268081060243,
+              "boundary_position_error_m": 0.22775958368755272,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.09716128198994237,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.22835172453389668
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.10989484515191819,
+          "terminal_speed_mps": 0.0065301470479599616,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+          "minimum_root_height_m": 0.6275290250778198,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+            "minimum_root_height_m": 0.6275290250778198
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.1350333375307462,
+            "minimum_root_height_m": 0.7360067094242779
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_position_error_m": 0.18003844317731207,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 21.72809496849774,
+          "speed_error_sum_mps": 31.371905031502262,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.14175862266948336,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 7.530870152276775,
+        "predicted_remaining_speed_budget_mps": 14.197224816220963,
+        "predicted_stop_peak_mps": 0.09716128198994237,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.36916613578796387,
+      "converted_rate_max_ratio": 0.36916613578796387
+    },
+    {
+      "slot": 5,
+      "side": "left",
+      "program_id": "m3k_strafe_walk_stop_left_5s",
+      "tube_m": 0.1,
+      "settle_s": 0.4,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.68,
+      "actual_hold_start_s": 5.72,
+      "repair_start_s": 5.12,
+      "projection_calls": 15,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": true,
+          "timed_heading": true,
+          "timed_path": false
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": false
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.3024349504729974,
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_timed_path_error_m": 0.30368698063165017,
+          "mean_heading_error_deg": 1.477946785629869,
+          "mean_timed_path_error_m": 0.14327189481864466,
+          "p95_timed_path_error_m": 0.3033354520832493,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.1707571197378068,
+              "boundary_position_error_m": 0.13546489826816657,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.9987381941747616,
+              "boundary_position_error_m": 0.032374837921485496,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.6849066906835549,
+              "boundary_position_error_m": 0.30160165959116664,
+              "complete": false,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.41335917733095595,
+              "boundary_position_error_m": 0.3024349504729974,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.052132066025720715,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.30368698063165017
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.11792514446282956,
+          "terminal_speed_mps": 0.004099730902608334,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+          "minimum_root_height_m": 0.6275290250778198,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+            "minimum_root_height_m": 0.6275290250778198
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.15266720724583482,
+            "minimum_root_height_m": 0.7358687571133745
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_position_error_m": 0.18003844317731207,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 21.72809496849774,
+          "speed_error_sum_mps": 31.371905031502262,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.5184349031582507,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 10.373596108339397,
+        "predicted_remaining_speed_budget_mps": 11.354498860158342,
+        "predicted_stop_peak_mps": 0.052132066025720715,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.36916613578796387,
+      "converted_rate_max_ratio": 0.3691664457321167
+    },
+    {
+      "slot": 6,
+      "side": "left",
+      "program_id": "m3k_strafe_walk_stop_left_5s",
+      "tube_m": 0.15,
+      "settle_s": 0.12,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.96,
+      "actual_hold_start_s": 5.96,
+      "repair_start_s": 5.16,
+      "projection_calls": 20,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.19380394497126402,
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_timed_path_error_m": 0.19448837025036797,
+          "mean_heading_error_deg": 1.4533432606065535,
+          "mean_timed_path_error_m": 0.12205272762674665,
+          "p95_timed_path_error_m": 0.19351100431864096,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.1707571197378068,
+              "boundary_position_error_m": 0.13546489826816657,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.9987381941747616,
+              "boundary_position_error_m": 0.032374837921485496,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.4465527635834574,
+              "boundary_position_error_m": 0.1941757874457747,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.19139283701198062,
+              "boundary_position_error_m": 0.19380394497126402,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.12574549176935318,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.1941757874457747
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.10590580366858922,
+          "terminal_speed_mps": 0.011821810260891373,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+          "minimum_root_height_m": 0.6275290250778198,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+            "minimum_root_height_m": 0.6275290250778198
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.12633526419090696,
+            "minimum_root_height_m": 0.73611698359914
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_position_error_m": 0.18003844317731207,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 21.72809496849774,
+          "speed_error_sum_mps": 31.371905031502262,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.2574549176935317,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 6.118749467178323,
+        "predicted_remaining_speed_budget_mps": 15.609345501319417,
+        "predicted_stop_peak_mps": 0.12574549176935318,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.36916613578796387,
+      "converted_rate_max_ratio": 0.36916613578796387
+    },
+    {
+      "slot": 7,
+      "side": "left",
+      "program_id": "m3k_strafe_walk_stop_left_5s",
+      "tube_m": 0.15,
+      "settle_s": 0.24,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.84,
+      "actual_hold_start_s": 5.84,
+      "repair_start_s": 5.12,
+      "projection_calls": 18,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": true,
+          "timed_heading": true,
+          "timed_path": false
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": false
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.23241275032934305,
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_timed_path_error_m": 0.23279665077468617,
+          "mean_heading_error_deg": 1.4066061749616106,
+          "mean_timed_path_error_m": 0.12900341616761984,
+          "p95_timed_path_error_m": 0.23254853468921,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.1707571197378068,
+              "boundary_position_error_m": 0.13546489826816657,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.9987381941747616,
+              "boundary_position_error_m": 0.032374837921485496,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.33689241300048645,
+              "boundary_position_error_m": 0.2300960763071254,
+              "complete": false,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.18046862760955135,
+              "boundary_position_error_m": 0.23241275032934305,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.08466500378681643,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.23279665077468617
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.10910891107740595,
+          "terminal_speed_mps": 0.0035982053081311137,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+          "minimum_root_height_m": 0.6275290250778198,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+            "minimum_root_height_m": 0.6275290250778198
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.13878567361706332,
+            "minimum_root_height_m": 0.7360418040718926
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_position_error_m": 0.18003844317731207,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 21.72809496849774,
+          "speed_error_sum_mps": 31.371905031502262,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.1639832538734307,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 7.25264948989944,
+        "predicted_remaining_speed_budget_mps": 14.4754454785983,
+        "predicted_stop_peak_mps": 0.08466500378681643,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.36916613578796387,
+      "converted_rate_max_ratio": 0.36916613578796387
+    },
+    {
+      "slot": 8,
+      "side": "left",
+      "program_id": "m3k_strafe_walk_stop_left_5s",
+      "tube_m": 0.15,
+      "settle_s": 0.4,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.68,
+      "actual_hold_start_s": 5.68,
+      "repair_start_s": 5.12,
+      "projection_calls": 14,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": true,
+          "timed_heading": true,
+          "timed_path": false
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": false
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.3177538676604607,
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_timed_path_error_m": 0.32654035776863927,
+          "mean_heading_error_deg": 1.5132922547024945,
+          "mean_timed_path_error_m": 0.14666909411133652,
+          "p95_timed_path_error_m": 0.3242569652287021,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.1707571197378068,
+              "boundary_position_error_m": 0.13546489826816657,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.9987381941747616,
+              "boundary_position_error_m": 0.032374837921485496,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.7458981419675277,
+              "boundary_position_error_m": 0.3243024370383679,
+              "complete": false,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.35455971746838694,
+              "boundary_position_error_m": 0.3177538676604607,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.043712169964183534,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.32654035776863927
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.11983202763947373,
+          "terminal_speed_mps": 0.0038939506230926345,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+          "minimum_root_height_m": 0.6275290250778198,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+            "minimum_root_height_m": 0.6275290250778198
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.17618182516422487,
+            "minimum_root_height_m": 0.7359079114668895
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_position_error_m": 0.18003844317731207,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 21.72809496849774,
+          "speed_error_sum_mps": 31.371905031502262,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.6327017888431963,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 11.048632752871432,
+        "predicted_remaining_speed_budget_mps": 10.679462215626307,
+        "predicted_stop_peak_mps": 0.043712169964183534,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.36916613578796387,
+      "converted_rate_max_ratio": 0.36916613578796387
+    },
+    {
+      "slot": 9,
+      "side": "right",
+      "program_id": "m3k_strafe_walk_stop_right_5s",
+      "tube_m": 0.05,
+      "settle_s": 0.12,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.96,
+      "actual_hold_start_s": 5.96,
+      "repair_start_s": 5.16,
+      "projection_calls": 20,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.032316695192249056,
+          "max_heading_error_deg": 4.989453572841316,
+          "max_timed_path_error_m": 0.16025384350749883,
+          "mean_heading_error_deg": 1.2899337001288291,
+          "mean_timed_path_error_m": 0.07125095076659106,
+          "p95_timed_path_error_m": 0.146544590186032,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.4593398036159495,
+              "boundary_position_error_m": 0.15897449960679333,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.180038855249248,
+              "boundary_position_error_m": 0.0639056371427811,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.13386258211079166,
+              "boundary_position_error_m": 0.019545525353349386,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.4082576393335001,
+              "boundary_position_error_m": 0.032316695192249056,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.11826434076050361,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.0345568137762462
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.1131048509224732,
+          "terminal_speed_mps": 0.008207612499103248,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+          "minimum_root_height_m": 0.7236137986183167,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+            "minimum_root_height_m": 0.7236137986183167
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.0791736032906736,
+            "minimum_root_height_m": 0.742919380675187
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 4.989453572841316,
+          "max_position_error_m": 0.16025384350749883,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 18.16420924916863,
+          "speed_error_sum_mps": 34.93579075083137,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.18264340760503606,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 5.103326475724133,
+        "predicted_remaining_speed_budget_mps": 13.060882773444495,
+        "predicted_stop_peak_mps": 0.11826434076050361,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.38697339594364166,
+      "converted_rate_max_ratio": 0.3869734764099121
+    },
+    {
+      "slot": 10,
+      "side": "right",
+      "program_id": "m3k_strafe_walk_stop_right_5s",
+      "tube_m": 0.05,
+      "settle_s": 0.24,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.84,
+      "actual_hold_start_s": 5.84,
+      "repair_start_s": 5.12,
+      "projection_calls": 18,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.0424313851734567,
+          "max_heading_error_deg": 4.989453572841316,
+          "max_timed_path_error_m": 0.16025384350749883,
+          "mean_heading_error_deg": 1.2794134110935478,
+          "mean_timed_path_error_m": 0.0730340878014708,
+          "p95_timed_path_error_m": 0.146544590186032,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.4593398036159495,
+              "boundary_position_error_m": 0.15897449960679333,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.180038855249248,
+              "boundary_position_error_m": 0.0639056371427811,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.34293611740107294,
+              "boundary_position_error_m": 0.03691788564126021,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.47354134082360344,
+              "boundary_position_error_m": 0.0424313851734567,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.11504218489726184,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.04322441491745472
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.11516504004005465,
+          "terminal_speed_mps": 0.01030225597522555,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+          "minimum_root_height_m": 0.7236137986183167,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+            "minimum_root_height_m": 0.7236137986183167
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.06738655607673585,
+            "minimum_root_height_m": 0.7467712759180141
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 4.989453572841316,
+          "max_position_error_m": 0.16025384350749883,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 18.16420924916863,
+          "speed_error_sum_mps": 34.93579075083137,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.15042184897261834,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 5.83263342334797,
+        "predicted_remaining_speed_budget_mps": 12.331575825820657,
+        "predicted_stop_peak_mps": 0.11504218489726184,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.38697339594364166,
+      "converted_rate_max_ratio": 0.3869734764099121
+    },
+    {
+      "slot": 11,
+      "side": "right",
+      "program_id": "m3k_strafe_walk_stop_right_5s",
+      "tube_m": 0.05,
+      "settle_s": 0.4,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.68,
+      "actual_hold_start_s": 5.84,
+      "repair_start_s": 5.12,
+      "projection_calls": 18,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.0424313851734567,
+          "max_heading_error_deg": 4.989453572841316,
+          "max_timed_path_error_m": 0.16025384350749883,
+          "mean_heading_error_deg": 1.2794134110935478,
+          "mean_timed_path_error_m": 0.0730340878014708,
+          "p95_timed_path_error_m": 0.146544590186032,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.4593398036159495,
+              "boundary_position_error_m": 0.15897449960679333,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.180038855249248,
+              "boundary_position_error_m": 0.0639056371427811,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.34293611740107294,
+              "boundary_position_error_m": 0.03691788564126021,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.47354134082360344,
+              "boundary_position_error_m": 0.0424313851734567,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.11504218489726184,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.04322441491745472
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.11516504004005465,
+          "terminal_speed_mps": 0.01030225597522555,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+          "minimum_root_height_m": 0.7236137986183167,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+            "minimum_root_height_m": 0.7236137986183167
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.06738655607673585,
+            "minimum_root_height_m": 0.7467712759180141
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 4.989453572841316,
+          "max_position_error_m": 0.16025384350749883,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 18.16420924916863,
+          "speed_error_sum_mps": 34.93579075083137,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.15042184897261834,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 5.83263342334797,
+        "predicted_remaining_speed_budget_mps": 12.331575825820657,
+        "predicted_stop_peak_mps": 0.11504218489726184,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.38697339594364166,
+      "converted_rate_max_ratio": 0.3869734764099121
+    },
+    {
+      "slot": 12,
+      "side": "right",
+      "program_id": "m3k_strafe_walk_stop_right_5s",
+      "tube_m": 0.1,
+      "settle_s": 0.12,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.96,
+      "actual_hold_start_s": 5.96,
+      "repair_start_s": 5.16,
+      "projection_calls": 20,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.032929013557540646,
+          "max_heading_error_deg": 4.989453572841316,
+          "max_timed_path_error_m": 0.16025384350749883,
+          "mean_heading_error_deg": 1.2738068167078191,
+          "mean_timed_path_error_m": 0.07218444474327149,
+          "p95_timed_path_error_m": 0.146544590186032,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.4593398036159495,
+              "boundary_position_error_m": 0.15897449960679333,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.180038855249248,
+              "boundary_position_error_m": 0.0639056371427811,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.38089744836424405,
+              "boundary_position_error_m": 0.019760558921943554,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.265738976196052,
+              "boundary_position_error_m": 0.032929013557540646,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.1128808669013256,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.03785426127281858
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.11294606151624555,
+          "terminal_speed_mps": 0.009188536724235696,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+          "minimum_root_height_m": 0.7236137986183167,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+            "minimum_root_height_m": 0.7236137986183167
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.09614977749028729,
+            "minimum_root_height_m": 0.7397913473614623
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 4.989453572841316,
+          "max_position_error_m": 0.16025384350749883,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 18.16420924916863,
+          "speed_error_sum_mps": 34.93579075083137,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.12880866901325594,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 5.047115025919552,
+        "predicted_remaining_speed_budget_mps": 13.117094223249076,
+        "predicted_stop_peak_mps": 0.1128808669013256,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.38697339594364166,
+      "converted_rate_max_ratio": 0.3869734764099121
+    },
+    {
+      "slot": 13,
+      "side": "right",
+      "program_id": "m3k_strafe_walk_stop_right_5s",
+      "tube_m": 0.1,
+      "settle_s": 0.24,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.84,
+      "actual_hold_start_s": 5.84,
+      "repair_start_s": 5.12,
+      "projection_calls": 18,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.04108477116685231,
+          "max_heading_error_deg": 4.989453572841316,
+          "max_timed_path_error_m": 0.16025384350749883,
+          "mean_heading_error_deg": 1.356522959403733,
+          "mean_timed_path_error_m": 0.07370704296535749,
+          "p95_timed_path_error_m": 0.146544590186032,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.4593398036159495,
+              "boundary_position_error_m": 0.15897449960679333,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.180038855249248,
+              "boundary_position_error_m": 0.0639056371427811,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.6723799963957775,
+              "boundary_position_error_m": 0.02195666729875639,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.15603811193771533,
+              "boundary_position_error_m": 0.04108477116685231,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.10377761855513196,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.046478432265491115
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.11617754114464023,
+          "terminal_speed_mps": 0.013833441526366671,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+          "minimum_root_height_m": 0.7236137986183167,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+            "minimum_root_height_m": 0.7236137986183167
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.09032866669196768,
+            "minimum_root_height_m": 0.7419612432193594
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 4.989453572841316,
+          "max_position_error_m": 0.16025384350749883,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 18.16420924916863,
+          "speed_error_sum_mps": 34.93579075083137,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.03777618555131945,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 6.19105881437126,
+        "predicted_remaining_speed_budget_mps": 11.973150434797368,
+        "predicted_stop_peak_mps": 0.10377761855513196,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.38697339594364166,
+      "converted_rate_max_ratio": 0.3869734764099121
+    },
+    {
+      "slot": 14,
+      "side": "right",
+      "program_id": "m3k_strafe_walk_stop_right_5s",
+      "tube_m": 0.1,
+      "settle_s": 0.4,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.68,
+      "actual_hold_start_s": 5.72,
+      "repair_start_s": 5.12,
+      "projection_calls": 15,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.06268843948121343,
+          "max_heading_error_deg": 4.989453572841316,
+          "max_timed_path_error_m": 0.16025384350749883,
+          "mean_heading_error_deg": 1.2377018102918278,
+          "mean_timed_path_error_m": 0.07660073990908038,
+          "p95_timed_path_error_m": 0.146544590186032,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.4593398036159495,
+              "boundary_position_error_m": 0.15897449960679333,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.180038855249248,
+              "boundary_position_error_m": 0.0639056371427811,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.4732947826975162,
+              "boundary_position_error_m": 0.055623425921546066,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.11410414707388933,
+              "boundary_position_error_m": 0.06268843948121343,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.10047607740861782,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.0635297975945093
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.1174707266123677,
+          "terminal_speed_mps": 0.009777927440382705,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+          "minimum_root_height_m": 0.7236137986183167,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+            "minimum_root_height_m": 0.7236137986183167
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.08304163111559729,
+            "minimum_root_height_m": 0.746819650105397
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 4.989453572841316,
+          "max_position_error_m": 0.16025384350749883,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 18.16420924916863,
+          "speed_error_sum_mps": 34.93579075083137,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.004760774086178143,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 6.6488464699467835,
+        "predicted_remaining_speed_budget_mps": 11.515362779221846,
+        "predicted_stop_peak_mps": 0.10047607740861782,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.38697339594364166,
+      "converted_rate_max_ratio": 0.3869734764099121
+    },
+    {
+      "slot": 15,
+      "side": "right",
+      "program_id": "m3k_strafe_walk_stop_right_5s",
+      "tube_m": 0.15,
+      "settle_s": 0.12,
+      "geometry_eligible": true,
+      "status": "geometry_qualified",
+      "fallback_reason": null,
+      "reference_changed": true,
+      "requested_hold_start_s": 5.96,
+      "actual_hold_start_s": 5.96,
+      "repair_start_s": 5.16,
+      "projection_calls": 20,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": null,
+      "forecast_status": "complete",
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.032929013557540646,
+          "max_heading_error_deg": 4.989453572841316,
+          "max_timed_path_error_m": 0.16025384350749883,
+          "mean_heading_error_deg": 1.2738068167078191,
+          "mean_timed_path_error_m": 0.07218444474327149,
+          "p95_timed_path_error_m": 0.146544590186032,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.4593398036159495,
+              "boundary_position_error_m": 0.15897449960679333,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.180038855249248,
+              "boundary_position_error_m": 0.0639056371427811,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.38089744836424405,
+              "boundary_position_error_m": 0.019760558921943554,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.265738976196052,
+              "boundary_position_error_m": 0.032929013557540646,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.1128808669013256,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.03785426127281858
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.11294606151624555,
+          "terminal_speed_mps": 0.009188536724235696,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+          "minimum_root_height_m": 0.7236137986183167,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+            "minimum_root_height_m": 0.7236137986183167
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.09614977749028729,
+            "minimum_root_height_m": 0.7397913473614623
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 4.989453572841316,
+          "max_position_error_m": 0.16025384350749883,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 18.16420924916863,
+          "speed_error_sum_mps": 34.93579075083137,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 0.12880866901325594,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 5.047115025919552,
+        "predicted_remaining_speed_budget_mps": 13.117094223249076,
+        "predicted_stop_peak_mps": 0.1128808669013256,
+        "uncalibrated_research_heuristic": true
+      },
+      "native_rate_max_ratio": 0.38697339594364166,
+      "converted_rate_max_ratio": 0.3869734764099121
+    },
+    {
+      "slot": 16,
+      "side": "right",
+      "program_id": "m3k_strafe_walk_stop_right_5s",
+      "tube_m": 0.15,
+      "settle_s": 0.24,
+      "geometry_eligible": false,
+      "status": "reference_rejected",
+      "fallback_reason": "frozen_v5_geometry_rejected",
+      "reference_changed": false,
+      "requested_hold_start_s": 5.84,
+      "actual_hold_start_s": 5.84,
+      "repair_start_s": 5.12,
+      "projection_calls": 10,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": "transition_contact_projection_infeasible",
+      "forecast_status": "not_forecast_reference_rejected",
+      "prediction": null,
+      "native_rate_max_ratio": null,
+      "converted_rate_max_ratio": null
+    },
+    {
+      "slot": 17,
+      "side": "right",
+      "program_id": "m3k_strafe_walk_stop_right_5s",
+      "tube_m": 0.15,
+      "settle_s": 0.4,
+      "geometry_eligible": false,
+      "status": "reference_rejected",
+      "fallback_reason": "frozen_v5_geometry_rejected",
+      "reference_changed": false,
+      "requested_hold_start_s": 5.68,
+      "actual_hold_start_s": 5.68,
+      "repair_start_s": 5.12,
+      "projection_calls": 8,
+      "all_checks_pass": true,
+      "underlying_rejection_reason": "transition_contact_projection_infeasible",
+      "forecast_status": "not_forecast_reference_rejected",
+      "prediction": null,
+      "native_rate_max_ratio": null,
+      "converted_rate_max_ratio": null
+    }
+  ],
+  "current_forecasts": [
+    {
+      "declared_recovery_attempt": true,
+      "forecast_status": "complete",
+      "geometry_eligible": true,
+      "independent_score_clock_hash_checks": true,
+      "is_current": true,
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.10803036120098296,
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_timed_path_error_m": 0.18059699370521756,
+          "mean_heading_error_deg": 1.6658907965118206,
+          "mean_timed_path_error_m": 0.10487289165910178,
+          "p95_timed_path_error_m": 0.1774873201182315,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.1707571197378068,
+              "boundary_position_error_m": 0.13546489826816657,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.9987381941747616,
+              "boundary_position_error_m": 0.032374837921485496,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.25720516299123775,
+              "boundary_position_error_m": 0.10006815306681589,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.8275389162625635,
+              "boundary_position_error_m": 0.10803036120098296,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.2643233011545804,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.11445131768422441
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.10935702721334432,
+          "terminal_speed_mps": 0.016361730307715976,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+          "minimum_root_height_m": 0.6275290250778198,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.23477505147457123,
+            "minimum_root_height_m": 0.6275290250778198
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.09994968112732644,
+            "minimum_root_height_m": 0.7361718897591542
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 6.7235966650832655,
+          "max_position_error_m": 0.18003844317731207,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 21.72809496849774,
+          "speed_error_sum_mps": 31.371905031502262,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 1.6432330115458038,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 7.340482602021627,
+        "predicted_remaining_speed_budget_mps": 14.387612366476112,
+        "predicted_stop_peak_mps": 0.2643233011545804,
+        "uncalibrated_research_heuristic": true
+      },
+      "result_sha256": "4133b519592e28715868bb7bf6e90cdd63e6966e37551121dcff4f50f99666fc",
+      "side": "left",
+      "slot": null
+    },
+    {
+      "declared_recovery_attempt": false,
+      "forecast_status": "complete",
+      "geometry_eligible": true,
+      "independent_score_clock_hash_checks": true,
+      "is_current": true,
+      "prediction": {
+        "checks": {
+          "all_phase_boundary_and_stop_checks": false,
+          "full_duration": true,
+          "no_past_irrevocable_violations": true,
+          "predicted_no_geometric_fall": true,
+          "speed_budget": true,
+          "speed_mean": true,
+          "stop_speed": false,
+          "timed_heading": true,
+          "timed_path": true
+        },
+        "empirical_uncertainty_margin_applied": false,
+        "full_original_clock_kinematic_score": {
+          "checks": {
+            "full_duration": true,
+            "ordered_phases": false,
+            "speed": true,
+            "timed_heading": true,
+            "timed_path": true
+          },
+          "executed_program_success": null,
+          "fell": null,
+          "final_position_error_m": 0.0846102093357201,
+          "max_heading_error_deg": 4.989453572841316,
+          "max_timed_path_error_m": 0.16025384350749883,
+          "mean_heading_error_deg": 1.3455511543014982,
+          "mean_timed_path_error_m": 0.08129310418677074,
+          "p95_timed_path_error_m": 0.146544590186032,
+          "phases": [
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.4593398036159495,
+              "boundary_position_error_m": 0.15897449960679333,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 0
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.180038855249248,
+              "boundary_position_error_m": 0.0639056371427811,
+              "complete": true,
+              "op": "STRAFE",
+              "phase_index": 1
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 1.8604455319278057,
+              "boundary_position_error_m": 0.05600666025115411,
+              "complete": true,
+              "op": "WALK_STRAIGHT",
+              "phase_index": 2
+            },
+            {
+              "available": true,
+              "boundary_heading_error_deg": 0.40276776860693614,
+              "boundary_position_error_m": 0.0846102093357201,
+              "captured_dwell_s": 1.0,
+              "complete": false,
+              "max_stop_speed_mps": 0.21228542438551326,
+              "op": "STOP",
+              "phase_index": 3,
+              "requested_dwell_s": 1.0,
+              "stopping_overshoot_m": 0.09446594151576719
+            }
+          ],
+          "protocol": "m3a-requested-program-v1-provisional",
+          "request_end_time_s": 7.08,
+          "request_tracking_success": false,
+          "scored_end_time_s": 7.08,
+          "speed_mae_mps": 0.1192649633037365,
+          "terminal_speed_mps": 0.02055053310948584,
+          "thresholds": {
+            "heading_deg": 10.0,
+            "position_m": 0.2,
+            "speed_mae_mps": 0.15,
+            "stop_speed_mps": 0.1
+          }
+        },
+        "geometric_fall_diagnostic": {
+          "extra_acquisition_state_excluded": true,
+          "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+          "minimum_root_height_m": 0.7236137986183167,
+          "observed_prefix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.15539810061454773,
+            "minimum_root_height_m": 0.7236137986183167
+          },
+          "predicted_suffix": {
+            "geometric_fall": false,
+            "maximum_absolute_roll_pitch_rad": 0.06155927566723763,
+            "minimum_root_height_m": 0.7354468283797138
+          },
+          "thresholds": {
+            "absolute_roll_or_pitch_above_rad": 1.4,
+            "root_height_below_m": 0.25
+          }
+        },
+        "measured_budget": {
+          "complete": false,
+          "consumed_scored_samples": 254,
+          "grid_full_duration_coverage": true,
+          "irrevocable_violations": [],
+          "max_heading_error_deg": 4.989453572841316,
+          "max_position_error_m": 0.16025384350749883,
+          "observed_through_s": 5.08,
+          "received_capture_samples": 254,
+          "remaining_scored_samples": 100,
+          "remaining_speed_error_budget_mps": 18.16420924916863,
+          "speed_error_sum_mps": 34.93579075083137,
+          "total_scored_samples": 354,
+          "total_speed_error_budget_mps": 53.1
+        },
+        "normalized_max_violation": 1.1228542438551323,
+        "physical_success_claimed": false,
+        "point_admissible": false,
+        "predicted_future_speed_error_sum_mps": 7.284006258691338,
+        "predicted_remaining_speed_budget_mps": 10.88020299047729,
+        "predicted_stop_peak_mps": 0.21228542438551326,
+        "uncalibrated_research_heuristic": true
+      },
+      "result_sha256": "836dacf558886b113206e908152278e31296ab69d844bfbc3bf96e800a9eb6c9",
+      "side": "right",
+      "slot": null
+    }
+  ],
+  "all_checks_pass": true,
+  "development_posthoc": true,
+  "final36_accessed": false,
+  "original_zero_state_forecast_failure_retained": true,
+  "geometry_reused_without_new_solver_calls": true,
+  "forecast_recovery_receipt_sha256": "21e46463f30b79cbc81500988954148d7afecd72614607966df421ebb0372995",
+  "source_sha256": {
+    "knav/artifacts/terminal-reference-envelope-audit-v0.1/result.json": "03c37211aadcc5dfb926920d693ac9453e37b7252bbe41e0f14cbe9c0d567e74",
+    "knav/research/2026-09-08-terminal-repair/terminal_reference_envelope_study_sources.json": "8afb3c973afd6bc3b16bd70e875d7ab039891b4b1680db7cbe461d53277dd608"
+  }
+}

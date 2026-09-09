@@ -1,45 +1,35 @@
-# KimoNav paper summary — 9 September 2026
+# KimoNav: deadline-aware reference repair — working-paper summary
 
-**Active working title:** KimoNav: Deadline-Aware Reference Repair.
-**Status:** incomplete method draft; all execution evidence is simulation.
-The full draft remains local pending author review. No submission is claimed.
+Updated after the 9 September 2026 research continuation. Ongoing simulation
+research, not a published or submitted paper. The full manuscript remains local
+pending human author review.
 
-We test whether whole-body reference changes around a fixed SONIC tracker can
-improve completion of a timed navigation request without moving its path,
-relaxing its tolerances, or postponing STOP. The implementation combines
-contact-consistent reference geometry, a nominal tracker-conditioned rollout,
-and causal accounting of already consumed task errors.
+The question is whether bounded reference repair around a frozen humanoid
+tracker can improve a complete timed task without resetting its past errors
+or stopping deadline. The method combines whole-body geometry, a nominal
+execution forecast and original-clock task budgets.
 
-The 24-program terminal-only comparison remains at 8/24 task successes, with
-two gains and two losses. STOP-speed compliance improves from 12/24 to 16/24,
-but full STOP phase stays at 9/24 and runtime quality drops from 14/24 to 11/24.
-The two complete-task rescues use the sequential branch; they cannot be
-attributed to the new coupled optimization branch.
+The completed live binary governor reproduces10/24 task successes versus 8/24
+current, with two gains and no losses. Its24 captures include two reused
+captures and22 new captures, with one declared recovery. All original attempts
+remain. Choices, reference/forecast arrays and selected physical first-episode
+arrays reproduce the inspected replay under the same seed. This is a live
+implementation check, not validation on new programs.
 
-A minimal-intervention rule selects 10/24 successes from these saved outcomes.
-It was designed after inspecting the results: this is post-hoc development
-replay with zero new captures. A live pilot of an expanded pelvis-reference
-bank has 0/2 governor successes and 0/1 zero-control success on two programs.
-The selected right offset predicts STOP 0.096005 m/s, but executes 0.158513 m/s;
-the zero-offset control executes 0.150212 m/s. Its predicted benefit has the
-wrong observed sign. Causal default-offset calibration fails to improve the
-forecast overall and is not adopted.
+The next18-proposal reference-envelope study admits16 geometry/rate-valid
+repairs and predicts no complete-task success. Wider priors advance stopping
+holds, but four left STOP-speed passes lose position. The closest right STOP
+forecast remains above the strict threshold. A zero-state model import failure
+is preserved, and its forecast-only recovery reuses all geometry. No new robot
+execution is added by that grid.
 
-Remaining work: reconcile the incomplete 24-slot binary live collection,
-validate prediction of repair effects on separate development variation,
-qualify actual delayed execution, freeze the method/baselines, then evaluate
-the 36 reserved parameter-variation programs. They are distinct from the
-older consumed twelve-design confirmation panel.
+The paper retains the separate wrong-sign live pelvis prediction and negative
+causal default-offset calibration. Binary preparation takes 11.30–18.13 s with
+simulation paused. Actual delay handling, prediction transfer and sealed-final36
+evaluation remain unfinished. Hardware, calibrated guarantees and real-time
+operation are not established.
 
-The earlier diagnostic paper is retained as a separate contribution. Completing
-its first-candidate repeat arms gives fixed / first / minimum-jerk counts of
-2/3/4, 2/1/2 and 1/5/3 at simulator seeds 1701/1702/1703, each out of twelve.
-Selection changes success by +1, +1, −2 versus first candidate.
-
-No hardware reliability, real-time control, calibrated stopping guarantee,
-broad generalization, or novelty of the upstream integration is claimed.
-Human authors must review the scientific argument and complete the factual
-AI-assistance inventory before preparing a submission candidate.
-
-[Results, analysis and remaining work](progress-2026-09-09.md) ·
-[Program-level evidence and source hashes](progress-2026-09-09.json)
+[Results, analysis and sources](/assets/kimonav/continuation-2026-09-09.md).
+OpenAI Codex assisted with research code, experimental execution, analysis,
+figures and substantive drafting. Human authors remain responsible for the
+scientific argument, citations, full assistance inventory and final submission.

@@ -1,3 +1,5 @@
+> Historical report. The [September 9 review](progress-2026-09-09.md) and [current evidence](progress-2026-09-09.json) supersede its status and next-step statements. The first-candidate repeat arms are now complete; the active reference-repair study is unfinished.
+
 # M3q: bounded preview improves prediction, but the heading guard fails
 
 6 September 2026. All **3,840 grid forecasts and 32 finite parameter selections**

@@ -1,3 +1,5 @@
+> Historical report. The [September 9 review](progress-2026-09-09.md) and [current evidence](progress-2026-09-09.json) supersede its status and next-step statements. The first-candidate repeat arms are now complete; the active reference-repair study is unfinished.
+
 # KimoNav: completed braking and reserved confirmation
 
 Updated 7 September 2026. Ongoing research, not a published controller result.

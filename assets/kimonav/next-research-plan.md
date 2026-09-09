@@ -1,3 +1,5 @@
+> Historical report. The [September 9 review](progress-2026-09-09.md) and [current evidence](progress-2026-09-09.json) supersede its status and next-step statements. The first-candidate repeat arms are now complete; the active reference-repair study is unfinished.
+
 # M3r: qualify tracker adaptation and retention before training
 
 Next-stage draft after M3q, 6 September 2026. No M3r fine-tuning, vectorized

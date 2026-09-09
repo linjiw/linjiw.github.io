@@ -1,0 +1,1213 @@
+{
+  "review_date": "2026-09-09",
+  "snapshot_utc": "2026-09-09T06:46:21.281816+00:00",
+  "scope": "Existing development evidence; all robot execution is simulation. No new experiments in this review.",
+  "terminal_pairs": [
+    {
+      "program_id": "m3k_pivot_walk_stop_left_10s",
+      "family": "pivot_walk_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.16961488127708435,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 11.672595902090883,
+        "max_position_error_m": 0.21821803050879376,
+        "speed_MAE_mps": 0.12171692982208082,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.08823351562023163,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 11.672595902090883,
+        "max_position_error_m": 0.2457939432283831,
+        "speed_MAE_mps": 0.12545454290351638,
+        "success": false
+      },
+      "geometry": "new_coupled_v8_reference"
+    },
+    {
+      "program_id": "m3k_pivot_walk_stop_left_3s",
+      "family": "pivot_walk_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.18054617941379547,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 5.726441332413843,
+        "max_position_error_m": 0.14958038116924569,
+        "speed_MAE_mps": 0.13377357243039592,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.18054617941379547,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 5.726441332413843,
+        "max_position_error_m": 0.14958038116924569,
+        "speed_MAE_mps": 0.13377357243039592,
+        "success": false
+      },
+      "geometry": "whole_current_fallback"
+    },
+    {
+      "program_id": "m3k_pivot_walk_stop_left_5s",
+      "family": "pivot_walk_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.18397347629070282,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 7.262656628883036,
+        "max_position_error_m": 0.29726478541010576,
+        "speed_MAE_mps": 0.11470326336174362,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.07781727612018585,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 7.262656628883036,
+        "max_position_error_m": 0.4123369147779023,
+        "speed_MAE_mps": 0.11728443398240349,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_pivot_walk_stop_right_10s",
+      "family": "pivot_walk_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.21740466356277466,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.9687146077968487,
+        "max_position_error_m": 0.14370309030691564,
+        "speed_MAE_mps": 0.10632243766507987,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.07156811654567719,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.9687146077968487,
+        "max_position_error_m": 0.14370309030691564,
+        "speed_MAE_mps": 0.1056902715192556,
+        "success": true
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_pivot_walk_stop_right_3s",
+      "family": "pivot_walk_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.07639961689710617,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 4.234635624643259,
+        "max_position_error_m": 0.27823575302592723,
+        "speed_MAE_mps": 0.12908510263825906,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.06995204836130142,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 4.234635624643259,
+        "max_position_error_m": 0.3682483088754473,
+        "speed_MAE_mps": 0.1492648677830034,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_pivot_walk_stop_right_5s",
+      "family": "pivot_walk_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.1851469725370407,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 6.734817502795076,
+        "max_position_error_m": 0.38095221403584884,
+        "speed_MAE_mps": 0.15354761922800397,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.08334001153707504,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 6.734817502795076,
+        "max_position_error_m": 0.4798340079517297,
+        "speed_MAE_mps": 0.16227351673947135,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_left_10s",
+      "family": "same_sign_pair",
+      "current": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.059258874505758286,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 6.550244467026528,
+        "max_position_error_m": 0.17705661416376325,
+        "speed_MAE_mps": 0.0970559195641564,
+        "success": true
+      },
+      "repair": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.09373491257429123,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 6.3974834065271,
+        "max_position_error_m": 0.18582851568349115,
+        "speed_MAE_mps": 0.09866136324797012,
+        "success": true
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_left_3s",
+      "family": "same_sign_pair",
+      "current": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.06132267042994499,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 5.652261306319827,
+        "max_position_error_m": 0.19244742232217044,
+        "speed_MAE_mps": 0.11672851258085849,
+        "success": true
+      },
+      "repair": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.05689330771565437,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 5.1505459719162845,
+        "max_position_error_m": 0.19672799613273903,
+        "speed_MAE_mps": 0.11549713518741855,
+        "success": true
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_left_5s",
+      "family": "same_sign_pair",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.04874928668141365,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 4.704204094680353,
+        "max_position_error_m": 0.32392814611433457,
+        "speed_MAE_mps": 0.12887177079234613,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.05207660049200058,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 4.704204094680353,
+        "max_position_error_m": 0.32392814611433457,
+        "speed_MAE_mps": 0.12850608837711863,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_right_10s",
+      "family": "same_sign_pair",
+      "current": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.056678179651498795,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.874247174006544,
+        "max_position_error_m": 0.19555025669885018,
+        "speed_MAE_mps": 0.10103151764524858,
+        "success": true
+      },
+      "repair": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.05705108866095543,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.874247174006544,
+        "max_position_error_m": 0.19555025669885018,
+        "speed_MAE_mps": 0.10089178338386308,
+        "success": true
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_right_3s",
+      "family": "same_sign_pair",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": null,
+        "STOP_speed_observed": false,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": false,
+        "max_heading_error_deg": 4.919487648749315,
+        "max_position_error_m": 0.13924864957433075,
+        "speed_MAE_mps": 0.1731804591231048,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": null,
+        "STOP_speed_observed": false,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": false,
+        "max_heading_error_deg": 4.919487648749315,
+        "max_position_error_m": 0.14010082073594438,
+        "speed_MAE_mps": 0.17335631964728235,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_same_sign_pair_right_5s",
+      "family": "same_sign_pair",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.10656348615884781,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 6.77464980280133,
+        "max_position_error_m": 0.1543696911282201,
+        "speed_MAE_mps": 0.12510127929034037,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.10554239898920059,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 6.77464980280133,
+        "max_position_error_m": 0.1583030975654086,
+        "speed_MAE_mps": 0.12750025839855275,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_left_10s",
+      "family": "strafe_walk_stop",
+      "current": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.06530532985925674,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 4.904934595813098,
+        "max_position_error_m": 0.16873833970593463,
+        "speed_MAE_mps": 0.09190095307367134,
+        "success": true
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.1131737232208252,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 5.175152997073007,
+        "max_position_error_m": 0.31345817590020825,
+        "speed_MAE_mps": 0.10119251884501557,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_left_3s",
+      "family": "strafe_walk_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.18991124629974365,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.144174138261131,
+        "max_position_error_m": 0.19985975485631174,
+        "speed_MAE_mps": 0.10755022804839466,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.07853250950574875,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.144174138261131,
+        "max_position_error_m": 0.25363232706149497,
+        "speed_MAE_mps": 0.11704874314499773,
+        "success": false
+      },
+      "geometry": "new_coupled_v8_reference"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_left_5s",
+      "family": "strafe_walk_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.2138867974281311,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 6.7235966650832655,
+        "max_position_error_m": 0.18411883319704517,
+        "speed_MAE_mps": 0.10788439520771521,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.06052296981215477,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 6.7235966650832655,
+        "max_position_error_m": 0.24804596928095665,
+        "speed_MAE_mps": 0.10896793483693346,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_right_10s",
+      "family": "strafe_walk_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.07994989305734634,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 4.507436903653154,
+        "max_position_error_m": 0.3347280670707528,
+        "speed_MAE_mps": 0.09027314635844816,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.10921229422092438,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 4.507436903653154,
+        "max_position_error_m": 0.4784332762754917,
+        "speed_MAE_mps": 0.10017070056585327,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_right_3s",
+      "family": "strafe_walk_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.11838102340698242,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.8760531604305783,
+        "max_position_error_m": 0.16529026079640086,
+        "speed_MAE_mps": 0.0943028467824668,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.08139847964048386,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.8760531604305783,
+        "max_position_error_m": 0.16568871645641928,
+        "speed_MAE_mps": 0.10402442495573284,
+        "success": true
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_strafe_walk_stop_right_5s",
+      "family": "strafe_walk_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.22149395942687988,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 4.989453572841316,
+        "max_position_error_m": 0.16025384350749883,
+        "speed_MAE_mps": 0.12153368882413979,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.1578149050474167,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 4.989453572841316,
+        "max_position_error_m": 0.16025384350749883,
+        "speed_MAE_mps": 0.12138210395593095,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_left_10s",
+      "family": "walk_pivot_stop",
+      "current": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.12328802794218063,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 14.181114029363899,
+        "max_position_error_m": 0.20428146043086526,
+        "speed_MAE_mps": 0.10504342043982813,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.13036224246025085,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 10.089599729968374,
+        "max_position_error_m": 0.20841401302621163,
+        "speed_MAE_mps": 0.10780704160736694,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_left_3s",
+      "family": "walk_pivot_stop",
+      "current": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.06276734918355942,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.4092931795058736,
+        "max_position_error_m": 0.11415725308924779,
+        "speed_MAE_mps": 0.10037621000334326,
+        "success": true
+      },
+      "repair": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.04633980244398117,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.2728137748206043,
+        "max_position_error_m": 0.11415725308924779,
+        "speed_MAE_mps": 0.09918870151479266,
+        "success": true
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_left_5s",
+      "family": "walk_pivot_stop",
+      "current": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.04026300087571144,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 4.708663897269779,
+        "max_position_error_m": 0.15805295786689938,
+        "speed_MAE_mps": 0.09476481143890297,
+        "success": true
+      },
+      "repair": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.05961529165506363,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.831523619298439,
+        "max_position_error_m": 0.15805295786689938,
+        "speed_MAE_mps": 0.09613451436067286,
+        "success": true
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_right_10s",
+      "family": "walk_pivot_stop",
+      "current": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.0809277892112732,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 9.74468917003821,
+        "max_position_error_m": 0.18779881343492158,
+        "speed_MAE_mps": 0.10123605053133286,
+        "success": true
+      },
+      "repair": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.10776790976524353,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 9.74468917003821,
+        "max_position_error_m": 0.18936979116829383,
+        "speed_MAE_mps": 0.10454282468864816,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_right_3s",
+      "family": "walk_pivot_stop",
+      "current": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.07662194222211838,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.142936843577025,
+        "max_position_error_m": 0.14332350206846337,
+        "speed_MAE_mps": 0.11475541727074721,
+        "success": true
+      },
+      "repair": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.0553881898522377,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.3297908623735384,
+        "max_position_error_m": 0.14332350206846337,
+        "speed_MAE_mps": 0.11083911910957443,
+        "success": true
+      },
+      "geometry": "v5_exact_passthrough"
+    },
+    {
+      "program_id": "m3k_walk_pivot_stop_right_5s",
+      "family": "walk_pivot_stop",
+      "current": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.062223080545663834,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.9615772485584935,
+        "max_position_error_m": 0.2171293231941333,
+        "speed_MAE_mps": 0.10742761361712619,
+        "success": false
+      },
+      "repair": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.056079305708408356,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.9615772485584935,
+        "max_position_error_m": 0.2171293231941333,
+        "speed_MAE_mps": 0.10718325197928198,
+        "success": false
+      },
+      "geometry": "v5_exact_passthrough"
+    }
+  ],
+  "governor_replay": {
+    "rows": [
+      {
+        "program_id": "m3k_pivot_walk_stop_left_10s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_pivot_walk_stop_left_3s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_pivot_walk_stop_left_5s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_pivot_walk_stop_right_10s",
+        "selected_index": 0,
+        "reason": "repair_predicted_violation_with_admissible_reference",
+        "current_success": false,
+        "repair_success": true,
+        "selected_success": true
+      },
+      {
+        "program_id": "m3k_pivot_walk_stop_right_3s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_pivot_walk_stop_right_5s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_same_sign_pair_left_10s",
+        "selected_index": 9,
+        "reason": "retain_predicted_compliant_current",
+        "current_success": true,
+        "repair_success": true,
+        "selected_success": true
+      },
+      {
+        "program_id": "m3k_same_sign_pair_left_3s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": true,
+        "repair_success": true,
+        "selected_success": true
+      },
+      {
+        "program_id": "m3k_same_sign_pair_left_5s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_same_sign_pair_right_10s",
+        "selected_index": 9,
+        "reason": "retain_predicted_compliant_current",
+        "current_success": true,
+        "repair_success": true,
+        "selected_success": true
+      },
+      {
+        "program_id": "m3k_same_sign_pair_right_3s",
+        "selected_index": 9,
+        "reason": "retain_predicted_compliant_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_same_sign_pair_right_5s",
+        "selected_index": 9,
+        "reason": "retain_predicted_compliant_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_strafe_walk_stop_left_10s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": true,
+        "repair_success": false,
+        "selected_success": true
+      },
+      {
+        "program_id": "m3k_strafe_walk_stop_left_3s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_strafe_walk_stop_left_5s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_strafe_walk_stop_right_10s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_strafe_walk_stop_right_3s",
+        "selected_index": 0,
+        "reason": "repair_predicted_violation_with_admissible_reference",
+        "current_success": false,
+        "repair_success": true,
+        "selected_success": true
+      },
+      {
+        "program_id": "m3k_strafe_walk_stop_right_5s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_walk_pivot_stop_left_10s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      },
+      {
+        "program_id": "m3k_walk_pivot_stop_left_3s",
+        "selected_index": 9,
+        "reason": "retain_predicted_compliant_current",
+        "current_success": true,
+        "repair_success": true,
+        "selected_success": true
+      },
+      {
+        "program_id": "m3k_walk_pivot_stop_left_5s",
+        "selected_index": 9,
+        "reason": "retain_predicted_compliant_current",
+        "current_success": true,
+        "repair_success": true,
+        "selected_success": true
+      },
+      {
+        "program_id": "m3k_walk_pivot_stop_right_10s",
+        "selected_index": 9,
+        "reason": "retain_predicted_compliant_current",
+        "current_success": true,
+        "repair_success": false,
+        "selected_success": true
+      },
+      {
+        "program_id": "m3k_walk_pivot_stop_right_3s",
+        "selected_index": 9,
+        "reason": "retain_predicted_compliant_current",
+        "current_success": true,
+        "repair_success": true,
+        "selected_success": true
+      },
+      {
+        "program_id": "m3k_walk_pivot_stop_right_5s",
+        "selected_index": 9,
+        "reason": "no_admissible_update_retain_current",
+        "current_success": false,
+        "repair_success": false,
+        "selected_success": false
+      }
+    ],
+    "summary": {
+      "available_repair_gains_not_selected": 0,
+      "current": {
+        "STOP_speed_passes": 12,
+        "censored_physical_labels": 1,
+        "full_STOP_phase_passes": 9,
+        "geometric_falls": 0,
+        "mean_existing_slide_ratio": 0.1256352957694341,
+        "mean_max_heading_error_deg": 5.8070366456917775,
+        "mean_max_position_error_m": 0.20367864348654088,
+        "mean_speed_mae_mps": 0.1140902985724056,
+        "physical_terminations": 1,
+        "programs": 24,
+        "runtime_quality_accepted": 14,
+        "task_and_runtime_quality_successes": 5,
+        "task_successes": 8
+      },
+      "current_retained_decisions": 22,
+      "empirical_two_reference_task_union": 10,
+      "governor": {
+        "STOP_speed_passes": 14,
+        "censored_physical_labels": 1,
+        "full_STOP_phase_passes": 11,
+        "geometric_falls": 0,
+        "mean_existing_slide_ratio": 0.12496860685566802,
+        "mean_max_heading_error_deg": 5.8070366456917775,
+        "mean_max_position_error_m": 0.2036952458057083,
+        "mean_speed_mae_mps": 0.11446902407354902,
+        "physical_terminations": 1,
+        "programs": 24,
+        "runtime_quality_accepted": 14,
+        "task_and_runtime_quality_successes": 7,
+        "task_successes": 10
+      },
+      "observed_gains_over_current": 2,
+      "observed_losses_vs_current": 0,
+      "reference_update_decisions": 2,
+      "unconditional_losses_avoided": 2,
+      "unconditional_repair": {
+        "STOP_speed_passes": 16,
+        "censored_physical_labels": 1,
+        "full_STOP_phase_passes": 9,
+        "geometric_falls": 0,
+        "mean_existing_slide_ratio": 0.1235972021266815,
+        "mean_max_heading_error_deg": 5.586097564154333,
+        "mean_max_position_error_m": 0.23541227617232127,
+        "mean_speed_mae_mps": 0.11735983471521051,
+        "physical_terminations": 1,
+        "programs": 24,
+        "runtime_quality_accepted": 11,
+        "task_and_runtime_quality_successes": 7,
+        "task_successes": 8
+      }
+    },
+    "new_physics": 0,
+    "posthoc": true
+  },
+  "live_pelvis": {
+    "rows": [
+      {
+        "case_id": "left__governor",
+        "program_id": "m3k_strafe_walk_stop_left_5s",
+        "actual_STOP_peak_mps": 0.2138867974281311,
+        "actual_minus_predicted_mps": -0.05043650372644931,
+        "actual_task_success": false,
+        "false_point_accept": false,
+        "point_admissible": false,
+        "predicted_STOP_peak_mps": 0.2643233011545804,
+        "prediction_may_be_partial_actual_label": false,
+        "selected_index": 9,
+        "worker_wall_s": 22.622670519980602,
+        "runtime_preparation_wall_s": 25.117298593046144,
+        "physics_paused": true
+      },
+      {
+        "case_id": "right__governor",
+        "program_id": "m3k_strafe_walk_stop_right_5s",
+        "actual_STOP_peak_mps": 0.1585129350423813,
+        "actual_minus_predicted_mps": 0.06250825348732822,
+        "actual_task_success": false,
+        "false_point_accept": true,
+        "point_admissible": true,
+        "predicted_STOP_peak_mps": 0.09600468155505307,
+        "prediction_may_be_partial_actual_label": false,
+        "selected_index": 1,
+        "worker_wall_s": 24.91069993301062,
+        "runtime_preparation_wall_s": 27.54278245900059,
+        "physics_paused": true
+      },
+      {
+        "case_id": "right__repair_only_zero",
+        "program_id": "m3k_strafe_walk_stop_right_5s",
+        "actual_STOP_peak_mps": 0.15021242201328278,
+        "actual_minus_predicted_mps": 0.03194808125277916,
+        "actual_task_success": false,
+        "false_point_accept": false,
+        "point_admissible": false,
+        "predicted_STOP_peak_mps": 0.11826434076050361,
+        "prediction_may_be_partial_actual_label": false,
+        "selected_index": 0,
+        "worker_wall_s": 21.461096234968863,
+        "runtime_preparation_wall_s": 23.278574344003573,
+        "physics_paused": true
+      }
+    ],
+    "right_effect": {
+      "predicted_offset_minus_zero_mps": -0.022259659205450547,
+      "actual_offset_minus_zero_mps": 0.00830051302909851
+    },
+    "programs": 2,
+    "captures": 3,
+    "successes": 0
+  },
+  "offset_comparison": {
+    "horizons": [
+      {
+        "horizon_s": 0.2,
+        "programs": 23,
+        "nominal_xy_rmse_m": 0.0024255598916677955,
+        "offset_xy_rmse_m": 0.002386451442711042,
+        "nominal_speed_mae_mps": 0.0192832999921032,
+        "offset_speed_mae_mps": 0.019322949645596714
+      },
+      {
+        "horizon_s": 0.5,
+        "programs": 23,
+        "nominal_xy_rmse_m": 0.009076810749852504,
+        "offset_xy_rmse_m": 0.009186958291332764,
+        "nominal_speed_mae_mps": 0.03161421040168006,
+        "offset_speed_mae_mps": 0.03199029677913493
+      },
+      {
+        "horizon_s": 1.0,
+        "programs": 23,
+        "nominal_xy_rmse_m": 0.016395263967133953,
+        "offset_xy_rmse_m": 0.01682211723929282,
+        "nominal_speed_mae_mps": 0.032830408668737356,
+        "offset_speed_mae_mps": 0.03366955273286587
+      },
+      {
+        "horizon_s": 1.5,
+        "programs": 23,
+        "nominal_xy_rmse_m": 0.020503297557937644,
+        "offset_xy_rmse_m": 0.02079613392655589,
+        "nominal_speed_mae_mps": 0.029696031803034817,
+        "offset_speed_mae_mps": 0.030241679167792773
+      },
+      {
+        "horizon_s": 2.0,
+        "programs": 13,
+        "nominal_xy_rmse_m": 0.02255860454100058,
+        "offset_xy_rmse_m": 0.022585020068040147,
+        "nominal_speed_mae_mps": 0.02776633092936531,
+        "offset_speed_mae_mps": 0.028565310504847695
+      }
+    ],
+    "new_forecasts": 24,
+    "exact_reuses": 24,
+    "false_safe_counts": {
+      "nominal": {
+        "STOP_speed_false_safe": {
+          "programs": 4,
+          "slots": 6
+        },
+        "STOP_speed_label_evaluable": {
+          "programs": 23,
+          "slots": 46
+        },
+        "complete_model_task_label_evaluable": {
+          "programs": 24,
+          "slots": 48
+        },
+        "predicted_root_task_pass": {
+          "programs": 10,
+          "slots": 18
+        },
+        "recorded_termination_despite_predicted_root_task_pass": {
+          "programs": 1,
+          "slots": 2
+        },
+        "root_task_false_safe": {
+          "programs": 3,
+          "slots": 5
+        }
+      },
+      "updated": {
+        "STOP_speed_false_safe": {
+          "programs": 4,
+          "slots": 6
+        },
+        "STOP_speed_label_evaluable": {
+          "programs": 23,
+          "slots": 46
+        },
+        "complete_model_task_label_evaluable": {
+          "programs": 24,
+          "slots": 48
+        },
+        "predicted_root_task_pass": {
+          "programs": 11,
+          "slots": 19
+        },
+        "recorded_termination_despite_predicted_root_task_pass": {
+          "programs": 1,
+          "slots": 2
+        },
+        "root_task_false_safe": {
+          "programs": 3,
+          "slots": 5
+        }
+      }
+    }
+  },
+  "historical_confirmation_extension": {
+    "1701": {
+      "first_early_endings": 2,
+      "first_falls": 0,
+      "first_mean_sliding": 0.13604931638700296,
+      "first_stop_available": 10,
+      "first_successes": 3,
+      "fixed_successes": 2,
+      "minimum_jerk_gains_vs_first": [
+        "m3k_reverse_pair_left_3s",
+        "m3k_reverse_pair_right_3s"
+      ],
+      "minimum_jerk_losses_vs_first": [
+        "m3k_reverse_pair_right_5s"
+      ],
+      "minimum_jerk_slide_regressions_vs_first": 0,
+      "minimum_jerk_successes": 4,
+      "programs": 12
+    },
+    "1702": {
+      "first_early_endings": 0,
+      "first_falls": 0,
+      "first_mean_sliding": 0.14758578382177934,
+      "first_stop_available": 12,
+      "first_successes": 1,
+      "fixed_successes": 2,
+      "minimum_jerk_gains_vs_first": [
+        "m3k_reverse_pair_left_3s"
+      ],
+      "minimum_jerk_losses_vs_first": [],
+      "minimum_jerk_slide_regressions_vs_first": 2,
+      "minimum_jerk_successes": 2,
+      "programs": 12
+    },
+    "1703": {
+      "first_early_endings": 0,
+      "first_falls": 0,
+      "first_mean_sliding": 0.12380313107184708,
+      "first_stop_available": 12,
+      "first_successes": 5,
+      "fixed_successes": 1,
+      "minimum_jerk_gains_vs_first": [],
+      "minimum_jerk_losses_vs_first": [
+        "m3k_reverse_pair_right_3s",
+        "m3k_reverse_pair_right_5s"
+      ],
+      "minimum_jerk_slide_regressions_vs_first": 1,
+      "minimum_jerk_successes": 3,
+      "programs": 12
+    }
+  },
+  "incomplete_binary_live": {
+    "attempts.jsonl": [
+      {
+        "slot": 0,
+        "case_id": "binary__m3k_pivot_walk_stop_left_10s",
+        "status": "started",
+        "qualified": false
+      },
+      {
+        "slot": 1,
+        "case_id": "binary__m3k_pivot_walk_stop_left_3s",
+        "status": "started",
+        "qualified": false
+      },
+      {
+        "slot": 2,
+        "case_id": "binary__m3k_pivot_walk_stop_left_5s",
+        "status": "started",
+        "qualified": false
+      }
+    ],
+    "execution.jsonl": [
+      {
+        "slot": 0,
+        "case_id": "binary__m3k_pivot_walk_stop_left_10s",
+        "status": "qualified",
+        "qualified": true
+      },
+      {
+        "slot": 1,
+        "case_id": "binary__m3k_pivot_walk_stop_left_3s",
+        "status": "qualified",
+        "qualified": true
+      }
+    ],
+    "planned_slots": 24,
+    "completed_receipt_exists": false,
+    "interpretation": "Incomplete allocation snapshot; no all-24 performance estimate."
+  },
+  "final_36": "Reported sealed in the source records; inputs and outcomes not opened in this review.",
+  "verification_scope": "Recounted audit rows and recomputed selected differences; no raw trajectory/model/physics replay.",
+  "source_sha256": {
+    "knav/artifacts/terminal-first-candidate-independent-audit-v0.1/result.json": "6d738ddbbf398b3ba4078683ad71d535ff9bc998d7e330a2f64d5f5bd440719e",
+    "knav/artifacts/execution-reference-governor-evaluation-v0.2/result.json": "61c925c1563812adc98799f97adb3b4faea9b383128c71c8b9356b4fcac092ca",
+    "knav/artifacts/terminal-pelvis-live-independent-audit-v0.1/result.json": "3dbc7128dd17f44f9b078a33cdaa66a71867754a0e0981c71e6a4d8e2e81be39",
+    "knav/artifacts/sonic-default-offset-forecast-comparison-v0.1/result.json": "99a7deb3bf7f205ff64c660c422a9317b02effd57f52ccc325a9028c5c92d917",
+    "knav/artifacts/sonic-default-offset-forecast-independent-audit-v0.1/result.json": "5f457d53cf86629025a0bd541d12bde4f2c48b0fe7f4c78d677c08305bee2851",
+    "knav/artifacts/repeat-first-result-v0.1/results.json": "0d8efd078bb1c424512e3af8a06e2bb0208b4402ac8f5d8b90ede2a88ebc6156",
+    "knav/artifacts/terminal-binary-live-execution-v0.1/attempts.jsonl": "d982e88f85f89eadcc3046265b109626b4d28476f4a9aa8e617c53fdb39df8d0",
+    "knav/artifacts/terminal-binary-live-execution-v0.1/execution.jsonl": "89fbe5fa0a4d4a8acf84e5d2e23faf62b496b31ab3af3ba0d2d092bc1130b4fa"
+  }
+}

@@ -1,58 +1,45 @@
-# KimoNav paper summary (working manuscript, September 2026)
+# KimoNav paper summary — 9 September 2026
 
-**Working title.** Requested, generated, executed: diagnosing timed whole-body
-navigation with frozen motion priors.
+**Active working title:** KimoNav: Deadline-Aware Reference Repair.
+**Status:** incomplete method draft; all execution evidence is simulation.
+The full draft remains local pending author review. No submission is claimed.
 
-**Status.** Working manuscript prepared for a conference submission. The experiment
-set that supports it is finite and complete; final formatting, anonymization and
-submission review are manuscript tasks. No submission or acceptance is claimed, and
-the manuscript itself is not distributed through this website.
+We test whether whole-body reference changes around a fixed SONIC tracker can
+improve completion of a timed navigation request without moving its path,
+relaxing its tolerances, or postponing STOP. The implementation combines
+contact-consistent reference geometry, a nominal tracker-conditioned rollout,
+and causal accounting of already consumed task errors.
 
-## Question
+The 24-program terminal-only comparison remains at 8/24 task successes, with
+two gains and two losses. STOP-speed compliance improves from 12/24 to 16/24,
+but full STOP phase stays at 9/24 and runtime quality drops from 14/24 to 11/24.
+The two complete-task rescues use the sequential branch; they cannot be
+attributed to the new coupled optimization branch.
 
-When a timed metric navigation program (walk, pivot, arc, strafe, stop, each with a
-deadline) is compiled into full-body motion by a frozen autoregressive motion
-generator (ARDY) and tracked by a pretrained humanoid policy (SONIC) on a simulated
-Unitree G1, which failures arise in the requested-to-reference mapping, which appear
-during execution, and which small interventions improve original-clock success
-without degrading movement quality?
+A minimal-intervention rule selects 10/24 successes from these saved outcomes.
+It was designed after inspecting the results: this is post-hoc development
+replay with zero new captures. A live pilot of an expanded pelvis-reference
+bank has 0/2 governor successes and 0/1 zero-control success on two programs.
+The selected right offset predicts STOP 0.096005 m/s, but executes 0.158513 m/s;
+the zero-offset control executes 0.150212 m/s. Its predicted benefit has the
+wrong observed sign. Causal default-offset calibration fails to improve the
+forecast overall and is not adopted.
 
-## Contributions
+Remaining work: reconcile the incomplete 24-slot binary live collection,
+validate prediction of repair effects on separate development variation,
+qualify actual delayed execution, freeze the method/baselines, then evaluate
+the 36 reserved parameter-variation programs. They are distinct from the
+older consumed twelve-design confirmation panel.
 
-1. **A requested/generated/executed benchmark.** 36 metric programs in six families
-   (24 development, 12 held-out confirmation), original-clock scoring with explicit
-   state, reference and action clocks, first-episode failure accounting, causal
-   measured-history packets at 2.04 s and atomic reference replacement at 2.08 s.
-2. **Error anatomy.** Across 192 candidate executions, 69 pass both reference and
-   task checks, 49 fail the task despite a passing reference, 3 pass despite a
-   reference defect, and 71 fail both. STOP dominates: 73 references and 109
-   executions fail a STOP check. Reference defects and execution drift coexist.
-3. **Selection headroom and its limits.** On fresh draws, K=1 succeeds on 9/24
-   contexts, minimum generated joint jerk on 10/24 and a qualified hindsight oracle on
-   13/24. Three learned selectors and two tracker-response predictors fail their
-   registered promotion rules. No fresh pivot–walk–stop candidate succeeds.
-4. **Prospective interventions on held-out programs.** A compiler braking lead
-   (0.2/0.4/0.6 s) adds at most one success over 6/24 and is not promoted. On the
-   twelve confirmation programs, native / measured-history K=1 / minimum jerk
-   succeed on 2/12, 3/12, 4/12 at the primary simulator seed; the first repeat seed
-   gives 2/12 and 2/12, and a second registered repeat seed gives 1/12 and 3/12. Three seeds,
-   reported separately: a small, consistently signed direction, not a significant effect.
-5. **A common-interface native-planner baseline.** SONIC's own planner, driven by the
-   same requests through the same G1 pose-replay interface, succeeds on 0/24
-   development programs versus 6/24 for ARDY; all 24 planner references already
-   violate the request, so this bounds the interface, not the full native deployment.
+The earlier diagnostic paper is retained as a separate contribution. Completing
+its first-candidate repeat arms gives fixed / first / minimum-jerk counts of
+2/3/4, 2/1/2 and 1/5/3 at simulator seeds 1701/1702/1703, each out of twelve.
+Selection changes success by +1, +1, −2 versus first candidate.
 
-## What the paper does not claim
+No hardware reliability, real-time control, calibrated stopping guarantee,
+broad generalization, or novelty of the upstream integration is claimed.
+Human authors must review the scientific argument and complete the factual
+AI-assistance inventory before preparing a submission candidate.
 
-Real-time control, hardware transfer, torque or ZMP feasibility, sole-point slip,
-language-to-program on human text, novelty of the Kimodo/ARDY/SONIC integration, or
-statistical significance on 12 or 24 related programs.
-
-## Evidence on this site
-
-- Confirmation results and paired changes: `confirmation-evidence.json`
-- Braking sweep and initialization caveat: `braking-evidence.json`
-- Candidate banks and selectors: `selection-evidence.json`
-- Response predictors: `response-evidence.json`
-- Planner comparison: `planner-evidence.json`, `planner-report.md`
-- Source hashes and verification: `execution-provenance.json`
+[Results, analysis and remaining work](progress-2026-09-09.md) ·
+[Program-level evidence and source hashes](progress-2026-09-09.json)

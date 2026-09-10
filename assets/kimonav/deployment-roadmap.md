@@ -2,7 +2,7 @@
 
 Completed: the 24-program live binary implementation check (10/24 versus 8/24
 current, two gains/no losses), with declared recovery accounting; and the 18-case
-reference-envelope grid, which admits16 geometric repairs but no full-task
+reference-envelope grid, which admits 16 geometric repairs but no full-task
 nominal forecast. Both saved-output audits pass. These are development studies.
 
 1. **Repair stopping and timed progress jointly.** Wider bounds advance the

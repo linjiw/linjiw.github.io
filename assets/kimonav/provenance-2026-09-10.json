@@ -1,0 +1,534 @@
+{
+  "date": "2026-09-10",
+  "defects_repaired_2026-09-10": {
+    "class": "exporter/authoring defect: a lost space between a word and a following number",
+    "files": {
+      "continuation-2026-09-09.md": [
+        "and308 cold projection returns -> and 308 cold projection returns",
+        "and5.68 s at 15 cm -> and 5.68 s at 15 cm"
+      ],
+      "deployment-roadmap.md": [
+        "admits16 geometric repairs -> admits 16 geometric repairs"
+      ],
+      "paper-summary.md": [
+        "reproduces10/24 -> reproduces 10/24",
+        "Its24 captures -> Its 24 captures",
+        "and22 new captures -> and 22 new captures",
+        "The next18-proposal -> The next 18-proposal",
+        "admits16 geometry/rate-valid -> admits 16 geometry/rate-valid"
+      ]
+    },
+    "not_touched": [
+      "final36 / Final36 (sealed set name)",
+      "G1 (robot name)",
+      "10/24, 8/24, 0.10 m/s, 5.72 s and every other numeral: unchanged"
+    ],
+    "upstream_fix_still_needed": "knav/paper/terminal_repair_draft.md carries the same \"next18-proposal ... admits16\" text; the served copies are now correct but the draft is not."
+  },
+  "public_asset_count": 66,
+  "public_asset_sha256": {
+    "anticipatory-mechanism.png": "abe5720e992b8f167022093d16965f76ab18c11ce8b5a72c28922ecb9d340fb1",
+    "binary-live-2026-09-09.json": "37b08cbd6b4da18dd58f44fedaf8ec7f227f7265ba207247f7bfcfe45249999a",
+    "binary-live-recovery-protocol.md": "40095eb22ffc06cc304d7576d7df846ab55dc2743af4079c8c449df04c668a7a",
+    "binary-rescue-demo-provenance.json": "19fb37d3a3fedc5c7fd78f086d4b04b8c3aad3de4324cb8c2c4098f1fbe8752a",
+    "binary-rescue-demo.jpg": "d1c7ad945d95e86f20a0f2aa7d1f7225e9a303553c5611d17b6f44cce94f0674",
+    "binary-rescue-demo.mp4": "049b77fe9eee6f1e78e73cff808514cd4c10dd5879abcf8d497d2909ee24bebc",
+    "binary-rescue-demo.webp": "e91641ffae90c8e4aa71dd94df58600dcf442d5612423c3c64e3b6e10163a14c",
+    "binary_live_results.pdf": "96ab6d6a9df7bed55d355ec648c68bf0d04e53ed5bbc29bc5af9341a2ded2896",
+    "binary_live_results.png": "8ce40642484f5d617fa4a9b9e30c1e395a71e0e0ba32123f831ad9f8f39ece96",
+    "braking-evidence.json": "15eed9f438753e3c62d8d84b61b67ac92434560bc4c45b8ea62087345ad119c9",
+    "confirmation-evidence.json": "320d75d7f1c55ff91912c82db441774770a916e4f4f0116e76849541fbad0c44",
+    "confirmation-report.md": "b1d199819c4e7e0079f5f2567b9897c0753814651b7b51460af27161dc015a89",
+    "confirmation-success-and-sliding.svg": "75a4510e3d0163a00275248ba7a3af64c2a91ae30834488cbf3a9a879230d077",
+    "continuation-2026-09-09.md": "b8d1985342b13d4fd4528795f0f91ee41e3d93bfc785461dc74967531e583737",
+    "deployment-roadmap.md": "d3b85cddd71427e7a4f200d5563fe06c14b6fa4939ac2db2fc0fa2ce426389f1",
+    "design.md": "5acf7b764c597a1fceb696e2aab611a68c5d0a3191489c2f3c0ee79d7184da56",
+    "envelope-forecast-recovery-protocol.md": "6cd98ffa2986b99bd8996ff004463e02251e8ccfb89cffabcea7790cd94f9ba6",
+    "error-anatomy.svg": "4f6582c94e7cd8c5de99a35f878c59469fe42e8942f233deb7ee33f1b2f94de1",
+    "executed-path-example.json": "416494ad5cf1d9a75062776717dc368b9134ae0b537affaf19207a977ec9c6be",
+    "executed-path-example.png": "4658babfaea659a735252f7436072afbc0d3ef33e01b4cb5a9d3fe21305d6b86",
+    "executed-path-example.svg": "54ff9b3811083df0a2fbdaf8e693c9ad6ab9d435c3c43632a16a25de1d09172c",
+    "execution-provenance.json": "313e68300949d7500eadeb045824d577d3634f7a9e4c0a4fd84fbf869bd808b9",
+    "execution-research-report.md": "55222be14f34d2ac471d98090980b3391cab0c687398b028a0802fd2354fe625",
+    "execution.css": "9294969674eeff7f92d1ee20c794f58da325638f653be21323f35f22e17cfcf5",
+    "execution.js": "23927afa839c4b4e1e5687b6e749cfe06c6e4e66395449d1e6aa551413aa864f",
+    "governor-mechanism.png": "8f25133dd195147b98e27e56e5a7c0349a8f1d59e65bbe99c101514d6b26dd95",
+    "m3q-protocol.md": "8d269e64b25ba5b5c79953d1d77a0b8597d664a7c0cfc044f75130282e5e27b6",
+    "motion-bank-audit.json": "1e3894967a5e95e51f0c9a7344bb6ff20d5262e66d42b89b98fe42d649612caf",
+    "motion-provenance.json": "f3ae08f8ff7d3c2724eb41a3a84fe6fa212f41cd6407446483370de4fc7f1b59",
+    "native-turns.jpg": "b5574335c287d982da8874e141510ecd21f5886c2c983c351e8670e8dd16a9a4",
+    "native-turns.mp4": "89d54b044d62569dd3d6b4980a9cdf8742d1c0e55c1bc8223bd4fd373bc97b72",
+    "native-turns.webp": "40273610081d1f96dfb6c83aa949fe48007ab020def1be6a10b6a6292008d879",
+    "next-research-plan.md": "ff301f4676cb9a169a8eaa5c2502796f3004ca02e4c867602eb2bd132562c0b4",
+    "paper-summary.md": "044353b5541fe04f5fb35369e2f0638f1abd2a19695a684d967df1d5e94509a8",
+    "performance.pdf": "820c7796aa0ebd79b75909b535b4e90c81ec2b389bb79eb6aaf697b80718f850",
+    "performance.png": "cfa10e7f73877b2440d3a958b308a29a8b722af67ebacb05a6f27224de16e059",
+    "phase-failure-anatomy.svg": "aaba4c2c27c98b62854c1aa737c2cb4a4a78f4cb74b067d57d3a2bd6bfa98e97",
+    "pipeline.svg": "9e37f5fa5ed1ae9afb23734f8baa33607d313e10be3cfb34751e57d30db08825",
+    "planner-comparison.svg": "9aa3c546055ec0b211bb0df45a7e9934716f05cb3a17c1a19e7337411c884ff7",
+    "planner-evidence.json": "e0d8330b36c0c94c2c8a043d37ad6bc5f0bd2eff00fbabf638cd0544bc265392",
+    "planner-report.md": "a8433b1668a2f6bfec89a625f81d6c7faa561038df49847dd90ee081d1020b1a",
+    "programs.pdf": "7a624c403d469b7a134539ab0288db9f128900b2e30d96a791b5ec44df9c7474",
+    "programs.png": "e6d2008956bb1b53fc44c1da3ecc54dbbf83921124218c15cf27b9a3dc16b6c1",
+    "progress-2026-09-09.json": "92a09ccca41cc79f5f418b424726385841c10310d4fc0e8a41bf98db3bcb8c31",
+    "progress-2026-09-09.md": "bf85ed2ce46374f347f4ffd79f7ebfe92f242fa12885bc5cd32c61be85a4d3c6",
+    "protocol.md": "b35ce9a98bfd8c171644e003df0cd736838d2a1ea92caec5ab32f4b7cdb17b23",
+    "provenance.json": "e71b8f5c35ecab7da14204a71d6711f79304947d2589cd3d24734405ed426f75",
+    "reference-envelope-2026-09-09.json": "b7d41c508254a394f2cf270cae407eeb00e19e01f4db0defbf232817217fd6b2",
+    "reference-envelope-protocol.md": "aa654627439758592f23029806563e159717bb706ac76bdf3735f9e3148ba0ed",
+    "reference_envelope_results.pdf": "ba1af4a11d1200ac740956dfd734d1710d519b9809784b54277015bbab2dd408",
+    "reference_envelope_results.png": "297cdf068ca0bad3f5b0293d475b4a461e135a7bf00b28ebbbe25ae8d11bae48",
+    "research.css": "7dd8a451ff75a82b9f0cef99c0cab69a3f9fa71b82658ea8894fbccdaf75253f",
+    "research.js": "480e8a7dcb45047d1596a51a2695320c952b67748dc5e2a7c41ff8ab6047e7ab",
+    "response-evidence.json": "9a43c7b77b4784f8938b15b610f36c5c8f6bd82104cd9efdc39615dd8327b4e8",
+    "results-report.md": "d75e864198b2d2a99c4a578bd73e6050f21821b257d6a9def10d06c18e50f52a",
+    "results.json": "1b950dd70ad9d0074887652156d2ed232de5e76cf7b66a0e2985726f2952c79f",
+    "selection-evidence.json": "f141693d41a6b41406657b8c110a88ac311e69d8753c65f42d9b66787387493b",
+    "terminal-geometry-mechanism.pdf": "90ef60dc9f674bec5c63607b428a1e0151eaddf0e7d0bea73a57287fca6ee3d3",
+    "terminal-geometry-mechanism.png": "b6d5d7eeb75d65ab06337ea79d3ecdfe4f62f9224519d620664493e501fa2ff0",
+    "terminal_forecast_validation.pdf": "f6d175296f7c9502e9ead40072e93df1fa3ca039a167455854931e27b28a94d6",
+    "terminal_forecast_validation.png": "93a5f18cccc2ffdbe64ee83921a3fc40fb8fbb5850a1d6df7cf825ebc987d1fa",
+    "terminal_pelvis_live.pdf": "cfddb8dafc42ce9176bce23ec02550b90df1e17edb44de7c4d27d4bd9787b866",
+    "terminal_pelvis_live.png": "56cfc944cb59d4973d38fe844ddb3095dce287157681286571d68b9e6ecf508a",
+    "timing-failure-provenance.json": "778d23e5a3f12fde5852327237bb4ac8e91d9b95de4bf393a9ffe83f4e8f69f8",
+    "timing-failure.jpg": "615dc54e5ec604ed7284a005afac2f77fad07f7c232f3062f998831d528cb039",
+    "timing-failure.mp4": "04e953580b7ef73ce86b9613d71cd3c72a61e7d9b7aaccf82b6af5b92cc2d389"
+  },
+  "schema": "kimonav-public-provenance-v2",
+  "scope": {
+    "current_research": [
+      "Live binary reference governor on 24 inspected development programs (2026-09-09) - knav/artifacts/research-continuation-2026-09-09-v0.1.",
+      "Offline 18-proposal reference-envelope geometry and nominal forecast grid (2026-09-09) - same artifact.",
+      "Terminal reference repair and pelvis pilot replays - knav/artifacts/terminal-* figure artifacts.",
+      "Native-planner pose-replay baseline - knav/artifacts/native-planner-result-v0.1.",
+      "R-B three-seed confirmation - knav/artifacts/rb-result-v0.1, rb-details-v0.1-r2, rb-delivery-v0.1.",
+      "Superseded M3q/M3o offline bounded-response prediction - knav/artifacts/m3q-bounded-response-v0.1, m3o-phase-prediction-v0.1."
+    ],
+    "execution_evidence_tier": "Flat-ground Unitree G1 simulation, replayed from saved captures. No hardware, no real-time and no asynchronous operation is claimed or shown.",
+    "final36": "The sealed evaluation set exists and remains unopened. Nothing here reads, counts or reports it.",
+    "new_generation_or_training_in_this_pass": 0,
+    "new_physics_in_this_pass": 0,
+    "paused_preparation_wall_s": {
+      "binary_governor_study": [
+        11.300260781998077,
+        18.125260120999883
+      ],
+      "pelvis_pilot": [
+        23.28,
+        27.54
+      ]
+    },
+    "physics_paused_during_intervention": true,
+    "summary": "Every file served under /assets/kimonav/ as of 2026-09-10, hashed from the bytes actually on disk."
+  },
+  "snapshot_utc": "2026-09-10T18:40:00Z",
+  "source_artifacts": {
+    "/assets/kimonav/anticipatory-mechanism.png": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/binary-live-2026-09-09.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/binary-live-recovery-protocol.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/binary-rescue-demo-provenance.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/binary-rescue-demo.jpg": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/binary-rescue-demo.mp4": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/binary-rescue-demo.webp": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/binary_live_results.pdf": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/binary_live_results.png": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/braking-evidence.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/confirmation-evidence.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/confirmation-report.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/confirmation-success-and-sliding.svg": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/continuation-2026-09-09.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/deployment-roadmap.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/design.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/envelope-forecast-recovery-protocol.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/error-anatomy.svg": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/executed-path-example.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/executed-path-example.png": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/executed-path-example.svg": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/execution-provenance.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/execution-research-report.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/execution.css": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/execution.js": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/governor-mechanism.png": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/m3q-protocol.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/motion-bank-audit.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/motion-provenance.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/native-turns.jpg": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/native-turns.mp4": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/native-turns.webp": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/next-research-plan.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/paper-summary.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/performance.pdf": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/performance.png": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/phase-failure-anatomy.svg": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/pipeline.svg": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/planner-comparison.svg": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/planner-evidence.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/planner-report.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/programs.pdf": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/programs.png": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/progress-2026-09-09.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/progress-2026-09-09.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/protocol.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/provenance.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/reference-envelope-2026-09-09.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/reference-envelope-protocol.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/reference_envelope_results.pdf": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/reference_envelope_results.png": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/research.css": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/research.js": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/response-evidence.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/results-report.md": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/results.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/selection-evidence.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/terminal-geometry-mechanism.pdf": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/terminal-geometry-mechanism.png": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/terminal_forecast_validation.pdf": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/terminal_forecast_validation.png": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/terminal_pelvis_live.pdf": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/terminal_pelvis_live.png": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/timing-failure-provenance.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/timing-failure.jpg": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "/assets/kimonav/timing-failure.mp4": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "anticipatory-mechanism.png": {
+      "artifact": "knav/artifacts/anticipatory-mechanism-figure-v0.2/anticipatory_mechanism.png",
+      "relation": "byte-identical copy"
+    },
+    "binary-live-2026-09-09.json": {
+      "artifact": "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json",
+      "exporter": "knav/scripts/export_research_continuation_20260909.py",
+      "relation": "byte-identical copy"
+    },
+    "binary-live-recovery-protocol.md": {
+      "artifact": "knav/research/2026-09-08-terminal-repair/terminal_binary_live_resume_protocol.md",
+      "relation": "byte-identical copy"
+    },
+    "binary-rescue-demo-provenance.json": "knav/artifacts/binary-rescue-demo-v0.2/manifest.json (path-sanitised public copy)",
+    "binary-rescue-demo.jpg": {
+      "artifact": "knav/artifacts/binary-rescue-demo-v0.2/poster.jpg",
+      "relation": "byte-identical copy"
+    },
+    "binary-rescue-demo.mp4": {
+      "artifact": "knav/artifacts/binary-rescue-demo-v0.2/binary-rescue-demo.mp4",
+      "relation": "byte-identical copy"
+    },
+    "binary-rescue-demo.webp": {
+      "artifact": "knav/artifacts/binary-rescue-demo-v0.2/poster.webp",
+      "relation": "byte-identical copy"
+    },
+    "binary_live_results.pdf": {
+      "artifact": "knav/artifacts/research-continuation-2026-09-09-v0.1/figures/binary_live_results.pdf",
+      "exporter": "knav/scripts/plot_research_continuation_20260909.py",
+      "relation": "byte-identical copy"
+    },
+    "binary_live_results.png": {
+      "artifact": "knav/artifacts/research-continuation-2026-09-09-v0.1/figures/binary_live_results.png",
+      "exporter": "knav/scripts/plot_research_continuation_20260909.py",
+      "relation": "byte-identical copy"
+    },
+    "braking-evidence.json": {
+      "artifact": "knav/artifacts/native-planner-result-v0.1/results.json (ardy_fixed baseline) and the killed braking-lead sweep",
+      "exporter": "knav/scripts/export_confirmation_assets.py",
+      "relation": "curated subset"
+    },
+    "confirmation-evidence.json": {
+      "artifact": "knav/artifacts/rb-result-v0.1/results.json + knav/artifacts/rb-details-v0.1-r2/details.json + knav/artifacts/rb-delivery-v0.1/verification.json",
+      "exporter": "knav/scripts/export_confirmation_assets.py",
+      "relation": "curated subset"
+    },
+    "confirmation-report.md": {
+      "artifact": "knav/artifacts/rb-result-v0.1/results.json + knav/artifacts/rb-details-v0.1-r2/details.json",
+      "exporter": "knav/scripts/export_confirmation_assets.py",
+      "relation": "templated narrative"
+    },
+    "confirmation-success-and-sliding.svg": {
+      "artifact": "knav/artifacts/rb-result-v0.1/results.json",
+      "exporter": "knav/scripts/export_confirmation_assets.py",
+      "relation": "plot"
+    },
+    "continuation-2026-09-09.md": {
+      "artifact": "knav/artifacts/research-continuation-2026-09-09-v0.1/website-source-manifest.json",
+      "numbers_from": "knav/artifacts/research-continuation-2026-09-09-v0.1/{binary-live,reference-envelope}-2026-09-09.json",
+      "relation": "staged from that manifest entry; edited 2026-09-10 to restore one lost inter-word space (\"and308\"->\"and 308\") and one more (\"and5.68\"->\"and 5.68\"); no number changed"
+    },
+    "deployment-roadmap.md": {
+      "artifact": "knav/artifacts/research-continuation-2026-09-09-v0.1/website-source-manifest.json",
+      "numbers_from": "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json",
+      "relation": "staged from that manifest entry; edited 2026-09-10 to restore one lost inter-word space (\"admits16\"->\"admits 16\"); no number changed"
+    },
+    "design.md": {
+      "artifact": "unestablished",
+      "confirmed": false,
+      "relation": "legacy M2p site asset; no byte match and no generator found under knav/scripts in this pass"
+    },
+    "envelope-forecast-recovery-protocol.md": {
+      "artifact": "knav/research/2026-09-08-terminal-repair/terminal_reference_envelope_forecast_resume_protocol.md",
+      "relation": "byte-identical copy"
+    },
+    "error-anatomy.svg": {
+      "artifact": "knav/artifacts/paper-evidence-v0.1/error_anatomy.svg",
+      "relation": "byte-identical copy"
+    },
+    "executed-path-example.json": {
+      "artifact": "knav/artifacts/m3o-phase-prediction-v0.1/candidate-execution/execution.jsonl (m3k_pivot_walk_stop_right_5s, seed 2703)",
+      "exporter": "knav/scripts/export_execution_website.py",
+      "relation": "single recorded episode"
+    },
+    "executed-path-example.png": {
+      "artifact": "knav/artifacts/m3o-phase-prediction-v0.1/candidate-execution/execution.jsonl (m3k_pivot_walk_stop_right_5s, seed 2703)",
+      "exporter": "knav/scripts/export_execution_website.py",
+      "relation": "plot of executed-path-example.json"
+    },
+    "executed-path-example.svg": {
+      "artifact": "knav/artifacts/m3o-phase-prediction-v0.1/candidate-execution/execution.jsonl (m3k_pivot_walk_stop_right_5s, seed 2703)",
+      "exporter": "knav/scripts/export_execution_website.py",
+      "relation": "plot of executed-path-example.json"
+    },
+    "execution-provenance.json": {
+      "artifact": "knav/artifacts/m3q-bounded-response-v0.1",
+      "exporter": "knav/scripts/export_execution_website.py",
+      "relation": "SUPERSEDED by this file; left in place because the page still links it"
+    },
+    "execution-research-report.md": {
+      "artifact": "knav/M3Q_BOUNDED_RESPONSE_RESULT.md",
+      "exporter": "knav/scripts/export_execution_website.py",
+      "relation": "copy with three public link rewrites; gained a \"> Historical report\" banner after 2026-09-06"
+    },
+    "execution.css": {
+      "artifact": "not derived from a knav artifact",
+      "relation": "website stylesheet"
+    },
+    "execution.js": {
+      "artifact": "not derived from a knav artifact",
+      "relation": "website script"
+    },
+    "governor-mechanism.png": {
+      "artifact": "knav/artifacts/governor-mechanism-figure-v0.1/governor_mechanism.png",
+      "relation": "byte-identical copy"
+    },
+    "m3q-protocol.md": {
+      "artifact": "knav/M3Q_EXECUTABLE_PROTOCOL.md",
+      "exporter": "knav/scripts/export_execution_website.py",
+      "relation": "byte-identical copy"
+    },
+    "motion-bank-audit.json": {
+      "artifact": "unestablished",
+      "confirmed": false,
+      "relation": "legacy motion-bank audit site asset; no byte match and no generator found under knav/scripts in this pass"
+    },
+    "motion-provenance.json": {
+      "artifact": "knav/artifacts/research-web-v0.1/motion-provenance.json",
+      "relation": "byte-identical copy"
+    },
+    "native-turns.jpg": {
+      "artifact": "knav/artifacts/research-web-v0.1/native-turns.jpg",
+      "relation": "byte-identical copy"
+    },
+    "native-turns.mp4": {
+      "artifact": "knav/artifacts/research-web-v0.1/native-turns.mp4",
+      "relation": "byte-identical copy"
+    },
+    "native-turns.webp": {
+      "artifact": "knav/artifacts/research-web-v0.1/native-turns.mp4",
+      "confirmed": false,
+      "relation": "animated-webp transcode of that clip; not byte-identical to any knav file"
+    },
+    "next-research-plan.md": {
+      "artifact": "knav/M3R_TRACKER_ADAPTATION_QUALIFICATION_PLAN.md",
+      "exporter": "knav/scripts/export_execution_website.py",
+      "relation": "copy; gained a \"> Historical report\" banner after 2026-09-06"
+    },
+    "paper-summary.md": {
+      "artifact": "knav/artifacts/research-continuation-2026-09-09-v0.1/website-source-manifest.json",
+      "numbers_from": "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json",
+      "relation": "staged from that manifest entry; edited 2026-09-10 to restore five lost inter-word spaces; no number changed"
+    },
+    "performance.pdf": {
+      "artifact": "knav/artifacts/token-local-v0.1/token_local_timesteps.pdf",
+      "relation": "byte-identical copy"
+    },
+    "performance.png": {
+      "artifact": "knav/artifacts/token-local-v0.1/token_local_timesteps.png",
+      "relation": "byte-identical copy"
+    },
+    "phase-failure-anatomy.svg": {
+      "artifact": "knav/artifacts/paper-phase-anatomy-v0.1/anatomy.svg",
+      "exporter": "knav/scripts/export_native_planner_assets.py",
+      "relation": "copy with trailing whitespace stripped"
+    },
+    "pipeline.svg": {
+      "artifact": "knav/artifacts/paper-pipeline-v0.1/pipeline.svg",
+      "relation": "byte-identical copy"
+    },
+    "planner-comparison.svg": {
+      "artifact": "knav/artifacts/native-planner-result-v0.1/comparison.svg",
+      "exporter": "knav/scripts/export_native_planner_assets.py",
+      "relation": "copy with trailing whitespace stripped"
+    },
+    "planner-evidence.json": {
+      "artifact": "knav/artifacts/native-planner-result-v0.1/results.json",
+      "exporter": "knav/scripts/export_native_planner_assets.py",
+      "relation": "curated subset (tables, paired, reference_passes, scope)"
+    },
+    "planner-report.md": {
+      "artifact": "knav/artifacts/native-planner-result-v0.1/results.json",
+      "exporter": "knav/scripts/export_native_planner_assets.py",
+      "relation": "templated narrative; every number interpolated from that file"
+    },
+    "programs.pdf": {
+      "artifact": "knav/artifacts/token-local-v0.1/token_local_programs.pdf",
+      "relation": "byte-identical copy"
+    },
+    "programs.png": {
+      "artifact": "knav/artifacts/token-local-v0.1/token_local_programs.png",
+      "relation": "byte-identical copy"
+    },
+    "progress-2026-09-09.json": {
+      "artifact": "knav/artifacts/research-progress-2026-09-09-v0.1/reviewed-evidence.json",
+      "exporter": "knav/scripts/build_progress_review_20260909.py",
+      "relation": "byte-identical copy"
+    },
+    "progress-2026-09-09.md": {
+      "artifact": "knav/artifacts/research-progress-2026-09-09-v0.1",
+      "exporter": "knav/scripts/build_progress_review_20260909.py",
+      "relation": "narrative review of that artifact; numbers from reviewed-evidence.json"
+    },
+    "protocol.md": {
+      "artifact": "unestablished",
+      "confirmed": false,
+      "relation": "legacy M2p site asset; no byte match and no generator found under knav/scripts in this pass"
+    },
+    "provenance.json": {
+      "artifact": "unestablished",
+      "confirmed": false,
+      "relation": "legacy M2p provenance receipt dated 2026-09-05; no byte match and no generator found under knav/scripts in this pass"
+    },
+    "reference-envelope-2026-09-09.json": {
+      "artifact": "knav/artifacts/research-continuation-2026-09-09-v0.1/reference-envelope-2026-09-09.json",
+      "exporter": "knav/scripts/export_research_continuation_20260909.py",
+      "relation": "byte-identical copy"
+    },
+    "reference-envelope-protocol.md": {
+      "artifact": "knav/research/2026-09-08-terminal-repair/terminal_reference_envelope_study_protocol.md",
+      "relation": "byte-identical copy"
+    },
+    "reference_envelope_results.pdf": {
+      "artifact": "knav/artifacts/research-continuation-2026-09-09-v0.1/figures/reference_envelope_results.pdf",
+      "exporter": "knav/scripts/plot_research_continuation_20260909.py",
+      "relation": "byte-identical copy"
+    },
+    "reference_envelope_results.png": {
+      "artifact": "knav/artifacts/research-continuation-2026-09-09-v0.1/figures/reference_envelope_results.png",
+      "exporter": "knav/scripts/plot_research_continuation_20260909.py",
+      "relation": "byte-identical copy"
+    },
+    "research.css": {
+      "artifact": "not derived from a knav artifact",
+      "relation": "website stylesheet"
+    },
+    "research.js": {
+      "artifact": "not derived from a knav artifact",
+      "relation": "website script"
+    },
+    "response-evidence.json": {
+      "artifact": "knav/artifacts/m3q-bounded-response-v0.1/summary.json + gates.json",
+      "exporter": "knav/scripts/export_execution_website.py",
+      "relation": "curated subset"
+    },
+    "results-report.md": {
+      "artifact": "unestablished",
+      "confirmed": false,
+      "relation": "legacy M2p token-local site asset; no byte match and no generator found under knav/scripts in this pass"
+    },
+    "results.json": {
+      "artifact": "unestablished",
+      "confirmed": false,
+      "relation": "legacy M2p token-local site asset; no byte match and no generator found under knav/scripts in this pass"
+    },
+    "selection-evidence.json": {
+      "artifact": "knav/artifacts/m3o-phase-prediction-v0.1/delivery.json",
+      "exporter": "knav/scripts/export_execution_website.py",
+      "relation": "curated subset"
+    },
+    "terminal-geometry-mechanism.pdf": {
+      "artifact": "knav/artifacts/contact-projection-method-draft-v0.4/mechanism.pdf",
+      "relation": "byte-identical copy (identical bytes also in contact-projection-method-draft-v0.2 and v0.3)"
+    },
+    "terminal-geometry-mechanism.png": {
+      "artifact": "knav/artifacts/terminal-geometry-mechanism-figure-v0.1/terminal_geometry_mechanism.png",
+      "confirmed": false,
+      "relation": "raster of the same mechanism figure; bytes differ from that artifact, source not byte-confirmed in this pass"
+    },
+    "terminal_forecast_validation.pdf": {
+      "artifact": "knav/artifacts/terminal-forecast-validation-figure-v0.2/terminal_forecast_validation.pdf",
+      "relation": "byte-identical copy"
+    },
+    "terminal_forecast_validation.png": {
+      "artifact": "knav/artifacts/terminal-forecast-validation-figure-v0.2/terminal_forecast_validation.png",
+      "relation": "byte-identical copy"
+    },
+    "terminal_pelvis_live.pdf": {
+      "artifact": "knav/artifacts/terminal-pelvis-live-figure-v0.1/terminal_pelvis_live.pdf",
+      "relation": "byte-identical copy"
+    },
+    "terminal_pelvis_live.png": {
+      "artifact": "knav/artifacts/terminal-pelvis-live-figure-v0.1/terminal_pelvis_live.png",
+      "relation": "byte-identical copy"
+    },
+    "timing-failure-provenance.json": {
+      "artifact": "knav/artifacts/recorded-execution-video-v0.1-r3",
+      "relation": "render receipt for timing-failure.mp4/.jpg"
+    },
+    "timing-failure.jpg": {
+      "artifact": "knav/artifacts/recorded-execution-video-v0.1-r3/timing-failure.jpg",
+      "relation": "byte-identical copy"
+    },
+    "timing-failure.mp4": {
+      "artifact": "knav/artifacts/recorded-execution-video-v0.1-r3/timing-failure.mp4",
+      "relation": "byte-identical copy"
+    }
+  },
+  "source_artifacts_unestablished": [
+    "design.md",
+    "motion-bank-audit.json",
+    "protocol.md",
+    "provenance.json",
+    "results-report.md",
+    "results.json"
+  ],
+  "supersedes": {
+    "entries_still_correct": [
+      "executed-path-example.json",
+      "executed-path-example.png",
+      "executed-path-example.svg",
+      "m3q-protocol.md",
+      "response-evidence.json",
+      "selection-evidence.json"
+    ],
+    "file": "execution-provenance.json",
+    "its_date": "2026-09-06",
+    "its_scope": "M3q bounded-response prediction only; 8 public assets",
+    "left_in_place": true,
+    "reason_left_in_place": "the published page still links it",
+    "stale_hash_count": 2,
+    "stale_hashes": {
+      "execution-research-report.md": {
+        "actual_bytes_served": "55222be14f34d2ac471d98090980b3391cab0c687398b028a0802fd2354fe625",
+        "cause": "the served file gained a \"> Historical report...\" banner after 2026-09-06; the 2026-09-06 receipt was never regenerated",
+        "recorded_in_execution_provenance": "60e544e3599bd22e389fbe52bf8920b0728b5669a270cbe9563a87339abc8fb2"
+      },
+      "next-research-plan.md": {
+        "actual_bytes_served": "ff301f4676cb9a169a8eaa5c2502796f3004ca02e4c867602eb2bd132562c0b4",
+        "cause": "the served file gained a \"> Historical report...\" banner after 2026-09-06; the 2026-09-06 receipt was never regenerated",
+        "recorded_in_execution_provenance": "591734a6ee452e763a761c21ba5d4a8b724bd1fa95ac7aeea22628246a5bf9e7"
+      }
+    }
+  },
+  "upstream_sources": [
+    "https://research.nvidia.com/labs/sil/projects/kimodo/",
+    "https://research.nvidia.com/labs/sil/projects/ardy/",
+    "https://nvlabs.github.io/GEAR-SONIC/"
+  ],
+  "withheld_2026-09-10": {
+    "method-figure.svg": "Drawn, then withheld after adversarial review: it drew a measured-history return edge into the frozen generator that the executed terminal-repair run does not have (completed.json new_generation_calls = 0; replay_candidate_future.py records online_generation = false), and it fused the fixed 2.08 s continuation boundary with the later governor decision, which occurs at ticks 154-506 (3.08-10.12 s)."
+  }
+}

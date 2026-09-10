@@ -1,0 +1,411 @@
+{
+  "claims": [
+    {
+      "how": "summary.gains lists exactly these two program ids; both rows have current.success false and live.success true",
+      "supported_by": [
+        "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json",
+        "knav/artifacts/terminal-binary-live-resume-audit-v0.1/result.json"
+      ],
+      "text": "KimoNav: two recorded task rescues by the live binary reference governor"
+    },
+    {
+      "how": "captures carry fps=50.0 and control_step_dt_s=0.02; poses are drawn by MuJoCo forward kinematics of the recorded G1 state (this script contains no stepping call, asserted statically); every displayed frame is a saved Isaac Lab state of the flat-ground G1 simulation",
+      "supported_by": [
+        ".codex/sonic-m3j/gear_sonic/data/assets/robot_description/mjcf/g1_29dof_rev_1_0.xml",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl",
+        "/home/linjiw/kimodo/knav/scripts/render_binary_rescue_demo_v2.py"
+      ],
+      "text": "Replay of recorded Isaac Lab states \u00b7 simulated Unitree G1 on flat ground \u00b7 no new physics \u00b7 25 fps display of 50 Hz captures"
+    },
+    {
+      "how": "summary.current.allocated_programs = summary.live.allocated_programs = 24 and len(rows) = 24; summary.gains has exactly 2 entries and summary.retained_current = 22, and 22 + 2 = 24; exactly 2 of the 24 rows carry reference_changed true",
+      "supported_by": [
+        "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json"
+      ],
+      "text": "Selection: 2 of 24 inspected development programs \u2014 the only two whose outcome changed; the governor kept the current reference in the other 22"
+    },
+    {
+      "how": "summary.current.success = 8, summary.live.success = 10, summary.losses = [] over the same 24 allocated programs; registration.json records development_posthoc true and untouched_confirmation false (the confirmation family had already been inspected), so the rule is scored on its own development programs; final36_accessed is false in all three files, so the sealed set contributed no validation",
+      "supported_by": [
+        "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/registration.json",
+        "knav/artifacts/terminal-binary-live-resume-audit-v0.1/result.json"
+      ],
+      "text": "Complete-task success across the 24: 8/24 \u2192 10/24, 0 losses \u2014 but the rule was designed post-hoc on these same programs: no out-of-sample validation"
+    },
+    {
+      "how": "summary.preparation_wall_s_range is [11.300260781998077, 18.125260120999883], equal to the min and max of rows[].preparation_wall_s; registration.json records physics_paused_during_preparation true and real_time_claimed false; each live ledger row records evidence.updates[0].physics_paused_during_preparation true and asynchronous_computation false",
+      "supported_by": [
+        "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/registration.json",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl"
+      ],
+      "text": "\"Live\" = decided during the run from that run's own measured history; physics was PAUSED 11.30\u201318.13 s per decision \u2014 not real time, not asynchronous"
+    },
+    {
+      "how": "all four scored arms record fell false and full_duration true, max_timed_path_error_m <= 0.20 m, max_heading_error_deg <= 10 deg and speed_mae_mps <= 0.15 m/s; for both failing current arms the only false entry of requested_program.checks is ordered_phases, every phase before the final STOP is complete, and inside that STOP the captured dwell and the stopping overshoot both pass - the requested STOP speed is the sole failing condition",
+      "supported_by": [
+        "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json",
+        "knav/artifacts/m3k-candidate-execution-v0.1/execution.jsonl",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl"
+      ],
+      "text": "Neither robot falls, both track the path and both reach the stop marker: the only failed gate is the requested STOP speed"
+    },
+    {
+      "how": "duration from compile_program(NavigationProgram.from_dict(programs.jsonl row)); the live ledger row's candidate.program is asserted byte-identical to that record; both panels are indexed by the same state_time_s sample; markers are drawn from the same compiled trajectory",
+      "supported_by": [
+        "knav/artifacts/m3k-program-bank-v0.1/programs.jsonl",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl"
+      ],
+      "text": "{order}/2  {program_id} \u00b7 compiled duration {duration:.2f} s \u00b7 panels time-aligned on the original clock \u00b7 teal: requested path, amber: requested stop point"
+    },
+    {
+      "how": "the two peaks are rows[program_id][arm].STOP_peak_mps, each asserted equal to the maximum of |root_lin_vel_w[:, :2]| over the requested STOP interval of the matching capture and to requested_program.phases[-1].max_stop_speed_mps; the preparation time is evidence.updates[0].preparation_wall_s of the live ledger row, equal to rows[program_id].preparation_wall_s in the study report and the audit; the two end distances are requested_program.final_position_error_m of each scoring ledger row, asserted equal to this renderer's own |root - requested stop point| at the last scored sample; the repaired end distance is asserted to be the larger of the two",
+      "supported_by": [
+        "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json",
+        "knav/artifacts/terminal-binary-live-resume-audit-v0.1/result.json",
+        "knav/artifacts/m3k-candidate-execution-v0.1/execution.jsonl",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl"
+      ],
+      "text": "STOP peak {current:.3f} \u2192 {live:.3f} m/s (limit 0.10) \u00b7 physics paused {prep:.2f} s for this decision \u00b7 repaired run ends FARTHER from the stop point: {current_end:.3f} \u2192 {live_end:.3f} m"
+    },
+    {
+      "how": "rows[program_id].current.success is false for both programs; the panel replays the hash-checked m3k-candidate-execution seed 1703 capture that the audit rescored as the current arm",
+      "supported_by": [
+        "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json",
+        "knav/artifacts/terminal-binary-live-resume-audit-v0.1/result.json",
+        "knav/artifacts/m3k-candidate-execution-v0.1/execution.jsonl"
+      ],
+      "text": "Current reference \u00b7 task fails"
+    },
+    {
+      "how": "rows[program_id].live.success is true; audit rows record reference_changed true and selected_index 0 (the repair candidate) for both programs",
+      "supported_by": [
+        "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json",
+        "knav/artifacts/terminal-binary-live-resume-audit-v0.1/result.json",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl"
+      ],
+      "text": "Repaired reference selected by the governor \u00b7 task succeeds"
+    },
+    {
+      "how": "t is state_time_s of the displayed sample; the error is |sonic_root_to_request(root_pos_w) - compiled target| at that time, and its maximum over the scored window is asserted equal to the ledger max_position_error_m for the same arm",
+      "supported_by": [
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_pivot_walk_stop_right_10s__1703/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_strafe_walk_stop_right_3s__1703/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_pivot_walk_stop_right_10s/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_strafe_walk_stop_right_3s/trajectories/000000.trajectory.pkl"
+      ],
+      "text": "Original clock {t:.2f} s \u00b7 path error {e:.3f} m"
+    },
+    {
+      "how": "the last scored frame of each program is repeated for 25 display frames and no state is extrapolated; at that frame the compiled target is the requested stop point, so the displayed path error is exactly the distance to the amber marker and is asserted equal to requested_program.final_position_error_m of the ledger row that scored this arm",
+      "supported_by": [
+        "knav/artifacts/m3k-candidate-execution-v0.1/execution.jsonl",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl",
+        "/home/linjiw/kimodo/knav/scripts/render_binary_rescue_demo_v2.py"
+      ],
+      "text": "Final frame held at {t:.2f} s held \u00b7 ends {e:.3f} m from the stop marker"
+    },
+    {
+      "how": "compiled primitive_start_frames of the final STOP primitive, on the original clock; asserted equal to the governor decision record's original_stop_start_s",
+      "supported_by": [
+        "knav/artifacts/m3k-program-bank-v0.1/programs.jsonl",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl"
+      ],
+      "text": "STOP interval starts at {t:.2f} s"
+    },
+    {
+      "how": "running maximum of |root_lin_vel_w[:, :2]| over samples inside the requested STOP interval; the value at the last scored frame is asserted equal to the ledger STOP_peak_mps; the limit is knav.eval.executed_program.ProgramTolerances.stop_speed_mps",
+      "supported_by": [
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_pivot_walk_stop_right_10s__1703/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_strafe_walk_stop_right_3s__1703/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_pivot_walk_stop_right_10s/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_strafe_walk_stop_right_3s/trajectories/000000.trajectory.pkl",
+        "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json"
+      ],
+      "text": "STOP peak so far {v:.3f} m/s \u00b7 limit 0.10 m/s"
+    },
+    {
+      "how": "the word is 'complete' exactly when rows[program_id][arm].STOP_full_phase is true, which is asserted equal to requested_program.phases[-1].complete of the same scoring ledger row",
+      "supported_by": [
+        "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json",
+        "knav/artifacts/terminal-binary-live-resume-audit-v0.1/result.json",
+        "knav/artifacts/m3k-candidate-execution-v0.1/execution.jsonl",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl"
+      ],
+      "text": "STOP peak {v:.3f} m/s \u00b7 limit 0.10 m/s \u00b7 phase {complete|incomplete}"
+    },
+    {
+      "how": "all 33 per-frame arrays of the two captures are asserted bit-identical over samples [0, measurement_tick); the audit records preterminal33_exact true",
+      "supported_by": [
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_pivot_walk_stop_right_10s__1703/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_strafe_walk_stop_right_3s__1703/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_pivot_walk_stop_right_10s/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_strafe_walk_stop_right_3s/trajectories/000000.trajectory.pkl",
+        "knav/artifacts/terminal-binary-live-resume-audit-v0.1/result.json"
+      ],
+      "text": "Both panels: identical recorded arrays through {tick:.2f} s (33 of 33)"
+    },
+    {
+      "how": "the left panel replays the archived m3k-candidate-execution seed 1703 capture. That capture directory has no terminal/ subdirectory and contains exactly one update record and one generation record, both under feedback/: mode 'measured_history', transition_s 0.0, boundary_s 2.08, last_history_s 2.04, online_generation false. It therefore has no reference event at the 10.08 s or 3.12 s governor tick, which is why v0.1's string 'Current reference kept at the 10.08 s tick' was withdrawn",
+      "supported_by": [
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_pivot_walk_stop_right_10s__1703/feedback/generation.json",
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_pivot_walk_stop_right_10s__1703/feedback/update.json",
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_strafe_walk_stop_right_3s__1703/feedback/generation.json",
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_strafe_walk_stop_right_3s__1703/feedback/update.json"
+      ],
+      "text": "Archived current-reference capture \u2014 no reference event after 2.08 s"
+    },
+    {
+      "how": "measurement_tick from the live ledger row times control_step_dt_s, equal to the decision record's measurement_time_s; evidence.updates[0].physics_paused_during_preparation is true and asynchronous_computation is false, and registration.json declares real_time_claimed false",
+      "supported_by": [
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl",
+        "knav/artifacts/terminal-binary-live-resume-v0.1/registration.json"
+      ],
+      "text": "Governor decision tick at {tick:.2f} s \u00b7 physics paused there"
+    },
+    {
+      "how": "audit rows record reference_changed true and terminal_reached true at that tick; the two captures are bit-identical over samples [0, measurement_tick) in all 33 arrays and their root_pos_w already differs at sample measurement_tick. state_time_s[i] is (i + 1) * 0.02 s, so the last state the decision reads is 10.08 s (sample measurement_tick - 1) and the first state it can change is 10.10 s (sample measurement_tick), the frame the marker is drawn on - the two clocks are one control step apart by construction, not in disagreement",
+      "supported_by": [
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl",
+        "knav/artifacts/terminal-binary-live-resume-audit-v0.1/result.json",
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_pivot_walk_stop_right_10s__1703/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_strafe_walk_stop_right_3s__1703/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_pivot_walk_stop_right_10s/trajectories/000000.trajectory.pkl",
+        "/home/linjiw/kimodo/knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_strafe_walk_stop_right_3s/trajectories/000000.trajectory.pkl"
+      ],
+      "text": "Reference replaced at the {tick:.2f} s tick \u00b7 first state it changes is {tick+0.02:.2f} s"
+    },
+    {
+      "how": "same ledger event; the replacement is activated immediately at the measurement tick",
+      "supported_by": [
+        "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl",
+        "knav/artifacts/terminal-binary-live-resume-audit-v0.1/result.json"
+      ],
+      "text": "Repaired reference active since the {tick:.2f} s tick"
+    }
+  ],
+  "disclosure": {
+    "development_posthoc": true,
+    "final36_accessed": false,
+    "governor_design_is_posthoc_development": true,
+    "out_of_sample_validation": false,
+    "physics_paused_during_preparation": true,
+    "preparation_wall_s_range": [
+      11.300260781998077,
+      18.125260120999883
+    ],
+    "real_time_claimed": false,
+    "untouched_confirmation": false
+  },
+  "display_fps": 25,
+  "final36_accessed": false,
+  "fk_tolerance_m": 0.002,
+  "frames": 481,
+  "height": 720,
+  "kind": "binary_live_governor_rescue_side_by_side_replay",
+  "maximum_common_body_fk_error_m": 1.3252356176171323e-06,
+  "new_physics": 0,
+  "path_sanitisation": "Absolute local paths are rewritten relative to the repository root; hashes are unchanged from knav/artifacts/binary-rescue-demo-v0.2/manifest.json.",
+  "per_program_strings": [
+    "1/2  m3k_pivot_walk_stop_right_10s \u00b7 compiled duration 12.08 s \u00b7 panels time-aligned on the original clock \u00b7 teal: requested path, amber: requested stop point",
+    "STOP peak 0.217 \u2192 0.072 m/s (limit 0.10) \u00b7 physics paused 18.13 s for this decision \u00b7 repaired run ends FARTHER from the stop point: 0.029 \u2192 0.074 m",
+    "2/2  m3k_strafe_walk_stop_right_3s \u00b7 compiled duration 5.08 s \u00b7 panels time-aligned on the original clock \u00b7 teal: requested path, amber: requested stop point",
+    "STOP peak 0.118 \u2192 0.081 m/s (limit 0.10) \u00b7 physics paused 11.30 s for this decision \u00b7 repaired run ends FARTHER from the stop point: 0.093 \u2192 0.134 m"
+  ],
+  "persistent_strings": [
+    "KimoNav: two recorded task rescues by the live binary reference governor",
+    "Replay of recorded Isaac Lab states \u00b7 simulated Unitree G1 on flat ground \u00b7 no new physics \u00b7 25 fps display of 50 Hz captures",
+    "Selection: 2 of 24 inspected development programs \u2014 the only two whose outcome changed; the governor kept the current reference in the other 22",
+    "Complete-task success across the 24: 8/24 \u2192 10/24, 0 losses \u2014 but the rule was designed post-hoc on these same programs: no out-of-sample validation",
+    "\"Live\" = decided during the run from that run's own measured history; physics was PAUSED 11.30\u201318.13 s per decision \u2014 not real time, not asynchronous",
+    "Neither robot falls, both track the path and both reach the stop marker: the only failed gate is the requested STOP speed",
+    "Current reference \u00b7 task fails",
+    "Repaired reference selected by the governor \u00b7 task succeeds"
+  ],
+  "programs": [
+    {
+      "archived_baseline_only_reference_event_s": 2.08,
+      "capture_frames": 605,
+      "compiled_duration_s": 12.08,
+      "compiled_frames": 303,
+      "control_step_dt_s": 0.02,
+      "current_failed_checks": [
+        "ordered_phases"
+      ],
+      "current_metrics": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.21740466356277466,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.9687146077968487,
+        "max_position_error_m": 0.14370309030691564,
+        "runtime_quality": true,
+        "speed_MAE_mps": 0.10632243766507987,
+        "success": false,
+        "success_and_quality": false
+      },
+      "current_trajectory_file": "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_pivot_walk_stop_right_10s__1703/trajectories/000000.trajectory.pkl",
+      "current_trajectory_sha256": "f631ba3b7a6e30ddefc0d43101d0eb02117d1a150fd3172ecc88c727371bc55e",
+      "display_frames": 303,
+      "end_distance_from_requested_stop_m": {
+        "current": 0.029416122839852756,
+        "live": 0.07399346190665008
+      },
+      "first_changed_state_s": 10.1,
+      "held_frames": 25,
+      "identical_prefix_arrays": "33 of 33 over samples [0, 504)",
+      "live_failed_checks": [],
+      "live_metrics": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.07156811654567719,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.9687146077968487,
+        "max_position_error_m": 0.14370309030691564,
+        "runtime_quality": true,
+        "speed_MAE_mps": 0.1056902715192556,
+        "success": true,
+        "success_and_quality": true
+      },
+      "live_trajectory_file": "/home/linjiw/kimodo/knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_pivot_walk_stop_right_10s/trajectories/000000.trajectory.pkl",
+      "live_trajectory_sha256": "650d5df75d19dbbd4145c214846071652bc22a2c99363904920223facc63b114",
+      "measurement_tick_frame": 504,
+      "measurement_tick_s": 10.08,
+      "order": 1,
+      "preparation_wall_s": 18.125260120999883,
+      "program_id": "m3k_pivot_walk_stop_right_10s",
+      "scored_frames": 604,
+      "stop_interval_s": [
+        11.08,
+        12.08
+      ],
+      "stop_peak_mps": {
+        "current": 0.21740466356277466,
+        "live": 0.07156811654567719
+      }
+    },
+    {
+      "archived_baseline_only_reference_event_s": 2.08,
+      "capture_frames": 255,
+      "compiled_duration_s": 5.08,
+      "compiled_frames": 128,
+      "control_step_dt_s": 0.02,
+      "current_failed_checks": [
+        "ordered_phases"
+      ],
+      "current_metrics": {
+        "STOP_full_phase": false,
+        "STOP_peak_mps": 0.11838102340698242,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": false,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.8760531604305783,
+        "max_position_error_m": 0.16529026079640086,
+        "runtime_quality": true,
+        "speed_MAE_mps": 0.0943028467824668,
+        "success": false,
+        "success_and_quality": false
+      },
+      "current_trajectory_file": "/home/linjiw/kimodo/knav/artifacts/m3k-candidate-execution-v0.1/m3k_strafe_walk_stop_right_3s__1703/trajectories/000000.trajectory.pkl",
+      "current_trajectory_sha256": "64642d62ac4234909f00b7549e0e6f9dd0f16747f1d96989a42ff78c371514ea",
+      "display_frames": 128,
+      "end_distance_from_requested_stop_m": {
+        "current": 0.09311601932658957,
+        "live": 0.13374138328544932
+      },
+      "first_changed_state_s": 3.14,
+      "held_frames": 25,
+      "identical_prefix_arrays": "33 of 33 over samples [0, 156)",
+      "live_failed_checks": [],
+      "live_metrics": {
+        "STOP_full_phase": true,
+        "STOP_peak_mps": 0.08139847964048386,
+        "STOP_speed_observed": true,
+        "STOP_speed_only": true,
+        "fell": false,
+        "full_duration": true,
+        "max_heading_error_deg": 3.8760531604305783,
+        "max_position_error_m": 0.16568871645641928,
+        "runtime_quality": true,
+        "speed_MAE_mps": 0.10402442495573284,
+        "success": true,
+        "success_and_quality": true
+      },
+      "live_trajectory_file": "/home/linjiw/kimodo/knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_strafe_walk_stop_right_3s/trajectories/000000.trajectory.pkl",
+      "live_trajectory_sha256": "3767c42cf04f46d30730d91eea481ffbb864cce26365442d99a4fd1dc6b83da6",
+      "measurement_tick_frame": 156,
+      "measurement_tick_s": 3.12,
+      "order": 2,
+      "preparation_wall_s": 11.300260781998077,
+      "program_id": "m3k_strafe_walk_stop_right_3s",
+      "scored_frames": 254,
+      "stop_interval_s": [
+        4.12,
+        5.08
+      ],
+      "stop_peak_mps": {
+        "current": 0.11838102340698242,
+        "live": 0.08139847964048386
+      }
+    }
+  ],
+  "renderer": "MuJoCo forward kinematics of recorded state; no stepping call in this script",
+  "review_fixes": {
+    "1_selection_denominator": "persistent header line names 2 of 24 inspected development programs, 22 retained current, 8/24 -> 10/24 complete-task success, 0 losses",
+    "2_live_is_not_real_time": "persistent header line states physics was PAUSED 11.30-18.13 s per decision, not real time, not asynchronous; each program line carries its own paused seconds",
+    "3_false_left_caption": "v0.1's 'Current reference kept at the {tick} s tick' replaced by 'Archived current-reference capture - no reference event after 2.08 s'",
+    "4_posthoc_disclosure": "persistent header line states the rule was designed post-hoc on these same programs with no out-of-sample validation",
+    "5_difference_is_invisible": "persistent header line names the requested STOP speed as the only failed gate; each program line shows both STOP peaks and both end distances, and says the repaired run ends FARTHER from the requested stop point",
+    "6_poster_crop": "no cropped poster is produced; poster.jpg and poster.webp are full 1280x720 frames carrying the complete simulation statement",
+    "7_clock_reconciliation": "the marked frame's footer reads the tick time and the caption adds 'first state it changes is {tick + 0.02:.2f} s'"
+  },
+  "scope": "Inspected development programs; robot execution is simulation.",
+  "script_sha256": "140396f6146800e282a58bf458bd27df3da139e4fe3fd9ec976180e5a814693f",
+  "sealed_paths_refused": [
+    "final36",
+    "confirmation"
+  ],
+  "selection": {
+    "current_success": 8,
+    "inspected": 24,
+    "live_success": 10,
+    "losses": 0,
+    "note": "both task rescues named in summary.gains of the completed live binary governor study - the only two of the 24 inspected development programs whose outcome changed; no sealed evaluation set was opened",
+    "retained_current": 22,
+    "shown": 2
+  },
+  "source_fps": 50,
+  "source_hashes": {
+    ".codex/sonic-m3j/gear_sonic/data/assets/robot_description/mjcf/g1_29dof_rev_1_0.xml": "15a330f1dbff68cdbeb8284be6162a857bdcd21a858f65a8617fb32d5115f209",
+    "knav/artifacts/m3k-candidate-execution-v0.1/execution.jsonl": "08698f055cbb6ce275ee0895b38d6834ff91bf2a469c431c4ee9d94f86da83a0",
+    "knav/artifacts/m3k-candidate-execution-v0.1/m3k_pivot_walk_stop_right_10s__1703/feedback/generation.json": "beec02fc12031d274d03b5b18a320011a455e874d4f210c605f352180f41998f",
+    "knav/artifacts/m3k-candidate-execution-v0.1/m3k_pivot_walk_stop_right_10s__1703/feedback/update.json": "0468a84b1d9647d20bc2404d0548dbd8cdb7b9d70899b821ec22f59a1d950b78",
+    "knav/artifacts/m3k-candidate-execution-v0.1/m3k_pivot_walk_stop_right_10s__1703/trajectories/000000.trajectory.pkl": "f631ba3b7a6e30ddefc0d43101d0eb02117d1a150fd3172ecc88c727371bc55e",
+    "knav/artifacts/m3k-candidate-execution-v0.1/m3k_strafe_walk_stop_right_3s__1703/feedback/generation.json": "0d5d8d8f5d1abe096beb4b050c6662524f619c63d1318b247b3798d47ec9c61a",
+    "knav/artifacts/m3k-candidate-execution-v0.1/m3k_strafe_walk_stop_right_3s__1703/feedback/update.json": "c50f508d03b3f10e36e7978684e5f22e106e7722793c51bfa1428a573fda7cfe",
+    "knav/artifacts/m3k-candidate-execution-v0.1/m3k_strafe_walk_stop_right_3s__1703/trajectories/000000.trajectory.pkl": "64642d62ac4234909f00b7549e0e6f9dd0f16747f1d96989a42ff78c371514ea",
+    "knav/artifacts/m3k-program-bank-v0.1/programs.jsonl": "979c3c9f909930f6a6c1fe42affa12b3e52be6451067a9993944d32aa36c2788",
+    "knav/artifacts/research-continuation-2026-09-09-v0.1/binary-live-2026-09-09.json": "37b08cbd6b4da18dd58f44fedaf8ec7f227f7265ba207247f7bfcfe45249999a",
+    "knav/artifacts/terminal-binary-live-resume-audit-v0.1/result.json": "93c27fb56d71afa2a18278f5795950390d43ca26142f9c49f3f2871febc8c8ce",
+    "knav/artifacts/terminal-binary-live-resume-v0.1/execution.jsonl": "1b1b0412c15fbd9ed365290b7a16158f44abefd6c7ede8511edeea407a98f0a9",
+    "knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_pivot_walk_stop_right_10s/terminal/update_000/generation.json": "e4b9ac0fa516c754ed10c3d9377976d8432d549be0356b122ef2fc7faa490dd7",
+    "knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_pivot_walk_stop_right_10s/trajectories/000000.trajectory.pkl": "650d5df75d19dbbd4145c214846071652bc22a2c99363904920223facc63b114",
+    "knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_strafe_walk_stop_right_3s/terminal/update_000/generation.json": "23d512680039833611c27ebbbec4fbc88ac4ab45b034a4dbeb5c67d85207d264",
+    "knav/artifacts/terminal-binary-live-resume-v0.1/executions/binary__m3k_strafe_walk_stop_right_3s/trajectories/000000.trajectory.pkl": "3767c42cf04f46d30730d91eea481ffbb864cce26365442d99a4fd1dc6b83da6",
+    "knav/artifacts/terminal-binary-live-resume-v0.1/registration.json": "d2aa55d3dc74d9480b2efbcbbcd7f14fae91c216fd6a82d81748052f5917b13f"
+  },
+  "stop_speed_limit_mps": 0.1,
+  "supersedes": "knav/artifacts/binary-rescue-demo-v0.1 (unmodified; kept for comparison)",
+  "version": "v0.2",
+  "video": "binary-rescue-demo.mp4",
+  "video_bytes": 2614245,
+  "video_sha256": "049b77fe9eee6f1e78e73cff808514cd4c10dd5879abcf8d497d2909ee24bebc",
+  "width": 1280,
+  "xml_sha256": "15a330f1dbff68cdbeb8284be6162a857bdcd21a858f65a8617fb32d5115f209"
+}

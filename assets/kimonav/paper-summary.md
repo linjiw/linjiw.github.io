@@ -9,14 +9,14 @@ tracker can improve a complete timed task without resetting its past errors
 or stopping deadline. The method combines whole-body geometry, a nominal
 execution forecast and original-clock task budgets.
 
-The completed live binary governor reproduces10/24 task successes versus 8/24
-current, with two gains and no losses. Its24 captures include two reused
-captures and22 new captures, with one declared recovery. All original attempts
+The completed live binary governor reproduces 10/24 task successes versus 8/24
+current, with two gains and no losses. Its 24 captures include two reused
+captures and 22 new captures, with one declared recovery. All original attempts
 remain. Choices, reference/forecast arrays and selected physical first-episode
 arrays reproduce the inspected replay under the same seed. This is a live
 implementation check, not validation on new programs.
 
-The next18-proposal reference-envelope study admits16 geometry/rate-valid
+The next 18-proposal reference-envelope study admits 16 geometry/rate-valid
 repairs and predicts no complete-task success. Wider priors advance stopping
 holds, but four left STOP-speed passes lose position. The closest right STOP
 forecast remains above the strict threshold. A zero-state model import failure

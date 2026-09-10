@@ -42,13 +42,13 @@ uncalibrated. Preparation takes 11.30–18.13 s with physics paused.
 
 ## Reference-envelope mechanism
 
-All 18 geometry attempts and308 cold projection returns are retained. Sixteen
+All 18 geometry attempts and 308 cold projection returns are retained. Sixteen
 references pass geometry/rate checks; two right 15 cm references fail transition
 contact projection. The executed tolerance stays 20 cm and STOP stays strictly
 below 0.10 m/s throughout its original interval.
 
 For requested settling 0.40 s, the 5 cm prior delays hold until 5.84 s, versus
-5.72 s at 10 cm and5.68 s at 15 cm. The right 15 cm proposal is rejected.
+5.72 s at 10 cm and 5.68 s at 15 cm. The right 15 cm proposal is rejected.
 Thus the prior limits hold timing in this grid. Earlier holds do not establish
 complete-task support.
 

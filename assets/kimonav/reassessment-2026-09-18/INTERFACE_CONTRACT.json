@@ -1,0 +1,38 @@
+{
+  "schema": "proposed-traversal-interface-v1",
+  "status": "design_only_not_implemented",
+  "date": "2026-09-18",
+  "scope": "G1 static indoor traversal; first stage permits foot-floor support and forbids deliberate obstacle contact",
+  "task": {
+    "required": ["task_id", "version", "accepted_time_s", "anchor_frame", "goal_region", "units", "field_availability"],
+    "optional": ["heading_interval_rad", "ordered_regions", "route_constraints", "arrival_window_s", "hold_duration_s", "hold_speed_limit_mps", "posture_constraints", "allowed_contacts", "language"],
+    "invariants": ["No hidden exact motion target", "Replanning preserves accepted task and elapsed clock", "Changes require explicit version and effective time", "Missing deadline does not mean immediate deadline"]
+  },
+  "observation": {
+    "robot": ["measured_joint_positions_rad", "measured_joint_velocities_rad_s", "imu", "executed_action_history", "estimated_base_pose", "estimated_base_velocity", "state_timestamp_s", "validity", "uncertainty"],
+    "scene": ["3d_occupancy_or_checked_multilayer_geometry", "free_occupied_unknown", "support_surfaces", "lateral_obstacles", "overhead_clearance", "sensor_timestamp_s", "sensor_calibration", "transform_at_acquisition", "visibility", "uncertainty"],
+    "optional_modalities": ["rgb_semantics", "depth", "lidar", "contact_estimates"],
+    "forbidden_public_inputs": ["teacher_reference_clip", "teacher_code", "future_realized_state", "hidden_scene_truth", "privileged_posterior_latent"]
+  },
+  "planner_output": {
+    "reference": ["robot_model_and_joint_names", "frame", "timestamped_q_rad", "timestamped_dq_rad_s", "relative_base_orientation", "planned_root_motion_for_outer_feedback", "contact_mode", "estimated_swept_volume"],
+    "transaction": ["task_version", "based_on_observation_time_s", "activation_time_s", "expiry_time_s", "committed_prefix", "proposal_id", "motor_checkpoint_id"],
+    "status": ["candidate", "admitted_within_tested_envelope", "needs_observation", "no_supported_continuation"],
+    "caveat": "Predicted feasibility is not a proof; fallback behavior also requires qualification"
+  },
+  "motor_adapter": {
+    "implemented_baseline": "SONIC native reference pack/unpack -> frozen encoder/FSQ -> decoder conditioned on history -> action29",
+    "current_reference_fields": "10 physical frames at native 0.1 s offsets, each q29 + dq29 + orientation6D; native R640 packing is not a naive reshape",
+    "current_control_tick_s": 0.02,
+    "code": "checkpoint-specific post-FSQ code64; direct prediction is a separate experimental arm",
+    "not_consumed_automatically": ["global root goal", "scene geometry", "clearance constraints", "new contact permissions"],
+    "actuation": "Versioned joint order, nominal offsets, action scale, gains and limits; do not interpret action29 as raw torque"
+  },
+  "monitor_output": ["accepted_task_version", "completed_events", "remaining_obligations", "actual_task_error", "forbidden_contact", "fall_or_intervention", "observation_age", "command_age", "replan_reason", "completion_or_failure_status"],
+  "training_record": ["source_motion_group", "scene_group", "task", "public_observation", "privileged_labels_separate", "proposed_reference", "executed_action", "measured_transition", "contacts", "original_clock", "initialization", "termination", "teacher_checkpoint", "split_and_prior_access"],
+  "extensions": {
+    "vision": "Train and test an adapter with realistic uncertainty; the task and motor contract remain versioned",
+    "contact_interaction": "Requires contact-aware motor capability and task-specific dynamic validation",
+    "new_robot": "Requires new embodiment geometry and adapter plus transfer evaluation"
+  }
+}

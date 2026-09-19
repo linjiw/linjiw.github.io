@@ -1,0 +1,47 @@
+{
+  "schema": "knav-matched-motor-clearance-v1",
+  "registered_utc": "2026-09-19T21:39:25.557261+00:00",
+  "modes": [
+    "fixed_lowered"
+  ],
+  "layouts": [
+    "clear",
+    "beam",
+    "beam_lower20"
+  ],
+  "seeds": [
+    96162,
+    96167
+  ],
+  "primary_attempts": 6,
+  "reused_controls": 6,
+  "comparison_parent": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919",
+  "protocol": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/PROTOCOL.md",
+    "sha256": "d2a190f78c00d1b2f2da22df46c9829d42c0ca534c4b517b190a0495b8e2d5c3"
+  },
+  "bank": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/BANK.json",
+    "sha256": "704095a758aaa0a5c1ab5985822375ea83fc040820ff1f87a3c727c87f87ff06"
+  },
+  "reuse": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/REUSE.json",
+    "sha256": "5913b9f1a9c7852508036c47bbb0c24acfcb58041c4e3ab03a6f32ba04268dd8"
+  },
+  "preflight": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/PREFLIGHT.json",
+    "sha256": "17b2c83a2b3918a915c1537056aadf75a5b2aaf28f45fe2b9ada4cba99501ce6"
+  },
+  "execution_checkpoint": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/inputs/original/checkpoint.pt",
+    "sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909"
+  },
+  "common_config": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/inputs/original/config.yaml",
+    "sha256": "d426da14e6f3c7ac9cfe2000330b460da7b192aa580323eb2b415227599d1c01"
+  },
+  "question": "Do original SONIC weights improve lower-clearance complete tasks under the same fixed reference and scene evaluation conditions?",
+  "scope": "Six new original-motor executions and six reused scene-motor controls; familiar source/corridor/seeds; no online replacement, training or public ledger promotion",
+  "training": false,
+  "hardware": false
+}

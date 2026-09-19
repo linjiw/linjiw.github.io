@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "study": "capability-selection-20260919",
+      "seed": 96162,
+      "mode": "fixed_lowered",
+      "trace": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/trace.npz",
+        "sha256": "7d4e322be521ac4437359a9c332485821470d5aa432c37916d96546323b4b018"
+      },
+      "first": {
+        "substep": 545,
+        "time_s": 2.73,
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 1221.290283203125
+      },
+      "peak": {
+        "substep": 545,
+        "time_s": 2.73,
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 1221.290283203125
+      }
+    },
+    {
+      "study": "capability-selection-20260919",
+      "seed": 96167,
+      "mode": "fixed_lowered",
+      "trace": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/trace.npz",
+        "sha256": "56467e81aeed439467b584b092d1a9da056ddccc803674326c09ce9385346df7"
+      },
+      "first": {
+        "substep": 569,
+        "time_s": 2.85,
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 859.4874267578125
+      },
+      "peak": {
+        "substep": 570,
+        "time_s": 2.855,
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 975.1136474609375
+      }
+    },
+    {
+      "study": "coupled-crouch-comparison-20260919",
+      "seed": 96162,
+      "mode": "fixed_coupled",
+      "trace": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/coupled-crouch-comparison-20260919/runs/beam_lower20-fixed_coupled-96162/task/trace.npz",
+        "sha256": "b35e3f705e7adf18e3bb42aec6423ca608c6658ba05c3dbeb21b09a6298baeac"
+      },
+      "first": {
+        "substep": 545,
+        "time_s": 2.73,
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 1208.2347412109375
+      },
+      "peak": {
+        "substep": 545,
+        "time_s": 2.73,
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 1208.2347412109375
+      }
+    },
+    {
+      "study": "coupled-crouch-comparison-20260919",
+      "seed": 96167,
+      "mode": "fixed_coupled",
+      "trace": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/coupled-crouch-comparison-20260919/runs/beam_lower20-fixed_coupled-96167/task/trace.npz",
+        "sha256": "b89dd8470b77698b4d1ad265abc26d4106a68f7af500a91b86845fdf0573e6ea"
+      },
+      "first": {
+        "substep": 571,
+        "time_s": 2.86,
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 1966.543212890625
+      },
+      "peak": {
+        "substep": 571,
+        "time_s": 2.86,
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 1966.543212890625
+      }
+    }
+  ],
+  "correction": "Prior AUDIT contact time_s selected the peak-force sample in the terminal control tick. It is not necessarily the earliest forbidden contact. No task outcome, control-step count or deadline is rescored.",
+  "source": {
+    "path": "knav/src/knav/eval/contact_timing.py",
+    "sha256": "63e0bf91cd1046aad8ae9ff37b7707e8d93cf1c5bdf682cac805f5e0580cf242"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "physics": false,
+  "original_checkpoint": {
+    "path": "/home/linjiw/groot-wbc-sonic-sim-trackb/sonic_release/last.pt",
+    "sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909"
+  },
+  "scene_checkpoint": {
+    "path": "/home/linjiw/research-data/m2s-bfm-repaired-navigation-prep-20260912/teacher/checkpoint.pt",
+    "sha256": "afd649cfbbfd28833550e11a0f8c3b7a5f6a05ee8b4021dd0dac97a6f94733ce"
+  },
+  "execution_checkpoint": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/inputs/original/checkpoint.pt",
+    "sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909"
+  },
+  "common_saved_config": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/inputs/original/config.yaml",
+    "sha256": "d426da14e6f3c7ac9cfe2000330b460da7b192aa580323eb2b415227599d1c01"
+  },
+  "parent_saved_config": {
+    "path": "/home/linjiw/research-data/m2s-bfm-repaired-navigation-prep-20260912/teacher/config.yaml",
+    "sha256": "d426da14e6f3c7ac9cfe2000330b460da7b192aa580323eb2b415227599d1c01"
+  },
+  "same_saved_config_bytes": true,
+  "same_composed_environment_policy_and_schedule": true,
+  "policy_tensor_count": 55,
+  "same_policy_tensor_shapes": true,
+  "actor_running_normalization": false,
+  "reference_dimension": 640,
+  "token_dimension": 64,
+  "proprio_history_dimension": 930,
+  "action_dimension": 29,
+  "mass_randomization_range": [
+    0.8,
+    2.5
+  ],
+  "control_hz": 50,
+  "physics_hz": 200,
+  "property_and_action_history_frames": 10,
+  "checkpoint_load": "Native eval loads policy_state_dict only; no optimizer/env_state restore; training schedule disabled. Runtime tensor/entry/query checks precede first task action.",
+  "limitation": "Original weights under the existing scene evaluation configuration, not reproduction of the release default evaluation package."
+}

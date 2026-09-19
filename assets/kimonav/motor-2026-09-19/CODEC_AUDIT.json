@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "case": "clear-original-96162",
+      "frames": 376,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-original-96162",
+      "frames": 376,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower20-original-96162",
+      "frames": 376,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "clear-original-96167",
+      "frames": 422,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-original-96167",
+      "frames": 422,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower20-original-96167",
+      "frames": 422,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    }
+  ],
+  "teacher_sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909",
+  "batch_size": 1,
+  "scope": "Offline replay of issued inputs, not additional physical trials or learning"
+}

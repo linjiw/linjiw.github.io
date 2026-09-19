@@ -1,0 +1,287 @@
+{
+  "date": "2026-09-18",
+  "scope": "targeted reassessment and source-bound synthesis",
+  "local_sources": [
+    {
+      "path": "knav/artifacts/motor-distillation-20260913/REPORT.md",
+      "sha256": "a3b845f99c4bcef9166dc6e320437aa33df2a82c56540aad6cae1bb7e582a0bc",
+      "review_scope": "full result report read",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/motor-distillation-20260913.md",
+      "public_extract_sha256": "9748c6b7d699abcfdfbd6ddb50c7282c4152f3ee0394ec91db91c83aa13b278d",
+      "transformation": "Add historical label, remove local-only image/link targets, normalize whitespace; preserve result prose and tables"
+    },
+    {
+      "path": "knav/artifacts/navigation-bfm-dagger-20260915/REPORT.md",
+      "sha256": "2863acc962cc6a2294afe39acf4cb0d679a08e1cd9944f0bc28a93229570a7f8",
+      "review_scope": "full result report read",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/navigation-bfm-dagger-20260915.md",
+      "public_extract_sha256": "c49d9e827cfa50fcfdf42d1651c9536a90946e3dab919088d6545c7d3a047e0c",
+      "transformation": "Add historical label, remove local-only image/link targets, normalize whitespace; preserve result prose and tables"
+    },
+    {
+      "path": "knav/artifacts/navigation-bfm-joint-20260915/REPORT.md",
+      "sha256": "b6c769bb2863de7eab974483942376dcb220fe00fff9eff6d871e188c5dae7b6",
+      "review_scope": "full result report read",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/navigation-bfm-joint-20260915.md",
+      "public_extract_sha256": "38a4912590d532310fa970e4781f9b687ac76b8f2bbc0e8ab47f2e0510fb1893",
+      "transformation": "Add historical label, remove local-only image/link targets, normalize whitespace; preserve result prose and tables"
+    },
+    {
+      "path": "knav/artifacts/navigation-bfm-reference-20260915/REPORT.md",
+      "sha256": "c82da5571d580fafbd3ff489e0570228a8d72a9a2e4686a43f108bd0163ca423",
+      "review_scope": "full result report read",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/navigation-bfm-reference-20260915.md",
+      "public_extract_sha256": "ed98427553dd8e57d82b37c304d3c2e624b9bad74d64f63c4593a224a929b17f",
+      "transformation": "Add historical label, remove local-only image/link targets, normalize whitespace; preserve result prose and tables"
+    },
+    {
+      "path": "knav/artifacts/proposal-teacher-20260915/REPORT.md",
+      "sha256": "49b7ab77de87d10a2c2ac9439f512a6a9273fdc15f8bdf4e2b4960e09bb340c0",
+      "review_scope": "full result report read",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/proposal-teacher-20260915.md",
+      "public_extract_sha256": "a93dc3f5ee560e7643499db198e9f614e07e697fb62c8480369502ea5a3ab478",
+      "transformation": "Add historical label, remove local-only image/link targets, normalize whitespace; preserve result prose and tables"
+    },
+    {
+      "path": "knav/artifacts/sonic-teacher-evaluation-20260913/REPORT.md",
+      "sha256": "3261a5a9e4de0a612ace9330396b4f7c122c1251d23241729ed5cae68a901c7a",
+      "review_scope": "full result report read",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/sonic-teacher-evaluation-20260913.md",
+      "public_extract_sha256": "58178872aadc237ad75f335130e27564300af6558970aa4aa708792a3583f8fc",
+      "transformation": "Add historical label, remove local-only image/link targets, normalize whitespace; preserve result prose and tables"
+    },
+    {
+      "path": "knav/artifacts/task-adapter-stable-full-20260914/REPORT.md",
+      "sha256": "127e9e16b5d55542996bfe3b51b3107c94e341c947a26a081809219d7db47cbd",
+      "review_scope": "full result report read",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/task-adapter-stable-full-20260914.md",
+      "public_extract_sha256": "fbde2b12eedd5f9a9bb01c65fa0ca2d26e0813a2fec5abebb7e474ca4f0f475c",
+      "transformation": "Add historical label, remove local-only image/link targets, normalize whitespace; preserve result prose and tables"
+    },
+    {
+      "path": "knav/artifacts/task-authority-single-20260915/REPORT.md",
+      "sha256": "5ea5d7c5f703210bf38c22b3aa357d759e4980c48a3f072712a9e5865b16fe18",
+      "review_scope": "full result report read",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/task-authority-single-20260915.md",
+      "public_extract_sha256": "b50f37a3275a089b136145323f603d220027afb92ed474bb4cfb631feba64bfc",
+      "transformation": "Add historical label, remove local-only image/link targets, normalize whitespace; preserve result prose and tables"
+    },
+    {
+      "path": "knav/artifacts/task-margin-pilot-20260914/REPORT.md",
+      "sha256": "fb896a0fb8d2566e283607aa29362c27af48f883feea9d85221b74586cf08588",
+      "review_scope": "full result report read",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/task-margin-pilot-20260914.md",
+      "public_extract_sha256": "ef0d792b4e268a8e9d99ef43e55c1d90dedc85d64f3ef7084fd2c87e5c8104d8",
+      "transformation": "Add historical label, remove local-only image/link targets, normalize whitespace; preserve result prose and tables"
+    },
+    {
+      "path": "knav/artifacts/text-goal-navigation-20260913/REPORT.md",
+      "sha256": "c7105a28369fb6196b6b0e748a32119875987b7d607c54bb2fa1040ce3ff70a3",
+      "review_scope": "full result report read",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/text-goal-navigation-20260913.md",
+      "public_extract_sha256": "cd235c51c46f1eacf0133e3a5fcd82668439a5f2bb66549a891df1ef4441ea23",
+      "transformation": "Add historical label, remove local-only image/link targets, normalize whitespace; preserve result prose and tables"
+    },
+    {
+      "path": "knav/artifacts/token-navigation-20260915/REPORT.md",
+      "sha256": "c049f84e50cdc34e6d099fef333210c3170ad391cff77cc6184cf07bf1b490ad",
+      "review_scope": "full result report read",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/token-navigation-20260915.md",
+      "public_extract_sha256": "58eb59ce55dd4519c080424dff02f8c46cc8b6a1b6904a4a145ceb0593f96f78",
+      "transformation": "Add historical label, remove local-only image/link targets, normalize whitespace; preserve result prose and tables"
+    },
+    {
+      "path": "knav/RESEARCH_CONTINUATION_2026_09_09.md",
+      "sha256": "ae72eca46302e0ec2fc24e121086ffc68ba97a97e3091e05cc5a8279dee23f7f",
+      "review_scope": "result and scope sections inspected",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/continuation-2026-09-09.md",
+      "public_extract_sha256": "f3b0fb04b86774d7bf182d3be679c9e29529677ddc4382a2cc319c4ead335916"
+    },
+    {
+      "path": "knav/RESEARCH_WEB_PUBLICATION_2026_09_10.md",
+      "sha256": "6cd16059e298d91d474898e6ac5ed2c04ea38b08f2ab1f7b6eda01f92d0329d3",
+      "review_scope": "result and scope sections inspected",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/publication-2026-09-10.md",
+      "public_extract_sha256": "fa6d17ed2e508c8e2e64ec13ae28de05e6557260f3f5102f0ba0b6b0b3a5966a"
+    },
+    {
+      "path": "knav/research/2026-09-11-terminal-family-capacity/EXECUTION_REPORT.md",
+      "sha256": "00357af7f42018442a737f5d4de777ed664f72748fd67255f83c6cd5f16efebc",
+      "review_scope": "result and scope sections inspected",
+      "public_extract": "assets/kimonav/reassessment-2026-09-18/reports/terminal-family-2026-09-11.md",
+      "public_extract_sha256": "6709e30e517b84aca6a61a15c9b357c5cba623ba6c082c3b106695c633827bb1"
+    },
+    {
+      "path": "knav/artifacts/navigation-bfm-joint-20260915/SUMMARY.json",
+      "sha256": "8561789d0131cf55c3e9d494bbfdfabe4ab246ae8af7223e1afdea1aca9c35e0",
+      "review_scope": "aggregate and development metrics parsed; arithmetic recomputed"
+    },
+    {
+      "path": "knav/AGENTS.md",
+      "sha256": "da22fbc13a87162c59befe0504479b615659c856e3f4645b3c169f0e634bb284",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/configs/teacher_dataset.json",
+      "sha256": "cca8ce6ba9f26d87ed22634c4fd8039217807ea4cdd3cefffd00a18da5772f54",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/README.md",
+      "sha256": "ef14f7ac572e11ca8f682f314d02f133508db9dcbed59ff4f8b7c34bc2d0144c",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/RESULT_SYNTHESIS_AND_FOLLOWUPS.md",
+      "sha256": "84410025fafb5dab8af3043492c32c31d9d5cb848770c662f250bdfe86bb4c09",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/PAPER_LEDGER.md",
+      "sha256": "42d3aeb76f096bdd33d44c48bacb283a11ca090cbf8725f0cb0fa4e007221066",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "fable.md",
+      "sha256": "7e202aeafad4e1c47c7b55f36ac6520b004885f6d63089241bfe74998d1158f7",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/LITERATURE_AUDIT.md",
+      "sha256": "35ceecc64b68d5c978404413b7ae2d93ab9c0cc4f39fc53c2b83bf7276dfed87",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/research/2026-09-15-timed-navigation-student/LITERATURE_REVIEW.md",
+      "sha256": "13fbb7aa1e7d1f5940f586d6683dc19534ee8f6924c0afd35e3e919c6d9804cb",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/research/2026-09-15-hindsight-navigation/README.md",
+      "sha256": "d8adcbbe9b34f6dbd645dd3a807fd8b76712f719f6d0c233018ba82ba34db8db",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/research/2026-09-15-navigation-bfm-reference/FOLLOWUP.md",
+      "sha256": "dc929d5cebd286d5f5455a50c55e68ff54ad28f55187b4da39287565a475d92f",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/research/2026-09-15-navigation-bfm-online/NEXT_STAGE.md",
+      "sha256": "ccb8ffe40eb47585262ba519871f7e3718aaf40a913e1974f4616effc0038815",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/research/2026-09-15-navigation-bfm-joint/README.md",
+      "sha256": "2a50727e6d510ef1599b582f2a6f02d7df97d0a4552ce5bfa5a4161ff8e325af",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/src/knav/training/navigation_joint_student.py",
+      "sha256": "fa15deb476d3c4c38ffbacbda20b4b1aaf1982de6ae0353819773f939c2ab125",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    },
+    {
+      "path": "knav/src/knav/training/sparse_timed_student.py",
+      "sha256": "500f3eb72ef3cc5516495d6c75c5c98b6bb0d5f01be4466bafad5fe05b813e3f",
+      "review_scope": "relevant sections inspected; historical summaries are not raw trial replication"
+    }
+  ],
+  "external_sources": [
+    {
+      "key": "tango",
+      "url": "https://arxiv.org/html/2609.09158v1",
+      "bytes": 332394,
+      "sha256": "b76c0fc173cbcd10761e68f5e2d691de1f1ef003882bf3b93fa9004ff8a3744b"
+    },
+    {
+      "key": "cat",
+      "url": "https://arxiv.org/html/2601.16035v1",
+      "bytes": 253808,
+      "sha256": "6256eb265cd166a4ecf43e0c4f97fb2c2b5a2707d241172313c78306ff35b852"
+    },
+    {
+      "key": "scenebot",
+      "url": "https://arxiv.org/html/2606.27581v1",
+      "bytes": 204586,
+      "sha256": "dcc8de2f60d8ab059d29a96f30eb7ae197b2780cc9d0f2c01805e55d28d4418f"
+    },
+    {
+      "key": "pbfm",
+      "url": "https://arxiv.org/html/2606.08059v1",
+      "bytes": 267272,
+      "sha256": "06ab7aa6e61db7a6236e4e8606295d69b865d050d0d957673c0f332e57b44d08"
+    },
+    {
+      "key": "adapt",
+      "url": "https://arxiv.org/html/2609.00677v1",
+      "bytes": 322079,
+      "sha256": "3487bddc8c49f5daed5f546f42661e19185199ce07a21482f967e445900c749c"
+    },
+    {
+      "key": "bfm",
+      "url": "https://arxiv.org/html/2509.13780v1",
+      "bytes": 242954,
+      "sha256": "edd32726fb208386a41e09118c8c774df680b5fdb80fd6f22791bb4114c7d45c"
+    },
+    {
+      "key": "scaling-bfm",
+      "url": "https://arxiv.org/html/2607.15163v1",
+      "bytes": 313196,
+      "sha256": "0ee52c2cbdf3f3b5c8467e70a2c876f439301951879cffeb126059cd5e8998f3"
+    },
+    {
+      "key": "sonic",
+      "url": "https://arxiv.org/html/2511.07820v4",
+      "bytes": 446925,
+      "sha256": "55e0841963a0db45dac4994f5f5fa07878e53c5312bd0375d5207654bceca2f9"
+    },
+    {
+      "key": "bfm-zero",
+      "url": "https://arxiv.org/html/2511.04131v1",
+      "bytes": 380125,
+      "sha256": "8bec1ce55e54d234f2c9cfa4b7188e16ca726f8b9844478d6a7e7c36f285a050"
+    },
+    {
+      "key": "tango-project",
+      "url": "https://tango-vla.github.io/",
+      "bytes": 15213,
+      "sha256": "f5d29fec942615df461a3facf9213f5a8c96ab0c85861612bf8377d5a9c51087"
+    },
+    {
+      "key": "cat-code",
+      "url": "https://github.com/GalaxyGeneralRobotics/Click-and-Traverse",
+      "bytes": 382092,
+      "sha256": "3604b20cfe6b9fd7c4f845ff5bdfdbc4de03bee643fff7210e37fd913487a136"
+    },
+    {
+      "key": "scenebot-project",
+      "url": "https://ericcsr.github.io/scenebot/",
+      "bytes": 33734,
+      "sha256": "1af7db6ff45e79ba940983937eb5e127b6f833cd685bb711410bbdc2f32f28a2"
+    },
+    {
+      "key": "passage",
+      "url": "https://arxiv.org/html/2609.18732v1",
+      "bytes": 394812,
+      "sha256": "23b46219586ca6a3b530adb0ba474f0e32a7433f09084f22544c96cbaadf22d9"
+    },
+    {
+      "key": "dwmp",
+      "url": "https://arxiv.org/html/2609.12347v1",
+      "bytes": 206859,
+      "sha256": "6f5d51f91610802f8e9d8fbcbb98ced918c9dfa20f617c59c3c7a4a7ac66d61d"
+    },
+    {
+      "key": "mtc",
+      "url": "https://arxiv.org/html/2603.05993v1",
+      "bytes": 165849,
+      "sha256": "fa3757ea1e39caeef103066b740d07d5d701027b1eb197b9e3cd27658e91589c"
+    }
+  ],
+  "new_training": 0,
+  "new_physics": 0,
+  "reserved_data_loaded": false,
+  "external_methods_reproduced": false,
+  "source_inventory_is_not_full_text_read_claim": true
+}

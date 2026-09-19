@@ -1,0 +1,127 @@
+---
+layout: none
+title: "KimoNav — Literature review"
+permalink: /kimonav/literature/
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>KimoNav — Literature review</title><link rel="canonical" href="https://linjiw.github.io/kimonav/literature/"><link rel="stylesheet" href="/assets/kimonav/traversal.css"></head><body><a class="skip" href="#document">Skip to document</a><main class="plan-document"><nav class="plan-nav" aria-label="Research documents"><a href="/kimonav/">← KimoNav</a><a href="/kimonav/plan/">Plan</a><a href="/kimonav/evidence/">Evidence</a><a href="/kimonav/literature/">Literature</a><a href="/assets/kimonav/reassessment-2026-09-18/LITERATURE_REVIEW.md">Download Markdown</a></nav><article id="document" style="padding-top:32px"><h1>Literature that changes the traversal plan</h1>
+<p>Checked 18 September 2026. This is a targeted primary-source reassessment, not an exhaustive survey or a guarantee of novelty. Full-text access below means the relevant method, evaluation and limitation sections were inspected; it does not mean an external method was reproduced. Paper claims are attributed to their authors. Our design decisions are inferences.</p>
+<h2>The closest work now</h2>
+<table>
+<thead>
+<tr>
+<th>Primary source and inspected scope</th>
+<th>What is established in that source</th>
+<th>Decision for KimoNav</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/html/2609.09158v1">TANGO, 2609.09158v1</a>, §§3–5 and deployment/metrics appendices; full text</td>
+<td>RGB, language and proprioception condition whole-body reference chunks executed by SONIC. Its Plan–Edit–Track pipeline filters references through physical execution; action labels remain the edited references, not the tracked states. It also compares another tracker and identifies RGB-only perception and tracker capability as limitations.</td>
+<td>Direct overlap with our broad destination. Compare actual reference inputs and physical task definitions. “Whole-body VLA,” frozen-tracker composition, and swapping a tracker are insufficient novelty. Its outputs are references for a tracker, not direct motor torques.</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2609.18732v1">PASSAGE, 2609.18732v1</a>, §§III–V and map/runtime appendices; full text</td>
+<td>Destination and multi-layer geometric observations condition a flow planner and perceptive tracker. Scene-aligned data, chunk continuity and planner-side post-training support onboard traversal; goal completion and contact-free completion are distinguished.</td>
+<td>Essential new comparator. Scene-conditioned planning, layered overhead geometry, frozen-tracker refinement and reusable interfaces are already occupied. Evaluate our actual remaining question: task preservation and reliable adaptation under controlled command/observation changes.</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2601.16035v1">CAT / HumanoidPF, 2601.16035v1</a>, §§III–IV; full text</td>
+<td>Per-body geometric fields guide traversal learning; hybrid scenes cover ground, lateral and overhead obstacles. Deployment uses LiDAR–inertial mapping and target selection.</td>
+<td>Strong geometry/control comparator. Match sensing and motor capabilities before attributing a result to our interface. Per-body features and 3D clearance are established tools. <a href="https://github.com/GalaxyGeneralRobotics/Click-and-Traverse">Official repository</a> was inspected for availability, not executed.</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2609.12347v1">DWMP, 2609.12347v1</a>, method and experimental sections; full text</td>
+<td>Separate dynamics and depth world-model representations feed a traversal policy, with simulation and G1 demonstrations.</td>
+<td>A predictive visual representation is a plausible later comparison, not a necessary first component. Compare with a simple geometry/history encoder before adopting two world models.</td>
+</tr>
+</tbody>
+</table>
+<p>These sources make a timing-only differentiator unconvincing unless a real application requires it. We should study an operationally meaningful failure, with matched baselines, rather than create a narrower score merely because existing systems were not evaluated on it. The proposed task/observation intervention study remains a hypothesis; this review does not establish that no prior work studies the same issue.</p>
+<h2>Motion, scene data, and contact</h2>
+<table>
+<thead>
+<tr>
+<th>Source and scope</th>
+<th>Relevant finding</th>
+<th>Design implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/html/2603.05993v1">Moving Through Clutter, 2603.05993v1</a>, §§III–V; full text</td>
+<td>VR collection couples geometry with whole-body traversal. The paper reports 348 trajectories across 145 scenes and discusses scene-agnostic retargeting and omitted contact-assisted progression.</td>
+<td>Connect our program to this existing scene-aligned resource. Preserve human motion, retargeted reference and executed robot data as separate levels. Reuse accessible assets before building another scene generator.</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2606.27581v1">SceneBot, 2606.27581v1</a>, §§3–6; full text</td>
+<td>Motion-conditioned scene reconstruction and contact labels train a scene-interaction tracker. Its conclusion leaves autonomous perceptive goal-driven control to future work.</td>
+<td>Strong contact-aware motor and data precedent. A task-level planner remains a different obligation. New support contacts require motor training or qualification, not only collision-free animation.</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2606.08059v1">Perceptive BFM, 2606.08059v1</a>, synthesis, distillation and limitations; full text</td>
+<td>Terrain-conformal reference synthesis and perceptual distillation adapt supplied motion. Its stated foot-centric assumptions can leave upper-body collisions.</td>
+<td>Use as a terrain-adaptation comparison. Preserving upper-body style is unsuitable when shoulder/head clearance requires changing that style.</td>
+</tr>
+<tr>
+<td><a href="https://www.cs.utexas.edu/~xiao/Research/LfH/LfH.html">Learning from Hallucination family</a>, author project synthesis</td>
+<td>Open-space navigation experience is paired with constructed obstacle configurations; later variants change hallucination and deployment requirements.</td>
+<td>Motion-first scene construction is established. Our data branch must test whole-body feasibility, alternative actions and downstream learning against scene-first or existing scene-aligned data.</td>
+</tr>
+<tr>
+<td><a href="https://lijiaman.github.io/projects/summon/">SUMMON</a>, <a href="https://jiann-li.github.io/physcenegen/">INFERACT</a>, <a href="https://anindita127.github.io/SceMoS/">SceMoS</a>, <a href="https://arxiv.org/abs/2604.24833">MotionBricks</a></td>
+<td>Previously reviewed in the September 15 hindsight/tokenization notes; not independently re-read in this revision.</td>
+<td>Keep as secondary prior art for scene reconstruction, motion vocabularies and root/body factorization. Verify the relevant full-text passages before a specific novelty claim.</td>
+</tr>
+</tbody>
+</table>
+<h2>What the behavior-model papers do and do not imply</h2>
+<table>
+<thead>
+<tr>
+<th>Source and inspected scope</th>
+<th>Relevant finding</th>
+<th>Design implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/html/2509.13780v1">Behavior Foundation Model, 2509.13780v1</a>, §§III–V; full text</td>
+<td>A tracking proxy, masked geometric control, CVAE and online student-state supervision provide reusable control.</td>
+<td>These are methodological precedents. Our offline context masking and limited stored queries are not a full reproduction. Judge the public prior independently of privileged reconstruction.</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2607.15163v1">Scaling BFM, 2607.15163v1</a>, architecture, scaling and deployment sections; full text plus existing source audit</td>
+<td>Time-offset motion targets and observation/action histories support global whole-body control; motion diversity and rollout quantity are distinct.</td>
+<td>Time tokens and cross-attention are established. Repeating the same clips cannot replace missing body/scene behavior. Relative features still need an explicit localization contract.</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2511.04131v1">BFM-Zero, 2511.04131v1</a>, formulation and inference; full text plus September 15 code audit</td>
+<td>Forward–backward learning supports objective-conditioned behavior and inference through a learned representation.</td>
+<td>A separate pretraining route. Its latent is not SONIC code64, and importing its name does not give our student zero-shot properties. Reconsider only against a specific task and compute budget.</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2511.07820v4">SONIC, 2511.07820v4</a>, control/planning and deployment sections; full text</td>
+<td>A motion tracking system and kinematic planning interface provide reusable humanoid motion execution.</td>
+<td>Keep both original and repaired checkpoints as explicit baselines. Reproduce the actual reference context, initialization and controller implementation; adapted pose replay does not establish full native deployment parity.</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2609.00677v1">ADAPT, 2609.00677v1</a>, §§3–4; full text</td>
+<td>Closed-loop text-driven control, robustness adaptation and goal steering include a reaching-and-stationary objective.</td>
+<td>Neither text control nor stopping is new. Compare command semantics, allowed observations and execution latency. Our strict historical timing results are not directly comparable with its goal criterion.</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2409.14393">MaskedMimic</a>, <a href="https://hover-versatile-humanoid.github.io/">HOVER</a>, <a href="https://arxiv.org/abs/2604.11251">CLAW</a>, <a href="https://arxiv.org/abs/2511.22963">Humanoid-LLA</a>, <a href="https://arxiv.org/abs/2608.01410">GenTrack</a>, <a href="https://arxiv.org/abs/2506.07339">RTC</a></td>
+<td>Covered in existing September 8/15 primary-source reviews; those local reviews were inspected here. No new full-text verification in this revision.</td>
+<td>Retain as comparator families for sparse control, parameterized planning, language and execution-aware generation. Check implementation and availability before selecting an experimental baseline.</td>
+</tr>
+</tbody>
+</table>
+<h2>A focused next reading pass</h2>
+<ol>
+<li><strong>Task and runtime contracts:</strong> inspect released TANGO/PASSAGE/CAT code, if available, for goal acceptance, body/reference representation, collision accounting, recovery, sensor delay and initialization. Do not treat a project page as proof that a runnable checkpoint exists. This revision does not certify the release completeness of TANGO or PASSAGE.</li>
+<li><strong>Task preservation under partial observation:</strong> seek body-aware planning and constrained/uncertainty-aware navigation methods with explicit false-admission, abstention and intervention outcomes. Include conventional search/MPC and geometric checks, not only learned policies.</li>
+<li><strong>Supervision that distinguishes decisions:</strong> compare scene-aligned demonstration, scene-first generation, and motion-first augmentation at matched real behavior coverage. Ask whether changing an obstacle changes the desired action under a fixed destination.</li>
+<li><strong>Compression only after capability:</strong> revisit online masked distillation and multimodal prediction after a planner–tracker provides useful actions. Test whether compression improves latency/data cost while retaining task and contact outcomes.</li>
+</ol>
+<p>Stop a reading branch when it resolves the design decision. Continue the nearest-work search before a paper claim, especially because the September 2026 traversal literature has changed the comparison set substantially.</p></article><footer><a href="/kimonav/">Return to the research overview</a><span>Reassessed 18 September 2026</span></footer></main></body></html>

@@ -1,0 +1,134 @@
+---
+layout: none
+title: "KimoNav — Evidence review"
+permalink: /kimonav/evidence/
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>KimoNav — Evidence review</title><link rel="canonical" href="https://linjiw.github.io/kimonav/evidence/"><link rel="stylesheet" href="/assets/kimonav/traversal.css"></head><body><a class="skip" href="#document">Skip to document</a><main class="plan-document"><nav class="plan-nav" aria-label="Research documents"><a href="/kimonav/">← KimoNav</a><a href="/kimonav/plan/">Plan</a><a href="/kimonav/evidence/">Evidence</a><a href="/kimonav/literature/">Literature</a><a href="/assets/kimonav/reassessment-2026-09-18/EVIDENCE_REVIEW.md">Download Markdown</a></nav><article id="document" style="padding-top:32px"><h1>Evidence review and research decisions</h1>
+<p>18 September 2026. Counts below retain their original denominators and experimental scopes. No aggregate across these studies is a new benchmark. Current headline values are extracted from the latest joint study's machine-readable summary; other entries are traced to the reports linked below.</p>
+<h2>Current matched study</h2>
+<p>Four internal-development motions × two simulator seeds; one training seed. These motions were excluded from student fitting but were seen by the tracking teacher. Reference-state resets and imitation termination remain active.</p>
+<table>
+<thead>
+<tr>
+<th>Arm</th>
+<th style="text-align: right;">Full native duration</th>
+<th style="text-align: right;">Complete timed task</th>
+<th style="text-align: right;">Offline action MSE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tracking teacher</td>
+<td style="text-align: right;">8/8</td>
+<td style="text-align: right;">1/8</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td>Mean reference</td>
+<td style="text-align: right;">0/8</td>
+<td style="text-align: right;">0/8</td>
+<td style="text-align: right;">0.09956</td>
+</tr>
+<tr>
+<td>Measured reference</td>
+<td style="text-align: right;">0/8</td>
+<td style="text-align: right;">0/8</td>
+<td style="text-align: right;">0.05307</td>
+</tr>
+<tr>
+<td>Joint CVAE</td>
+<td style="text-align: right;">0/8</td>
+<td style="text-align: right;">0/8</td>
+<td style="text-align: right;">0.04569</td>
+</tr>
+<tr>
+<td>Staged CVAE</td>
+<td style="text-align: right;">0/8</td>
+<td style="text-align: right;">0/8</td>
+<td style="text-align: right;">0.04645</td>
+</tr>
+<tr>
+<td>Staged deterministic</td>
+<td style="text-align: right;">0/8</td>
+<td style="text-align: right;">0/8</td>
+<td style="text-align: right;">0.04709</td>
+</tr>
+</tbody>
+</table>
+<p><a href="/assets/kimonav/reassessment-2026-09-18/reports/navigation-bfm-joint-20260915.md">Source: joint-state study</a>. Its exact-reference oracle reproduces 1,096 teacher decisions across four complete trials. Staged posterior completion is 1/4; this is privileged assistance, not public navigation. The measured parameterization reduces offline action error by 46.7% relative to mean, but does not improve full completion. Current representations are usable research instruments; their downstream controller is not qualified.</p>
+<h2>What preceded it</h2>
+<table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Observation</th>
+<th>What it rules out / leaves open</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/assets/kimonav/reassessment-2026-09-18/reports/sonic-teacher-evaluation-20260913.md">Repaired teacher</a></td>
+<td>Original/repaired: 82/84 vs 83/84 training completions; 20/20 vs 16/20 reserved completions on one matched seed</td>
+<td>Fine-tuning is not uniformly superior. Failed motions have truncated errors; reduced error does not cancel a retention loss. No obstacle tasks were introduced.</td>
+</tr>
+<tr>
+<td><a href="/assets/kimonav/reassessment-2026-09-18/reports/motor-distillation-20260913.md">Full-current motor study</a></td>
+<td>Small full-current anticipatory panel: 21/24, matching teacher. Subsequent main motor: 9/20 reserved; exact-phase confirmation: 8/20; paired teacher: 15/20</td>
+<td>Low-level imitation can work with dense commands. This does not establish sparse-goal control or general retention. Different panels are not pooled.</td>
+</tr>
+<tr>
+<td><a href="/assets/kimonav/reassessment-2026-09-18/reports/text-goal-navigation-20260913.md">Text/goal pilot</a></td>
+<td>Two public students each fail all 24 fresh-seed evaluations after very limited qualified task data</td>
+<td>Too little task coverage to isolate the preview mechanism. Failed residual teacher tasks do not disqualify all motion-tracking supervision.</td>
+</tr>
+<tr>
+<td><a href="/assets/kimonav/reassessment-2026-09-18/reports/task-adapter-stable-full-20260914.md">Stable task adapter</a></td>
+<td>All three arms complete 24/24 native duration; all have 0/24 task-and-quality success</td>
+<td>Optimizer integrity and duration are distinct from task learning.</td>
+</tr>
+<tr>
+<td><a href="/assets/kimonav/reassessment-2026-09-18/reports/task-margin-pilot-20260914.md">Task margin study</a></td>
+<td>Margin arm: 0/24 task-and-quality; matched continuation control: 1/24</td>
+<td>No evidence to promote this reward package.</td>
+</tr>
+<tr>
+<td><a href="/assets/kimonav/reassessment-2026-09-18/reports/task-authority-single-20260915.md">Single-robot correction</a></td>
+<td>Early positive code correction improves STOP peaks in six pairs; no full qualification; some prefixes already fail the path</td>
+<td>Control authority can exist without sufficient task capacity. Later corrections cannot erase past violations.</td>
+</tr>
+<tr>
+<td><a href="/assets/kimonav/reassessment-2026-09-18/reports/proposal-teacher-20260915.md">Proposal-conditioned teacher</a></td>
+<td>Aware and blind each achieve 1/6 task-and-quality; both complete 6/6 duration</td>
+<td>Proposal features do not yet add demonstrated qualified capacity.</td>
+</tr>
+<tr>
+<td><a href="/assets/kimonav/reassessment-2026-09-18/reports/token-navigation-20260915.md">Timed token student</a></td>
+<td>About 10% lower token action MSE than flat at the longer fit; all 36 student runs terminate early</td>
+<td>Offline error is a poor promotion criterion here. Model capacity differs in the flat comparison.</td>
+</tr>
+<tr>
+<td><a href="/assets/kimonav/reassessment-2026-09-18/reports/navigation-bfm-dagger-20260915.md">Student-state DAgger</a></td>
+<td>1,392 queries; all student arms 0/8, teacher 8/8; nine newly retimed teacher motions complete</td>
+<td>Stored query fitting did not solve closed-loop execution. Tempo data are feasible, but are not STOP/hold qualification. Seven of eight scheduled teacher-recovery diagnostics complete with assistance.</td>
+</tr>
+<tr>
+<td><a href="/assets/kimonav/reassessment-2026-09-18/reports/navigation-bfm-reference-20260915.md">Reference/mask/velocity study</a></td>
+<td>Six public arms each 0/8; full-reference oracle 4/4; current-frame hint 2/4; posterior 0/4</td>
+<td>Exact motor path works; hint helps narrowly; this trained posterior is not an adequate privileged target. Initial simulator velocity alone does not fix the problem.</td>
+</tr>
+</tbody>
+</table>
+<h2>Historical findings retained in the new interpretation</h2>
+<p>The <a href="/assets/kimonav/reassessment-2026-09-18/reports/continuation-2026-09-09.md">September 9 continuation</a> and <a href="/assets/kimonav/reassessment-2026-09-18/reports/publication-2026-09-10.md">September 10 publication receipt</a> document the live binary governor's 10/24 versus 8/24 result. This is a development implementation check at the two-reference union ceiling, with post-hoc design and paused simulation during decisions. It is not evidence for a general real-time navigation controller.</p>
+<p>The <a href="/assets/kimonav/reassessment-2026-09-18/reports/terminal-family-2026-09-11.md">September 11 terminal-family result</a> finds global fixed and hindsight capacity tied at two qualified successes in fifteen available program/seed cells; eligibility and unavailable cells remain distinct. An adaptive selector has no demonstrated additional capacity in that allocation.</p>
+<p>The historical synthesis (local historical record), paper ledger (local historical record) and Fable review (local historical record) describe representation controls, failed learned selectors, reference-response limitations and clock/provenance corrections. Their dated next-step recommendations have been overtaken by later experiments. Preserve them as evidence; use this revision for current priorities.</p>
+<h2>Four consequential repairs to the argument</h2>
+<ol>
+<li><strong>Goal → evidence:</strong> the website's flat-floor timing story does not test the requested cluttered traversal capability. Add an explicit whole-body geometry question and scene-conditioned baselines; retain old timing panels as history.</li>
+<li><strong>Teacher → student:</strong> an exact tracking action can be a good motor label without being a successful navigation transition. Keep motor supervision, task feasibility and scene interaction as separate qualifications. Train on student states only when the queried continuation is meaningful for that state and task.</li>
+<li><strong>Representation → execution:</strong> smaller MSE, changed codes and a better privileged posterior do not show autonomous capability. Promote on complete task-and-quality outcomes at matched observations and budgets.</li>
+<li><strong>Split → claim:</strong> recent “reserved20 untouched” statements mean unused in that specific student study. Earlier reports already evaluated these clips. Preserve exclusions from training and create a new final split for claims needing unseen data; never describe seed repeats as unseen tasks.</li>
+</ol>
+<h2>Scope still unmeasured</h2>
+<p>Arbitrary standing starts; route/posture changes caused by obstacles; contact-free completion in clutter; sensor-based localization; visual policy input; asynchronous runtime under measured delay; long-route generalization; independently grounded language control; new support contacts; and hardware performance. None follows from the current token or teacher tracking results.</p>
+<p>The recommendation is a reasoned research decision, not proof that a modular planner will win. The <a href="/kimonav/plan/">new plan</a> specifies outcomes that would keep, simplify or replace it.</p></article><footer><a href="/kimonav/">Return to the research overview</a><span>Reassessed 18 September 2026</span></footer></main></body></html>

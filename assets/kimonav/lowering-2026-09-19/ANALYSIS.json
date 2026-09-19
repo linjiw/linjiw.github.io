@@ -1,0 +1,145 @@
+{
+  "passed": true,
+  "old_controls": [
+    {
+      "case": "clear-fixed_duck-96162",
+      "all_arrays_exact": true
+    },
+    {
+      "case": "clear-fixed_duck-96165",
+      "all_arrays_exact": true
+    },
+    {
+      "case": "beam-fixed_duck-96162",
+      "all_arrays_exact": true
+    },
+    {
+      "case": "beam-fixed_duck-96165",
+      "all_arrays_exact": true
+    }
+  ],
+  "prior_three_native_candidates_exact": true,
+  "native_foot_pose_errors": {
+    "left": {
+      "native_position_max_error_m": 0.00038157953531481326,
+      "native_rotation_max_error_rad": 0.0009784688240366622
+    },
+    "right": {
+      "native_position_max_error_m": 0.00043199965148232877,
+      "native_rotation_max_error_rad": 0.0017909945719821185
+    }
+  },
+  "paired_outcomes": [
+    {
+      "layout": "clear",
+      "seed": 96162,
+      "local_success": true,
+      "lowered_success": true,
+      "completion_time_difference_s": 0.0
+    },
+    {
+      "layout": "clear",
+      "seed": 96165,
+      "local_success": true,
+      "lowered_success": true,
+      "completion_time_difference_s": 0.02
+    },
+    {
+      "layout": "clear",
+      "seed": 96166,
+      "local_success": true,
+      "lowered_success": true,
+      "completion_time_difference_s": 0.08
+    },
+    {
+      "layout": "beam",
+      "seed": 96162,
+      "local_success": false,
+      "lowered_success": true,
+      "completion_time_difference_s": null
+    },
+    {
+      "layout": "beam",
+      "seed": 96165,
+      "local_success": true,
+      "lowered_success": true,
+      "completion_time_difference_s": 0.0
+    },
+    {
+      "layout": "beam",
+      "seed": 96166,
+      "local_success": true,
+      "lowered_success": true,
+      "completion_time_difference_s": 0.08
+    }
+  ],
+  "realization_diagnostics": [
+    {
+      "case": "beam-fixed_duck-96162",
+      "query_time_s": 2.7,
+      "common_2_70s_available": true,
+      "measured_root_height_m": 0.7443369626998901,
+      "planned_root_height_m": 0.6629535555839539,
+      "forward_error_m": 0.146285558599014,
+      "height_error_m": 0.08138340711593628,
+      "joint_rms_error_rad": 0.2108404040336609,
+      "preceding_forbidden_force_max_n": 0.0
+    },
+    {
+      "case": "beam-fixed_lowered-96162",
+      "query_time_s": 2.7,
+      "common_2_70s_available": true,
+      "measured_root_height_m": 0.733352541923523,
+      "planned_root_height_m": 0.6202846169471741,
+      "forward_error_m": 0.1522275414341833,
+      "height_error_m": 0.11306792497634888,
+      "joint_rms_error_rad": 0.243769571185112,
+      "preceding_forbidden_force_max_n": 0.0
+    },
+    {
+      "case": "beam-fixed_duck-96165",
+      "query_time_s": 2.7,
+      "common_2_70s_available": true,
+      "measured_root_height_m": 0.7194729447364807,
+      "planned_root_height_m": 0.6629535555839539,
+      "forward_error_m": 0.18010023862700295,
+      "height_error_m": 0.056519389152526855,
+      "joint_rms_error_rad": 0.1671464741230011,
+      "preceding_forbidden_force_max_n": 0.0
+    },
+    {
+      "case": "beam-fixed_lowered-96165",
+      "query_time_s": 2.7,
+      "common_2_70s_available": true,
+      "measured_root_height_m": 0.7027286291122437,
+      "planned_root_height_m": 0.6202846169471741,
+      "forward_error_m": 0.19538795045081322,
+      "height_error_m": 0.08244401216506958,
+      "joint_rms_error_rad": 0.1954289823770523,
+      "preceding_forbidden_force_max_n": 0.0
+    },
+    {
+      "case": "beam-fixed_duck-96166",
+      "query_time_s": 2.7,
+      "common_2_70s_available": true,
+      "measured_root_height_m": 0.7257799506187439,
+      "planned_root_height_m": 0.6629535555839539,
+      "forward_error_m": 0.1473802909335659,
+      "height_error_m": 0.06282639503479004,
+      "joint_rms_error_rad": 0.19019638001918793,
+      "preceding_forbidden_force_max_n": 0.0
+    },
+    {
+      "case": "beam-fixed_lowered-96166",
+      "query_time_s": 2.7,
+      "common_2_70s_available": true,
+      "measured_root_height_m": 0.7090208530426025,
+      "planned_root_height_m": 0.6202846169471741,
+      "forward_error_m": 0.1488978950670891,
+      "height_error_m": 0.08873623609542847,
+      "joint_rms_error_rad": 0.2196054756641388,
+      "preceding_forbidden_force_max_n": 0.0
+    }
+  ],
+  "diagnostic_scope": "Descriptive same-time measured/planned differences; no causal isolation, safety threshold or physical success label from geometry."
+}

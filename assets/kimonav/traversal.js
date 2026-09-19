@@ -20,7 +20,7 @@
         ['Implemented input', 'Goal + known geometry', 'Accepted destination, exact observed map and measured initial body. The task does not supply an answer motion ID.', false],
         ['Implemented choice', 'Initial library selection', 'Sampled whole-body clearance and endpoint checks choose nominal when clear and local duck with the beam.', false],
         ['Verified execution', 'Native reference → motor', 'Selected q/dq/orientation frames → encoder / FSQ → decoder with actual proprioception and action history.', false],
-        ['Measured limitation', 'Task + contact outcome', 'Public selection: 2/2 clear, 1/2 beam. Latest fixed duration comparison: each 3/3 clear and 2/3 beam; same hard failure.', true]
+        ['Measured limitation', 'Task + contact outcome', 'Public selection remains 2/2 clear, 1/2 beam in its own panel. New fixed lowered candidate: 3/3 beam; public selection of that candidate is not tested here.', true]
       ],
       loop: '↶ Actual state is recorded and used by the tracker; changing the continuation from measured feedback is the next unimplemented gate.',
       allowed: 'Public goal/map, measured initial body, current orientation and actual motor history; fixed previously built motion library.',

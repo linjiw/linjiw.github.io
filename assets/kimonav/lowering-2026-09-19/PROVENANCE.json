@@ -1,0 +1,39 @@
+{
+  "study": "foot-preserving-lowering-20260919",
+  "plan_sha256": "bfb3fda78a6656fec72af6e78681a013d2d2403aedb2921bb02b1dd3ad85f707",
+  "registered_utc": "2026-09-19T07:28:30.234742+00:00",
+  "assets": [
+    {
+      "file": "ANALYSIS.json",
+      "sha256": "159fd6824dfe2317aae83173b2d5548ee5ee4abd87cd88e7758c9c03b81373ca"
+    },
+    {
+      "file": "AUDIT.json",
+      "sha256": "81eeb66ca6cdb420f6ffcb857d8c6d40fd80f4a535ccdbaa0c5cae4a753554f7"
+    },
+    {
+      "file": "lowering-outcomes.svg",
+      "sha256": "7d6e6183e40afb7dcbf4bfc4a44446a10dbfa2e01e8d2870cdf4822a401c5b44"
+    },
+    {
+      "file": "CODEC_AUDIT.json",
+      "sha256": "343af267cd8821415e8df6241ed03437ab3477728451644a766e5a2134d0137c"
+    },
+    {
+      "file": "REPORT.md",
+      "sha256": "07b0ea2793495c8f859305750824b790d0d22101d28b81a237d6e6d15ab25d11"
+    },
+    {
+      "file": "TEST_RESULTS.txt",
+      "sha256": "a9ec939b7bad1ca080c5e31d078eba746c2df0caf037e969a37cca9f9507de64"
+    },
+    {
+      "file": "PROTOCOL.md",
+      "sha256": "ec443365e39d841cf8c431d1872cd3cbb484ad63ee210483067b31d068e20f94"
+    },
+    {
+      "file": "lowering-outcomes.png",
+      "sha256": "27d862b1c1f589f31386460c8cacc682ecc419d9c930c2a39688342738e98655"
+    }
+  ]
+}

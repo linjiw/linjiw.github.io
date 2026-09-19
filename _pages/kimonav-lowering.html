@@ -1,0 +1,125 @@
+---
+layout: none
+title: "KimoNav — Foot-preserving lowering"
+permalink: /kimonav/lowering/
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>KimoNav — Foot-preserving lowering</title><link rel="canonical" href="https://linjiw.github.io/kimonav/lowering/"><link rel="stylesheet" href="/assets/kimonav/traversal.css"></head><body><a class="skip" href="#document">Skip to document</a><main class="plan-document"><nav class="plan-nav" aria-label="Research documents"><a href="/kimonav/">← KimoNav</a><a href="/kimonav/lowering/">Latest experiment</a><a href="/kimonav/progress/">Earlier execution</a><a href="/kimonav/plan/">Plan</a><a href="/kimonav/literature/">Literature</a></nav><article id="document" style="padding-top:32px"><h1>A constrained fixed lowering rescues the retained difficult case</h1>
+<p>Completed 19 September 2026 UTC. All 12 registered first attempts are complete. <strong>The new fixed lowering passes 3/3 beam tasks, versus 2/3 for local duck.</strong> Clear results are 3/3 and 3/3 respectively. The previously failing seed 96162 now completes passage, recovery and stable destination hold. This is fixed-candidate qualification on one inspected source/corridor; the public selector and online replanning were not improved or evaluated by this panel.</p>
+<p><img alt="Paired physical outcomes and the constrained lowering" src="/assets/kimonav/lowering-2026-09-19/lowering-outcomes.png" /></p>
+<h2>What changed and what stayed fixed</h2>
+<p>The previous duration extension retained the failure. This candidate instead lowers the pelvis while holding both original full foot poses and the upper body joints fixed. An unprojected request for 80 mm extra lowering failed at source frame 42 because its foot-pose constraints could not be met inside the joint bounds. That zero-physics preparation is preserved. The adopted constrained solve plus conservative smoothing achieves at most <strong>48.108 mm</strong> extra source lowering, with a maximum additional joint change of 0.24352 rad. It is not an 80 mm executed body correction.</p>
+<p>Source IK foot errors are below 0.1 mm and 0.0001 rad. Native resampling is a different boundary: maximum foot-position changes are 0.382 mm left and 0.432 mm right. Both full foot trajectories are approximately preserved, including swing; this does not establish support, balance, friction or collision-free execution.</p>
+<p>Both arms retain the scene teacher, nominal standing start, one-second transition, actual motor history, clean relative orientation, destination, beam and original 10 s clock. The full task scorer is unchanged. The bank contains the original three candidates plus the new lowered reference; the original native arrays reproduce exactly. There is no online replacement, force input to the actor, student training or hardware run.</p>
+<h2>Every first attempt</h2>
+<table>
+<thead>
+<tr>
+<th>Layout / seed</th>
+<th>Local duck</th>
+<th>Constrained lowering</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clear / 96162</td>
+<td>Complete, 8.34 s</td>
+<td>Complete, 8.34 s</td>
+</tr>
+<tr>
+<td>Clear / 96165</td>
+<td>Complete, 8.78 s</td>
+<td>Complete, 8.80 s</td>
+</tr>
+<tr>
+<td>Clear / 96166</td>
+<td>Complete, 8.28 s</td>
+<td>Complete, 8.36 s</td>
+</tr>
+<tr>
+<td>Beam / 96162</td>
+<td>Contact: torso_link, 2.84 s</td>
+<td>Complete, 8.34 s</td>
+</tr>
+<tr>
+<td>Beam / 96165</td>
+<td>Complete, 8.78 s</td>
+<td>Complete, 8.78 s</td>
+</tr>
+<tr>
+<td>Beam / 96166</td>
+<td>Complete, 8.28 s</td>
+<td>Complete, 8.36 s</td>
+</tr>
+</tbody>
+</table>
+<p>Seeds 96162 and 96165 were inspected previously; 96166 is a fresh execution seed on the same source and corridor. Four overlapping local controls are exact repeats of the previous panel, not independent confirmation. Complete success requires the original passage, required duck event, upright recovery, destination region, fresh stable hold and environment-contact/fall conjunction. Historical strict self-contact qualification is separate and remains unresolved.</p>
+<h2>What actual execution explains—and does not</h2>
+<table>
+<thead>
+<tr>
+<th>Seed / mode</th>
+<th style="text-align: right;">Measured pelvis at query</th>
+<th style="text-align: right;">Planned pelvis</th>
+<th style="text-align: right;">Height error</th>
+<th style="text-align: right;">Joint RMS error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fixed_duck-96162</td>
+<td style="text-align: right;">0.7443 m</td>
+<td style="text-align: right;">0.6630 m</td>
+<td style="text-align: right;">+81.4 mm</td>
+<td style="text-align: right;">0.211 rad</td>
+</tr>
+<tr>
+<td>fixed_lowered-96162</td>
+<td style="text-align: right;">0.7334 m</td>
+<td style="text-align: right;">0.6203 m</td>
+<td style="text-align: right;">+113.1 mm</td>
+<td style="text-align: right;">0.244 rad</td>
+</tr>
+<tr>
+<td>fixed_duck-96165</td>
+<td style="text-align: right;">0.7195 m</td>
+<td style="text-align: right;">0.6630 m</td>
+<td style="text-align: right;">+56.5 mm</td>
+<td style="text-align: right;">0.167 rad</td>
+</tr>
+<tr>
+<td>fixed_lowered-96165</td>
+<td style="text-align: right;">0.7027 m</td>
+<td style="text-align: right;">0.6203 m</td>
+<td style="text-align: right;">+82.4 mm</td>
+<td style="text-align: right;">0.195 rad</td>
+</tr>
+<tr>
+<td>fixed_duck-96166</td>
+<td style="text-align: right;">0.7258 m</td>
+<td style="text-align: right;">0.6630 m</td>
+<td style="text-align: right;">+62.8 mm</td>
+<td style="text-align: right;">0.190 rad</td>
+</tr>
+<tr>
+<td>fixed_lowered-96166</td>
+<td style="text-align: right;">0.7090 m</td>
+<td style="text-align: right;">0.6203 m</td>
+<td style="text-align: right;">+88.7 mm</td>
+<td style="text-align: right;">0.220 rad</td>
+</tr>
+</tbody>
+</table>
+<p>Queries use the 2.70 s pre-action state where available; the machine-readable analysis marks any shorter episode. These are descriptive same-clock measurements. On the retained hard case the actual pelvis is about 11 mm lower at this instant, even though the intended source change is larger. At that query, height error actually grows from 81.4 to 113.1 mm and joint RMS error from 0.211 to 0.244 rad because the intended reference is deeper. A successful task is not equivalent to lower same-time reference error. The edited leg posture, body progress, timing and tracking response remain coupled; this experiment does not isolate foot-pose constraints as the essential component.</p>
+<p>A simpler coupled hip/knee/ankle edit matched for excursion or achieved source depth remains a credible competing explanation and comparison. No claim that this IK construction is a novel planner, a general recovery rule or a robust perception interface follows from this panel.</p>
+<h2>Audit and costs</h2>
+<ul>
+<li><a href="/assets/kimonav/lowering-2026-09-19/AUDIT.json">Task/contact/reference audit</a>: all 12 cases and six exact initial-state/dynamics pairs pass.</li>
+<li><a href="/assets/kimonav/lowering-2026-09-19/CODEC_AUDIT.json">Frozen codec</a>: all 4,814 recorded token/action pairs replay with zero error; no extra physics is counted for replay.</li>
+<li><a href="/assets/kimonav/lowering-2026-09-19/ANALYSIS.json">Analysis</a>: four exact historical controls, unchanged prior native candidates, joint-range checks and separate native foot-trajectory measurements.</li>
+<li><a href="/assets/kimonav/lowering-2026-09-19/TEST_RESULTS.txt">Focused checks</a>: 32 passed, including named-joint permutation and independent foot-pose verification.</li>
+<li>Physical cost: 12 first attempts, 4,814 control ticks and 19,256 contact substeps. No physical or process retries. One rejected kinematic preparation is recorded separately.</li>
+<li><a href="/assets/kimonav/lowering-2026-09-19/PROTOCOL.md">Registered protocol</a> and original raw records remain unchanged.</li>
+</ul>
+<h2>Decision</h2>
+<p>Retain this fixed candidate as a stronger development baseline where the paired outcomes support it. The result explains a task improvement without online replanning; it does not prove that feedback is needed to rescue this particular case. The current geometry-only public ranking still prefers the cheaper original local duck, so fixed capability and public navigation must remain separate claims.</p>
+<p>Next connect measured execution qualification to public candidate eligibility and test the resulting selection under a newly frozen clearance-variation panel, with the strong fixed candidate and original selector as controls. Compare the simpler posture-edit rival before attributing benefit specifically to foot constraints. Introduce actual-state replacement only for a measured remaining failure that fixed selection cannot resolve. Keep new source/scene evaluation and observation robustness as separate future gates.</p></article></main></body></html>

@@ -40,7 +40,7 @@ latest_posts:
 ---
 
 <div class="classic-intro">
-  <p class="classic-lede">I build adaptive training systems that decide <strong>what an embodied agent should practice next</strong> and <strong>how its rewards should change as it improves</strong>.</p>
+  <p class="classic-lede">I build adaptive training systems that decide <strong>what an embodied agent should practice next</strong>, <strong>how its rewards should change</strong>, and <strong>when it is ready for harder simulation conditions</strong>.</p>
   <p>I am a Computer Science Ph.D. researcher at George Mason University's <a href="https://robotixx.cs.gmu.edu/">RobotiXX Lab</a>, advised by <a href="https://people.cs.gmu.edu/~xiao/">Xuesu Xiao</a>. My work spans automatic curriculum learning, deep reinforcement learning, GPU-parallel robot simulation, physical off-road validation, and ongoing humanoid policy inference.</p>
 </div>
 
@@ -50,10 +50,10 @@ latest_posts:
     <strong>One-page resume</strong>
     <small>Experience, skills, publications, education →</small>
   </a>
-  <a class="audience-route" href="{{ '/canvas/' | relative_url }}">
+  <a class="audience-route" href="{{ '/research/' | relative_url }}">
     <span>TECHNICAL PATH</span>
-    <strong>Guided research canvas</strong>
-    <small>Methods, authorship, evidence, and platforms →</small>
+    <strong>My Ph.D. research story</strong>
+    <small>Animated methods, examples, and evidence →</small>
   </a>
   <a class="audience-route" href="https://scholar.google.com/citations?user=VURUgFMAAAAJ" target="_blank" rel="noopener">
     <span>RESEARCH RECORD</span>
@@ -66,7 +66,7 @@ latest_posts:
   <div class="classic-thesis-copy">
     <span class="classic-eyebrow">RESEARCH THESIS</span>
     <h2 id="thesis-heading">Make training adapt to the learner.</h2>
-    <p><strong>GACL adapts tasks.</strong> <strong>Reward Training Wheels adapts auxiliary rewards.</strong> Together they form a capability-aware training program: observe performance, estimate competence, and present the right challenge.</p>
+    <p><strong>GACL adapts tasks.</strong> <strong>Reward Training Wheels adapts auxiliary rewards.</strong> <strong>LUCID paces domain randomization.</strong> These complementary methods share a research principle: understand the student, then adapt its training. <a href="{{ '/research/' | relative_url }}">Explore the interactive story →</a></p>
   </div>
   <div class="classic-thesis-visual">
     {% include embodied_loop.liquid variant='light' %}
@@ -78,7 +78,7 @@ latest_posts:
     <span class="focus-role">FIRST AUTHOR · IROS 2025</span>
     <h3><a href="https://arxiv.org/abs/2508.02988">GACL</a></h3>
     <p>Designed a grounded automatic curriculum framework using task representations, online performance history, and limited target-distribution samples.</p>
-    <strong class="focus-evidence">+6.8% wheeled navigation · +6.1% quadruped locomotion</strong>
+    <strong class="focus-evidence">Simulation vs CLUTR: +5.18 / +4.56 percentage points</strong>
   </article>
   <article class="focus-card">
     <span class="focus-role">CO-FIRST AUTHOR · IROS 2025</span>
@@ -87,14 +87,14 @@ latest_posts:
     <strong class="focus-evidence">Simulation: 3× faster to threshold · Physical: 5/5 vs 2/5</strong>
   </article>
   <article class="focus-card">
-    <span class="focus-role">THIRD AUTHOR · ARXIV 2026</span>
-    <h3><a href="https://arxiv.org/abs/2603.05993">Moving Through Clutter</a></h3>
-    <p>VR data collection and evaluation for scene-aware humanoid locomotion, paired with an ongoing <a href="https://github.com/linjiw/motion_tracking_controller_bfm">C++/ROS 2/ONNX policy-inference prototype</a>.</p>
-    <strong class="focus-evidence">348 trajectories · 145 cluttered 3D scenes</strong>
+    <span class="focus-role">PREPRINT · 2026</span>
+    <h3><a href="{{ '/research/#lucid' | relative_url }}">LUCID</a></h3>
+    <p>Execution-informed domain-randomization curricula for humanoid motion tracking, using a frozen temporal encoder and bounded feedback control.</p>
+    <strong class="focus-evidence">G1 study at +40 ms added delay: 38/60 vs 23/60 completions</strong>
   </article>
 </section>
 
-<p class="classic-breadth"><strong>Research + production breadth.</strong> I also co-authored RL-based <a href="https://arxiv.org/abs/2510.05330">Adaptive Dynamics Planning</a> (4th author, ICRA 2026) and <a href="https://arxiv.org/abs/2503.20521">DDP</a> (3rd author, IROS 2025); the DDP-based RobotiXX system placed 2nd in both phases of the 2025 BARN Challenge. At AWS, I worked in C on PostgreSQL-based database internals, join processing, performance, and compatibility for <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/user-apg-adaptive-join.html">Amazon Aurora PostgreSQL</a> in summer 2026, after building statistical performance-testing infrastructure for RDS Proxy in summer 2025. Before my Ph.D., I completed an M.S. in Mechanical Engineering at Carnegie Mellon (GPA 3.94/4.0), working on 3D perception and AR scene inpainting, and a magna cum laude B.S. from the University of Cincinnati.</p>
+<p class="classic-breadth"><strong>Research + systems engineering.</strong> I am also third author on <a href="https://arxiv.org/abs/2603.05993">Moving Through Clutter</a>, a humanoid data and benchmarking study with 348 trajectories across 145 scenes, and I am developing a separate <a href="https://github.com/linjiw/motion_tracking_controller_bfm">C++/ROS 2/ONNX policy-inference prototype</a>. I also co-authored RL-based <a href="https://arxiv.org/abs/2510.05330">Adaptive Dynamics Planning</a> (4th author, ICRA 2026) and <a href="https://arxiv.org/abs/2503.20521">DDP</a> (3rd author, IROS 2025); the DDP-based RobotiXX system placed 2nd in both phases of the 2025 BARN Challenge. At AWS, I worked in C on PostgreSQL-based database internals, join processing, performance, and compatibility for <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/user-apg-adaptive-join.html">Amazon Aurora PostgreSQL</a> in summer 2026, after building statistical performance-testing infrastructure for RDS Proxy in summer 2025. Before my Ph.D., I completed an M.S. in Mechanical Engineering at Carnegie Mellon (GPA 3.94/4.0), working on 3D perception and AR scene inpainting, and a magna cum laude B.S. from the University of Cincinnati.</p>
 
 <div class="classic-utility" aria-label="Portfolio links">
   <a href="{{ '/projects/' | relative_url }}">Projects</a>

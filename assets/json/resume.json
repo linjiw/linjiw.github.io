@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "Linji (Joey) Wang",
-    "label": "AI Robotics & Systems Engineer | Curriculum Learning & Embodied RL",
+    "label": "Robot Learning Researcher & Robotics Systems Engineer",
     "image": "",
     "email": "joewwang@outlook.com",
     "url": "https://linjiw.github.io/",
-    "summary": "AI/robotics and systems engineer and Computer Science Ph.D. researcher specializing in automatic curriculum learning, deep reinforcement learning, and embodied-agent training. First/co-first author of two IROS 2025 papers, with systems experience spanning PostgreSQL query performance at AWS and C++/ROS 2 humanoid policy inference.",
+    "summary": "Computer Science Ph.D. researcher connecting adaptive RL training with robot policy integration. My research examines student-aware curricula over tasks (GACL), auxiliary rewards (Reward Training Wheels), and domain randomization (LUCID preprint), supported by C++/ROS 2/ONNX inference work and C/Python systems engineering at AWS.",
     "location": {
       "city": "Fairfax",
       "countryCode": "US",
@@ -37,35 +37,36 @@
   "work": [
     {
       "name": "RobotiXX Lab, George Mason University",
-      "position": "Graduate Research Assistant — Robot Learning",
+      "position": "Graduate Research Assistant \u2014 Robot Learning",
       "location": "Fairfax, VA",
       "url": "https://robotixx.cs.gmu.edu/",
       "startDate": "2023-08-01",
       "endDate": "",
-      "summary": "Automatic curriculum learning and deep reinforcement learning for embodied robots, advised by Dr. Xuesu Xiao",
+      "summary": "Student-aware curricula over tasks, rewards, and simulation conditions; advised by Dr. Xuesu Xiao",
       "highlights": [
-        "Developed GACL, an automatic curriculum-learning framework using VAE task representations, performance-history tracking, and target-domain grounding; trained PPO agents in 128 parallel Isaac Gym environments and improved success by 6.8% on wheeled navigation and 6.1% on quadruped locomotion versus state-of-the-art methods (first author, IROS 2025)",
-        "Co-developed Reward Training Wheels, a teacher–student framework for proficiency-conditioned auxiliary-reward adaptation; in simulation, improved off-road mobility by 122.62% and reached the same performance threshold 3x faster; sim-trained policies achieved 5/5 physical trials versus 2/5 (co-first author, IROS 2025)",
+        "Developed GACL with VAE task representations, learner-performance history, and grounded task sampling for PPO in 128 parallel Isaac Gym environments. Reported simulation success: 81.85% navigation and 79.21% quadruped locomotion versus CLUTR at 76.67% and 74.65% (first author, IROS 2025)",
+        "Co-developed Reward Training Wheels to adapt auxiliary-reward weights while retaining the primary objective. Reported off-road simulation success: 76.67% versus 34.44% with expert rewards; physical completion: 5/5 versus 2/5 trials (co-first author, IROS 2025)",
+        "LUCID (preprint, 2026): execution-informed domain-randomization curricula for humanoid motion tracking. The study reports 88.9% versus 76.8% full-randomization simulation completion against filtered-error PI; physical G1 trials with 40 ms added delay: 38/60 versus 23/60",
         "Third author on Moving Through Clutter (2026), a VR data-collection and evaluation framework for scene-aware humanoid locomotion with 348 trajectories across 145 3D scenes",
-        "Developing a C++/ROS 2 policy-inference stack for Unitree G1 with paired ONNX residual/base policies, metadata-driven observation construction, temporal history, normalization, and Isaac Lab–MuJoCo parity diagnostics",
+        "Developing a C++/ROS 2 policy-inference stack for Unitree G1 with paired ONNX residual/base policies, metadata-driven observation construction, temporal history, normalization, and Isaac Lab\u2013MuJoCo parity diagnostics",
         "Co-authored RL-based Adaptive Dynamics Planning (4th author, ICRA 2026) and Decremental Dynamics Planning (3rd author, IROS 2025); the DDP-based RobotiXX system placed 2nd in both the simulation qualifier and physical finals of the 2025 BARN Challenge"
       ]
     },
     {
       "name": "Amazon Web Services (AWS)",
-      "position": "Software Development Engineer Intern — Amazon Aurora PostgreSQL",
+      "position": "Software Development Engineer Intern \u2014 Amazon Aurora PostgreSQL",
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/user-apg-adaptive-join.html",
       "startDate": "2026-05-01",
       "endDate": "2026-08-01",
       "summary": "Aurora PostgreSQL query-execution performance and compatibility",
       "highlights": [
-        "Contributed to Adaptive Join for Amazon Aurora PostgreSQL, developing mechanisms that adjust join execution to improve query performance",
-        "Worked in the PostgreSQL-based database engine codebase in C on database internals, join processing, performance analysis, and compatibility improvements"
+        "Implemented and extended Adaptive Join in C for Aurora PostgreSQL, adding support for additional join types and expanding supported query coverage",
+        "Built join benchmarks and synthetic-data generators; used statistical comparisons to investigate regressions across engine changes"
       ]
     },
     {
       "name": "Amazon Web Services (AWS)",
-      "position": "Software Development Engineer Intern — RDS Proxy",
+      "position": "Software Development Engineer Intern \u2014 RDS Proxy",
       "location": "Bellevue, WA",
       "url": "https://aws.amazon.com/rds/proxy/",
       "startDate": "2025-05-01",
@@ -79,7 +80,7 @@
     },
     {
       "name": "Computational Engineering and Robotics Lab, Carnegie Mellon University",
-      "position": "Research Assistant — 3D Perception and AR",
+      "position": "Research Assistant \u2014 3D Perception and AR",
       "location": "Pittsburgh, PA",
       "url": "https://www.andrew.cmu.edu/user/shimada/",
       "startDate": "2022-01-01",
@@ -158,8 +159,17 @@
       "endDate": "",
       "summary": "Ongoing C++/ROS 2 prototype for Unitree G1 motion-policy inference",
       "highlights": [
-        "Added paired ONNX residual/base inference, metadata-driven observation assembly, history buffering, normalization, and Isaac Lab–MuJoCo parity diagnostics",
+        "Added paired ONNX residual/base inference, metadata-driven observation assembly, history buffering, normalization, and Isaac Lab\u2013MuJoCo parity diagnostics",
         "Documented validation gates explicitly; no physical-deployment claim is made"
+      ]
+    },
+    {
+      "name": "LUCID: execution-informed domain randomization",
+      "url": "https://linjiw.github.io/research/#lucid",
+      "summary": "Preprint, 2026. Latent-Understanding Curriculum for Informed Domain Randomization in Humanoid Motion Tracking.",
+      "highlights": [
+        "A frozen temporal encoder summarizes command\u2013execution discrepancy; a bounded PI scheduler with return-based backoff paces shared randomization intensity",
+        "Study evaluates held-out motion tracking, an unseen 60 ms delay, and physical G1 trials across four motions, three checkpoints, and five repetitions per condition and method"
       ]
     }
   ],
@@ -169,14 +179,14 @@
       "publisher": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
       "releaseDate": "2025-10-19",
       "url": "https://doi.org/10.1109/IROS60139.2025.11246910",
-      "summary": "First author. Grounded automatic curriculum generation for robotics; 6.8% and 6.1% higher success rates on wheeled navigation and quadruped locomotion than state-of-the-art methods."
+      "summary": "First author. Adaptive task generation grounded in reference tasks; reported navigation/locomotion simulation success of 81.85%/79.21% versus CLUTR at 76.67%/74.65%."
     },
     {
       "name": "Reward Training Wheels: Adaptive Auxiliary Rewards for Robotics Reinforcement Learning",
       "publisher": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
       "releaseDate": "2025-10-19",
       "url": "https://doi.org/10.1109/IROS60139.2025.11247039",
-      "summary": "Co-first author with Tong Xu. In simulation, adaptive auxiliary rewards achieved 122.62% higher off-road mobility and reached the same performance threshold 3x faster; sim-trained policies achieved 5/5 physical trials versus 2/5."
+      "summary": "Co-first author with Tong Xu. Adaptive auxiliary-reward weighting; reported off-road simulation success of 76.67% versus 34.44% with expert rewards, and physical completion of 5/5 versus 2/5 trials."
     },
     {
       "name": "Moving Through Clutter: Scaling Data Collection and Benchmarking for 3D Scene-Aware Humanoid Locomotion via Virtual Reality",
@@ -216,7 +226,7 @@
   ],
   "awards": [
     {
-      "title": "RobotiXX Team — 2nd Place, Simulation and Real-World Phases, 2025 BARN Challenge",
+      "title": "RobotiXX Team \u2014 2nd Place, Simulation and Real-World Phases, 2025 BARN Challenge",
       "date": "2025-05-22",
       "awarder": "IEEE ICRA 2025",
       "url": "https://people.cs.gmu.edu/~xiao/Research/BARN_Challenge/BARN_Challenge25.html#leaderboard",
@@ -226,7 +236,7 @@
   "volunteer": [
     {
       "organization": "George Mason University",
-      "position": "Teaching Assistant — Introduction to Programming",
+      "position": "Teaching Assistant \u2014 Introduction to Programming",
       "url": "https://www.gmu.edu",
       "startDate": "2023-08-01",
       "endDate": "2023-12-15",
@@ -235,7 +245,7 @@
     },
     {
       "organization": "Carnegie Mellon University",
-      "position": "Teaching Assistant — Artificial Intelligence and Machine Learning",
+      "position": "Teaching Assistant \u2014 Artificial Intelligence and Machine Learning",
       "url": "https://www.cmu.edu",
       "startDate": "2022-08-01",
       "endDate": "2022-12-15",
@@ -244,7 +254,7 @@
     },
     {
       "organization": "University of Cincinnati",
-      "position": "Teaching Assistant — System Dynamics, Fluid Dynamics and Engineering Models",
+      "position": "Teaching Assistant \u2014 System Dynamics, Fluid Dynamics and Engineering Models",
       "url": "https://www.uc.edu",
       "startDate": "2020-08-01",
       "endDate": "2020-12-15",
@@ -260,11 +270,13 @@
       "keywords": [
         "Automatic Curriculum Learning",
         "Deep Reinforcement Learning",
-        "Teacher–Student Learning",
+        "Teacher\u2013Student Learning",
         "Reward Shaping",
         "PPO",
         "VAE Task Representations",
-        "Sim-to-Real"
+        "Sim-to-Real",
+        "Domain Randomization",
+        "Latent Temporal Representations"
       ]
     },
     {

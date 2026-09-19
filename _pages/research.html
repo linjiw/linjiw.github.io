@@ -1,0 +1,176 @@
+---
+layout: none
+title: research
+permalink: /research/
+nav: true
+nav_order: 1
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A better teacher for robot learning | Linji (Joey) Wang</title>
+  <meta name="description" content="Linji Wang's Ph.D. research on student-aware robot training: GACL adapts tasks, Reward Training Wheels adapts rewards, and LUCID paces domain randomization. Explore animated methods and scoped results.">
+  <link rel="canonical" href="https://linjiw.github.io/research/">
+  <meta property="og:title" content="A better teacher for robot learning — Linji Wang">
+  <meta property="og:description" content="Tasks. Rewards. Training conditions. An interactive tour of adaptive robot training through GACL, RTW, and LUCID.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://linjiw.github.io/research/">
+  <meta property="og:image" content="https://linjiw.github.io/assets/research/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="icon" href="{{ '/assets/img/prof_pic.jpg' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/research/research.css' | relative_url }}">
+  <script src="{{ '/assets/research/research.js' | relative_url }}" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to research</a>
+<header class="site-header">
+  <a class="wordmark" href="{{ '/' | relative_url }}"><span class="monogram">LW</span><span>Linji <span class="name-extra">(Joey)</span> Wang<small>ROBOT LEARNING · ROBOTIXX / GMU</small></span></a>
+  <nav aria-label="Research navigation"><a href="#idea">The idea</a><a href="#methods">The methods</a><a href="#evidence">The evidence</a><a class="portfolio-link" href="{{ '/classic/' | relative_url }}">Portfolio ↗</a></nav>
+  <button id="motion-toggle" class="motion-toggle" type="button" aria-pressed="false">Pause motion</button>
+</header>
+<main id="main">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="status-dot"></span> A PH.D. RESEARCH AGENDA</p>
+      <h1 id="hero-title">A better <em>teacher</em><br>for robot learning.</h1>
+      <p class="hero-lede">Robust policies need a training process that responds to the robot learning them.</p>
+      <p class="hero-description">I study how a teacher can understand a student's progress and execution, then adapt <strong>tasks</strong>, <strong>rewards</strong>, and <strong>simulation conditions</strong>.</p>
+      <div class="hero-actions"><a class="button primary" href="#idea">Explore the idea <span>↓</span></a><a class="text-link" href="#methods">Meet the three methods ↗</a></div>
+      <div class="byline"><span>Linji (Joey) Wang</span><span>CS Ph.D. researcher · advised by Xuesu Xiao</span></div>
+    </div>
+    <figure class="hero-lab">
+      <div class="lab-topline"><span>ADAPTIVE ROBOT TRAINING</span><span class="live-label">conceptual loop</span></div>
+      <svg class="hero-diagram" viewBox="0 0 560 430" role="img" aria-labelledby="hero-svg-title hero-svg-desc">
+        <title id="hero-svg-title">A teacher adapts training using feedback from a robot student</title>
+        <desc id="hero-svg-desc">Task choice, auxiliary rewards, and domain-randomization intensity are three complementary training decisions. A student practices and returns performance or execution feedback.</desc>
+        <defs><pattern id="dot-grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#b8c6c3" opacity=".5"/></pattern><marker id="hero-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="none" stroke="#819690"/></marker></defs>
+        <rect width="560" height="430" fill="url(#dot-grid)"/>
+        <path class="signal-path" d="M280 122V153M280 223V264M358 320H500V76H385" marker-end="url(#hero-arrow)"/>
+        <path class="signal-path" d="M280 151H88V171M280 151H472V171M88 220V249H280M472 220V249H280"/>
+        <text x="481" y="293" class="svg-caption" transform="rotate(-90 481 293)">observe the learner</text>
+        <g class="teacher-box"><rect x="160" y="30" width="240" height="93" rx="18"/><text x="280" y="66" text-anchor="middle" class="svg-kicker">THE TEACHER</text><text x="280" y="94" text-anchor="middle" class="svg-title">Understand. Adapt.</text></g>
+        <g class="decision task"><rect x="24" y="171" width="136" height="51" rx="12"/><text x="92" y="201" text-anchor="middle">01 · Tasks</text></g>
+        <g class="decision reward"><rect x="210" y="171" width="140" height="51" rx="12"/><text x="280" y="201" text-anchor="middle">02 · Rewards</text></g>
+        <g class="decision domain"><rect x="400" y="171" width="136" height="51" rx="12"/><text x="468" y="194" text-anchor="middle">03 · Conditions</text><text x="468" y="211" text-anchor="middle" class="svg-mini">domain randomization</text></g>
+        <g class="student-box"><rect x="202" y="268" width="156" height="109" rx="18"/><g class="robot-bob" stroke="#edf5ef" fill="none" stroke-width="3" stroke-linecap="round"><rect x="265" y="281" width="30" height="23" rx="7"/><path d="M272 312H288L293 331H267ZM268 317L255 333M291 317L304 333M274 331L268 345M286 331L293 345"/><circle cx="274" cy="292" r="1"/><circle cx="286" cy="292" r="1"/></g><text x="280" y="364" text-anchor="middle">ROBOT STUDENT</text></g>
+        <circle class="signal-dot dot-one" cx="280" cy="141" r="5"/><circle class="signal-dot dot-two" cx="280" cy="258" r="5"/>
+        <text x="280" y="410" text-anchor="middle" class="svg-caption">Practice → feedback → the next training decision</text>
+      </svg>
+      <figcaption>Three complementary methods. One research question.</figcaption>
+    </figure>
+  </section>
+
+  <div class="research-strip wrap" aria-label="Research pillars">
+    <a href="#gacl"><span class="index task-ink">01</span><span><strong>GACL</strong><small>What should the robot practice?</small></span><span>↗</span></a>
+    <a href="#rtw"><span class="index reward-ink">02</span><span><strong>Reward Training Wheels</strong><small>What guidance helps it learn?</small></span><span>↗</span></a>
+    <a href="#lucid"><span class="index domain-ink">03</span><span><strong>LUCID</strong><small>When is it ready for harder conditions?</small></span><span>↗</span></a>
+  </div>
+
+  <section class="wrap section idea" id="idea" aria-labelledby="idea-title">
+    <div class="section-intro"><p class="eyebrow">THE IDEA / LEARNING TO TEACH</p><h2 id="idea-title">Good teaching begins<br>with the student.</h2><p>A teacher does more than assign harder homework. They choose useful exercises, change the guidance, and introduce challenging conditions when the learner can benefit.</p><p>My research brings this principle to reinforcement learning: use evidence about the robot to adapt its training.</p></div>
+    <div class="analogy-panel">
+      <div class="panel-header"><span>A FAMILIAR IDEA, A ROBOTICS QUESTION</span><div class="segmented" role="group" aria-label="Example setting"><button type="button" data-example="classroom" aria-pressed="true">Classroom</button><button type="button" data-example="robotics" aria-pressed="false">Robotics</button></div></div>
+      <div class="analogy-row"><span class="analogy-number task-ink">01</span><div><h3 id="example-task-title">Choose the next exercise.</h3><p id="example-task">Give a student practice that addresses what they have not yet mastered, while staying relevant to the subject.</p></div><span class="analogy-tag">TASKS</span></div>
+      <div class="analogy-row"><span class="analogy-number reward-ink">02</span><div><h3 id="example-reward-title">Adjust the guidance.</h3><p id="example-reward">Change which hints and intermediate steps receive attention, while keeping the learning objective the same.</p></div><span class="analogy-tag">REWARDS</span></div>
+      <div class="analogy-row"><span class="analogy-number domain-ink">03</span><div><h3 id="example-domain-title">Prepare for less ideal conditions.</h3><p id="example-domain">Move from quiet practice to distractions and time pressure at a pace the student can handle.</p></div><span class="analogy-tag">CONDITIONS</span></div>
+      <p class="microcopy">An analogy for the research agenda. Each method has its own signals, controller, and experiments.</p>
+    </div>
+  </section>
+
+  <section class="methods-section" id="methods" aria-labelledby="methods-title">
+    <div class="wrap section-heading"><p class="eyebrow">THE METHODS / THREE PARTS OF TRAINING</p><h2 id="methods-title">What changes when the teacher<br>understands more?</h2><p>The shared principle is student-aware adaptation. The implementation depends on the decision being made.</p></div>
+
+    <article class="method wrap" id="gacl">
+      <div class="method-copy"><span class="method-label task-ink">01 / ADAPT THE TASKS</span><h3>GACL</h3><p class="method-subtitle">Choose useful practice.<br>Keep it grounded.</p><p>Robot task spaces are complex, and generated challenges can drift away from the target domain. GACL represents tasks in a learned latent space and gives its teacher task and performance history.</p><p>The teacher proposes training tasks; alternating reference and generated samples keeps the curriculum connected to the environments that matter.</p><div class="paper-meta">First author · IROS 2025</div><a class="text-link" href="https://arxiv.org/abs/2508.02988">Read GACL ↗</a></div>
+      <div class="method-visual" data-method="gacl">
+        <div class="visual-heading"><span>FROM FIGURE 2 · SIMPLIFIED INTERACTIVE SCHEMATIC</span><span class="pill task-pill">Task curriculum</span></div>
+        <div class="flow-board" aria-label="GACL method diagram">
+          <div class="flow-node" data-step="0"><span class="node-icon">▦</span><strong>Reference tasks → VAE</strong><small>A learned representation of task structure</small></div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-node" data-step="1"><span class="node-icon">◎</span><strong>Teacher + learner history</strong><small>Task context and student performance</small></div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-node" data-step="2"><span class="node-icon">⇄</span><strong>Grounded practice → PPO student</strong><small>Alternate reference and generated tasks</small></div>
+          <div class="feedback-line">↶ Performance returns to the teacher</div>
+        </div>
+        <div class="step-controls" role="group" aria-label="Explore GACL"><button type="button" data-step="0" aria-pressed="true">1 · Represent</button><button type="button" data-step="1" aria-pressed="false">2 · Observe</button><button type="button" data-step="2" aria-pressed="false">3 · Teach</button></div>
+        <p class="step-caption" aria-live="polite">A pretrained VAE encodes the task space. The curriculum operates on structured task representations.</p>
+        <details><summary>See the paper diagram and technical detail</summary><img src="{{ '/assets/img/projects/gacl_framework.jpg' | relative_url }}" alt="Original GACL framework figure with teacher, student and antagonist agents" loading="lazy"><p>The full method includes a PPO student and antagonist, a teacher over task representations, and alternating sampling. This teaching diagram omits those lower-level connections; the paper is the technical reference.</p></details>
+      </div>
+    </article>
+
+    <article class="method wrap" id="rtw">
+      <div class="method-copy"><span class="method-label reward-ink">02 / ADAPT THE REWARDS</span><h3>Reward Training Wheels</h3><p class="method-subtitle">Keep the destination.<br>Adapt the guidance.</p><p>A fixed set of auxiliary rewards can become poorly matched to a changing student. RTW keeps the primary objective and learns how much emphasis to give auxiliary reward components.</p><p>Its teacher observes previous weights and reward histories. The action is a new weight vector for the student's learning process.</p><div class="paper-meta">Co-first author with Tong Xu · IROS 2025</div><a class="text-link" href="https://arxiv.org/abs/2503.15724">Read Reward Training Wheels ↗</a></div>
+      <div class="method-visual" data-method="rtw">
+        <div class="visual-heading"><span>FROM FIGURE 1 · SIMPLIFIED INTERACTIVE SCHEMATIC</span><span class="pill reward-pill">Reward curriculum</span></div>
+        <div class="reward-equation"><span>Primary objective</span><b>+</b><span>Weighted auxiliary rewards</span></div>
+        <div class="flow-board">
+          <div class="flow-node" data-step="0"><strong>Observe the learning history</strong><small>Previous weights, primary rewards, auxiliary rewards</small></div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-node" data-step="1"><strong>Teacher chooses auxiliary weights</strong><div class="weight-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><small>Illustrative weights · not an experimental trace</small></div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-node" data-step="2"><strong>Student learns with adjusted guidance</strong><small>Task performance feeds the next teacher decision</small></div>
+        </div>
+        <div class="step-controls" role="group" aria-label="Explore RTW"><button type="button" data-step="0" aria-pressed="true">1 · Observe</button><button type="button" data-step="1" aria-pressed="false">2 · Reweight</button><button type="button" data-step="2" aria-pressed="false">3 · Learn</button></div>
+        <p class="step-caption" aria-live="polite">The teacher receives learning history, rather than assuming the same shaping weights help at every stage.</p>
+        <details><summary>See the paper diagram and technical detail</summary><img src="{{ '/assets/img/projects/rtw_framework.jpg' | relative_url }}" alt="Original Reward Training Wheels teacher and student framework" loading="lazy"><p>Weights can increase or decrease. “Training wheels” is the motivation; it is not a guarantee that every auxiliary weight decreases monotonically or reaches zero. Reward penalties are not hard safety constraints.</p></details>
+      </div>
+    </article>
+
+    <article class="method wrap" id="lucid">
+      <div class="method-copy"><span class="method-label domain-ink">03 / PACE DOMAIN RANDOMIZATION</span><h3>LUCID</h3><p class="method-subtitle">Read execution.<br>Pace the challenge.</p><p>Delay, uncertain dynamics, and noisy observations prepare policies for transfer—but severe perturbations can disrupt learning too early.</p><p>LUCID compares histories of issued joint targets and measured positions in a frozen, learned motion space. The execution gap helps decide the next training block's randomization intensity.</p><div class="paper-meta">Preprint · 2026</div><a class="text-link" href="{{ '/assets/pdf/lucid-preprint.pdf' | relative_url }}">Read the LUCID preprint ↗</a><p class="source-note">Latent-Understanding Curriculum for Informed Domain Randomization in Humanoid Motion Tracking</p></div>
+      <div class="method-visual" data-method="lucid">
+        <div class="visual-heading"><span>FROM FIGURE 1 · SIMPLIFIED INTERACTIVE SCHEMATIC</span><span class="pill domain-pill">Condition curriculum</span></div>
+        <div class="flow-board">
+          <div class="history-pair" data-step="0"><div class="flow-node"><strong>Issued commands</strong><svg viewBox="0 0 180 34" aria-hidden="true"><path d="M0 20Q15 0 30 20T60 20T90 20T120 20T150 20T180 20"/></svg></div><div class="flow-node"><strong>Measured positions</strong><svg viewBox="0 0 180 34" aria-hidden="true"><path d="M0 22Q25 8 40 22T70 22T100 22T130 22T160 22T190 22"/></svg></div></div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-node" data-step="1"><strong>Shared frozen temporal encoder</strong><small>Denoising pretraining → latent discrepancy → block quantile</small></div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-node" data-step="2"><strong>Bounded PI update + return backoff</strong><small>Set the next block's shared DR intensity</small></div>
+          <div class="deployment-strip"><span>AT DEPLOYMENT</span> Trained policy → low-level controller → G1</div>
+        </div>
+        <div class="step-controls" role="group" aria-label="Explore LUCID"><button type="button" data-step="0" aria-pressed="true">1 · Compare</button><button type="button" data-step="1" aria-pressed="false">2 · Encode</button><button type="button" data-step="2" aria-pressed="false">3 · Pace</button></div>
+        <p class="step-caption" aria-live="polite">Compare 25-sample command and execution histories from the same episode. The waveforms here are schematic.</p>
+        <details><summary>What “understanding” means here</summary><p>A denoising-pretrained temporal VAE supplies a frozen, 32-dimensional comparison space. “Understanding” refers to learned temporal motion structure—not an estimate of the student's intentions or a diagnosis of the physical cause.</p><p>A 90th-percentile block discrepancy drives a bounded proportional–integral scheduler. Low task return supplies an independent override. This teacher is an encoder plus feedback controller, not a learned RL teacher policy. Neither encoder nor scheduler runs onboard.</p><a href="{{ '/assets/pdf/lucid-preprint.pdf#page=2' | relative_url }}">Full training diagram in the preprint ↗</a></details>
+      </div>
+    </article>
+  </section>
+
+  <section class="wrap section scheduler-section" aria-labelledby="scheduler-title">
+    <div class="section-intro"><p class="eyebrow">TRY THE MECHANISM / LUCID</p><h2 id="scheduler-title">How much challenge<br>comes next?</h2><p>Move the execution gap above or below its nominal reference. See how proportional feedback, accumulated error, and a low-return override change the next intensity.</p><p class="microcopy">An interactive calculation of the preprint's scheduler equations. Input values are illustrative; this is not a trained robot or a replay of experimental data.</p></div>
+    <div class="scheduler-card">
+      <label for="gap-input">Execution gap relative to reference <output id="gap-value" for="gap-input">0.70×</output></label>
+      <input id="gap-input" type="range" min="0" max="2" value="0.7" step="0.05">
+      <div class="range-labels"><span>Below reference</span><span>At reference</span><span>Above reference</span></div>
+      <label class="checkbox-row"><input type="checkbox" id="return-low"> Mean return below 65% of nominal</label>
+      <div class="intensity-readout"><div><span>RANDOMIZATION INTENSITY</span><strong id="intensity-value">0.500</strong></div><div class="intensity-meter"><div id="intensity-bar" style="width:50%"></div></div><p><span>Nominal conditions</span><span>Full configured ranges</span></p></div>
+      <div class="scheduler-actions"><button type="button" class="button primary" id="advance-block">Advance one training block →</button><button type="button" class="text-button" id="reset-scheduler">Reset</button></div>
+      <p id="scheduler-feedback" class="scheduler-feedback" aria-live="polite">Start at intensity 0.5 with warm-up already complete. Advance to apply one update.</p>
+      <details><summary>Equation and assumptions</summary><p><code>e = 1 − gap/reference</code><br><code>I = clip(I + e, −0.8, 0.8)</code><br><code>λ ← clip(λ + 0.04 × clip(0.8e + 0.15I, −1, 1), 0, 1)</code></p><p>After warm-up, two consecutive low-return blocks apply <code>λ ← 0.70λ</code> and reset the integral, overriding the PI update. This demo starts after warm-up with valid histories; Algorithm 1 also specifies warm-up and empty-window handling. A shared intensity couples channels; it does not set each channel's difficulty independently.</p></details>
+    </div>
+  </section>
+
+  <section class="evidence-section" id="evidence" aria-labelledby="evidence-title">
+    <div class="wrap section"><div class="evidence-top"><div><p class="eyebrow">THE EVIDENCE / SCOPED COMPARISONS</p><h2 id="evidence-title">From training decisions<br>to robot behavior.</h2></div><p>Wheeled navigation. Quadruped locomotion. Physical off-road driving. Humanoid motion tracking. Each result answers a specific experimental question.</p></div>
+    <div class="results-panel">
+      <div class="result-controls"><label for="result-select">Explore an experiment</label><select id="result-select"><option value="gacl_nav">GACL · wheeled navigation</option><option value="gacl_quad">GACL · quadruped locomotion</option><option value="rtw_sim">RTW · off-road simulation</option><option value="rtw_robot">RTW · physical off-road trials</option><option value="lucid_full">LUCID · full-range randomization</option><option value="lucid_delay">LUCID · unseen 60 ms delay</option><option value="lucid_robot">LUCID · physical G1 with +40 ms delay</option></select><span id="result-stage" class="pill">Published · simulation</span><h3 id="result-title">Wheeled navigation success</h3><p id="result-description">GACL and CLUTR evaluated in the reported BARN navigation simulation benchmark.</p><a id="result-source" class="text-link" href="https://arxiv.org/html/2508.02988v1#S5.T2">GACL · Table II ↗</a></div>
+      <div class="result-chart" aria-live="polite"><div class="chart-scale"><span>0%</span><span>50%</span><span>100%</span></div><div class="bar-row"><div><strong id="method-name">GACL</strong><span id="method-value">81.85%</span></div><div class="bar-track"><div class="bar-fill method-fill" id="method-bar" style="width:81.85%"></div></div></div><div class="bar-row"><div><strong id="baseline-name">CLUTR</strong><span id="baseline-value">76.67%</span></div><div class="bar-track"><div class="bar-fill baseline-fill" id="baseline-bar" style="width:76.67%"></div></div></div><div class="result-delta"><strong id="result-delta">+5.18</strong><span>percentage points</span></div><p id="result-context">Table II reports mean ± standard deviation: 81.85 ± 2.51% versus 76.67 ± 2.74%.</p><p class="microcopy" id="result-limit">This is a simulation result; it does not establish GACL hardware deployment.</p></div>
+    </div>
+    <p class="evidence-note">These are paper-reported results, not a new reproduction. Different experiments use different tasks and protocols; values should not be compared across experiments. LUCID results are from a 2026 preprint.</p>
+    </div>
+  </section>
+
+  <section class="wrap section practice-section" aria-labelledby="practice-title">
+    <div class="section-intro"><p class="eyebrow">RESEARCH MEETS ENGINEERING</p><h2 id="practice-title">Work across the<br>robot-learning stack.</h2><p>I connect adaptive-training research with simulation, policy interfaces, and evaluation. My mechanical-engineering background and AWS systems work complement that research.</p><a class="button secondary" href="{{ '/assets/pdf/resume.pdf' | relative_url }}">Read my resume ↗</a></div>
+    <div class="stack-list"><div><span>01</span><h3>Learning algorithms</h3><p>Task representation, teacher–student RL, reward adaptation, and execution-informed curriculum design.</p></div><div><span>02</span><h3>Simulation and experiments</h3><p>PPO, parallel robot simulation, controlled baselines, ablations, held-out evaluation, and cross-simulator comparisons.</p></div><div><span>03</span><h3>Policy integration</h3><p>C++ / ROS 2 / ONNX inference, observation construction, normalization, temporal history, and runtime diagnostics.</p></div><div><span>04</span><h3>Physical evaluation and systems</h3><p>Research with off-road and G1 physical evaluations; C database-engine work and Python performance tooling at AWS.</p></div></div>
+    <p class="scope-note">The studies span wheeled navigation, quadruped locomotion, off-road driving, and humanoid motion tracking. My separate <a href="https://github.com/linjiw/motion_tracking_controller_bfm">G1 residual/base inference project</a> currently focuses on simulation integration and policy-interface validation.</p>
+  </section>
+
+  <section class="wrap paper-shelf" aria-labelledby="papers-title"><p class="eyebrow">READ THE RESEARCH</p><h2 id="papers-title">The papers behind the story.</h2><div class="paper-grid"><a href="https://arxiv.org/abs/2508.02988"><span>01 · IROS 2025</span><h3>GACL</h3><p>Grounded Adaptive Curriculum Learning with Active Task and Performance Monitoring</p><small>Linji Wang, Zifan Xu, Peter Stone, Xuesu Xiao</small><b>Paper ↗</b></a><a href="https://arxiv.org/abs/2503.15724"><span>02 · IROS 2025</span><h3>Reward Training Wheels</h3><p>Adaptive Auxiliary Rewards for Robotics Reinforcement Learning</p><small>Linji Wang*, Tong Xu*, Yuanjie Lu, Xuesu Xiao<br>* Equal contribution</small><b>Paper ↗</b></a><a href="{{ '/assets/pdf/lucid-preprint.pdf' | relative_url }}"><span>03 · PREPRINT 2026</span><h3>LUCID</h3><p>Latent-Understanding Curriculum for Informed Domain Randomization in Humanoid Motion Tracking</p><small>Preprint version supplied September 2026</small><b>Preprint PDF ↗</b></a></div></section>
+</main>
+<footer class="wrap"><div><strong>Linji (Joey) Wang</strong><p>Adaptive robot training · RobotiXX Lab · George Mason University</p></div><nav aria-label="Footer"><a href="{{ '/classic/' | relative_url }}">About</a><a href="{{ '/publications/' | relative_url }}">Publications</a><a href="https://github.com/linjiw">GitHub</a><a href="mailto:joewwang@outlook.com">Get in touch ↗</a></nav></footer>
+</body>
+</html>

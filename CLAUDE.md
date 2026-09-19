@@ -39,6 +39,7 @@ at `/classic/`, not `/`.
 | Publications | `_bibliography/papers.bib` | /publications/, classic selected papers |
 | Site CV | `assets/json/resume.json` | /cv/ (via `_layouts/cv.liquid`) |
 | PDF resume | `resume.tex` | `assets/pdf/resume.pdf` (built by CI) |
+| Interactive research story | `_pages/research.html` + `assets/research/` | /research/ |
 | Classic bio | `_pages/about.md` | /classic/ |
 | News | `_news/*.md` | classic announcements |
 | Projects | `_projects/*.md` | /projects/ |
@@ -58,8 +59,9 @@ Note: on /cv/, the `volunteer` key of resume.json renders under the heading
   2/5 physical trials; MTC: 348 trajectories across 145 scenes; DDP/RobotiXX:
   2nd place in both simulation and physical phases of the 2025 BARN Challenge.
 - Wang's published research is **navigation and locomotion** (wheeled UGV,
-  quadruped, off-road, and scene-aware humanoid locomotion). Humanoid curriculum
-  learning remains clearly labeled as an ongoing direction, not a published result.
+  quadruped, off-road, and scene-aware humanoid locomotion). LUCID humanoid domain-randomization research is a candidate-confirmed 2026
+  preprint (`assets/pdf/lucid-preprint.pdf`), not an accepted ICRA paper. Attribute
+  its results to the study; do not invent author order or personal component ownership.
 - Authorship matters: GACL is first-author; RTW is co-first-author with Tong Xu;
   MTC and DDP are 3rd-author, ADP is 4th-author, and II-NVM/ColorMap-VIO are
   5th-author collaborations.
@@ -70,7 +72,8 @@ Note: on /cv/, the `volunteer` key of resume.json renders under the heading
 
 ## Publications (papers.bib)
 
-Seven robotics entries: GACL, RTW, DDP, II-NVM, Adaptive Dynamics Planning,
+Seven bibliography entries (LUCID is linked from the research page and CV as a
+preprint; do not invent a BibTeX author list from its anonymous PDF): GACL, RTW, DDP, II-NVM, Adaptive Dynamics Planning,
 ColorMap-VIO, and Moving Through Clutter. DDP carries the corrected BARN
 Challenge `award`/`award_name`; II-NVM has the real open-source repository. Do
 not add `code=`/`slides=` fields pointing at PDFs, and do not put submission
@@ -89,3 +92,17 @@ numbers in `note=`.
 `PLAN.md` tracks the phased website/resume overhaul (content accuracy → resume
 consolidation → publications presentation → visual identity → SEO). Check items
 off as they are completed.
+
+## Adaptive-training story
+
+Keep GACL task selection, RTW auxiliary-weight adaptation, and LUCID domain
+randomization distinct. They support one research agenda, not a jointly evaluated
+three-axis system. RTW weights need not fade monotonically. LUCID uses a frozen
+temporal encoder and bounded PI scheduler with return-based backoff, not an RL
+teacher policy. Its encoder/scheduler are training components. Preserve baseline,
+sample size, simulation/physical boundaries, and preprint status in results.
+
+The research-page animations and scheduler demo are explanatory, not experimental
+trajectories. Keep motion controls, reduced-motion support, keyboard operation,
+and small-screen layout working. The G1 residual/base integration remains a
+separate prototype until direct evidence establishes its hardware validation.

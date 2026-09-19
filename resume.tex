@@ -25,7 +25,7 @@
 \hypersetup{
   pdftitle={Linji Wang - AI Robotics and Systems Engineer - Curriculum Learning and Embodied RL},
   pdfauthor={Linji Wang},
-  pdfsubject={AI robotics, database systems, and performance engineering},
+  pdfsubject={Adaptive robot learning, policy integration, and systems engineering},
   pdfkeywords={AI robotics, robot learning, curriculum learning, reinforcement learning, embodied AI, Aurora PostgreSQL, database systems, query optimization, AWS}
 }
 
@@ -50,7 +50,7 @@
 
 \begin{center}
   {\fontsize{19}{21}\selectfont\bfseries LINJI (JOEY) WANG}\\[-1pt]
-  {\large\bfseries\color{accent}AI Robotics \& Systems Engineer \textbar{} Curriculum Learning \& Embodied RL}\\[2pt]
+  {\large\bfseries\color{accent}Robot Learning Researcher \textbar{} Robotics Systems Engineer}\\[2pt]
   \small Fairfax, VA \textbar{}
   \href{mailto:joewwang@outlook.com}{joewwang@outlook.com} \textbar{}
   412-888-6071 \textbar{}
@@ -62,12 +62,12 @@
 \vspace{-7pt}
 
 \section{PROFILE}
-\small AI/robotics and systems engineer and Computer Science Ph.D. researcher specializing in automatic curriculum learning, deep reinforcement learning, and embodied-agent training. First/co-first author of two IROS 2025 papers, with systems experience spanning Aurora PostgreSQL query performance at AWS and C++/ROS 2 humanoid policy inference.
+\small Computer Science Ph.D. researcher connecting adaptive RL training with robot policy integration. Research spans curricula over tasks, auxiliary rewards, and domain randomization, with first/co-first-author papers at IROS 2025. Engineering experience includes C++/ROS 2/ONNX inference and C/Python systems at AWS.
 
 \section{TECHNICAL EXPERTISE}
 \small
 \begin{tabularx}{\textwidth}{>{\bfseries}p{1.36in} X}
-Robot learning & Automatic curriculum learning, deep reinforcement learning, PPO, teacher--student learning, reward shaping, VAE task representations, sim-to-real \\
+Robot learning & Automatic curriculum learning, deep reinforcement learning, PPO, teacher--student learning, reward adaptation, latent representations, domain randomization, sim-to-real \\
 Robotics systems & PyTorch, Isaac Gym, Isaac Lab, MuJoCo, ROS 2, ONNX Runtime; navigation, quadruped locomotion, off-road mobility, humanoid policy inference \\
 Systems \& software & C, C++, Python, Aurora PostgreSQL, query processing and join optimization, AWS, Docker, Git/CI-CD \\
 \end{tabularx}
@@ -76,18 +76,17 @@ Systems \& software & C, C++, Python, Aurora PostgreSQL, query processing and jo
 \small
 \role{RobotiXX Lab, George Mason University}{Fairfax, VA}{Graduate Research Assistant --- Robot Learning}{Aug 2023 -- Present}
 \begin{itemize}
-  \item Developed \textbf{GACL}, an automatic curriculum-learning framework using VAE task representations, performance-history tracking, and target-domain grounding; trained PPO agents in 128 parallel Isaac Gym environments and improved success by 6.8\% on wheeled navigation and 6.1\% on quadruped locomotion versus state-of-the-art methods (first author, IROS 2025).
-  \item Co-developed \textbf{Reward Training Wheels}, a teacher--student framework for proficiency-conditioned auxiliary-reward adaptation; in simulation, improved off-road mobility by 122.62\% and reached the same performance threshold 3$\times$ faster than expert-designed rewards; sim-trained policies achieved 5/5 physical trials versus 2/5 (co-first author, IROS 2025).
-  \item Third author on \textbf{Moving Through Clutter} (2026), a VR data-collection and evaluation framework for scene-aware humanoid locomotion with 348 trajectories across 145 3D scenes.
-  \item Developing a C++/ROS 2 policy-inference stack for Unitree G1 with paired ONNX residual/base policies, metadata-driven observation construction, temporal history, normalization, and Isaac Lab--MuJoCo parity diagnostics.
-  \item Co-authored RL-based \textbf{Adaptive Dynamics Planning} (4th author, ICRA 2026) and \textbf{Decremental Dynamics Planning} (3rd author, IROS 2025); the DDP-based RobotiXX system placed 2nd in both the simulation qualifier and physical finals of the 2025 BARN Challenge.
+  \item \textbf{Task curricula --- GACL:} Developed VAE task representations, performance-history conditioning, and grounded task sampling for PPO in 128 parallel Isaac Gym environments. Reported navigation / quadruped simulation success: 81.85\% / 79.21\% versus CLUTR at 76.67\% / 74.65\% (first author, IROS 2025).
+  \item \textbf{Reward curricula --- Reward Training Wheels:} Co-developed adaptive auxiliary-reward weighting. Reported off-road simulation success: 76.67\% versus 34.44\% with expert rewards; physical completion: 5/5 versus 2/5 trials (co-first author, IROS 2025).
+  \item \textbf{Domain-randomization curricula --- \href{https://linjiw.github.io/research/\#lucid}{LUCID} (preprint):} Execution-informed humanoid training with a frozen temporal encoder and bounded feedback scheduler. Study reports 88.9\% versus 76.8\% full-randomization simulation completion against filtered-error PI; G1 at 40 ms added delay: 38/60 versus 23/60 trials.
+  \item \textbf{Policy integration:} Implemented residual/base ONNX inference, metadata-driven observations, normalization, and temporal history in an upstream C++/ROS 2 controller for Unitree G1; developing Isaac Lab--MuJoCo parity diagnostics. This integration remains a simulation prototype.
+  \item Co-authored \textbf{Moving Through Clutter} (3rd author, preprint 2026), \textbf{DDP} (3rd, IROS 2025), and \textbf{Adaptive Dynamics Planning} (4th, ICRA 2026). The DDP-based RobotiXX team placed 2nd in both 2025 BARN Challenge phases.
 \end{itemize}
 
 \role{Amazon Web Services (AWS)}{}{Software Development Engineer Intern --- Amazon RDS \& Aurora}{Summers 2025 \& 2026}
 \begin{itemize}
-  \item \textbf{Aurora PostgreSQL (2026):} Contributed to Adaptive Join, developing mechanisms that adjust join execution to improve query performance.
-  \item Worked in the PostgreSQL-based database engine codebase in C on database internals, join processing, performance analysis, and compatibility improvements.
-  \item \textbf{RDS Proxy (2025):} Built multi-region performance-comparison and regression-analysis tooling using Streamlit, CloudWatch metrics, statistical testing, and adaptive test selection.
+  \item \textbf{Aurora PostgreSQL (2026):} Implemented and extended Adaptive Join in C, adding support for additional join types; built join benchmarks and synthetic-data generators to investigate regressions across engine changes.
+  \item \textbf{RDS Proxy (2025):} Built Python/Streamlit performance tooling with multi-region CloudWatch metrics; implemented Welch's tests, power analysis, and Bonferroni correction for regression investigation.
 \end{itemize}
 
 \role{Computational Engineering and Robotics Lab, Carnegie Mellon University}{Pittsburgh, PA}{Research Assistant --- 3D Perception and AR}{Jan 2022 -- May 2023}
@@ -105,7 +104,7 @@ Systems \& software & C, C++, Python, Aurora PostgreSQL, query processing and jo
 
 \section{EDUCATION}
 \small
-\education{George Mason University}{Fairfax, VA}{Ph.D. in Computer Science --- research focus: curriculum learning and reinforcement learning for robotics}{2023 -- Present}
+\education{George Mason University}{Fairfax, VA}{Ph.D. in Computer Science --- Advisor: Xuesu Xiao}{2023 -- Expected 2027}
 \education{Carnegie Mellon University}{Pittsburgh, PA}{M.S. in Mechanical Engineering, GPA: 3.94/4.0}{2021 -- 2023}
 \education{University of Cincinnati}{Cincinnati, OH}{B.S. in Mechanical Engineering, magna cum laude}{2016 -- 2021}
 

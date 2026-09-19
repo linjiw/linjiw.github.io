@@ -859,7 +859,7 @@ a.os-card:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px;
   <span>automatic curriculum learning · deep RL · embodied agents</span>
   <nav aria-label="Quick links">
     <a href="{{ '/classic/' | relative_url }}">recruiter brief</a>
-    <a href="{{ '/canvas/' | relative_url }}">research map</a>
+    <a href="{{ '/research/' | relative_url }}">research story</a>
     <a href="{{ '/assets/pdf/resume.pdf' | relative_url }}">one-page resume</a>
   </nav>
 </aside>
@@ -965,7 +965,7 @@ a.os-card:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px;
         <div class="os-body">
           <div class="start-kicker">AI ROBOTICS ENGINEER · ROBOT LEARNING</div>
           <div class="start-title">I build adaptive training systems for embodied robots.</div>
-          <p class="start-sub">Computer Science Ph.D. researcher at George Mason's RobotiXX Lab, focused on automatic curricula, adaptive rewards, and reliable policy inference.</p>
+          <p class="start-sub">Computer Science Ph.D. researcher at George Mason's RobotiXX Lab, studying how a teacher can adapt tasks, rewards, and simulation conditions to the robot learning them.</p>
           <div class="start-proof">
             <div><strong>2</strong><span>first / co-first IROS 2025 papers</span></div>
             <div><strong>5/5</strong><span>RTW physical trials vs 2/5 baseline</span></div>
@@ -975,8 +975,8 @@ a.os-card:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px;
             <a class="start-route" href="{{ '/assets/pdf/resume.pdf' | relative_url }}" target="_blank" rel="noopener">
               <span>HIRING PATH</span><strong>Open the one-page resume →</strong>
             </a>
-            <a class="start-route" href="{{ '/canvas/' | relative_url }}">
-              <span>TECHNICAL PATH</span><strong>Tour the research canvas →</strong>
+            <a class="start-route" href="{{ '/research/' | relative_url }}">
+              <span>RESEARCH STORY</span><strong>Tasks, rewards, and sim-to-real curricula →</strong>
             </a>
             <a class="start-route" href="{{ '/publications/' | relative_url }}">
               <span>EVIDENCE</span><strong>Methods, papers, and exact results →</strong>
@@ -1153,7 +1153,8 @@ a.os-card:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px;
 
     <section class="home-section" id="research">
       <div class="section-label">ls research/</div>
-      <h2 class="section-heading">What I build</h2>
+      <h2 class="section-heading">A better teacher for robot learning</h2>
+      <a class="os-card" href="{{ '/research/' | relative_url }}"><div class="card-title">Explore my Ph.D. research story →</div><div class="card-sub">Animated explanations of GACL, Reward Training Wheels, and LUCID: adapt tasks, rewards, and training conditions to the student.</div></a>
       <a class="os-card" href="{{ '/projects/1_project/' | relative_url }}">
         <span class="big-num">01</span>
         <span class="role-chip">FIRST AUTHOR · IROS 2025</span>
@@ -1164,18 +1165,25 @@ a.os-card:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px;
       <a class="os-card" href="{{ '/projects/1_project/' | relative_url }}">
         <span class="big-num">02</span>
         <span class="role-chip">CO-FIRST AUTHOR · IROS 2025</span>
-        <div class="card-title">Self-fading reward shaping (RTW)</div>
-        <div class="card-sub">teacher–student RL that changes auxiliary rewards with proficiency and removes hand-tuned training wheels</div>
+        <div class="card-title">Adaptive auxiliary rewards (RTW)</div>
+        <div class="card-sub">teacher–student RL that adjusts auxiliary reward weights from learning history while keeping the primary objective fixed</div>
         <div class="card-evidence">simulation: 3× faster to threshold · physical: 5/5 vs 2/5</div>
       </a>
-      <a class="os-card" href="{{ '/projects/4_project/' | relative_url }}">
+      <a class="os-card" href="{{ '/research/#lucid' | relative_url }}">
         <span class="big-num">03</span>
+        <span class="role-chip">PREPRINT · 2026</span>
+        <div class="card-title">Execution-informed domain randomization (LUCID)</div>
+        <div class="card-sub">a frozen temporal encoder and bounded feedback scheduler pace simulation uncertainty for humanoid motion tracking</div>
+        <div class="card-evidence">G1 study, +40 ms added delay: 38/60 vs 23/60 completions</div>
+      </a>
+      <a class="os-card" href="{{ '/projects/4_project/' | relative_url }}">
+        <span class="big-num">04</span>
         <span class="role-chip">THIRD AUTHOR · ARXIV 2026</span>
         <div class="card-title">Humanoid motion data + benchmarking (MTC)</div>
         <div class="card-sub">VR data collection, automatic retargeting, and benchmarks across 348 trajectories in 145 cluttered scenes</div>
       </a>
       <a class="os-card" href="{{ '/projects/2_project/' | relative_url }}">
-        <span class="big-num">04</span>
+        <span class="big-num">05</span>
         <span class="role-chip">COLLABORATIONS · IROS 2025 / ICRA 2026</span>
         <div class="card-title">Dynamics-aware navigation (DDP + ADP)</div>
         <div class="card-sub">DDP decreases dynamics fidelity along the horizon; RL-based ADP adapts fidelity from environmental observations</div>
@@ -1213,7 +1221,7 @@ a.os-card:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px;
       <h2 class="section-heading">Current direction</h2>
       <div class="os-card">
         <div class="card-title">Adaptive curricula for scene-aware humanoid learning</div>
-        <div class="card-sub">exploring controllable scene clutter as a curriculum axis while prototyping testable ROS 2/C++ policy-inference infrastructure</div>
+        <div class="card-sub">LUCID preprint: pacing domain randomization from command–execution history; ongoing ROS 2/C++ policy-inference integration and validation</div>
       </div>
     </section>
   </div>

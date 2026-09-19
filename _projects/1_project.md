@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Curriculum & Reward Learning for Robot Navigation and Locomotion
-description: GACL and Reward Training Wheels — adaptive training for RL robots (IROS 2025)
+title: Adaptive Training for Robot Learning
+description: Tasks, rewards, and domain randomization — GACL, Reward Training Wheels, and LUCID
 img: assets/img/publication_preview/GACL_sq.jpg
 importance: 1
 category: robotics
@@ -10,11 +10,14 @@ related_publications: true
 
 ## Overview
 
-Reinforcement learning for robots is bottlenecked by *how* we train, not just what
-we train: fixed task curricula and hand-designed rewards require expert effort and
-still leave performance on the table. This project develops two complementary
-frameworks — a first-author and a co-first-author paper at IROS 2025 — that adapt the
-training process itself to the robot's learning progress.
+My research asks how a teacher can understand a robot student and adapt three parts
+of training: **tasks**, **auxiliary rewards**, and **simulation conditions**.
+GACL and Reward Training Wheels (IROS 2025) address the first two decisions;
+LUCID (preprint, 2026) extends the agenda to execution-informed domain randomization.
+These are complementary methods with distinct mechanisms and evaluations.
+
+[Explore the animated research story]({{ '/research/' | relative_url }}) for
+teacher–student diagrams, classroom analogies, a scheduling demo, and linked results.
 
 ## Grounded Adaptive Curriculum Learning (GACL)
 
@@ -43,7 +46,8 @@ quadruped locomotion in challenging 3D confined spaces.
 
 RTW {% cite wang2025reward %}, co-first-authored with Tong Xu, automates auxiliary reward shaping: a teacher
 adaptively weights auxiliary reward components as the robot's proficiency grows,
-so guidance fades out exactly like training wheels on a bicycle.
+while the primary objective stays fixed. Weights can rise or fall; they are not
+constrained to fade monotonically.
 
 <div class="row justify-content-center">
     <div class="col-sm-10 mt-3 mb-3">
@@ -63,12 +67,25 @@ about 35% and 3× faster. Sim-trained policies achieved 5/5 physical off-road
 trials versus 2/5 for expert-designed rewards, with up to 47.4% reduction in
 orientation angles (more stable poses).
 
+## LUCID: pacing domain randomization
+
+[LUCID]({{ '/assets/pdf/lucid-preprint.pdf' | relative_url }}) is a 2026 preprint on
+humanoid motion tracking. A frozen temporal encoder compares issued-command and
+measured-execution histories. A bounded PI scheduler adjusts shared randomization
+intensity, with return-based backoff when training degrades.
+
+The study reports **88.9% vs. 76.8%** full-randomization simulation completion
+against filtered-error PI (Table III). On the physical Unitree G1 with **40 ms
+added delay**, completion was **38/60 vs. 23/60** across four motions, three
+checkpoints, and five repetitions (Table VII). These are preprint study results.
+Only the policy and low-level controller are needed at deployment.
+
 ## Platforms
 
 - Wheeled ground robots navigating highly constrained spaces
 - Quadruped locomotion in confined 3D environments
 - Off-road vehicles on vertically challenging terrain
-- **Ongoing:** extending curriculum learning to humanoid robots
+- Humanoid motion tracking in LUCID simulation and physical G1 experiments (preprint)
 
 ## Papers
 

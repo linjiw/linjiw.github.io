@@ -1,0 +1,1176 @@
+{
+  "passed": true,
+  "partial": false,
+  "trials": 18,
+  "native_executions": 15,
+  "request_rejections": 3,
+  "groups": [
+    {
+      "layout": "clear",
+      "seed": 96162,
+      "initial_states_exact": true,
+      "executing_controls_dynamics_exact": true,
+      "executing_controls": 3
+    },
+    {
+      "layout": "clear",
+      "seed": 96167,
+      "initial_states_exact": true,
+      "executing_controls_dynamics_exact": true,
+      "executing_controls": 2
+    },
+    {
+      "layout": "beam",
+      "seed": 96162,
+      "initial_states_exact": true,
+      "executing_controls_dynamics_exact": true,
+      "executing_controls": 3
+    },
+    {
+      "layout": "beam",
+      "seed": 96167,
+      "initial_states_exact": true,
+      "executing_controls_dynamics_exact": true,
+      "executing_controls": 2
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96162,
+      "initial_states_exact": true,
+      "executing_controls_dynamics_exact": true,
+      "executing_controls": 3
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96167,
+      "initial_states_exact": true,
+      "executing_controls_dynamics_exact": true,
+      "executing_controls": 2
+    }
+  ],
+  "paired_executor_matches": [
+    {
+      "layout": "clear",
+      "seed": 96162,
+      "qualified_request_rejected": false,
+      "qualified_vs_matching_executor_max_errors": {
+        "reference": 0.0,
+        "token": 0.0,
+        "proprio": 0.0,
+        "action": 0.0
+      },
+      "comparison_mode": "public_select",
+      "old_vs_qualified_first_action_difference_tick": null
+    },
+    {
+      "layout": "clear",
+      "seed": 96167,
+      "qualified_request_rejected": true,
+      "qualified_vs_matching_executor_max_errors": {},
+      "comparison_mode": "public_select",
+      "old_vs_qualified_first_action_difference_tick": null
+    },
+    {
+      "layout": "beam",
+      "seed": 96162,
+      "qualified_request_rejected": false,
+      "qualified_vs_matching_executor_max_errors": {
+        "reference": 0.0,
+        "token": 0.0,
+        "proprio": 0.0,
+        "action": 0.0
+      },
+      "comparison_mode": "fixed_lowered",
+      "old_vs_qualified_first_action_difference_tick": 60
+    },
+    {
+      "layout": "beam",
+      "seed": 96167,
+      "qualified_request_rejected": true,
+      "qualified_vs_matching_executor_max_errors": {},
+      "comparison_mode": "fixed_lowered",
+      "old_vs_qualified_first_action_difference_tick": null
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96162,
+      "qualified_request_rejected": false,
+      "qualified_vs_matching_executor_max_errors": {
+        "reference": 0.0,
+        "token": 0.0,
+        "proprio": 0.0,
+        "action": 0.0
+      },
+      "comparison_mode": "fixed_lowered",
+      "old_vs_qualified_first_action_difference_tick": 60
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96167,
+      "qualified_request_rejected": true,
+      "qualified_vs_matching_executor_max_errors": {},
+      "comparison_mode": "fixed_lowered",
+      "old_vs_qualified_first_action_difference_tick": null
+    }
+  ],
+  "rows": [
+    {
+      "case": "clear-public_select-96162",
+      "mode": "public_select",
+      "layout": "clear",
+      "seed": 96162,
+      "selected": "nominal",
+      "geometry_only_choice": "nominal",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": true
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": true,
+      "control_steps": 417,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 156,
+          "contact_hypotheses": 233,
+          "contact_hypotheses_with_observed_load": 232,
+          "lifted_hypotheses": 28,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 131,
+          "contact_hypotheses": 258,
+          "contact_hypotheses_with_observed_load": 258,
+          "lifted_hypotheses": 28,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7467396855354309
+    },
+    {
+      "case": "clear-public_qualified-96162",
+      "mode": "public_qualified",
+      "layout": "clear",
+      "seed": 96162,
+      "selected": "nominal",
+      "geometry_only_choice": "nominal",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 2,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ],
+      "success": true,
+      "control_steps": 417,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 156,
+          "contact_hypotheses": 233,
+          "contact_hypotheses_with_observed_load": 232,
+          "lifted_hypotheses": 28,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 131,
+          "contact_hypotheses": 258,
+          "contact_hypotheses_with_observed_load": 258,
+          "lifted_hypotheses": 28,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7467396855354309
+    },
+    {
+      "case": "clear-fixed_lowered-96162",
+      "mode": "fixed_lowered",
+      "layout": "clear",
+      "seed": 96162,
+      "selected": "lowered",
+      "geometry_only_choice": "nominal",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": true
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": true,
+      "control_steps": 417,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 153,
+          "contact_hypotheses": 221,
+          "contact_hypotheses_with_observed_load": 218,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 240,
+          "contact_hypotheses_with_observed_load": 240,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 4
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7222265005111694
+    },
+    {
+      "case": "beam-public_select-96162",
+      "mode": "public_select",
+      "layout": "beam",
+      "seed": 96162,
+      "selected": "local_duck",
+      "geometry_only_choice": "local_duck",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.03854203055065156,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.04940984000287715,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": false,
+      "control_steps": 142,
+      "stop_reason": "contact",
+      "contact": {
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 729.6616821289062,
+        "time_s": 2.84
+      },
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 66,
+          "contact_hypotheses": 53,
+          "contact_hypotheses_with_observed_load": 53,
+          "lifted_hypotheses": 23,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 52,
+          "contact_hypotheses": 73,
+          "contact_hypotheses_with_observed_load": 73,
+          "lifted_hypotheses": 17,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7380843758583069
+    },
+    {
+      "case": "beam-public_qualified-96162",
+      "mode": "public_qualified",
+      "layout": "beam",
+      "seed": 96162,
+      "selected": "lowered",
+      "geometry_only_choice": "local_duck",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.03854203055065156,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.04940984000287715,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ],
+      "success": true,
+      "control_steps": 417,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 153,
+          "contact_hypotheses": 221,
+          "contact_hypotheses_with_observed_load": 218,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 240,
+          "contact_hypotheses_with_observed_load": 240,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 4
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7225475311279297
+    },
+    {
+      "case": "beam-fixed_lowered-96162",
+      "mode": "fixed_lowered",
+      "layout": "beam",
+      "seed": 96162,
+      "selected": "lowered",
+      "geometry_only_choice": "local_duck",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.03854203055065156,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.04940984000287715,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": true,
+      "control_steps": 417,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 153,
+          "contact_hypotheses": 221,
+          "contact_hypotheses_with_observed_load": 218,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 240,
+          "contact_hypotheses_with_observed_load": 240,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 4
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7225475311279297
+    },
+    {
+      "case": "beam_lower20-public_select-96162",
+      "mode": "public_select",
+      "layout": "beam_lower20",
+      "seed": 96162,
+      "selected": "local_duck",
+      "geometry_only_choice": "local_duck",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.058542030550651575,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.029409840002877136,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": false,
+      "control_steps": 126,
+      "stop_reason": "contact",
+      "contact": {
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 853.66748046875,
+        "time_s": 2.52
+      },
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 65,
+          "contact_hypotheses": 53,
+          "contact_hypotheses_with_observed_load": 53,
+          "lifted_hypotheses": 8,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 49,
+          "contact_hypotheses": 60,
+          "contact_hypotheses_with_observed_load": 60,
+          "lifted_hypotheses": 17,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7411736845970154
+    },
+    {
+      "case": "beam_lower20-public_qualified-96162",
+      "mode": "public_qualified",
+      "layout": "beam_lower20",
+      "seed": 96162,
+      "selected": "lowered",
+      "geometry_only_choice": "local_duck",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.058542030550651575,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.029409840002877136,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ],
+      "success": false,
+      "control_steps": 137,
+      "stop_reason": "contact",
+      "contact": {
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 1221.290283203125,
+        "time_s": 2.73
+      },
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 66,
+          "contact_hypotheses": 53,
+          "contact_hypotheses_with_observed_load": 53,
+          "lifted_hypotheses": 18,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 52,
+          "contact_hypotheses": 68,
+          "contact_hypotheses_with_observed_load": 68,
+          "lifted_hypotheses": 17,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7281489372253418
+    },
+    {
+      "case": "beam_lower20-fixed_lowered-96162",
+      "mode": "fixed_lowered",
+      "layout": "beam_lower20",
+      "seed": 96162,
+      "selected": "lowered",
+      "geometry_only_choice": "local_duck",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.058542030550651575,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.029409840002877136,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": false,
+      "control_steps": 137,
+      "stop_reason": "contact",
+      "contact": {
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 1221.290283203125,
+        "time_s": 2.73
+      },
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 66,
+          "contact_hypotheses": 53,
+          "contact_hypotheses_with_observed_load": 53,
+          "lifted_hypotheses": 18,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 52,
+          "contact_hypotheses": 68,
+          "contact_hypotheses_with_observed_load": 68,
+          "lifted_hypotheses": 17,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7281489372253418
+    },
+    {
+      "case": "clear-public_select-96167",
+      "mode": "public_select",
+      "layout": "clear",
+      "seed": 96167,
+      "selected": "nominal",
+      "geometry_only_choice": "nominal",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": true
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": true,
+      "control_steps": 416,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 156,
+          "contact_hypotheses": 232,
+          "contact_hypotheses_with_observed_load": 232,
+          "lifted_hypotheses": 28,
+          "lifted_hypotheses_with_observed_load": 1
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 131,
+          "contact_hypotheses": 257,
+          "contact_hypotheses_with_observed_load": 257,
+          "lifted_hypotheses": 28,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7405736446380615
+    },
+    {
+      "case": "clear-public_qualified-96167",
+      "mode": "public_qualified",
+      "layout": "clear",
+      "seed": 96167,
+      "selected": null,
+      "geometry_only_choice": null,
+      "selection_details": [],
+      "success": false,
+      "control_steps": 0,
+      "stop_reason": "profile_rejection",
+      "rejection_reason": "Measured start outside the declared profile: joint_position",
+      "contact": null,
+      "reference_exact": null,
+      "scope": "No issued task actions; raw initial state reproduces admission rejection"
+    },
+    {
+      "case": "clear-fixed_lowered-96167",
+      "mode": "fixed_lowered",
+      "layout": "clear",
+      "seed": 96167,
+      "selected": "lowered",
+      "geometry_only_choice": "nominal",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": true
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": true,
+      "control_steps": 416,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 153,
+          "contact_hypotheses": 220,
+          "contact_hypotheses_with_observed_load": 220,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 239,
+          "contact_hypotheses_with_observed_load": 239,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 5
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7079264521598816
+    },
+    {
+      "case": "beam-public_select-96167",
+      "mode": "public_select",
+      "layout": "beam",
+      "seed": 96167,
+      "selected": "local_duck",
+      "geometry_only_choice": "local_duck",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.03854203055065156,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.04940984000287715,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": true,
+      "control_steps": 416,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 152,
+          "contact_hypotheses": 221,
+          "contact_hypotheses_with_observed_load": 221,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 239,
+          "contact_hypotheses_with_observed_load": 239,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 5
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7179414629936218
+    },
+    {
+      "case": "beam-public_qualified-96167",
+      "mode": "public_qualified",
+      "layout": "beam",
+      "seed": 96167,
+      "selected": null,
+      "geometry_only_choice": null,
+      "selection_details": [],
+      "success": false,
+      "control_steps": 0,
+      "stop_reason": "profile_rejection",
+      "rejection_reason": "Measured start outside the declared profile: joint_position",
+      "contact": null,
+      "reference_exact": null,
+      "scope": "No issued task actions; raw initial state reproduces admission rejection"
+    },
+    {
+      "case": "beam-fixed_lowered-96167",
+      "mode": "fixed_lowered",
+      "layout": "beam",
+      "seed": 96167,
+      "selected": "lowered",
+      "geometry_only_choice": "local_duck",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.03854203055065156,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.04940984000287715,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": true,
+      "control_steps": 416,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 153,
+          "contact_hypotheses": 220,
+          "contact_hypotheses_with_observed_load": 220,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 239,
+          "contact_hypotheses_with_observed_load": 239,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 5
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7079264521598816
+    },
+    {
+      "case": "beam_lower20-public_select-96167",
+      "mode": "public_select",
+      "layout": "beam_lower20",
+      "seed": 96167,
+      "selected": "local_duck",
+      "geometry_only_choice": "local_duck",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.058542030550651575,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.029409840002877136,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": false,
+      "control_steps": 140,
+      "stop_reason": "contact",
+      "contact": {
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 1413.4610595703125,
+        "time_s": 2.79
+      },
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 66,
+          "contact_hypotheses": 53,
+          "contact_hypotheses_with_observed_load": 53,
+          "lifted_hypotheses": 21,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 52,
+          "contact_hypotheses": 71,
+          "contact_hypotheses_with_observed_load": 71,
+          "lifted_hypotheses": 17,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7259823679924011
+    },
+    {
+      "case": "beam_lower20-public_qualified-96167",
+      "mode": "public_qualified",
+      "layout": "beam_lower20",
+      "seed": 96167,
+      "selected": null,
+      "geometry_only_choice": null,
+      "selection_details": [],
+      "success": false,
+      "control_steps": 0,
+      "stop_reason": "profile_rejection",
+      "rejection_reason": "Measured start outside the declared profile: joint_position",
+      "contact": null,
+      "reference_exact": null,
+      "scope": "No issued task actions; raw initial state reproduces admission rejection"
+    },
+    {
+      "case": "beam_lower20-fixed_lowered-96167",
+      "mode": "fixed_lowered",
+      "layout": "beam_lower20",
+      "seed": 96167,
+      "selected": "lowered",
+      "geometry_only_choice": "local_duck",
+      "selection_details": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.058542030550651575,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.029409840002877136,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "success": false,
+      "control_steps": 143,
+      "stop_reason": "contact",
+      "contact": {
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 975.1136474609375,
+        "time_s": 2.855
+      },
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 66,
+          "contact_hypotheses": 53,
+          "contact_hypotheses_with_observed_load": 53,
+          "lifted_hypotheses": 24,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 52,
+          "contact_hypotheses": 74,
+          "contact_hypotheses_with_observed_load": 74,
+          "lifted_hypotheses": 17,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7139974236488342
+    }
+  ],
+  "plan_sha256": "d0e14aa40749cf6696ccc97433a2c3ca2828db8ca80b1f09db87586e7df57ab4",
+  "scope": "All registered outcomes, force/body and native reference reconstruction; old/new selectors and strong fixed control. Known-map initial choice, no replanning. Source serialization repair preserved separately."
+}

@@ -15,15 +15,15 @@
       privileged: 'Teacher actions, reference motion and privileged posterior inputs stay outside the public actor.'
     },
     selection: {
-      caption: 'Implemented initial library selector. Public known geometry changes the executed candidate. One inspected source/corridor; no moving seams or online replanning.',
+      caption: 'Implemented initial library selector with a separately verified standing-profile repair. Corrected interface check: three new plus three retained executions on one inspected source/corridor. No moving seams or online replanning.',
       nodes: [
         ['Implemented input', 'Goal + known geometry', 'Accepted destination, exact observed map and measured initial body. The task does not supply an answer motion ID.', false],
-        ['Implemented choice', 'Initial library selection', 'Sampled whole-body clearance and endpoint checks choose nominal when clear and local duck with the beam.', false],
+        ['Implemented choice', 'Initial library selection', 'A prior-execution filter plus geometry and endpoint checks choose nominal when clear and lowered under the beam. Standing state is checked relative to the configured robot pose.', false],
         ['Verified execution', 'Native reference → motor', 'Selected q/dq/orientation frames → encoder / FSQ → decoder with actual proprioception and action history.', false],
-        ['Measured limitation', 'Task + contact outcome', 'Public selection remains 2/2 clear, 1/2 beam in its own panel. New fixed lowered candidate: 3/3 beam; public selection of that candidate is not tested here.', true]
+        ['Measured limitation', 'Task + contact outcome', 'Corrected interface check: 2/2 clear, 2/2 original beam, 0/2 at a 20 mm lower beam. Three new + three retained executions; original rejections remain visible.', true]
       ],
       loop: '↶ Actual state is recorded and used by the tracker; changing the continuation from measured feedback is the next unimplemented gate.',
-      allowed: 'Public goal/map, measured initial body, current orientation and actual motor history; fixed previously built motion library.',
+      allowed: 'Public goal/map, measured initial body, current orientation and actual motor history; fixed motion library, prior execution ledger and configured standing pose.',
       privileged: 'Exact map/localization assumptions are declared. Future realized robot motion and a task-provided answer reference do not select the candidate.'
     },
     proposed: {

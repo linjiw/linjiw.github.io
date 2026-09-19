@@ -1,0 +1,90 @@
+{
+  "study": "capability-standing-profile-20260919",
+  "original_study": "capability-selection-20260919",
+  "assets": [
+    {
+      "file": "ANALYSIS.json",
+      "sha256": "36277d226d303df6f106ffd947d2598c43dfe7e0c3955e1d4cd8857964859081"
+    },
+    {
+      "file": "AUDIT.json",
+      "sha256": "9a3ddded8b36a698b4cd30d599d7a5d67b3c9f2def77e9700b118aace17bf34b"
+    },
+    {
+      "file": "CAPABILITY_LEDGER.json",
+      "sha256": "c1c6653eceec4c66066d228a1ddbae47705695e8e3419562d534d4773f418383"
+    },
+    {
+      "file": "CODEC_AUDIT.json",
+      "sha256": "3698565b3dd4fd94de3943ffc7314eda9df5bb4f38a10550988d8d3d99267e70"
+    },
+    {
+      "file": "CURRENT_PLAN.md",
+      "sha256": "0da0668601456c26cf555bb607197f8eda4723eaed5b9502635fc2d23196e0ab"
+    },
+    {
+      "file": "PLAN.json",
+      "sha256": "4a4e28c1e564458adbf66d46196aa7518a5ca2689999f0f8c0bdf98d70f16d06"
+    },
+    {
+      "file": "PREFLIGHT.json",
+      "sha256": "b5bcb2648e4c795fb896011c2c5aed8043b0fbb5070e97c151482752ded0ab2f"
+    },
+    {
+      "file": "PROTOCOL.md",
+      "sha256": "256bf30f917ac1c1613ff5dc99d41be614fb944c3a606076cbc0b834c259a2d5"
+    },
+    {
+      "file": "REPORT.md",
+      "sha256": "248e01e95a38f9c3c1d454aee9803b41b18e01e2209dab524c14a25ccb422f04"
+    },
+    {
+      "file": "TEST_RESULTS.txt",
+      "sha256": "b923d5b32a83629cfcad82ed5d3ef1e239bf9f396fbe5cc8312e7f1183e3594f"
+    },
+    {
+      "file": "capability-outcomes.png",
+      "sha256": "9ee1046142f39753d4f918adf645ddf4b58707a07cce25eace2f1d99e65c2fdd"
+    },
+    {
+      "file": "capability-outcomes.svg",
+      "sha256": "4b81c79bb57a1117b4d17f7d9786b2c76282f8591ca961c2c0d441fe6f0e9b39"
+    },
+    {
+      "file": "original-ANALYSIS.json",
+      "sha256": "27a1614b9b308d82815ad32efd0479bba154bdf52e80cc9a0d172b5c8aed915e"
+    },
+    {
+      "file": "original-AUDIT.json",
+      "sha256": "069433c618d31e91953853c818b120654be1083524eef9efa368dbdf64d3857c"
+    },
+    {
+      "file": "original-CAPABILITY_LEDGER.json",
+      "sha256": "6ebb6c4f9f53836e0144fee4952c9018d710ba16d6641b363e061d11dd514141"
+    },
+    {
+      "file": "original-CODEC_AUDIT.json",
+      "sha256": "cfa714d8208e9d0bfd098488e9bddf72ae6d9ec2b59943b28e4d714b449698ae"
+    },
+    {
+      "file": "original-PLAN.json",
+      "sha256": "d0e14aa40749cf6696ccc97433a2c3ca2828db8ca80b1f09db87586e7df57ab4"
+    },
+    {
+      "file": "original-PREFLIGHT.json",
+      "sha256": "b6b75814ea0cc44e1c3a73166efa649059e5dadf0b5790565e1af9afa758bc28"
+    },
+    {
+      "file": "original-PROTOCOL.md",
+      "sha256": "a4928138b81ba1de5f595d314afd2c1fbbd2b7c9c8bc93acb9a648ec544606f3"
+    },
+    {
+      "file": "original-selection-outcomes.png",
+      "sha256": "4ec97236baebdc07701280bb3d4fbb70abba1fb220461bbd97cd0e5f0bd71bf5"
+    },
+    {
+      "file": "original-selection-outcomes.svg",
+      "sha256": "c114644fab04cdeaeceff245135f6dfbb10eadcd13d339928e211e0ee14869ac"
+    }
+  ]
+}

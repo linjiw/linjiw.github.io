@@ -1,0 +1,270 @@
+{
+  "schema": "knav-capability-ledger-v1",
+  "minimum_attempts": 2,
+  "rule": "All recorded first attempts in the designated prior fixed-candidate panel must pass; minimum two. No probability or safety guarantee.",
+  "teacher_sha256": "afd649cfbbfd28833550e11a0f8c3b7a5f6a05ee8b4021dd0dac97a6f94733ce",
+  "motion_sha256": {
+    "nominal": "c9ecaab496e4cd92c6820fed0d181e5a186d0f888b882d53de6e6a4ebd915da2",
+    "local_duck": "b4b61d251061613db7583f72b45c5174bd3a4b9d20a37ad01665d19dba9d30fb",
+    "sustained": "ae8d06a235e7d2558393970d7f091f6959f1c209e55a978b00e506a430e2c419",
+    "lowered": "dde7663bde07fffb90642bce815eeb4b1bd289c66277dd407831d503ecd90b4c"
+  },
+  "profile": {
+    "goal_xyz": [
+      2.6363954544067383,
+      0.534538745880127,
+      0.7887343168258667
+    ],
+    "beam": {
+      "center_xyz": [
+        1.4162035530228292,
+        0.2871404097888465,
+        1.3773607365655527
+      ],
+      "quaternion_wxyz": [
+        0.9950020749211026,
+        0.0,
+        0.0,
+        0.09985424829570648
+      ],
+      "full_dimensions_xyz": [
+        0.35,
+        2.4,
+        0.2
+      ],
+      "shape": "beam"
+    },
+    "entry": {
+      "position": [
+        [
+          0.0,
+          0.0,
+          0.7599999904632568
+        ]
+      ],
+      "quaternion": [
+        [
+          0.9915569424629211,
+          0.0,
+          0.0,
+          0.12967202067375183
+        ]
+      ],
+      "velocity": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "angular_velocity": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "joint_position": [
+        [
+          -0.30709293484687805,
+          -0.30826297402381897,
+          -0.004648731090128422,
+          0.009660648182034492,
+          -0.006710389629006386,
+          -0.0015561822801828384,
+          -0.008979005739092827,
+          0.00042951852083206177,
+          -0.0057455203495919704,
+          0.6615613102912903,
+          0.6617499589920044,
+          0.19371120631694794,
+          0.19604991376399994,
+          -0.3603096902370453,
+          -0.3720380663871765,
+          0.20236310362815857,
+          -0.20350386202335358,
+          -0.0069795940071344376,
+          -0.008765492588281631,
+          -0.0008311886340379715,
+          0.007722800597548485,
+          0.6013432741165161,
+          0.6080873012542725,
+          0.004805479198694229,
+          -0.006973504554480314,
+          -0.009378978982567787,
+          -0.00948388408869505,
+          0.006527025252580643,
+          0.006371865049004555
+        ]
+      ],
+      "joint_velocity": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "vertical_offset_envelope_m": [
+      -0.02,
+      0.0
+    ],
+    "calibration": "Original beam only. The negative offset is a frozen extrapolation probe, not prior execution evidence."
+  },
+  "contexts": {
+    "clear": {
+      "nominal": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/primitive-selection-20260919/AUDIT.json",
+          "sha256": "3972f30b892650be73d481b9dfb24ee1c222d8d2f89a865d0cd66964a36d5ff2"
+        },
+        "cases": [
+          "clear-fixed_nominal-96162",
+          "clear-fixed_nominal-96164"
+        ],
+        "outcomes": [
+          true,
+          true
+        ]
+      },
+      "local_duck": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/foot-preserving-lowering-20260919/AUDIT.json",
+          "sha256": "81eeb66ca6cdb420f6ffcb857d8c6d40fd80f4a535ccdbaa0c5cae4a753554f7"
+        },
+        "cases": [
+          "clear-fixed_duck-96162",
+          "clear-fixed_duck-96165",
+          "clear-fixed_duck-96166"
+        ],
+        "outcomes": [
+          true,
+          true,
+          true
+        ]
+      },
+      "lowered": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/foot-preserving-lowering-20260919/AUDIT.json",
+          "sha256": "81eeb66ca6cdb420f6ffcb857d8c6d40fd80f4a535ccdbaa0c5cae4a753554f7"
+        },
+        "cases": [
+          "clear-fixed_lowered-96162",
+          "clear-fixed_lowered-96165",
+          "clear-fixed_lowered-96166"
+        ],
+        "outcomes": [
+          true,
+          true,
+          true
+        ]
+      },
+      "sustained": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/fixed-duck-duration-20260919/AUDIT.json",
+          "sha256": "991d6676c6b1b6726453d749117ce1bbdc1b62f1b3c7048bbe203a69d11b079c"
+        },
+        "cases": [
+          "clear-fixed_sustained-96162",
+          "clear-fixed_sustained-96164",
+          "clear-fixed_sustained-96165"
+        ],
+        "outcomes": [
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    "beam": {
+      "nominal": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/primitive-selection-20260919/AUDIT.json",
+          "sha256": "3972f30b892650be73d481b9dfb24ee1c222d8d2f89a865d0cd66964a36d5ff2"
+        },
+        "cases": [
+          "beam-fixed_nominal-96162",
+          "beam-fixed_nominal-96164"
+        ],
+        "outcomes": [
+          false,
+          false
+        ]
+      },
+      "local_duck": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/foot-preserving-lowering-20260919/AUDIT.json",
+          "sha256": "81eeb66ca6cdb420f6ffcb857d8c6d40fd80f4a535ccdbaa0c5cae4a753554f7"
+        },
+        "cases": [
+          "beam-fixed_duck-96162",
+          "beam-fixed_duck-96165",
+          "beam-fixed_duck-96166"
+        ],
+        "outcomes": [
+          false,
+          true,
+          true
+        ]
+      },
+      "lowered": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/foot-preserving-lowering-20260919/AUDIT.json",
+          "sha256": "81eeb66ca6cdb420f6ffcb857d8c6d40fd80f4a535ccdbaa0c5cae4a753554f7"
+        },
+        "cases": [
+          "beam-fixed_lowered-96162",
+          "beam-fixed_lowered-96165",
+          "beam-fixed_lowered-96166"
+        ],
+        "outcomes": [
+          true,
+          true,
+          true
+        ]
+      },
+      "sustained": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/fixed-duck-duration-20260919/AUDIT.json",
+          "sha256": "991d6676c6b1b6726453d749117ce1bbdc1b62f1b3c7048bbe203a69d11b079c"
+        },
+        "cases": [
+          "beam-fixed_sustained-96162",
+          "beam-fixed_sustained-96164",
+          "beam-fixed_sustained-96165"
+        ],
+        "outcomes": [
+          false,
+          true,
+          true
+        ]
+      }
+    }
+  }
+}

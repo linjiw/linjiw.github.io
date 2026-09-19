@@ -1,0 +1,256 @@
+{
+  "passed": true,
+  "counts": [
+    {
+      "layout": "clear",
+      "mode": "public_select",
+      "successes": 2,
+      "attempts": 2,
+      "request_rejections": 0,
+      "admitted_task_failures": 0
+    },
+    {
+      "layout": "clear",
+      "mode": "public_qualified",
+      "successes": 1,
+      "attempts": 2,
+      "request_rejections": 1,
+      "admitted_task_failures": 0
+    },
+    {
+      "layout": "clear",
+      "mode": "fixed_lowered",
+      "successes": 2,
+      "attempts": 2,
+      "request_rejections": 0,
+      "admitted_task_failures": null
+    },
+    {
+      "layout": "beam",
+      "mode": "public_select",
+      "successes": 1,
+      "attempts": 2,
+      "request_rejections": 0,
+      "admitted_task_failures": 1
+    },
+    {
+      "layout": "beam",
+      "mode": "public_qualified",
+      "successes": 1,
+      "attempts": 2,
+      "request_rejections": 1,
+      "admitted_task_failures": 0
+    },
+    {
+      "layout": "beam",
+      "mode": "fixed_lowered",
+      "successes": 2,
+      "attempts": 2,
+      "request_rejections": 0,
+      "admitted_task_failures": null
+    },
+    {
+      "layout": "beam_lower20",
+      "mode": "public_select",
+      "successes": 0,
+      "attempts": 2,
+      "request_rejections": 0,
+      "admitted_task_failures": 2
+    },
+    {
+      "layout": "beam_lower20",
+      "mode": "public_qualified",
+      "successes": 0,
+      "attempts": 2,
+      "request_rejections": 1,
+      "admitted_task_failures": 1
+    },
+    {
+      "layout": "beam_lower20",
+      "mode": "fixed_lowered",
+      "successes": 0,
+      "attempts": 2,
+      "request_rejections": 0,
+      "admitted_task_failures": null
+    }
+  ],
+  "paired_outcomes": [
+    {
+      "layout": "clear",
+      "seed": 96162,
+      "old_success": true,
+      "qualified_success": true,
+      "gain": false,
+      "regression": false,
+      "excluded_old_choice_succeeded": false,
+      "rejected_despite_fixed_success": false,
+      "completion_time_change_s": 0.0
+    },
+    {
+      "layout": "clear",
+      "seed": 96167,
+      "old_success": true,
+      "qualified_success": false,
+      "gain": false,
+      "regression": true,
+      "excluded_old_choice_succeeded": false,
+      "rejected_despite_fixed_success": true,
+      "completion_time_change_s": null
+    },
+    {
+      "layout": "beam",
+      "seed": 96162,
+      "old_success": false,
+      "qualified_success": true,
+      "gain": true,
+      "regression": false,
+      "excluded_old_choice_succeeded": false,
+      "rejected_despite_fixed_success": false,
+      "completion_time_change_s": null
+    },
+    {
+      "layout": "beam",
+      "seed": 96167,
+      "old_success": true,
+      "qualified_success": false,
+      "gain": false,
+      "regression": true,
+      "excluded_old_choice_succeeded": false,
+      "rejected_despite_fixed_success": true,
+      "completion_time_change_s": null
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96162,
+      "old_success": false,
+      "qualified_success": false,
+      "gain": false,
+      "regression": false,
+      "excluded_old_choice_succeeded": false,
+      "rejected_despite_fixed_success": false,
+      "completion_time_change_s": null
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96167,
+      "old_success": false,
+      "qualified_success": false,
+      "gain": false,
+      "regression": false,
+      "excluded_old_choice_succeeded": false,
+      "rejected_despite_fixed_success": false,
+      "completion_time_change_s": null
+    }
+  ],
+  "historical_controls": [
+    {
+      "case": "clear-public_select-96162",
+      "prior_study": "primitive-selection-20260919",
+      "prior_case": "clear-fixed_nominal-96162",
+      "all_arrays_exact": true
+    },
+    {
+      "case": "beam-public_select-96162",
+      "prior_study": "primitive-selection-20260919",
+      "prior_case": "beam-fixed_duck-96162",
+      "all_arrays_exact": true
+    },
+    {
+      "case": "clear-fixed_lowered-96162",
+      "prior_study": "foot-preserving-lowering-20260919",
+      "prior_case": "clear-fixed_lowered-96162",
+      "all_arrays_exact": true
+    },
+    {
+      "case": "beam-fixed_lowered-96162",
+      "prior_study": "foot-preserving-lowering-20260919",
+      "prior_case": "beam-fixed_lowered-96162",
+      "all_arrays_exact": true
+    }
+  ],
+  "all_four_prior_native_candidates_exact": true,
+  "beam_height_pairs": [
+    {
+      "seed": 96162,
+      "mode": "public_select",
+      "initial_state_and_dynamics_exact": true,
+      "first_difference_tick": {
+        "reference": null,
+        "token": null,
+        "proprio": null,
+        "action": null
+      },
+      "common_control_ticks": 126
+    },
+    {
+      "seed": 96162,
+      "mode": "public_qualified",
+      "initial_state_and_dynamics_exact": true,
+      "first_difference_tick": {
+        "reference": null,
+        "token": null,
+        "proprio": null,
+        "action": null
+      },
+      "common_control_ticks": 137
+    },
+    {
+      "seed": 96162,
+      "mode": "fixed_lowered",
+      "initial_state_and_dynamics_exact": true,
+      "first_difference_tick": {
+        "reference": null,
+        "token": null,
+        "proprio": null,
+        "action": null
+      },
+      "common_control_ticks": 137
+    },
+    {
+      "seed": 96167,
+      "mode": "public_select",
+      "initial_state_and_dynamics_exact": true,
+      "first_difference_tick": {
+        "reference": null,
+        "token": null,
+        "proprio": null,
+        "action": null
+      },
+      "common_control_ticks": 140
+    },
+    {
+      "seed": 96167,
+      "mode": "public_qualified",
+      "profile_rejected": true,
+      "initial_state_exact": true,
+      "common_control_ticks": 0
+    },
+    {
+      "seed": 96167,
+      "mode": "fixed_lowered",
+      "initial_state_and_dynamics_exact": true,
+      "first_difference_tick": {
+        "reference": null,
+        "token": null,
+        "proprio": null,
+        "action": null
+      },
+      "common_control_ticks": 143
+    }
+  ],
+  "cost": {
+    "registered_requests": 18,
+    "task_executions": 15,
+    "request_rejections": 3,
+    "native_process_attempts": 19,
+    "nonzero_process_exits": 4,
+    "task_execution_retries": 0,
+    "diagnostic_capture_retries": 1,
+    "control_steps": 4574,
+    "physics_contact_substeps": 18296,
+    "native_wall_seconds": 507.8974025340285,
+    "training_updates": 0
+  },
+  "source_repair": "Python-bool serialization fix; then typed rejection recording and one zero-task-action diagnostic capture retry. Original guard, ledger, attempt and all outcomes retained; no scientific retuning in this panel.",
+  "scope": "Conditional development evidence: one inspected ancestry/corridor, one retained failure seed and one fresh execution seed. Six paired request groups, not six independent scenes."
+}

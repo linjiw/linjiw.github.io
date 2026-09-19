@@ -1,0 +1,1029 @@
+{
+  "passed": true,
+  "physics": false,
+  "rows": [
+    {
+      "case": "clear-public_select-96162",
+      "old_choice": "nominal",
+      "evidence_choice": "nominal",
+      "profile": {
+        "context": "clear",
+        "vertical_offset_m": null,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 2,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "clear-public_qualified-96162",
+      "old_choice": "nominal",
+      "evidence_choice": "nominal",
+      "profile": {
+        "context": "clear",
+        "vertical_offset_m": null,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 2,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "clear-fixed_lowered-96162",
+      "old_choice": "nominal",
+      "evidence_choice": "nominal",
+      "profile": {
+        "context": "clear",
+        "vertical_offset_m": null,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 2,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam-public_select-96162",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": 0.0,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.03854203055065156,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.04940984000287715,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam-public_qualified-96162",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": 0.0,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.03854203055065156,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.04940984000287715,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam-fixed_lowered-96162",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": 0.0,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.03854203055065156,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.04940984000287715,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam_lower20-public_select-96162",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": -0.020000000000000018,
+        "calibration_geometry": false
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.058542030550651575,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.029409840002877136,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam_lower20-public_qualified-96162",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": -0.020000000000000018,
+        "calibration_geometry": false
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.058542030550651575,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.029409840002877136,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam_lower20-fixed_lowered-96162",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": -0.020000000000000018,
+        "calibration_geometry": false
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.058542030550651575,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.029409840002877136,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "clear-public_select-96167",
+      "old_choice": "nominal",
+      "evidence_choice": "nominal",
+      "profile": {
+        "context": "clear",
+        "vertical_offset_m": null,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 2,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "clear-public_qualified-96167",
+      "old_choice": "nominal",
+      "evidence_choice": "nominal",
+      "profile": {
+        "context": "clear",
+        "vertical_offset_m": null,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 2,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "clear-fixed_lowered-96167",
+      "old_choice": "nominal",
+      "evidence_choice": "nominal",
+      "profile": {
+        "context": "clear",
+        "vertical_offset_m": null,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 2,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": null,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam-public_select-96167",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": 0.0,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.03854203055065156,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.04940984000287715,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam-public_qualified-96167",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": 0.0,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.03854203055065156,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.04940984000287715,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam-fixed_lowered-96167",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": 0.0,
+        "calibration_geometry": true
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.03854203055065156,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.04441312302671138,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.04940984000287715,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam_lower20-public_select-96167",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": -0.020000000000000018,
+        "calibration_geometry": false
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.058542030550651575,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.029409840002877136,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam_lower20-public_qualified-96167",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": -0.020000000000000018,
+        "calibration_geometry": false
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.058542030550651575,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.029409840002877136,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    },
+    {
+      "case": "beam_lower20-fixed_lowered-96167",
+      "old_choice": "local_duck",
+      "evidence_choice": "lowered",
+      "profile": {
+        "context": "beam",
+        "vertical_offset_m": -0.020000000000000018,
+        "calibration_geometry": false
+      },
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.058542030550651575,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false,
+          "geometry_admitted": false,
+          "capability_admitted": false,
+          "evidence_attempts": 2,
+          "evidence_successes": 0
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.024413123026711364,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false,
+          "geometry_admitted": true,
+          "capability_admitted": false,
+          "evidence_attempts": 3,
+          "evidence_successes": 2
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.029409840002877136,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true,
+          "geometry_admitted": true,
+          "capability_admitted": true,
+          "evidence_attempts": 3,
+          "evidence_successes": 3
+        }
+      ]
+    }
+  ],
+  "outside_profile": [
+    {
+      "offset_m": -0.1,
+      "profile_rejected": true,
+      "reason": "Obstacle outside the declared clearance probe envelope",
+      "geometry_only_choice": null
+    },
+    {
+      "offset_m": 0.02,
+      "profile_rejected": true,
+      "reason": "Obstacle outside the declared clearance probe envelope",
+      "geometry_only_choice": "local_duck"
+    }
+  ],
+  "scope": "Previous native-library arrays and measured entry; no new physical outcomes or safe-stop qualification"
+}

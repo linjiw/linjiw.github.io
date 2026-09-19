@@ -5,3 +5,7 @@
 @media(max-width:380px){.flow{grid-template-columns:1fr}.node:not(:last-child):after{content:'↓';right:50%;top:auto;bottom:-23px;font-size:19px}.node:nth-child(2):after{display:block}.explorer-controls{grid-template-columns:1fr}.mast{padding:18px 20px}.mast nav{gap:13px}.lede{font-size:17px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{.mast,.mode-controls,.explorer-controls{display:none}body{background:white}.hero{padding-top:10px}section{break-inside:avoid}.node{break-inside:avoid}}
+
+.evidence-history { margin: 32px 0; border-top: 1px solid var(--line, #ccd3c9); border-bottom: 1px solid var(--line, #ccd3c9); padding: 20px 0; }
+.evidence-history > summary { cursor: pointer; font-weight: 600; padding: 10px 0; }
+.evidence-history > summary:focus-visible { outline: 2px solid #176758; outline-offset: 5px; }

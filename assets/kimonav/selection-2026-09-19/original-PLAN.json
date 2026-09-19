@@ -1,0 +1,48 @@
+{
+  "schema": "knav-capability-selection-v1",
+  "registered_utc": "2026-09-19T16:49:30.049474+00:00",
+  "question": "Does a frozen prior-execution filter connect the improved fixed capability to public choice, and does it survive one predeclared clearance change?",
+  "modes": [
+    "public_select",
+    "public_qualified",
+    "fixed_lowered"
+  ],
+  "layouts": [
+    "clear",
+    "beam",
+    "beam_lower20"
+  ],
+  "seeds": [
+    96162,
+    96167
+  ],
+  "primary_attempts": 18,
+  "seed_scope": "Retained difficult execution seed 96162 plus fresh 96167; one inspected source/corridor, no ancestry holdout",
+  "comparators": "Same four immutable motions, motor, initial state, scene information, goal, timing, native packing and score. Old geometry/cost selector, prior-evidence filter, fixed lowered control.",
+  "changed_geometry": "Translate only beam center Z by -0.020 m in the task, scoring gate and USD. Floor bytes/goal/reset unchanged.",
+  "qualification": "At least two designated prior attempts and zero failures per clear/beam context; no new outcomes used. Lowered beam has 3/3 original-beam calibration only.",
+  "outcome": "Unchanged complete passage/duck/recovery/goal/fresh 50-tick hold/contact/fall score, 500 control ticks. Contact is any forbidden measured force >1N.",
+  "rejection": "No qualified candidate is a request rejection before action, not success, physical impossibility or a qualified safe stop. All registered cases are expected to pass the existing geometric screen.",
+  "analysis": "All attempts, paired gains/regressions, selected candidates, false admissions (selected but task fails), raw contact cause, exact initial state/dynamics, reference/token/action replay and matched fixed executor. Changed clearance is extrapolation.",
+  "decision": "If original capability transfers to public selection but lower20 fails even fixed, prioritize capability/clearance coverage before online composition or training. If public differs from selected fixed, repair interface first.",
+  "retry": "No scientific tuning/retry. Preserve infrastructure failures; one isolated repair retry maximum per affected condition.",
+  "training": false,
+  "hardware": false,
+  "online_replanning": false,
+  "bank": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/BANK.json",
+    "sha256": "704095a758aaa0a5c1ab5985822375ea83fc040820ff1f87a3c727c87f87ff06"
+  },
+  "capability_ledger": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/CAPABILITY_LEDGER.json",
+    "sha256": "6ebb6c4f9f53836e0144fee4952c9018d710ba16d6641b363e061d11dd514141"
+  },
+  "parent": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/foot-preserving-lowering-20260919/PLAN.json",
+    "sha256": "bfb3fda78a6656fec72af6e78681a013d2d2403aedb2921bb02b1dd3ad85f707"
+  },
+  "protocol": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/PROTOCOL.md",
+    "sha256": "a4928138b81ba1de5f595d314afd2c1fbbd2b7c9c8bc93acb9a648ec544606f3"
+  }
+}

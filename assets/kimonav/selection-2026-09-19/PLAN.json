@@ -1,0 +1,41 @@
+{
+  "schema": "knav-standing-profile-followup-v1",
+  "registered_utc": "2026-09-19T17:05:36.227553+00:00",
+  "modes": [
+    "public_qualified"
+  ],
+  "layouts": [
+    "clear",
+    "beam",
+    "beam_lower20"
+  ],
+  "seeds": [
+    96167
+  ],
+  "primary_attempts": 3,
+  "comparison_parent": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919",
+  "bank": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/capability-standing-profile-20260919/BANK.json",
+    "sha256": "704095a758aaa0a5c1ab5985822375ea83fc040820ff1f87a3c727c87f87ff06"
+  },
+  "capability_ledger": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/capability-standing-profile-20260919/CAPABILITY_LEDGER.json",
+    "sha256": "c1c6653eceec4c66066d228a1ddbae47705695e8e3419562d534d4773f418383"
+  },
+  "protocol": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/capability-standing-profile-20260919/PROTOCOL.md",
+    "sha256": "256bf30f917ac1c1613ff5dc99d41be614fb944c3a606076cbc0b834c259a2d5"
+  },
+  "parent": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/PLAN.json",
+    "sha256": "d0e14aa40749cf6696ccc97433a2c3ca2828db8ca80b1f09db87586e7df57ab4"
+  },
+  "preflight": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/capability-standing-profile-20260919/PREFLIGHT.json",
+    "sha256": "b5bcb2648e4c795fb896011c2c5aed8043b0fbb5070e97c151482752ded0ab2f"
+  },
+  "scope": "Three new post-result verification executions with reused exact fixed controls; original 18 requests and three rejections remain separate",
+  "training": false,
+  "hardware": false,
+  "online_replanning": false
+}

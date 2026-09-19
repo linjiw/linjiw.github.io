@@ -1,0 +1,145 @@
+---
+layout: none
+title: "KimoNav — Public capability selection"
+permalink: /kimonav/selection/
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>KimoNav — Public capability selection</title><link rel="canonical" href="https://linjiw.github.io/kimonav/selection/"><link rel="stylesheet" href="/assets/kimonav/traversal.css"></head><body><a class="skip" href="#document">Skip to document</a><main class="plan-document"><nav class="plan-nav" aria-label="Research documents"><a href="/kimonav/">← KimoNav</a><a href="/kimonav/selection/">Current results</a><a href="/kimonav/plan/">Current plan</a><a href="/kimonav/lowering/">Fixed lowering</a><a href="/kimonav/literature/">Literature</a></nav><article id="document" style="padding-top:32px"><h1>Public choice improves; clearance capability remains limited</h1>
+<p>The improved fixed lowering can now be selected from the public goal, known map and measured standing state. The repaired selector completes both original-beam requests, versus one for the old geometry/cost selector. Lowering the beam by 20 mm causes both requests to fail even with the strong fixed reference. This establishes a narrow integration result and a concrete execution limit, not robust navigation.</p>
+<h2>The original registered panel is preserved</h2>
+<p>The first panel contains <strong>18 requests: 15 task executions and three rejections before task action</strong>. The absolute initial-joint check rejected all three requests of seed 96167. Rejections count against request completion. They are neither falls nor successful safe stops.</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th style="text-align: right;">Old geometry selector</th>
+<th style="text-align: right;">Original evidence selector</th>
+<th style="text-align: right;">Fixed lowered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clear</td>
+<td style="text-align: right;">2/2</td>
+<td style="text-align: right;">1/2; 1 rejected</td>
+<td style="text-align: right;">2/2</td>
+</tr>
+<tr>
+<td>Original beam</td>
+<td style="text-align: right;">1/2</td>
+<td style="text-align: right;">1/2; 1 rejected</td>
+<td style="text-align: right;">2/2</td>
+</tr>
+<tr>
+<td>Beam −20 mm</td>
+<td style="text-align: right;">0/2</td>
+<td style="text-align: right;">0/2; 1 rejected</td>
+<td style="text-align: right;">0/2</td>
+</tr>
+</tbody>
+</table>
+<p>The original evidence selector has one paired gain and two paired regressions against the old selector across six requests: it rescues the retained difficult beam case but incorrectly rejects executable clear and original-beam requests at the new seed. Conditional success on admitted requests would hide that loss of coverage. <a href="/assets/kimonav/selection-2026-09-19/original-PROTOCOL.md">Original protocol</a>, <a href="/assets/kimonav/selection-2026-09-19/original-AUDIT.json">all original outcomes</a>, <a href="/assets/kimonav/selection-2026-09-19/original-ANALYSIS.json">original analysis</a>.</p>
+<h2>Fix the state definition, then verify separately</h2>
+<p>The unchanged simulator calibration event adds uniform ±0.01 rad offsets to the default joint pose and updates the action offset. The robot starts exactly at that configured pose. An absolute comparison to one seed differs by up to 0.01865 rad at seed 96167; it also rejects two previously successful calibration seeds. The error was in representing the standing-start condition, not evidence that those starts cannot execute the task.</p>
+<p>A separately registered version compares measured joint angles with the configured default standing pose, retaining the 1e-5 rad numerical tolerance. It bounds differences between configured defaults by 0.020001 rad, derived from the unchanged ±0.01 event. Motor, candidate motions, prior success records, ranking, geometry threshold and task score stay fixed. Robot configuration metadata is an explicit input to this check.</p>
+<p><strong>Three new executions</strong> verify the repaired interface on seed 96167. These are now familiar, post-result requests. The retained seed contributes three earlier executions whose admission result and unchanged ranking match the repaired rule; those are reused evidence, not new trials. All three new reference/token/action histories match their existing selected fixed/nominal executor exactly. <a href="/assets/kimonav/selection-2026-09-19/PROTOCOL.md">Repair protocol</a>, <a href="/assets/kimonav/selection-2026-09-19/PREFLIGHT.json">calibration and reuse checks</a>, <a href="/assets/kimonav/selection-2026-09-19/AUDIT.json">new execution audit</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th style="text-align: right;">Old selector</th>
+<th style="text-align: right;">Repaired selector</th>
+<th style="text-align: right;">Fixed lowered</th>
+<th>Evidence for repaired selector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clear</td>
+<td style="text-align: right;">2/2</td>
+<td style="text-align: right;">2/2</td>
+<td style="text-align: right;">2/2</td>
+<td>1 new + 1 retained</td>
+</tr>
+<tr>
+<td>Original beam</td>
+<td style="text-align: right;">1/2</td>
+<td style="text-align: right;">2/2</td>
+<td style="text-align: right;">2/2</td>
+<td>1 new + 1 retained</td>
+</tr>
+<tr>
+<td>Beam −20 mm</td>
+<td style="text-align: right;">0/2</td>
+<td style="text-align: right;">0/2</td>
+<td style="text-align: right;">0/2</td>
+<td>1 new + 1 retained</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Task outcomes and sampled reference clearance" src="/assets/kimonav/selection-2026-09-19/capability-outcomes.png" /></p>
+<h2>Geometry changes the choice, but a passing screen is insufficient</h2>
+<p>At the same start and goal, clear space selects nominal; a beam selects lowered after the prior-evidence filter. The old selector chooses local duck at both beam heights. The new choice reproduces the improved fixed executor; it adds no online reference correction.</p>
+<p>Lowering only the beam Z coordinate preserves its XY position, orientation and dimensions, the physical floor, start, goal and motor. Both references still pass the 20 mm screen: local duck has about 24.4 mm sampled separation and lowered about 29.4 mm. Yet every lower-beam execution collides with the torso. These are false admissions by the geometric/execution-evidence screen. A sampled reference envelope and original-height successes do not qualify actual motion at a new clearance.</p>
+<p>The fixed lowered control fails at both seeds as well. A selector cannot choose a successful traversal from the tested fixed alternatives here. No detour, deeper executable motion, moving replacement or verified fallback was supplied. Failure of this bank does not prove the robot or task physically infeasible.</p>
+<h2>Recorded executions</h2>
+<table>
+<thead>
+<tr>
+<th>Layout / seed</th>
+<th>Old selector</th>
+<th>Repaired evidence selector</th>
+<th>Fixed lowered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clear / 96162</td>
+<td>Complete, 8.34 s</td>
+<td>Complete, 8.34 s</td>
+<td>Complete, 8.34 s</td>
+</tr>
+<tr>
+<td>Clear / 96167</td>
+<td>Complete, 8.32 s</td>
+<td>Complete, 8.32 s</td>
+<td>Complete, 8.32 s</td>
+</tr>
+<tr>
+<td>Original beam / 96162</td>
+<td>Torso contact, 2.84 s</td>
+<td>Complete, 8.34 s</td>
+<td>Complete, 8.34 s</td>
+</tr>
+<tr>
+<td>Original beam / 96167</td>
+<td>Complete, 8.32 s</td>
+<td>Complete, 8.32 s</td>
+<td>Complete, 8.32 s</td>
+</tr>
+<tr>
+<td>Beam −20 mm / 96162</td>
+<td>Torso contact, 2.52 s</td>
+<td>Torso contact, 2.74 s</td>
+<td>Torso contact, 2.74 s</td>
+</tr>
+<tr>
+<td>Beam −20 mm / 96167</td>
+<td>Torso contact, 2.80 s</td>
+<td>Torso contact, 2.86 s</td>
+<td>Torso contact, 2.86 s</td>
+</tr>
+</tbody>
+</table>
+<p>Times use 50 Hz control-step duration; contact substep times remain in the raw audit. The complete score still requires passage, the beam duck event, upright recovery, a fresh 50-tick hold inside the 0.5 m goal region, no forbidden environmental contact and no fall, within the original 500-tick deadline.</p>
+<h2>Verification and costs</h2>
+<p>The original panel reconstructs <strong>4,574 native reference/token/action outputs</strong> and all 18 request outcomes, including three zero-action rejections. Six groups have identical measured initial states; dynamics match among executing controls. Four overlapping historical controls and all four native candidate arrays remain exact. The separate repair reconstructs <strong>975 new outputs</strong> and three matching-executor comparisons. <strong>44 focused tests pass.</strong> Outputs are correlated control samples, not independent trials. <a href="/assets/kimonav/selection-2026-09-19/CODEC_AUDIT.json">Codec replay</a>, <a href="/assets/kimonav/selection-2026-09-19/original-CODEC_AUDIT.json">original codec replay</a>, <a href="/assets/kimonav/selection-2026-09-19/TEST_RESULTS.txt">tests</a>.</p>
+<p>Total acquisition: <strong>18 task executions</strong> (15 original + 3 repair), <strong>three original rejected requests</strong>, and one additional zero-task-action capture retry, for <strong>22 native process starts</strong>. The original rejection was preserved when adding structured rejection logging; a separate Python-bool serialization error was also repaired without changing scientific conditions. The original native processes used 507.9 s; the three follow-up processes used 59.0 s. No optimizer updates, hardware runs or task-execution retries occurred.</p>
+<h2>Next decision</h2>
+<p>The broader goal remains a humanoid that accepts a destination and observation stream, coordinates route/body/support, and reaches and holds the accepted task. The immediate research question is narrower: what execution-valid information must accompany a proposed continuation before the system accepts it?</p>
+<ol>
+<li>Freeze this repaired standing-profile baseline. Keep calibration metadata, actual pose, proposed motion and measured execution distinct in the interface. The corrected known-map choice is now tested; online replacement and perception are still separate work.</li>
+<li>Diagnose the lower-beam collision against the successful original-height execution using the same motor and original clock. Compare actual body sweep, root progress and joint realization. Build a usable clearance envelope with both admissions and rejections, and retain a strong fixed-motion or supported detour control. Do not turn proxy overlap into contact truth or reject every difficult request to improve a conditional score.</li>
+<li>Qualify an actually executable lower-clearance alternative before proposing a learned selector or moving seam as its repair. Keep the simpler coupled-posture edit as a rival to fixed-foot IK; the current experiment does not isolate why that construction helped.</li>
+<li>Expand to independent starts, source ancestries and clutter families only after this gate. Replace known geometry with timestamped partial observations under the same task score later; unknown space, estimation error and stale observations must remain explicit.</li>
+</ol>
+<p>These are development findings from one inspected source/corridor. New execution seeds are not scene generalization. The result neither establishes architectural novelty over the reviewed traversal literature nor validates hardware or sensor robustness.</p></article></main></body></html>

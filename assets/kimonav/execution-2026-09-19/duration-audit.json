@@ -1,0 +1,461 @@
+{
+  "passed": true,
+  "partial": false,
+  "trials": 12,
+  "groups": [
+    {
+      "layout": "clear",
+      "seed": 96162,
+      "initial_state_and_dynamics_exact": true
+    },
+    {
+      "layout": "clear",
+      "seed": 96164,
+      "initial_state_and_dynamics_exact": true
+    },
+    {
+      "layout": "clear",
+      "seed": 96165,
+      "initial_state_and_dynamics_exact": true
+    },
+    {
+      "layout": "beam",
+      "seed": 96162,
+      "initial_state_and_dynamics_exact": true
+    },
+    {
+      "layout": "beam",
+      "seed": 96164,
+      "initial_state_and_dynamics_exact": true
+    },
+    {
+      "layout": "beam",
+      "seed": 96165,
+      "initial_state_and_dynamics_exact": true
+    }
+  ],
+  "paired_executor_matches": [
+    {
+      "layout": "clear",
+      "seed": 96162,
+      "public_vs_selected_fixed_max_errors": {},
+      "fixed_candidate_first_action_difference_tick": 16
+    },
+    {
+      "layout": "clear",
+      "seed": 96164,
+      "public_vs_selected_fixed_max_errors": {},
+      "fixed_candidate_first_action_difference_tick": 16
+    },
+    {
+      "layout": "clear",
+      "seed": 96165,
+      "public_vs_selected_fixed_max_errors": {},
+      "fixed_candidate_first_action_difference_tick": 20
+    },
+    {
+      "layout": "beam",
+      "seed": 96162,
+      "public_vs_selected_fixed_max_errors": {},
+      "fixed_candidate_first_action_difference_tick": 16
+    },
+    {
+      "layout": "beam",
+      "seed": 96164,
+      "public_vs_selected_fixed_max_errors": {},
+      "fixed_candidate_first_action_difference_tick": 16
+    },
+    {
+      "layout": "beam",
+      "seed": 96165,
+      "public_vs_selected_fixed_max_errors": {},
+      "fixed_candidate_first_action_difference_tick": 20
+    }
+  ],
+  "rows": [
+    {
+      "case": "clear-fixed_duck-96162",
+      "mode": "fixed_duck",
+      "layout": "clear",
+      "seed": 96162,
+      "selected": "local_duck",
+      "success": true,
+      "control_steps": 417,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 152,
+          "contact_hypotheses": 222,
+          "contact_hypotheses_with_observed_load": 219,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 240,
+          "contact_hypotheses_with_observed_load": 240,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 5
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.731676459312439
+    },
+    {
+      "case": "clear-fixed_sustained-96162",
+      "mode": "fixed_sustained",
+      "layout": "clear",
+      "seed": 96162,
+      "selected": "sustained",
+      "success": true,
+      "control_steps": 417,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 146,
+          "contact_hypotheses": 223,
+          "contact_hypotheses_with_observed_load": 223,
+          "lifted_hypotheses": 48,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 139,
+          "contact_hypotheses": 220,
+          "contact_hypotheses_with_observed_load": 220,
+          "lifted_hypotheses": 58,
+          "lifted_hypotheses_with_observed_load": 6
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7313967943191528
+    },
+    {
+      "case": "beam-fixed_duck-96162",
+      "mode": "fixed_duck",
+      "layout": "beam",
+      "seed": 96162,
+      "selected": "local_duck",
+      "success": false,
+      "control_steps": 142,
+      "stop_reason": "contact",
+      "contact": {
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 729.6616821289062,
+        "time_s": 2.84
+      },
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 66,
+          "contact_hypotheses": 53,
+          "contact_hypotheses_with_observed_load": 53,
+          "lifted_hypotheses": 23,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 52,
+          "contact_hypotheses": 73,
+          "contact_hypotheses_with_observed_load": 73,
+          "lifted_hypotheses": 17,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7380843758583069
+    },
+    {
+      "case": "beam-fixed_sustained-96162",
+      "mode": "fixed_sustained",
+      "layout": "beam",
+      "seed": 96162,
+      "selected": "sustained",
+      "success": false,
+      "control_steps": 144,
+      "stop_reason": "contact",
+      "contact": {
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 41.199134826660156,
+        "time_s": 2.88
+      },
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 61,
+          "contact_hypotheses": 54,
+          "contact_hypotheses_with_observed_load": 54,
+          "lifted_hypotheses": 29,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 54,
+          "contact_hypotheses": 71,
+          "contact_hypotheses_with_observed_load": 71,
+          "lifted_hypotheses": 19,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.73537677526474
+    },
+    {
+      "case": "clear-fixed_duck-96164",
+      "mode": "fixed_duck",
+      "layout": "clear",
+      "seed": 96164,
+      "selected": "local_duck",
+      "success": true,
+      "control_steps": 424,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 152,
+          "contact_hypotheses": 229,
+          "contact_hypotheses_with_observed_load": 229,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 247,
+          "contact_hypotheses_with_observed_load": 247,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 5
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7225834727287292
+    },
+    {
+      "case": "clear-fixed_sustained-96164",
+      "mode": "fixed_sustained",
+      "layout": "clear",
+      "seed": 96164,
+      "selected": "sustained",
+      "success": true,
+      "control_steps": 418,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 146,
+          "contact_hypotheses": 224,
+          "contact_hypotheses_with_observed_load": 224,
+          "lifted_hypotheses": 48,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 139,
+          "contact_hypotheses": 221,
+          "contact_hypotheses_with_observed_load": 221,
+          "lifted_hypotheses": 58,
+          "lifted_hypotheses_with_observed_load": 7
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7237185835838318
+    },
+    {
+      "case": "beam-fixed_duck-96164",
+      "mode": "fixed_duck",
+      "layout": "beam",
+      "seed": 96164,
+      "selected": "local_duck",
+      "success": true,
+      "control_steps": 425,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 152,
+          "contact_hypotheses": 230,
+          "contact_hypotheses_with_observed_load": 230,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 248,
+          "contact_hypotheses_with_observed_load": 248,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 5
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7225750088691711
+    },
+    {
+      "case": "beam-fixed_sustained-96164",
+      "mode": "fixed_sustained",
+      "layout": "beam",
+      "seed": 96164,
+      "selected": "sustained",
+      "success": true,
+      "control_steps": 418,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 146,
+          "contact_hypotheses": 224,
+          "contact_hypotheses_with_observed_load": 224,
+          "lifted_hypotheses": 48,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 139,
+          "contact_hypotheses": 221,
+          "contact_hypotheses_with_observed_load": 221,
+          "lifted_hypotheses": 58,
+          "lifted_hypotheses_with_observed_load": 7
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7237175703048706
+    },
+    {
+      "case": "clear-fixed_duck-96165",
+      "mode": "fixed_duck",
+      "layout": "clear",
+      "seed": 96165,
+      "selected": "local_duck",
+      "success": true,
+      "control_steps": 439,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 152,
+          "contact_hypotheses": 244,
+          "contact_hypotheses_with_observed_load": 244,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 262,
+          "contact_hypotheses_with_observed_load": 262,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 7
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7095731496810913
+    },
+    {
+      "case": "clear-fixed_sustained-96165",
+      "mode": "fixed_sustained",
+      "layout": "clear",
+      "seed": 96165,
+      "selected": "sustained",
+      "success": true,
+      "control_steps": 416,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 146,
+          "contact_hypotheses": 222,
+          "contact_hypotheses_with_observed_load": 222,
+          "lifted_hypotheses": 48,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 139,
+          "contact_hypotheses": 219,
+          "contact_hypotheses_with_observed_load": 219,
+          "lifted_hypotheses": 58,
+          "lifted_hypotheses_with_observed_load": 10
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7067620754241943
+    },
+    {
+      "case": "beam-fixed_duck-96165",
+      "mode": "fixed_duck",
+      "layout": "beam",
+      "seed": 96165,
+      "selected": "local_duck",
+      "success": true,
+      "control_steps": 439,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 152,
+          "contact_hypotheses": 244,
+          "contact_hypotheses_with_observed_load": 244,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 262,
+          "contact_hypotheses_with_observed_load": 262,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 7
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7095731496810913
+    },
+    {
+      "case": "beam-fixed_sustained-96165",
+      "mode": "fixed_sustained",
+      "layout": "beam",
+      "seed": 96165,
+      "selected": "sustained",
+      "success": true,
+      "control_steps": 438,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 146,
+          "contact_hypotheses": 244,
+          "contact_hypotheses_with_observed_load": 244,
+          "lifted_hypotheses": 48,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 139,
+          "contact_hypotheses": 241,
+          "contact_hypotheses_with_observed_load": 241,
+          "lifted_hypotheses": 58,
+          "lifted_hypotheses_with_observed_load": 10
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7067610025405884
+    }
+  ],
+  "plan_sha256": "811ac754406269bfa306fa2db0dbc8d2c05a6924c1750c067bfa4c60bbae699f",
+  "scope": "Raw force/body and reference reconstruction; same existing scorer. Initial selection, no replanning. Support is descriptive and not a qualified seam constraint."
+}

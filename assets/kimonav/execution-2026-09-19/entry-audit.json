@@ -1,0 +1,1574 @@
+{
+  "passed": true,
+  "partial": false,
+  "trials": 18,
+  "pairs": [
+    {
+      "layout": "clear",
+      "seed": 96161,
+      "physical_state_exact": true,
+      "dynamics_and_actuator_mapping_exact": true
+    },
+    {
+      "layout": "clear",
+      "seed": 96162,
+      "physical_state_exact": true,
+      "dynamics_and_actuator_mapping_exact": true
+    },
+    {
+      "layout": "clear",
+      "seed": 96163,
+      "physical_state_exact": true,
+      "dynamics_and_actuator_mapping_exact": true
+    },
+    {
+      "layout": "beam",
+      "seed": 96161,
+      "physical_state_exact": true,
+      "dynamics_and_actuator_mapping_exact": true
+    },
+    {
+      "layout": "beam",
+      "seed": 96162,
+      "physical_state_exact": true,
+      "dynamics_and_actuator_mapping_exact": true
+    },
+    {
+      "layout": "beam",
+      "seed": 96163,
+      "physical_state_exact": true,
+      "dynamics_and_actuator_mapping_exact": true
+    }
+  ],
+  "rows": [
+    {
+      "run": "runs/clear-reference-96161",
+      "seed": 96161,
+      "layout": "clear",
+      "arm": "reference",
+      "task": {
+        "path": "runs/clear-reference-96161/TASK.json",
+        "sha256": "4cab237d44ff17c88c4b63220dbec3d78123a5f54c01af8a8e70b1b6300c6d37"
+      },
+      "config": {
+        "path": "runs/clear-reference-96161/CONFIG.json",
+        "sha256": "b429f054f4110a456b2cb413b7fcade8f011573eaa11bca8bb94f5535659dcb0"
+      },
+      "entry": {
+        "path": "runs/clear-reference-96161/ENTRY_SPEC.json",
+        "sha256": "207822affce82e0a15a3a0aa484eaf815e88f6cab7004c00977ebc337b02e1d9"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 50,
+      "final_goal_distance_m": 0.0214387482210077,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 367,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 66,
+      "clear_tick": 137,
+      "recovery_tick": 314,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 0.74
+        },
+        {
+          "phase": "approach",
+          "time_s": 0.86
+        },
+        {
+          "phase": "recover",
+          "time_s": 1.36
+        },
+        {
+          "phase": "approach",
+          "time_s": 1.78
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.02
+        },
+        {
+          "phase": "approach",
+          "time_s": 2.38
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.66
+        },
+        {
+          "phase": "brake",
+          "time_s": 3.02
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.8200000000000003
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.0200000000000005
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.08
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.1000000000000005
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.26
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.38
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": null
+    },
+    {
+      "run": "runs/clear-direct-96161",
+      "seed": 96161,
+      "layout": "clear",
+      "arm": "direct",
+      "task": {
+        "path": "runs/clear-direct-96161/TASK.json",
+        "sha256": "dec3219a0d66d5d5b1a1e475630d13b495a2a92181a1fa242585ed291c6be0fd"
+      },
+      "config": {
+        "path": "runs/clear-direct-96161/CONFIG.json",
+        "sha256": "fe760d1e9b3a5b85a6d81d8c244112d5321df530eec619c215a62b59bde562a0"
+      },
+      "entry": {
+        "path": "runs/clear-direct-96161/ENTRY_SPEC.json",
+        "sha256": "acae1c11f719f5d57d1238940a82d7a1f9687c7ddf2f745dda2f4f1f885b9028"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 50,
+      "final_goal_distance_m": 0.09670442383103697,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 367,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 68,
+      "clear_tick": 140,
+      "recovery_tick": 314,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 1.4000000000000001
+        },
+        {
+          "phase": "approach",
+          "time_s": 1.76
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.02
+        },
+        {
+          "phase": "approach",
+          "time_s": 2.4
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.66
+        },
+        {
+          "phase": "approach",
+          "time_s": 3.02
+        },
+        {
+          "phase": "brake",
+          "time_s": 3.06
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.8200000000000003
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.0200000000000005
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.08
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.1000000000000005
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.26
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.38
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": null
+    },
+    {
+      "run": "runs/clear-bridge-96161",
+      "seed": 96161,
+      "layout": "clear",
+      "arm": "bridge",
+      "task": {
+        "path": "runs/clear-bridge-96161/TASK.json",
+        "sha256": "dfaf1328f6a48559c59f5c9bea2eb76fdd325f96833444f726ede2339903b16f"
+      },
+      "config": {
+        "path": "runs/clear-bridge-96161/CONFIG.json",
+        "sha256": "cefde657c603f7203fc222b76522a68a4641fa65caf3e349d1276728e9a56a01"
+      },
+      "entry": {
+        "path": "runs/clear-bridge-96161/ENTRY_SPEC.json",
+        "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 61,
+      "final_goal_distance_m": 0.08601343905169731,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 416,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 115,
+      "clear_tick": 168,
+      "recovery_tick": 365,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.46
+        },
+        {
+          "phase": "approach",
+          "time_s": 2.74
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.0
+        },
+        {
+          "phase": "approach",
+          "time_s": 3.38
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.66
+        },
+        {
+          "phase": "brake",
+          "time_s": 4.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 4.82
+        },
+        {
+          "phase": "brake",
+          "time_s": 7.04
+        },
+        {
+          "phase": "hold",
+          "time_s": 7.140000000000001
+        },
+        {
+          "phase": "brake",
+          "time_s": 7.2
+        },
+        {
+          "phase": "hold",
+          "time_s": 7.24
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": null
+    },
+    {
+      "run": "runs/beam-reference-96161",
+      "seed": 96161,
+      "layout": "beam",
+      "arm": "reference",
+      "task": {
+        "path": "runs/beam-reference-96161/TASK.json",
+        "sha256": "c3711ce4a30c7ab7e63df5bf99b3eb8de1942edab6b68b4d8a7d79231842ab46"
+      },
+      "config": {
+        "path": "runs/beam-reference-96161/CONFIG.json",
+        "sha256": "4ac1b2aee4fbc9ca0accb57aa33504afde795cd950880c7b60acdeeda8f858bb"
+      },
+      "entry": {
+        "path": "runs/beam-reference-96161/ENTRY_SPEC.json",
+        "sha256": "207822affce82e0a15a3a0aa484eaf815e88f6cab7004c00977ebc337b02e1d9"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 50,
+      "final_goal_distance_m": 0.021024129750155413,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 368,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 66,
+      "clear_tick": 137,
+      "recovery_tick": 314,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 0.74
+        },
+        {
+          "phase": "approach",
+          "time_s": 0.86
+        },
+        {
+          "phase": "duck",
+          "time_s": 1.08
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.7800000000000002
+        },
+        {
+          "phase": "brake",
+          "time_s": 3.02
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.8200000000000003
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.0200000000000005
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.08
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.1000000000000005
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.26
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.38
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": -0.004979490086227362
+    },
+    {
+      "run": "runs/beam-direct-96161",
+      "seed": 96161,
+      "layout": "beam",
+      "arm": "direct",
+      "task": {
+        "path": "runs/beam-direct-96161/TASK.json",
+        "sha256": "934ace8e906587d96952454ae5e1a2b08c1ba7013e421929e62662410d40513b"
+      },
+      "config": {
+        "path": "runs/beam-direct-96161/CONFIG.json",
+        "sha256": "2758294bfb69311be26460015902af6a373088a09cfcb41869d34b657d6e21aa"
+      },
+      "entry": {
+        "path": "runs/beam-direct-96161/ENTRY_SPEC.json",
+        "sha256": "acae1c11f719f5d57d1238940a82d7a1f9687c7ddf2f745dda2f4f1f885b9028"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 50,
+      "final_goal_distance_m": 0.09670442383103697,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 367,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 68,
+      "clear_tick": 140,
+      "recovery_tick": 314,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "duck",
+          "time_s": 1.2
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.82
+        },
+        {
+          "phase": "exit",
+          "time_s": 3.02
+        },
+        {
+          "phase": "brake",
+          "time_s": 3.06
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.8200000000000003
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.0200000000000005
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.08
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.1000000000000005
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.26
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.38
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": -0.008297782577741414
+    },
+    {
+      "run": "runs/beam-bridge-96161",
+      "seed": 96161,
+      "layout": "beam",
+      "arm": "bridge",
+      "task": {
+        "path": "runs/beam-bridge-96161/TASK.json",
+        "sha256": "8fddd49d41045001a45b7a6cf747083f0eca97251ddc20a1147bbe71fc872ceb"
+      },
+      "config": {
+        "path": "runs/beam-bridge-96161/CONFIG.json",
+        "sha256": "79d8a9137585789385c5ead2bd466e9f92c784def10b43ae6a2c1dc835e51e59"
+      },
+      "entry": {
+        "path": "runs/beam-bridge-96161/ENTRY_SPEC.json",
+        "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 61,
+      "final_goal_distance_m": 0.07611700816714004,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 416,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 115,
+      "clear_tick": 168,
+      "recovery_tick": 365,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "duck",
+          "time_s": 1.86
+        },
+        {
+          "phase": "exit",
+          "time_s": 3.38
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.66
+        },
+        {
+          "phase": "brake",
+          "time_s": 4.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 4.82
+        },
+        {
+          "phase": "brake",
+          "time_s": 7.04
+        },
+        {
+          "phase": "hold",
+          "time_s": 7.140000000000001
+        },
+        {
+          "phase": "brake",
+          "time_s": 7.22
+        },
+        {
+          "phase": "hold",
+          "time_s": 7.24
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": -0.008059332435471106
+    },
+    {
+      "run": "runs/clear-reference-96162",
+      "seed": 96162,
+      "layout": "clear",
+      "arm": "reference",
+      "task": {
+        "path": "runs/clear-reference-96162/TASK.json",
+        "sha256": "3d1f658882482140d1c53da3e6fdd49d73f695860f92c7b387d465d02218cef8"
+      },
+      "config": {
+        "path": "runs/clear-reference-96162/CONFIG.json",
+        "sha256": "dabbc26f7af7ff18a378c6aead10197a5a541d770b2d1d9c269a98961650525b"
+      },
+      "entry": {
+        "path": "runs/clear-reference-96162/ENTRY_SPEC.json",
+        "sha256": "207822affce82e0a15a3a0aa484eaf815e88f6cab7004c00977ebc337b02e1d9"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 67,
+      "final_goal_distance_m": 0.04265732308070797,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 368,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 66,
+      "clear_tick": 138,
+      "recovery_tick": 317,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 1.3800000000000001
+        },
+        {
+          "phase": "approach",
+          "time_s": 1.74
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.04
+        },
+        {
+          "phase": "approach",
+          "time_s": 2.3000000000000003
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.72
+        },
+        {
+          "phase": "approach",
+          "time_s": 2.92
+        },
+        {
+          "phase": "brake",
+          "time_s": 3.02
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.8200000000000003
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.08
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": null
+    },
+    {
+      "run": "runs/clear-direct-96162",
+      "seed": 96162,
+      "layout": "clear",
+      "arm": "direct",
+      "task": {
+        "path": "runs/clear-direct-96162/TASK.json",
+        "sha256": "8e07fbb6590eecbf8720fa22730d84d4c5a85fda75181666beaa4972f495b686"
+      },
+      "config": {
+        "path": "runs/clear-direct-96162/CONFIG.json",
+        "sha256": "a5670db9f3f75a49682ca27016e670370019d30a5c99a6e2588dde59f317ea0f"
+      },
+      "entry": {
+        "path": "runs/clear-direct-96162/ENTRY_SPEC.json",
+        "sha256": "acae1c11f719f5d57d1238940a82d7a1f9687c7ddf2f745dda2f4f1f885b9028"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 67,
+      "final_goal_distance_m": 0.11440560657697778,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 368,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 70,
+      "clear_tick": 141,
+      "recovery_tick": 317,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 1.42
+        },
+        {
+          "phase": "approach",
+          "time_s": 1.72
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.04
+        },
+        {
+          "phase": "approach",
+          "time_s": 2.3000000000000003
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.72
+        },
+        {
+          "phase": "approach",
+          "time_s": 2.92
+        },
+        {
+          "phase": "brake",
+          "time_s": 3.14
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.8200000000000003
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.08
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": null
+    },
+    {
+      "run": "runs/clear-bridge-96162",
+      "seed": 96162,
+      "layout": "clear",
+      "arm": "bridge",
+      "task": {
+        "path": "runs/clear-bridge-96162/TASK.json",
+        "sha256": "a7af33d610c362d4109b00e8bea65a8f36a76ea1676e7f2646bdf2a943e8165b"
+      },
+      "config": {
+        "path": "runs/clear-bridge-96162/CONFIG.json",
+        "sha256": "f68e29e9064dd3d68eb8ed692b07ec13845a0b07ab97912d1bb5522772bf0250"
+      },
+      "entry": {
+        "path": "runs/clear-bridge-96162/ENTRY_SPEC.json",
+        "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 76,
+      "final_goal_distance_m": 0.12157493495085187,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 417,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 114,
+      "clear_tick": 168,
+      "recovery_tick": 366,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.54
+        },
+        {
+          "phase": "approach",
+          "time_s": 2.64
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.06
+        },
+        {
+          "phase": "approach",
+          "time_s": 3.24
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.72
+        },
+        {
+          "phase": "brake",
+          "time_s": 3.92
+        },
+        {
+          "phase": "recover",
+          "time_s": 4.82
+        },
+        {
+          "phase": "hold",
+          "time_s": 7.0600000000000005
+        },
+        {
+          "phase": "brake",
+          "time_s": 7.26
+        },
+        {
+          "phase": "hold",
+          "time_s": 7.38
+        },
+        {
+          "phase": "brake",
+          "time_s": 8.18
+        },
+        {
+          "phase": "hold",
+          "time_s": 8.2
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": null
+    },
+    {
+      "run": "runs/beam-reference-96162",
+      "seed": 96162,
+      "layout": "beam",
+      "arm": "reference",
+      "task": {
+        "path": "runs/beam-reference-96162/TASK.json",
+        "sha256": "112981c05a4348d5356944d749235301b3dfdd94e86d3d431b85cab413b84bdc"
+      },
+      "config": {
+        "path": "runs/beam-reference-96162/CONFIG.json",
+        "sha256": "5e232d44224239b8153b13f58ec2b6e1ea2835fc75d070f7565319a3899e6e7d"
+      },
+      "entry": {
+        "path": "runs/beam-reference-96162/ENTRY_SPEC.json",
+        "sha256": "207822affce82e0a15a3a0aa484eaf815e88f6cab7004c00977ebc337b02e1d9"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 66,
+      "final_goal_distance_m": 0.04756663078479961,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 368,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 66,
+      "clear_tick": 138,
+      "recovery_tick": 317,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "duck",
+          "time_s": 1.08
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.8000000000000003
+        },
+        {
+          "phase": "exit",
+          "time_s": 2.92
+        },
+        {
+          "phase": "brake",
+          "time_s": 3.02
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.8200000000000003
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.08
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.1000000000000005
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.22
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.24
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": -0.016464268177687785
+    },
+    {
+      "run": "runs/beam-direct-96162",
+      "seed": 96162,
+      "layout": "beam",
+      "arm": "direct",
+      "task": {
+        "path": "runs/beam-direct-96162/TASK.json",
+        "sha256": "68e7b4ec33c2e2bbd1b4dbfd2405059007bbf889a2dc6d7a049f392b6c3233dc"
+      },
+      "config": {
+        "path": "runs/beam-direct-96162/CONFIG.json",
+        "sha256": "5d723d7a0f25dd806ed019add7db6ea159c09dc556c1c8a72aa12a1d96223e4e"
+      },
+      "entry": {
+        "path": "runs/beam-direct-96162/ENTRY_SPEC.json",
+        "sha256": "acae1c11f719f5d57d1238940a82d7a1f9687c7ddf2f745dda2f4f1f885b9028"
+      },
+      "navigation_success": false,
+      "goal_ever_reached": false,
+      "terminal_hold": false,
+      "collision_free": false,
+      "fell": false,
+      "max_hold_ticks": 0,
+      "final_goal_distance_m": 1.1568934054047948,
+      "max_undesired_force_n": 1228.0517578125,
+      "control_steps": 119,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": false,
+      "duck_recover_stop_success": false,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": false,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": false,
+      "entry_tick": 70,
+      "clear_tick": null,
+      "recovery_tick": null,
+      "ordered_hold_ticks": 0,
+      "stable_stop_success": false,
+      "stop_reason": "contact",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "duck",
+          "time_s": 1.22
+        }
+      ],
+      "terminal_contact_pair": {
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 1228.0517578125,
+        "time_s": 2.37
+      },
+      "minimum_sampled_face_separation_m": -0.011213757197985036
+    },
+    {
+      "run": "runs/beam-bridge-96162",
+      "seed": 96162,
+      "layout": "beam",
+      "arm": "bridge",
+      "task": {
+        "path": "runs/beam-bridge-96162/TASK.json",
+        "sha256": "ed1c52cd3786e7c1521759c09b96a8ccc646a7215366634b7a3c73744b48a32f"
+      },
+      "config": {
+        "path": "runs/beam-bridge-96162/CONFIG.json",
+        "sha256": "8a76353dc4376e51313dab98d1b48bf4367e401708af84e3308c3ff3a452a95d"
+      },
+      "entry": {
+        "path": "runs/beam-bridge-96162/ENTRY_SPEC.json",
+        "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+      },
+      "navigation_success": false,
+      "goal_ever_reached": false,
+      "terminal_hold": false,
+      "collision_free": false,
+      "fell": false,
+      "max_hold_ticks": 0,
+      "final_goal_distance_m": 1.2821923889071258,
+      "max_undesired_force_n": 189.56272888183594,
+      "control_steps": 145,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": false,
+      "duck_recover_stop_success": false,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": false,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": false,
+      "entry_tick": 114,
+      "clear_tick": null,
+      "recovery_tick": null,
+      "ordered_hold_ticks": 0,
+      "stable_stop_success": false,
+      "stop_reason": "contact",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "duck",
+          "time_s": 1.8800000000000001
+        }
+      ],
+      "terminal_contact_pair": {
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 189.56272888183594,
+        "time_s": 2.8850000000000002
+      },
+      "minimum_sampled_face_separation_m": -0.01571009298785145
+    },
+    {
+      "run": "runs/clear-reference-96163",
+      "seed": 96163,
+      "layout": "clear",
+      "arm": "reference",
+      "task": {
+        "path": "runs/clear-reference-96163/TASK.json",
+        "sha256": "dc0567154ab2b941303c99ae5d77643ff45ffc4ded7b97d6475ae7919a39893b"
+      },
+      "config": {
+        "path": "runs/clear-reference-96163/CONFIG.json",
+        "sha256": "fe7d6714eace57474683b5183d126c643433c271e53905e4a19005f924dd9495"
+      },
+      "entry": {
+        "path": "runs/clear-reference-96163/ENTRY_SPEC.json",
+        "sha256": "207822affce82e0a15a3a0aa484eaf815e88f6cab7004c00977ebc337b02e1d9"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 50,
+      "final_goal_distance_m": 0.1488906139226439,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 379,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 69,
+      "clear_tick": 138,
+      "recovery_tick": 318,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 1.46
+        },
+        {
+          "phase": "approach",
+          "time_s": 1.82
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.06
+        },
+        {
+          "phase": "approach",
+          "time_s": 2.36
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.64
+        },
+        {
+          "phase": "approach",
+          "time_s": 3.02
+        },
+        {
+          "phase": "brake",
+          "time_s": 3.06
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.8200000000000003
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.1000000000000005
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.66
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": null
+    },
+    {
+      "run": "runs/clear-direct-96163",
+      "seed": 96163,
+      "layout": "clear",
+      "arm": "direct",
+      "task": {
+        "path": "runs/clear-direct-96163/TASK.json",
+        "sha256": "a057e75c83c0ef88f34d1091b786283f53ba2ff650af9f74f591ea1eaa0bfd36"
+      },
+      "config": {
+        "path": "runs/clear-direct-96163/CONFIG.json",
+        "sha256": "c3d68b8f5ab1b4c974e87cbcb1ee855709fc81fb46c6f00503b2f61ab6237f5a"
+      },
+      "entry": {
+        "path": "runs/clear-direct-96163/ENTRY_SPEC.json",
+        "sha256": "acae1c11f719f5d57d1238940a82d7a1f9687c7ddf2f745dda2f4f1f885b9028"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 50,
+      "final_goal_distance_m": 0.21044561004261236,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 379,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 70,
+      "clear_tick": 141,
+      "recovery_tick": 318,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 0.12
+        },
+        {
+          "phase": "approach",
+          "time_s": 0.16
+        },
+        {
+          "phase": "recover",
+          "time_s": 1.46
+        },
+        {
+          "phase": "approach",
+          "time_s": 1.8800000000000001
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.02
+        },
+        {
+          "phase": "approach",
+          "time_s": 2.36
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.64
+        },
+        {
+          "phase": "approach",
+          "time_s": 3.02
+        },
+        {
+          "phase": "brake",
+          "time_s": 3.18
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.8200000000000003
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.1000000000000005
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.66
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": null
+    },
+    {
+      "run": "runs/clear-bridge-96163",
+      "seed": 96163,
+      "layout": "clear",
+      "arm": "bridge",
+      "task": {
+        "path": "runs/clear-bridge-96163/TASK.json",
+        "sha256": "83d2afd818c3c976316be01a940db7abb21a3d86a77f81abb5c75895c5d9af83"
+      },
+      "config": {
+        "path": "runs/clear-bridge-96163/CONFIG.json",
+        "sha256": "929385388b9a4cc0f712ac916d2007bb7b0d974424539fbb60e04f062db2f1a2"
+      },
+      "entry": {
+        "path": "runs/clear-bridge-96163/ENTRY_SPEC.json",
+        "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 50,
+      "final_goal_distance_m": 0.07950615158660883,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 426,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 114,
+      "clear_tick": 168,
+      "recovery_tick": 367,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.44
+        },
+        {
+          "phase": "approach",
+          "time_s": 2.82
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.06
+        },
+        {
+          "phase": "approach",
+          "time_s": 3.36
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.68
+        },
+        {
+          "phase": "brake",
+          "time_s": 4.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 4.82
+        },
+        {
+          "phase": "brake",
+          "time_s": 7.08
+        },
+        {
+          "phase": "hold",
+          "time_s": 7.5600000000000005
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": null
+    },
+    {
+      "run": "runs/beam-reference-96163",
+      "seed": 96163,
+      "layout": "beam",
+      "arm": "reference",
+      "task": {
+        "path": "runs/beam-reference-96163/TASK.json",
+        "sha256": "ee480b4f6c3b046e6045bd97322af3cf2abe85e560f3eac72763466ee15992b9"
+      },
+      "config": {
+        "path": "runs/beam-reference-96163/CONFIG.json",
+        "sha256": "2af4c163f838c9b44c84769bbf927a114175bb318a047a3c091bf03bbb81efdf"
+      },
+      "entry": {
+        "path": "runs/beam-reference-96163/ENTRY_SPEC.json",
+        "sha256": "207822affce82e0a15a3a0aa484eaf815e88f6cab7004c00977ebc337b02e1d9"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 50,
+      "final_goal_distance_m": 0.14662165407737285,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 379,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 69,
+      "clear_tick": 138,
+      "recovery_tick": 318,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "duck",
+          "time_s": 1.16
+        },
+        {
+          "phase": "recover",
+          "time_s": 2.8000000000000003
+        },
+        {
+          "phase": "exit",
+          "time_s": 3.02
+        },
+        {
+          "phase": "brake",
+          "time_s": 3.06
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.8200000000000003
+        },
+        {
+          "phase": "brake",
+          "time_s": 6.1000000000000005
+        },
+        {
+          "phase": "hold",
+          "time_s": 6.66
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": -0.0068585721572708425
+    },
+    {
+      "run": "runs/beam-direct-96163",
+      "seed": 96163,
+      "layout": "beam",
+      "arm": "direct",
+      "task": {
+        "path": "runs/beam-direct-96163/TASK.json",
+        "sha256": "fd9e95765a7e91975a7ec5cc6e6ebff9d849d043cae38eb4ce6d90e1dc54fa36"
+      },
+      "config": {
+        "path": "runs/beam-direct-96163/CONFIG.json",
+        "sha256": "ecd4a9a9f1a1532dd343956d39c0b80143595cd2367b59392e98435a9288ce6d"
+      },
+      "entry": {
+        "path": "runs/beam-direct-96163/ENTRY_SPEC.json",
+        "sha256": "acae1c11f719f5d57d1238940a82d7a1f9687c7ddf2f745dda2f4f1f885b9028"
+      },
+      "navigation_success": false,
+      "goal_ever_reached": false,
+      "terminal_hold": false,
+      "collision_free": false,
+      "fell": false,
+      "max_hold_ticks": 0,
+      "final_goal_distance_m": 1.1023698970100835,
+      "max_undesired_force_n": 534.2723999023438,
+      "control_steps": 122,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": false,
+      "duck_recover_stop_success": false,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": false,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": false,
+      "entry_tick": 70,
+      "clear_tick": null,
+      "recovery_tick": null,
+      "ordered_hold_ticks": 0,
+      "stable_stop_success": false,
+      "stop_reason": "contact",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 0.12
+        },
+        {
+          "phase": "approach",
+          "time_s": 0.16
+        },
+        {
+          "phase": "duck",
+          "time_s": 1.22
+        }
+      ],
+      "terminal_contact_pair": {
+        "body": "torso_link",
+        "target": "obstacle_1",
+        "force_n": 534.2723999023438,
+        "time_s": 2.44
+      },
+      "minimum_sampled_face_separation_m": -0.009530591747242495
+    },
+    {
+      "run": "runs/beam-bridge-96163",
+      "seed": 96163,
+      "layout": "beam",
+      "arm": "bridge",
+      "task": {
+        "path": "runs/beam-bridge-96163/TASK.json",
+        "sha256": "d665dbd7a48fe8a3f2b6355c8bbc8e6495d0b1477419ddd13d3c6890a528dff3"
+      },
+      "config": {
+        "path": "runs/beam-bridge-96163/CONFIG.json",
+        "sha256": "655a2ab83851ef19cdfee180e3a9d3069c0509ba14876f844e2e960ce8e9e3fd"
+      },
+      "entry": {
+        "path": "runs/beam-bridge-96163/ENTRY_SPEC.json",
+        "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+      },
+      "navigation_success": true,
+      "goal_ever_reached": true,
+      "terminal_hold": true,
+      "collision_free": true,
+      "fell": false,
+      "max_hold_ticks": 50,
+      "final_goal_distance_m": 0.07981562453149026,
+      "max_undesired_force_n": 0.0,
+      "control_steps": 426,
+      "reference_tracking_required": false,
+      "goal_stop_component_success": true,
+      "duck_recover_stop_success": true,
+      "evidence_scope": "duck_recover_stop_from_reset",
+      "passage_success": true,
+      "duck_observed": true,
+      "lateral_gate_valid": true,
+      "recovered": true,
+      "entry_tick": 114,
+      "clear_tick": 168,
+      "recovery_tick": 367,
+      "ordered_hold_ticks": 50,
+      "stable_stop_success": true,
+      "stop_reason": "goal_hold",
+      "phase_sequence": [
+        {
+          "phase": "approach",
+          "time_s": 0.0
+        },
+        {
+          "phase": "duck",
+          "time_s": 1.9000000000000001
+        },
+        {
+          "phase": "exit",
+          "time_s": 3.4
+        },
+        {
+          "phase": "recover",
+          "time_s": 3.68
+        },
+        {
+          "phase": "brake",
+          "time_s": 4.0
+        },
+        {
+          "phase": "recover",
+          "time_s": 4.82
+        },
+        {
+          "phase": "brake",
+          "time_s": 7.08
+        },
+        {
+          "phase": "hold",
+          "time_s": 7.5600000000000005
+        }
+      ],
+      "terminal_contact_pair": null,
+      "minimum_sampled_face_separation_m": -0.0032616968468116847
+    }
+  ],
+  "plan_sha256": "30c485bc4eb72a162a112a61e1669eba0447631a52eba00f85038f8cb03899ca",
+  "sources_sha256": "479e6cab96f5d620c38d1a99cc73ddb95aa8b3c0e7631495935dcb303d7cbe08",
+  "audit_scope": "Separately re-reduces raw substep forces and collision bounds, and reuses existing task scorer. Shadow requests are not executed decisions.",
+  "publication_note": "Workspace prefixes removed from paths; all outcome fields and original file hashes retained. Source audit digest is recorded in PROVENANCE.json."
+}

@@ -1,0 +1,108 @@
+{
+  "scope": "Unpublished development experiments. Public audits support the displayed counts; full local source and raw physics records are retained. Overlapping controls are exact repeats, not independent samples.",
+  "records": [
+    {
+      "study": "fixed-duck-duration-20260919",
+      "file": "AUDIT.json",
+      "published_file": "duration-audit.json",
+      "source_sha256": "991d6676c6b1b6726453d749117ce1bbdc1b62f1b3c7048bbe203a69d11b079c",
+      "published_sha256": "991d6676c6b1b6726453d749117ce1bbdc1b62f1b3c7048bbe203a69d11b079c"
+    },
+    {
+      "study": "fixed-duck-duration-20260919",
+      "file": "CODEC_AUDIT.json",
+      "published_file": "duration-codec-audit.json",
+      "source_sha256": "57d8c5fcbb22f4dd7381225f37493ad906bd831c994ddc75b9c428697fac6ce8",
+      "published_sha256": "57d8c5fcbb22f4dd7381225f37493ad906bd831c994ddc75b9c428697fac6ce8"
+    },
+    {
+      "study": "fixed-duck-duration-20260919",
+      "file": "ANALYSIS.json",
+      "published_file": "duration-analysis.json",
+      "source_sha256": "eb10003d3336c84af3d240ff0c072f166acb3a5251243a6df530c22d19c41624",
+      "published_sha256": "eb10003d3336c84af3d240ff0c072f166acb3a5251243a6df530c22d19c41624"
+    },
+    {
+      "study": "fixed-duck-duration-20260919",
+      "file": "TEST_RESULTS.txt",
+      "published_file": "duration-tests.txt",
+      "source_sha256": "93d6407d1a6bf5b5376d0a57ddc88c6414f1d8e33d69a2f223add8fc16c749bf",
+      "published_sha256": "93d6407d1a6bf5b5376d0a57ddc88c6414f1d8e33d69a2f223add8fc16c749bf"
+    },
+    {
+      "study": "fixed-duck-duration-20260919",
+      "file": "duration-outcomes.svg",
+      "published_file": "duration-outcomes.svg",
+      "source_sha256": "fe87ff2d9811089828efe7762ef0a57d678739df35a6aec46acb362290a6b85c",
+      "published_sha256": "fe87ff2d9811089828efe7762ef0a57d678739df35a6aec46acb362290a6b85c"
+    },
+    {
+      "study": "fixed-duck-duration-20260919",
+      "file": "duration-outcomes.png",
+      "published_file": "duration-outcomes.png",
+      "source_sha256": "a7c1f5bcb326fb20512f08fb6fb595a2b19f54937619397d96e209e97f868be4",
+      "published_sha256": "a7c1f5bcb326fb20512f08fb6fb595a2b19f54937619397d96e209e97f868be4"
+    },
+    {
+      "study": "primitive-selection-20260919",
+      "file": "AUDIT.json",
+      "published_file": "selection-audit.json",
+      "source_sha256": "3972f30b892650be73d481b9dfb24ee1c222d8d2f89a865d0cd66964a36d5ff2",
+      "published_sha256": "3972f30b892650be73d481b9dfb24ee1c222d8d2f89a865d0cd66964a36d5ff2"
+    },
+    {
+      "study": "primitive-selection-20260919",
+      "file": "CODEC_AUDIT.json",
+      "published_file": "selection-codec-audit.json",
+      "source_sha256": "d7ca7e494a4300033a7999ddbf347678cb5c8d50c4b1e6bac7cfbf1f8b80af27",
+      "published_sha256": "d7ca7e494a4300033a7999ddbf347678cb5c8d50c4b1e6bac7cfbf1f8b80af27"
+    },
+    {
+      "study": "primitive-selection-20260919",
+      "file": "selection-outcomes.svg",
+      "published_file": "selection-outcomes.svg",
+      "source_sha256": "99e76ac9313ca6e7fb59aab21483159b5b8bacae5fc50c8a0177dc998fbff6c1",
+      "published_sha256": "99e76ac9313ca6e7fb59aab21483159b5b8bacae5fc50c8a0177dc998fbff6c1"
+    },
+    {
+      "study": "duck-entry-transfer-20260919",
+      "file": "AUDIT.json",
+      "published_file": "entry-audit.json",
+      "source_sha256": "dfe1c5f864ced341ea56b072a2a626d4431e6418975d7c0ab9b46ee10318f43e",
+      "published_sha256": "1e868b82fc378954b7a186b0ef891f0326207164f752a9a0004bb14a040a14e4"
+    },
+    {
+      "study": "fixed-duck-duration-20260919",
+      "file": "PLAN.json",
+      "public_bytes": false,
+      "source_sha256": "811ac754406269bfa306fa2db0dbc8d2c05a6924c1750c067bfa4c60bbae699f"
+    },
+    {
+      "study": "fixed-duck-duration-20260919",
+      "file": "PROTOCOL.md",
+      "public_bytes": false,
+      "source_sha256": "91a8705a462582951f3468b39b40927a903393d6425cc8e57eb778936848df91"
+    },
+    {
+      "study": "fixed-duck-duration-20260919",
+      "file": "SOURCES.json",
+      "public_bytes": false,
+      "source_sha256": "d540f75538a925186b9280f615ff581402d157615a569296481296edb352f198"
+    },
+    {
+      "study": "primitive-selection-20260919",
+      "file": "PLAN.json",
+      "public_bytes": false,
+      "source_sha256": "d66fd8b6eb9699aa6c4ea8b3057f15a30cd2d696807e1101ffe1ac760f62dd58"
+    },
+    {
+      "study": "duck-entry-transfer-20260919",
+      "file": "PLAN.json",
+      "public_bytes": false,
+      "source_sha256": "30c485bc4eb72a162a112a61e1669eba0447631a52eba00f85038f8cb03899ca"
+    }
+  ],
+  "registered_utc": "2026-09-19T06:45:43.458483+00:00",
+  "protocol_published": "duration-protocol.md",
+  "protocol_published_sha256": "5a31cc2ac66366c75c032761d4c01bde647297ccc2e04afc231cec4e36046b07"
+}

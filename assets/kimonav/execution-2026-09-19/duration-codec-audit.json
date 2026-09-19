@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "case": "clear-fixed_duck-96162",
+      "frames": 417,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "clear-fixed_sustained-96162",
+      "frames": 417,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-fixed_duck-96162",
+      "frames": 142,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-fixed_sustained-96162",
+      "frames": 144,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "clear-fixed_duck-96164",
+      "frames": 424,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "clear-fixed_sustained-96164",
+      "frames": 418,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-fixed_duck-96164",
+      "frames": 425,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-fixed_sustained-96164",
+      "frames": 418,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "clear-fixed_duck-96165",
+      "frames": 439,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "clear-fixed_sustained-96165",
+      "frames": 416,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-fixed_duck-96165",
+      "frames": 439,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-fixed_sustained-96165",
+      "frames": 438,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    }
+  ],
+  "teacher_sha256": "afd649cfbbfd28833550e11a0f8c3b7a5f6a05ee8b4021dd0dac97a6f94733ce",
+  "batch_size": 1,
+  "scope": "Offline replay of issued inputs, not additional physical trials or learning"
+}

@@ -3,7 +3,7 @@
   'use strict';
   const views = {
     current: {
-      caption: 'Implemented public student path, latest joint study. The interfaces execute, but autonomous task completion is not established. No scene or language input is used.',
+      caption: 'Historical public student path, September 15 joint study. The interfaces execute, but autonomous task completion is not established. No scene or language input is used.',
       nodes: [
         ['Implemented', 'Timed goals + history', 'Eight goal tokens, measured proprioception, ideal simulator localization and the original clock.', false],
         ['Unproven control', 'Public reference student', 'Predicts ten short reference frames from allowed inputs. Public prior uses no teacher reference.', true],
@@ -14,8 +14,20 @@
       allowed: 'Requested future goals, current measured history, declared localization and current task clock.',
       privileged: 'Teacher actions, reference motion and privileged posterior inputs stay outside the public actor.'
     },
+    selection: {
+      caption: 'Implemented initial library selector. Public known geometry changes the executed candidate. One inspected source/corridor; no moving seams or online replanning.',
+      nodes: [
+        ['Implemented input', 'Goal + known geometry', 'Accepted destination, exact observed map and measured initial body. The task does not supply an answer motion ID.', false],
+        ['Implemented choice', 'Initial library selection', 'Sampled whole-body clearance and endpoint checks choose nominal when clear and local duck with the beam.', false],
+        ['Verified execution', 'Native reference → motor', 'Selected q/dq/orientation frames → encoder / FSQ → decoder with actual proprioception and action history.', false],
+        ['Measured limitation', 'Task + contact outcome', 'Public selection: 2/2 clear, 1/2 beam. Latest fixed duration comparison: each 3/3 clear and 2/3 beam; same hard failure.', true]
+      ],
+      loop: '↶ Actual state is recorded and used by the tracker; changing the continuation from measured feedback is the next unimplemented gate.',
+      allowed: 'Public goal/map, measured initial body, current orientation and actual motor history; fixed previously built motion library.',
+      privileged: 'Exact map/localization assumptions are declared. Future realized robot motion and a task-provided answer reference do not select the candidate.'
+    },
     proposed: {
-      caption: 'Proposed main experiment. Start with a declared ideal scene estimate, qualify the tracker, then test geometry-dependent whole-body decisions. This traversal path is not yet demonstrated in KimoNav.',
+      caption: 'Proposed main experiment. Start with a declared ideal scene estimate, qualify the tracker, then test geometry-dependent whole-body decisions. Initial library selection is now tested; short-horizon construction and online replacement remain proposed.',
       nodes: [
         ['Proposed input', 'Task + state + scene', 'Destination region, optional route and timing; measured robot state; support, obstacles and overhead space.', true],
         ['Proposed planner', 'Whole-body continuation', 'Choose a short motion with appropriate route, body shape and permitted support. Check the executed prefix and its clearance.', true],
@@ -39,11 +51,11 @@
       privileged: 'Simulator-perfect localization, invisible geometry and future motion may supervise training, but must be removed from the claimed sensor-only deployment path.'
     }
   };
-  document.querySelectorAll('[data-mode]').forEach(button => {
+  document.querySelectorAll('button[data-mode]').forEach(button => {
     button.addEventListener('click', () => {
       const view = views[button.dataset.mode];
       if (!view) return;
-      document.querySelectorAll('[data-mode]').forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+      document.querySelectorAll('button[data-mode]').forEach(other => other.setAttribute('aria-pressed', String(other === button)));
       document.getElementById('system-caption').textContent = view.caption;
       view.nodes.forEach(([tag, title, copy, open], i) => {
         const badge = document.getElementById(`node-tag-${i}`);

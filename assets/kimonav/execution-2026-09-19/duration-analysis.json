@@ -1,0 +1,508 @@
+{
+  "passed": true,
+  "old_control_continuity": [
+    {
+      "case": "clear-fixed_duck-96162",
+      "all_arrays_exact": true,
+      "files": [
+        "ENTRY.npz",
+        "dynamics-entry.npz",
+        "native-episode.npz",
+        "pre-action-poses.npz",
+        "robot-poses.npz",
+        "trace.npz"
+      ]
+    },
+    {
+      "case": "clear-fixed_duck-96164",
+      "all_arrays_exact": true,
+      "files": [
+        "ENTRY.npz",
+        "dynamics-entry.npz",
+        "native-episode.npz",
+        "pre-action-poses.npz",
+        "robot-poses.npz",
+        "trace.npz"
+      ]
+    },
+    {
+      "case": "beam-fixed_duck-96162",
+      "all_arrays_exact": true,
+      "files": [
+        "ENTRY.npz",
+        "dynamics-entry.npz",
+        "native-episode.npz",
+        "pre-action-poses.npz",
+        "robot-poses.npz",
+        "trace.npz"
+      ]
+    },
+    {
+      "case": "beam-fixed_duck-96164",
+      "all_arrays_exact": true,
+      "files": [
+        "ENTRY.npz",
+        "dynamics-entry.npz",
+        "native-episode.npz",
+        "pre-action-poses.npz",
+        "robot-poses.npz",
+        "trace.npz"
+      ]
+    }
+  ],
+  "paired_outcomes": [
+    {
+      "layout": "clear",
+      "seed": 96162,
+      "local_success": true,
+      "sustained_success": true,
+      "sustained_minus_local_completion_s": 0.0
+    },
+    {
+      "layout": "clear",
+      "seed": 96164,
+      "local_success": true,
+      "sustained_success": true,
+      "sustained_minus_local_completion_s": -0.12
+    },
+    {
+      "layout": "clear",
+      "seed": 96165,
+      "local_success": true,
+      "sustained_success": true,
+      "sustained_minus_local_completion_s": -0.46
+    },
+    {
+      "layout": "beam",
+      "seed": 96162,
+      "local_success": false,
+      "sustained_success": false,
+      "sustained_minus_local_completion_s": null
+    },
+    {
+      "layout": "beam",
+      "seed": 96164,
+      "local_success": true,
+      "sustained_success": true,
+      "sustained_minus_local_completion_s": -0.14
+    },
+    {
+      "layout": "beam",
+      "seed": 96165,
+      "local_success": true,
+      "sustained_success": true,
+      "sustained_minus_local_completion_s": -0.02
+    }
+  ],
+  "exploratory_scope": "2.70 s was chosen after outcomes as a shared contact-free query. FK substitutions are descriptive static geometry, not dynamically executable interventions. Root means translation and orientation. Sampled enclosing-box separation is not a collision certificate. No score or action is changed.",
+  "fk_diagnostics": [
+    {
+      "case": "beam-fixed_duck-96162",
+      "query": "common_clock_2.70s",
+      "time_s": 2.7,
+      "success": false,
+      "root_forward_error_m": 0.146285558599014,
+      "root_height_error_m": 0.08138340711593628,
+      "joint_rms_error_rad": 0.2108404040336609,
+      "joint_max_error_rad": 0.5963701009750366,
+      "largest_joint_errors": [
+        {
+          "joint": "right_knee_joint",
+          "error_rad": -0.5963701009750366
+        },
+        {
+          "joint": "left_knee_joint",
+          "error_rad": -0.5946030616760254
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "error_rad": 0.35980135202407837
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "error_rad": 0.3521207869052887
+        },
+        {
+          "joint": "right_ankle_pitch_joint",
+          "error_rad": 0.3304348289966583
+        }
+      ],
+      "previous_max_forbidden_contact_n": 0.0,
+      "geometry": {
+        "planned_root_planned_joints": {
+          "torso_proxy_top_m": 1.199640293671803,
+          "sampled_proxy_separation_m": 0.07772044289374977
+        },
+        "measured_root_planned_joints": {
+          "torso_proxy_top_m": 1.2807258187586696,
+          "sampled_proxy_separation_m": -0.0033650821931169583
+        },
+        "planned_root_measured_joints": {
+          "torso_proxy_top_m": 1.1965631029815933,
+          "sampled_proxy_separation_m": 0.08079763358395939
+        },
+        "measured_root_measured_joints": {
+          "torso_proxy_top_m": 1.2799388707003247,
+          "sampled_proxy_separation_m": -0.0025781341347720643
+        }
+      }
+    },
+    {
+      "case": "beam-fixed_duck-96162",
+      "query": "last_precontact_state",
+      "time_s": 2.82,
+      "success": false,
+      "root_forward_error_m": 0.13729484903072248,
+      "root_height_error_m": 0.06912195682525635,
+      "joint_rms_error_rad": 0.1761631965637207,
+      "joint_max_error_rad": 0.5607023239135742,
+      "largest_joint_errors": [
+        {
+          "joint": "right_knee_joint",
+          "error_rad": -0.5607023239135742
+        },
+        {
+          "joint": "left_knee_joint",
+          "error_rad": -0.3899707794189453
+        },
+        {
+          "joint": "right_ankle_pitch_joint",
+          "error_rad": 0.3205268085002899
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "error_rad": 0.3011729419231415
+        },
+        {
+          "joint": "right_hip_pitch_joint",
+          "error_rad": 0.28570058941841125
+        }
+      ],
+      "previous_max_forbidden_contact_n": 0.0,
+      "geometry": {
+        "planned_root_planned_joints": {
+          "torso_proxy_top_m": 1.222423593435395,
+          "sampled_proxy_separation_m": 0.0549371431301576
+        },
+        "measured_root_planned_joints": {
+          "torso_proxy_top_m": 1.2920205859922422,
+          "sampled_proxy_separation_m": -0.014659849426689547
+        },
+        "planned_root_measured_joints": {
+          "torso_proxy_top_m": 1.2204181578195783,
+          "sampled_proxy_separation_m": 0.05694257874597439
+        },
+        "measured_root_measured_joints": {
+          "torso_proxy_top_m": 1.2916778465142629,
+          "sampled_proxy_separation_m": -0.014317109948710188
+        }
+      }
+    },
+    {
+      "case": "beam-fixed_sustained-96162",
+      "query": "common_clock_2.70s",
+      "time_s": 2.7,
+      "success": false,
+      "root_forward_error_m": 0.11556505231100359,
+      "root_height_error_m": 0.07878613471984863,
+      "joint_rms_error_rad": 0.20309565961360931,
+      "joint_max_error_rad": 0.5713473558425903,
+      "largest_joint_errors": [
+        {
+          "joint": "left_knee_joint",
+          "error_rad": -0.5713473558425903
+        },
+        {
+          "joint": "right_knee_joint",
+          "error_rad": -0.5604239702224731
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "error_rad": 0.35520637035369873
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "error_rad": 0.3236880302429199
+        },
+        {
+          "joint": "right_hip_pitch_joint",
+          "error_rad": 0.3088143765926361
+        }
+      ],
+      "previous_max_forbidden_contact_n": 0.0,
+      "geometry": {
+        "planned_root_planned_joints": {
+          "torso_proxy_top_m": 1.199640293671803,
+          "sampled_proxy_separation_m": 0.07772044289374977
+        },
+        "measured_root_planned_joints": {
+          "torso_proxy_top_m": 1.2788522265275692,
+          "sampled_proxy_separation_m": -0.0014914899620165623
+        },
+        "planned_root_measured_joints": {
+          "torso_proxy_top_m": 1.1971170110779634,
+          "sampled_proxy_separation_m": 0.08024372548758926
+        },
+        "measured_root_measured_joints": {
+          "torso_proxy_top_m": 1.27832984502049,
+          "sampled_proxy_separation_m": -0.0009691084549373896
+        }
+      }
+    },
+    {
+      "case": "beam-fixed_sustained-96162",
+      "query": "last_precontact_state",
+      "time_s": 2.86,
+      "success": false,
+      "root_forward_error_m": 0.09635229649401551,
+      "root_height_error_m": 0.0637822151184082,
+      "joint_rms_error_rad": 0.16395558416843414,
+      "joint_max_error_rad": 0.5450475811958313,
+      "largest_joint_errors": [
+        {
+          "joint": "right_knee_joint",
+          "error_rad": -0.5450475811958313
+        },
+        {
+          "joint": "right_ankle_pitch_joint",
+          "error_rad": 0.3193384110927582
+        },
+        {
+          "joint": "left_knee_joint",
+          "error_rad": -0.30925416946411133
+        },
+        {
+          "joint": "right_hip_pitch_joint",
+          "error_rad": 0.2643098533153534
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "error_rad": 0.2516991198062897
+        }
+      ],
+      "previous_max_forbidden_contact_n": 0.0,
+      "geometry": {
+        "planned_root_planned_joints": {
+          "torso_proxy_top_m": 1.2284627717579426,
+          "sampled_proxy_separation_m": 0.04889796480761008
+        },
+        "measured_root_planned_joints": {
+          "torso_proxy_top_m": 1.2934427222932483,
+          "sampled_proxy_separation_m": -0.01608198572769562
+        },
+        "planned_root_measured_joints": {
+          "torso_proxy_top_m": 1.2264459008738715,
+          "sampled_proxy_separation_m": 0.050914835691681176
+        },
+        "measured_root_measured_joints": {
+          "torso_proxy_top_m": 1.2928489174223148,
+          "sampled_proxy_separation_m": -0.015488180856762096
+        }
+      }
+    },
+    {
+      "case": "beam-fixed_duck-96164",
+      "query": "common_clock_2.70s",
+      "time_s": 2.7,
+      "success": true,
+      "root_forward_error_m": 0.12706190044782886,
+      "root_height_error_m": 0.06974929571151733,
+      "joint_rms_error_rad": 0.19082997739315033,
+      "joint_max_error_rad": 0.5516886711120605,
+      "largest_joint_errors": [
+        {
+          "joint": "left_knee_joint",
+          "error_rad": -0.5516886711120605
+        },
+        {
+          "joint": "right_knee_joint",
+          "error_rad": -0.4834839701652527
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "error_rad": 0.41077929735183716
+        },
+        {
+          "joint": "right_ankle_pitch_joint",
+          "error_rad": 0.3134216368198395
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "error_rad": 0.2795432209968567
+        }
+      ],
+      "previous_max_forbidden_contact_n": 0.0,
+      "geometry": {
+        "planned_root_planned_joints": {
+          "torso_proxy_top_m": 1.199640293671803,
+          "sampled_proxy_separation_m": 0.07772044289374977
+        },
+        "measured_root_planned_joints": {
+          "torso_proxy_top_m": 1.2700426132551486,
+          "sampled_proxy_separation_m": 0.007318123310404129
+        },
+        "planned_root_measured_joints": {
+          "torso_proxy_top_m": 1.1974765257611635,
+          "sampled_proxy_separation_m": 0.0798842108043892
+        },
+        "measured_root_measured_joints": {
+          "torso_proxy_top_m": 1.2700085915584927,
+          "sampled_proxy_separation_m": 0.007352145007060024
+        }
+      }
+    },
+    {
+      "case": "beam-fixed_sustained-96164",
+      "query": "common_clock_2.70s",
+      "time_s": 2.7,
+      "success": true,
+      "root_forward_error_m": 0.08807440243953424,
+      "root_height_error_m": 0.06914252042770386,
+      "joint_rms_error_rad": 0.18884313106536865,
+      "joint_max_error_rad": 0.5324013233184814,
+      "largest_joint_errors": [
+        {
+          "joint": "left_knee_joint",
+          "error_rad": -0.5324013233184814
+        },
+        {
+          "joint": "right_knee_joint",
+          "error_rad": -0.47455114126205444
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "error_rad": 0.4034593105316162
+        },
+        {
+          "joint": "right_ankle_pitch_joint",
+          "error_rad": 0.30434751510620117
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "error_rad": 0.25109925866127014
+        }
+      ],
+      "previous_max_forbidden_contact_n": 0.0,
+      "geometry": {
+        "planned_root_planned_joints": {
+          "torso_proxy_top_m": 1.199640293671803,
+          "sampled_proxy_separation_m": 0.07772044289374977
+        },
+        "measured_root_planned_joints": {
+          "torso_proxy_top_m": 1.2699304150621735,
+          "sampled_proxy_separation_m": 0.007430321503379161
+        },
+        "planned_root_measured_joints": {
+          "torso_proxy_top_m": 1.1974794118860677,
+          "sampled_proxy_separation_m": 0.07988132467948503
+        },
+        "measured_root_measured_joints": {
+          "torso_proxy_top_m": 1.269682889851525,
+          "sampled_proxy_separation_m": 0.007677846714027575
+        }
+      }
+    },
+    {
+      "case": "beam-fixed_duck-96165",
+      "query": "common_clock_2.70s",
+      "time_s": 2.7,
+      "success": true,
+      "root_forward_error_m": 0.18010023862700295,
+      "root_height_error_m": 0.056519389152526855,
+      "joint_rms_error_rad": 0.1671464741230011,
+      "joint_max_error_rad": 0.5196605920791626,
+      "largest_joint_errors": [
+        {
+          "joint": "left_knee_joint",
+          "error_rad": -0.5196605920791626
+        },
+        {
+          "joint": "right_knee_joint",
+          "error_rad": -0.3783595561981201
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "error_rad": 0.3113783001899719
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "error_rad": 0.3015950322151184
+        },
+        {
+          "joint": "right_ankle_pitch_joint",
+          "error_rad": 0.20776161551475525
+        }
+      ],
+      "previous_max_forbidden_contact_n": 0.0,
+      "geometry": {
+        "planned_root_planned_joints": {
+          "torso_proxy_top_m": 1.199640293671803,
+          "sampled_proxy_separation_m": 0.07772044289374977
+        },
+        "measured_root_planned_joints": {
+          "torso_proxy_top_m": 1.2561110476226338,
+          "sampled_proxy_separation_m": 0.02124968894291887
+        },
+        "planned_root_measured_joints": {
+          "torso_proxy_top_m": 1.196638275121811,
+          "sampled_proxy_separation_m": 0.0807224614437417
+        },
+        "measured_root_measured_joints": {
+          "torso_proxy_top_m": 1.2537698651894682,
+          "sampled_proxy_separation_m": 0.023590871376084482
+        }
+      }
+    },
+    {
+      "case": "beam-fixed_sustained-96165",
+      "query": "common_clock_2.70s",
+      "time_s": 2.7,
+      "success": true,
+      "root_forward_error_m": 0.11088440932653419,
+      "root_height_error_m": 0.05331331491470337,
+      "joint_rms_error_rad": 0.16688841581344604,
+      "joint_max_error_rad": 0.5093281269073486,
+      "largest_joint_errors": [
+        {
+          "joint": "left_knee_joint",
+          "error_rad": -0.5093281269073486
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "error_rad": 0.3623906373977661
+        },
+        {
+          "joint": "right_knee_joint",
+          "error_rad": -0.35456639528274536
+        },
+        {
+          "joint": "left_hip_pitch_joint",
+          "error_rad": 0.2526913583278656
+        },
+        {
+          "joint": "right_ankle_pitch_joint",
+          "error_rad": 0.2174835503101349
+        }
+      ],
+      "previous_max_forbidden_contact_n": 0.0,
+      "geometry": {
+        "planned_root_planned_joints": {
+          "torso_proxy_top_m": 1.199640293671803,
+          "sampled_proxy_separation_m": 0.07772044289374977
+        },
+        "measured_root_planned_joints": {
+          "torso_proxy_top_m": 1.2535877474036294,
+          "sampled_proxy_separation_m": 0.023772989161923247
+        },
+        "planned_root_measured_joints": {
+          "torso_proxy_top_m": 1.1969477699084947,
+          "sampled_proxy_separation_m": 0.08041296665705797
+        },
+        "measured_root_measured_joints": {
+          "torso_proxy_top_m": 1.2521350142350158,
+          "sampled_proxy_separation_m": 0.025225722330536854
+        }
+      }
+    }
+  ]
+}

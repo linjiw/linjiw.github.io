@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "case": "clear-fixed_nominal-96162",
+      "frames": 417,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "clear-fixed_duck-96162",
+      "frames": 417,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "clear-public_select-96162",
+      "frames": 417,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-fixed_nominal-96162",
+      "frames": 126,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-fixed_duck-96162",
+      "frames": 142,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-public_select-96162",
+      "frames": 142,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "clear-fixed_nominal-96164",
+      "frames": 419,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "clear-fixed_duck-96164",
+      "frames": 424,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "clear-public_select-96164",
+      "frames": 419,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-fixed_nominal-96164",
+      "frames": 127,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-fixed_duck-96164",
+      "frames": 425,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam-public_select-96164",
+      "frames": 425,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    }
+  ],
+  "teacher_sha256": "afd649cfbbfd28833550e11a0f8c3b7a5f6a05ee8b4021dd0dac97a6f94733ce",
+  "batch_size": 1,
+  "scope": "Offline replay of issued inputs, not additional physical trials or learning"
+}

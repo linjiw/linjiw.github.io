@@ -1,0 +1,43 @@
+{
+  "schema": "knav-coupled-crouch-v1",
+  "registered_utc": "2026-09-19T18:12:29.740784+00:00",
+  "modes": [
+    "fixed_coupled"
+  ],
+  "layouts": [
+    "clear",
+    "beam",
+    "beam_lower20"
+  ],
+  "seeds": [
+    96162,
+    96167
+  ],
+  "primary_attempts": 6,
+  "reused_controls": 6,
+  "comparison_parent": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919",
+  "protocol": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/coupled-crouch-comparison-20260919/PROTOCOL.md",
+    "sha256": "13fe7f5a225b87ad4aa5f8ae56e0a6dd4a6d572e64c9e9dd3b19555ec8221b25"
+  },
+  "bank": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/coupled-crouch-comparison-20260919/BANK.json",
+    "sha256": "e1c2d9b1b88a329861356bc4037c223e14e5d6a05fe6afceda11193f83fbdbc9"
+  },
+  "reuse": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/coupled-crouch-comparison-20260919/REUSE.json",
+    "sha256": "4b37113e043fe5644c76560e6a4bf01aa5f19a3c3a025ae8672bd04cc190d001"
+  },
+  "prior_diagnosis": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/coupled-crouch-comparison-20260919/PRIOR_DIAGNOSIS.json",
+    "sha256": "be6b6fc7ac49bd0b1a7fcf515622234e26a37e6d97e2550d27b88fd5b584ec7e"
+  },
+  "source_diagnostics": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/coupled-crouch-comparison-20260919/COUPLING_DIAGNOSTICS.npz",
+    "sha256": "0ab28fc79d306fe595cae94d57081d8ecebf3659d68a0eb252cdd84a154bfa97"
+  },
+  "question": "Does a simpler per-frame matched-excursion crouch retain or improve full task completion relative to full-foot IK?",
+  "scope": "Six new fixed-reference attempts and six exact prior controls; all inspected conditions, no online replanning or public bank admission",
+  "training": false,
+  "hardware": false
+}

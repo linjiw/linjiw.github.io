@@ -1,0 +1,57 @@
+{
+  "study": "coupled-crouch-comparison-20260919",
+  "assets": [
+    {
+      "file": "ANALYSIS.json",
+      "sha256": "f17076213c3a0bfbbc59422fe29e8e09d1adaacda14377d3a121ea5d911f14ab"
+    },
+    {
+      "file": "AUDIT.json",
+      "sha256": "d8b9976b0db92cb7b8df86e271375cc21dfa16cd4e2b87876b7bbafbe556add6"
+    },
+    {
+      "file": "CODEC_AUDIT.json",
+      "sha256": "bb5e00f8c34a98a553ecd45fb1d6b18169751c8eefeb4e5d97d4556848590164"
+    },
+    {
+      "file": "CURRENT_PLAN.md",
+      "sha256": "b0296d73fbb416f3d0327f0593853697bb44945404175a53316b767249a59034"
+    },
+    {
+      "file": "PLAN.json",
+      "sha256": "5e348459d1cb15052aba75d3d6883b6f2480bd5c06378dcab70a0147b2e4022b"
+    },
+    {
+      "file": "PRIOR_DIAGNOSIS.json",
+      "sha256": "be6b6fc7ac49bd0b1a7fcf515622234e26a37e6d97e2550d27b88fd5b584ec7e"
+    },
+    {
+      "file": "PROTOCOL.md",
+      "sha256": "13fe7f5a225b87ad4aa5f8ae56e0a6dd4a6d572e64c9e9dd3b19555ec8221b25"
+    },
+    {
+      "file": "REPORT.md",
+      "sha256": "02a98acd7f5984753e39497a13999f79fd7e291c93bc4ae887513ea1a79e817b"
+    },
+    {
+      "file": "REUSE.json",
+      "sha256": "4b37113e043fe5644c76560e6a4bf01aa5f19a3c3a025ae8672bd04cc190d001"
+    },
+    {
+      "file": "SOURCE_CONSTRUCTION.json",
+      "sha256": "1b8902d7784837a3d00ce6a17d88509f8e354aad98e1f0bdc6f31981f8f1c075"
+    },
+    {
+      "file": "TEST_RESULTS.txt",
+      "sha256": "231940e64daca9d94e5461c55f3f4864662a6e92c5089be0dd279970c5142459"
+    },
+    {
+      "file": "coupled-outcomes.png",
+      "sha256": "eb23db6665ee4d7a7ee1fa6768e7801e82804cb1155e071ff3bc85add340c26c"
+    },
+    {
+      "file": "coupled-outcomes.svg",
+      "sha256": "48443db8707dc29bf20e9e1cabfaaa86c1d93829234c66026c5b32e0199dcea1"
+    }
+  ]
+}

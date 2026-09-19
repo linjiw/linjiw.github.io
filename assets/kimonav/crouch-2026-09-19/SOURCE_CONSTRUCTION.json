@@ -1,0 +1,22 @@
+{
+  "recorded_utc": "2026-09-19T18:17:01.772652+00:00",
+  "record_type": "Input-provenance receipt after registration; construction and its diagnostics were saved before registration.",
+  "parents": [
+    {
+      "path": "/home/linjiw/research-data/m2s-duck-source-qualification-20260916-v1/sources/00976/local_duck/reference.npz",
+      "sha256": "fd526bfb21116c14ebc8788ab4f6916dfbf469a233df4c4c57a4fc38c2ae4951"
+    },
+    {
+      "path": "/home/linjiw/kimodo/knav/artifacts/foot-preserving-lowering-20260919/lowered-reference.npz",
+      "sha256": "424c4399fbd8a7c21342baffc03a210308b6e6dbc570362e2e61c95a48c14e70"
+    },
+    {
+      "path": "/home/linjiw/research-data/m2s-navigation-collision-challenge-20260913/native-collision-bounds.json",
+      "sha256": "cb2cbd43ca67ec3265a74ae54698d2fde8b72ad41be73b0464c2bfca2950fcff"
+    }
+  ],
+  "operator": "knav.eval.coupled_crouch.coupled_crouch",
+  "budget": "Per-frame max absolute joint difference between existing IK-lowered and local-duck source at 30Hz",
+  "output_sha256": "a314756ea5934637898413adae29c8282c2791ad5ee653f7d28c00d80eadfd60",
+  "diagnostics_sha256": "0ab28fc79d306fe595cae94d57081d8ecebf3659d68a0eb252cdd84a154bfa97"
+}

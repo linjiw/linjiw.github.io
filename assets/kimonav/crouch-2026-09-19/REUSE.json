@@ -1,0 +1,530 @@
+{
+  "parent_audit": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/AUDIT.json",
+    "sha256": "069433c618d31e91953853c818b120654be1083524eef9efa368dbdf64d3857c"
+  },
+  "controls": [
+    {
+      "layout": "clear",
+      "seed": 96162,
+      "run": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/TASK.json",
+          "sha256": "0d440d423cf7ec07b485c8f7c77c7606f97b0806e8b69ee705916725731a535b"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/CONFIG.json",
+          "sha256": "61fec9c25fda4ae87e07ebe10d52c1bada4e3c7b992c2a10ed2a437d1fdd1810"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/COMMAND.json",
+          "sha256": "542c6326552d52b01783eaf4514971b31a6b8c7d88734b6e634619acf2ae281a"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/STATUS.json",
+          "sha256": "1097fb0e84da82ec719ae1bf8fa8203924d61311e811b00331bc5842ef9bb2a4"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/ENTRY.npz",
+          "sha256": "a0e1fe5c7e5915b28954d04486a1f8280ada0a27e6b07cd5e90043f246eb0c53"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/duck-features.npz",
+          "sha256": "b4c99470d799e4b465b4669b4cad66e53db5c679afe58e95697f68048b07eebb"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/dynamics-entry.npz",
+          "sha256": "25cf7e9008ba59c437cb87c064fa333f6fde4cf0bc37a358d2fb5a1a2082fc35"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/native-episode.npz",
+          "sha256": "8a37db75ae28085947895ace2de25b4f8f13008858d1635c23bd210b74498147"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/pre-action-poses.npz",
+          "sha256": "f83a504988c0aa41f8483510c0fbf4c71838a91319c2e2c263af1326c9019d14"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/robot-poses.npz",
+          "sha256": "035fb1d5f906a35ac990776b43e7f04150ac667d957b59522f477ac76b7d2888"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96162/task/trace.npz",
+          "sha256": "4f686c091df0e742054333fcb4259f7cfdfb7be36e38516696ede170c166593b"
+        }
+      ]
+    },
+    {
+      "layout": "clear",
+      "seed": 96167,
+      "run": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/TASK.json",
+          "sha256": "0d440d423cf7ec07b485c8f7c77c7606f97b0806e8b69ee705916725731a535b"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/CONFIG.json",
+          "sha256": "82f59e9d7f5f2bd92dadd5229d5491d05ad99ec8b49c9a9b87da701b148cdd9f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/COMMAND.json",
+          "sha256": "ce16e7a0e4139f018566375f6d3f7ab39f077064dd0b69712761900875045a3a"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/STATUS.json",
+          "sha256": "5cacdd57ce4b4af2948fa0c2a8a43b78793c9e562381a104238f750638ab8c6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/ENTRY.npz",
+          "sha256": "d70c4070094fb09ea9f689f76ff98b776f5b0431a2cdeb06d290c54dfa3aff1c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/duck-features.npz",
+          "sha256": "d2f45a5e5b9733bcaedcda8e1d6916d4f6c1f87716eb31f6d2122363d272a205"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/dynamics-entry.npz",
+          "sha256": "ff8dc0877410ffc70281b75cec8ea6704618d5a79c0a27a0c2e5a75822d84fd1"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/native-episode.npz",
+          "sha256": "4b2fd27d7e48b4b6d3a719309c1119f0934865789dc423eb798ef075a0868622"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/pre-action-poses.npz",
+          "sha256": "5045741e95987ca0c10dcca2ed7da1706f848c7f820fd8ee99031eb60fbd8f26"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/robot-poses.npz",
+          "sha256": "8c79796357fa81cffa20bfe4c23288d47fcde0bc610602636a4d6fde1dff7d82"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/clear-fixed_lowered-96167/task/trace.npz",
+          "sha256": "cec0d9f2291e70c71058ac769c3a72a69aeb0316d2717372ad734c307939a146"
+        }
+      ]
+    },
+    {
+      "layout": "beam",
+      "seed": 96162,
+      "run": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/TASK.json",
+          "sha256": "3dd7f73353403735a924363a7271e640f9953d71ea173242904f4db48aacda9f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/CONFIG.json",
+          "sha256": "ea8efffe0fb617bb59c1cbd27b13bb851e4a68d186c9e26d0cb3bcf91b90ceac"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/COMMAND.json",
+          "sha256": "ab05240d5b6642d835b4d383ba80aa7cbbe5f2d67ce3657b6b1351de10e88f1a"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/STATUS.json",
+          "sha256": "ed35b22a7ae41a2a268ae6ff23710b59ce6495e66fe36f7caa8e61361375e52b"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/ENTRY.npz",
+          "sha256": "a0e1fe5c7e5915b28954d04486a1f8280ada0a27e6b07cd5e90043f246eb0c53"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/duck-features.npz",
+          "sha256": "04308996d2b73b6234c118c346c1ba7df7f60e0adfd109912ad88e024ae3d6d5"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/dynamics-entry.npz",
+          "sha256": "25cf7e9008ba59c437cb87c064fa333f6fde4cf0bc37a358d2fb5a1a2082fc35"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/native-episode.npz",
+          "sha256": "c63cea350d4c0a4f770ee3241c964e5fb1226cbfe187f66f8629b456c0db8758"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/pre-action-poses.npz",
+          "sha256": "e4b97a77e21d67df6f569ce0f542d3ab9ee86b5ea5a50999302504d1d1f8e244"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/robot-poses.npz",
+          "sha256": "77e0c8a0c3c9c8635579469a035edac7f03e7e4e90aee393c78cf7b14161fb5b"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96162/task/trace.npz",
+          "sha256": "4a063f97316ee2620967da964d1c716a91bdec58970b85a3c1b6f1d8aceae6dd"
+        }
+      ]
+    },
+    {
+      "layout": "beam",
+      "seed": 96167,
+      "run": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/TASK.json",
+          "sha256": "3dd7f73353403735a924363a7271e640f9953d71ea173242904f4db48aacda9f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/CONFIG.json",
+          "sha256": "9c65f1ca52a7f95059fe23c613a6eb2e7ba65f9f28f300258b015a4ebfd2759a"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/COMMAND.json",
+          "sha256": "86e6e15aa2b72b39da6f292eea8bfbcbd81e0dca924edcf1087d238686e6362a"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/STATUS.json",
+          "sha256": "1cbd5745d7addd71245680f9e1fa6ecb8d1f992caa350781dfd7643ef2b3b6a5"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/ENTRY.npz",
+          "sha256": "d70c4070094fb09ea9f689f76ff98b776f5b0431a2cdeb06d290c54dfa3aff1c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/duck-features.npz",
+          "sha256": "ba9e88b97a99d62bee2cb0264214a645fd5c523c067d8ef0a90edefe46ef31f8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/dynamics-entry.npz",
+          "sha256": "ff8dc0877410ffc70281b75cec8ea6704618d5a79c0a27a0c2e5a75822d84fd1"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/native-episode.npz",
+          "sha256": "78b68bbc8fe6e08c6a7c239fae277088e280724ae0f2ff031c4c4dde97132c8c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/pre-action-poses.npz",
+          "sha256": "d6a0a014cbb286a45fe55fd0fcdca544650f9361cef44c3d34e46f44398a3e9a"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/robot-poses.npz",
+          "sha256": "7154e1cf0957da714bcaae564e5362b5e4ae4171c392d6913a8fbf0e3540e5f2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam-fixed_lowered-96167/task/trace.npz",
+          "sha256": "9624b6b755a8014a0f4f9b00a008480536ead3295973408c40cafb1fac068bf1"
+        }
+      ]
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96162,
+      "run": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/TASK.json",
+          "sha256": "60aa3aa3f3faa2139570448777463aa166c2ba8dc753dda99ef2eb08cc7f034c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/CONFIG.json",
+          "sha256": "f29229b68d6b3e20007c0432e509faa4081dd48a1016ab48b6f07af311727648"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/COMMAND.json",
+          "sha256": "32d4fda5f8b6270bf68472415a7f789460afa93f307626bf95d44a4bf2042e84"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/STATUS.json",
+          "sha256": "437f84199864a91c0641dc6a67312d08374bc18f4d9e40198d5544d3067c905f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/ENTRY.npz",
+          "sha256": "a0e1fe5c7e5915b28954d04486a1f8280ada0a27e6b07cd5e90043f246eb0c53"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/duck-features.npz",
+          "sha256": "f7532b86a45309c1948d02c2f965b692f8a03d2b205226177daa9d9c179c591a"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/dynamics-entry.npz",
+          "sha256": "25cf7e9008ba59c437cb87c064fa333f6fde4cf0bc37a358d2fb5a1a2082fc35"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/native-episode.npz",
+          "sha256": "e091ab206d01d1e73c0bbd5953b4aecc4632bcf9d494c92d4c790e9119500d25"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/pre-action-poses.npz",
+          "sha256": "1cd18ac3e40b7517f4f80d0258bb33e741fb4b3b93559eee329c996368ee532e"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/robot-poses.npz",
+          "sha256": "6a7e71b99dd8c4a9cab076de2bd81aa20b972bee5b8a86c0ecbb4cb1b0c4809e"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/trace.npz",
+          "sha256": "7d4e322be521ac4437359a9c332485821470d5aa432c37916d96546323b4b018"
+        }
+      ]
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96167,
+      "run": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/TASK.json",
+          "sha256": "60aa3aa3f3faa2139570448777463aa166c2ba8dc753dda99ef2eb08cc7f034c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/CONFIG.json",
+          "sha256": "20e5246b66c5650d0109943e636853bcc654017fd00a3923b9a12f81f28009f0"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/COMMAND.json",
+          "sha256": "8d8cfe7027f8c6c1e29df98d213aaaf61afc4c3addb70686a36db57dcacbf3f9"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/STATUS.json",
+          "sha256": "a501c2247f96bdf6cc3cadd0911b22cf1a4f46b6b5457d818454eb052a817b82"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/ENTRY.npz",
+          "sha256": "d70c4070094fb09ea9f689f76ff98b776f5b0431a2cdeb06d290c54dfa3aff1c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/duck-features.npz",
+          "sha256": "91735077ef238dbdde854e6ca25ab1e79f976eaefe84f5d24afeadfc3b19e6b7"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/dynamics-entry.npz",
+          "sha256": "ff8dc0877410ffc70281b75cec8ea6704618d5a79c0a27a0c2e5a75822d84fd1"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/native-episode.npz",
+          "sha256": "195d2503ee85afffd0b5f3c5ee110aed99e70d9d944e3d0dcfc49cdbda0f55f1"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/pre-action-poses.npz",
+          "sha256": "cde896d8f7da40eefcfcff6d7441be9d8049a058e3a5e01f3bd88a8d2e6a4b92"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/robot-poses.npz",
+          "sha256": "6802f830bbc287dd8facabbd0b9accbaea90802063ffb58d955fefb1b28f47a3"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/trace.npz",
+          "sha256": "56467e81aeed439467b584b092d1a9da056ddccc803674326c09ce9385346df7"
+        }
+      ]
+    }
+  ]
+}

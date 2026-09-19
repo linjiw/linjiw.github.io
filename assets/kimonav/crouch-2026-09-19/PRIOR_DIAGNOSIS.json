@@ -1,0 +1,229 @@
+{
+  "scope": "Post-result diagnosis of four prior failures; proxy overlap is not contact truth and nearest progress is not an online phase controller.",
+  "rows": [
+    {
+      "seed": 96162,
+      "candidate": "local_duck",
+      "pre_action_time_s": 2.5,
+      "contact_control_end_time_s": 2.52,
+      "prior_force_max_n": 0.0,
+      "actual_pelvis_z_m": 0.74347984790802,
+      "target_pelvis_z_m": 0.653254508972168,
+      "root_height_error_m": 0.09022533893585205,
+      "root_progress_error_m": 0.13902450348785103,
+      "nearest_reference_progress_time_s": 2.68,
+      "progress_phase_lead_s": 0.18,
+      "minimum_actual_proxy_separation_m": -0.019227104492414743,
+      "limiting_proxy_body": "torso_link",
+      "torso_proxy_top_minus_beam_bottom_m": 0.019227104492414826,
+      "joints": [
+        {
+          "joint": "left_knee_joint",
+          "actual": 0.8287978768348694,
+          "target": 1.4772073030471802,
+          "error": -0.6484094262123108
+        },
+        {
+          "joint": "right_knee_joint",
+          "actual": 0.4853785037994385,
+          "target": 1.2432745695114136,
+          "error": -0.7578960657119751
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "actual": -0.3101274371147156,
+          "target": -0.7205217480659485,
+          "error": 0.4103943109512329
+        },
+        {
+          "joint": "right_ankle_pitch_joint",
+          "actual": -0.009105260483920574,
+          "target": -0.43481847643852234,
+          "error": 0.4257132112979889
+        },
+        {
+          "joint": "waist_pitch_joint",
+          "actual": 0.26711854338645935,
+          "target": 0.17013438045978546,
+          "error": 0.09698416292667389
+        }
+      ],
+      "trace": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-public_select-96162/task/trace.npz",
+        "sha256": "4d42e6f453072f4444b639688a9751f83999c43c4f5219136331256476b7a267"
+      },
+      "pre_action": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-public_select-96162/task/pre-action-poses.npz",
+        "sha256": "06d967081fd7f81a260c43955fd68b1bc975f91f09582ff025bba8fbacbad44f"
+      }
+    },
+    {
+      "seed": 96162,
+      "candidate": "lowered",
+      "pre_action_time_s": 2.72,
+      "contact_control_end_time_s": 2.74,
+      "prior_force_max_n": 0.0,
+      "actual_pelvis_z_m": 0.7358537912368774,
+      "target_pelvis_z_m": 0.6283359527587891,
+      "root_height_error_m": 0.10751783847808838,
+      "root_progress_error_m": 0.15127451425691638,
+      "nearest_reference_progress_time_s": 2.92,
+      "progress_phase_lead_s": 0.2,
+      "minimum_actual_proxy_separation_m": -0.014282701756750088,
+      "limiting_proxy_body": "torso_link",
+      "torso_proxy_top_minus_beam_bottom_m": 0.014282701756750171,
+      "joints": [
+        {
+          "joint": "left_knee_joint",
+          "actual": 1.7441508769989014,
+          "target": 2.3751721382141113,
+          "error": -0.63102126121521
+        },
+        {
+          "joint": "right_knee_joint",
+          "actual": 0.7495076060295105,
+          "target": 1.4375334978103638,
+          "error": -0.6880258917808533
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "actual": -0.21664386987686157,
+          "target": -0.6661860346794128,
+          "error": 0.44954216480255127
+        },
+        {
+          "joint": "right_ankle_pitch_joint",
+          "actual": -0.4029028117656708,
+          "target": -0.7846043705940247,
+          "error": 0.3817015588283539
+        },
+        {
+          "joint": "waist_pitch_joint",
+          "actual": 0.2834656238555908,
+          "target": 0.17769891023635864,
+          "error": 0.10576671361923218
+        }
+      ],
+      "trace": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/trace.npz",
+        "sha256": "7d4e322be521ac4437359a9c332485821470d5aa432c37916d96546323b4b018"
+      },
+      "pre_action": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96162/task/pre-action-poses.npz",
+        "sha256": "1cd18ac3e40b7517f4f80d0258bb33e741fb4b3b93559eee329c996368ee532e"
+      }
+    },
+    {
+      "seed": 96167,
+      "candidate": "local_duck",
+      "pre_action_time_s": 2.7800000000000002,
+      "contact_control_end_time_s": 2.8000000000000003,
+      "prior_force_max_n": 0.0,
+      "actual_pelvis_z_m": 0.7372997999191284,
+      "target_pelvis_z_m": 0.6789787411689758,
+      "root_height_error_m": 0.05832105875015259,
+      "root_progress_error_m": 0.1459408885785103,
+      "nearest_reference_progress_time_s": 2.96,
+      "progress_phase_lead_s": 0.18,
+      "minimum_actual_proxy_separation_m": -0.015451518143348025,
+      "limiting_proxy_body": "torso_link",
+      "torso_proxy_top_minus_beam_bottom_m": 0.015451518143348109,
+      "joints": [
+        {
+          "joint": "left_knee_joint",
+          "actual": 1.654931664466858,
+          "target": 2.0657083988189697,
+          "error": -0.4107767343521118
+        },
+        {
+          "joint": "right_knee_joint",
+          "actual": 0.7471151947975159,
+          "target": 1.1749064922332764,
+          "error": -0.4277912974357605
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "actual": -0.2472372204065323,
+          "target": -0.5725097060203552,
+          "error": 0.32527250051498413
+        },
+        {
+          "joint": "right_ankle_pitch_joint",
+          "actual": -0.44451138377189636,
+          "target": -0.7051613926887512,
+          "error": 0.26065000891685486
+        },
+        {
+          "joint": "waist_pitch_joint",
+          "actual": 0.2844342291355133,
+          "target": 0.17468495666980743,
+          "error": 0.10974927246570587
+        }
+      ],
+      "trace": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-public_select-96167/task/trace.npz",
+        "sha256": "f2fdb3d65893116635b0523c8933cec16eb0ec62c84363ef63ae699b2f789625"
+      },
+      "pre_action": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-public_select-96167/task/pre-action-poses.npz",
+        "sha256": "7fcefe3bef63faf407e3e71d638bd0cccc8da4b0e8009dc057aab16f5a519dd4"
+      }
+    },
+    {
+      "seed": 96167,
+      "candidate": "lowered",
+      "pre_action_time_s": 2.84,
+      "contact_control_end_time_s": 2.86,
+      "prior_force_max_n": 0.0,
+      "actual_pelvis_z_m": 0.7363855838775635,
+      "target_pelvis_z_m": 0.6749771237373352,
+      "root_height_error_m": 0.06140846014022827,
+      "root_progress_error_m": 0.15401555835359743,
+      "nearest_reference_progress_time_s": 3.02,
+      "progress_phase_lead_s": 0.18,
+      "minimum_actual_proxy_separation_m": -0.01446050227973053,
+      "limiting_proxy_body": "torso_link",
+      "torso_proxy_top_minus_beam_bottom_m": 0.014460502279730614,
+      "joints": [
+        {
+          "joint": "left_knee_joint",
+          "actual": 1.4474412202835083,
+          "target": 1.8080341815948486,
+          "error": -0.36059296131134033
+        },
+        {
+          "joint": "right_knee_joint",
+          "actual": 0.7257639765739441,
+          "target": 1.187856674194336,
+          "error": -0.46209269762039185
+        },
+        {
+          "joint": "left_ankle_pitch_joint",
+          "actual": -0.32753583788871765,
+          "target": -0.5782933831214905,
+          "error": 0.2507575452327728
+        },
+        {
+          "joint": "right_ankle_pitch_joint",
+          "actual": -0.5060724020004272,
+          "target": -0.7765654921531677,
+          "error": 0.2704930901527405
+        },
+        {
+          "joint": "waist_pitch_joint",
+          "actual": 0.27454012632369995,
+          "target": 0.16574853658676147,
+          "error": 0.10879158973693848
+        }
+      ],
+      "trace": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/trace.npz",
+        "sha256": "56467e81aeed439467b584b092d1a9da056ddccc803674326c09ce9385346df7"
+      },
+      "pre_action": {
+        "path": "/home/linjiw/kimodo/knav/artifacts/capability-selection-20260919/runs/beam_lower20-fixed_lowered-96167/task/pre-action-poses.npz",
+        "sha256": "cde896d8f7da40eefcfcff6d7441be9d8049a058e3a5e01f3bd88a8d2e6a4b92"
+      }
+    }
+  ]
+}

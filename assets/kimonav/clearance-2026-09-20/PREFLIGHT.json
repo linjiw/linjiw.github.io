@@ -1,0 +1,170 @@
+{
+  "passed": true,
+  "physics": false,
+  "parent": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/PLAN.json",
+    "sha256": "54aa533700bfe99f40e253b703298820265d30ef9ce8dcd3fe4cad83e5ba0645"
+  },
+  "prior_audit": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/AUDIT.json",
+    "sha256": "dd341089c43f05284d4fd7c8cc17eb7d01accb8b6dfe5758efab05ab56db3f2d"
+  },
+  "original_task": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/beam-fixed_duck-96162/TASK.json",
+    "sha256": "db79252333c41b7173dfd108e136478cae096f2d131357851a0ed1aa4726ad03"
+  },
+  "original_command": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/beam-fixed_duck-96162/COMMAND.json",
+    "sha256": "4ab991654e547ab650110977b6c2d860cd42e802910c399e3ba03d1fa2a3772c"
+  },
+  "original_scene": {
+    "path": "/home/linjiw/research-data/m2s-duck-executed-sweep-repair-20260916-v1/00976-swept_margin_005mm-teacher.usda",
+    "sha256": "2bbd2af9d80742c344c261d3848b9c068ca1c672ea4b9d8bd1c310decf5cc145"
+  },
+  "reference_libraries": [
+    {
+      "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/beam-fixed_duck-96162/task/nominal-native-library.npz",
+      "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+    },
+    {
+      "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/beam-fixed_duck-96162/task/local_duck-native-library.npz",
+      "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+    },
+    {
+      "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/beam-fixed_duck-96162/task/sustained-native-library.npz",
+      "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+    },
+    {
+      "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/beam-fixed_duck-96162/task/lowered-native-library.npz",
+      "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+    }
+  ],
+  "scenes": [
+    {
+      "layout": "beam_lower10",
+      "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/beam_lower10.usda",
+      "sha256": "7630b2c8c214a31dd90884a6fdc9508a217d81bca9ebe53c243b58ac0c004d6e"
+    },
+    {
+      "layout": "beam_lower30",
+      "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/beam_lower30.usda",
+      "sha256": "a1cb0c80ca3ecf20116719e120f9dcc5ccb520c4447fefab17e8feaa8e3d8adc"
+    },
+    {
+      "layout": "beam_lower50",
+      "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/beam_lower50.usda",
+      "sha256": "d2d5b4b93e08de82a72db6d162c267ab6e27ef9661f6ee4cebf45e5270977a4c"
+    }
+  ],
+  "predictions": [
+    {
+      "layout": "beam_lower10",
+      "geometry_choice": "local_duck",
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.048542030550651566,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.03441312302671137,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": true
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.03441312302671137,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": true
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.039409840002877145,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": true
+        }
+      ],
+      "finite_ledger_choice": null,
+      "scope": "Offline library geometry before registration; actual initial body is included in the pre-action runtime decision. No physics."
+    },
+    {
+      "layout": "beam_lower30",
+      "geometry_choice": null,
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.06854203055065158,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": 0.014413123026711355,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": 0.014413123026711355,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": 0.019409840002877127,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": false
+        }
+      ],
+      "finite_ledger_choice": null,
+      "scope": "Offline library geometry before registration; actual initial body is included in the pre-action runtime decision. No physics."
+    },
+    {
+      "layout": "beam_lower50",
+      "geometry_choice": null,
+      "candidates": [
+        {
+          "candidate": "nominal",
+          "minimum_sampled_separation_m": -0.0885420305506516,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.0,
+          "admitted": false
+        },
+        {
+          "candidate": "local_duck",
+          "minimum_sampled_separation_m": -0.0055868769732886625,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.012632986828187528,
+          "admitted": false
+        },
+        {
+          "candidate": "sustained",
+          "minimum_sampled_separation_m": -0.0055868769732886625,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.019785215030009583,
+          "admitted": false
+        },
+        {
+          "candidate": "lowered",
+          "minimum_sampled_separation_m": -0.000590159997122891,
+          "endpoint_distance_m": 0.0,
+          "posture_cost": 0.016017508574782617,
+          "admitted": false
+        }
+      ],
+      "finite_ledger_choice": null,
+      "scope": "Offline library geometry before registration; actual initial body is included in the pre-action runtime decision. No physics."
+    }
+  ],
+  "preserved": "Original motor/common config, bank, goal, score, clock, entry protocol and floor; only beam Z and execution seeds change."
+}

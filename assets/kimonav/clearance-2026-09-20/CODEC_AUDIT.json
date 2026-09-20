@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "case": "beam_lower10-fixed_duck-96171",
+      "frames": 421,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower10-fixed_lowered-96171",
+      "frames": 421,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower30-fixed_duck-96171",
+      "frames": 421,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower30-fixed_lowered-96171",
+      "frames": 421,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower50-fixed_duck-96171",
+      "frames": 147,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower50-fixed_lowered-96171",
+      "frames": 150,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower10-fixed_duck-96173",
+      "frames": 432,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower10-fixed_lowered-96173",
+      "frames": 432,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower30-fixed_duck-96173",
+      "frames": 432,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower30-fixed_lowered-96173",
+      "frames": 432,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower50-fixed_duck-96173",
+      "frames": 462,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    },
+    {
+      "case": "beam_lower50-fixed_lowered-96173",
+      "frames": 432,
+      "token_max_error": 0.0,
+      "action_max_error": 0.0
+    }
+  ],
+  "teacher_sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909",
+  "batch_size": 1,
+  "scope": "Offline replay of issued inputs, not additional physical trials or learning"
+}

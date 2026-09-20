@@ -1,0 +1,69 @@
+{
+  "study": "clearance-admission-20260920",
+  "assets": [
+    {
+      "file": "ANALYSIS.json",
+      "sha256": "4aa212e17cb73b784ee136a63218585bce63d5a0f223e0875b098b83fc7225a4"
+    },
+    {
+      "file": "AUDIT.json",
+      "sha256": "a81635709e2b5f4e13195457aedc79f38401e7cd96a85378928290fa4cce179f"
+    },
+    {
+      "file": "CODEC_AUDIT.json",
+      "sha256": "490b362cca5948bd6394dc65b0c04be1f18a3ddbb9b52adeffc6947b8cccc160"
+    },
+    {
+      "file": "CURRENT_PLAN.md",
+      "sha256": "7db1683bb8a35f4376135e94bcefa2441e574685bceed32ddcc1e3ec66b37968"
+    },
+    {
+      "file": "LITERATURE_NOTE.md",
+      "sha256": "cb07afde548a09c0dbbaa2d824bf39d1e6a4472fe2ecdd55fa3b1db44b838138"
+    },
+    {
+      "file": "NEXT_SOURCE_READINESS.json",
+      "sha256": "99e6c5e747dc76b1e0781b1c47b4a44b9ee4dfdc9701660a9604b8532c17ce0a"
+    },
+    {
+      "file": "PLAN.json",
+      "sha256": "f4b1b74808baa82563cd6c11e5fdcffbbfab9715828f12af0e126ae189d8d1a7"
+    },
+    {
+      "file": "PREFLIGHT.json",
+      "sha256": "b36ed4b83ecd6488a377b99afb00b9a6aba514f7493fab733fca3734c09e8048"
+    },
+    {
+      "file": "PROTOCOL.md",
+      "sha256": "4fb5149f7aa17ba05ecb0b5273443bf02287ca6dfe6a1244d7da854e03053dfc"
+    },
+    {
+      "file": "REPORT.md",
+      "sha256": "29c1e2f55f7fd9ab6c5732e1128f5559332818fb9040dc78cc1d395c53a6254b"
+    },
+    {
+      "file": "SEED_ACCESS.json",
+      "sha256": "303d5e8f9436aafff880da075697c7665bf3bd94c268331b0471a7da8b4f1b83"
+    },
+    {
+      "file": "SEED_ACCESS_SUPPLEMENT.json",
+      "sha256": "854a2757c90cab6512f756f4b39bd71588e99a869eda85e74b856aca05cdc5ae"
+    },
+    {
+      "file": "SEED_SCOPE_CORRECTION.md",
+      "sha256": "bf7c6c68164dbd55c67df1732aa92a9be0df1d3a6c3c9251b8959d76a2c66a4e"
+    },
+    {
+      "file": "TEST_RESULTS.txt",
+      "sha256": "551d3f6f9cd1ce1fc6713052e28ef9a35c4bd7be2f4cebb0450f3b3ea829f558"
+    },
+    {
+      "file": "clearance-admission-outcomes.png",
+      "sha256": "bc8748338a47a0b673f5fe42810d7a1dae420ea239df9a8add2508abb10a18c4"
+    },
+    {
+      "file": "clearance-admission-outcomes.svg",
+      "sha256": "6ba2bf32688f419ab16a79c430f374295668fdcf809c38d43fa4cd998cd15232"
+    }
+  ]
+}

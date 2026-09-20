@@ -1,0 +1,19 @@
+{
+  "candidate_source": "00265",
+  "source_manifest": {
+    "path": "/home/linjiw/research-data/m2s-duck-source-qualification-20260916-v1/sources/00265/source.json",
+    "sha256": "34c223eb82eda44fd06280660e7c4de62c03ddb2ce112a2f9077136bc5b951f2"
+  },
+  "historical_audit": {
+    "path": "/home/linjiw/research-data/m2s-duck-source-qualification-20260916-v1/audit-complete-v1/analysis.json",
+    "sha256": "3701765b529c326dba5776c89c2a2ae838f769cba34668766e8662e35417a0b1"
+  },
+  "historically_evaluated_rows": 32,
+  "old_conditions": "Earlier teacher/motor/source task conditions; not current standing-prefix/original-motor qualification.",
+  "source_ancestry_scope": "Distinct clip identity; broader statistical independence is not established.",
+  "blocked_by_implementation": [
+    "PrimitiveSelectionCallback currently strips the literal 00976_bank_ prefix; general bank metadata mapping is needed before importing 00265.",
+    "New bank source needs a standing transition and full clear-space/beam task qualification with the current motor; historical outcomes cannot be inherited."
+  ],
+  "selection_status": "Read-only candidate-readiness inspection; not selected as a held-out test or physically rerun."
+}

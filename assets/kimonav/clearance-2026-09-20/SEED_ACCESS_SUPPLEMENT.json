@@ -1,0 +1,202 @@
+{
+  "checked_utc": "2026-09-20T07:39:56.928156+00:00",
+  "timing": "Post-registration supplementary broader case-insensitive metadata search; does not replace the original frozen search.",
+  "command": [
+    "rg",
+    "--no-ignore",
+    "-l",
+    "--iglob",
+    "*plan*.json",
+    "--iglob",
+    "*cases*.json",
+    "--iglob",
+    "*command*.json",
+    "--iglob",
+    "*protocol*.md",
+    "96171|96173",
+    "knav/artifacts",
+    "knav/research",
+    "/home/linjiw/research-data",
+    "/home/linjiw/groot-wbc-sonic-sim-trackb/gear_sonic/research"
+  ],
+  "matches_outside_current_study": [
+    "/home/linjiw/research-data/m2s-bfm-repaired-navigation-prep-20260912/dagger-evaluation/navigation/metrics/command-quality.json",
+    "/home/linjiw/research-data/m2s-duck-learned-prefix-teacher-recovery-20260916-v1/plan.json",
+    "/home/linjiw/research-data/m2s-duck-learned-prefix-motor-recovery-20260916-v1/plan.json",
+    "/home/linjiw/research-data/m2s-bfm-transformer-dagger-20260913/dagger-4-eval-navigation/metrics/command-quality.json",
+    "/home/linjiw/research-data/m2s-bfm-readout-20260913/round-4-seed-91261-full/metrics/command-quality.json",
+    "/home/linjiw/research-data/m2s-flow-context-20260913/token-residual-eval-full/metrics/command-quality.json",
+    "/home/linjiw/research-data/m2s-flow-context-20260913/regression-dagger-3-eval-full/metrics/command-quality.json",
+    "/home/linjiw/research-data/m2s-flow-context-20260913/regression-dagger-2-eval-navigation/metrics/command-quality.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/plan.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96171-00265-clear/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96171-00265-swept_005mm/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96171-00976-swept_005mm/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96173-00265-swept_005mm/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96173-00976-swept_005mm/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96173-00265-clear/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96173-00976-clear/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96171-00976-clear/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96173-00976-swept_005mm/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96173-00265-clear/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96173-00976-clear/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96171-00265-clear/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96171-00976-swept_005mm/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96171-00976-clear/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96173-00265-swept_005mm/attempt-01/command.json",
+    "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96171-00265-swept_005mm/attempt-01/command.json"
+  ],
+  "current_study_matches": 15,
+  "confirmed_prior_seed_commands": [],
+  "interpretation": "The matching historical IDs are optimizer seeds, while every matched native command uses execution seed 96161. No prior exact ++seed=96171/96173 command was found in this search. They are new execution seeds within the inspected records, not project-wide unused integers or independent-scene evidence.",
+  "historical_seed_roles": [
+    {
+      "case": "source_only-96171-00976-clear",
+      "optimizer_seed": 96171,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96171-00976-clear/attempt-01/command.json",
+        "sha256": "fb5737e89eec22f7ef929cf4289f8ff61d9153c8d6abb2534c541f7f62404b73"
+      }
+    },
+    {
+      "case": "source_only-96171-00976-swept_005mm",
+      "optimizer_seed": 96171,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96171-00976-swept_005mm/attempt-01/command.json",
+        "sha256": "d7a964b52b22ecaecfd69eeea2a2e8f62c9c1d4ea0a9af373ea86a13b06e6b8d"
+      }
+    },
+    {
+      "case": "source_only-96171-00265-clear",
+      "optimizer_seed": 96171,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96171-00265-clear/attempt-01/command.json",
+        "sha256": "efe1bfd864149ac6a9a19ee5d3311022043dcd3ab1867bc6795d5c24287c7ca2"
+      }
+    },
+    {
+      "case": "source_only-96171-00265-swept_005mm",
+      "optimizer_seed": 96171,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96171-00265-swept_005mm/attempt-01/command.json",
+        "sha256": "8dc648735db6c5e3d23a2ff96b9897fb2601c73509758d2a664ce081dd1b3981"
+      }
+    },
+    {
+      "case": "source_plus_corrections-96171-00976-clear",
+      "optimizer_seed": 96171,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96171-00976-clear/attempt-01/command.json",
+        "sha256": "2c79f68cad2c1f6d026058cbd779133cf28573e890d84ca27e0b366c0f8c94df"
+      }
+    },
+    {
+      "case": "source_plus_corrections-96171-00976-swept_005mm",
+      "optimizer_seed": 96171,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96171-00976-swept_005mm/attempt-01/command.json",
+        "sha256": "dd53f82013954ea2bff8d6e15099328470e855b0b0c9ed772750ee3266d0faa6"
+      }
+    },
+    {
+      "case": "source_plus_corrections-96171-00265-clear",
+      "optimizer_seed": 96171,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96171-00265-clear/attempt-01/command.json",
+        "sha256": "cac77ce04ffc27f69642abaf326fd6a05c3a9b97e81a238bf770de97051de56e"
+      }
+    },
+    {
+      "case": "source_plus_corrections-96171-00265-swept_005mm",
+      "optimizer_seed": 96171,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96171-00265-swept_005mm/attempt-01/command.json",
+        "sha256": "be6c436a36ffc738abc223bae250c1b92009eeae2113f8a2a4cc954e1433edb7"
+      }
+    },
+    {
+      "case": "source_only-96173-00976-clear",
+      "optimizer_seed": 96173,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96173-00976-clear/attempt-01/command.json",
+        "sha256": "4666b4c65396e9a7af27f598eaa479c6f259dcdfca5aa07101398f38892e164a"
+      }
+    },
+    {
+      "case": "source_only-96173-00976-swept_005mm",
+      "optimizer_seed": 96173,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96173-00976-swept_005mm/attempt-01/command.json",
+        "sha256": "d49f8f11c04648eaac81a55ee5997f2c3e89ac27027a5da9f756086a571e9d34"
+      }
+    },
+    {
+      "case": "source_only-96173-00265-clear",
+      "optimizer_seed": 96173,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96173-00265-clear/attempt-01/command.json",
+        "sha256": "05c9f884b48907efb4ec4131c1391a0e1717692f99290c6c999f668daded2559"
+      }
+    },
+    {
+      "case": "source_only-96173-00265-swept_005mm",
+      "optimizer_seed": 96173,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_only-96173-00265-swept_005mm/attempt-01/command.json",
+        "sha256": "4785e2114161a23e43740153041853111ed315b8f1728ddeebf8ed7a8f5b43fd"
+      }
+    },
+    {
+      "case": "source_plus_corrections-96173-00976-clear",
+      "optimizer_seed": 96173,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96173-00976-clear/attempt-01/command.json",
+        "sha256": "7ec58b34898864c56c080ba45d5945d7740e22ba042acd3d6ed539321cb2e7d7"
+      }
+    },
+    {
+      "case": "source_plus_corrections-96173-00976-swept_005mm",
+      "optimizer_seed": 96173,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96173-00976-swept_005mm/attempt-01/command.json",
+        "sha256": "f478671e6243c35d9ace6030edad1a9f0e4d4e239c88a8320132ac5c4f6cc3fe"
+      }
+    },
+    {
+      "case": "source_plus_corrections-96173-00265-clear",
+      "optimizer_seed": 96173,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96173-00265-clear/attempt-01/command.json",
+        "sha256": "fd06d9b0a62d2b6bccd0532e01f1e7083a3456a2df2ea707373c787006b5b5a7"
+      }
+    },
+    {
+      "case": "source_plus_corrections-96173-00265-swept_005mm",
+      "optimizer_seed": 96173,
+      "native_execution_seed": 96161,
+      "command": {
+        "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/evaluation/source_plus_corrections-96173-00265-swept_005mm/attempt-01/command.json",
+        "sha256": "91618efa2eca6343f28ca6a9860d8f8817c507364e3dea083c96beb18dbf8e65"
+      }
+    }
+  ],
+  "historical_plan": {
+    "path": "/home/linjiw/research-data/m2s-duck-director-learning-20260916-v1/physical/plan.json",
+    "sha256": "07e6bab76c5570dd83ebb22def5520883bd20fcd212651ee660ae47375bf78c8"
+  }
+}

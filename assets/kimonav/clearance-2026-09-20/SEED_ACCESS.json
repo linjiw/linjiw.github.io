@@ -1,0 +1,82 @@
+{
+  "checked_utc": "2026-09-20T07:30:23.515166+00:00",
+  "seeds": [
+    96171,
+    96173
+  ],
+  "metadata_files_searched": 171,
+  "roots": [
+    "knav/artifacts",
+    "knav/research",
+    "/home/linjiw/research-data",
+    "/home/linjiw/groot-wbc-sonic-sim-trackb/gear_sonic/research"
+  ],
+  "globs": [
+    "PLAN.json",
+    "CASES.json",
+    "PROTOCOL.md",
+    "COMMAND.json"
+  ],
+  "command": [
+    "rg",
+    "--no-ignore",
+    "-l",
+    "--glob",
+    "PLAN.json",
+    "--glob",
+    "CASES.json",
+    "--glob",
+    "PROTOCOL.md",
+    "--glob",
+    "COMMAND.json",
+    "96171|96173",
+    "knav/artifacts",
+    "knav/research",
+    "/home/linjiw/research-data",
+    "/home/linjiw/groot-wbc-sonic-sim-trackb/gear_sonic/research"
+  ],
+  "exit_code": 1,
+  "matches": [],
+  "prior_original_motor_panels": [
+    {
+      "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/PLAN.json",
+      "sha256": "c3b5a04184113d08d9b4f9e48790c578cb6a297a16ad803d7f5db8181b0e22cb",
+      "layouts": [
+        "clear",
+        "beam",
+        "beam_lower20"
+      ],
+      "seeds": [
+        96162,
+        96167
+      ]
+    },
+    {
+      "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/PLAN.json",
+      "sha256": "87d34340631700415aff4bf0fe2007d6c06f8ce2c438d2a32eee07adce6ac4fc",
+      "layouts": [
+        "clear",
+        "beam",
+        "beam_lower20"
+      ],
+      "seeds": [
+        96162,
+        96167
+      ]
+    },
+    {
+      "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/PLAN.json",
+      "sha256": "54aa533700bfe99f40e253b703298820265d30ef9ce8dcd3fe4cad83e5ba0645",
+      "layouts": [
+        "clear",
+        "beam",
+        "beam_lower20"
+      ],
+      "seeds": [
+        96162,
+        96167
+      ]
+    }
+  ],
+  "scope": "No occurrences of the chosen seeds in the searched plan/case/protocol/command metadata. New beam offsets are absent from the three original-motor panels; this is development within the same ancestry/corridor, not a globally untouched-data claim."
+}

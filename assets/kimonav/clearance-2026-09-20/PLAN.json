@@ -1,0 +1,61 @@
+{
+  "schema": "knav-distinct-clearance-admission-v1",
+  "registered_utc": "2026-09-20T07:32:36.725238+00:00",
+  "primary_attempts": 12,
+  "requests": 6,
+  "layouts": [
+    "beam_lower10",
+    "beam_lower30",
+    "beam_lower50"
+  ],
+  "seeds": [
+    96171,
+    96173
+  ],
+  "modes": [
+    "fixed_duck",
+    "fixed_lowered"
+  ],
+  "reused_physical_controls": 0,
+  "protocol": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/PROTOCOL.md",
+    "sha256": "4fb5149f7aa17ba05ecb0b5273443bf02287ca6dfe6a1244d7da854e03053dfc"
+  },
+  "seed_access": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/SEED_ACCESS.json",
+    "sha256": "303d5e8f9436aafff880da075697c7665bf3bd94c268331b0471a7da8b4f1b83"
+  },
+  "cases": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/CASES.json",
+    "sha256": "0a1230f9cc5d337dc9b5618616f3332bac16527a6d5c021793899bd09fb0e258"
+  },
+  "sources": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/SOURCES.json",
+    "sha256": "cdb276a3d6885ed6b1c21f2b804756c58627c52af9ab4618a7b52204ddc780b0"
+  },
+  "bank": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/BANK.json",
+    "sha256": "704095a758aaa0a5c1ab5985822375ea83fc040820ff1f87a3c727c87f87ff06"
+  },
+  "capability_ledger": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/CAPABILITY_LEDGER.json",
+    "sha256": "af991004733e8fe90c19930041e0080e572328657c79563d7bd5006893c78eec"
+  },
+  "preflight": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/PREFLIGHT.json",
+    "sha256": "b36ed4b83ecd6488a377b99afb00b9a6aba514f7493fab733fca3734c09e8048"
+  },
+  "execution_checkpoint": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/inputs/original/checkpoint.pt",
+    "sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909"
+  },
+  "common_config": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/clearance-admission-20260920/inputs/original/config.yaml",
+    "sha256": "d426da14e6f3c7ac9cfe2000330b460da7b192aa580323eb2b415227599d1c01"
+  },
+  "question": "Which previously unmeasured clearance requests are executable, and which does frozen shadow admission accept or reject?",
+  "resource_minimum_free_mib": 3500,
+  "training": false,
+  "hardware": false,
+  "scope": "Same ancestry/corridor development diagnostic; fixed capability probes with pre-action shadow decisions, not public admissions or continuous safety guarantees."
+}

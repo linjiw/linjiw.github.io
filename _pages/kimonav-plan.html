@@ -3,15 +3,15 @@ layout: none
 title: "KimoNav — Current research plan"
 permalink: /kimonav/plan/
 ---
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>KimoNav — Current research plan</title><link rel="canonical" href="https://linjiw.github.io/kimonav/plan/"><link rel="stylesheet" href="/assets/kimonav/traversal.css"></head><body><a class="skip" href="#document">Skip to document</a><main class="plan-document"><nav class="plan-nav" aria-label="Research documents"><a href="/kimonav/">← KimoNav</a><a href="/kimonav/motor/">Latest results</a><a href="/kimonav/crouch/">Reference comparison</a><a href="/kimonav/selection/">Public selector</a><a href="/kimonav/plan/">Current plan</a><a href="/kimonav/literature/">Literature</a></nav><article id="document" style="padding-top:32px"><h1>A usable whole-body navigation interface</h1>
-<p>Updated 19 September 2026 after the registered matched-configuration motor comparison. This is the current plan. Individual registered protocols and their original outcomes remain unchanged.</p>
-<p><strong>Keep the downstream goal:</strong> give a humanoid a destination and observations, let it coordinate route, torso, arms, pelvis, feet and speed through clutter, then arrive and remain stable. “Dexterous traversal” here means coordinated body motion. Finger manipulation, moving furniture and hand-supported climbing require additional contact capabilities and are later branches.</p>
-<p>The immediate question is now concrete: <strong>what execution evidence must accompany a proposed motion before the system accepts it for the current body state and clearance?</strong> Initial geometry-based selection is implemented; passing reference geometry alone still admits motions that physically collide. This is a candidate research question, not an established novelty claim. The existing <a href="/kimonav/literature/">literature assessment</a> already rules out presenting planner–tracker layering or a whole-body reference interface alone as new.</p>
-<h2>What changed our decision</h2>
-<p>The original SONIC weights now complete 6/6 fixed-reference tasks: 2/2 clear, 2/2 original beam and 2/2 at a 20 mm lower beam. The scene-motor controls are respectively 2/2, 2/2 and 0/2. Six new executions are paired with six retained controls, giving two gains and zero task regressions. The physical configuration, native reference bank, task clock, scoring, entry and initial observation/history are matched. The original weights use the current scene configuration, because the release's own saved configuration has different mass randomization. <a href="/kimonav/motor/">Complete results and configuration audit</a>.</p>
-<p>This is a stronger existing motor executing the same fixed motion, not a new planner or learned navigation result. At the difficult seed's pre-contact time, reference pelvis-height error is +16.259 mm with original weights versus +107.518 mm with the scene motor. The full task also succeeds; a tracking diagnostic alone would not justify promotion. Six scene executions contain two distinct complete action histories, one per familiar seed, on one inspected ancestry and corridor.</p>
-<p>The earlier coupled-crouch comparison remains informative within its scene-motor conditions: both constructions fail the lower beam, and the coupled edit still inherits an IK-derived budget. It did not demonstrate an end-to-end IK-free planner. The new result shows why motor selection must be reconsidered before adding reference complexity. The failed request was not physically impossible. <a href="/kimonav/crouch/">Reference-construction comparison</a>.</p>
-<p>The previously audited public selector still uses the scene motor and reports 2/2 clear, 2/2 original beam and 0/2 lower beam. Its original rejections, separate standing-profile correction and motor-specific execution ledger remain unchanged. Public integration of the stronger motor has not run. <a href="/kimonav/selection/">Public interface evidence</a>.</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>KimoNav — Current research plan</title><link rel="canonical" href="https://linjiw.github.io/kimonav/plan/"><link rel="stylesheet" href="/assets/kimonav/traversal.css"></head><body><a class="skip" href="#document">Skip to document</a><main class="plan-document"><nav class="plan-nav" aria-label="Research documents"><a href="/kimonav/">← KimoNav</a><a href="/kimonav/simple-reference/">Latest results</a><a href="/kimonav/motor/">Motor comparison</a><a href="/kimonav/selection/">Public selector</a><a href="/kimonav/plan/">Current plan</a><a href="/kimonav/literature/">Literature</a></nav><article id="document" style="padding-top:32px"><h1>A usable whole-body navigation interface</h1>
+<p>Updated 20 September 2026 after the registered simple-reference qualification. This is the current plan; historical protocols, failures and decisions remain preserved.</p>
+<p><strong>The goal remains:</strong> give a humanoid a destination and observations, let it coordinate route, torso, arms, pelvis, feet and speed through clutter, then arrive and remain stable. Dexterous traversal means coordinated body motion here. Finger manipulation, moving furniture and hand-supported climbing require additional contact capabilities.</p>
+<p>The immediate question is <strong>which proposed motions are executable under the current motor, body state and observed clearance, and what evidence should govern acceptance?</strong> A reference that fits the scene can still fail under a particular tracker. This is a candidate research question. Planner–tracker layering and a whole-body reference interface already have direct precedents; the <a href="/kimonav/literature/">literature assessment</a> does not establish novelty for this system outline.</p>
+<h2>The latest evidence simplifies the baseline</h2>
+<p>The planned <strong>eight new executions are complete</strong>. Under the original SONIC weights and the same scene evaluation configuration, the existing local-duck reference completes 6/6 tasks: 2/2 clear, 2/2 original beam and 2/2 with the beam 20 mm lower. The six reused IK-lowered controls also complete 6/6, with identical paired completion ticks. Nominal motion completes its two clear-space tasks; nominal obstacle tasks were not tested. <a href="/kimonav/simple-reference/">Every result and its audit</a>.</p>
+<p>Extra IK lowering is unnecessary for the observed successful executions in this panel. Retain local duck as the simpler supported fixed option, nominal as a qualified clear-space option in these conditions, and the IK controls as retained evidence. This does not establish equivalence, runtime savings or general traversal. There is one inspected source ancestry, one corridor and two familiar development seeds.</p>
+<p>The preceding matched-motor study remains the explanation for revisiting reference complexity: original weights solved two lower-beam failures that persisted under the previously selected scene motor. Changing the saved evaluation configuration would confound that result, so the original weights continue to use the common scene configuration. <a href="/kimonav/motor/">Motor comparison</a>, <a href="/kimonav/crouch/">earlier reference-construction comparison</a>.</p>
+<p>The public selector still uses the previous scene motor and ledger. Its published lower-beam result remains 0/2; no new public integration has run. Stronger fixed execution is not automatically stronger public navigation. <a href="/kimonav/selection/">Public-interface history</a>.</p>
 <h2>How the final system connects</h2>
 <table>
 <thead>
@@ -23,58 +23,60 @@ permalink: /kimonav/plan/
 </thead>
 <tbody>
 <tr>
-<td>User / upstream planner → task</td>
-<td>Destination region, optional heading/route/deadline/hold/contact constraints; eventually language</td>
-<td>Accepted task with units, frame, masks and persistent clock. No hidden answer motion.</td>
+<td>User or upstream planner → task</td>
+<td>Destination region; optional heading, route, deadline, hold and allowed-contact constraints; eventually language</td>
+<td>Accepted task with units, coordinate frame, masks and a persistent clock. No hidden answer motion.</td>
 </tr>
 <tr>
 <td>Sensors → state and scene estimate</td>
-<td>Proprioception, robot calibration/configuration, timestamps; later depth/LiDAR/RGB</td>
-<td>Body state and local support/obstacle/overhead geometry, including unknown space and observation age.</td>
+<td>Proprioception, robot calibration/configuration, timestamps; later depth, LiDAR or RGB</td>
+<td>Body state and local support, obstacle and overhead geometry, including unknown space and observation age.</td>
 </tr>
 <tr>
 <td>Task + estimate → whole-body planner</td>
-<td>Accepted task, current state/history, geometry and available motor capabilities</td>
-<td>A proposed continuation, its validity conditions and unresolved limitations. Route, posture, feet and speed are coordinated here.</td>
+<td>Accepted task, measured state/history, geometry and motor capabilities</td>
+<td>Proposed continuation with its execution conditions and unresolved limitations. Coordinate route, posture, feet and speed here.</td>
 </tr>
 <tr>
-<td>Planner → motor adapter</td>
-<td>Versioned joint/velocity/orientation reference and reference clock</td>
-<td>Correct native tracker input. Proposed root motion is not a direct root-position actuator.</td>
+<td>Planner → reference adapter</td>
+<td>Versioned joints, velocities, orientations and reference clock</td>
+<td>Correct native tracker input. Planned pelvis/root motion is not a direct root-position actuator.</td>
 </tr>
 <tr>
 <td>Motor → robot</td>
 <td>Reference plus actual proprioception and action history</td>
-<td>Joint commands and physical motion. Balance and contact execution must be measured.</td>
+<td>Joint commands and physical motion; measure balance, contact and task execution.</td>
 </tr>
 <tr>
-<td>Execution → task supervisor</td>
+<td>Execution → supervisor</td>
 <td>Actual progress, contact, stability, remaining time and observation quality</td>
-<td>Completion, continued execution, a new planning request, or no supported continuation. A stop/fallback needs its own qualification.</td>
+<td>Completion, continued execution, a new planning request or no supported continuation. Stopping and fallback motions need their own qualification.</td>
 </tr>
 </tbody>
 </table>
-<p>Today: one G1 model, one inspected motion ancestry and corridor, known map/localization and nominal standing protocol. Two native trackers have now been compared; the public interface still uses the previously audited scene tracker. Reference packing uses ten future samples; the selected reference is generated from an independent bank. The public interface chooses once. Online moving replacement, broader geometry, sensing robustness and hardware are unestablished.</p>
-<h2>Next experiment: qualify simpler references with the stronger motor</h2>
-<p>Retain original weights under the same common scene configuration as the strongest fixed control for this panel. Before attributing the new capability to extra reference lowering, test the unmodified local-duck source with those weights and qualify a nominal clear-space option.</p>
-<p>The proposed cap is <strong>eight new executions</strong>: original motor + fixed local duck × clear/original beam/beam −20 mm × seeds 96162 and 96167 (six), plus original motor + fixed nominal × clear × the same two seeds (two). Compare local duck with the six original-motor fixed-IK executions acquired in the completed motor study. This is a proposed budget, not a registered or executed panel. Do not count the reused controls again as new data.</p>
+<p>Today the fixed controls use one G1 model, known geometry/localization, a nominal standing protocol and an independent motion bank. The older public interface makes one initial choice. There is no established moving replacement, general destination coverage, perception robustness or hardware result.</p>
+<h2>Next bounded check: connect qualified motions to public requests</h2>
+<p>The proposed cap is <strong>six new public-interface executions</strong>: clear, original beam and beam −20 mm, each at the two familiar seeds. This is proposed, not registered or executed. Reuse the completed nominal clear and local-duck fixed controls, plus retained lowered controls; do not count them again as newly acquired data.</p>
 <ol>
-<li><strong>Freeze the stronger execution interface.</strong> Preserve the original checkpoint bytes, common scene configuration, 640D reference / 64D token / 930D history / 29D action contract, entry transition, clock and complete-task score. Reuse the model-identity, first-query and actual-dynamics gates. Keep source motions unchanged; new outcomes may not tune amplitude, phase or thresholds.</li>
-<li><strong>Test the simple reference and ordinary clear-space option.</strong> If local duck retains the lower-beam gains, keep it as the simpler supported option; this would narrow the need for extra posture construction in these conditions. If it loses tasks, retain the IK-lowered control for those requests. Nominal clear-space failures remain failures and preclude assuming a cheap nominal option is qualified. Report every outcome, conditional completion time, body contact and first-versus-peak contact timing. Extra seed repeats do not establish independent-source generalization.</li>
-<li><strong>Integrate public choice with a separate motor-specific ledger.</strong> Use only primitives that qualify under the selected motor. Before execution, freeze the ledger and request-to-candidate rules; do not silently transplant the scene-motor ledger. Test actual public requests against the strongest fixed candidates with identical goal, map, initial state and deadline. A fixed crouch that succeeds in all three layouts does not itself show geometry-conditioned choice. Include the nominal option only if its clear-space behavior has been established.</li>
-<li><strong>Measure useful admission on separate conditions.</strong> Freeze a clearance/initial-state panel distinct from the familiar calibration cases, and compare execution-informed admission against the same reference-only geometry screen at the same motor and bank. Count complete tasks over every request, false admissions and solvable requests rejected. Do not claim a continuous safe envelope from discrete successes. No supported continuation must remain explicit; an executable stop, detour or fallback requires its own qualification.</li>
-<li><strong>Add online replacement for an actual unresolved need.</strong> Qualify a continuation from a measured deviated state before testing replanning. Preserve action history, committed frames, elapsed task time and support uncertainty, and compare with the strongest fixed control. A posture-timing repair is no longer the immediate response to these two lower-beam failures: an existing motor already solves them.</li>
+<li><strong>Freeze a motor-specific ledger and profile.</strong> Bind original checkpoint, common saved configuration, candidate hashes, reference clock, score and standing-entry conditions. Keep observed successes/failures and untested candidates explicit. The sustained candidate has no new original-motor qualification and must not inherit scene-motor results. Use the corrected separation of configured calibration offsets from actual deviations. Two beam heights do not qualify every height between them.</li>
+<li><strong>Freeze the public rule before execution.</strong> Use destination, known geometry and measured state to choose among qualified candidates with the existing simple geometry/posture-cost rule. No access to the current episode's eventual outcome or external answer reference. Verify map changes select nominal for clear space and a supported duck for the beams. Count every pre-action rejection; rejection is not a demonstrated safe stop.</li>
+<li><strong>Audit the physical connection.</strong> Preserve the existing complete-task score and 10 s deadline. Match entry, actual dynamics, gains, initial observations, motor history and clock to the fixed controls. Verify selected reference inputs and controller output, then measure the complete task. Equal public and fixed execution is a useful integration check, not an independent generalization result.</li>
+<li><strong>Keep the simplest credible rival.</strong> Geometry-only and evidence-filtered selection may choose the same nominal/local-duck options in these cases. If so, state the tie. A ledger that changes nothing has not demonstrated a better admission mechanism. Do not require a preferred architecture to win this familiar panel.</li>
 </ol>
-<p>The mechanism question is becoming more specific: what motor-dependent execution conditions must a planner carry with its proposed body motion, and how should observation uncertainty change the accepted continuation? The current evidence motivates that question but does not prove novelty or a general solution. Student scaling remains deferred until the chosen interface and useful task coverage are established.</p>
-<h2>Broader validation after this gate</h2>
+<p>After this one integration check, move beyond this familiar pair. Do not repeatedly tune the same two seeds or add posture complexity without an unresolved failure that requires it.</p>
+<h2>The next substantive research test</h2>
+<p>Freeze distinct clearance and initial-state conditions before their outcomes. Separate calibration evidence from the test panel; changing only a random seed does not create a new scene or source. Compare an execution-informed admission mechanism with the same reference-only geometry screen, bank and motor. Include the strongest fixed candidate available at matched information.</p>
+<p>Measure complete tasks over <strong>all requests</strong>, false admissions, and solvable requests rejected. A rule that rejects difficult requests must account for the lost coverage. Discrete successes are evidence at those conditions, not a continuous safe envelope. Unsupported requests need an explicit status; a useful executable stop or detour requires separate evidence.</p>
+<p>The mechanism must specify what execution conditions it carries with a motion—motor/configuration identity, start/support conditions, clearance uncertainty or measured tracking deviation—and which of those actually improve decisions. This question is motivated by the observed motor dependence. It has not yet been solved or shown novel. A fixed crouch succeeding everywhere in a small panel cannot establish the value of scene-dependent planning.</p>
+<h2>Extend toward the intended downstream problem</h2>
 <ul>
-<li>Add independent source ancestries and scene families, including narrow lateral passages and combined height/width constraints. Include a supported alternate route so the system can prefer an ordinary detour when that solves the task.</li>
-<li>Qualify new initial poses, speeds and disturbances. Keep configured calibration offsets separate from actual body deviations; do not erase a moving-start mismatch through coordinate normalization.</li>
-<li>Replace known geometry with timestamped partial observations while holding task, planner and motor fixed. Test occlusion, pose error, latency and dropout. Unknown space and stale observations must remain explicit, and sensing must change physical decisions appropriately.</li>
-<li>Then evaluate longer routes, destination changes and stopping precision, followed by grounded language. New terrain support, permitted hand contact and hardware each require separate execution evidence.</li>
+<li>Add independent motion ancestries and scene families, narrow lateral passages and combined height/width constraints. Offer an alternate route when ordinary detouring is preferable to contortion.</li>
+<li>Qualify moving starts, disturbances and a continuation from an actual deviated body state before online replacement. Preserve action history, support uncertainty, committed motion and elapsed task time.</li>
+<li>Replace ideal geometry with timestamped partial observations while holding the task and motor fixed. Test occlusion, localization error, latency and dropout. Keep unknown space explicit and verify that changed observations lead to appropriate executable decisions.</li>
+<li>Then expand destinations, route lengths, goal changes and stopping precision, followed by grounded language. New terrain support, permitted hand contact and hardware each need separate evidence.</li>
 </ul>
-<p>The prior goal-only/student branch remains a bounded comparison. Lower imitation error alone does not earn promotion. Preserve repaired84 training membership, reserved20/excluded16 separation and stable motion–text identities. Do not mix the adjacent program's distinct resets, reference clocks or distance-extension results into this clearance study.</p>
-<h2>Reading and evidence priorities</h2>
-<p>Review literature when it changes a specific decision: execution-aware whole-body planning, state/calibration representations, tracking-error bounds, uncertain clearance and observation latency. Compare task definitions, tracker strength, runtime information and collision scoring before attributing a gain to a new interface. TANGO, PASSAGE and the reviewed tracker work remain direct comparators; reading their methods is not reproducing them.</p>
-<p>The next convincing contribution needs a concrete mechanism that improves useful complete-task coverage over these strengthened simple controls on independent conditions. The website's schematic shows the intended connections; measured experiment figures and their source records carry the evidence.</p>
-<p><a href="/assets/kimonav/motor-2026-09-19/CURRENT_PLAN.md">Download the current plan</a>. <a href="/assets/kimonav/crouch-2026-09-19/CURRENT_PLAN.md">Previous plan snapshot</a>.</p></article></main></body></html>
+<p>Student scaling remains deferred until a useful task interface and credible control baseline exist. Lower imitation error alone is insufficient. Preserve repaired84 training membership, reserved20/excluded16 separation and stable motion–text identities. Keep the adjacent program's different reset/terrain/task profiles separate.</p>
+<h2>Reading and claim discipline</h2>
+<p>Read additional work to decide a concrete mechanism: execution-aware whole-body planning, tracking-error bounds, support-state representations, uncertain clearance and observation latency. Match tracker strength, available observations, task definitions and collision scoring before attributing gains to a planner. TANGO, PASSAGE and the reviewed tracker work remain comparators; reading their methods is not reproduction.</p>
+<p>The next contribution needs improved useful task coverage over these strengthened simple controls on independent conditions. The website's interactive schematic explains intended connections; measured figures and linked raw audits carry the experimental evidence.</p>
+<p><a href="/assets/kimonav/simple-reference-2026-09-20/CURRENT_PLAN.md">Download the current plan</a>. <a href="/assets/kimonav/motor-2026-09-19/CURRENT_PLAN.md">Previous plan snapshot</a>.</p></article></main></body></html>

@@ -1,0 +1,53 @@
+{
+  "study": "simple-reference-motor-20260920",
+  "assets": [
+    {
+      "file": "ANALYSIS.json",
+      "sha256": "c8e4436d1ddf91591e9a2a0cf3fb5b29cbb29a41af1db77eb74f82fc41529397"
+    },
+    {
+      "file": "AUDIT.json",
+      "sha256": "f6428874e150c15a383a26ef09cf4b14e8b7cdd91a3ec956e2af4f34dc1253f8"
+    },
+    {
+      "file": "CODEC_AUDIT.json",
+      "sha256": "0393b93e423a89d449f1e4d85ae5e8637b6eaa5894907fc8b67315dda9806b3e"
+    },
+    {
+      "file": "CURRENT_PLAN.md",
+      "sha256": "4b8d99dcd2e30a463369213a02dbca5e535b45cc3b20b5bb01ea3e8f75805ac3"
+    },
+    {
+      "file": "PLAN.json",
+      "sha256": "87d34340631700415aff4bf0fe2007d6c06f8ce2c438d2a32eee07adce6ac4fc"
+    },
+    {
+      "file": "PREFLIGHT.json",
+      "sha256": "5a5a5fcc1808130cf1d0324c79f817635bd06370a251d8904fc94d24f58c233d"
+    },
+    {
+      "file": "PROTOCOL.md",
+      "sha256": "1fd4b0aab8d040e6ac119d62d8ed6cff72548f3465c74f2e9dcc8a69a0b9b7c4"
+    },
+    {
+      "file": "REPORT.md",
+      "sha256": "efc6bb823f7594320484feee152ed537efa28560623a61d470a6a78eafc9c67d"
+    },
+    {
+      "file": "REUSE.json",
+      "sha256": "3c9370e91fa62aff2a80ae483866683f192895c699154a951de66fa255f884e0"
+    },
+    {
+      "file": "TEST_RESULTS.txt",
+      "sha256": "3ddaab181e0e3a06d5a196a89da38cade37ce3812ff9ea1b1d3d27da23d69a54"
+    },
+    {
+      "file": "simple-reference-outcomes.png",
+      "sha256": "61e57eedd6685488396b4448f89f2768c81a23c97abd754122ca2bb96ad4eccd"
+    },
+    {
+      "file": "simple-reference-outcomes.svg",
+      "sha256": "ab670552b183c0e939ac182496d419486d7ee6291f6ad8ae657a2244da8dd814"
+    }
+  ]
+}

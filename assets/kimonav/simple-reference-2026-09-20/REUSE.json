@@ -1,0 +1,678 @@
+{
+  "parent_audit": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/AUDIT.json",
+    "sha256": "569418308636c56286d42c967886a764fd25bbf2b88d46659312c96886299f0f"
+  },
+  "parent_codec": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/CODEC_AUDIT.json",
+    "sha256": "54863553c6beecb3bd2e12eb135165453452419fbc7ae14e8ac3e6b8bb15eb93"
+  },
+  "controls": [
+    {
+      "layout": "clear",
+      "seed": 96162,
+      "run": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/TASK.json",
+          "sha256": "f4465e3e4c8c427fa0ea13fb86b1da47490e2f93465620fdeda478e6bfe2e8bf"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/CONFIG.json",
+          "sha256": "95333556919c934715fc46301154f426f79516504ea9a2ab1dc772e7b544fe57"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/COMMAND.json",
+          "sha256": "080099c1bedf986e57e0b9b38190d0b8d49f653546f2c9d14323a01ef140abef"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/STATUS.json",
+          "sha256": "ee6eecefbc59feba15f7c408cae00d188e2b33a26b6213b14c3c5797c6501c2d"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/ACTUATOR_ENTRY.npz",
+          "sha256": "23823970916c422f8591958ef2a04e8c5fd0fb68d201801323766067b8d597f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/ENTRY.npz",
+          "sha256": "a0e1fe5c7e5915b28954d04486a1f8280ada0a27e6b07cd5e90043f246eb0c53"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/duck-features.npz",
+          "sha256": "fdc4c2c210b8a5cf0b3098e700c9ba672383926682df5eca83ebb2d06c35833d"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/dynamics-entry.npz",
+          "sha256": "25cf7e9008ba59c437cb87c064fa333f6fde4cf0bc37a358d2fb5a1a2082fc35"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/native-episode.npz",
+          "sha256": "560385716ba8c2b76a2e1e5d187a64b44744c5ba79717f85a4445eb3d9d77675"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/pre-action-poses.npz",
+          "sha256": "2094bcb1cf5b0f1cf24407784fe27a2a1a8e6f78f3df4a8cee41bc924e1df31d"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/robot-poses.npz",
+          "sha256": "7f1667ee50be98a7c0df3c2d52fb3977c9823a12dfc792775f1034ac86b6dd32"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/trace.npz",
+          "sha256": "1d305018c2c742c631d5360b077b2be04cbb9270f4fc33fa993e401d9cec37a5"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/depth-source.json",
+          "sha256": "2d77852e68437077118367c53ca9f48181a59d9f8fbe923a6558ede564dc2fd9"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/task-result.json",
+          "sha256": "4f218f53e8150f8b99aa102b345e267fe106ce8f177068abc514710a6d0b6719"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/SELECTION.json",
+          "sha256": "f4bbd6c775ede95b3672d352afa37eaa2f12e23e1117736899a1a97d4ad873b1"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/MOTOR_IDENTITY.json",
+          "sha256": "5fa16fa5049d24d731ba539f11e8e6c88bee1c3208ca1f12ee970762b95fe8dd"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96162/task/FIRST_QUERY.json",
+          "sha256": "a6274245837316e1ff09f3636e1f49cb8ea1de79978d4ce419e1554e54ba4b76"
+        }
+      ]
+    },
+    {
+      "layout": "clear",
+      "seed": 96167,
+      "run": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/TASK.json",
+          "sha256": "f4465e3e4c8c427fa0ea13fb86b1da47490e2f93465620fdeda478e6bfe2e8bf"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/CONFIG.json",
+          "sha256": "c08f15903646a723ee451ea281cf32f9f1b1eb96b3fb8f660ee953eb87513ffa"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/COMMAND.json",
+          "sha256": "cd7e9f1884bdb73c2f3685571c52da6294379773ac272a8e90add895402b3501"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/STATUS.json",
+          "sha256": "9dbb2f06cc921639c4acfbe96161fa61b5a6372799004480c48d7812d71e0db3"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/ACTUATOR_ENTRY.npz",
+          "sha256": "23823970916c422f8591958ef2a04e8c5fd0fb68d201801323766067b8d597f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/ENTRY.npz",
+          "sha256": "d70c4070094fb09ea9f689f76ff98b776f5b0431a2cdeb06d290c54dfa3aff1c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/duck-features.npz",
+          "sha256": "242d9ca4a45ed89374fe804fe0fba0a4cbb124bcd656d8148f71f8325e50fe51"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/dynamics-entry.npz",
+          "sha256": "ff8dc0877410ffc70281b75cec8ea6704618d5a79c0a27a0c2e5a75822d84fd1"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/native-episode.npz",
+          "sha256": "5fc0f3b11104f0bec888b83febb703bd34a333039fcbe4dd1fd4203c4dba889c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/pre-action-poses.npz",
+          "sha256": "7ce6aee69252d1f39dea3d76c7f0b245b3184984ccdf932049bd678219287a18"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/robot-poses.npz",
+          "sha256": "15fcf29499ba253e60b06cc613a0981f76c3a7e51e49bf29c0d378885f338ffd"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/trace.npz",
+          "sha256": "90c9bba972c2a5fd50340149357c9acad843d52993c6bdc677e61e8859692e45"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/depth-source.json",
+          "sha256": "239d1e2f070bcf737b427beb0d4ccea1f24e51a9f6a40562a64a7f0f3cd465d9"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/task-result.json",
+          "sha256": "3eaf3b33e1422d4db89ded31b24c6b8f266eed3b58809fc988024e0317ce26cf"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/SELECTION.json",
+          "sha256": "f4bbd6c775ede95b3672d352afa37eaa2f12e23e1117736899a1a97d4ad873b1"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/MOTOR_IDENTITY.json",
+          "sha256": "5fa16fa5049d24d731ba539f11e8e6c88bee1c3208ca1f12ee970762b95fe8dd"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/clear-original-96167/task/FIRST_QUERY.json",
+          "sha256": "a6274245837316e1ff09f3636e1f49cb8ea1de79978d4ce419e1554e54ba4b76"
+        }
+      ]
+    },
+    {
+      "layout": "beam",
+      "seed": 96162,
+      "run": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/TASK.json",
+          "sha256": "dca5889685e473dd5dd929f50b4483c07775405d0502aab03ad3d6f86e60e406"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/CONFIG.json",
+          "sha256": "a74ff61b1d6d8d8f2cef7543eab1cf29b6cacdc15f94b1daa6d5e23d4df319d0"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/COMMAND.json",
+          "sha256": "cb16554a1912cd07e0c042c5ca0a416e41b3e3c0e1f8df15db1055d538d4e90a"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/STATUS.json",
+          "sha256": "f96440525438c761649881c4859ccfcc1446ead944c01d36a06180f408cb9097"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/ACTUATOR_ENTRY.npz",
+          "sha256": "23823970916c422f8591958ef2a04e8c5fd0fb68d201801323766067b8d597f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/ENTRY.npz",
+          "sha256": "a0e1fe5c7e5915b28954d04486a1f8280ada0a27e6b07cd5e90043f246eb0c53"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/duck-features.npz",
+          "sha256": "fdc4c2c210b8a5cf0b3098e700c9ba672383926682df5eca83ebb2d06c35833d"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/dynamics-entry.npz",
+          "sha256": "25cf7e9008ba59c437cb87c064fa333f6fde4cf0bc37a358d2fb5a1a2082fc35"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/native-episode.npz",
+          "sha256": "560385716ba8c2b76a2e1e5d187a64b44744c5ba79717f85a4445eb3d9d77675"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/pre-action-poses.npz",
+          "sha256": "2094bcb1cf5b0f1cf24407784fe27a2a1a8e6f78f3df4a8cee41bc924e1df31d"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/robot-poses.npz",
+          "sha256": "7f1667ee50be98a7c0df3c2d52fb3977c9823a12dfc792775f1034ac86b6dd32"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/trace.npz",
+          "sha256": "adae0097141525fe4cbf10211845f70ce84afb9fd2dc5506a684c8e183d35786"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/depth-source.json",
+          "sha256": "889998a8a35d1611a2eb802028c435678ea7ff0c0647893c6d460c29c00b8e95"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/task-result.json",
+          "sha256": "254394eefda9833f9c5730566f79f0eb419fbfab9cc372a6657982abe72b52ae"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/SELECTION.json",
+          "sha256": "66f98f9a779f98eb3b0f59a64df3f3fdb7a319d047ed282ddefe42709a65f99e"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/MOTOR_IDENTITY.json",
+          "sha256": "5fa16fa5049d24d731ba539f11e8e6c88bee1c3208ca1f12ee970762b95fe8dd"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96162/task/FIRST_QUERY.json",
+          "sha256": "a6274245837316e1ff09f3636e1f49cb8ea1de79978d4ce419e1554e54ba4b76"
+        }
+      ]
+    },
+    {
+      "layout": "beam",
+      "seed": 96167,
+      "run": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/TASK.json",
+          "sha256": "dca5889685e473dd5dd929f50b4483c07775405d0502aab03ad3d6f86e60e406"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/CONFIG.json",
+          "sha256": "fead15a8fa3dbba70d781857d70bdb7b6a2e6b8c0877efd3e948cdd760ff42df"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/COMMAND.json",
+          "sha256": "64d291ccbecd941ab9e180dd5802e5d26396aa48dc6a0cb2683792a72f016660"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/STATUS.json",
+          "sha256": "feb415fbb38b4c5f6550e3282d2d1f7079303aa06ee85944956ef17e5338f9f8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/ACTUATOR_ENTRY.npz",
+          "sha256": "23823970916c422f8591958ef2a04e8c5fd0fb68d201801323766067b8d597f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/ENTRY.npz",
+          "sha256": "d70c4070094fb09ea9f689f76ff98b776f5b0431a2cdeb06d290c54dfa3aff1c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/duck-features.npz",
+          "sha256": "242d9ca4a45ed89374fe804fe0fba0a4cbb124bcd656d8148f71f8325e50fe51"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/dynamics-entry.npz",
+          "sha256": "ff8dc0877410ffc70281b75cec8ea6704618d5a79c0a27a0c2e5a75822d84fd1"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/native-episode.npz",
+          "sha256": "5fc0f3b11104f0bec888b83febb703bd34a333039fcbe4dd1fd4203c4dba889c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/pre-action-poses.npz",
+          "sha256": "7ce6aee69252d1f39dea3d76c7f0b245b3184984ccdf932049bd678219287a18"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/robot-poses.npz",
+          "sha256": "15fcf29499ba253e60b06cc613a0981f76c3a7e51e49bf29c0d378885f338ffd"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/trace.npz",
+          "sha256": "91f92c89f7ec2f54fd61e59c71ff5900b2dd47aa2a17062a822ec2dd2bedb11f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/depth-source.json",
+          "sha256": "955e210b14f72088dfb091cabbe453e931a95faacc74393c22737d4af6d453a4"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/task-result.json",
+          "sha256": "2a76d7c3cf4cae6b8adcb3e936e5230e490896973ad10dcb5ff7a11bc462b1e0"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/SELECTION.json",
+          "sha256": "66f98f9a779f98eb3b0f59a64df3f3fdb7a319d047ed282ddefe42709a65f99e"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/MOTOR_IDENTITY.json",
+          "sha256": "5fa16fa5049d24d731ba539f11e8e6c88bee1c3208ca1f12ee970762b95fe8dd"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam-original-96167/task/FIRST_QUERY.json",
+          "sha256": "a6274245837316e1ff09f3636e1f49cb8ea1de79978d4ce419e1554e54ba4b76"
+        }
+      ]
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96162,
+      "run": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/TASK.json",
+          "sha256": "d2c7f0a9442db2bf14382e3602da64d0f3cbc7d723bee0cd17bf8f90a19d0e1c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/CONFIG.json",
+          "sha256": "3a9d9bed1dbbeaa75b8d4ecf3eec0ee033610dca9b2ccf0bedb196c2e92d025e"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/COMMAND.json",
+          "sha256": "9e6fb0a1ba9f11adde814df6674f1b9e85b461b1bb63ed3fc65c7fafed98ab5b"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/STATUS.json",
+          "sha256": "d4eee38fdc03cf2bcc419f2f8ad728d31f96a8be68364a16564ab3b6dbaf601f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/ACTUATOR_ENTRY.npz",
+          "sha256": "23823970916c422f8591958ef2a04e8c5fd0fb68d201801323766067b8d597f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/ENTRY.npz",
+          "sha256": "a0e1fe5c7e5915b28954d04486a1f8280ada0a27e6b07cd5e90043f246eb0c53"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/duck-features.npz",
+          "sha256": "288e7f2acd2ad992d3e4187fdbeecd8223325ed818595040510e16b9fc0aa7b1"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/dynamics-entry.npz",
+          "sha256": "25cf7e9008ba59c437cb87c064fa333f6fde4cf0bc37a358d2fb5a1a2082fc35"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/native-episode.npz",
+          "sha256": "560385716ba8c2b76a2e1e5d187a64b44744c5ba79717f85a4445eb3d9d77675"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/pre-action-poses.npz",
+          "sha256": "2094bcb1cf5b0f1cf24407784fe27a2a1a8e6f78f3df4a8cee41bc924e1df31d"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/robot-poses.npz",
+          "sha256": "7f1667ee50be98a7c0df3c2d52fb3977c9823a12dfc792775f1034ac86b6dd32"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/trace.npz",
+          "sha256": "adae0097141525fe4cbf10211845f70ce84afb9fd2dc5506a684c8e183d35786"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/depth-source.json",
+          "sha256": "581d25e75b05ab7ad3eb5e0baae2841813f33b2704dc8565e3a063b12bfdf023"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/task-result.json",
+          "sha256": "bfb2d9ba41a668a0b7ff7a26d1e965cad87092459ea1d42ad155d5ce0e1f1eb0"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/SELECTION.json",
+          "sha256": "72d67adeddbc371e9873c2b2f095420906c33dd84c8b0f9160a992513ae9916c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/MOTOR_IDENTITY.json",
+          "sha256": "5fa16fa5049d24d731ba539f11e8e6c88bee1c3208ca1f12ee970762b95fe8dd"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96162/task/FIRST_QUERY.json",
+          "sha256": "a6274245837316e1ff09f3636e1f49cb8ea1de79978d4ce419e1554e54ba4b76"
+        }
+      ]
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96167,
+      "run": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167",
+      "files": [
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/TASK.json",
+          "sha256": "d2c7f0a9442db2bf14382e3602da64d0f3cbc7d723bee0cd17bf8f90a19d0e1c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/CONFIG.json",
+          "sha256": "044d6eaa01041cf5805e337e2593bcd337f1a2a2c43cf93a9a64151cbc733cbd"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/ENTRY_SPEC.json",
+          "sha256": "3788620f7d02eb81a362d80756caa571bdf162fd6456e345ba6cd20e67e0ac6f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/COMMAND.json",
+          "sha256": "1ec4bcda10e5dca629dbeff5554be90c95e41eb6df794a12051e4c8528673fdc"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/STATUS.json",
+          "sha256": "c7d56116feecd92dcad4c1e25b98c8e53bd2fe85788e712d008aada962c67bb7"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/ACTUATOR_ENTRY.npz",
+          "sha256": "23823970916c422f8591958ef2a04e8c5fd0fb68d201801323766067b8d597f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/ENTRY.npz",
+          "sha256": "d70c4070094fb09ea9f689f76ff98b776f5b0431a2cdeb06d290c54dfa3aff1c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/duck-features.npz",
+          "sha256": "2eb724d0154fef6cc1b4bcfcbc212642e5cc3c78286d6fd70409f2abcea3a32c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/dynamics-entry.npz",
+          "sha256": "ff8dc0877410ffc70281b75cec8ea6704618d5a79c0a27a0c2e5a75822d84fd1"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/local_duck-native-library.npz",
+          "sha256": "0411d6c8354a2baed9d9d2cdf9413e8352c3b983376dfcd3665fa21119ebe5a8"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/local_duck-support-hypotheses.npz",
+          "sha256": "3c904a91e806963645ae7be820a2c2bf0659ecbc7144ae678b2a175f83a32412"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/lowered-native-library.npz",
+          "sha256": "fdfb9b7f7ce2c19e310fc832f5b976fb1ca48cffb80531b4c02f84271fc85a37"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/lowered-support-hypotheses.npz",
+          "sha256": "6bb5300729ccc3be4164963973fa0c67f57776e837a3bce194e34295fdee2e00"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/native-episode.npz",
+          "sha256": "5fc0f3b11104f0bec888b83febb703bd34a333039fcbe4dd1fd4203c4dba889c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/nominal-native-library.npz",
+          "sha256": "f1e2b56a1352edc94ee31895c1683acff03c693d25dcef79cd9b63bed75173ec"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/nominal-support-hypotheses.npz",
+          "sha256": "28c37170a42693ad6999835ec37bc925e2968935cb2445486c94222f0e82afe2"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/pre-action-poses.npz",
+          "sha256": "7ce6aee69252d1f39dea3d76c7f0b245b3184984ccdf932049bd678219287a18"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/robot-poses.npz",
+          "sha256": "15fcf29499ba253e60b06cc613a0981f76c3a7e51e49bf29c0d378885f338ffd"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/sustained-native-library.npz",
+          "sha256": "3915fb63b0b5725649b380272d77164c242eee0136e3873d3cf089bda3d8f5f6"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/sustained-support-hypotheses.npz",
+          "sha256": "16ba9ebc2f2f1305db9c1c20322d47d2f5a6dfec691efbc0719ec968402aff83"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/trace.npz",
+          "sha256": "91f92c89f7ec2f54fd61e59c71ff5900b2dd47aa2a17062a822ec2dd2bedb11f"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/depth-source.json",
+          "sha256": "8a9be2bea47cd460599ababb221f3b465829f9fc7de7a06b4c168d31cfcecb86"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/task-result.json",
+          "sha256": "57f64cecec83386fa15974e99f49e10125f2bed690a48e1ed4b73be4b519aad3"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/SELECTION.json",
+          "sha256": "72d67adeddbc371e9873c2b2f095420906c33dd84c8b0f9160a992513ae9916c"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/MOTOR_IDENTITY.json",
+          "sha256": "5fa16fa5049d24d731ba539f11e8e6c88bee1c3208ca1f12ee970762b95fe8dd"
+        },
+        {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/runs/beam_lower20-original-96167/task/FIRST_QUERY.json",
+          "sha256": "a6274245837316e1ff09f3636e1f49cb8ea1de79978d4ce419e1554e54ba4b76"
+        }
+      ]
+    }
+  ]
+}

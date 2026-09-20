@@ -1,0 +1,58 @@
+{
+  "schema": "knav-simple-reference-original-motor-v1",
+  "registered_utc": "2026-09-20T06:23:20.294451+00:00",
+  "modes": [
+    "fixed_duck",
+    "fixed_nominal"
+  ],
+  "layouts": [
+    "clear",
+    "beam",
+    "beam_lower20"
+  ],
+  "seeds": [
+    96162,
+    96167
+  ],
+  "primary_attempts": 8,
+  "local_duck_attempts": 6,
+  "nominal_clear_attempts": 2,
+  "reused_controls": 6,
+  "comparison_parent": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919",
+  "protocol": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/PROTOCOL.md",
+    "sha256": "1fd4b0aab8d040e6ac119d62d8ed6cff72548f3465c74f2e9dcc8a69a0b9b7c4"
+  },
+  "bank": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/BANK.json",
+    "sha256": "704095a758aaa0a5c1ab5985822375ea83fc040820ff1f87a3c727c87f87ff06"
+  },
+  "reuse": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/REUSE.json",
+    "sha256": "3c9370e91fa62aff2a80ae483866683f192895c699154a951de66fa255f884e0"
+  },
+  "preflight": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/PREFLIGHT.json",
+    "sha256": "5a5a5fcc1808130cf1d0324c79f817635bd06370a251d8904fc94d24f58c233d"
+  },
+  "execution_checkpoint": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/inputs/original/checkpoint.pt",
+    "sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909"
+  },
+  "common_config": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/inputs/original/config.yaml",
+    "sha256": "d426da14e6f3c7ac9cfe2000330b460da7b192aa580323eb2b415227599d1c01"
+  },
+  "question": "Does an unchanged local-duck source retain the original motor lower-beam successes, and does nominal clear-space execution qualify?",
+  "scope": "One familiar ancestry/corridor and two familiar seeds; fixed references, no public integration, tuning, source generation or training",
+  "training": false,
+  "hardware": false,
+  "cases": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/CASES.json",
+    "sha256": "f91e4dbb7aa24181be7ca100ed65bf0ac5e4ca43e30dc5e39fda6a05367386a8"
+  },
+  "sources": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/SOURCES.json",
+    "sha256": "e08d5c046e15a3f0244259d56f9fe92c4e2dcdcda6e846728ffbfa28931a2090"
+  }
+}

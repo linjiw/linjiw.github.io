@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "physics": false,
+  "parent_plan": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/PLAN.json",
+    "sha256": "c3b5a04184113d08d9b4f9e48790c578cb6a297a16ad803d7f5db8181b0e22cb"
+  },
+  "parent_preflight": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/PREFLIGHT.json",
+    "sha256": "17b2c83a2b3918a915c1537056aadf75a5b2aaf28f45fe2b9ada4cba99501ce6"
+  },
+  "execution_checkpoint": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/inputs/original/checkpoint.pt",
+    "sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909"
+  },
+  "common_saved_config": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/inputs/original/config.yaml",
+    "sha256": "d426da14e6f3c7ac9cfe2000330b460da7b192aa580323eb2b415227599d1c01"
+  },
+  "bank": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/BANK.json",
+    "sha256": "704095a758aaa0a5c1ab5985822375ea83fc040820ff1f87a3c727c87f87ff06"
+  },
+  "same_motor_and_saved_config_bytes": true,
+  "same_native_command_except_callback_and_output_paths": true,
+  "declared_intervention": "selection_mode fixed_duck or fixed_nominal instead of fixed_lowered; all four native libraries unchanged",
+  "first_query_gate": "Initial proprioception/history exact; declared reference reconstructed. Equality to control reference is diagnostic, not required.",
+  "actual_entry_dynamics_actuator_and_library_gate": true,
+  "training": false
+}

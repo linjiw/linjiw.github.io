@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "probes": [
+    {
+      "probe": "motor",
+      "rejected": true,
+      "reason": "Motor/configuration/clock/actuator runtime is unqualified",
+      "physics": false
+    },
+    {
+      "probe": "config",
+      "rejected": true,
+      "reason": "Motor/configuration/clock/actuator runtime is unqualified",
+      "physics": false
+    },
+    {
+      "probe": "clock",
+      "rejected": true,
+      "reason": "Motor/configuration/clock/actuator runtime is unqualified",
+      "physics": false
+    },
+    {
+      "probe": "gains",
+      "rejected": true,
+      "reason": "Motor/configuration/clock/actuator runtime is unqualified",
+      "physics": false
+    },
+    {
+      "probe": "goal",
+      "rejected": true,
+      "reason": "Request is outside the finite measured task contexts",
+      "physics": false
+    },
+    {
+      "probe": "hold",
+      "rejected": true,
+      "reason": "Request is outside the finite measured task contexts",
+      "physics": false
+    },
+    {
+      "probe": "intermediate_height",
+      "rejected": true,
+      "reason": "Request is outside the finite measured task contexts",
+      "physics": false
+    },
+    {
+      "probe": "lower_height",
+      "rejected": true,
+      "reason": "Request is outside the finite measured task contexts",
+      "physics": false
+    },
+    {
+      "probe": "horizontal",
+      "rejected": true,
+      "reason": "Request is outside the finite measured task contexts",
+      "physics": false
+    },
+    {
+      "probe": "body_deviation",
+      "rejected": true,
+      "reason": "Measured entry outside standing profile: joint_position",
+      "physics": false
+    },
+    {
+      "probe": "calibration",
+      "rejected": true,
+      "reason": "Configured pose outside calibration envelope",
+      "physics": false
+    }
+  ],
+  "scope": "Offline software contract checks; no physical requests, interventions or safe stops"
+}

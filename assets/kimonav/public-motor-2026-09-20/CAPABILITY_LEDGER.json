@@ -1,0 +1,508 @@
+{
+  "schema": "knav-public-motor-finite-context-v3",
+  "created_utc": "2026-09-20T06:54:28.718706+00:00",
+  "minimum_attempts": 2,
+  "rule": "All designated prior original-motor first attempts in this exact context must succeed; minimum two. Untested is not qualified. No probability or continuous safety guarantee.",
+  "runtime": {
+    "teacher_sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909",
+    "common_config_sha256": "d426da14e6f3c7ac9cfe2000330b460da7b192aa580323eb2b415227599d1c01",
+    "bank_sha256": "704095a758aaa0a5c1ab5985822375ea83fc040820ff1f87a3c727c87f87ff06",
+    "control_dt": 0.02,
+    "contact_dt": 0.005,
+    "maximum_control_steps": 500,
+    "actuator_sha256": "c5285aa6896a649ca6015ecc4d6087e0a42402570293a4b44bb1f6327039043a"
+  },
+  "motion_sha256": {
+    "nominal": "c9ecaab496e4cd92c6820fed0d181e5a186d0f888b882d53de6e6a4ebd915da2",
+    "local_duck": "b4b61d251061613db7583f72b45c5174bd3a4b9d20a37ad01665d19dba9d30fb",
+    "sustained": "ae8d06a235e7d2558393970d7f091f6959f1c209e55a978b00e506a430e2c419",
+    "lowered": "dde7663bde07fffb90642bce815eeb4b1bd289c66277dd407831d503ecd90b4c"
+  },
+  "standing_profile": {
+    "entry": {
+      "position": [
+        [
+          0.0,
+          0.0,
+          0.7599999904632568
+        ]
+      ],
+      "quaternion": [
+        [
+          0.9915569424629211,
+          0.0,
+          0.0,
+          0.12967202067375183
+        ]
+      ],
+      "velocity": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "angular_velocity": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "joint_position": [
+        [
+          -0.30709293484687805,
+          -0.30826297402381897,
+          -0.004648731090128422,
+          0.009660648182034492,
+          -0.006710389629006386,
+          -0.0015561822801828384,
+          -0.008979005739092827,
+          0.00042951852083206177,
+          -0.0057455203495919704,
+          0.6615613102912903,
+          0.6617499589920044,
+          0.19371120631694794,
+          0.19604991376399994,
+          -0.3603096902370453,
+          -0.3720380663871765,
+          0.20236310362815857,
+          -0.20350386202335358,
+          -0.0069795940071344376,
+          -0.008765492588281631,
+          -0.0008311886340379715,
+          0.007722800597548485,
+          0.6013432741165161,
+          0.6080873012542725,
+          0.004805479198694229,
+          -0.006973504554480314,
+          -0.009378978982567787,
+          -0.00948388408869505,
+          0.006527025252580643,
+          0.006371865049004555
+        ]
+      ],
+      "joint_velocity": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "maximum_default_difference_rad": 0.020001,
+    "scope": "Measured standing relative to configured default; calibration offsets are not body deviations. Only two familiar development seeds tested."
+  },
+  "task_contexts": {
+    "clear": {
+      "schema": "bfm_duck_recover_stop_task_v1",
+      "observation_profile": "known_map_5_primitives_v1",
+      "world_frame": "scene_z_up_m_wxyz",
+      "anchor_body": "pelvis",
+      "start_xyz": [
+        0.0,
+        0.0,
+        0.76
+      ],
+      "start_wxyz": [
+        0.991556940795823,
+        0.0,
+        0.0,
+        0.12967202149896728
+      ],
+      "goal_xyz": [
+        2.6363954544067383,
+        0.534538745880127,
+        0.7887343168258667
+      ],
+      "goal_tolerance_m": 0.5,
+      "terminal_speed_mps": 0.1,
+      "hold_ticks": 50,
+      "deadline_ticks": 500,
+      "obstacles": [],
+      "scene_usd_sha256": "95ed0e2002ec063a95e64259c9811c672a1ca0895f74c6b95b3963aee977eb3b",
+      "success_profile": "whole_body_passage_upright_recovery_goal050_stop_v1",
+      "duck_contract": {
+        "gate": {
+          "center_xyz": [
+            1.4162035530228292,
+            0.2871404097888465,
+            1.3773607365655527
+          ],
+          "quaternion_wxyz": [
+            0.9950020749211026,
+            0.0,
+            0.0,
+            0.09985424829570648
+          ],
+          "full_dimensions_xyz": [
+            0.35,
+            2.4,
+            0.2
+          ]
+        },
+        "beam_obstacle_index": null,
+        "require_duck": false,
+        "recovery_pelvis_height_m": [
+          0.738697350025177,
+          0.8218777179718018
+        ],
+        "max_torso_tilt_rad": 0.2552098896604577,
+        "recovery_ticks": 15,
+        "clearance_margin_m": 0.02,
+        "collision_bounds": {
+          "path": "/home/linjiw/research-data/m2s-navigation-collision-challenge-20260913/native-collision-bounds.json",
+          "sha256": "cb2cbd43ca67ec3265a74ae54698d2fde8b72ad41be73b0464c2bfca2950fcff"
+        }
+      }
+    },
+    "beam": {
+      "schema": "bfm_duck_recover_stop_task_v1",
+      "observation_profile": "known_map_5_primitives_v1",
+      "world_frame": "scene_z_up_m_wxyz",
+      "anchor_body": "pelvis",
+      "start_xyz": [
+        0.0,
+        0.0,
+        0.76
+      ],
+      "start_wxyz": [
+        0.991556940795823,
+        0.0,
+        0.0,
+        0.12967202149896728
+      ],
+      "goal_xyz": [
+        2.6363954544067383,
+        0.534538745880127,
+        0.7887343168258667
+      ],
+      "goal_tolerance_m": 0.5,
+      "terminal_speed_mps": 0.1,
+      "hold_ticks": 50,
+      "deadline_ticks": 500,
+      "obstacles": [
+        {
+          "center_xyz": [
+            1.4162035530228292,
+            0.2871404097888465,
+            1.3773607365655527
+          ],
+          "quaternion_wxyz": [
+            0.9950020749211026,
+            0.0,
+            0.0,
+            0.09985424829570648
+          ],
+          "full_dimensions_xyz": [
+            0.35,
+            2.4,
+            0.2
+          ],
+          "shape": "beam"
+        }
+      ],
+      "scene_usd_sha256": "2bbd2af9d80742c344c261d3848b9c068ca1c672ea4b9d8bd1c310decf5cc145",
+      "success_profile": "whole_body_passage_upright_recovery_goal050_stop_v1",
+      "duck_contract": {
+        "gate": {
+          "center_xyz": [
+            1.4162035530228292,
+            0.2871404097888465,
+            1.3773607365655527
+          ],
+          "quaternion_wxyz": [
+            0.9950020749211026,
+            0.0,
+            0.0,
+            0.09985424829570648
+          ],
+          "full_dimensions_xyz": [
+            0.35,
+            2.4,
+            0.2
+          ]
+        },
+        "beam_obstacle_index": 0,
+        "require_duck": true,
+        "recovery_pelvis_height_m": [
+          0.738697350025177,
+          0.8218777179718018
+        ],
+        "max_torso_tilt_rad": 0.2552098896604577,
+        "recovery_ticks": 15,
+        "clearance_margin_m": 0.02,
+        "collision_bounds": {
+          "path": "/home/linjiw/research-data/m2s-navigation-collision-challenge-20260913/native-collision-bounds.json",
+          "sha256": "cb2cbd43ca67ec3265a74ae54698d2fde8b72ad41be73b0464c2bfca2950fcff"
+        }
+      }
+    },
+    "beam_lower20": {
+      "schema": "bfm_duck_recover_stop_task_v1",
+      "observation_profile": "known_map_5_primitives_v1",
+      "world_frame": "scene_z_up_m_wxyz",
+      "anchor_body": "pelvis",
+      "start_xyz": [
+        0.0,
+        0.0,
+        0.76
+      ],
+      "start_wxyz": [
+        0.991556940795823,
+        0.0,
+        0.0,
+        0.12967202149896728
+      ],
+      "goal_xyz": [
+        2.6363954544067383,
+        0.534538745880127,
+        0.7887343168258667
+      ],
+      "goal_tolerance_m": 0.5,
+      "terminal_speed_mps": 0.1,
+      "hold_ticks": 50,
+      "deadline_ticks": 500,
+      "obstacles": [
+        {
+          "center_xyz": [
+            1.4162035530228292,
+            0.2871404097888465,
+            1.3573607365655527
+          ],
+          "quaternion_wxyz": [
+            0.9950020749211026,
+            0.0,
+            0.0,
+            0.09985424829570648
+          ],
+          "full_dimensions_xyz": [
+            0.35,
+            2.4,
+            0.2
+          ],
+          "shape": "beam"
+        }
+      ],
+      "scene_usd_sha256": "392c164042d8f51093d724d178b6ebcdaff64c4c2118a0a6755eede05bc5b004",
+      "success_profile": "whole_body_passage_upright_recovery_goal050_stop_v1",
+      "duck_contract": {
+        "gate": {
+          "center_xyz": [
+            1.4162035530228292,
+            0.2871404097888465,
+            1.3573607365655527
+          ],
+          "quaternion_wxyz": [
+            0.9950020749211026,
+            0.0,
+            0.0,
+            0.09985424829570648
+          ],
+          "full_dimensions_xyz": [
+            0.35,
+            2.4,
+            0.2
+          ]
+        },
+        "beam_obstacle_index": 0,
+        "require_duck": true,
+        "recovery_pelvis_height_m": [
+          0.738697350025177,
+          0.8218777179718018
+        ],
+        "max_torso_tilt_rad": 0.2552098896604577,
+        "recovery_ticks": 15,
+        "clearance_margin_m": 0.02,
+        "collision_bounds": {
+          "path": "/home/linjiw/research-data/m2s-navigation-collision-challenge-20260913/native-collision-bounds.json",
+          "sha256": "cb2cbd43ca67ec3265a74ae54698d2fde8b72ad41be73b0464c2bfca2950fcff"
+        }
+      }
+    }
+  },
+  "contexts": {
+    "clear": {
+      "nominal": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/AUDIT.json",
+          "sha256": "f6428874e150c15a383a26ef09cf4b14e8b7cdd91a3ec956e2af4f34dc1253f8"
+        },
+        "cases": [
+          "clear-fixed_nominal-96162",
+          "clear-fixed_nominal-96167"
+        ],
+        "outcomes": [
+          true,
+          true
+        ],
+        "status": "observed"
+      },
+      "local_duck": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/AUDIT.json",
+          "sha256": "f6428874e150c15a383a26ef09cf4b14e8b7cdd91a3ec956e2af4f34dc1253f8"
+        },
+        "cases": [
+          "clear-fixed_duck-96162",
+          "clear-fixed_duck-96167"
+        ],
+        "outcomes": [
+          true,
+          true
+        ],
+        "status": "observed"
+      },
+      "sustained": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/AUDIT.json",
+          "sha256": "f6428874e150c15a383a26ef09cf4b14e8b7cdd91a3ec956e2af4f34dc1253f8"
+        },
+        "cases": [],
+        "outcomes": [],
+        "status": "untested"
+      },
+      "lowered": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/AUDIT.json",
+          "sha256": "569418308636c56286d42c967886a764fd25bbf2b88d46659312c96886299f0f"
+        },
+        "cases": [
+          "clear-original-96162",
+          "clear-original-96167"
+        ],
+        "outcomes": [
+          true,
+          true
+        ],
+        "status": "observed"
+      }
+    },
+    "beam": {
+      "nominal": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/AUDIT.json",
+          "sha256": "f6428874e150c15a383a26ef09cf4b14e8b7cdd91a3ec956e2af4f34dc1253f8"
+        },
+        "cases": [],
+        "outcomes": [],
+        "status": "untested"
+      },
+      "local_duck": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/AUDIT.json",
+          "sha256": "f6428874e150c15a383a26ef09cf4b14e8b7cdd91a3ec956e2af4f34dc1253f8"
+        },
+        "cases": [
+          "beam-fixed_duck-96162",
+          "beam-fixed_duck-96167"
+        ],
+        "outcomes": [
+          true,
+          true
+        ],
+        "status": "observed"
+      },
+      "sustained": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/AUDIT.json",
+          "sha256": "f6428874e150c15a383a26ef09cf4b14e8b7cdd91a3ec956e2af4f34dc1253f8"
+        },
+        "cases": [],
+        "outcomes": [],
+        "status": "untested"
+      },
+      "lowered": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/AUDIT.json",
+          "sha256": "569418308636c56286d42c967886a764fd25bbf2b88d46659312c96886299f0f"
+        },
+        "cases": [
+          "beam-original-96162",
+          "beam-original-96167"
+        ],
+        "outcomes": [
+          true,
+          true
+        ],
+        "status": "observed"
+      }
+    },
+    "beam_lower20": {
+      "nominal": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/AUDIT.json",
+          "sha256": "f6428874e150c15a383a26ef09cf4b14e8b7cdd91a3ec956e2af4f34dc1253f8"
+        },
+        "cases": [],
+        "outcomes": [],
+        "status": "untested"
+      },
+      "local_duck": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/AUDIT.json",
+          "sha256": "f6428874e150c15a383a26ef09cf4b14e8b7cdd91a3ec956e2af4f34dc1253f8"
+        },
+        "cases": [
+          "beam_lower20-fixed_duck-96162",
+          "beam_lower20-fixed_duck-96167"
+        ],
+        "outcomes": [
+          true,
+          true
+        ],
+        "status": "observed"
+      },
+      "sustained": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/AUDIT.json",
+          "sha256": "f6428874e150c15a383a26ef09cf4b14e8b7cdd91a3ec956e2af4f34dc1253f8"
+        },
+        "cases": [],
+        "outcomes": [],
+        "status": "untested"
+      },
+      "lowered": {
+        "audit": {
+          "path": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919/AUDIT.json",
+          "sha256": "569418308636c56286d42c967886a764fd25bbf2b88d46659312c96886299f0f"
+        },
+        "cases": [
+          "beam_lower20-original-96162",
+          "beam_lower20-original-96167"
+        ],
+        "outcomes": [
+          true,
+          true
+        ],
+        "status": "observed"
+      }
+    }
+  }
+}

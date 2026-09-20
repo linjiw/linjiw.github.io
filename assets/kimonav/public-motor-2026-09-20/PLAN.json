@@ -1,0 +1,65 @@
+{
+  "schema": "knav-public-original-motor-integration-v1",
+  "registered_utc": "2026-09-20T06:54:30.670675+00:00",
+  "modes": [
+    "public_qualified"
+  ],
+  "layouts": [
+    "clear",
+    "beam",
+    "beam_lower20"
+  ],
+  "seeds": [
+    96162,
+    96167
+  ],
+  "primary_attempts": 6,
+  "reused_qualification_executions": 14,
+  "reused_selected_controls": 6,
+  "comparison_parent": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920",
+  "retained_lowered_parent": "/home/linjiw/kimodo/knav/artifacts/motor-clearance-comparison-20260919",
+  "protocol": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/PROTOCOL.md",
+    "sha256": "9c20d3946922cb85b1a3399b1fde4c2626e48006ae71580dae9d5834a53f9453"
+  },
+  "bank": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/BANK.json",
+    "sha256": "704095a758aaa0a5c1ab5985822375ea83fc040820ff1f87a3c727c87f87ff06"
+  },
+  "reuse": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/REUSE.json",
+    "sha256": "c6991c27254c4fa863e112b31416ef041c5464294bcfc8ba379e2475295ccb51"
+  },
+  "preflight": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/PREFLIGHT.json",
+    "sha256": "3a528dfa49a325afdf82ea1a9b00dfe5824f650136ea9cdc8783bbdd742603de"
+  },
+  "execution_checkpoint": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/inputs/original/checkpoint.pt",
+    "sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909"
+  },
+  "common_config": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/inputs/original/config.yaml",
+    "sha256": "d426da14e6f3c7ac9cfe2000330b460da7b192aa580323eb2b415227599d1c01"
+  },
+  "capability_ledger": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/CAPABILITY_LEDGER.json",
+    "sha256": "af991004733e8fe90c19930041e0080e572328657c79563d7bd5006893c78eec"
+  },
+  "cases": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/CASES.json",
+    "sha256": "f015cf864bcda7510156d27734ecbf2deb33a335fa1795cb7c2f38ac12df90b7"
+  },
+  "sources": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/SOURCES.json",
+    "sha256": "1c1bc15fd3ad84b101c69492e7f6abb188274ae2ab33d07ef2285f46d6597e6e"
+  },
+  "runtime_changes": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/RUNTIME_CHANGES.json",
+    "sha256": "bec83751b86c9c3bec425a71d6796b108d56ca888ac494993d49bafd0aba5c11"
+  },
+  "question": "Does the public request select supported simple references and retain their fixed execution under the original motor?",
+  "scope": "Six familiar integration requests, not independent generalization or evidence-filter superiority. No training, reference tuning or moving replacement.",
+  "training": false,
+  "hardware": false
+}

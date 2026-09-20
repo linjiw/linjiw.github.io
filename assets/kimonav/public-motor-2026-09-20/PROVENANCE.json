@@ -1,0 +1,65 @@
+{
+  "study": "public-motor-integration-20260920",
+  "assets": [
+    {
+      "file": "ANALYSIS.json",
+      "sha256": "affb6ee12f06e56d8441d9f3aa44cd5c823ba73385c5846ce033540cf9d02c9e"
+    },
+    {
+      "file": "AUDIT.json",
+      "sha256": "dd341089c43f05284d4fd7c8cc17eb7d01accb8b6dfe5758efab05ab56db3f2d"
+    },
+    {
+      "file": "CAPABILITY_LEDGER.json",
+      "sha256": "af991004733e8fe90c19930041e0080e572328657c79563d7bd5006893c78eec"
+    },
+    {
+      "file": "CODEC_AUDIT.json",
+      "sha256": "fde2f8f80e36cefd9bd544a1a62e1e623b165fc52bc8835071045117f5c80104"
+    },
+    {
+      "file": "CURRENT_PLAN.md",
+      "sha256": "c53469433088fc67d066387f8cdba6ff95c699d0c846b95d88b83f69eb53376f"
+    },
+    {
+      "file": "PLAN.json",
+      "sha256": "54aa533700bfe99f40e253b703298820265d30ef9ce8dcd3fe4cad83e5ba0645"
+    },
+    {
+      "file": "PREFLIGHT.json",
+      "sha256": "3a528dfa49a325afdf82ea1a9b00dfe5824f650136ea9cdc8783bbdd742603de"
+    },
+    {
+      "file": "PROFILE_REJECTIONS.json",
+      "sha256": "d7adc63fac16993431cc35d89a97af4c1bfc814263a9a6cb2c77eabe2f4235e9"
+    },
+    {
+      "file": "PROTOCOL.md",
+      "sha256": "9c20d3946922cb85b1a3399b1fde4c2626e48006ae71580dae9d5834a53f9453"
+    },
+    {
+      "file": "REPORT.md",
+      "sha256": "5d4bbe96a72bfca3e5e8805a0b94e413f379538e02d476c887b5ec913947a4c6"
+    },
+    {
+      "file": "REUSE.json",
+      "sha256": "c6991c27254c4fa863e112b31416ef041c5464294bcfc8ba379e2475295ccb51"
+    },
+    {
+      "file": "RUNTIME_CHANGES.json",
+      "sha256": "bec83751b86c9c3bec425a71d6796b108d56ca888ac494993d49bafd0aba5c11"
+    },
+    {
+      "file": "TEST_RESULTS.txt",
+      "sha256": "31085faa50a2e6fefea10bab950f6eb9003d97dc82fba2dab1c74aa8f8ac5786"
+    },
+    {
+      "file": "public-motor-outcomes.png",
+      "sha256": "734ed606f53af05d6380702658a8e1af525cb9bf9aaf50ea30d66a2cd6a03d57"
+    },
+    {
+      "file": "public-motor-outcomes.svg",
+      "sha256": "ed406abe4aff00b6af9fabfdf57340141fa06963058613867e2f5fb82f8d2d53"
+    }
+  ]
+}

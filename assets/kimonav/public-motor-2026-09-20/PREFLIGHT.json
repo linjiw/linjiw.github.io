@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "physics": false,
+  "execution_checkpoint": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/inputs/original/checkpoint.pt",
+    "sha256": "e6bdab3f64a39336b3d41877d4f497d05f58af275f288ec0e6746c283ded8909"
+  },
+  "common_config": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/inputs/original/config.yaml",
+    "sha256": "d426da14e6f3c7ac9cfe2000330b460da7b192aa580323eb2b415227599d1c01"
+  },
+  "same_motor_config_and_native_command_except_selection_callback_and_paths": true,
+  "ledger": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/CAPABILITY_LEDGER.json",
+    "sha256": "af991004733e8fe90c19930041e0080e572328657c79563d7bd5006893c78eec"
+  },
+  "predictions": [
+    {
+      "layout": "clear",
+      "seed": 96162,
+      "geometry_choice": "nominal",
+      "qualified_choice": "nominal",
+      "context": "clear"
+    },
+    {
+      "layout": "beam",
+      "seed": 96162,
+      "geometry_choice": "local_duck",
+      "qualified_choice": "local_duck",
+      "context": "beam"
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96162,
+      "geometry_choice": "local_duck",
+      "qualified_choice": "local_duck",
+      "context": "beam_lower20"
+    },
+    {
+      "layout": "clear",
+      "seed": 96167,
+      "geometry_choice": "nominal",
+      "qualified_choice": "nominal",
+      "context": "clear"
+    },
+    {
+      "layout": "beam",
+      "seed": 96167,
+      "geometry_choice": "local_duck",
+      "qualified_choice": "local_duck",
+      "context": "beam"
+    },
+    {
+      "layout": "beam_lower20",
+      "seed": 96167,
+      "geometry_choice": "local_duck",
+      "qualified_choice": "local_duck",
+      "context": "beam_lower20"
+    }
+  ],
+  "rejection_probes": {
+    "path": "/home/linjiw/kimodo/knav/artifacts/public-motor-integration-20260920/PROFILE_REJECTIONS.json",
+    "sha256": "d7adc63fac16993431cc35d89a97af4c1bfc814263a9a6cb2c77eabe2f4235e9"
+  },
+  "expected_geometry_evidence_ties": 6,
+  "prior_qualification_executions": 14,
+  "selected_fixed_pairs": 6,
+  "training": false
+}

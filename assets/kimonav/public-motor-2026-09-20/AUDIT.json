@@ -1,0 +1,485 @@
+{
+  "passed": true,
+  "partial": false,
+  "trials": 6,
+  "reused_selected_controls": 6,
+  "prior_qualification_executions": 14,
+  "groups": [
+    {
+      "case": "clear-public_qualified-96162",
+      "layout": "clear",
+      "seed": 96162,
+      "mode": "public_qualified",
+      "matched_control": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/clear-fixed_nominal-96162",
+      "initial_state_dynamics_actuator_gains_exact": true,
+      "first_proprio_exact": true,
+      "first_reference_matches_control": true,
+      "first_action_matches_control": true,
+      "control_reused": true
+    },
+    {
+      "case": "beam-public_qualified-96162",
+      "layout": "beam",
+      "seed": 96162,
+      "mode": "public_qualified",
+      "matched_control": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/beam-fixed_duck-96162",
+      "initial_state_dynamics_actuator_gains_exact": true,
+      "first_proprio_exact": true,
+      "first_reference_matches_control": true,
+      "first_action_matches_control": true,
+      "control_reused": true
+    },
+    {
+      "case": "beam_lower20-public_qualified-96162",
+      "layout": "beam_lower20",
+      "seed": 96162,
+      "mode": "public_qualified",
+      "matched_control": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/beam_lower20-fixed_duck-96162",
+      "initial_state_dynamics_actuator_gains_exact": true,
+      "first_proprio_exact": true,
+      "first_reference_matches_control": true,
+      "first_action_matches_control": true,
+      "control_reused": true
+    },
+    {
+      "case": "clear-public_qualified-96167",
+      "layout": "clear",
+      "seed": 96167,
+      "mode": "public_qualified",
+      "matched_control": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/clear-fixed_nominal-96167",
+      "initial_state_dynamics_actuator_gains_exact": true,
+      "first_proprio_exact": true,
+      "first_reference_matches_control": true,
+      "first_action_matches_control": true,
+      "control_reused": true
+    },
+    {
+      "case": "beam-public_qualified-96167",
+      "layout": "beam",
+      "seed": 96167,
+      "mode": "public_qualified",
+      "matched_control": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/beam-fixed_duck-96167",
+      "initial_state_dynamics_actuator_gains_exact": true,
+      "first_proprio_exact": true,
+      "first_reference_matches_control": true,
+      "first_action_matches_control": true,
+      "control_reused": true
+    },
+    {
+      "case": "beam_lower20-public_qualified-96167",
+      "layout": "beam_lower20",
+      "seed": 96167,
+      "mode": "public_qualified",
+      "matched_control": "/home/linjiw/kimodo/knav/artifacts/simple-reference-motor-20260920/runs/beam_lower20-fixed_duck-96167",
+      "initial_state_dynamics_actuator_gains_exact": true,
+      "first_proprio_exact": true,
+      "first_reference_matches_control": true,
+      "first_action_matches_control": true,
+      "control_reused": true
+    }
+  ],
+  "paired_executor_matches": [
+    {
+      "case": "clear-public_qualified-96162",
+      "new_vs_control_first_action_difference_tick": null,
+      "new_vs_control_first_reference_difference_tick": null,
+      "full_arrays_exact": {
+        "native-episode.npz": true,
+        "trace.npz": true,
+        "robot-poses.npz": true,
+        "pre-action-poses.npz": true
+      },
+      "action_max_abs_difference": 0.0
+    },
+    {
+      "case": "beam-public_qualified-96162",
+      "new_vs_control_first_action_difference_tick": null,
+      "new_vs_control_first_reference_difference_tick": null,
+      "full_arrays_exact": {
+        "native-episode.npz": true,
+        "trace.npz": true,
+        "robot-poses.npz": true,
+        "pre-action-poses.npz": true
+      },
+      "action_max_abs_difference": 0.0
+    },
+    {
+      "case": "beam_lower20-public_qualified-96162",
+      "new_vs_control_first_action_difference_tick": null,
+      "new_vs_control_first_reference_difference_tick": null,
+      "full_arrays_exact": {
+        "native-episode.npz": true,
+        "trace.npz": true,
+        "robot-poses.npz": true,
+        "pre-action-poses.npz": true
+      },
+      "action_max_abs_difference": 0.0
+    },
+    {
+      "case": "clear-public_qualified-96167",
+      "new_vs_control_first_action_difference_tick": null,
+      "new_vs_control_first_reference_difference_tick": null,
+      "full_arrays_exact": {
+        "native-episode.npz": true,
+        "trace.npz": true,
+        "robot-poses.npz": true,
+        "pre-action-poses.npz": true
+      },
+      "action_max_abs_difference": 0.0
+    },
+    {
+      "case": "beam-public_qualified-96167",
+      "new_vs_control_first_action_difference_tick": null,
+      "new_vs_control_first_reference_difference_tick": null,
+      "full_arrays_exact": {
+        "native-episode.npz": true,
+        "trace.npz": true,
+        "robot-poses.npz": true,
+        "pre-action-poses.npz": true
+      },
+      "action_max_abs_difference": 0.0
+    },
+    {
+      "case": "beam_lower20-public_qualified-96167",
+      "new_vs_control_first_action_difference_tick": null,
+      "new_vs_control_first_reference_difference_tick": null,
+      "full_arrays_exact": {
+        "native-episode.npz": true,
+        "trace.npz": true,
+        "robot-poses.npz": true,
+        "pre-action-poses.npz": true
+      },
+      "action_max_abs_difference": 0.0
+    }
+  ],
+  "counterfactual_map_choices": [
+    {
+      "case": "clear-public_qualified-96162",
+      "held": "actual entry, bank, goal and motor; change map/task context",
+      "choices": [
+        {
+          "context": "clear",
+          "qualified_choice": "nominal",
+          "geometry_only_choice": "nominal"
+        },
+        {
+          "context": "beam",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        },
+        {
+          "context": "beam_lower20",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        }
+      ]
+    },
+    {
+      "case": "beam-public_qualified-96162",
+      "held": "actual entry, bank, goal and motor; change map/task context",
+      "choices": [
+        {
+          "context": "clear",
+          "qualified_choice": "nominal",
+          "geometry_only_choice": "nominal"
+        },
+        {
+          "context": "beam",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        },
+        {
+          "context": "beam_lower20",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        }
+      ]
+    },
+    {
+      "case": "beam_lower20-public_qualified-96162",
+      "held": "actual entry, bank, goal and motor; change map/task context",
+      "choices": [
+        {
+          "context": "clear",
+          "qualified_choice": "nominal",
+          "geometry_only_choice": "nominal"
+        },
+        {
+          "context": "beam",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        },
+        {
+          "context": "beam_lower20",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        }
+      ]
+    },
+    {
+      "case": "clear-public_qualified-96167",
+      "held": "actual entry, bank, goal and motor; change map/task context",
+      "choices": [
+        {
+          "context": "clear",
+          "qualified_choice": "nominal",
+          "geometry_only_choice": "nominal"
+        },
+        {
+          "context": "beam",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        },
+        {
+          "context": "beam_lower20",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        }
+      ]
+    },
+    {
+      "case": "beam-public_qualified-96167",
+      "held": "actual entry, bank, goal and motor; change map/task context",
+      "choices": [
+        {
+          "context": "clear",
+          "qualified_choice": "nominal",
+          "geometry_only_choice": "nominal"
+        },
+        {
+          "context": "beam",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        },
+        {
+          "context": "beam_lower20",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        }
+      ]
+    },
+    {
+      "case": "beam_lower20-public_qualified-96167",
+      "held": "actual entry, bank, goal and motor; change map/task context",
+      "choices": [
+        {
+          "context": "clear",
+          "qualified_choice": "nominal",
+          "geometry_only_choice": "nominal"
+        },
+        {
+          "context": "beam",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        },
+        {
+          "context": "beam_lower20",
+          "qualified_choice": "local_duck",
+          "geometry_only_choice": "local_duck"
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "case": "clear-public_qualified-96162",
+      "mode": "public_qualified",
+      "layout": "clear",
+      "seed": 96162,
+      "selected": "nominal",
+      "geometry_only_choice": "nominal",
+      "success": true,
+      "control_steps": 375,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "peak_contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 156,
+          "contact_hypotheses": 191,
+          "contact_hypotheses_with_observed_load": 190,
+          "lifted_hypotheses": 28,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 131,
+          "contact_hypotheses": 216,
+          "contact_hypotheses_with_observed_load": 215,
+          "lifted_hypotheses": 28,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7346298098564148
+    },
+    {
+      "case": "beam-public_qualified-96162",
+      "mode": "public_qualified",
+      "layout": "beam",
+      "seed": 96162,
+      "selected": "local_duck",
+      "geometry_only_choice": "local_duck",
+      "success": true,
+      "control_steps": 376,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "peak_contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 152,
+          "contact_hypotheses": 181,
+          "contact_hypotheses_with_observed_load": 180,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 199,
+          "contact_hypotheses_with_observed_load": 198,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 2
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.6614524722099304
+    },
+    {
+      "case": "beam_lower20-public_qualified-96162",
+      "mode": "public_qualified",
+      "layout": "beam_lower20",
+      "seed": 96162,
+      "selected": "local_duck",
+      "geometry_only_choice": "local_duck",
+      "success": true,
+      "control_steps": 376,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "peak_contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 152,
+          "contact_hypotheses": 181,
+          "contact_hypotheses_with_observed_load": 180,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 0
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 199,
+          "contact_hypotheses_with_observed_load": 198,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 1
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.6602672338485718
+    },
+    {
+      "case": "clear-public_qualified-96167",
+      "mode": "public_qualified",
+      "layout": "clear",
+      "seed": 96167,
+      "selected": "nominal",
+      "geometry_only_choice": "nominal",
+      "success": true,
+      "control_steps": 423,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "peak_contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 156,
+          "contact_hypotheses": 239,
+          "contact_hypotheses_with_observed_load": 239,
+          "lifted_hypotheses": 28,
+          "lifted_hypotheses_with_observed_load": 2
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 131,
+          "contact_hypotheses": 264,
+          "contact_hypotheses_with_observed_load": 264,
+          "lifted_hypotheses": 28,
+          "lifted_hypotheses_with_observed_load": 0
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.7203477025032043
+    },
+    {
+      "case": "beam-public_qualified-96167",
+      "mode": "public_qualified",
+      "layout": "beam",
+      "seed": 96167,
+      "selected": "local_duck",
+      "geometry_only_choice": "local_duck",
+      "success": true,
+      "control_steps": 422,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "peak_contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 152,
+          "contact_hypotheses": 227,
+          "contact_hypotheses_with_observed_load": 227,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 2
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 245,
+          "contact_hypotheses_with_observed_load": 245,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 2
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.6458017230033875
+    },
+    {
+      "case": "beam_lower20-public_qualified-96167",
+      "mode": "public_qualified",
+      "layout": "beam_lower20",
+      "seed": 96167,
+      "selected": "local_duck",
+      "geometry_only_choice": "local_duck",
+      "success": true,
+      "control_steps": 422,
+      "stop_reason": "goal_hold",
+      "contact": null,
+      "peak_contact": null,
+      "support_diagnostic": [
+        {
+          "foot": "left_ankle_roll_link",
+          "unknown": 152,
+          "contact_hypotheses": 227,
+          "contact_hypotheses_with_observed_load": 227,
+          "lifted_hypotheses": 43,
+          "lifted_hypotheses_with_observed_load": 2
+        },
+        {
+          "foot": "right_ankle_roll_link",
+          "unknown": 130,
+          "contact_hypotheses": 245,
+          "contact_hypotheses_with_observed_load": 245,
+          "lifted_hypotheses": 47,
+          "lifted_hypotheses_with_observed_load": 2
+        }
+      ],
+      "reference_exact": true,
+      "measured_min_pelvis_height_m": 0.6458017230033875
+    }
+  ],
+  "plan_sha256": "54aa533700bfe99f40e253b703298820265d30ef9ce8dcd3fe4cad83e5ba0645",
+  "scope": "Six public original-motor requests, fourteen old qualification executions and six old selected fixed pairs. Exact finite-context admission, initial-state/dynamics/actuator/library/RNG checks; full execution comparison is reported separately. No independent generalization or evidence-filter superiority."
+}

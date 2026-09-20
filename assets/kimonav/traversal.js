@@ -15,17 +15,37 @@
       privileged: 'Teacher actions, reference motion and privileged posterior inputs stay outside the public actor.'
     },
     selection: {
-      caption: 'Implemented initial library selector with a separately verified standing-profile repair. Corrected interface check: three new plus three retained executions on one inspected source/corridor. No moving seams or online replanning.',
-      nodes: [
-        ['Implemented input', 'Goal + known geometry', 'Accepted destination, exact observed map and measured initial body. The task does not supply an answer motion ID.', false],
-        ['Implemented choice', 'Initial library selection', 'A prior-execution filter plus geometry and endpoint checks choose nominal when clear and lowered under the beam. Standing state is checked relative to the configured robot pose.', false],
-        ['Verified execution', 'Native reference → motor', 'Selected q/dq/orientation frames → encoder / FSQ → decoder with actual proprioception and action history.', false],
-        ['Measured limitation', 'Task + contact outcome', 'Corrected interface check: 2/2 clear, 2/2 original beam, 0/2 at a 20 mm lower beam. Three new + three retained executions; original rejections remain visible.', true]
-      ],
-      loop: '↶ Actual state is recorded and used by the tracker; changing the continuation from measured feedback is the next unimplemented gate.',
-      allowed: 'Public goal/map, measured initial body, current orientation and actual motor history; fixed motion library, prior execution ledger and configured standing pose.',
-      privileged: 'Exact map/localization assumptions are declared. Future realized robot motion and a task-provided answer reference do not select the candidate.'
-    },
+  "caption": "Implemented initial selector with original motor weights and a new finite qualification profile. Six new familiar requests complete 6/6 tasks. Geometry-only and evidence-filtered choices tie; no online replanning.",
+  "nodes": [
+    [
+      "Implemented input",
+      "Goal + known geometry",
+      "One bound destination, three known-map task contexts and a measured standing body. No task-provided answer motion ID.",
+      false
+    ],
+    [
+      "Implemented choice",
+      "Initial library selection",
+      "Motor-specific prior evidence plus geometry and endpoint checks choose nominal when clear and local duck at both beam heights.",
+      false
+    ],
+    [
+      "Verified execution",
+      "Native reference → motor",
+      "Selected q/dq/orientation → original encoder / FSQ → decoder with actual proprioception and action history. Common scene configuration and actuator gains are bound.",
+      false
+    ],
+    [
+      "Measured scope",
+      "Task + contact outcome",
+      "2/2 clear, 2/2 original beam, 2/2 beam −20 mm. All six execution records match selected fixed controls exactly; admission-rule superiority remains unproved.",
+      true
+    ]
+  ],
+  "loop": "↶ Measured state closes the motor loop. The initial plan is not replaced during execution; continuation from a deviated body remains unqualified.",
+  "allowed": "Bound public task/map, measured initial body, current orientation and actual motor history; fixed bank and prior ledger tied to this motor, configuration and standing profile.",
+  "privileged": "Exact geometry/localization are declared development assumptions. Future realized outcomes and matched-control records do not select the candidate. Changed unmeasured requests are rejected, without a safe-stop claim."
+},
     proposed: {
       caption: 'Proposed main experiment. Start with a declared ideal scene estimate, qualify the tracker, then test geometry-dependent whole-body decisions. Initial library selection is now tested; short-horizon construction and online replacement remain proposed.',
       nodes: [

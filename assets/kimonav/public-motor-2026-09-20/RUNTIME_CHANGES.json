@@ -1,0 +1,8 @@
+[
+  {
+    "path": "/home/linjiw/kimodo/knav/src/knav/training/primitive_selection.py",
+    "previous_sha256": "867d762cc3e185df9d00d91ce2d8188e1a5d36ad3abe36a7f8311fdc5686040f",
+    "current_sha256": "c6a8fa8d9b7b7cd952079a338d93c44986cbf96524c168e5fe56c16ce8aff889",
+    "reason": "Injectable qualification-profile validator; legacy default path unchanged, reference packing and tracking unchanged."
+  }
+]

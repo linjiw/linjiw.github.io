@@ -1,0 +1,38 @@
+# Student 01：因果数据与开发拟合协议 v1
+
+登记：2026-09-21，首次拟合前。本阶段执行[研究计划](RESEARCH_PLAN_zh.md)的第一项学习准备，不依赖 pending case。当前范围为本地 read-only inventory、因果 loader 和一次 CPU BC 开发诊断；不包括 native 仿真、GPU 训练、闭环能力或 held-out 声明。
+
+## 数据来源与使用权限
+
+[清单配置](../configs/student01_inventory_v1.json)限定六个已有 complete-task/reset run 根目录；suffix-only continuation 与复用 admission packet 不重复计入。清单保留未执行 task、失败、supplied-reference controls 和实际 selector 轨迹。每条绑定 task/config/result/selection/pre-action 文件；验证 task digest、数组尺寸/有限值、20 ms 时基和前置 q/qdot 对齐。轨迹重复按 actor features、issued reference、actions 和 checkpoint contract 判断；这不是独立祖先鉴定。
+
+初次 inventory：30 task records、25 completed episodes、8,217 recorded rows、20 成功、5 失败；另 5 records 没有 completed result，不称物理失败。12 个成功 causal-selector candidates 中有 3 个完全重复，9 个不同记录。旧 representation index 的 96 episodes 支持 mask 合计确认为 16,800 行；不纳入本次拟合，未将 moving-arrival 标签升为 recover-stop 标签。
+
+用户已要求按新计划持续推进。本协议据此新建一个**仅限 development 拟合**的数据使用范围：只选 inventory 中成功、未重复、完整、method=linear29 的四条 selector trajectory，共 1,454 行；保留全部失败在 inventory 中。旧 task 的 false/缺失 authorization 字段、query masks 和 split 原样保留。新训练配置显式绑定入选 episode IDs 与 manifest，不能作为旧数据已可用于泛化研究的证明。
+
+四条记录均属 `duck_pilot_00976`，其中 original/shifted/clear 等布局已经被研究者检查过。无 train/validation/test 随机逐帧切分；全部是开发拟合。不同场景、controller 分支或多行不制造独立来源。对以后正式训练需要新的 ancestry map、训练/验证/测试规则与版本化 release。
+
+## 输入、目标和接口边界
+
+Actor 为 1,013 维：930D 已经由 recorder 记录的、经过 teacher normalization 的因果 proprio history；3D 当前 body-frame goal；5×15 known-map object features；5 个 object availability mask。当前 pre-action pose 只用于 world-to-body 转换，使用 exact localization 和完整静态地图。几何 convention 对齐已冻结 recorder：center、full dimensions、局部 rotation 前两列逐列展开、shape one-hot。没有障碍的 padding 为零并带 mask。
+
+不输入 episode time、candidate/source ID、clip phase、issued reference、teacher tokens/actions、未来 pose、执行后成功标签。不得使用 post-action `robot-poses.npz` 代替 `pre-action-poses.npz`。现有 930D history 已包含 tracker 所需历史；本次不引入额外未来 context。
+
+Target 是 **Linear29 路径实际发给 motor encoder 的 640D packed reference**，十个相隔 0.1 s 的 q/qdot/相对 root orientation 样本，跨度 0.9 s。它不是 640 个 motor tokens，也不是完整 root-translation/contact-intent chunk，更不是新 Linear29 codec。冻结打包将 flattened q 与 flattened qdot 拼接后再 reshape 为十块；直接将每块头 29 维当物理 q 是错误的。当前 BC 直接拟合原 packed 数值，不解包重构或调用 motor。
+
+模型可输出不满足旋转正交性、速度一致性或执行支持的参考。闭环前必须单独验证 packed roundtrip、rotation 投影/有效性、velocity 规则、checkpoint normalization、joint order、history 和 latency，并重新评价预测 horizon 的可执行性。不能把拟合误差降低当作 tracker qualification。
+
+## 冻结的小规模诊断
+
+机器配置：`configs/student01_bc_smoke_v1.plan.json`（执行前生成，绑定四条 episode）。模型为 1013→128→128→640 的 ReLU MLP；CPU、2 threads、seed 20260921、Adam lr 0.001、batch 128、最多 300 updates、优化循环 120 s 上限、native=0、GPU=0，不自动重试。输入和 target 标准化仅在这四个开发 episode 上拟合，std 下限 0.001，随 checkpoint 保存。
+
+各 episode 等权采样，内部行均匀抽样；避免较长 episode 单纯占更多训练权重。记录初始/最终 normalized MSE、常量均值基线、各 episode 开发误差、实际 updates、时间与 local checkpoint。诊断是否通过以 loss 有限且最终低于初始及开发均值基线为标准；失败也完整保留，不调参填补成功。此标准只验证管线能拟合已见数据。
+
+独立测试覆盖：未来/特权字段不能影响过去 actor rows、body-frame 几何、invalid quaternion/尺寸、缺 tick、错位前置状态、源文件变更、失败 episode 禁止正向 loader。训练 release 需精确 episode whitelist、method、非重复和 checkpoint 一致性；无合法 release 不拟合。
+
+## 后续工作
+
+1. 本阶段产出 inventory、loader、CPU diagnostic checkpoint 和报告，更新 [TODO](../TODO.md)。
+2. 对预测参考做离线几何/时基/打包检查，识别当前 packed-target baseline 与正式 Linear29 chunk policy 的差距，确定执行 adapter。
+3. 另登记预算有界的 native Student 01 评估，使用相同完整任务 scorer；此前仍没有本仓库新学生的闭环结果。
+4. 小范围闭环可行后，采集独立任务分布并比较数据/输出头；本次四条 developer-inspected episodes 不作为泛化测试。

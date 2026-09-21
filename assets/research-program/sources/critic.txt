@@ -1,0 +1,272 @@
+# Traversal Critic — a video foundation model as a navigation reward
+
+Research codebase for **"The World Model as Judge: Learned Traversal Rewards
+for Humanoid Navigation in Cluttered, Human-Occupied Spaces"** (ICLR/ICRA
+target). A compact video-language model (Cosmos3-Edge, 2B) is fine-tuned into
+a **traversal critic** — an ordinal 1–5 judge of navigation clips — using
+labels derived automatically from privileged simulator state, and then used
+**at training time only** as reward shaping for a small vision policy that
+commands a frozen GEAR-SONIC whole-body controller on a Unitree G1.
+
+**Project page:** https://linjiw.github.io/traversal-critic/
+**Current paper prose:** [`paper/draft.md`](paper/draft.md). The checked-in PDF
+and factual images predate the clean v5 evidence and are not submission
+artifacts until the final evidence manifest validates their replacements.
+
+## Current evidence status
+
+| Finding | Number |
+|---|---|
+| G1 data | Exactly **2,000** audited labeler-v3 contact-physics rollouts; 1,568/432 scene-hash-disjoint train/validation originals; all five labels represented |
+| G2 selected v5 critic | Iteration 100 is the sole zero-parser-failure checkpoint: **Pearson 0.564556**, acc±1 0.740741, exact acc 0.398148 on all 432 validation clips |
+| Later v5 checkpoints | Iterations 200–800 rank better (Pearson 0.630392–0.705093) but each emits one or two out-of-range generations and is ineligible under the frozen rule |
+| G3 v4/v5 common yardstick | **Unresolved**: the historical v4 weights and validation media are unavailable locally, so no paired non-inferiority or monotone-scaling claim is made |
+| G4 OOD critic | 42/42 outputs parse and stay in [1,5], but the impaired-gait clip scores 5.0 versus a 4.3 clean-walk mean; the required ordering fails |
+| G4 grouped frozen-tower probe | Discrete Pearson **0.7053** and correct impaired-below-clean ordering, but 8/42 continuous OOD predictions fall outside [1,5] |
+| G5/G6 contact-physics policy test | The frozen 300,000-step, 3-seed × 3-arm baseline/oracle/critic PPO matrix is running; **no policy-superiority, parity, or mechanism claim is currently made** |
+| Causal balance protocol | Terminally infeasible at frozen scene 608 after the amended max-20 attempt budget; robot-visual and pre-fall mechanism support are false for v5 |
+
+The current objective is submission-grade adjudication of whether the selected
+critic is a replicable **differently-informed** reward under contact physics.
+The canonical protocol, gate status, exact claim rules, and next research
+direction are in
+[`research_goal_and_execution_plan_2026-08-09.md`](docs/reviews/research_goal_and_execution_plan_2026-08-09.md).
+Historical v1–v4, kinematic, and seed-0 physics artifacts are preserved as
+motivation and non-record pilots, not substituted for the clean matrix.
+
+The immediate next action is deliberately unchanged: do not inspect partial
+policy outcomes or alter scheduling; let all nine runs reach exactly 300,032
+steps and 586 rows, then execute the guarded matrix → training-only selection
+and independent replay → three selected/final held-out seed endpoints and
+audits → G5/G6 analysis → reviewed claims, figures, release gate, and PDF.
+After that closure, the strongest prospective direction is the separately
+sealed, corpus-disjoint clean-versus-natural-fall/solid-collision readout
+challenge described in
+[`next_readout_challenge_goal_2026-08-09.md`](docs/reviews/next_readout_challenge_goal_2026-08-09.md).
+
+## Repository layout
+
+```
+sim_rl/            Self-contained simulation + RL stack (CPU, MuJoCo, ONNX):
+                     scene generation, kinematic + PHYSICS nav envs (full
+                     SONIC planner→encoder→decoder→PD loop under mj_step),
+                     PPO trainer (baseline/critic/oracle arms), paired
+                     evaluator (SPL/contact-seconds/fall-rate), scripted-
+                     expert baseline, async critic scorer daemon, frozen-
+                     probe control, rollout generators for critic data.
+cosmos_overlay/    Files that live INSIDE a cosmos-framework checkout
+                     (auto-labeler + tests, dataset source, SFT experiment
+                     SKU + TOML + launcher, ordinal eval). Mirrors the
+                     in-tree paths; applied by scripts/apply_cosmos_overlay.sh.
+docs/              Design doc, SONIC physics-harness spec (the verified ONNX
+                     interface), exploration notes, scene-assets survey.
+docs/reviews/      Four adversarial review rounds + responses (simulation
+                     correctness, independent claims audit, external advisor
+                     review, final review + paper guide).
+ops/               Supervisor/sequencer shell scripts used to run multi-day
+                     experiments unattended on a shared box.
+paper/             Draft (md + pdf), pitch, figures, review triage.
+results/           Checked-in historical summaries and the final v5 claim
+                     record after current evidence closure.
+scripts/           apply_cosmos_overlay.sh, check_env.sh.
+```
+
+## System overview
+
+```
+                     TRAINING TIME                              DEPLOY TIME
+┌─────────────────────────────────────────────────┐    ┌──────────────────────┐
+│ procedural cluttered scenes (MuJoCo)            │    │ small vision policy  │
+│   └─ SONIC stack: planner ONNX → encoder ONNX   │    │  (~0.5M params, 3 Hz)│
+│      → decoder ONNX → PD torques → mj_step      │    │        │             │
+│ PPO policy (heading/speed/mode @ 3.3 Hz)        │    │ SONIC planner cmds   │
+│   reward = task + safety + λ·critic(clip)       │    │        │             │
+│                        ▲ async file queue       │    │ frozen SONIC WBC     │
+│ Cosmos3-Edge critic (2B, SFT'd judge) ──────────┘    │  (50 Hz, on robot)   │
+│   trained on auto-labeled sim clips              │    └──────────────────────┘
+│   (privileged state → 4-axis ordinal labels)     │      no world model
+└─────────────────────────────────────────────────┘      deploys, ever
+```
+
+Three independent environments (they never share a venv):
+
+| Env | Used for | Python |
+|---|---|---|
+| **SONIC `.venv_sim`** | everything in `sim_rl/` (MuJoCo, onnxruntime, torch-cpu) | 3.10 |
+| **cosmos-framework `.venv`** | critic SFT, checkpoint eval, scorer daemon (GPU) | 3.13 (uv) |
+| *(optional)* Isaac Lab conda | future GPU-parallel training; not required for any current result | 3.10 |
+
+## Installation
+
+### 0. Hardware
+
+The historical prototype ran on a shared 22 GiB NVIDIA L4. The clean v5
+reproduction uses one RTX 5090 plus a 20-core CPU workstation; simulation/PPO
+is CPU-only, while critic SFT, feature extraction, and the scorer daemon use the
+GPU. Treat these as observed configurations rather than minimum requirements.
+
+### 1. This repo
+
+```bash
+git clone https://github.com/linjiw/traversal-critic-research
+cd traversal-critic-research
+```
+
+### 2. GEAR-SONIC (controller + planner + sim assets)
+
+```bash
+git clone https://github.com/NVlabs/GR00T-WholeBodyControl ~/GR00T-WholeBodyControl
+export SONIC_ROOT=~/GR00T-WholeBodyControl
+
+# released ONNX models (planner + motion-token encoder/decoder):
+# from the SONIC release / HF nvidia/GEAR-SONIC, place at:
+#   $SONIC_ROOT/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx
+#   $SONIC_ROOT/gear_sonic_deploy/policy/release/model_{encoder,decoder}.onnx
+#   $SONIC_ROOT/gear_sonic_deploy/policy/release/observation_config.yaml
+
+# sim venv (python 3.10):
+cd $SONIC_ROOT
+python3.10 -m venv .venv_sim
+.venv_sim/bin/pip install mujoco onnxruntime torch --index-url https://download.pytorch.org/whl/cpu
+.venv_sim/bin/pip install numpy imageio[ffmpeg] opencv-python-headless pillow
+```
+
+Verify the physics loop end-to-end (G1 should walk ~7 m in 10 s):
+
+```bash
+cd sim_rl
+MUJOCO_GL=egl $SONIC_ROOT/.venv_sim/bin/python sonic_physics_smoke.py --seconds 10 --mode 2
+```
+
+> The ONNX interface (994-dim decoder obs, 1762-dim encoder obs, joint-order
+> maps, PD gains) is fully specified in
+> [`docs/sonic_physics_harness.md`](docs/sonic_physics_harness.md) — it was
+> extracted from SONIC's C++ deployment and cross-verified against the
+> IsaacLab training code. **Use `policy_parameters.hpp` values, not the
+> legacy wbc yaml.**
+
+### 3. Cosmos3 (critic model) — only needed for critic training/scoring
+
+```bash
+git clone <cosmos-framework> ~/cosmos-framework   # NVIDIA Cosmos3 framework
+cd ~/cosmos-framework && just install              # uv sync, see its README
+
+# apply this project's overlay (labeler, SFT SKU, TOML, launcher, eval):
+bash ~/traversal-critic-research/scripts/apply_cosmos_overlay.sh ~/cosmos-framework
+
+# verify (24 CPU-only labeler tests):
+cd ~/cosmos-framework
+LD_LIBRARY_PATH='' uv run pytest cosmos_framework/scripts/reasoner/prepare_traversal_critic_dataset_test.py -q
+```
+
+Model checkpoint: `nvidia/Cosmos3-Edge` from Hugging Face (the SFT recipe
+partially unfreezes projector + last 8 LM blocks to fit a 22 GiB card).
+
+Keep generated rollouts and checkpoints on a large-volume filesystem. All
+portable supervisors honor `TRAVERSAL_DATA_ROOT` (default
+`~/traversal_data`), alongside `SONIC_ROOT` and `COSMOS_ROOT`. SFT supervisors
+write checkpoints under `COSMOS_OUTPUT_ROOT` (default
+`$TRAVERSAL_DATA_ROOT/cosmos_outputs/train`) rather than filling the Cosmos
+checkout filesystem.
+
+Environment gotchas we hit (all reproduced + fixed in code here):
+
+- **torchcodec needs NPP libs**: run GPU tools with
+  `LD_LIBRARY_PATH=$COSMOS/.venv/lib/python3.13/site-packages/nvidia/cu13/lib`
+  or the daemon silently fails every decode (see `ops/` and the incident note
+  in `docs/reviews/final_review_and_paper_guide_2026-08-07.md` §1.4).
+- **`PYTORCH_ALLOC_CONF=expandable_segments:True`** for SFT on a fragmented
+  shared card (the launcher sets it).
+- Generation-time **thinking mode must be off** for a digit-emitting critic
+  (`enable_thinking=False`) — otherwise every checkpoint outputs CoT prose.
+- transformers drops per-item fps in `apply_chat_template`; pass
+  `videos_kwargs={"do_sample_frames": False, "video_metadata": ...}` (the
+  scorer daemon does).
+
+### 4. Check everything
+
+```bash
+bash scripts/check_env.sh
+```
+
+## Reproducing the pipeline
+
+All commands run from `sim_rl/` inside the SONIC `.venv_sim` unless noted.
+`$DATA` is your data root (ours was `~/traversal_data`).
+
+```bash
+# 1. generate critic training rollouts (physics, banded quality drivers)
+MUJOCO_GL=egl python generate_physics_rollouts.py \
+    --out_root $DATA/rollouts_phys_v5 --scenes 1000-1500 --episodes_per_scene 4
+
+# 2. build the labeled dataset (in the cosmos venv; labeler v3, scene-held-out split)
+cd ~/cosmos-framework && LD_LIBRARY_PATH='' uv run python -m \
+    cosmos_framework.scripts.reasoner.prepare_traversal_critic_dataset \
+    --rollout_root $DATA/rollouts_phys_v5 --out_root $DATA/critic_v5 \
+    --val_scene_frac 0.2 --balance_train --print_distribution
+
+# 3. SFT the critic (GPU; ~800 iters on an L4)
+TRAVERSAL_CRITIC_ROOT=$DATA/critic_v5 NPROC_PER_NODE=1 \
+    bash examples/launch_sft_traversal_critic_edge_l4.sh
+
+# 4. evaluate checkpoints (ordinal metrics on the held-out val)
+VAL_ROOT=$DATA/critic_v5/traversal_critic_val \
+    bash tools/eval_traversal_critic_sweep.sh
+
+# 5. start the async scorer daemon (GPU) on the best checkpoint
+LD_LIBRARY_PATH=.venv/lib/python3.13/site-packages/nvidia/cu13/lib \
+    .venv/bin/python tools/critic_scorer_daemon.py \
+    --hf_ckpt <best_export> --queue_dir $DATA/score_queue
+
+# 6. train the three PPO arms under physics (CPU; ~30 h each at 300k steps)
+cd sim_rl
+for ARM in baseline critic oracle; do
+  MUJOCO_GL=egl python train_nav_policy_ppo.py --physics --reward $ARM \
+      --out_dir $DATA/nav_ppo_${ARM} --total_steps 300000 --max_seconds 30
+done
+
+# 7. paired evaluation on held-out scenes (SPL, contact-seconds, fall rate)
+MUJOCO_GL=egl python eval_nav_policy.py --physics \
+    --policies baseline=... critic=... oracle=... \
+    --scene_lo 400 --scene_hi 440 --episodes 100 \
+    --out $DATA/nav_eval_phys.json
+
+# 8. controls: scripted privileged expert + frozen-probe baseline
+MUJOCO_GL=egl python scripted_route_baseline.py --episodes 100 --out $DATA/scripted.json
+cd ~/cosmos-framework && uv run python tools/frozen_probe_baseline.py \
+    --data_root $DATA/critic_v5 --out $DATA/probe_v5.json
+```
+
+For multi-day unattended runs, use the supervisor patterns in `ops/`
+(crash-resume with a log-continuous step counter, GPU-headroom gates,
+fast-failure backoff). **Always verify `bonus_applied > 0` in a critic arm's
+`train_log.jsonl`** — a critic arm without bonus coverage is silently a
+baseline arm.
+
+## Relationship to upstream projects
+
+| Project | What we use | What we changed |
+|---|---|---|
+| **GR00T-WholeBodyControl / GEAR-SONIC** (NVlabs) | released planner/encoder/decoder ONNX, G1 MuJoCo models, obs-config yamls | **nothing** — consumed frozen, driven from Python by `sim_rl/sonic_physics_env.py` per the spec in `docs/sonic_physics_harness.md` |
+| **cosmos-framework / Cosmos3-Edge** (NVIDIA) | Edge 2B reasoner + SFT infra | additive overlay only (`cosmos_overlay/`): auto-labeler, dataset source, experiment SKU, TOML, launcher, ordinal eval |
+| **BFM-Zero** (LeCAR Lab) | none in current results; **designated substrate for critic-guided behavior discovery** (phase C) | Architecture decision of record (`docs/reviews/cosmos_humanoid_control_architecture_review_2026-08-06.md`): SONIC stays the reference-driven baseline + deployment track (its planner supplies behavior from a fixed mode library), while BFM-Zero's reward-free latent skill space is the substrate for *discovering* traversal behaviors the critic scores — behaviors outside SONIC's mode list. A BFM-Zero backend slots in at the `robot.plan()` seam in `sim_rl/sonic_physics_nav_env.py`; the env is otherwise controller-agnostic. All published numbers use SONIC. |
+| **Isaac Lab** | none at present | staged for GPU-parallel envs (phase C); the MuJoCo harness is the source of truth for physics semantics |
+
+## Documentation index
+
+| Doc | Contents |
+|---|---|
+| `docs/traversal_critic_design.md` | Full design: problem, three-layer system, phase plan, gates |
+| `docs/sonic_physics_harness.md` | **The verified SONIC ONNX interface spec** + physics findings (fall check, replan cadence, strafe limit) |
+| `docs/reviews/*` | Four adversarial reviews + responses — the audit trail behind every number |
+| `docs/reviews/research_goal_and_execution_plan_2026-08-09.md` | Canonical G1–G6 status, frozen policy protocol, claim contract, and current research direction |
+| `docs/reviews/final_review_and_paper_guide_2026-08-07.md` | Historical pre-v5 review and writing plan; superseded for current evidence status |
+| `paper/draft.md` | The paper (canonical copy) |
+
+## License / provenance
+
+New code in this repo: SPDX `OpenMDW-1.1` headers (matching the
+cosmos-framework convention it was developed inside). Upstream projects keep
+their own licenses; no upstream code is vendored here — only additive overlay
+files and standalone tools. Result JSONs carry `labeler_version` + dynamics
+stamps for auditability.

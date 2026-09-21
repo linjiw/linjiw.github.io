@@ -1,0 +1,282 @@
+> **Current direction — 18 September 2026:** [Whole-body traversal reassessment and research plan](research/2026-09-18-traversal-reset/README.md). The goal remains scene-aware, observation-extensible humanoid traversal. The newest matched study has 0/8 full completions for every public student arm; the main proposed system comparison is now task-driven whole-body planning with a retained tracker. Earlier entries below are historical. Reserved20 was evaluated in earlier motor studies and is not globally untouched.
+
+> Latest completed research: [9 September continuation](RESEARCH_CONTINUATION_2026_09_09.md). Live binary10/24 versus current8/24 (two gains, no losses);24 captures include22 new and one declared recovery. The18-proposal envelope grid admits16 references but no complete-task forecast. Both audits pass; final36 remains sealed. Earlier review snapshots below predate this continuation.
+
+# Current synthesis and follow-ups — 9 September 2026
+
+See the [current results, analysis and prioritized remaining work](RESEARCH_PROGRESS_2026_09_09.md)
+and [active paper](paper/method_draft.pdf). The synthesis below is historical;
+its prospective steps must not be read as current completion claims.
+
+---
+
+# KimoNav result synthesis and strongest follow-up experiments
+
+**Superseded next-step ordering, 6 September:** see the
+[ICRA plan](ICRA_NEXT_STAGE_PLAN_2026_09_06.md), [completed M3c search](M3C_SAMPLING_TEACHER_RESULT.md)
+and [M3d implementation/audit](M3D_WAYPOINT_ATTENTION_RESULT.md). Twelve physics
+trials now exist; all fail the timed requested task without falling. The
+September 5 synthesis below remains historical evidence.
+
+**Synthesis date:** 5 September 2026  
+**Evidence boundary:** frozen ARDY kinematics, representation learning, and
+learned residual trainability. The residual now changes generation, but useful
+numerical control and physical navigation remain unestablished.
+
+Latest evidence: [M2p token-local path features](MOTION_BODY_TOKEN_LOCAL_RESULT.md)
+completes nine shared regression prefixes, 18 refinements and 24,480 new scores.
+The balanced local head reduces turn joint MSE 7.21% versus native and 5.74%
+versus optimized time-only, with improved contact accuracy and gains in all
+six noise/stratum aggregates. Both promotion gates still fail: gain versus
+the global head is 3.57% (threshold 5%), versus its own TRAIN mean 4.16%, and
+only 14/36 programs beat all primary controls. Raw-local gain versus native
+is 2.93%; one seed loses to global/time. The +120-degree turn group still
+regresses 18.46%. All integrity checks, exact cached replay and 141 tests pass.
+The [next phase-resolved predictability audit](MOTION_BODY_PATH_PHASE_AUDIT_NEXT_STEP.md)
+is specified before further capacity or weight changes. The
+[public research notebook](https://linjiw.github.io/kimonav/) presents motion
+renders, interactive results, frozen criteria and limitations. Generated-
+navigation and physical improvement remain unestablished.
+
+**Earlier interface evidence:** [M2b](MOTION_BODY_DECODED_RESULT.md) fails the
+learned generator gate, while [M2c](MOTION_BODY_INTERFACE_RESULT.md) finds 60.09%
+lower joint MSE for temporal than global target-assisted corrections. M2d
+now shows that this oracle advantage did not transfer to its path/phase head.
+
+**Preceding bridge experiment:** [Motion-supervised body conditioning](MOTION_BODY_BRIDGE_RESULT.md)
+completes 350/350 reserved-program generations and 50/50 post-result mean controls.
+All five seeds preserve the backbone and exact zero recovery. Token MSE improves
+2.33%, but raw transition jerk worsens 1.32%; two seeds and two families improve,
+and three quality margins fail. A constant TRAIN-mean condition is essentially
+tied with baseline and beats varying raw conditioning. The next controlled test
+is [decoded objectives × future-context compatibility](MOTION_BODY_DECODED_NEXT_STEP.md),
+keeping the model size fixed.
+
+**Preceding offline experiment:** [Motion-grounded body prediction](MOTION_BODY_PREDICTION_RESULT.md)
+passes its offline gate: 11.77% lower rollout joint-coordinate MSE for raw
+path/time versus history, 21 effective confirmation groups, five model seeds
+(one losing seed). An embedding-scale audit preserves the directional finding.
+Contact-transition error remains high; use the frozen motion prior in the
+[body-bridge proposal](MOTION_BODY_BRIDGE_NEXT_STEP.md), now executed as M2a.
+
+**Preceding experiment:** The [hidden-condition follow-up](HIDDEN_CONDITION_RESULT.md)
+completes 360/360 generations with five paired seeds. Both hidden views improve
+on token-loss conditioning on all four fresh confirmation command means, but
+both still lose to zero on all four. The exact-alpha oracle passes; this
+fixed-budget loss repair fails its gate. The
+[realized-motion audit](D0_REALIZED_WINDOW_RESULT.md) extracts 3,445 windows and
+exposes an 827-clip shared-prompt component. Stop teacher-alpha repair and
+address temporal supervision and independent data coverage before a decisive fit;
+see [the next-step design](MOTION_GROUNDED_NEXT_STEP.md).
+
+## Decision
+
+The current evidence supports the hybrid decomposition, but not yet the proposed
+learned method:
+
+> Exact root constraints should carry auditable geometry and endpoint
+> look-ahead. A separate numerical, time-varying navigation prompt is justified
+> only if it improves behavioral realization after that strengthened baseline is
+> fixed.
+
+The strongest next scientific test is therefore **not** another caption prompt
+or a larger full-model fine-tune. It is a matched-geometry generator experiment
+that asks whether the frozen O2a program/path latent can control phase,
+velocity regime, transition, and terminal behavior through a small separately
+ablatable residual.
+
+The enabling audit has now run: all 1,000 Kimodo-G1 clips pass the direct ARDY
+representation interface, and a development-frozen support card retains 958 for
+bridge training. The 42 rejected clips remain explicit; weave is the weakest
+path shape at 32/43 eligible. This audit emits the support-qualified pool. Objective relabeling and a
+separate grouped O2b3 split are required before learned motion-bank fitting.
+
+## What the completed work establishes
+
+| Result | Measured observation | Supported conclusion | Limit that remains |
+| --- | --- | --- | --- |
+| O0 objective contract | 60/60 programs pass strict serialization and goal/path/phase/time agreement | The views can share one exact typed objective | Interface integrity, not semantic or model equivalence |
+| O1 objective scorer | 60/60 compiler controls and 24/25 prior ARDY probes rank the intended objective; one non-identifiable speed negative is excluded and the realized loss is retained | Smooth counterfactual relabeling is usable as a diagnostic | No reward encoder or reward-prompted generation |
+| O2a two-view retrieval | Five seeds all beat their random comparator; median held-out program→path top-1 is 67.89% | Program and path state contain alignable task information | Retrieval does not show causal generator control |
+| ARDY injection audit | Each root/body stage has one projected 4096-D text token; appended tokens are cropped; the token participates in text CFG | The learned signal needs an explicit residual or new branch | No trainability or usefulness result yet |
+| O2b0 prompt/hold factorial | Stop text reduces final-0.4 s speed for 2/3 program means; one-second hold is repeatable and costs about 0.005 m endpoint error | Text is causally active, while endpoint velocity is under-specified by the native path mask | Only three straight-walk programs |
+| O2b1 text-direction dose | Monotonic trend has the intended sign for 2/3 programs and reverses at 1.5 m/s | One generic semantic direction is not a calibrated numerical control axis | Static interpolation is unsafe as the method |
+| O2b2 phase-switched prompt | Phase switching improves 0.5 and 1.0 m/s terminal behavior, fails at 1.5 m/s, and causes no material cruise/geometry tradeoff; one-second hold improves 5/5 seeds at all three speeds | Prompt timing matters, but exact future geometry is still the more reliable channel | No learned numeric/time-varying prompt |
+| D0 motion representation | Direct interface passes 1,000/1,000; 903/940 held-out and 958/1,000 overall are support-eligible | Kimodo-G1 can supply a source-hashed ARDY bridge bank after frozen filtering | Synthetic teacher data; 42 support failures, especially weave; O2b3 split/labels still needed |
+| O2b3a residual smoke | Five-seed zero recovery and trainability pass; initial and coverage studies each complete 60/60 rows | Small residual is trainable and changes generated motion | Neither view improves teacher imitation on either validation program mean; not useful-control evidence |
+
+The three frozen generator studies comprise 195/195 completed trials and peaked
+at roughly 0.92 GiB. Their narrow two-of-three gates should not be summarized as
+robust control: the 1.5 m/s reversal is the most informative losing subgroup and
+must remain a central held-out test.
+
+## Revised evidence chain
+
+1. **Geometry is already controllable.** Native root position/heading masks and
+   stationary endpoint look-ahead provide a strong deterministic route and stop
+   channel.
+2. **Semantics can affect realization.** Changing only the frozen text feature
+   changes terminal motion, so the generator has a behavior-sensitive channel.
+3. **The semantic channel is not a numerical controller.** Static and
+   phase-switched stop directions are conditional on the requested speed and
+   fail at 1.5 m/s.
+4. **Useful learned control remains unestablished.** O2a aligns two objective
+   views; O2b3a now connects them to generation. The residual is trainable, but
+   teacher imitation does not transfer adequately even after broader training
+   coverage. A causal motion change alone does not establish useful control.
+5. **Physical navigation remains a separate claim.** No SONIC denominator
+   exists because the two S0 attempts failed during RTX/USD initialization.
+
+This changes the smallest defensible paper hypothesis to:
+
+> With exact root constraints fixed, a numerical time-varying prompt inferred
+> from either program state or future path state improves whole-body phase and
+> terminal realization over exact constraints, metric text, and the one-second
+> look-ahead baseline, without degrading route geometry.
+
+If the learned residual only reproduces the look-ahead baseline, that is useful
+bridge evidence but not sufficient evidence for a better navigation-motion
+interface. If it cannot reproduce it, view expansion and denoiser fine-tuning
+should stop.
+
+## Run-order prerequisite: D0 motion-representation compatibility
+
+This enabling audit is complete; it is not the primary paper experiment. See
+[`D0_MOTION_REPRESENTATION_RESULT.md`](D0_MOTION_REPRESENTATION_RESULT.md).
+
+| Field | Decision |
+| --- | --- |
+| Question | Can the available 1,000 Kimodo-G1 clips supply valid ARDY training targets? |
+| Changed component | Conversion through `ArdyMotionRep`, its autoencoder tokens, and inverse decoding only |
+| Coverage | Hash-selected development clips followed by a held-out source-clip set spanning all six dataset categories, constrained/unconstrained clips, speeds, durations, and path shapes |
+| Independent unit | Original motion clip; windows from a clip are repeats |
+| Diagnostics | Root position/heading reconstruction, joint rotation/position error, foot/contact consistency, motion duration, finite values, and visual axis/limb sanity cases |
+| Leakage control | Freeze eligible clip hashes and train/validation/test grouping before fitting any navigation projection |
+| Output | `NavMotionWindow-v1` compatibility manifest with every rejection and reason retained |
+| Gate | **Passed:** direct interface 1,000/1,000; development card frozen before held-out; 958/1,000 training-eligible with all rejection reasons retained |
+
+The audit must explicitly test 30→25 FPS resampling and the G1 joint order. The
+matching `(T, 34, 3, 3)` rotation and `(T, 3)` root shapes are encouraging, but
+shape compatibility is not semantic compatibility.
+
+## Ranked follow-up experiments
+
+The ranking is by claim leverage, not chronological convenience. D0 precedes
+all learned studies.
+
+| Rank | Experiment | Decisive question | Why it is high value | Stop condition |
+| ---: | --- | --- | --- | --- |
+| 1 | **O2b3 matched-geometry learned residual** | Does a small two-view prompt add behavioral control after exact path and one-second look-ahead are fixed? | It is the missing causal bridge between O2a and the proposed method | Stop view expansion if neither view improves program-level outcomes or if gains disappear against look-ahead |
+| 2 | **O2c generated view equivalence and counterfactual specificity** | Do program and path views of the same objective cause equivalent motion, while one-field changes cause the intended change? | It directly tests the shared-objective-space claim rather than retrieval accuracy | Reject shared-space claim if latent alignment does not survive generation |
+| 3 | **O5 measured-state disturbance/replanning** | Does recomputing the remaining objective from executed state improve completion after lag or pushes? | It upgrades reference generation to a navigation result | Do not claim navigation if generated gains fail in SONIC or only elapsed-time progression works |
+| 4 | **O4 prompt optimization under held-out nuisances** | Can a short prompt sequence recover failures without weight updates? | It tests adaptation while keeping the prior fixed | Drop adaptation claim if it overfits the kinematic proxy, loses to matched-budget random search, or costs as much as fine-tuning |
+| 5 | **O3 goal view, then reward-bank sensitivity** | Can a genuinely different task specification recover the same usable prompt? | It broadens the interface only after the core mechanism exists | Do not add reward prompting if bank coverage or source choice dominates the result |
+
+## Experiment 1: O2b3 matched-geometry learned residual
+
+### Mechanism
+
+Keep the O2a encoders and ARDY denoiser frozen initially. At each root/body
+stage, add a stage-specific, zero-initialized projection after the released text
+projection:
+
+\[
+h_t^{stage}=W_{text}^{stage}e_{style,t}
++P_{nav}^{stage}z_{nav,t},\qquad stage\in\{root,body\}.
+\]
+
+Only `P_nav` is trainable in the first causal test. A zeroed projection exactly
+recovers the checkpoint. The prompt can be disabled, shuffled, or replaced by a
+one-field counterfactual without changing text or path. This avoids the audited
+failure mode in which appended prefix tokens are silently cropped.
+
+### Two stages of evidence
+
+1. **O2b3a bridge smoke:** self-distill existing ARDY motions from O2a training
+   programs. Its only question is whether the residual is trainable and whether
+   program/path views can reproduce a target behavior on held-out programs. It
+   is plumbing evidence and cannot establish superiority over its teacher.
+2. **O2b3b decisive study:** train on the D0-qualified objective-relabeled
+   motion bank. Compare on source-grouped held-out programs and numerical
+   regimes, including 1.5 m/s and ordered compositions.
+
+### Frozen comparison table
+
+| Arm | Exact path | One-second hold | Phase text | Learned prompt | Purpose |
+| --- | ---: | ---: | ---: | ---: | --- |
+| A | yes | no | no | no | Native geometry baseline |
+| B | yes | yes | no | no | Strengthened deterministic baseline |
+| C | yes | no | yes | no | Best frozen semantic schedule |
+| D | yes | same as B | fixed style only | program view | Learned program prompt |
+| E | yes | same as B | fixed style only | path view | Learned path prompt |
+| F | yes | same as B | fixed style only | shuffled/counterfactual | Causal negative control |
+
+Use paired generation seeds and the exact same compiled path in all matched
+arms. Report the hold's extra future constraint explicitly rather than hiding it
+inside preprocessing.
+
+The independent unit is the held-out source program or source motion, not a
+window, prompt paraphrase, counterfactual, or random seed. The primary table
+must print every primitive family and the 1.5 m/s subgroup. Continuous route,
+terminal, transition, foot-skate, jerk, contact, and seam metrics accompany all
+thresholded counts.
+
+The result supports H1 only if the gains are program-level, survive comparison
+with Arm B, preserve route geometry, appear from both prompt views, and reverse
+or disappear under Arm F. A gain against Arm A but not Arm B means the learned
+prompt recovers missing endpoint information; it does not yet add value beyond
+deterministic look-ahead.
+
+## Experiment 2: O2c generated view equivalence
+
+Use the same checkpoint, path, style text, and random seed. Change only the
+source of `z_nav`:
+
+```text
+same objective: program view ↔ path view
+hard negative: speed, sign, distance, phase order, or terminal mode changed once
+```
+
+Calibrate the equivalence margin from within-view stochastic variation on the
+development split and freeze it before the held-out table. Measure both motion
+distance and task-field response. A valid shared space requires:
+
+- same-objective cross-view outputs to stay within the frozen equivalence
+  margin;
+- counterfactual outputs to separate in the intended metric;
+- off-target geometry and quality effects to remain bounded;
+- no collapse in slow straight walks, the weakest O2a retrieval family.
+
+Retrieval accuracy is only an auxiliary diagnostic. Generated behavior is the
+endpoint of this claim.
+
+## Experiment 3: O5 measured-state replanning
+
+Run this only after the released SONIC known-good control and ARDY bridge smoke
+complete. Compare:
+
+```text
+open-loop elapsed-time phase progression
+vs
+measured-state remaining-goal rebasing
+```
+
+Pair conditions on distinct routes and disturbances. Treat each route/disturbance
+episode as the independent unit and retain falls, timeouts, capture failures,
+tracker aborts, and command failures separately. Report final SE(2), terminal
+speed, completion time, extra path length, tracking error, replan count, and
+success `n/N`. This can support comparative robustness in the tested simulator
+or robot setting; one environment cannot support broad deployment claims.
+
+## Immediate sequence
+
+1. **Completed:** D0 froze 958 eligible motion hashes and 42 explicit rejections.
+2. **Completed:** implement the 64→1024 root/body residual; exact recovery and
+   finite-gradient trainability pass in five seeds.
+3. **Transfer unresolved:** both initial and expanded-coverage smokes fail the
+   program-mean teacher-imitation comparison. Isolate hidden-condition versus
+   token-output distillation with a constant-prompt and privileged-oracle control.
+4. Build D0 objective labels and a separate O2b3 grouped split, then freeze the
+   primary behavioral outcome, geometry margins, and losing-case table.
+5. Run the decisive O2b3b comparison only after the revised smoke transfers.
+   Advance to O2c on useful field-specific control, not merely any motion delta.

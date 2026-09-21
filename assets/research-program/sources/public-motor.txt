@@ -1,0 +1,64 @@
+# Public requests now connect to the stronger simple baseline
+
+20 September 2026 · completed simulation development study, not a peer-reviewed result. **Six new public-interface executions** use original SONIC weights, the same scene evaluation configuration and a newly bound qualification ledger. The ledger uses **14 old qualification executions**, including the six selected fixed controls; those are reused evidence, not new data.
+
+All **6/6** public requests complete the unchanged task. Clear requests select `nominal`; original-beam and beam-minus-20-mm requests select `local_duck`. The selected fixed controls also complete **6/6**, with zero paired gains or regressions. [Registered protocol](PROTOCOL.md).
+
+| Request context | Public choice | Public · new | Selected fixed · reused |
+|---|---|---|---|
+| Clear | Nominal | 2/2 | 2/2 |
+| Original beam | Local duck | 2/2 | 2/2 |
+| Beam −20 mm | Local duck | 2/2 | 2/2 |
+
+![Public task outcomes and measured pelvis motion](public-motor-outcomes.svg)
+
+**This verifies an interface connection, not a better admission mechanism.** Geometry-only and evidence-filtered selection choose the same candidate on all six requests. Every complete execution record exactly matches its corresponding selected-fixed control: native episode, control trace, measured poses and pre-action poses. The task/map selects a supported reference, and the native motor executes it without a regression introduced by this connection.
+
+## Every execution
+
+| Request / seed | Chosen motion | Public · new | Selected fixed · reused |
+|---|---|---|---|
+| Clear / 96162 | Nominal | Complete, 7.50 s | Complete, 7.50 s |
+| Original beam / 96162 | Local duck | Complete, 7.52 s | Complete, 7.52 s |
+| Beam −20 mm / 96162 | Local duck | Complete, 7.52 s | Complete, 7.52 s |
+| Clear / 96167 | Nominal | Complete, 8.46 s | Complete, 8.46 s |
+| Original beam / 96167 | Local duck | Complete, 8.44 s | Complete, 8.44 s |
+| Beam −20 mm / 96167 | Local duck | Complete, 8.44 s | Complete, 8.44 s |
+
+All six new runs have zero measured forbidden environmental contact force. The unchanged task requires whole-body passage, ducking where requested, 15 upright recovery ticks followed by a fresh 50-tick hold inside the 0.5 m three-dimensional destination region, speed at most 0.1 m/s, no forbidden contact above 1 N at any 200 Hz physics substep, and no pelvis-height fall, within 10 s. Foot-floor support is allowed; self-contact absence is not established. There is no imitation termination or reference-state reset.
+
+These are six simulator executions but only **five distinct full action histories**, all from one inspected motion ancestry (00976), one corridor and two familiar seeds. The two beam layouts at seed 96167 have identical complete actions. This is not independent-source or scene-family generalization. [Exact groups and paired outcomes](ANALYSIS.json).
+
+## What the public interface accepts
+
+The implemented domain is finite: **one bound destination and three measured task/map contexts**, from a declared standing profile. The profile binds the original motor, common scene configuration, bank, control and physics clocks, actual actuator gains, operational task fields and measured entry. Configured joint calibration offsets are checked separately from actual deviations of the body. The 14 qualification executions include eight simpler-reference and six IK-lowered trials; nominal obstacle and sustained-motion conditions remain unqualified.
+
+The selector receives the public task, exact known geometry and measured initial state; it does not read a task-provided answer motion ID or the future result of this execution. Candidate geometry and endpoint checks operate on the fixed bank. The prior ledger records completed capability tests under the bound motor and conditions. The selected-fixed counterpart is used only for diagnostic matching after selection. [Ledger](CAPABILITY_LEDGER.json), [preflight decisions](PREFLIGHT.json), [reuse bindings](REUSE.json).
+
+An offline intervention holds actual entry, bank, destination and motor fixed and changes the declared map/task context. For every recorded entry, the choice changes from nominal in clear space to local duck in both beam contexts. Geometry-only produces the same choices. These are software counterfactual checks, not additional physical trials. They show input-dependent selection within this declared domain; they do not prove that this choice is necessary for success, since fixed local duck also succeeds in clear space.
+
+The current tracker uses measured proprioception and action history at every control step. Selection is initial only: no moving reference replacement, route replanning, camera input or hardware capability was tested.
+
+## Rejecting an unknown request is not solving it
+
+None of the six registered native requests was rejected. Separately, **11 offline profile probes** reject changed motor/configuration, timing, gains, goal, hold, unseen beam heights or placement, actual body deviation, or calibration. These probes verify contract enforcement without physics. They do not establish a safe stop, task completion, or that an unfamiliar request is physically impossible. [Probe definitions and results](PROFILE_REJECTIONS.json).
+
+In particular, successful execution at two discrete beam heights does not qualify an interval between them. The current finite gate rejects an unmeasured intermediate height. That restriction exposes a coverage question for the next experiment; it is not itself a navigation contribution.
+
+## What this changes in the research plan
+
+The earlier scene-motor public interface completed 0/2 lower-beam tasks. That result remains in the [historical public study](/kimonav/selection/). The [motor comparison](/kimonav/motor/) and [simpler-reference study](/kimonav/simple-reference/) established a stronger fixed baseline before this connection. Comparing old and new public scores does not isolate a planner improvement: the motor and its qualification evidence changed.
+
+The next proposed diagnostic is **12 new fixed-reference executions**: three untested beam offsets (−10, −30 and −50 mm) × two seeds unused in this clearance series × local duck versus IK lowered. Freeze requests, rules and budget before execution. Separately record geometry-only and finite-ledger shadow decisions, then use the measured fixed outcomes to count false admissions and solvable requests rejected. A shadow rejection is not a native attempt or a demonstrated safe stop. This panel is proposed, not registered or executed. [Current plan and decision branches](/kimonav/plan/).
+
+If the simple reference still covers the entire panel, move to independent sources and combined height/width constraints. If lowering adds successful tasks, retain that conditional role. If both fail, report the tested capability gap. A mechanism fitted using these new outcomes will need a separate evaluation panel.
+
+## Verification and acquisition cost
+
+- [Registered plan](PLAN.json) binds 298 runtime files; [runtime change record](RUNTIME_CHANGES.json) preserves the small qualification-hook change and its earlier hash. Historical source snapshots remain intact.
+- [Raw audit](AUDIT.json) reconstructs all six scores, references, contacts and selection receipts. All 55 loaded policy tensors, measured entry, recorded dynamics, actual actuator gains, motion libraries, initial proprioception/history and first-physics RNG match their declared controls.
+- [Frozen codec replay](CODEC_AUDIT.json) reproduces every one of **2,394** issued tokens and actions exactly; replay is not new physics.
+- **6 new native attempts**, **9,576 physics/contact substeps**, **188.360 s native wall time**; zero physical retries and zero training updates. The 14 old qualification executions contain 5,586 control steps; the six selected pairs are a subset with 2,394 old steps.
+- [Focused tests](TEST_RESULTS.txt): **37 passed**, including operational task matching, finite contexts, motor/configuration/clock/gain binding and calibration versus actual posture.
+
+The downstream goal remains destination and observations → coordinated route, body posture, feet and speed → arrival and stable hold. This increment establishes the connection in familiar conditions; useful coverage under new geometry, entry states and observations remains the research problem.

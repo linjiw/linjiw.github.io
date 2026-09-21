@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 390" role="img" aria-labelledby="title desc">
+<title id="title">A planned body envelope and an executed body can disagree</title><desc id="desc">Two conceptual scenes. Left: a planned crouch clears a beam, but an executed torso rises and hits it. Right: a conservative reference margin rejects a motion that a measured execution can complete. Neither diagram is a measured trajectory.</desc>
+<rect width="960" height="390" rx="16" fill="#e7ede3"/>
+<g font-family="system-ui, sans-serif" fill="#172e29">
+<text x="32" y="39" font-size="14" font-weight="700">A / FALSE CONFIDENCE</text><text x="510" y="39" font-size="14" font-weight="700">B / MISSED CAPABILITY</text>
+<path d="M480 24V360" stroke="#bac8ba"/>
+<g stroke="#172e29" stroke-width="4"><path d="M35 280H443M510 280H925"/><path d="M320 280V100H180V124H300V280M795 280V100H655V124H775V280" fill="#cfb993" stroke-width="2"/></g>
+<g fill="none" stroke="#206953" stroke-width="4" stroke-dasharray="7 5"><ellipse cx="221" cy="174" rx="45" ry="22"/><path d="M202 192L184 226L212 273M244 193L266 227L247 273"/></g>
+<g fill="none" stroke="#a74d37" stroke-width="5"><circle cx="245" cy="98" r="16"/><path d="M232 116L218 184L192 224L211 273M218 184L264 223L248 273M230 128L267 173"/></g>
+<circle cx="234" cy="120" r="15" fill="none" stroke="#a74d37" stroke-width="2"/><path d="M258 119L340 159" stroke="#a74d37"/><text x="337" y="181" font-size="13" fill="#a74d37">Contact</text>
+<g fill="none" stroke="#aa8b55" stroke-width="3" stroke-dasharray="6 5"><rect x="650" y="115" width="105" height="94" rx="30"/></g>
+<g fill="none" stroke="#206953" stroke-width="5"><circle cx="735" cy="163" r="16"/><path d="M718 176L675 192L659 229L688 273M675 192L723 225L710 273M704 183L748 218"/></g>
+<path d="M650 128H765" stroke="#aa8b55" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="34" y="318" font-size="16" font-weight="600">Reference clearance is not execution safety.</text><text x="510" y="318" font-size="16" font-weight="600">Rejection is not proof of impossibility.</text>
+<text x="34" y="343" font-size="13">Dashed green: plan · red: execution mismatch</text><text x="510" y="343" font-size="13">Dashed tan: conservative bound · green: execution</text>
+<text x="32" y="376" font-size="12" fill="#50645b">SCHEMATIC ONLY · not measured body geometry, scale, motion, or a collision certificate</text></g></svg>

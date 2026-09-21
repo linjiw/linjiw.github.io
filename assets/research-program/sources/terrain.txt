@@ -1,0 +1,42 @@
+# Depth-practice training decision
+
+The matched training comparison completed. Neither candidate meets the original-depth performance requirements; no checkpoint is promoted. The retained starting policy remains a research reference, not a terrain-ready controller.
+
+| Policy | Sand failures | Mud failures | Mixed + rocks failures | Total soil failures | Ground failures |
+|---|---:|---:|---:|---:|---:|
+| Starting research policy | 20 | 15 | 21 | 56 | 0 |
+| 2 / 6 / 14 / 14 cm training | 20 | 13 | 20 | 53 | 0 |
+| 14 cm training throughout | 21 | 11 | 22 | 54 | 0 |
+
+Counts cover 30 seconds per terrain family across three reused development clips, evaluated at the original motion timing, 14 cm depth and 2 cm grid. Resets continue within each fixed-duration run; these are task-failure counts, not independent success-rate trials.
+
+| Candidate | At least 20% fewer soil failures | Zero ground failures | Soil tracking retained | Sufficient actual contact | Full contact-qualified reference ends in every soil family |
+|---|---|---|---|---|---|
+| 2 / 6 / 14 / 14 cm training | Fail | Pass | Fail | Pass | Fail |
+| 14 cm training throughout | Fail | Pass | Fail | Pass | Fail |
+
+The conditional second evaluation seed was not triggered because neither candidate passed the primary gate. All twenty reserved motions remain unused. Full-reference end means reaching the native reference clock without a task failure; it does not alone establish accurate tracking. [Completion tracking quality](COMPLETION_QUALITY.md) reports that distinction.
+
+## What was learned
+
+The unchanged starting policy had 56 soil failures at 14 cm and 10 at 2 cm. The 2 cm practice condition passed the predeclared admission criteria with contact-qualified full reference ends in sand, mud and mixed terrain. Easier support made practice possible, but this fixed training schedule did not establish useful transfer to deep soil. Four-centimeter practice also had 10 failures but failed the mixed-terrain tracking requirement.
+
+Both training arms completed 256 retained rollouts (24,576 transitions, 1,024 optimizer steps). The SONIC teacher stayed frozen; the expanded leg residual learned with identical rewards, original reference timing and unchanged actuator limits. Four phase seeds form one staged training sequence. This small adaptation comparison does not establish convergence or prove that the task is unlearnable.
+
+Two external SIGTERMs interrupted the scheduled arm. Both attempts are preserved; 8,916 additional transitions and 368 optimizer steps were discarded. The final serialized restart reproduced the archived prefixes exactly and completed. Physical computation therefore differs despite matching retained learning budgets. [Attempt accounting](ATTEMPTS.json).
+
+## Next experiment supported by the diagnostics
+
+First test explicit full-reference starts mixed with random-phase starts, with matched controls, before spending a larger training budget. Training rarely rehearsed references from time zero, whereas evaluation always did. This is an observed distribution difference, not a proven cause. [Start coverage](REFERENCE_START_COVERAGE.md).
+
+Then test promotion based on measured contact-rich tracking competence, with smaller depth increments and continued target-depth rehearsal. The completed schedule advanced after fixed budgets regardless of skill. Define the promotion and stopping criteria before running; retain the original 14 cm evaluation.
+
+Keep meaningful balance and physical-action constraints. Failure states show substantial pelvis tilt; simply relaxing height cutoffs does not address the measured failure triggers. The large action-change penalty mostly reflects changing teacher commands on the recorded states, so residual jitter alone is not an adequate diagnosis. Any change to smoothing or foot-tracking rewards needs a separate matched ablation and simultaneous tracking/stability measurements. [Failures](FAILURE_DIAGNOSTICS.md), [reward terms](REWARD_DIAGNOSTICS.md), [action penalty accounting](ACTION_RATE_DIAGNOSTICS.md).
+
+The coupling and material response still need calibration before a large production run. Guided-foot extraction succeeded in all 24 numerical cycles, but a constrained 18 kg probe is not an articulated humanoid feasibility test. A post-hoc nominal articulated-inertia audit also exposes a difference from the isolated-link unloading approximation; it does not establish a causal training defect. The 2 cm practice layer is only one cell deep at the training grid resolution. [Probe results](PRACTICE_RESULTS.md), [effective-mass audit](EFFECTIVE_MASS_AUDIT.json).
+
+## Artifacts and verification
+
+[Full target-task results](training/RESULTS.md), [comparison plot](completed-policy-comparison.png), [validation receipt](VALIDATION.json), [checkpoint hashes](CHECKPOINT_INTEGRITY.json), [selection record](candidate-selection.json), [literature context](LITERATURE_CONTEXT.md).
+
+Verification covers 62 passing tests, 15 unique completed evaluations, 12 completed training phases including smoke tests, finite states and parameters, unchanged frozen-teacher tensors, runtime/source/dataset provenance and native/MPM exit receipts. These checks establish execution integrity, not controller reliability or calibrated real-world soil behavior.

@@ -1,0 +1,463 @@
+{
+  "as_of": "2026-09-21",
+  "projects": [
+    {
+      "id": "kimonav",
+      "name": "KimoNav",
+      "lane": "Traversal",
+      "status": "Development simulation",
+      "question": "Which whole-body motion can a robot actually execute to reach a destination through clutter?",
+      "goal": "Coordinate route, posture, feet and speed, then recover upright and stop inside the destination region.",
+      "method": "Use a known map, goal and measured initial state to choose a qualified reference from a small bank. A native reference adapter feeds a frozen SONIC encoder/decoder and proprioceptive tracker. Current selection happens at startup; online replacement and perception are proposed.",
+      "finding": "Six new public requests completed in three familiar contexts and exactly matched their selected fixed controls. In a separate 12-execution clearance diagnostic, local duck and IK-lowered references each completed 5/6 requests. Geometry shadow admission covered only 2/6 requests; the finite ledger admitted none. Extra lowering added no task successes.",
+      "limit": "One inspected source ancestry and corridor. The latest shadow choices are not public rollouts or safe-stop tests. The successful public connection uses a different motor from older failed panels; the change cannot be credited to the planner alone.",
+      "next": "Compare a calibrated scalar geometry margin with an execution-envelope predictor on separately frozen requests. Replace the hard-coded source-name assumption with stable bank metadata and qualify a second source before expanding geometry and entry conditions.",
+      "decision": "Prefer the simple margin if it matches useful coverage at the same admitted-failure rate. Add learned state dependence only if it improves separate-condition results without privileged dynamics, seed IDs or future trajectories.",
+      "refs": [
+        [
+          "Current project",
+          "/kimonav/"
+        ],
+        [
+          "Every clearance outcome",
+          "/kimonav/clearance/"
+        ],
+        [
+          "Plan",
+          "/assets/research-program/sources/kimonav-plan.txt"
+        ],
+        [
+          "Public integration",
+          "/assets/research-program/sources/public-motor.txt"
+        ]
+      ]
+    },
+    {
+      "id": "hindsight",
+      "name": "Hindsight Motion / Student 01",
+      "lane": "Traversal",
+      "status": "Development simulation + preparation",
+      "question": "Can execution-verified motion experience teach a policy to choose useful motion from a goal and scene?",
+      "goal": "Learn complete approach–duck–recover–stop behavior, then compare hindsight-generated data with scene-first data at matched acquisition cost.",
+      "method": "Separate motion representations from their downstream usefulness. Retain continuous and Linear29 controls; first prepare a causal known-map behavior-cloning student using complete episodes and measured history.",
+      "finding": "Supplied same-phase continuations passed 8/8 per method. A separate scene screen passed 1/3 per method. The distance-responsive comparison passed continuous 2/2 versus Linear29 1/2: the farther-goal case missed a one-time clearance decision. A later memory-admission window launched no new native run. September 21 shifts priority to Student 01 preparation.",
+      "limit": "These are small, related development tasks. Supplied-reference and selected-reference successes do not prove learned navigation. The pending repair remains unqualified; CPU fit preparation is not a closed-loop result.",
+      "next": "Audit complete episodes and causal pre-action inputs, fit the bounded development baseline, validate reference packing and rotations, then register a separate native student evaluation. Freeze new ancestry/scene splits before any transfer claim.",
+      "decision": "Continue to data/representation comparisons only after the student executes a complete task unaided. Keep a discrete head only if it improves execution, data efficiency or latency over continuous controls.",
+      "refs": [
+        [
+          "Project repository",
+          "https://github.com/linjiw/hindsight-motion-research"
+        ],
+        [
+          "Reviewed evidence",
+          "/assets/research-program/sources/hindsight.txt"
+        ],
+        [
+          "Student 01 protocol",
+          "/assets/research-program/sources/student01.txt"
+        ]
+      ]
+    },
+    {
+      "id": "m2s-learning",
+      "name": "Motion2Scene / recursive student learning",
+      "lane": "Traversal",
+      "status": "Mixed development results",
+      "question": "Do corrections collected from a learner’s actual mistakes improve the next unaided student?",
+      "goal": "Build a repeatable acquisition–qualification–learning cycle above a frozen motor while retaining previously successful behavior.",
+      "method": "Replay causal learner histories; execute teacher and motor continuations; admit only labels supported by complete-task and changed-command tests; continue from the incumbent with replay controls; evaluate without assistance.",
+      "finding": "The latest coherent-history panel records initializer 10/12, demonstration replay 10/12 and history correction 8/12. Assisted continuations reached 12/12, but that support did not become an improved student. A separate goal/map scene-diversity study completed 3/24 tasks in each arm, with all shifted cases failing.",
+      "limit": "Teacher support, inherited full-command capability and learned sparse control are different outcomes. The four sparse commands are reference-derived; they do not establish autonomous goal/map navigation. These panels must not be pooled.",
+      "next": "Measure retained successes and individual regressions alongside correction response. Compare matched old-data replay, nominal demonstrations and learner-history corrections with the same initializer, optimizer and acquisition accounting.",
+      "decision": "Promote only an unaided student that earns complete-task gains while meeting declared retention criteria. If replay matches corrections, investigate coverage and optimization before collecting more expensive labels.",
+      "refs": [
+        [
+          "September 17 synthesis",
+          "/assets/research-program/sources/m2s-learning.txt"
+        ],
+        [
+          "Code and research",
+          "https://github.com/linjiw/groot-wbc-sonic-sim-trackb"
+        ]
+      ]
+    },
+    {
+      "id": "inverse",
+      "name": "Motion2Scene / inverse scene construction",
+      "lane": "Traversal",
+      "status": "Qualification gate failed",
+      "question": "Can a successful body motion tell us which obstacles make that motion necessary?",
+      "goal": "Construct minimal critical scenes and matched alternatives, producing useful scene–motion supervision with physical preference reversal.",
+      "method": "Generate matched neutral/adapted motion carriers, build ordered beam-clearance ladders, and verify reference semantics, tracker survival, route retention and obstacle-conditioned preference in stages.",
+      "finding": "The fresh eight-carrier validation admitted 8/8 references, retained 7/8 tracker survivors and passed relative route retention in 5/7 survivors. It missed the registered 80% criterion. The matched reference ladders exist, but their next physics pilot remains gated.",
+      "limit": "A beam interval that clears a reference is not an executable demonstration or proof that ducking is necessary. Earlier absolute-route measurements were sensitive to measurement scale; their frozen outcomes remain unchanged.",
+      "next": "Repair and separately validate route-retention measurement and carrier execution before spending on preference-reversal or learned scene generation. Compare against simple factorized geometry construction.",
+      "decision": "Only promote pairs where both controls are physically supported and obstacle changes alter the useful behavior under the same task. Stop if a simple sampler supplies equivalent qualified data.",
+      "refs": [
+        [
+          "Research record",
+          "/assets/research-program/sources/m2s-inverse.txt"
+        ],
+        [
+          "Training package",
+          "https://github.com/linjiw/motion2scene-training"
+        ]
+      ]
+    },
+    {
+      "id": "flow",
+      "name": "Motion2Scene Flow / geometry and generation",
+      "lane": "Traversal",
+      "status": "Offline proxy experiments",
+      "question": "What geometric information must a generator preserve, and how cheaply can its candidates be checked?",
+      "goal": "Generate diverse useful traversal candidates while retaining the body–obstacle relationships that determine clearance.",
+      "method": "Compare scene readouts and conditional flow matching on continuous crouch/yaw/lateral-shift controls. Use conservative interval certificates, exact geometry fallback and explicit query/runtime budgets.",
+      "finding": "On the reused 13,824-candidate bank, hybrid checking retained all 9,962 valid accepts and 375/432 scene–model returns with identical selected actions. Uniform16 plus fallback measured 20.136 ms per valid return versus exact checking’s 38.147 ms for the checker. A prior bounded-output comparison did not beat simple clipping on candidate validity.",
+      "limit": "The 432 evaluations reuse three fits across 144 scenes. Times are CPU batch measurements, not online robot latency. Geometry certificates apply to the declared interpolant and authored geometry, not tracking safety. No native motor execution is established.",
+      "next": "Freeze the checker choice and test new scenes. Return to the generator: compare its candidates with independent in-domain search at matched checking cost on the 57 scene–model cases with no valid candidate.",
+      "decision": "If search finds valid actions the generator misses, study coverage or conditioning. If neither finds them, report “not found,” not “infeasible”; test whether the three-control representation itself is too restricted.",
+      "refs": [
+        [
+          "Full experiment sequence",
+          "/assets/research-program/sources/flow.txt"
+        ],
+        [
+          "Hybrid checker report",
+          "/assets/research-program/sources/flow-hybrid.txt"
+        ]
+      ]
+    },
+    {
+      "id": "scene2motion",
+      "name": "Scene2Motion-G1 / frozen-prior control",
+      "lane": "Traversal",
+      "status": "Negative eligibility evidence",
+      "question": "Does a frozen motion prior expose enough reliable control to place a body event where a scene needs it?",
+      "goal": "Turn scene geometry and a route into physically executable whole-body adaptation programs.",
+      "method": "Audit command effects against sampling variation, then align coherent absolute/residual step-event programs to gait phase. Freeze sampler versions, cache identity and event-placement limits.",
+      "finding": "The candidate-pool preflight found only 1/8 eligible nominal motions and generated no final comparison arms. Exact replay showed a required +65-frame placement shift outside the locked ±8-frame bound in an earlier case.",
+      "limit": "This is evidence about addressability and eligibility, not a measured absolute-versus-residual benefit. Earlier long-clip results used a seed-restarting sampler and require version-specific interpretation.",
+      "next": "Couple route progress to gait phase explicitly and test whether a supported event can be placed under fixed scene/task requirements. Preserve the old failed pool rather than extending it after inspection.",
+      "decision": "Proceed to adaptation comparisons only if the interface can produce an eligible cohort. If placement remains unsupported, simplify to measured body modes or change the motion interface.",
+      "refs": [
+        [
+          "Repository",
+          "https://github.com/linjiw/scene2motion"
+        ],
+        [
+          "Reviewed method/status",
+          "/assets/research-program/sources/scene2motion.txt"
+        ]
+      ]
+    },
+    {
+      "id": "terrain",
+      "name": "Newton terrain / learning on deformable support",
+      "lane": "Physics",
+      "status": "Training completed; neither arm promoted",
+      "question": "Can shallow-soil practice teach a humanoid to retain tracking on deeper deformable terrain?",
+      "goal": "Learn stable, contact-rich motion tracking under changing support while preserving rigid-ground performance.",
+      "method": "Couple native humanoid dynamics to Newton MPM material simulation. Hold the SONIC teacher fixed and train a leg residual; compare staged 2/6/14/14 cm practice with direct 14 cm training under matched retained budgets.",
+      "finding": "Original-depth soil failure counts were 56 for the starting policy, 53 after staged practice and 54 after direct training. Both candidates failed the usefulness and tracking gates. Two-centimeter practice was executable, but useful transfer to 14 cm soil was not demonstrated.",
+      "limit": "These are reset-containing fixed-duration failure counts, not independent success-rate trials. Three reused development clips; uncalibrated soils; one-cell shallow depth. Interrupted staged attempts consumed extra discarded compute despite equal retained budgets.",
+      "next": "First compare explicit full-reference starts mixed with random-phase starts against current sampling. Then test competence-based depth promotion with target-depth rehearsal. Audit coupling mass/energy and material/grid sensitivity before scaling.",
+      "decision": "Advance only with lower target-depth failure counts, retained tracking, adequate material contact and ground retention. More surviving reference-clock endpoints alone do not qualify a policy.",
+      "refs": [
+        [
+          "Training decision",
+          "/assets/research-program/sources/terrain.txt"
+        ],
+        [
+          "Integration history",
+          "/assets/research-program/sources/terrain-history.txt"
+        ],
+        [
+          "Terrain project",
+          "https://linjiw.github.io/newton-terrain-lab/"
+        ]
+      ]
+    },
+    {
+      "id": "climb",
+      "name": "CLIMB + refeas / feasibility before curriculum",
+      "lane": "Physics",
+      "status": "Measured screening; learning benefit unresolved",
+      "question": "When a tracker fails repeatedly, is the motion useful practice or physically unsupported?",
+      "goal": "Prevent adaptive sampling from concentrating on references whose required wrench lacks an admissible contact/actuator source.",
+      "method": "Screen robot-space references with explicit physical assumptions, route them to admit/contextualize/repair/quarantine, enumerate legal starts and apply learning-progress selection only inside a feasibility gate.",
+      "finding": "The inspected corpus screen flags 2,442/10,705 clips (22.8%); a separately filtered pairing has 7/4,950 (0.14%). A bounded repair panel qualifies 22/26 candidates and preserves 4/4 controls. The newer status records inconclusive allocation evidence and an admission campaign that trained but stopped before evaluation. Actuator-limit sensitivity moved flags from 99 to 98 of 900, refuting the registered monotonicity prediction.",
+      "limit": "Corpus percentages are pipeline-dependent. Repair qualification is not policy improvement. Feasibility is model-relative; the screen’s translational residual is not guaranteed to increase when actuator limits tighten. The failed Newton predictive gate did not qualify that instrument for its proposed training role.",
+      "next": "Compare gated uniform sampling against progress-based allocation under the same eligible units, delivered exposure and training budget. Preserve sealed failures and distinguish screening accuracy, coverage and downstream policy value.",
+      "decision": "If allocation does not improve retained performance beyond the gate, keep the feasibility instrument and simplify the sampler. Do not reinterpret model conformance as predictive usefulness.",
+      "refs": [
+        [
+          "Project",
+          "https://linjiw.github.io/climb-feasibility-first/"
+        ],
+        [
+          "Reviewed evidence",
+          "/assets/research-program/sources/climb.txt"
+        ],
+        [
+          "refeas tool",
+          "https://github.com/linjiw/refeas"
+        ],
+        [
+          "Updated public status",
+          "https://linjiw.github.io/climb-feasibility-first/"
+        ],
+        [
+          "Updated status extract",
+          "/assets/research-program/sources/climb-update.txt"
+        ]
+      ]
+    },
+    {
+      "id": "lucid",
+      "name": "LUCID / robustness, retention and recovery",
+      "lane": "Learning",
+      "status": "Preprint + separate continuation research",
+      "question": "How do we make disturbances harder without teaching a robot to abandon the intended motion?",
+      "goal": "Improve disturbance tolerance while retaining nominal tracking and recovering to the task after perturbations.",
+      "method": "The preprint uses command–execution history, a frozen temporal encoder and bounded PI/backoff domain-randomization scheduling. Separate continuation studies test anchoring and fresh-event uniform versus prioritized level replay (PLR). These are distinct methods and records.",
+      "finding": "In the fresh-event replication, PLR’s primary gain was +1.82 points in one training seed and a tie in the other, failing the frozen directional criterion. Both methods passed retention checks. Stronger-stress gains were secondary findings and did not replace the failed primary endpoint.",
+      "limit": "Two new student seeds are not a precise algorithm-level estimate. Survival and tracking quality can disagree; pre-termination errors use different observation lengths. The existing preprint’s results do not validate these newer continuation methods.",
+      "next": "Build event-aligned, pre-reset recovery measurement with fixed horizons, dwell and censoring. Compare dense task-quality feedback with critic-error prioritization; use cap-only and schedule-replay controls before adding latent features.",
+      "decision": "Require simultaneous task retention and independently confirmed recovery improvement. If dense feedback matches a latent observer, retain the simpler signal. Confirm stronger-stress effects in a newly frozen study.",
+      "refs": [
+        [
+          "Published research story",
+          "/research/#lucid"
+        ],
+        [
+          "Preprint",
+          "/assets/pdf/lucid-preprint.pdf"
+        ],
+        [
+          "Fresh-event replication",
+          "/assets/research-program/sources/lucid-replication.txt"
+        ],
+        [
+          "Continuation history",
+          "/assets/research-program/sources/lucid-history.txt"
+        ]
+      ]
+    },
+    {
+      "id": "deployment",
+      "name": "G1 deployment / validating the execution path",
+      "lane": "Infrastructure",
+      "status": "Corrected simulation rehearsal",
+      "question": "Does the exported policy receive the intended reference in the actual deployment runner?",
+      "goal": "Preserve joint order, clocks, control activation and reference content across Python, ONNX, TensorRT and DDS.",
+      "method": "Bind policy/reference hashes, compare model outputs, inspect complete reference traces and rehearse start–stand–play–stop through the C++ runner and simulated robot.",
+      "finding": "The September 17 reference CSVs had a joint-order mismatch. The September 18 corrected converter regenerated them and all eight C++/TensorRT/DDS rehearsals completed under the declared low-pelvis criterion. Earlier DDS readiness claims were superseded; direct-player path drift remains documented.",
+      "limit": "Loading, balance and complete reference playback do not establish accurate locomotion tracking or hardware readiness. No robot was connected in this validation.",
+      "next": "Validate path and body tracking, transitions, timing and fault behavior under the corrected export contract before a separately authorized hardware protocol.",
+      "decision": "Do not promote on inference parity alone. The policy must execute the intended motion and satisfy task-quality requirements in the runner that will be deployed.",
+      "refs": [
+        [
+          "Correction and evidence",
+          "/assets/research-program/sources/lucid-deploy.txt"
+        ],
+        [
+          "Deployment repository",
+          "https://github.com/linjiw/lucid-g1-deploy"
+        ]
+      ]
+    },
+    {
+      "id": "maxrl",
+      "name": "Curriculum-MaxRL / what makes practice useful?",
+      "lane": "Learning",
+      "status": "Mixed preregistered findings",
+      "question": "Does a score derived from an RL estimator identify useful examples, or only opportunities for nonzero updates?",
+      "goal": "Allocate examples and rollout counts effectively while accounting for how task aggregation changes the estimator’s signal.",
+      "method": "Derive expected coefficient activity from pass rates and rollout count, estimate it with posterior sampling, and compare score shapes and realized count-law corrections under matched budgets.",
+      "finding": "The N-aware shape helped in a fixed Acrobot pool but lost to p(1−p) in the coarser MAZE-SCORE task unit (−0.0032; reported CI [−0.0054, −0.0011]). A separate matched count-law correction improved coverage-AUC by +0.00666; this does not establish superiority over p(1−p).",
+      "limit": "The algebra predicts coefficient activity, not the sign of learning benefit. Cross-study patterns were interpreted after results. Pooling heterogeneous tasks can invalidate an i.i.d.-at-the-mean activity estimate.",
+      "next": "Test activity calibration and learning utility separately. Match the scored task unit to the estimator’s rollout group; compare count-law activity, simple learnability and strong replay controls at equal cost.",
+      "decision": "Retain activity as a diagnostic if it predicts update availability but not useful learning. A more exact score earns deployment only through independently measured learning gains.",
+      "refs": [
+        [
+          "Repository",
+          "https://github.com/linjiw/curriculum-maxrl"
+        ],
+        [
+          "Full reviewed record",
+          "/assets/research-program/sources/maxrl.txt"
+        ]
+      ]
+    },
+    {
+      "id": "gacl",
+      "name": "GACL / adapting the tasks",
+      "lane": "Learning",
+      "status": "Published · IROS 2025",
+      "question": "How can generated training tasks remain useful and relevant to a partially observed target domain?",
+      "goal": "Choose practice suited to the learner while retaining the structure of real target tasks.",
+      "method": "Encode structured tasks, give a teacher task/performance history, and alternate reference with generated samples.",
+      "finding": "The paper reports improved wheeled navigation and quadruped locomotion over its compared curricula. The existing research story shows the paper’s scoped simulation tables.",
+      "limit": "This published task-selection method is separate from reward adaptation and domain-randomization scheduling. The three have not been jointly validated as one system here.",
+      "next": "A proposed extension is to compare performance history with execution-quality feedback while preserving the same grounding distribution and training budget.",
+      "decision": "Keep the simpler history if added execution features do not improve held-out task learning and retention.",
+      "refs": [
+        [
+          "Paper",
+          "https://arxiv.org/abs/2508.02988"
+        ],
+        [
+          "Illustrated method",
+          "/research/#gacl"
+        ]
+      ]
+    },
+    {
+      "id": "rtw",
+      "name": "Reward Training Wheels / adapting the guidance",
+      "lane": "Learning",
+      "status": "Published · IROS 2025",
+      "question": "Which auxiliary rewards help a learner now, while the primary objective stays fixed?",
+      "goal": "Reduce manual reward-weight tuning and adapt shaping to the learner’s changing needs.",
+      "method": "A teacher observes reward/weight histories and adjusts auxiliary weights; the student continues optimizing the primary task with that guidance.",
+      "finding": "The paper reports improvements in constrained navigation and off-road mobility, including a small physical off-road comparison. Existing paper-linked charts retain the sample sizes and comparator.",
+      "limit": "Weights need not decrease monotonically. Reward adaptation is not a physical safety guarantee; small hardware demonstrations have a bounded scope.",
+      "next": "A proposed extension compares adaptive weights with tuned fixed weights and schedule replay under matched budgets, then tests whether retained task quality explains any gain.",
+      "decision": "Prefer a fixed or replayed schedule if it matches adaptation; distinguish adaptive feedback from merely choosing better average weights.",
+      "refs": [
+        [
+          "Paper",
+          "https://arxiv.org/abs/2503.15724"
+        ],
+        [
+          "Illustrated method",
+          "/research/#rtw"
+        ]
+      ]
+    },
+    {
+      "id": "triage",
+      "name": "TRIAGE / choosing what to adapt",
+      "lane": "Learning",
+      "status": "Infrastructure; prospective method",
+      "question": "Should the next intervention change tasks, rewards or domain randomization?",
+      "goal": "Route limited training effort to the current bottleneck rather than independently increasing every curriculum axis.",
+      "method": "Task/reward/DR experts propose bounded interventions. A guarded router compares deployment-grounded value, switching cost and confidence against a null continuation.",
+      "finding": "The reviewed repository implements the router, state transitions, paired screening/confirmation machinery and an Isaac Lab Franka Lift adapter. Short PPO probes and checkpoint forking remain the next stage in that record.",
+      "limit": "Infrastructure and shadow predictions are not a demonstrated training advantage. Source-reported status is a snapshot, not a live run monitor.",
+      "next": "Construct an intervention atlas to test whether short probes predict longer-block value. Compare fixed-axis, random, hold/null and guarded routing policies with probe costs charged.",
+      "decision": "Do not activate the learned router until probe validity and downstream benefit are demonstrated. A transparent fixed-axis strategy is the primary simplifying rival.",
+      "refs": [
+        [
+          "Repository",
+          "https://github.com/linjiw/TRIAGE"
+        ],
+        [
+          "Pinned reviewed README",
+          "/assets/research-program/sources/triage.txt"
+        ]
+      ]
+    },
+    {
+      "id": "snmr",
+      "name": "SNMR / shared neural motion retargeting",
+      "lane": "Physics",
+      "status": "Development research; confirmation pending in source",
+      "question": "Can a shared motion representation preserve content when decoded for a different robot?",
+      "goal": "Map human motion to embodiment-conditioned robot references that remain useful to a physical tracker.",
+      "method": "Use a skeleton-aware graph autoencoder and robot graph decoder with joint limits and differentiable forward kinematics. Compare GMR and learned references through separately trained Holosoma tracking policies.",
+      "finding": "The reviewed README reports an initial two-walk comparison passing the first seed’s content gates, with confirmation seeds still queued in that source. Its earlier specialist comparison closed after a quality-gate failure.",
+      "limit": "Kinematic reconstruction, explicit-reference tracking and latent-command control are separate questions. Confirmation status has not been verified from a live remote worker; no hardware conclusion follows.",
+      "next": "Close the frozen confirmation with adequately trained GMR controls and loader-order checks. Evaluate content retention and physical tracking together before expanding embodiments or adding a shared policy.",
+      "decision": "If learned references cannot match a qualified IK baseline, diagnose representation/contact information before claiming shared-control value.",
+      "refs": [
+        [
+          "Repository",
+          "https://github.com/linjiw/snmr"
+        ],
+        [
+          "Pinned reviewed README",
+          "/assets/research-program/sources/snmr.txt"
+        ]
+      ]
+    },
+    {
+      "id": "critic",
+      "name": "Traversal Critic / learned visual rewards",
+      "lane": "Learning",
+      "status": "Offline evidence; policy result unverified",
+      "question": "Can a video model judge traversal well enough to improve a navigation policy?",
+      "goal": "Use simulator-derived labels to train a visual critic, then supply training-time shaping to a small policy above a frozen whole-body motor.",
+      "method": "Separate label integrity, critic parsing/ranking, out-of-distribution ordering and matched baseline/oracle/critic policy tests.",
+      "finding": "The reviewed record reports that the selected critic parses validation outputs, but its impaired-gait out-of-distribution example scores above clean walking. The policy matrix is described as running in that source; no completed policy benefit is verified here.",
+      "limit": "Correlation with labels does not establish useful reward, causal visual understanding or policy improvement. Historical critic versions cannot be silently pooled.",
+      "next": "Close the frozen matrix and independent replay before editing claims. Test a corpus-disjoint natural-fall/collision readout challenge to expose visually plausible but physically poor behavior.",
+      "decision": "If the critic cannot rank physical failures correctly or improve policy outcomes against an oracle/baseline at equal cost, retain it as an offline instrument rather than a navigation reward.",
+      "refs": [
+        [
+          "Project",
+          "https://linjiw.github.io/traversal-critic/"
+        ],
+        [
+          "Pinned reviewed README",
+          "/assets/research-program/sources/critic.txt"
+        ]
+      ]
+    },
+    {
+      "id": "tooling",
+      "name": "Motion2Scene Training Kit + Newton Terrain Lab",
+      "lane": "Infrastructure",
+      "status": "Reusable research infrastructure",
+      "question": "Can another researcher reproduce the intended data, simulator and policy interfaces?",
+      "goal": "Make experiments inspectable and portable without confusing a packaged artifact with a validated learning result.",
+      "method": "Publish versioned datasets/manifests, extraction and doctor commands, selective resets, map generation, reference viewers and explicit simulator adapters.",
+      "finding": "The training kit bundles research code/data and workflow checks. The terrain package demonstrates native small-batch evaluation and a PPO smoke update. Newer local terrain training has since completed with negative qualification results, documented separately above.",
+      "limit": "Packaged September snapshots can lag active work. KimoNav’s repaired 84/reserved 20/excluded 16 split differs from the training kit’s reported 89-clip pool; these memberships must not be merged. A replay video is not live physics.",
+      "next": "Version interfaces and data contracts, keep source/clip identities through every transformation, and publish both qualification failures and reproducible small examples.",
+      "decision": "Treat installability, numerical conformance, physical validity and learning benefit as separate release checks; a pass at one boundary does not imply the next.",
+      "refs": [
+        [
+          "Training kit",
+          "https://github.com/linjiw/motion2scene-training"
+        ],
+        [
+          "Kit snapshot",
+          "/assets/research-program/sources/m2s-package.txt"
+        ],
+        [
+          "Terrain lab",
+          "https://github.com/linjiw/newton-terrain-lab"
+        ],
+        [
+          "Lab snapshot",
+          "/assets/research-program/sources/terrain-lab.txt"
+        ]
+      ]
+    },
+    {
+      "id": "cosmos",
+      "name": "Cosmos3-Edge / compute-efficient models",
+      "lane": "Infrastructure",
+      "status": "Measured engineering study",
+      "question": "Can a multimodal model fit an older GPU without losing useful behavior?",
+      "goal": "Reduce memory and runtime requirements while preserving task-relevant model quality.",
+      "method": "Use weight-only INT8, phase-separated memory probes and same-configuration comparisons; diagnose compiler kernel substitutions separately from quantization effects.",
+      "finding": "The local report measures 480p/189-frame image-to-video peak memory at 9.86 GiB with INT8 versus 12.48 GiB with BF16 on its A10G setup. It also documents a version-specific compiled INT8 performance trap.",
+      "limit": "These are measured configurations, not universal memory limits or a current installation recommendation. Small visual/LPIPS comparisons do not establish unchanged downstream robot decision quality.",
+      "next": "Freeze software/hardware settings and broaden task-level quality checks, including traversal-relevant judgments if the model is used by the critic. Measure load transients and complete pipeline cost.",
+      "decision": "Adopt compression only if the intended task meets a predeclared quality tolerance and actual end-to-end resource budget.",
+      "refs": [
+        [
+          "Project",
+          "https://linjiw.github.io/cosmos3edge-10gb/"
+        ],
+        [
+          "Reviewed measurements",
+          "/assets/research-program/sources/cosmos.txt"
+        ]
+      ]
+    }
+  ]
+}

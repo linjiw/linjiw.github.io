@@ -1,0 +1,47 @@
+# Current KimoNav continuation
+
+Latest completed experiment: **distinct clearance and shadow admission, 20 September 2026**.
+
+- [Current plan](2026-09-20-clearance-admission/CURRENT_PLAN.md)
+- [Durable state](2026-09-20-clearance-admission/STATE.json)
+- [Report and every outcome](../artifacts/clearance-admission-20260920/REPORT.md)
+- [Website report](https://linjiw.github.io/kimonav/clearance/) and [plan](https://linjiw.github.io/kimonav/plan/)
+
+Twelve new fixed executions cover three unmeasured beam offsets (−10/−30/−50 mm),
+two execution seeds and local duck versus IK lowered. Each reference succeeds
+5/6, no paired task gains or regressions. Both fail at −50 mm with seed 96171
+and succeed there with seed 96173. All six pairs match initial state, recorded
+dynamics, gains, libraries, initial history and first-physics RNG. All 4,603
+issued tokens/actions reproduce exactly. Forty-five focused tests pass.
+
+Geometry shadow decisions admit only the two −10-mm requests: task coverage
+2/6, three rejected requests with a measured successful alternative. The finite
+ledger rejects all six, including five measured-solvable requests. These shadow
+scores are not new public rollouts or physical stopping. The existing public
+ledger remains unchanged on its three historical contexts. Do not import these
+fixed outcomes into public qualification without a separately frozen study.
+
+Seed access: the registered case-sensitive search was supplemented after
+registration. Earlier student-run IDs 96171/96173 are optimizer seeds; all 16
+matching native commands actually use execution seed 96161. No prior exact
+execution use was found in inspected commands. Preserve the role clarification;
+no globally untouched data or independent-scene claim follows.
+
+Next bounded work: specify a simple calibrated geometry-margin competitor and
+an execution-envelope baseline with declared calibration/uncertainty inputs.
+The new outcomes are diagnostic/calibration data for any rule designed now;
+freeze separate evaluation. Never use future outcomes, seed labels or privileged
+randomized dynamics as runtime inputs.
+
+Then remove the literal 00976_bank_ parsing assumption through explicit stable
+bank metadata, verify unchanged old-bank behavior and qualify an additional
+motion source with the current motor/standing protocol. Candidate 00265 exists
+but has 32 historical evaluation rows under different conditions; it is not
+untouched or already qualified here. Do not continue only varying this beam.
+Combine geometry constraints and supported entry variations after capability
+qualification, with fixed controls and a qualified detour when available.
+
+No training, hardware or moving replacement in this increment. Preserve repaired
+84 / reserved 20 / excluded 16 separation and stable motion–text identities.
+Adjacent research imports use frozen snapshots; do not edit that repository or
+interrupt its independent GPU jobs.

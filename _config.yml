@@ -235,7 +235,7 @@ sass:
 jekyll-minifier:
   compress_javascript: false # disable JS compression - uglifier doesn't support ES6
   # Preserve published research data and its recorded byte hashes.
-  exclude: ["robots.txt", "assets/js/search/*.js", "assets/kimonav/*"]
+  exclude: ["robots.txt", "assets/js/search/*.js", "assets/kimonav/*", "assets/research-program/*"]
 
 # -----------------------------------------------------------------------------
 # Jekyll Archives

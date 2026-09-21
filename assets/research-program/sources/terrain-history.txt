@@ -1,0 +1,115 @@
+> **Latest completed training:** [Soil-depth practice and transfer](TERRAIN_DEPTH_CURRICULUM.md). Two matched 256-rollout training arms finished: original-depth soil failures were 56 at start, 53 after depth-scheduled training and 54 after direct training. Both failed the tracking and usefulness requirements; no checkpoint was promoted. The 2 cm practice condition passed admission, but useful transfer to 14 cm soil was not demonstrated. See the [decision and verified results](outputs/terrain-depth-20260920/DECISION.md), including two preserved interruptions and extra-compute accounting. Earlier [contact/capacity experiments](TERRAIN_CONTACT_TRAINING.md), [motion timing curriculum](TERRAIN_TEMPO_CURRICULUM.md), [adaptation](TERRAIN_ADAPTATION.md), [reward ablations](TERRAIN_REWARD_STUDY.md), and [initial audit](TERRAIN_TRAINING_AUDIT.md) remain documented. Older launch/readiness notes below describe their original experiments.
+
+# Motion2Scene humanoid terrain lab
+
+A working, exploratory terrain evaluation workspace on this machine. It runs the **repaired motion2scene SONIC teacher (step 1400)** with a G1 humanoid, measures actual simulated motion, and renders the results. The teacher is frozen; no retraining or reference-pose teleporting occurs during a rollout.
+
+## What works
+
+- A roughly **13.1 × 11.5 m course**, with 16 cells and connecting rigid walkways: ground, sand, mud, water, every nonempty combination of those four materials, plus a water-over-sand layer.
+- **MuJoCo + Newton MPM:** MuJoCo integrates the humanoid; Newton advances the material and returns forces/torques. One active cell or the entire course can be simulated.
+- **Isaac Lab + Isaac Sim/PhysX + Newton MPM:** the existing native teacher runs unchanged, with a separate Newton worker exchanging measured states and world-frame COM wrenches. Dynamic particle visualization is updated in the Isaac scene.
+- MP4 rendering, interactive MuJoCo replay, and USD mesh/particle animation for Isaac Sim timeline playback.
+- Versioned episode output directories, state/action/particle traces, metrics, and retained failures.
+
+This is an **external coupling adapter**, not an installation of Isaac Lab's newer native Newton backend. Pure standalone MuJoCo does not simulate MPM; the material dynamics come from the Newton worker/bridge.
+
+## Watch the results
+
+- `outputs/render-course-hires/motion.mp4`: full-course live-material run; the motion includes the recorded fall.
+- `outputs/render-course-hires/preview.png` and `course-overview.png`.
+- `outputs/render-course-hires/isaac-replay.usdc`: measured mesh and particle animation, not a live physics model.
+- `outputs/render-sand-v2/motion.mp4`: single-cell sand episode.
+- `outputs/render-native-isaac/motion.mp4`: measured native Isaac Lab/PhysX execution, visualized with the same mesh renderer.
+- `outputs/course-results.png`: all 16 initial conditions.
+
+Interactive recorded playback (Space: pause, R: restart, Esc: close):
+
+```bash
+cd /home/linjiw/newton-terrain
+.venv-teacher/bin/python play_recording.py outputs/course-all-live-v3
+```
+
+The interactive player is a playback monitor. For new physical experiments, use the following commands.
+
+## Run a new humanoid episode
+
+Use a **fresh output directory** for every run. `--cell` is 0–15; names and bounds are in `assets/course.json`. Motion `00265` is the initial measured example; other locally available candidates include `00413`, `00908`, and `00976`.
+
+```bash
+cd /home/linjiw/newton-terrain
+# Rigid-floor policy execution on course cell 0:
+OPENBLAS_NUM_THREADS=2 .venv-teacher/bin/python humanoid_run.py \
+  --course --cell 0 --seconds 6 --output outputs/my-ground-01
+
+# Cell 1: sand, with live two-way material feedback:
+OPENBLAS_NUM_THREADS=2 .venv-teacher/bin/python humanoid_run.py \
+  --course --mpm --cell 1 --seconds 6 --output outputs/my-sand-01
+
+# Entire course live, robot starts in the four-material cell:
+OPENBLAS_NUM_THREADS=2 .venv-teacher/bin/python humanoid_run.py \
+  --course --mpm --cell 14 --all-active --voxel-size .10 \
+  --particle-stride 20 --seconds 6 --output outputs/my-full-course-01
+
+# Sequential 16-condition evaluation:
+.venv-teacher/bin/python evaluate_course.py --output outputs/my-evaluation-01
+```
+
+The 50 Hz teacher uses ten frames of measured history, a ten-sample reference preview, named joint mapping, native action scaling/defaults, and clipped PD torques. MuJoCo and MPM advance at 200 Hz. The initial MuJoCo observation history repeats the initial measured state. Native Isaac Lab uses its own observation manager and actuator implementation.
+
+`--particle-stride` only downsamples the saved visualization; it does not reduce the number of simulated particles. `--all-active` controls which cells have live MPM. Without it, other cells are explicitly shown as static previews.
+
+## Run the native Isaac Lab / Isaac Sim teacher
+
+The launcher uses the existing native environment at `/home/linjiw/groot-wbc-sonic-sim-trackb/.venv_isaaclab`. It does not upgrade that environment. The Newton worker uses `.venv-teacher`.
+
+```bash
+cd /home/linjiw/newton-terrain
+.venv-teacher/bin/python prepare_native.py --cell 1 --mpm --steps 150 \
+  --output outputs/my-isaac-sand-01
+python3 run_native.py outputs/my-isaac-sand-01
+```
+
+Omit `--mpm` and select `--cell 0` for the native rigid-ground baseline. To view the live native scene, change `++headless=true` to `++headless=false` in the **newly prepared** `command.json` before launching. Native interactive display was not manually exercised; headless physics and particle-scene updates were tested.
+
+`native_entry.py` deserializes only the selected checkpoint on CPU, then the original evaluator copies policy weights to its chosen device. This avoids allocating unused optimizer tensors on the GPU. The external MPM worker uses a private local Unix socket and preserves each link's world force/torque when merging fixed-link proxies into native bodies.
+
+## Render and export a recorded MuJoCo/Newton episode
+
+```bash
+.venv-teacher/bin/python render_course.py outputs/my-sand-01 \
+  --output outputs/my-sand-render-01
+.venv-teacher/bin/python export_replay.py outputs/my-sand-01 \
+  --output outputs/my-sand-render-01/replay.usdc
+```
+
+Open the resulting USD in Isaac Sim and play its timeline. The final full-course replay was successfully parsed with Isaac Sim’s native USD runtime, including all 80,133 particle tracks. `assets/course.usda` is the reusable static course with material previews; it requires the live adapter to simulate those materials. The USD replay contains recorded animation and is labelled accordingly.
+
+## Evidence and current limits
+
+See `EVALUATION.md` and `outputs/artifact-validation.json`. The initial 16-condition test used one motion, an 8 cm MPM grid, and a six-second horizon. Eight conditions reached the horizon without falling; eight fell. Horizon completion is not proof of good tracking: the water episode had substantial drift.
+
+Material presets are **uncalibrated**. Adjacent or layered sand/water is not a saturation, seepage, suction, or erosion model. The explicit coupling uses per-link effective inertia and nominal collision proxies; it is not an exact articulated contact solve. Fine foot contact, real-world force fidelity, stable long-horizon operation, broad motion coverage, and equivalence between backends remain unestablished. Do not treat the results as a validated sim-to-real benchmark.
+
+## Environment and checks
+
+- Original Newton 1.5 environment remains separately managed.
+- `.venv`: Python 3.13 Newton 1.6 example/probe environment.
+- `.venv-teacher`: Python 3.11 Newton 1.6/Warp 1.17 environment; `teacher_adapter.py` adds the existing native dependency directory and pinned SONIC source tree. This is a machine-local integration, not a portable binary bundle.
+- `teacher_adapter.py` verifies the repaired teacher SHA-256 `afd649cfbbfd28833550e11a0f8c3b7a5f6a05ee8b4021dd0dac97a6f94733ce` and strictly loads its parameters. Its reduced CPU inference path matched the original forward path exactly in the executed tensor check.
+
+```bash
+.venv-teacher/bin/python -m unittest discover -s tests -v
+.venv-teacher/bin/python validate_artifacts.py
+.venv-teacher/bin/python teacher_adapter.py
+```
+
+The tests compare USD and MuJoCo rigid geometry, check the complete material-subset layout, and validate finite recorded body/action/particle states, quaternion norms, timestamps, fall conditions, and nonzero terrain feedback. The original `terrain_probe.py` remains available for the smaller 5 kg foot-box tests.
+
+## Continuous surfaces and integration follow-up
+
+See [SURFACE_INTEGRATION.md](SURFACE_INTEGRATION.md) for density-corrected sand and mud/water motion videos, animated surface USD validated in Isaac Sim's native USD runtime, native reset/curriculum metrics tests, and failed buoyancy/containment checks. Current training readiness is recorded in `outputs/training-readiness.json`; no terrain training has been launched.
+
+## Water-free batched training integration
+
+[DRY_TRAINING.md](DRY_TRAINING.md) documents the 256-tile sand/mud/rock map, random exclusive environment placement, native batched evaluation, live material surfaces, curriculum resets, contact-aware rewards, and the successful one-update SONIC PPO validation. A four-environment future experiment is prepared in `outputs/dry-training-prepared`; sustained training has not been launched.

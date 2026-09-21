@@ -1,0 +1,185 @@
+# Motion2Scene: recursive learning from physically qualified experience
+
+Updated September 17, 2026, after the matched coherent-history learning pilot.
+This is a project summary, not a claim of a finished navigation system.
+The [interactive research notebook](../research-cycle/index.html) explains the
+framework, measured results, paired regressions and recorded simulation examples.
+
+## The core idea
+
+A strong humanoid motor can execute rich movement instructions. A teacher can
+provide such instructions or actions. Neither fact by itself tells a sparse-input
+student how to recover from its own mistakes or choose a useful movement from a
+goal and scene.
+
+Our research asks whether **physically executable experience can teach decisions
+and command realization above a frozen motor**. The central unit is a tested
+continuation from a learner's actual history. Its label is earned by executing it
+and checking the complete task, not by trusting a teacher prediction or a geometric
+screen. The next student starts from the previous student's weights and receives
+the inputs intended for its own execution interface.
+
+Three sources of performance must remain separate:
+
+- **Inherited capability:** the pretrained teacher, full-command student and
+  frozen motor/decoder already know how to produce motion.
+- **Acquired supervision:** an executed teacher or motor continuation passes its
+  typed qualification gates. This proves support for that history and request.
+- **Learned performance:** an updated student executes from reset without help
+  and improves a registered task while preserving prior successful behavior.
+
+## How the recursive cycle works
+
+1. **Execute the incumbent student.** Record its causal observations, measured
+   proprioception and executed-action history, including failures.
+2. **Query from that history.** Reproduce the actual learner prefix before asking
+   the teacher or motor to continue. Nominal expert states are different evidence.
+3. **Qualify in physics.** Check physical guards, the complete task and deadline,
+   and whether a changed request produces a useful response. Preserve rejects and
+   charge all attempts. Teacher-only success cannot become a positive motor label.
+4. **Continue learning.** Initialize from the incumbent, train on typed qualified
+   targets, and replay its successful behavior. Keep deployment inputs causal and
+   preserve the frozen motor/interface unless separately testing a change.
+5. **Evaluate unaided.** Use fixed final checkpoints, matched controls and fresh
+   native processes. Report continuous metrics and each task gain/regression.
+6. **Decide whether to advance.** A completed fit is not automatic promotion. If
+   the student improves without unacceptable losses, it becomes the source of the
+   next acquisition round. Otherwise retain the incumbent and diagnose the failure.
+
+Recursion concerns the changing learner distribution and continued initialization.
+The project has executed successive acquisition, continuation and evaluation
+increments, including rejected updates. It has not established a reliably
+self-improving sequence or a benefit from arbitrary numbers of rounds.
+
+## Two connected tracks, different claims
+
+| Track | Actor input / task | Supported state | Still unresolved |
+| --- | --- | --- | --- |
+| Goal/map traversal | Goal, map/localization and measured history; duck under a beam, recover, stop | Autonomous familiar beam successes above the frozen motor | Shifted-layout robustness, reliable retention, depth execution, held-out transfer |
+| Sparse motor continuation | Four reference-derived current commands plus measured history; task-native command tracking | Initial corrective learning gains, coherent demonstrations and learner-history motor support | Retained changed-command learning and independent sparse-command control |
+
+The long-term destination is goal-conditioned whole-body traversal using causal
+depth/scene sensing and measured history, without supplied reference motion. The
+current sparse experiment is an interface and learning diagnosis toward that goal;
+its reference-derived command streams do not establish autonomous navigation.
+
+The sparse runtime is: **four public commands + 930-value measured history →
+learned command completer → frozen full-command motor with a predicted reference
+horizon → frozen decoder → joint actions**. The public fields are vx, vy, absolute
+height and yaw rate. Rich training-only full references and teacher tokens are not
+additional actor inputs. Full-command mode bypasses the completer, so exact
+full-path retention is inherited capability, not learned consolidation.
+
+## What has improved, and what has not
+
+| Experiment | Measured result | Bounded finding |
+| --- | --- | --- |
+| Full-to-sparse continuation | Under task-native scoring, direct/staged each 2/4; teacher/full motor each 4/4 | Sparse continuation retains some capability; the older native tracking metric used a different task |
+| First matched corrective continuation | Direct correction 4/4, staged correction 4/4; direct replay also 4/4, staged replay 2/4 | Correction helps the staged condition; aggregate gains are not all uniquely caused by new corrections |
+| Frozen isolated-command interventions | 3/64 sparse context/component pairs qualify; motor control 0/16 | Action sensitivity and broad task success do not establish task-aligned sparse control; control feasibility remained unresolved |
+| Coherent whole-motion changes | 24/24 task successes; motor 00265/00413 and teacher 00413 qualify paired response | Coherent executable demonstrations exist, with explicit insufficient-contrast exclusions |
+| Continuations on actual student histories | Student 10/12; motor-assisted 12/12; teacher-assisted 12/12; only 00413 qualifies correction response | Two unique learner query states support 746 motor rows and separately 746 teacher rows; assisted support is not learned improvement |
+| Latest matched learning | Initializer 10/12; demonstration replay 10/12; history correction 8/12 | Local response improves, but neither arm earns promotion and retention remains unresolved |
+
+The initial corrective study's mean fixed-horizon compliance was 83.39% for direct
+correction versus 74.70% for direct replay, and 85.76% for staged correction versus
+62.85% for staged replay. The direct 00265 continuous regression remains part of
+that result. The latest panel uses coherent changed streams and is not a pooled
+extension of those original four-task denominators.
+
+In the separate goal/map traversal track, a three-seed continued-old-data treatment
+completes 8/12 tasks versus 6/12 for fresh corrections. Its first registered seed
+passes all four familiar contexts, including both beams; other seeds do not.
+Fresh corrections gain one clear task and lose three beam tasks relative to their
+matched controls. Later matched scene-diversity learning achieves 3/24 complete
+tasks in each arm, with all shifted cases failing. These records establish some
+autonomous familiar traversal capability and serious retention/placement limits,
+not depth-based or broadly robust navigation.
+
+## The latest result in detail
+
+The [matched learning report](COHERENT_HISTORY_LEARNING_20260917.md) compares 746
+phase-matched motor demonstration rows with 746 actual-history correction rows.
+Both arms use the same initializer, 3,580 successful-student anchors, original
+examples, sample schedules and 1,000 updates. No checkpoint search occurs.
+
+| Metric | Previous student | Demonstration replay | History correction |
+| --- | ---: | ---: | ---: |
+| Autonomous task successes | 10/12 | 10/12 | 8/12 |
+| Mean fixed-horizon compliance | 85.23% | 82.01% | 79.65% |
+| Faster 00413 XY RMSE, m/s | .316193 | .272646 | .252082 |
+| Faster 00413 response gain | −.341358 | −.023213 | .245234 |
+| Slower 00413 response gain | .043460 | .106349 | .283070 |
+
+History correction reduces acquired-state action MSE by approximately 79.5% and
+improves 00413 response. Faster 00413 still narrowly fails the unchanged .25 m/s
+task limit and .25 response gate. Meanwhile nominal/faster 00908 lose task success;
+all three 00908 streams lose substantial compliance. Demonstration replay repairs
+slower 00908 but loses nominal 00413. All 24 new student trials survive physically.
+The regressions concern command execution, including terminal tracking.
+
+Both models remain research artifacts; the previous staged-correction checkpoint
+is retained. One seed and familiar development sources cannot establish the general
+effect of either data treatment. Successful replay examples alone are not an
+effective hard retention constraint in this recipe.
+
+## Findings that shape the next cycle
+
+- **Support depends on the learner's history.** Slower 00265 motor response is
+  +.348 from a motor reset but −.287 after the learner prefix in the same response
+  window. Basic task thresholds alone would admit the wrong positive label.
+- **Qualification and learning answer different questions.** The motor can execute
+  a correction that the updated sparse student does not autonomously realize.
+- **Better fit can coexist with worse behavior.** The pattern appears in both the
+  goal/map traversal and sparse-command studies. Retention must be measured on
+  successful policy histories and in fresh physical execution.
+- **Controls change the interpretation.** Direct replay's earlier 4/4 outcome,
+  the unqualified isolated-command motor control, and the latest paired
+  regressions each rule out a stronger but unsupported success story.
+- **Interfaces and denominators matter.** Current commands are not supplied future
+  poses; teacher targets are not motor labels; suffix rows are not independent
+  query states; assisted success is not an autonomous task result.
+
+## Current stage and next plan
+
+We have completed the latest **support → matched continuation → autonomous
+evaluation** cycle. The next priority is **retention and execution diagnosis**.
+Keep the incumbent fixed; use recorded histories to locate action drift before
+the request change, at the correction query and near terminal tracking. Compare
+retention/correction objectives on the same states and inspect changes in actual
+state visitation. These are planned analyses, not completed causal explanations.
+
+Then register one bounded retention-constrained or lower-dose comparison, chosen
+from that diagnosis, against a matched replay control. Keep update counts, final
+selection and all twelve evaluations fixed. Promotion requires retained task
+success plus qualified changed-command response, not merely lower imitation error.
+Independent command tests and untouched source validation follow only after that
+gate. Map-to-depth transfer, broader layouts, routing and hardware remain later
+research stages.
+
+## Evidence and visualization guide
+
+The [webpage](../research-cycle/index.html) includes a clickable six-stage cycle,
+a runtime/training boundary diagram, selectable metrics, all paired outcomes,
+response-gate detail and real recorded-state replays. The new three-panel video
+shows faster 00413 for the initializer and both final models; all three fail the
+complete task, despite differing motion and continuous metrics. The archived
+overhang video comes from an earlier controller study and is labeled separately.
+MuJoCo rendering adds no physics and does not replace Isaac contact evidence.
+
+Primary records:
+
+- [Full-to-sparse pilot](FULL_TO_SPARSE_PILOT_20260917.md)
+- [Task scoring and recovery](SPARSE_TASK_RECOVERY_20260917.md)
+- [First corrective continuation](SPARSE_CORRECTION_CONTINUATION_20260917.md)
+- [Isolated command intervention](SPARSE_COMMAND_INTERVENTION_20260917.md)
+- [Coherent demonstration qualification](COHERENT_COMMAND_QUALIFICATION_20260917.md)
+- [Actual-history recovery](COHERENT_HISTORY_RECOVERY_20260917.md)
+- [Latest matched learning](COHERENT_HISTORY_LEARNING_20260917.md)
+- [Goal/map autonomous traversal and fresh-data tradeoff](DUCK_FRESH_CORRECTION_LEARNING_20260916.md)
+- [Matched layout-diversity result](DUCK_LAYOUT_DIVERSITY_LEARNING_20260916.md)
+
+All headline results above are simulation evidence. Costs, rejected attempts,
+checkpoint hashes, exact protocols and source ancestry live in their individual
+records. No hardware, held-out generalization, robust autonomous depth navigation,
+or residual motor-capability consolidation is claimed.

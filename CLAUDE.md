@@ -40,6 +40,7 @@ at `/classic/`, not `/`.
 | Site CV | `assets/json/resume.json` | /cv/ (via `_layouts/cv.liquid`) |
 | PDF resume | `resume.tex` | `assets/pdf/resume.pdf` (built by CI) |
 | Interactive research story | `_pages/research.html` + `assets/research/` | /research/ |
+| Research program review | `_data/research_program.json` + `_pages/research-program.html` | /research/program/; JSON export generated from the same data |
 | Classic bio | `_pages/about.md` | /classic/ |
 | News | `_news/*.md` | classic announcements |
 | Projects | `_projects/*.md` | /projects/ |

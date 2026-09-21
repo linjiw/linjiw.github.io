@@ -1,0 +1,109 @@
+# Four-motion deployment validation — September 17, 2026
+
+Scope: only the latest walking, turning, crouch-hold and side-stepping pair,
+training seed 8600, iteration 4000. Existing dance and three-motion weights preserved.
+
+Deployment repo: /home/linjiw/lucid-sonic/lucid-g1-deploy
+Campaign: /home/linjiw/lucid-sonic/artifacts/four_motion_deploy_20260917
+Frozen plan SHA256: 2f39a32c0d4578af97060aa60ebcae83403a2e0304208d38e86cb09906dbf96c
+Policy hashes: fixed_dr 7be5c665980de616a4a22d5c36d9c0f4d00e74d44e32c41ead3963b9a96c855b; no_dr 222761c5e35901492c8a4b2dd5f229e0ddad7038d3e68c598d7c4bee4a0bbc64.
+
+Executed after `source /home/linjiw/lucid/env/lucid_env.sh`, from SONIC:
+
+```bash
+python scripts/practice_utility/validate_four_motion_deploy.py --stage prepare
+python scripts/practice_utility/validate_four_motion_deploy.py --stage direct
+python scripts/practice_utility/validate_four_motion_deploy.py --stage dds
+python scripts/practice_utility/validate_four_motion_deploy.py --stage direct_deploy
+python scripts/practice_utility/validate_four_motion_deploy.py --stage dds_verified
+python -m scripts.practice_utility.package_four_motion_deploy
+```
+
+The first direct stage characterized the training Python/MuJoCo environment.
+Accepted readiness results use direct_deploy (deployment Python 3.13.15, MuJoCo
+3.13.0, ORT 1.29.0) and dds_verified (DDS simulator Python 3.10.12, MuJoCo 3.13.0,
+TensorRT 10.13.3). Each cell's launch.json records the full executable command,
+checkpoint/source/frozen-plan hashes, motion, condition and seeds. Corresponding
+receipt.json verifies its online W&B metrics hash. Group four_motion_deploy_20260917,
+entity 16726, project lucid-sonic. The interactive launcher smoke has its own
+online receipt in launcher_smoke/receipt.json.
+
+Fixed the actual rehearsal: ] starts the controller but T is needed to advance
+the reference; the old drill omitted T. Also fixed its simulator epoch: it was
+printed before construction while the monotonic clock started afterward, shifting
+phase boundaries and counting post-stop collapse as policy behavior. Initial DDS
+runs are preserved as diagnostic runs; only corrected-clock dds_verified runs
+support the phase-height results. Missing imageio/video and W&B dependencies were
+installed in the deployment venv; failed video attempts were preserved in each
+cell's history/ before retry with the same stable W&B ID.
+
+Results: 8/8 full nominal direct playbacks and 8/8 actual INIT -> stand -> ] -> T
+-> full reference -> O rehearsals completed without their documented low-height
+failure. All native references advanced their full 484/432/406/422 distinct rows.
+Support released 0.02–0.03 s after control activation. Maximum TensorRT versus ONNX
+action discrepancy 7.391e-6. At approximate training-range DR, fixed_dr had 12/12
+height-qualified rollouts; no_dr 8/12, over three seeds per motion. All 12 matched
+DR sample dictionaries agree exactly between arms. These are descriptive checks.
+
+Walking, turning and side-stepping still exceeded the 0.5 m reference path error
+threshold for both policies. Crouch hold stayed inside it. Verified simulation
+loading/playback/balance is not accurate locomotion tracking or hardware readiness.
+No weights or original reference motions were changed. No robot was connected.
+
+Verification: 2011 existing CPU tests plus 4 focused deployment tests; Ruff/Black
+on new Python, shell syntax, actual launcher playback with online receipt, target
+install into a separate folder with old-file backup preserved, installed asset
+hash checks, eight complete MP4 decodes and ZIP CRC all passed. Existing bundle
+`bash test.sh --quick`: 6 pass, 0 fail, 1 initial-pose warning, 1 legacy-rollout skip.
+
+Deliverable: /home/linjiw/lucid-sonic/outputs/four_motion_deploy_20260917
+ZIP: /home/linjiw/lucid-sonic/outputs/four_motion_deploy_policies.zip
+Guide: /home/linjiw/lucid-sonic/lucid-g1-deploy/docs/FOUR_MOTION_DEPLOY.md
+
+Corrected native deployment runs:
+- fixed_dr / walking: https://wandb.ai/16726/lucid-sonic/runs/deploy4-20260917-dds_verified-fixed_dr-walking-nominal_stand_to_playback-s0
+- fixed_dr / turning: https://wandb.ai/16726/lucid-sonic/runs/deploy4-20260917-dds_verified-fixed_dr-turning-nominal_stand_to_playback-s0
+- fixed_dr / crouch_hold: https://wandb.ai/16726/lucid-sonic/runs/deploy4-20260917-dds_verified-fixed_dr-crouch_hold-nominal_stand_to_playback-s0
+- fixed_dr / side_stepping: https://wandb.ai/16726/lucid-sonic/runs/deploy4-20260917-dds_verified-fixed_dr-side_stepping-nominal_stand_to_playback-s0
+- no_dr / walking: https://wandb.ai/16726/lucid-sonic/runs/deploy4-20260917-dds_verified-no_dr-walking-nominal_stand_to_playback-s0
+- no_dr / turning: https://wandb.ai/16726/lucid-sonic/runs/deploy4-20260917-dds_verified-no_dr-turning-nominal_stand_to_playback-s0
+- no_dr / crouch_hold: https://wandb.ai/16726/lucid-sonic/runs/deploy4-20260917-dds_verified-no_dr-crouch_hold-nominal_stand_to_playback-s0
+- no_dr / side_stepping: https://wandb.ai/16726/lucid-sonic/runs/deploy4-20260917-dds_verified-no_dr-side_stepping-nominal_stand_to_playback-s0
+
+## September 18 publication correction and Git release
+
+Published `linjiw/lucid-g1-deploy` main at `9fb9fee7388e3eec65156030d437d0f0f4e11b36`. The latest two
+iteration-4000, seed-8600 ONNX weights and all four references are tracked in
+plain Git, with `docs/FOUR_MOTION_DEPLOY.md` providing portable setup, playback,
+DDS rehearsal, operator keys, and hardware-process links. Older local dance
+artifacts were preserved outside this commit.
+
+**Correction:** comparison with upstream converter fix `04c56d2` found that the
+September 17 exported four-motion joint-position and joint-velocity CSVs used
+MuJoCo order, while the runner reads IsaacLab order. Their DDS balance/parity
+results did not establish the intended motion playback and are superseded.
+The earlier ZIP's references and DDS readiness table must not be used. Source
+clips, ONNX weights, and the direct player's results are unchanged.
+
+Regenerated every reference with the corrected converter, added value checks
+for all frames/positions/velocities and five regression tests, integrated the
+current upstream code, built it, and ran all eight nominal C++/TensorRT/DDS
+rehearsals again. All eight loaded, started, played every reference frame,
+stopped, and passed the documented low-pelvis criterion. The C++ target trace
+matched all 36 intended reference values per frame within 6e-6 (print precision).
+Maximum TensorRT/ONNX action difference: 5.722e-6. This remains simulation
+validation with the documented direct-playback path drift; no hardware run.
+
+Every new run is verified online in W&B `16726/lucid-sonic`, group
+`four_motion_deploy_20260918`. Eight URLs, metrics, frozen manifest hash and
+source hashes are in `/home/linjiw/lucid-sonic/artifacts/four_motion_deploy_publish_20260918/publication_validation.json` and the committed
+`docs/validation/four_motion_20260918.json`. Evaluations ran against uncommitted
+changes on base 8f26883; receipts explicitly record this and exact source hashes.
+Reproduce with `bash four_motion.sh rehearse --policy <fixed_dr|no_dr>
+--motion <walking|turning|crouch_hold|side_stepping>`.
+
+Build passed. Bundle quick checks: 6 pass, 0 fail, 1 documented pose-mismatch
+warning, 1 skipped legacy rollout; five focused tests, Black/Ruff, shell syntax,
+manifest/hash checks and documentation links passed. The new manifest/asset
+checks also passed after fast-forwarding the original machine checkout to the
+published main. Backup of the previous local package: `/home/linjiw/lucid-sonic/artifacts/four_motion_deploy_publish_20260918/pre_publish_local_backup`.

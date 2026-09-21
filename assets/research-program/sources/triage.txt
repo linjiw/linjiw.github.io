@@ -1,0 +1,123 @@
+# TRIAGE
+
+**Bottleneck-Aware Routing of Task, Reward, and Domain-Randomization Curricula
+for Robotic Reinforcement Learning**
+
+TRIAGE treats curriculum-object selection as an online diagnosis problem. At a
+curriculum epoch, independent task, reward, and domain-randomization (DR)
+experts propose one bounded intervention each. A guarded sparse router compares
+their deployment-grounded Curriculum Intervention Value (CIV), commits at most
+one positive intervention, or holds the current curriculum.
+
+This repository is an external Isaac Lab project. It does not modify the Isaac
+Lab source tree.
+
+## Current status
+
+The initial infrastructure implements:
+
+- a simulator-independent CIV router with exponential smoothing, switching
+  cost, a minimum hold period, hard feasibility guards, and serializable state;
+- bounded expert proposals and immutable curriculum-state transitions;
+- an explicit executed null continuation distinct from the router's hold action;
+- a frozen, reward-independent lift evaluator with vector success and physical
+  feasibility outcomes;
+- deterministic disjoint screening, confirmation, and sealed held-out seed
+  manifests;
+- paired candidate-versus-null estimates, conservative confidence bounds, and
+  fresh-seed screening-winner confirmation;
+- JSONL routing traces for auditable decisions;
+- a contextual CIV bandit and teacher-epoch coordinator for safe probe
+  prioritization;
+- an Isaac Lab adapter for live Franka Lift task, reward, mass, and actuator
+  gain interventions;
+- a registered `TRIAGE-Lift-Cube-Franka-v0` environment that inherits the
+  official Franka Lift task and disables its fixed reward schedule;
+- controlled arena and experiment configurations;
+- unit tests and finite simulator smoke-test entry points.
+
+The short PPO-update probe backend and checkpoint forking are intentionally the
+next implementation stage. The contextual teacher remains a shadow-mode
+predictor until the offline intervention atlas establishes that short probes
+predict full training blocks. These are not represented as complete.
+
+## Pinned local runtime
+
+The known-working installation on this machine is:
+
+| Component | Pin |
+| --- | --- |
+| Python | 3.11 |
+| Isaac Sim | 5.0.0 |
+| Isaac Lab checkout | `v2.2.1-72-g21bcb476b2` |
+| Isaac Lab commit | `21bcb476b27ceedccccd63afef6bbd822adc2b2b` |
+| PyTorch | 2.7.0+cu128 |
+| RSL-RL | 3.0.1 |
+| Environment | `/home/robotixx/miniconda3/envs/env_isaaclab` |
+
+Do not mix this project with the separate Isaac Lab 2.3.0 installation on the
+machine without deliberately rebuilding and revalidating the environment.
+
+## Setup
+
+```bash
+cp .env.example .env
+make setup
+make check
+make test
+```
+
+The setup script installs this extension in editable mode into
+`env_isaaclab`. It reuses the existing simulator and does not reinstall Isaac
+Sim.
+
+## First runs
+
+Exercise the pure router without launching Isaac Sim:
+
+```bash
+make router-demo
+make teacher-demo
+```
+
+Verify task registration:
+
+```bash
+make list-envs
+```
+
+Run a finite two-environment simulator smoke test:
+
+```bash
+make smoke
+```
+
+Reproduce an un-routed PPO baseline:
+
+```bash
+make train-baseline NUM_ENVS=512
+```
+
+The baseline command is deliberately named `train-baseline`: it trains the
+router-ready environment but does not claim to execute CIV probes.
+
+## Repository layout
+
+```text
+configs/                 Router, expert, arena, and experiment definitions
+docs/                    Architecture, benchmark, and experiment protocol
+scripts/                 Setup, diagnostics, smoke, and baseline training
+source/triage/triage/
+  core/                  Simulator-independent routing and evaluation
+  grounding/             Frozen outcomes, manifests, paired inference, confirmation
+  integrations/          Isaac Lab runtime adapter
+  teacher/               Contextual teacher and epoch coordinator
+  tasks/                 Registered Isaac Lab environments and agent configs
+tests/                   Fast unit and contract tests
+```
+
+See [architecture.md](docs/architecture.md) for component boundaries and
+[experiments.md](docs/experiments.md) for the staged research protocol. The
+causal acceptance gates are specified in
+[scientific_validation_plan.md](docs/scientific_validation_plan.md), and the
+next-stage teacher is specified in [teacher_algorithm.md](docs/teacher_algorithm.md).

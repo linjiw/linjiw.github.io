@@ -1,0 +1,101 @@
+# Cosmos3-Edge under 10 GB — quantization, optimization & evaluation
+
+**Live write-up:** https://linjiw.github.io/cosmos3edge-10gb/
+
+**Framework patch branch:** https://github.com/linjiw/cosmos-framework/tree/feat/int8-ampere-quantization
+
+Running NVIDIA's Cosmos3-Edge (4B omni world model: 2B VL reasoner + rectified-flow
+video diffusion expert in one Mixture-of-Transformers tower) in **under 10 GiB of GPU
+memory on an Ampere A10G (sm_86)** — a GPU with no FP8/FP4 tensor cores, where NVIDIA's
+shipped quantization methods (mxfp8/nvfp4, Blackwell-only) cannot run.
+
+## Results (measured, A10G 23 GB)
+
+| mode | bf16 peak | int8wo peak | Δ | quality |
+|---|---|---|---|---|
+| text2image 480p | 8.95 GiB | **6.33 GiB** | −2.62 | visually equal, LPIPS 0.18* |
+| image2video 256p/189f | 8.36 GiB | **5.74 GiB** | −2.62 | LPIPS 0.040 |
+| image2video 480p/189f | 12.48 GiB | **9.86 GiB** | −2.62 | **LPIPS 0.036** — indistinguishable |
+| reasoner (VLM planning) | 8.65 GiB | **6.01 GiB** | −2.64 | valid plans; **17% faster** |
+
+\* single image, same-seed trajectory divergence — see the write-up for why per-pixel
+metrics under-report quantized diffusion quality.
+
+Speed: eager int8wo sampling (3.89 it/s) ≈ compiled bf16 (3.78 it/s). The reasoner
+gets *faster* because autoregressive decode is memory-bandwidth-bound.
+
+## What's here
+
+- `bench/` — the measurement harness:
+  - `memprobe.py` — phase-separated peak-memory probe (load transient vs inference peak)
+  - `run_battery.sh` — fixed 4-mode benchmark battery, args pinned, free-VRAM guard
+  - `trajprobe.py` — records the per-step velocity trajectory; step-0 velocity
+    relative-L2 is the trajectory-divergence-free quality gate
+  - `compare.py` — PSNR/LPIPS/text comparison between battery runs
+  - `int8wo_microbench.py` — isolates the torch 2.10 `_weight_int8pack_mm` regression
+  - `checkpoint_budget.py` — reads safetensors headers only and reproduces exact
+    component/pathway/INT8 byte budgets without loading PyTorch or using GPU memory
+- `results/` — raw measured JSON (memory probes, quality comparisons, trajectory probes)
+- `assets/` — side-by-side frames (bf16 vs int8)
+- `docs/QUANT_10GB_RESEARCH_PLAN.md` — the full research document: literature review
+  (60+ sources), verified model anatomy, ranked technique stacks for inference AND
+  training, review-hardened measurement protocol, roadmap
+- `0001-feat-quantization-*.patch` — the cosmos-framework patch (also on the fork branch)
+
+## The one-line recipe
+
+```bash
+python -m cosmos_framework.scripts.inference -i input.json -o out \
+  --checkpoint-path Cosmos3-Edge \
+  --quantization-method int8wo --no-use-torch-compile
+# optionally: COSMOS_VAE_CPU_OFFLOAD=1 for another -1.3 GiB
+```
+
+## Found along the way: a torch 2.10 performance trap
+
+torch 2.10 newly enables an inductor pattern (pytorch#161680) that rewrites the int8
+weight-only dequant+matmul graph into CUDA `aten._weight_int8pack_mm` — a
+thread-per-output GEMV that is **~150× slower** than the dequant+cuBLAS path it
+replaces at diffusion token counts (M≈12k). No graph break, nothing in logs: an
+in-graph kernel substitution. Our patch gates the pattern back to CPU-only (the
+torch ≤2.9 behavior). Details and microbenchmark in the write-up.
+
+## Method summary
+
+1. **Ground truth first**: parsed safetensors headers for exact per-module byte
+   budgets; mapped every existing quantization/offload/distillation hook in the
+   framework (with two adversarial review agents verifying file:line claims).
+2. **int8 weight-only** on all 28 MoT layers' Linears (both towers, 2.82B of 3.37B
+   params) via torchao, wired into the framework's existing `QuantizationConfig`
+   plumbing — which previously was never applied on the HuggingFace checkpoint path.
+3. **Evaluation designed against trajectory divergence**: same-seed bf16 reruns are
+   bit-exact (true null); the quantization gate is single-forward velocity error at
+   step 0 (0.05–0.10 rel-L2), calibrated against the 0.10 delta bf16 itself shows
+   between compiled and eager execution. Full-video LPIPS + side-by-side confirms.
+
+## Roadmap (from the research plan)
+
+- **P0 quantized streaming load**: eliminate the 10.27 GiB bf16-before-INT8 cold-load
+  transient so the model can start on a physical 10 GiB GPU
+- **P1 UND prompt-KV cache**: prefill conditional/unconditional text once, then run only
+  the GEN pathway during the 35 denoising steps
+- **P2 phase-aware offload**: after prefill, evict ~1.31 GiB of INT8 UND layer weights
+  and the phase-local embedding/LM-head instead of streaming every mixed block
+- **P4 decode drain**: move each temporally decoded VAE chunk to CPU immediately to trim
+  the remaining ~0.4–0.8 GiB high-resolution output transient
+- **int8dq (W8A8)**: already wired; INT8 tensor cores measured 31% faster than bf16
+  per block — pending clean-window video-quality validation
+- **Track B**: <10 GiB *training* via QLoRA-on-gen-pathway (est. 5.6–8 GiB)
+- **Track C**: DMD2 4-step distillation (~17× fewer forwards) for real-time-ish
+  robot-policy rollouts
+
+## Related
+
+- [cosmos3edge-24gb](https://github.com/linjiw/cosmos3edge-24gb) — the earlier phase:
+  fitting Cosmos3-Edge *SFT training* into 24 GB at stock quality.
+
+## License / attribution
+
+The framework patch applies to [NVIDIA cosmos-framework](https://github.com/NVIDIA/cosmos-framework)
+(OpenMDW-1.1). Benchmark scripts here are MIT. Model weights are NVIDIA's
+(nvidia/Cosmos3-Edge on Hugging Face, subject to their license).

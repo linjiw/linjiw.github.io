@@ -1,0 +1,366 @@
+Motion2Scene Flow research
+
+Public research review: [Motion2Scene Flow](https://linjiw.github.io/motion2scene-flow/)
+([website repository](https://github.com/linjiw/motion2scene-flow)). Updated 2026-09-21:
+problem definition, robotics flow-matching tutorial, all 11 study blocks, evidence
+notes, scientific figures, limitations and the next research decisions. Website
+sources live in `site/`, which is a separate Git repository; the original datasets
+and model checkpoints are not uploaded with the website.
+
+This workspace contains the literature-backed research plan and a runnable first
+experiment on traversal-relevant scene compression. Three representation/readout
+diagnostics, a conditional flow-matching proxy, and a bounded-output/solver study
+are complete. A native G1 reference/geometry/interface audit is also complete.
+Full-motion navigation and SONIC execution remain future work.
+The latest result is in [research/HYBRID_CHECKER_RESULT_zh.md](research/HYBRID_CHECKER_RESULT_zh.md).
+
+Limited certificates plus exact fallback now preserve all 9,962 valid accepts and
+375/432 valid scene-model returns on the reused 13,824-candidate bank, with identical
+selected actions. Seven arms (exact; uniform/motion-bound at 8/16/32 queries) run
+three shuffled timing repetitions for each of three frozen fits: 63 records.
+Only unresolved candidates invoke fresh exact geometry; archived truth never
+enters operational selection or fallback.
+
+Uniform16 plus fallback has the lowest measured cost on this development bank:
+20.136 ms per valid return for the complete checker versus exact's 38.147 ms.
+Adding identical retained conditioning/FM/decoding costs gives 40.592 versus
+58.603 ms. Exact timing varies substantially; all repetitions and ranges are
+retained. These are instrumented CPU batch measurements and assembled stage costs,
+not remeasured end-to-end or online latency. Motion-bound16 needs fewer exact
+checks, but its additional prefilter work makes it slower than uniform16 here.
+
+The independent audit replays 82,944 certificate sets and verifies exact fallback
+routes, values, final decisions and selections. All 75 tests pass. New code, traces,
+timing schedules and reports are in `artifacts/hybrid-checker-v1/`; prior artifacts
+remain unchanged. This is a checking improvement on reused synthetic data, with
+no new FM training or improvement in raw candidate validity.
+
+The preceding integration result is in
+[research/FM_CHECKER_RESULT_zh.md](research/FM_CHECKER_RESULT_zh.md).
+
+The frozen FM/checker integration evaluates 13,824 shared candidates from three
+existing fits on 144 new scenes in 48 procedural families. At a maximum of 64
+physical-time queries, motion-bound early stopping reduces mean queries from
+25.66 (static time-gap) to 19.65 and raises valid scene returns from 345/432 to
+357/432. Exact continuous checking returns 375/432; these are repeated fitted-model
+evaluations, not 432 independent scenes. All certified accepts pass the declared
+continuous proxy geometry.
+
+Motion-bound and exact checking cost approximately the same per valid scene return
+(48.631 versus 48.643 ms in descriptive CPU batch timing), while exact checking
+retains more valid candidates. Thus fewer point queries do not establish an
+end-to-end advantage. Uniform sampled checking at 16 points incorrectly accepts
+60 candidates and actually selects seven invalid motions. The report preserves
+all budgets, 72 evaluation records, paired family intervals and total cost.
+
+An independent precision audit caught a float32 box-center calculation in the new
+point adapter. After promoting geometry before arithmetic, every checker was
+rerun on the identical frozen candidates. All decisions and selections were
+unchanged; the first attempt remains archived. The final audit replays 221,184
+certificate sets, and 69 tests pass. Data and corrected results are in
+`artifacts/fm-checker-v1-candidates/` and `artifacts/fm-checker-v1-final/`.
+No new model training or native motor-token generation is claimed.
+
+The preceding budget result is in
+[research/NATIVE_BUDGET_RESULT_zh.md](research/NATIVE_BUDGET_RESULT_zh.md).
+
+The budget study freezes 20 additional source groups, excluded from the prior
+120-reference corpus, before new geometry evaluation. It compares four readers at
+8/16/32/64 source-frame budgets on 4,500 previous-development and 4,500 new-group
+pairs. At 64 frames, motion-bound reading certifies 1,666/4,500 new-group pairs
+versus static time-gap reading's 829/4,500; the paired coverage gain is 18.60
+percentage points [15.24, 22.02]. Both motion-bound and endpoint readers detect all
+2,450 known witnesses, but endpoint has only 163 certificates. At 16 frames,
+endpoint detects more of the short-witness subset (107/124 versus 95/124).
+
+Actual early stopping reduces mean frame queries from 29.56 (static time-gap) to
+19.38 (motion-bound), leaving 384/4,500 new-group pairs unresolved. Certificates
+apply to the declared reference interpolation and static authored geometry;
+17/20 new clips retain source joint-limit violations. These Kimodo source groups
+are new to this workspace's evaluation, not new humans, a new generator, or MTC.
+The previous five-frame collision is detected by motion-bound at query 24, while
+its previous 16-query miss remains unchanged. No new FM/controller run is claimed.
+
+All 32 comparison cells, full and stopped query traces, new-group provenance,
+144,000 replayed certificate sets, and the preserved conversion failure are linked
+from the report. Artifacts are in `artifacts/native-budget-v1/` and
+`artifacts/native-budget-v1-data-final/`; 63 tests pass.
+
+The preceding body/time study is in
+[research/NATIVE_STRUCTURE_RESULT_zh.md](research/NATIVE_STRUCTURE_RESULT_zh.md).
+
+The body/time follow-up completes nine new fits, reuses six frozen baselines, and
+compares four temporal query methods. Minimum body aggregation alone has no
+established advantage; per-shape BCE reduces mean witness accepts from 7.06% to
+6.40% with a group interval spanning zero, while distance regression worsens them
+to 12.35%. All seed results and additional supervision costs are retained.
+
+At the same 16-frame ×45-shape query budget, motion-bound-guided reads detect
+2,550/2,596 known witnesses versus uniform reads' 2,479/2,596. A separately archived
+same-starting-grid static control detects 2,486; endpoint-only adaptive reads detect
+2,549. Motion-bound ranking accepts zero known witnesses among 1,350 candidates,
+but two remain unknown and only 290 accepted candidates have continuous certificates
+from those queries. The previous five-frame collision is still missed by this
+reader; both it and the static grid control reject that case by ranking.
+
+These are comparisons on the previously inspected development corpus, not fresh
+test or FM-transfer results. Exact traces, weights, metrics and interval replays
+are in `artifacts/native-structure-v1/` and the separate
+`artifacts/native-structure-v1-phase-control/`. The linked report includes protocols,
+uncertainty, reproduction commands and the remaining constraints.
+
+The preceding event study is in
+[research/NATIVE_EVENT_RESULT_zh.md](research/NATIVE_EVENT_RESULT_zh.md).
+
+The event-sampling pilot relabels all 27,000 original motion/obstacle candidates:
+11,346 continuous-clear, 15,066 primitive-overlap witnesses, and 588 unknown.
+Adaptive interval certificates resolve all 71 previously unknown original scenes;
+all 240 now pass the authored-geometry reference-path margin. This does not qualify
+execution or remove source joint-limit violations.
+
+Eighteen fits compare three within-class training samplers and two pooling methods,
+with three seeds and matched group/clip/obstacle/class schedules. At 30% acceptance
+on 4,500 development pairs, attention plus uniform sampling accepts 7.06% primitive
+witnesses; boundary sampling increases this to 8.89%, while low-clearance sampling
+reduces it to 6.32%. Unknown accepts remain separately reported. Same-frame direct
+geometry has 1/1,350 witnesses and 5/1,350 unknowns. No attention advantage or FM
+transfer is established. A source-recomputed diagnostic shows its single geometric
+false accept missed a five-frame torso overlap between uniformly read timestamps.
+
+Data, weights, predictions, shared schedules and paired source-group uncertainty
+are in `artifacts/native-event-v1-data/` and `artifacts/native-event-v1/`.
+The protocol and result link above include reproduction commands. These are
+relation-reader fits on complete reference geometry, not observation-conditioned
+navigation or motor-token pretraining.
+
+The preceding native audit is in
+[research/NATIVE_REFERENCE_RESULT_zh.md](research/NATIVE_REFERENCE_RESULT_zh.md).
+
+The native audit independently extracts 45 USD collision shapes, checks 1,016,604
+mesh vertices and reconstructs all 25,335 source poses from the USD joint tree.
+Body frames agree with the stored MJCF references within 5.49e-7 m / 1.44e-6 rad.
+For the declared reference interpolant, conservative continuous 2 cm clearance
+initially passed 169/240 selected scenes; 71 remained unknown, not collision labels. Seven
+additional interior samples per interval found no bound violation and no sampled
+clearance below 2 cm, but did not promote the unknown scenes. The later event pilot
+uses refined bounds to resolve those scenes. Source joint-limit
+violations remain in 93/120 clips. These are Kimodo-generated references, not
+verified MTC or robot execution data.
+
+Offline SONIC joint-order, SLERP and planner-payload checks pass on all 120 clips.
+The native 640D packing helper is not equivalent to naive frame flattening.
+No motor encoder checkpoint was run and no latent/action labels were created.
+New relation tensors and reference derivatives, source snapshots and receipts are
+in `artifacts/native-reference-v1-final/`; dense checks and figures are in
+`artifacts/native-reference-v1-checks/`. See the linked result for reproduction.
+
+The preceding FM study is in
+[research/BOUNDED_FLOW_RESULT_zh.md](research/BOUNDED_FLOW_RESULT_zh.md).
+
+That study holds training and conditioning fixed and uses 144 new test scenes.
+At 16 vector-field evaluations, original FM had 24.83% out-of-domain controls and
+56.68% valid candidates. Retrained tanh-coordinate FM had 0% domain violations and
+71.67% valid candidates; simple terminal clipping reached 71.69%. Scene coverage
+was 89.81% and 90.05%, respectively, so bounded training did not establish a
+feasibility advantage over clipping. Its selected proxy cost was lower on paired
+common-success scenes, with higher measured parameter diversity.
+
+Increasing the frozen original model to 256 Euler evaluations reduced disagreement
+with a Heun numerical reference, but increased domain violations to 27.60%.
+More accurate integration was not a sufficient fix. The target-boundary inset was
+rechecked in all 360 train/validation scenes and caused no validity-label flips.
+Three new fits and 33 evaluation records are preserved in `artifacts/bounded-flow-v1/`.
+
+To reproduce this stage after `proxy-flow-v0` and `spatial-v3` are available:
+
+```bash
+python -m motion2scene_flow.boundary prepare --config configs/bounded_flow_v1.json --dataset artifacts/pilot-v1-data --output artifacts/new-bounded-data
+python -m motion2scene_flow.bounded_flow prepare --config configs/bounded_flow_v1.json --dataset artifacts/new-bounded-data --output artifacts/new-bounded-pool
+python -m motion2scene_flow.bounded_flow train --config configs/bounded_flow_v1.json --dataset artifacts/new-bounded-data --pool artifacts/new-bounded-pool --encoder-run artifacts/pilot-v1 --spatial-run artifacts/spatial-v3 --upstream-run artifacts/proxy-flow-v0 --output artifacts/new-bounded
+python -m motion2scene_flow.bounded_report --run artifacts/new-bounded
+```
+
+The design in [research/BOUNDED_FLOW_V1_PROTOCOL.md](research/BOUNDED_FLOW_V1_PROTOCOL.md)
+was saved locally before results; it was not externally registered and remains an
+exploratory follow-up.
+The tanh chart uses training-only sampling-weighted moments. Decoded range validity
+is structural, not learned collision safety. Projection is a declared baseline
+with geometry recomputed, and is never silently substituted for an archived result.
+
+The local attention reader retained spatial offsets and reached 0/518 unsafe accepts
+at 30% coverage on each of three fitted seeds; equal-parameter uniform pooling had
+7.08% unsafe accepts. Deterministic local interpolation also had zero, so a learned
+reader has not beaten the geometric reference. All learned local arms read the same
+136 grid vertex values per body segment; this is additional spatial access, not a
+32-scalar-only compressed representation.
+
+The first FM model emits continuous crouch/yaw/lateral-shift controls for the same
+sphere-proxy body. Adding 12 frozen local compatibility scores increased pre-filter
+valid candidate rate from 50.82% to 54.52%; scene coverage with 32 samples increased
+from 85.19% to 85.88%. About 27% of local-FM outputs violated the control domain.
+These are bounded findings from oracle synthetic geometry, not MTC pretraining,
+full joint generation, native SONIC tokens or closed-loop robot results.
+
+Reproduce the preceding spatial and first-FM stages after v1/v2 artifacts are available:
+
+```bash
+python -m motion2scene_flow.boundary prepare --config configs/spatial_v3.json --dataset artifacts/pilot-v1-data --output artifacts/new-spatial-data
+python -m motion2scene_flow.spatial train --config configs/spatial_v3.json --dataset artifacts/new-spatial-data --output artifacts/new-spatial
+python -m motion2scene_flow.spatial report --dataset artifacts/new-spatial-data --output artifacts/new-spatial --global-run artifacts/boundary-v2 --encoder-run artifacts/pilot-v1
+python -m motion2scene_flow.boundary prepare --config configs/proxy_flow_v0.json --dataset artifacts/pilot-v1-data --output artifacts/new-flow-data
+python -m motion2scene_flow.proxy_flow prepare --config configs/proxy_flow_v0.json --dataset artifacts/new-flow-data --output artifacts/new-flow-pool
+python -m motion2scene_flow.proxy_flow train --config configs/proxy_flow_v0.json --dataset artifacts/new-flow-data --pool artifacts/new-flow-pool --encoder-run artifacts/pilot-v1 --spatial-run artifacts/new-spatial --output artifacts/new-flow
+python -m motion2scene_flow.progress_report --spatial-run artifacts/new-spatial --flow-run artifacts/new-flow
+```
+
+The v3 and FM test corpora are separate fresh draws. Completed runs live in
+`artifacts/spatial-v3/` and `artifacts/proxy-flow-v0/`, with source snapshots, trained
+weights, raw predictions, geometry labels and the combined scientific figure.
+`research/SPATIAL_V3_PROTOCOL.md` was written before their results. Corresponding
+`*_smoke.json` configs exercise five-step runs on separate small corpora. Fresh test
+family IDs are dataset-local; qualify them with dataset identity, not bare integers.
+
+The previous second experiment crosses three frozen/raw scene inputs with three readout
+objectives and three seeds: 27 runs, 16,200 optimizer updates, 48 fresh test scene
+families. At 30% candidate acceptance, reconstruction/MSE had 22.27% unsafe accepts,
+relation/Gaussian 19.63%, and raw-grid/MSE 28.51%. The simple local-grid reference
+had 0/518 unsafe accepts. These are offline geometric ranking results, not execution
+safety. The main implication is to investigate motion-relative spatial access;
+the experiment does not isolate compression as the cause of failure.
+
+After producing the first pilot dataset and checkpoints, run the second experiment
+with new output directories (the paths below refer to the completed local v1):
+
+```bash
+python -m motion2scene_flow.boundary prepare --config configs/boundary_v2.json --dataset artifacts/pilot-v1-data --output artifacts/new-boundary-data
+python -m motion2scene_flow.boundary train --config configs/boundary_v2.json --dataset artifacts/new-boundary-data --upstream artifacts/pilot-v1 --output artifacts/new-boundary-run
+python -m motion2scene_flow.boundary_report --run artifacts/new-boundary-run --dataset artifacts/new-boundary-data
+```
+
+Training/validation scenes and encoders are inherited from v1; its test scenes are
+excluded. The protocol is [research/BOUNDARY_V2_PROTOCOL.md](research/BOUNDARY_V2_PROTOCOL.md).
+The completed evidence is in `artifacts/boundary-v2/`, including source snapshots,
+all predictions and the risk/coverage figure. `configs/boundary_smoke.json` tests
+the pipeline using `artifacts/smoke-data` and `artifacts/smoke-final-run`; it has five
+updates per arm and is not learning evidence. The smoke report exposed an empty
+acceptance case, now explicitly reported as undefined risk rather than zero.
+
+The first experiment is preserved in [research/PILOT_V1_RESULT.md](research/PILOT_V1_RESULT.md).
+
+The experiment uses full-geometry signed-distance grids, a 32-scalar scene
+bottleneck, and a fixed bank of linearly swept sphere proxies. It compares scene
+reconstruction pretraining with reconstruction plus relation gradients into the
+encoder. Both arms receive the same relation labels; the baseline's encoder is
+detached for that loss. All encoders are frozen before fitting a fresh common
+compatibility probe. A random encoder is an additional control.
+
+The first result does **not** support lower fixed-threshold false-safe error from
+the added relation supervision. Its higher safe recall comes with more unsafe
+acceptances. All seeds and failure predictions are retained.
+
+To reproduce with a Python environment containing NumPy, PyTorch and Matplotlib:
+
+```bash
+python -m pip install -e '.[dev]'
+python -m pytest -q
+python -m motion2scene_flow.data --config configs/pilot_v1.json --output artifacts/new-data
+python -m motion2scene_flow.train --config configs/pilot_v1.json --dataset artifacts/new-data --output artifacts/new-run
+python -m motion2scene_flow.report --run artifacts/new-run --dataset artifacts/new-data
+```
+
+Use a CUDA-capable PyTorch build appropriate for the hardware. This machine already
+has a working Python at `/home/linjiw/groot-wbc-sonic-sim-trackb/.venv_isaaclab/bin/python`.
+The pilot used that environment without installing into it. To use it directly,
+prefix commands with `PYTHONPATH=src` and replace `python` with that absolute path.
+The run receipt records the actual library versions. The package is also runnable
+on CPU after setting `device` to `cpu` in a new config.
+
+Each dataset/run requires a fresh output directory. Dataset files, configs,
+protocol and implementation are hash-bound. New runs automatically archive their
+exact Python source; the first completed pilot also has a hash-verified snapshot.
+All arrays load with `allow_pickle=False`. No upstream project is modified.
+
+`configs/smoke.json` is a tiny plumbing run on a separate corpus, not an evaluation
+of learning. `configs/pilot_v1.json` freezes the exploratory pilot. The written
+[protocol](research/PILOT_V1_PROTOCOL.md) defines thresholds, denominators, splits
+and the scope of the scene-family bootstrap interval.
+
+The analytic geometry engine minimizes segment/AABB distance between frames, so
+an obstacle crossed between clear endpoints is detected for this proxy. The proxy
+does not establish G1 mesh coverage, balance, support feasibility, sensing or robot
+execution. Its negative distances indicate collision; they are not true humanoid
+penetration depths. The candidate bank is shared across all splits, so this study
+tests held-out scene instances rather than motion/skill generalization.
+
+A read-only audit command is available for the locally discovered hindsight corpus:
+
+```bash
+python -m motion2scene_flow.audit \
+  --source /home/linjiw/m2s-portability-validation/m2s-hindsight-dataset-v1-20260911 \
+  --output artifacts/new-reference-audit.json
+```
+
+With MuJoCo installed (`.[audit]`), the follow-up kinematic audit is:
+
+```bash
+python -m motion2scene_flow.kinematic_audit \
+  --source /home/linjiw/m2s-portability-validation/m2s-hindsight-dataset-v1-20260911 \
+  --output artifacts/new-kinematic-audit.json
+```
+
+The completed audit checks all 25,335 frames against the bundled MJCF. Internal
+body and geom position agreement is within 5.33e-15 m. The subsequent native
+audit now verifies mesh envelopes and USD/MJCF articulated frames; execution
+remains unqualified.
+
+That corpus is distinct from MTC. Its original qualification and split labels are
+preserved. Native geometry includes mesh approximations that require review before
+any full-body clearance claim. See the [local inventory](research/LOCAL_DATA_INVENTORY.md).
+
+Relevant files:
+
+- `src/motion2scene_flow/geometry.py`: exact swept proxy queries.
+- `data.py`: procedural family splits and a fixed candidate bank.
+- `models.py`, `train.py`: paired objectives, frozen encoders, fresh probe fitting.
+- `metrics.py`, `report.py`: explicit denominators, validation calibration and plots.
+- `audit.py`: original reference structure and provenance inspection.
+- `boundary.py`, `boundary_report.py`: fresh-test factorial readout diagnostic.
+- `kinematic_audit.py`: read-only reference/model kinematic consistency.
+- `spatial.py`: uniform/attention/no-coordinate comparison on identical local reads.
+- `proxy_flow.py`: continuous proxy decoder, geometry-labeled pool, FM and sampling references.
+- `progress_report.py`: measured spatial/FM summary and publication-exportable figures.
+- `bounded_flow.py`: tanh-chart targets, target audit, Euler/Heun solver comparison and explicit projection baseline.
+- `bounded_report.py`: paired family intervals, common-scene cost and solver convergence figures.
+- `native_geometry.py`: USD collision extraction, articulated transforms and interval bounds.
+- `native_reference.py`, `native_audit.py`: typed offline conversion and native schema audit.
+- `native_verify.py`: artifact verification, interior-sample stress test and figures.
+- `native_events.py`: all-candidate typed labels and adaptive interval certificates.
+- `native_event_learning.py`: matched-class event sampling and body relation readers.
+- `native_event_report.py`, `native_event_diagnostic.py`: paired group analysis and temporal miss diagnosis.
+- `native_structure.py`, `native_structure_report.py`: body supervision/factorization comparisons and audited results.
+- `temporal_queries.py`, `temporal_phase_control.py`: fixed-budget geometry queries and a separate starting-grid control.
+- `budget_queries.py`: incremental frozen readers with certificate/witness/abstention stopping.
+- `native_budget_data.py`, `native_budget.py`, `native_budget_report.py`: new-source qualification, budget/cost experiments and certificate replay.
+- `fm_checker.py`, `proxy_checker.py`: frozen FM candidate bank, path-preserving geometry adapter, actual early stopping and selection.
+- `fm_checker_report.py`: independent continuous/point geometry replay, family-paired yield comparisons and whole-batch cost.
+- `hybrid_checker.py`, `hybrid_report.py`: limited certificates with fresh exact fallback, shuffled repeated timing and independent route/selection verification.
+- `research/Motion2Scene_followup_zh.md`: broader pretraining/FM research design.
+- `research/primary_source_audit.md`: literature and SONIC interface evidence.
+
+The earlier design in [research/SPATIAL_FLOW_NEXT.md](research/SPATIAL_FLOW_NEXT.md)
+is now partially implemented in the synthetic proxy. The bounded-output follow-up
+is complete and retains simple terminal constraints as a strong baseline. Structured
+body/time comparisons and the new-source budget study support certificate-based
+checking with explicit abstention, while learned body aggregation remains
+inconclusive. The frozen FM/decoder comparison is now complete: exact checking
+retains higher yield at comparable cost per valid scene. The next bounded question
+was whether limited certificates plus exact fallback could reduce total cost at
+identical yield. The hybrid study now supports uniform16 plus fallback as a
+provisional option on this reused bank; exact remains the reference. The next
+research priority is diagnosing frozen-generator failures with a matched-budget
+independent control-space search before adding training mechanisms. New-scene
+replication is needed to generalize the checker timing choice. The current FM
+remains a three-control proxy,
+not a native G1 motion decoder. Actual MTC provenance,
+motion/observation/goal interfaces and varying-goal training remain unresolved.
+An implementation plan is not evidence of transfer.

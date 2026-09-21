@@ -1,0 +1,218 @@
+{
+  "as_of": "2026-09-21",
+  "scope": "Selected research sources read for synthesis. Inventory is not a claim to rerun or audit every experiment.",
+  "sources": [
+    {
+      "id": "kimonav-current",
+      "title": "KimoNav current record",
+      "source": "kimodo/knav/research/CURRENT.md",
+      "sha256": "8b780b54df6846f8d57d24a3dee761d15c6e42b5e2820d9ce24d57212ddd4ca7",
+      "url": "/assets/research-program/sources/kimonav-current.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "kimonav-plan",
+      "title": "KimoNav current plan",
+      "source": "kimodo/knav/research/2026-09-20-clearance-admission/CURRENT_PLAN.md",
+      "sha256": "7db1683bb8a35f4376135e94bcefa2441e574685bceed32ddcc1e3ec66b37968",
+      "url": "/assets/research-program/sources/kimonav-plan.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "clearance",
+      "title": "Distinct-clearance report",
+      "source": "kimodo/knav/artifacts/clearance-admission-20260920/REPORT.md",
+      "sha256": "4190829b4e212b8258f8c9b280f00b2e4fe5bf97954dff7d09d8dc1d46eca62c",
+      "url": "/assets/research-program/sources/clearance.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "public-motor",
+      "title": "Public motor integration",
+      "source": "kimodo/knav/artifacts/public-motor-integration-20260920/REPORT.md",
+      "sha256": "b983a1fa5cfe4e68b32fb9b6199b4c73f138dc1e3c8a9212c19355501bd1532e",
+      "url": "/assets/research-program/sources/public-motor.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "kimonav-history",
+      "title": "KimoNav historical synthesis with supersession notes",
+      "source": "kimodo/knav/RESULT_SYNTHESIS_AND_FOLLOWUPS.md",
+      "sha256": "84410025fafb5dab8af3043492c32c31d9d5cb848770c662f250bdfe86bb4c09",
+      "url": "/assets/research-program/sources/kimonav-history.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "hindsight",
+      "title": "Hindsight Motion research status",
+      "source": "hindsight-motion-research/README.md",
+      "sha256": "dc7122a57609aaaa5cb741f89d3b80a0dee41511a51d0e02184939356179e984",
+      "url": "/assets/research-program/sources/hindsight.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "student01",
+      "title": "Student 01 registered development protocol (Chinese)",
+      "source": "hindsight-motion-research/docs/STUDENT01_PROTOCOL_zh.md",
+      "sha256": "0bd15f0fab9e7eb82ebee68eed9fa264bcec4f920c1079bf7780be126b2ea632",
+      "url": "/assets/research-program/sources/student01.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "flow",
+      "title": "Motion2Scene Flow experiment sequence",
+      "source": "flow/README.md",
+      "sha256": "35461b8d3cb27992d151c09c931a632d7c4b5da73dbba22c628dd1ce023183b5",
+      "url": "/assets/research-program/sources/flow.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "flow-hybrid",
+      "title": "Hybrid checker result and next experiment (Chinese)",
+      "source": "flow/research/HYBRID_CHECKER_RESULT_zh.md",
+      "sha256": "42692f260e5916f83da4e52caa095ee08c3d2409677af6a7336f4685f08d0d1e",
+      "url": "/assets/research-program/sources/flow-hybrid.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "terrain",
+      "title": "Terrain depth training decision",
+      "source": "newton-terrain/outputs/terrain-depth-20260920/DECISION.md",
+      "sha256": "41032c02f8b3e2ee3064c91d0512528aabf9c7fa64dfed9f13731a4a3c2a2aaa",
+      "url": "/assets/research-program/sources/terrain.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "terrain-history",
+      "title": "Terrain integration and training history",
+      "source": "newton-terrain/README.md",
+      "sha256": "329b97c29a2ff1f80d9e0a71e9406dae7282746c4426ea79be04a3d44f32b24a",
+      "url": "/assets/research-program/sources/terrain-history.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "terrain-lab",
+      "title": "Packaged terrain lab scope",
+      "source": "newton-terrain-lab/README.md",
+      "sha256": "d376e431b7bec36cf1321b1852e6a16e7504b350f2e1eae66341d58b9d1e7e44",
+      "url": "/assets/research-program/sources/terrain-lab.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "lucid-replication",
+      "title": "LUCID fresh-event replication",
+      "source": "lucid/lucid-fresh-replication-results-2026-09-12.md",
+      "sha256": "d2c59f5c4d355f7b9092b6f56c1bd635dc7bdf4c1a937c9cbd6800cca7c158d9",
+      "url": "/assets/research-program/sources/lucid-replication.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "lucid-deploy",
+      "title": "Four-motion deployment with September 18 correction",
+      "source": "lucid/lucid-four-motion-deploy-2026-09-17.md",
+      "sha256": "5181fd0f19a371b3e5cfb59c9dd324273adc68a94a1c4ef9bd6dcef91ef28438",
+      "url": "/assets/research-program/sources/lucid-deploy.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "lucid-history",
+      "title": "LUCID continuation history",
+      "source": "lucid/README.md",
+      "sha256": "8ef3ecdb2ffbbccce3da6772a237fc9e66b9782adb7f518046873e2ddce8895b",
+      "url": "/assets/research-program/sources/lucid-history.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "m2s-learning",
+      "title": "Motion2Scene recursive learning synthesis",
+      "source": "groot-wbc-sonic-sim-trackb/docs/motion2scene/RESEARCH_SUMMARY_20260917.md",
+      "sha256": "e8411935d50d368371a8af239600f10887ab8b2a472e3f2ea6105d68df065d51",
+      "url": "/assets/research-program/sources/m2s-learning.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "m2s-package",
+      "title": "Motion2Scene training package status",
+      "source": "motion2scene-training/README.md",
+      "sha256": "6fd37a57cdae837acc7b206ed6d4463ec69b5c93cead15f42bb4a5680a051671",
+      "url": "/assets/research-program/sources/m2s-package.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "m2s-inverse",
+      "title": "Inverse Motion2Scene research",
+      "source": "motion2scene/README.md",
+      "sha256": "d47b37a9fc205d81306b61620996ffee8ec2059ef0e873fa70ace72acec73f19",
+      "url": "/assets/research-program/sources/m2s-inverse.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "scene2motion",
+      "title": "Scene2Motion phase-addressability record",
+      "source": "scene2motion/README.md",
+      "sha256": "13b7c580d025fcf06ef30e9e06bc03e02a7ae6b3d25dcc4a2c6f3e9b9f8e4965",
+      "url": "/assets/research-program/sources/scene2motion.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "climb",
+      "title": "CLIMB feasibility record",
+      "source": "climb-feasibility-first/README.md",
+      "sha256": "7be26923babf455d327bfb19ef2fadcb2844875ea2d332a962f7209c0ea96e29",
+      "url": "/assets/research-program/sources/climb.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "maxrl",
+      "title": "Curriculum-MaxRL research evidence",
+      "source": "curriculum-maxrl/README.md",
+      "sha256": "e79b6bc15ad2ab1cf3ab9d9045ce1ff5a66a1782f8ba18fb93924ca0e43fbd4c",
+      "url": "/assets/research-program/sources/maxrl.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "cosmos",
+      "title": "Cosmos3-Edge memory research",
+      "source": "cosmos3edge-10gb/README.md",
+      "sha256": "3a11f39331af3559752a72b8898dc14e291c7f7e9474a7ad821c811aa8a38cb2",
+      "url": "/assets/research-program/sources/cosmos.txt",
+      "kind": "Research source snapshot; internal relative links are archival text"
+    },
+    {
+      "id": "snmr",
+      "title": "snmr README at reviewed commit",
+      "source": "https://github.com/linjiw/snmr/blob/a3d9b3d8af171379a8cb7c1ef277ad1a2d30af8b/README.md",
+      "sha256": "8b9ed2b2dba1e56f18251b974ab18517da409deb9aa1aa77dc48ea237c4843a1",
+      "commit": "a3d9b3d8af171379a8cb7c1ef277ad1a2d30af8b",
+      "url": "/assets/research-program/sources/snmr.txt",
+      "kind": "Repository status snapshot; running/pending statements are source-reported, not live process checks"
+    },
+    {
+      "id": "triage",
+      "title": "TRIAGE README at reviewed commit",
+      "source": "https://github.com/linjiw/TRIAGE/blob/b48fcbce15951f8a66a0fd0484e0cf3b6394fe87/README.md",
+      "sha256": "e2131341d7db86a15e7ef5c949840bc490e7fab01dcbf8b55871ec86102ccb52",
+      "commit": "b48fcbce15951f8a66a0fd0484e0cf3b6394fe87",
+      "url": "/assets/research-program/sources/triage.txt",
+      "kind": "Repository status snapshot; running/pending statements are source-reported, not live process checks"
+    },
+    {
+      "id": "critic",
+      "title": "traversal-critic-research README at reviewed commit",
+      "source": "https://github.com/linjiw/traversal-critic-research/blob/966a179a6b4e7db8f992aac52787fcd5fa28cd5d/README.md",
+      "sha256": "c9e414223a34859a8aad0edab448f03ee67aff16c151c6a98b4a899234fa1cfd",
+      "commit": "966a179a6b4e7db8f992aac52787fcd5fa28cd5d",
+      "url": "/assets/research-program/sources/critic.txt",
+      "kind": "Repository status snapshot; running/pending statements are source-reported, not live process checks"
+    },
+    {
+      "id": "climb-update",
+      "title": "CLIMB updated sensitivity and endpoint status",
+      "source": "climb-feasibility-first/plan/STATUS.md",
+      "source_sha256": "6fecc3002bb5d68f740b60db3c701cd83c3b08e681535299b16e31a3d82003a0",
+      "sha256": "027e7f8835ecf356916c975871d3307753c11c3120ebc7edfb386ab1f68d0f33",
+      "url": "/assets/research-program/sources/climb-update.txt",
+      "kind": "Selected verbatim actuator-sensitivity paragraph plus explicitly labeled editorial endpoint summary; not a full source snapshot"
+    }
+  ]
+}

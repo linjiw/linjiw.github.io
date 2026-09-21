@@ -1,0 +1,14 @@
+CLIMB status extract: actuator sensitivity, 8 September 2026
+
+**Rung 2 of the deployment ladder was executed, and it refuted its own registered prediction.**
+Design declared before the outcome: `plan/ACTUATOR_SENSITIVITY_2026-09-08.md`. Re-screening all
+900 Phase-G clips at knee and hip-roll limits of 139, 120 and 90 N·m leaves 888 clips unchanged
+and moves the flagged count from 99 to 98 of 900, with no clip newly flagged. The baseline
+reproduces the published screen exactly on all 900 clips, maximum delta 0.0. The design had
+predicted the flagged fraction could only rise; four clips fall, by up to 0.0236, because the
+screen thresholds the translational component of a residual whose total the program minimizes.
+The lower-bound sentence was withdrawn from the manuscript and the public page and replaced by
+the measurement. Full record: `reports/actuator_sensitivity_2026-09-08/result.json`.
+
+
+The status record also states: allocation is inconclusive; the H1 admission campaign completed ten training runs but stopped before the first evaluation cell. This is an editorial status summary, not new evidence.

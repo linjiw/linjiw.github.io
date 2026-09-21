@@ -1,0 +1,106 @@
+# Fresh-event replication: final results
+
+Review of the completed September 12 campaign. All 18 stages, four 2,000-update
+training runs and 90 evaluation cells completed. Each arm received 12,288,000
+transitions; total campaign wall time across serial stages was 11.09 hours.
+This note summarizes existing measurements, not a new simulator experiment.
+
+## Frozen primary verdict
+
+The primary condition is timed 1.5 m/s planar velocity increment plus 60 ms
+shared delay burst. Counts sum evaluation seeds 9190–9192, 128 aliases each.
+
+| Student training seed | Uniform completion | PLR completion | PLR minus uniform |
+|---|---:|---:|---:|
+| 9181 | 300/384 (78.13%) | 307/384 (79.95%) | +1.82 percentage points |
+| 9182 | 297/384 (77.34%) | 297/384 (77.34%) | 0.00 points |
+| Descriptive pooled total | 597/768 (77.73%) | 604/768 (78.65%) | +0.91 points |
+
+The frozen directional screen requires a strictly positive effect in both new
+training seeds. **It does not pass**, because seed 9182 ties. The pooled estimate
+does not override that rule. A tie does not prove equivalence; these two new
+student seeds cannot establish a precise algorithm-level effect.
+
+## Secondary stronger-stress result
+
+Timed 2 m/s + 80 ms exceeds this continuation campaign's severity support.
+
+| Student training seed | Uniform completion | PLR completion | PLR minus uniform |
+|---|---:|---:|---:|
+| 9181 | 192/384 (50.00%) | 227/384 (59.11%) | +9.11 percentage points |
+| 9182 | 194/384 (50.52%) | 211/384 (54.95%) | +4.43 points |
+| Descriptive pooled total | 386/768 (50.26%) | 438/768 (57.03%) | +6.77 points |
+
+PLR gains are +18/+12/+5 episodes for seed 9181 and +4/+6/+7 for seed 9182
+across the three evaluation seeds. This consistent secondary direction is worth
+an independently frozen confirmation. It must not be promoted retrospectively
+to the primary endpoint. Historical seed 9111 was slightly worse than fresh
+uniform on its own stronger-stress panel (212 versus 213/384); the total program
+therefore does not show an all-seed stronger-stress win.
+
+## Retention and interpretation
+
+Both arms pass all six retention criteria on development and every test panel
+for both new training seeds: **48/48 checks per method**. These are correlated
+criteria, not independent trials. They permit up to a two-percentage-point
+completion drop and 10% global/local MPJPE increases, separately under nominal
+and full physics with zero actuator delay. All nominal episodes complete.
+Some full-physics cells have one failure, within the frozen allowance.
+Both methods pass the retention component; PLR still fails the overall combined
+directional-plus-retention candidate screen because of the primary tie.
+
+PLR allocates 55.14% and 59.00% of practice episode assignments to the strongest
+push, versus approximately 25.1% for uniform. The allocation changes substantially
+without replicating the primary gain. High critic error and frequent selection
+therefore remain unvalidated estimates of useful practice. Assignment fractions
+are not delivered transition or event-dose fractions.
+
+Completion gains do not establish better stress tracking or recovery. For the
+stronger panel, mean global MPJPE is 460.88 versus 527.79 mm (uniform/PLR, seed
+9181), and 481.95 versus 507.02 mm (seed 9182). PLR has higher global error in
+all six stronger-stress cells. These pre-termination aggregates have different
+observation lengths when survival differs; they cannot separate longer survival
+from worse tracking on matched intervals. Local errors are close on this panel.
+Independent event-aligned recovery and failure-aware quality remain necessary.
+
+## Next research decision
+
+Keep fresh uniform and fresh PLR as controls. Do not claim general PLR superiority
+or corrected latent-feedback benefit. The measured case for an emergency
+retention fix is weaker in these two seeds, although the historical development
+retention failure remains real.
+
+The most useful next instrument is event-aligned, pre-reset task measurement:
+pre-event competence, event delivery/reach, physical failure versus timeout,
+and return to declared tracking bands with dwell and censoring. Report fixed
+post-event horizons with survival alongside quality rather than hiding failed
+episodes through success-only averages. This can distinguish improved disturbance
+tolerance from surviving with persistent displacement.
+
+Then freeze a study asking whether task-quality feedback improves that tradeoff
+beyond critic-error prioritization, with fresh event generation and protection
+held fixed. Compare dense task feedback before adding causal EMA and corrected
+latent features. A cap-only control and another-seed schedule replay isolate
+concentration and student-specific adaptation. Promote stronger-stress completion
+to a primary endpoint only in a new, independently frozen campaign with new test
+realizations; preserve this campaign's primary failure. No estimator/allocator
+gate or multi-motion expansion is authorized by these results.
+
+## Evidence checks
+
+Campaign root:
+`/home/linjiw/lucid-sonic/experiments/fresh_replication_20260912_a`.
+Frozen campaign SHA256 remains
+`d70a589dcf07cefb40187ba40cbbb1628bcc2f2cd89b92ea872d36bb0879f714`.
+This review verified all 90 metric-file hashes against their receipts and all
+eight analysis input evaluation-receipt hashes. Tables were recomputed from
+`analysis_s{9181,9182}_test_es{9190,9191,9192}/analysis.json`; development retention
+comes from the two `analysis_s*_development_es9130/analysis.json` files.
+This is not an independent frame-level replay or a new uncertainty estimate.
+
+Training URLs: [9181 uniform](https://wandb.ai/16726/lucid-sonic/runs/timed-aeeceb79064e951e),
+[9181 PLR](https://wandb.ai/16726/lucid-sonic/runs/timed-b10a4a8da01cb23a),
+[9182 uniform](https://wandb.ai/16726/lucid-sonic/runs/timed-a084dd3fcc064680),
+[9182 PLR](https://wandb.ai/16726/lucid-sonic/runs/timed-afe5615a25b2ff49).
+All four training runs were reverified as `finished` through the online W&B API
+during this results review.

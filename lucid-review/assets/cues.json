@@ -2,151 +2,169 @@
   {
     "scene": "intro",
     "start": 0.25,
-    "end": 7.282,
-    "text": "This G one repeats a turning motion under manual pushes and zero-to-sixty-millisecond added delay."
+    "end": 4.522,
+    "text": "Hand pushes. Foot pushes. Downward pressure."
+  },
+  {
+    "scene": "intro",
+    "start": 4.7620000000000005,
+    "end": 9.13,
+    "text": "LUCID repeats a turning motion under added randomized delay."
+  },
+  {
+    "scene": "intro",
+    "start": 9.370000000000001,
+    "end": 13.474,
+    "text": "The full, uncut take runs alongside our story."
   },
   {
     "scene": "gap",
-    "start": 10.25,
-    "end": 14.426,
-    "text": "Randomization must balance exposure against learnability."
+    "start": 15.25,
+    "end": 21.106,
+    "text": "Too little randomization leaves policies unprepared. Too much makes learning harder."
   },
   {
     "scene": "gap",
-    "start": 14.666,
-    "end": 19.874000000000002,
-    "text": "Joint error mixes execution mismatch with torque-generating offsets."
-  },
-  {
-    "scene": "gap",
-    "start": 20.114,
-    "end": 25.562,
-    "text": "LUCID compares command and execution histories in a learned temporal space."
+    "start": 21.346,
+    "end": 26.818,
+    "text": "LUCID uses learned command\u2013execution feedback to set training difficulty."
   },
   {
     "scene": "rollout",
-    "start": 27.25,
-    "end": 31.738,
+    "start": 28.25,
+    "end": 32.738,
     "text": "Issued commands pass through simulated delay and dynamics."
   },
   {
     "scene": "rollout",
-    "start": 31.978,
-    "end": 36.49,
+    "start": 32.978,
+    "end": 37.49,
     "text": "Command and execution histories enter the same frozen encoder."
   },
   {
     "scene": "rollout",
-    "start": 36.730000000000004,
-    "end": 40.93000000000001,
+    "start": 37.730000000000004,
+    "end": 41.93000000000001,
     "text": "Their normalized latent discrepancy guides the next training block."
   },
   {
     "scene": "pretrain",
     "start": 43.25,
-    "end": 50.498,
-    "text": "First, a denoising temporal V A E learns to reconstruct clean motion from noisy windows."
+    "end": 47.714,
+    "text": "A denoising V A E learns clean motion from noisy windows."
   },
   {
     "scene": "pretrain",
-    "start": 50.738,
-    "end": 56.018,
-    "text": "We freeze its encoder, keeping the comparison fixed as the policy learns."
+    "start": 47.954,
+    "end": 50.57,
+    "text": "Then we freeze its temporal encoder."
   },
   {
     "scene": "controller",
-    "start": 57.25,
-    "end": 63.01,
-    "text": "Bounded P I adjusts intensity using the learned gap and accumulated error."
+    "start": 52.25,
+    "end": 56.834,
+    "text": "Bounded P I sets randomization intensity from the latent gap."
   },
   {
     "scene": "controller",
-    "start": 63.25,
-    "end": 66.562,
-    "text": "Two low-return blocks trigger a separate backoff."
+    "start": 57.074,
+    "end": 59.882,
+    "text": "Low returns trigger a separate backoff."
   },
   {
     "scene": "controller",
-    "start": 66.80199999999999,
-    "end": 71.24199999999999,
-    "text": "One intensity sets all six training ranges for the next block."
+    "start": 60.122,
+    "end": 64.322,
+    "text": "One intensity controls six channels for the next training block."
   },
   {
     "scene": "evaluation",
-    "start": 76.25,
-    "end": 80.018,
+    "start": 65.25,
+    "end": 69.018,
     "text": "Training uses up to forty milliseconds of added delay."
   },
   {
     "scene": "evaluation",
-    "start": 80.258,
-    "end": 88.178,
+    "start": 69.258,
+    "end": 77.178,
     "text": "Frozen policies face sixty milliseconds on full held-out motions, fifty percent above the training maximum."
   },
   {
     "scene": "results",
-    "start": 90.25,
-    "end": 100.522,
+    "start": 78.25,
+    "end": 88.522,
     "text": "Under unseen sixty-millisecond delay, completion rises from fifty-two point one percent with filtered-error P I to seventy-three point eight with LUCID."
   },
   {
     "scene": "results",
-    "start": 100.762,
-    "end": 104.194,
+    "start": 88.762,
+    "end": 92.194,
     "text": "That is a twenty-one point seven percentage-point gain."
   },
   {
-    "scene": "ablation",
-    "start": 108.25,
-    "end": 112.354,
-    "text": "Denoising raises completion over ordinary reconstruction."
-  },
-  {
-    "scene": "ablation",
-    "start": 112.594,
-    "end": 117.05799999999999,
-    "text": "Live feedback also improves on one donor\u2019s replayed schedule."
-  },
-  {
     "scene": "simulation",
-    "start": 120.25,
-    "end": 126.49,
+    "start": 95.25,
+    "end": 101.49,
     "text": "These selected demonstrations combine forty milliseconds of added delay with scheduled pushes."
   },
   {
     "scene": "simulation",
-    "start": 126.73,
-    "end": 131.14600000000002,
+    "start": 101.73,
+    "end": 106.146,
     "text": "LUCID is on the left; filtered-error P I is on the right."
   },
   {
     "scene": "simulation",
-    "start": 131.386,
-    "end": 137.962,
+    "start": 106.386,
+    "end": 112.96199999999999,
     "text": "They show behavior under perturbation. Aggregate completion comes from separate benchmark trials."
   },
   {
-    "scene": "hardware",
-    "start": 144.25,
-    "end": 148.594,
-    "text": "The same hardware recording has continued throughout this presentation."
+    "scene": "ablation",
+    "start": 119.25,
+    "end": 123.354,
+    "text": "Denoising raises completion over ordinary reconstruction."
+  },
+  {
+    "scene": "ablation",
+    "start": 123.594,
+    "end": 128.058,
+    "text": "Live feedback also improves on one donor\u2019s replayed schedule."
   },
   {
     "scene": "hardware",
-    "start": 148.834,
-    "end": 158.626,
-    "text": "Separately, the paper\u2019s matched forty-millisecond test reports thirty-eight of sixty completions for LUCID, versus twenty-three for filtered-error P I."
+    "start": 130.25,
+    "end": 134.402,
+    "text": "This is the same uncut recording, still at normal speed."
   },
   {
     "scene": "hardware",
-    "start": 158.866,
-    "end": 162.65800000000002,
-    "text": "Only the policy and low-level controller run onboard."
+    "start": 134.642,
+    "end": 142.874,
+    "text": "LUCID repeats the turning reference through hand and foot perturbations, with zero-to-sixty-millisecond added randomized delay."
+  },
+  {
+    "scene": "hardware",
+    "start": 143.114,
+    "end": 152.40200000000002,
+    "text": "Separately, the paper\u2019s matched forty-millisecond test reports thirty-eight of sixty completions, versus twenty-three for filtered-error P I."
+  },
+  {
+    "scene": "hardware",
+    "start": 152.642,
+    "end": 156.218,
+    "text": "The encoder and curriculum scheduler stay in training."
   },
   {
     "scene": "closing",
-    "start": 168.25,
-    "end": 174.082,
-    "text": "Learn robustness during training. Deploy only the policy and low-level controller."
+    "start": 166.25,
+    "end": 171.002,
+    "text": "LUCID uses learned execution feedback to guide domain randomization."
+  },
+  {
+    "scene": "closing",
+    "start": 171.242,
+    "end": 175.85,
+    "text": "On the robot, only the policy and low-level controller remain."
   }
 ]

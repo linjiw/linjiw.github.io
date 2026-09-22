@@ -1,4 +1,4 @@
-import {curriculumStep,trainingRanges,TEACHING_EXAMPLES} from './curriculum.mjs';
+import {curriculumStep,trainingRanges,TEACHING_EXAMPLES} from './curriculum.mjs?v=13';
 const $=id=>document.getElementById(id);
 export function initProcessLab(){
  const inputs=['gap','intensity','integral'].map(id=>$('lab-'+id));

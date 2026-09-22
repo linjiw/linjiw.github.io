@@ -1,5 +1,5 @@
-import {bones,frameAt} from './motion-viz.mjs';
-import {curriculumStep,trainingRanges,TEACHING_EXAMPLES} from './curriculum.mjs';
+import {bones,frameAt} from './motion-viz.mjs?v=13';
+import {curriculumStep,trainingRanges,TEACHING_EXAMPLES} from './curriculum.mjs?v=13';
 
 // Editable vector adaptation of the supplied process film. Diagram inputs are illustrative.
 const P={bg:'#101524',panel:'#1b2236',line:'#424a60',ink:'#f1f4fa',muted:'#b4bfd1',blue:'#75c3f0',amber:'#efbd75',purple:'#c4a3e9',red:'#fb8593'};
@@ -73,51 +73,34 @@ export function processRollout(t,transitions=[5.63,9.13,14]){
  }
  return out+tabs(['01  Command → execution','02  Shared encoder','03  Compare features','04  Next block'],phase);
 }
-export function processController(t,transitions=[6,10]){
- const phase=t<transitions[0]?0:t<transitions[1]?1:2;
- const down=curriculumStep(TEACHING_EXAMPLES.ease),back=curriculumStep(TEACHING_EXAMPLES.backoff);
- let out=base(['PI PACING','INDEPENDENT RETURN BACKOFF','RANGES FOR THE NEXT BLOCK'][phase],'Illustrative arithmetic · manuscript rule, not a training log');
- if(phase===0){
-  out+=text(121,292,'Upper-quantile gap',30,P.purple,600);
-  for(let i=0;i<25;i++){let h=(25+100*Math.exp(-(((i-13)/6)**2)))*(.5+.5*smooth(t));out+=rect(122+i*13,465-h,9,h,i<21?'#796494':P.purple,2,'none')}
-  out+=text(121,510,'yₖ = p90(δ) = 0.232',29,P.ink,650)+text(121,552,'Nominal reference r = 0.145',22,P.muted)+text(121,596,'e = 1 − yₖ/r = −0.600',25,P.red,500);
-  out+=arrow([[460,424],[548,424]],t,P.purple)+rect(552,288,474,342,P.panel,20,P.amber);
-  out+=text(789,341,'BOUNDED PI CONTROLLER',26,P.amber,650,'middle')+text(590,416,'P  reacts to the current gap',27,P.ink)+text(590,469,'I   remembers accumulated error',25,P.ink)+text(590,546,'Previous I = −0.35 → clamped I = −0.80',20,P.muted)+text(590,590,'kP 0.8 · kI 0.15 · α 0.04',23,P.amber);
-  out+=arrow([[1026,424],[1114,424]],t,P.amber)+text(1301,328,'NEXT INTENSITY',23,P.amber,650,'middle')+text(1301,463,down.next.toFixed(3),81,P.ink,650,'middle')+text(1301,527,'0.520 → 0.496',31,P.amber,500,'middle')+text(1301,577,'Ease the next block',24,P.muted,400,'middle');
- }else if(phase===1){
-  out+=text(118,291,'After warm-up, count consecutive low-return blocks.',29,P.ink,600);
-  [['BLOCK 1','0.61'],['BLOCK 2','0.58']].forEach(([lab,v],i)=>{const x=120+i*323,active=t-transitions[0]>=i*.6;out+=rect(x,340,281,210,P.panel,18,active?P.amber:P.line)+text(x+141,389,lab,23,P.amber,600,'middle')+text(x+141,460,v,62,P.ink,650,'middle')+text(x+141,511,'return / nominal',21,P.muted,400,'middle')});
-  out+=text(121,606,'Both below 0.65 × nominal mean return',25,P.amber)+arrow([[770,441],[883,441]],t,P.amber);
-  out+=text(1200,348,'BACK OFF',41,P.amber,650,'middle')+text(1200,421,'λ_next = 0.70 λ',43,P.ink,600,'middle')+text(1200,488,'0.496 → 0.347',38,P.purple,600,'middle')+text(1200,548,'Reset I = 0',28,P.ink,500,'middle')+text(1200,599,'Overrides the PI proposal',24,P.muted,400,'middle');
- }else{
-  const l=back.next,r=trainingRanges(l),fill=smooth((t-transitions[1])/.8),f=frameAt(t%6);
-  out+=text(114,291,'SHARED INTENSITY',25,P.purple,650)+text(283,382,l.toFixed(3),76,P.ink,650,'middle');
-  out+=bones('01_walking','reference',f,277,621,176,P.blue,.8);
-  out+=text(281,680,'Hold λ fixed in the next block',23,P.ink,500,'middle');
-  out+=arrow([[445,464],[492,464],[492,484],[532,484]],t,P.purple);
-  const rows=[['Actuation delay',`0–${r.delayMaxMs} ms · 5 ms ticks`],['Surface contact',`friction ${r.staticFriction[0].toFixed(2)}–${r.staticFriction[1].toFixed(2)}`],['Mass + CoM',`mass ±${r.massOffsetKg.toFixed(2)} kg`],['Joint offsets',`±${r.jointOffsetRad.toFixed(4)} rad`],['External pushes',`x/y ±${r.pushXYMps.toFixed(3)} m/s`],['Observation noise',`joint σ ${r.jointNoiseSigmaRad.toFixed(4)} rad`]];
-  rows.forEach(([lab,value],i)=>{const x=536+(i%2)*482,y=264+Math.floor(i/2)*150,bx=x+61,by=y+112;
-   out+=rect(x,y,456,135,P.panel,13,P.line)+bones('01_walking','reference',f,bx,by,65,P.blue,.65);
-   if(i===0)for(let j=0;j<4;j++)out+=rect(x+20+j*24,y+17,17,11,j===Math.floor(t*4)%4?P.amber:P.line,2,'none');
-   if(i===1)out+=`<path d="M${x+16} ${by+4}h90" stroke="${P.amber}" stroke-width="3" stroke-dasharray="4 5"/>`;
-   if(i===2)out+=circle(bx,by-29,6,P.amber)+circle(bx+15,by-37,3,P.purple);
-   if(i===3)out+=circle(bx+7,by-16,5,'none',P.amber);
-   if(i===4)out+=arrow([[x+8,y+66],[x+45,y+66]],t,P.amber);
-   if(i===5)for(let j=0;j<6;j++)out+=circle(bx+37*Math.cos(j*2+t),by-35+31*Math.sin(j*2+t),2.3,P.amber);
-   out+=text(x+126,y+37,lab,24,P.ink,600)+text(x+126,y+73,value,21,P.amber);
-   out+=rect(x+127,y+98,289,8,P.line,4,'none')+rect(x+127,y+98,289*l*fill,8,P.purple,4,'none');
-  });
-  out+=text(1490,728,'G1 poses from recording · channel effects are schematic',18,P.muted,400,'end');
- }
- if(phase<2)out+=text(119,697,phase===0?'λ_next = clip(λ + α · clip(kP e + kI I, −1, 1), 0, 1)':'Two low-return blocks trigger backoff; one isolated low-return block does not.',25,P.muted);
- return out+tabs(['01  React + remember','02  Return protection','03  Set ranges','04  Hold during training'],phase===2?3:phase);
+export function processController(t,transitions=[4.5,7]){
+ const f=frameAt(t%6),phase=t<transitions[0]?0:t<transitions[1]?1:2;
+ let out=base('TRAINING FEEDBACK → NEXT BLOCK','Recorded G1 poses · explanatory feedback diagram');
+ out+=box(108,247,487,65,'Latent gap → bounded PI','upper-quantile discrepancy',P.purple);
+ out+=box(108,327,487,65,'Return → backoff','independent safeguard',phase===1?P.amber:P.muted);
+ out+=box(811,266,300,116,'Shared intensity λ','bounded between 0 and 1',P.purple);
+ out+=box(1150,266,340,116,'Next training block','hold the ranges fixed',P.blue);
+ out+=arrow([[595,279],[673,279],[673,305],[811,305]],t,P.purple)+arrow([[595,359],[713,359],[713,348],[811,348]],t,phase===1?P.amber:P.muted)+arrow([[1111,325],[1150,325]],t,P.purple);
+ const labels=['Actuation delay','Surface contact','Mass + CoM','Joint offsets','External pushes','Observation noise'];
+ labels.forEach((label,i)=>{const x=109+(i%3)*466,y=427+Math.floor(i/3)*155,bx=x+55,by=y+123,active=phase===2;
+ out+=rect(x,y,439,141,P.panel,16,active?P.purple:P.line)+bones('01_walking','reference',f,bx,by,78,P.blue,.85);
+ if(i===0)for(let j=0;j<4;j++)out+=rect(x+17+j*21,y+17,15,9,j===Math.floor(t*4)%4?P.amber:P.line,2,'none');
+ if(i===1)out+=`<path d="M${x+16} ${by+3}h84" stroke="${P.amber}" stroke-width="3" stroke-dasharray="4 5"/>`;
+ if(i===2)out+=circle(bx,by-32,6,P.amber)+circle(bx+17,by-40,3,P.purple);
+ if(i===3)out+=circle(bx+7,by-20,6,'none',P.amber);
+ if(i===4)out+=arrow([[x+7,y+57],[x+43,y+57]],t,P.amber);
+ if(i===5)for(let j=0;j<6;j++)out+=circle(bx+38*Math.cos(j*2+t),by-38+32*Math.sin(j*2+t),2.3,P.amber);
+ out+=text(x+119,y+56,label,28,P.ink,600)+rect(x+120,y+87,280,9,P.line,4,'none')+rect(x+120,y+87,280*(active?.50:.27),9,active?P.purple:P.muted,4,'none');
+ });
+ out+=text(800,778,phase===0?'Use execution feedback to pace randomization.':phase===1?'Low returns reduce exposure before the next block.':'One scalar scales six channels; then policy training continues.',25,phase===1?P.amber:P.purple,500,'middle');
+ return out;
 }
 
 export function processClosing(t){
- let out=rect(70,174,1460,456,P.bg,20,P.bg);
- out+=rect(70,184,1460,412,P.bg,0,P.bg);
- out+=text(800,619,'Choreographed G1 letter formation · closing visualization',21,P.muted,400,'middle');
- out+=rect(70,650,424,153,'#E9DFF3',18,'#E9DFF3')+text(98,713,'+25 pp',58,'#8862a2',700)+text(99,751,'Physical G1 · +40 ms delay',24,'#263543',500)+text(99,785,'38/60 vs 23/60 · paper result',21,'#65717b');
- out+=rect(520,650,1010,153,'#eef3f6',18,'#eef3f6')+text(550,704,'Policy → low-level controller → G1',36,'#263543',650)+text(551,751,'No encoder or curriculum scheduler onboard',27,'#8862a2',600)+text(552,787,'Simulation: +21.7 pp under unseen +60 ms added delay',24,'#65717b');
+ let out=rect(70,174,1460,344,P.bg,20,P.bg)+text(800,509,'Choreographed G1 letter formation',20,P.muted,400,'middle');
+ out+=rect(70,542,1460,261,'#eef3f6',18,'#eef3f6')+text(104,583,'ONBOARD DEPLOYMENT',23,'#367db5',650);
+ const nodes=[[105,303,'Policy'],[485,481,'Low-level controller'],[1140,335,'Physical G1']];
+ nodes.forEach(([x,w,label],i)=>{out+=rect(x,616,w,93,i===1?'#D9ECFA':'#E9DFF3',14,'none')+text(x+w/2,674,label,33,'#263543',650,'middle');if(i<2)out+=arrow([[x+w+9,662],[nodes[i+1][0]-12,662]],t,'#8862a2')});
+ out+=text(800,759,'Encoder + curriculum scheduler stay in training',30,'#8862a2',600,'middle');
  return out;
 }

@@ -1,99 +1,111 @@
 1
-00:00:00,250 --> 00:00:07,282
-This G one repeats a turning motion under manual pushes and zero-to-sixty-millisecond added delay.
+00:00:00,250 --> 00:00:04,522
+Hand pushes. Foot pushes. Downward pressure.
 
 2
-00:00:10,250 --> 00:00:14,426
-Randomization must balance exposure against learnability.
+00:00:04,762 --> 00:00:09,130
+LUCID repeats a turning motion under added randomized delay.
 
 3
-00:00:14,666 --> 00:00:19,874
-Joint error mixes execution mismatch with torque-generating offsets.
+00:00:09,370 --> 00:00:13,474
+The full, uncut take runs alongside our story.
 
 4
-00:00:20,114 --> 00:00:25,562
-LUCID compares command and execution histories in a learned temporal space.
+00:00:15,250 --> 00:00:21,106
+Too little randomization leaves policies unprepared. Too much makes learning harder.
 
 5
-00:00:27,250 --> 00:00:31,738
-Issued commands pass through simulated delay and dynamics.
+00:00:21,346 --> 00:00:26,818
+LUCID uses learned command–execution feedback to set training difficulty.
 
 6
-00:00:31,978 --> 00:00:36,490
-Command and execution histories enter the same frozen encoder.
+00:00:28,250 --> 00:00:32,738
+Issued commands pass through simulated delay and dynamics.
 
 7
-00:00:36,730 --> 00:00:40,930
-Their normalized latent discrepancy guides the next training block.
+00:00:32,978 --> 00:00:37,490
+Command and execution histories enter the same frozen encoder.
 
 8
-00:00:43,250 --> 00:00:50,498
-First, a denoising temporal V A E learns to reconstruct clean motion from noisy windows.
+00:00:37,730 --> 00:00:41,930
+Their normalized latent discrepancy guides the next training block.
 
 9
-00:00:50,738 --> 00:00:56,018
-We freeze its encoder, keeping the comparison fixed as the policy learns.
+00:00:43,250 --> 00:00:47,714
+A denoising V A E learns clean motion from noisy windows.
 
 10
-00:00:57,250 --> 00:01:03,010
-Bounded P I adjusts intensity using the learned gap and accumulated error.
+00:00:47,954 --> 00:00:50,570
+Then we freeze its temporal encoder.
 
 11
-00:01:03,250 --> 00:01:06,562
-Two low-return blocks trigger a separate backoff.
+00:00:52,250 --> 00:00:56,834
+Bounded P I sets randomization intensity from the latent gap.
 
 12
-00:01:06,802 --> 00:01:11,242
-One intensity sets all six training ranges for the next block.
+00:00:57,074 --> 00:00:59,882
+Low returns trigger a separate backoff.
 
 13
-00:01:16,250 --> 00:01:20,018
-Training uses up to forty milliseconds of added delay.
+00:01:00,122 --> 00:01:04,322
+One intensity controls six channels for the next training block.
 
 14
-00:01:20,258 --> 00:01:28,178
-Frozen policies face sixty milliseconds on full held-out motions, fifty percent above the training maximum.
+00:01:05,250 --> 00:01:09,018
+Training uses up to forty milliseconds of added delay.
 
 15
-00:01:30,250 --> 00:01:40,522
-Under unseen sixty-millisecond delay, completion rises from fifty-two point one percent with filtered-error P I to seventy-three point eight with LUCID.
+00:01:09,258 --> 00:01:17,178
+Frozen policies face sixty milliseconds on full held-out motions, fifty percent above the training maximum.
 
 16
-00:01:40,762 --> 00:01:44,194
-That is a twenty-one point seven percentage-point gain.
+00:01:18,250 --> 00:01:28,522
+Under unseen sixty-millisecond delay, completion rises from fifty-two point one percent with filtered-error P I to seventy-three point eight with LUCID.
 
 17
-00:01:48,250 --> 00:01:52,354
-Denoising raises completion over ordinary reconstruction.
+00:01:28,762 --> 00:01:32,194
+That is a twenty-one point seven percentage-point gain.
 
 18
-00:01:52,594 --> 00:01:57,058
-Live feedback also improves on one donor’s replayed schedule.
-
-19
-00:02:00,250 --> 00:02:06,490
+00:01:35,250 --> 00:01:41,490
 These selected demonstrations combine forty milliseconds of added delay with scheduled pushes.
 
-20
-00:02:06,730 --> 00:02:11,146
+19
+00:01:41,730 --> 00:01:46,146
 LUCID is on the left; filtered-error P I is on the right.
 
-21
-00:02:11,386 --> 00:02:17,962
+20
+00:01:46,386 --> 00:01:52,962
 They show behavior under perturbation. Aggregate completion comes from separate benchmark trials.
 
+21
+00:01:59,250 --> 00:02:03,354
+Denoising raises completion over ordinary reconstruction.
+
 22
-00:02:24,250 --> 00:02:28,594
-The same hardware recording has continued throughout this presentation.
+00:02:03,594 --> 00:02:08,058
+Live feedback also improves on one donor’s replayed schedule.
 
 23
-00:02:28,834 --> 00:02:38,626
-Separately, the paper’s matched forty-millisecond test reports thirty-eight of sixty completions for LUCID, versus twenty-three for filtered-error P I.
+00:02:10,250 --> 00:02:14,402
+This is the same uncut recording, still at normal speed.
 
 24
-00:02:38,866 --> 00:02:42,658
-Only the policy and low-level controller run onboard.
+00:02:14,642 --> 00:02:22,874
+LUCID repeats the turning reference through hand and foot perturbations, with zero-to-sixty-millisecond added randomized delay.
 
 25
-00:02:48,250 --> 00:02:54,082
-Learn robustness during training. Deploy only the policy and low-level controller.
+00:02:23,114 --> 00:02:32,402
+Separately, the paper’s matched forty-millisecond test reports thirty-eight of sixty completions, versus twenty-three for filtered-error P I.
+
+26
+00:02:32,642 --> 00:02:36,218
+The encoder and curriculum scheduler stay in training.
+
+27
+00:02:46,250 --> 00:02:51,002
+LUCID uses learned execution feedback to guide domain randomization.
+
+28
+00:02:51,242 --> 00:02:55,850
+On the robot, only the policy and low-level controller remain.

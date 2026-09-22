@@ -1,4 +1,4 @@
-import {mapMainRect,railScene} from './hardware-layout.mjs';
+import {mapMainRect,railScene} from './hardware-layout.mjs?v=13';
 // One media timeline for browser playback and the offline video compositor.
 export function mediaEntries(project) {
  const scene=project.scenes.find(s=>s.id==='simulation');
@@ -14,7 +14,8 @@ export function mediaEntries(project) {
   ...p,path:project.parallel_visualization.path,speed:1,kind:'parallel'
  }));
  const process=(project.process_design?.placements||[]).filter(p=>!project.hardware_take||p.scene!=='intro').map(p=>({...p,speed:1,kind:'process'}));
- const base=[...process,...parallel,...simulation,...slots];
+ const montage=project.push_opening?.mode==='integrated'?[{id:'push_montage',kind:'montage',path:project.push_opening.path,start:0,end:15,trim_start:0,speed:1,x:70,y:164,w:1440,h:810}]:[];
+ const base=[...montage,...process,...parallel,...simulation,...slots];
  if(!project.hardware_take)return base;
  const mapped=base.map(q=>railScene(project.scenes.find(s=>q.start>=s.start&&q.start<s.end).id)?mapMainRect(q):q);
  return [...mapped,{id:'continuous_hardware',kind:'continuous_hardware',path:project.hardware_take.path,start:0,end:project.hardware_take.duration,trim_start:0,speed:1,x:570,y:228,w:960,h:540}];

@@ -1,18 +1,18 @@
-import {MOTION,POLICY_LABELS} from './motion-viz.mjs';
-import {renderSVG} from './scenes.mjs';
-import {initProcessLab} from './process-lab.mjs';
-import {mediaEntries} from './media-timeline.mjs';
-import {hardwareRect} from './hardware-layout.mjs';
-import {createPushOpening} from './push-opening.mjs';
+import {MOTION,POLICY_LABELS} from './motion-viz.mjs?v=13';
+import {renderSVG} from './scenes.mjs?v=13';
+import {initProcessLab} from './process-lab.mjs?v=13';
+import {mediaEntries} from './media-timeline.mjs?v=13';
+import {hardwareRect} from './hardware-layout.mjs?v=13';
+import {createPushOpening} from './push-opening.mjs?v=13';
 const $=id=>document.getElementById(id);
-let project=await fetch('project.json?v=12').then(r=>r.json()), cues=await fetch('assets/cues.json').then(r=>r.ok?r.json():[]).catch(()=>[]);
+let project=await fetch('project.json?v=13').then(r=>r.json()), cues=await fetch('assets/cues.json?v=13').then(r=>r.ok?r.json():[]).catch(()=>[]);
 let t=0,playing=false,last=0,sound=true,cc=true,speed=1,dirty=false,narrationDirty=false,selected=0,currentScene='',mediaKey='';
 const audio=$('voice'),params=new URLSearchParams(location.search);
-const openingDuration=Number(project.push_opening?.duration||0);
+const openingDuration=(project.push_opening?.mode==='prelude'?Number(project.push_opening.duration):0);
 let opening=null;
 // A saved script must never silently play an older narration after reloading.
 try {
- const meta=await fetch('assets/voice-meta.json').then(r=>r.json());
+ const meta=await fetch('assets/voice-meta.json?v=13').then(r=>r.json());
  const bytes=new TextEncoder().encode(JSON.stringify(project.scenes.map(s=>[s.id,s.start,s.end,s.cues])));
  const digest=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(v=>v.toString(16).padStart(2,'0')).join('');
  narrationDirty=meta.script_hash!==digest||meta.voice!==project.voice||meta.voice_rate!==project.voice_rate||meta.voice_engine!==project.voice_engine||meta.voice_pause_seconds!==project.voice_pause_seconds;
@@ -20,8 +20,8 @@ try {
 } catch { narrationDirty=true;status('Voice track not available. Export MP4 builds narration and captions.'); }
 
 if(params.has('capture'))document.body.classList.add('capture');
-if(params.has('t'))t=Math.min(175.99,Math.max(0,Number(params.get('t'))||0));
-const descriptions={"intro": "A physical LUCID policy repeats a turning reference under manual perturbations and author-confirmed 0–60 ms added randomized delay. Source 00:57–03:50 plays continuously at 1×, with face-only blur and annotated contacts. It starts large, then continues in the right-hand inset.", "gap": "Randomization must balance exposure with learnability. Instantaneous joint error mixes execution mismatch with torque-generating offsets. LUCID uses learned temporal discrepancy instead of filtered joint error; recorded G1 states illustrate the motivation.", "rollout": "The core idea comes first: issued-command history branches before delay, measured history follows execution, and both enter one frozen encoder. Their normalized discrepancy guides the next training block.", "pretrain": "How the comparison is learned: denoise motion windows, then freeze the encoder before policy training. The same comparison function is used while the policy changes.", "controller": "Latent-gap PI and independent return backoff set a shared intensity. Six illustrated channels show delay, surface contact, mass/CoM, offsets, pushes and observation noise. G1 poses are recorded; channel effects and controller inputs are explanatory.", "evaluation": "Stress testing extends the maximum added delay from 40 ms in training to 60 ms in the held-out test, a 50% increase in this parameter. The test uses nominal dynamics. The separate context replay shows 1,024 environments with 0–40 ms delay; the paper trains with 4,096.", "results": "Completion under unseen +60 ms delay rises from 52.1% to 73.8%, a 21.7 percentage-point gain over filtered-error PI. Reported intervals and the hybrid’s highest tested means remain visible.", "ablation": "Denoising and live feedback are tested separately. The replay comparison uses one donor schedule and five recipient seeds; its scope remains explicit.", "simulation": "Full six-second walking and turning demonstrations play at 1×, with +40 ms added delay and scheduled impulses. LUCID is left, reference center, filtered-error PI right. These selected recordings differ from the +60 ms aggregate benchmark; root drift remains visible.", "hardware": "The same continuous physical recording expands again, without restarting. This qualitative 0–60 ms demonstration is separate from the paper’s controlled +40 ms benchmark: 38/60 versus 23/60 completions. There is no matched filtered-error PI hardware video in this recording. Only the policy and low-level controller run onboard.", "closing": "The choreographed robot lettering closes on both reported outcomes and the deployment path. LUCID’s encoder and curriculum scheduler stay in training. The final formation holds for 2.5 seconds."};
+if(params.has('t'))t=Math.min(project.duration-.01,Math.max(0,Number(params.get('t'))||0));
+const descriptions={"intro": "Six varied push moments play in the main panel for 15 seconds. The full 173-second physical recording starts simultaneously in the right panel and continues at normal speed without cuts. The selected montage and the continuous take are labeled distinctly.", "gap": "The deployment dilemma: randomization must balance exposure with learnability. Recorded G1 states show why instantaneous joint error mixes execution mismatch with torque-generating offsets. LUCID compares temporal histories in a learned space.", "rollout": "The core idea comes first: issued-command history branches before delay, measured history follows execution, and both enter one frozen encoder. Their normalized discrepancy guides the next training block.", "pretrain": "How the comparison is learned: denoise motion windows, then freeze the encoder before policy training. The same comparison function is used while the policy changes.", "controller": "A concise feedback loop: the upper-quantile latent gap drives bounded PI, with independent return-based backoff. A shared intensity sets six channels for the next block: actuation delay, surface contact, mass and center of mass, joint offsets, pushes, and observation noise. Recorded G1 skeletons illustrate the channels; the diagram is explanatory.", "evaluation": "Stress testing extends the maximum added delay from 40 ms in training to 60 ms in the held-out test, a 50% increase in this parameter. The test uses nominal dynamics. The separate context replay shows 1,024 environments with 0–40 ms delay; the paper trains with 4,096.", "results": "Completion under unseen +60 ms delay rises from 52.1% to 73.8%, a 21.7 percentage-point gain over filtered-error PI. Reported intervals and the hybrid’s highest tested means remain visible.", "ablation": "Denoising and live feedback are tested separately. The replay comparison uses one donor schedule and five recipient seeds; its scope remains explicit.", "simulation": "Full six-second walking and turning demonstrations play at 1×, with +40 ms added delay and scheduled impulses. LUCID is left, reference center, filtered-error PI right. These selected recordings differ from the +60 ms aggregate benchmark; root drift remains visible.", "hardware": "The same continuous physical take expands without restarting. Its randomized 0–60 ms delay and manual perturbations provide qualitative deployment evidence. A separate panel reports the manuscript’s matched fixed +40 ms benchmark: 38/60 versus 23/60 full-trial completions. These counts do not come from the displayed take.", "closing": "The deployment path becomes the main takeaway: policy → low-level controller → G1. The encoder and curriculum scheduler remain training components. The choreographed robot lettering remains above the architecture. The continuous take finishes at 2:53, followed by a completion card."};
 const fmt=v=>`${Math.floor(v/60)}:${String(Math.floor(v%60)).padStart(2,'0')}`;
 function status(s){$('status').textContent=s}
 function pause(){opening?.pause();playing=false;audio.pause();$('play').textContent='▶ Play';document.querySelectorAll('#media-layer video').forEach(v=>v.pause())}
@@ -35,7 +35,7 @@ function initMedia(s,force=false){
  for(const q of entries){
   let v=[...layer.querySelectorAll('video')].find(v=>v.dataset.slot===q.id);
   if(!v){v=document.createElement('video');v.src=q.path;v.preload='auto';v.muted=true;v.playsInline=true;v.dataset.slot=q.id;layer.append(v);v.addEventListener('loadedmetadata',()=>{if(t>=q.start&&t<q.end)v.currentTime=Math.min(v.duration-.001,t-q.start+Number(q.trim_start||0))},{once:true});}
-  const r=q.kind==='continuous_hardware'?hardwareRect(t):q;
+  const r=q.kind==='continuous_hardware'?hardwareRect(t,project):q;
   Object.assign(v.style,{left:`${r.x/16}%`,top:`${r.y/9}%`,width:`${r.w/16}%`,height:`${r.h/9}%`,borderRadius:'0',zIndex:q.kind==='continuous_hardware'?'2':'1'});
   const desired=t-q.start+Number(q.trim_start||0);
   if(force||Math.abs(v.currentTime-desired)>.25)v.currentTime=desired;

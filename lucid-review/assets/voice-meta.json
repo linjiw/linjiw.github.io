@@ -1,5 +1,5 @@
 {
-  "script_hash": "4e000d7bc56d650fb627b8fd2b170b2ce52345796822b52f193dbafefbb62807",
+  "script_hash": "1d5aca74d92a8db7d6490c7beb424cec774cbdaa5529bc9af44ccf1c36387d8c",
   "voice": "en-US-AvaMultilingualNeural",
   "voice_rate": "-5%",
   "voice_engine": "edge-tts",
@@ -8,51 +8,45 @@
   "timings": [
     {
       "scene": "intro",
-      "narration_end": 7.282,
-      "budget": 10,
-      "quiet_tail": 2.718
+      "narration_end": 13.474,
+      "budget": 15,
+      "quiet_tail": 1.526
     },
     {
       "scene": "gap",
-      "narration_end": 15.562,
-      "budget": 17,
-      "quiet_tail": 1.438
+      "narration_end": 11.818,
+      "budget": 13,
+      "quiet_tail": 1.182
     },
     {
       "scene": "rollout",
       "narration_end": 13.93,
-      "budget": 16,
-      "quiet_tail": 2.07
+      "budget": 15,
+      "quiet_tail": 1.07
     },
     {
       "scene": "pretrain",
-      "narration_end": 13.018,
-      "budget": 14,
-      "quiet_tail": 0.982
+      "narration_end": 7.57,
+      "budget": 9,
+      "quiet_tail": 1.43
     },
     {
       "scene": "controller",
-      "narration_end": 14.242,
-      "budget": 19,
-      "quiet_tail": 4.758
+      "narration_end": 12.322,
+      "budget": 13,
+      "quiet_tail": 0.678
     },
     {
       "scene": "evaluation",
       "narration_end": 12.178,
-      "budget": 14,
-      "quiet_tail": 1.822
+      "budget": 13,
+      "quiet_tail": 0.822
     },
     {
       "scene": "results",
       "narration_end": 14.194,
-      "budget": 18,
-      "quiet_tail": 3.806
-    },
-    {
-      "scene": "ablation",
-      "narration_end": 9.058,
-      "budget": 12,
-      "quiet_tail": 2.942
+      "budget": 17,
+      "quiet_tail": 2.806
     },
     {
       "scene": "simulation",
@@ -61,16 +55,22 @@
       "quiet_tail": 6.038
     },
     {
+      "scene": "ablation",
+      "narration_end": 9.058,
+      "budget": 11,
+      "quiet_tail": 1.942
+    },
+    {
       "scene": "hardware",
-      "narration_end": 18.658,
-      "budget": 24,
-      "quiet_tail": 5.342
+      "narration_end": 26.218,
+      "budget": 36,
+      "quiet_tail": 9.782
     },
     {
       "scene": "closing",
-      "narration_end": 6.082,
-      "budget": 8,
-      "quiet_tail": 1.918
+      "narration_end": 9.85,
+      "budget": 13,
+      "quiet_tail": 3.15
     }
   ]
 }

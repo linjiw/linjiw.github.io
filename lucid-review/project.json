@@ -1,6 +1,6 @@
 {
   "title": "LUCID: Latent-Understanding Curriculum for Informed Domain Randomization in Humanoid Motion Tracking",
-  "duration": 176,
+  "duration": 179,
   "fps": 24,
   "width": 1600,
   "height": 900,
@@ -19,28 +19,29 @@
     {
       "id": "intro",
       "start": 0,
-      "end": 10,
-      "title": "A turning policy under real disturbances.",
-      "eyebrow": "LUCID / CONTINUOUS PHYSICAL DEPLOYMENT",
+      "end": 15,
+      "title": "One policy. Repeated real-world disturbances.",
+      "eyebrow": "LUCID / LEARNING ROBUSTNESS FOR DEPLOYMENT",
       "cues": [
-        "This G one repeats a turning motion under manual pushes and zero-to-sixty-millisecond added delay."
+        "Hand pushes. Foot pushes. Downward pressure.",
+        "LUCID repeats a turning motion under added randomized delay.",
+        "The full, uncut take runs alongside our story."
       ]
     },
     {
       "id": "gap",
-      "start": 10,
-      "end": 27,
-      "title": "Which feedback should set training difficulty?",
-      "eyebrow": "01 / DOMAIN RANDOMIZATION AS A FEEDBACK PROBLEM",
+      "start": 15,
+      "end": 28,
+      "title": "How much uncertainty should training face?",
+      "eyebrow": "01 / THE DEPLOYMENT DILEMMA",
       "cues": [
-        "Randomization must balance exposure against learnability.",
-        "Joint error mixes execution mismatch with torque-generating offsets.",
-        "LUCID compares command and execution histories in a learned temporal space."
+        "Too little randomization leaves policies unprepared. Too much makes learning harder.",
+        "LUCID uses learned command–execution feedback to set training difficulty."
       ]
     },
     {
       "id": "rollout",
-      "start": 27,
+      "start": 28,
       "end": 43,
       "title": "Compare histories. Guide the next training block.",
       "eyebrow": "02 / THE CORE IDEA · FIGURE 1",
@@ -53,30 +54,30 @@
     {
       "id": "pretrain",
       "start": 43,
-      "end": 57,
-      "title": "Learn the comparison before policy training.",
+      "end": 52,
+      "title": "Learn the comparison. Then freeze it.",
       "eyebrow": "03 / OFFLINE DENOISING PRETRAINING",
       "cues": [
-        "First, a denoising temporal V A E learns to reconstruct clean motion from noisy windows.",
-        "We freeze its encoder, keeping the comparison fixed as the policy learns."
+        "A denoising V A E learns clean motion from noisy windows.",
+        "Then we freeze its temporal encoder."
       ]
     },
     {
       "id": "controller",
-      "start": 57,
-      "end": 76,
-      "title": "Adapt exposure across six training channels.",
-      "eyebrow": "04 / CLOSED-LOOP DOMAIN RANDOMIZATION",
+      "start": 52,
+      "end": 65,
+      "title": "One feedback loop. Six training channels.",
+      "eyebrow": "04 / ADAPT EXPOSURE, BLOCK BY BLOCK",
       "cues": [
-        "Bounded P I adjusts intensity using the learned gap and accumulated error.",
-        "Two low-return blocks trigger a separate backoff.",
-        "One intensity sets all six training ranges for the next block."
+        "Bounded P I sets randomization intensity from the latent gap.",
+        "Low returns trigger a separate backoff.",
+        "One intensity controls six channels for the next training block."
       ]
     },
     {
       "id": "evaluation",
-      "start": 76,
-      "end": 90,
+      "start": 65,
+      "end": 78,
       "title": "Stress-test beyond the training delay range.",
       "eyebrow": "05 / FROZEN-POLICY EVALUATION",
       "cues": [
@@ -86,8 +87,8 @@
     },
     {
       "id": "results",
-      "start": 90,
-      "end": 108,
+      "start": 78,
+      "end": 95,
       "title": "Unseen delay. Higher completion.",
       "eyebrow": "06 / +60 ms ADDED DELAY · NOMINAL DYNAMICS",
       "cues": [
@@ -96,22 +97,11 @@
       ]
     },
     {
-      "id": "ablation",
-      "start": 108,
-      "end": 120,
-      "title": "The representation and feedback matter.",
-      "eyebrow": "07 / TEST THE REPRESENTATION AND LIVE FEEDBACK",
-      "cues": [
-        "Denoising raises completion over ordinary reconstruction.",
-        "Live feedback also improves on one donor’s replayed schedule."
-      ]
-    },
-    {
       "id": "simulation",
-      "start": 120,
-      "end": 144,
-      "title": "Inspect delay and push responses.",
-      "eyebrow": "08 / SELECTED +40 ms DEMONSTRATIONS",
+      "start": 95,
+      "end": 119,
+      "title": "Watch the response to delay and pushes.",
+      "eyebrow": "07 / SELECTED +40 ms DEMONSTRATIONS",
       "cues": [
         "These selected demonstrations combine forty milliseconds of added delay with scheduled pushes.",
         "LUCID is on the left; filtered-error P I is on the right.",
@@ -119,25 +109,38 @@
       ]
     },
     {
-      "id": "hardware",
-      "start": 144,
-      "end": 168,
-      "title": "Continuous deployment, separate benchmark.",
-      "eyebrow": "09 / PHYSICAL G1 · CONTINUOUS TAKE + PAPER EVIDENCE",
+      "id": "ablation",
+      "start": 119,
+      "end": 130,
+      "title": "The representation and feedback matter.",
+      "eyebrow": "08 / TEST THE CONTRIBUTION",
       "cues": [
-        "The same hardware recording has continued throughout this presentation.",
-        "Separately, the paper’s matched forty-millisecond test reports thirty-eight of sixty completions for LUCID, versus twenty-three for filtered-error P I.",
-        "Only the policy and low-level controller run onboard."
+        "Denoising raises completion over ordinary reconstruction.",
+        "Live feedback also improves on one donor’s replayed schedule."
+      ]
+    },
+    {
+      "id": "hardware",
+      "start": 130,
+      "end": 166,
+      "title": "From simulation stress tests to physical G1.",
+      "eyebrow": "09 / CONTINUOUS DEPLOYMENT + SEPARATE PAPER BENCHMARK",
+      "cues": [
+        "This is the same uncut recording, still at normal speed.",
+        "LUCID repeats the turning reference through hand and foot perturbations, with zero-to-sixty-millisecond added randomized delay.",
+        "Separately, the paper’s matched forty-millisecond test reports thirty-eight of sixty completions, versus twenty-three for filtered-error P I.",
+        "The encoder and curriculum scheduler stay in training."
       ]
     },
     {
       "id": "closing",
-      "start": 168,
-      "end": 176,
+      "start": 166,
+      "end": 179,
       "title": "Train with feedback. Deploy the policy.",
-      "eyebrow": "LUCID / DEPLOYMENT TAKEAWAY",
+      "eyebrow": "LUCID / ROBUSTNESS LEARNED DURING TRAINING",
       "cues": [
-        "Learn robustness during training. Deploy only the policy and low-level controller."
+        "LUCID uses learned execution feedback to guide domain randomization.",
+        "On the robot, only the policy and low-level controller remain."
       ]
     }
   ],
@@ -628,8 +631,8 @@
       {
         "id": "parallel_evaluation",
         "scene": "evaluation",
-        "start": 76,
-        "end": 90,
+        "start": 65,
+        "end": 78,
         "trim_start": 0,
         "x": 70,
         "y": 220,
@@ -667,48 +670,22 @@
     "duration": 90,
     "placements": [
       {
-        "id": "process_world",
-        "scene": "intro",
-        "path": "media/process/01_world_film.mp4",
-        "start": 0,
-        "end": 4,
-        "trim_start": 0,
-        "x": 610,
-        "y": 245,
-        "w": 920,
-        "h": 324,
-        "source_duration": 4
-      },
-      {
-        "id": "process_focus",
-        "scene": "intro",
-        "path": "media/process/02_focus_film.mp4",
-        "start": 4,
-        "end": 10,
-        "trim_start": 0,
-        "x": 610,
-        "y": 245,
-        "w": 920,
-        "h": 324,
-        "source_duration": 6
-      },
-      {
         "id": "process_finale",
         "scene": "closing",
-        "path": "media/process/10_finale_film.mp4",
-        "start": 168,
-        "end": 176,
+        "path": "media/process/10_finale_hold_film.mp4",
+        "start": 166,
+        "end": 179,
         "trim_start": 0,
         "x": 70,
         "y": 184,
         "w": 1460,
-        "h": 412,
-        "source_duration": 8
+        "h": 300,
+        "source_duration": 13
       }
     ],
     "scope": "Context evaluation replay and choreographed closing letter formation. Not comparison footage, measured formation-control performance or a recorded training update."
   },
-  "revision": "push-montage-review-20260922-v12",
+  "revision": "integrated-submission-20260922-v13",
   "hardware_take": {
     "path": "LUCID_G1_continuous_take.mp4",
     "source_name": "IMG_7323.MOV",
@@ -1063,12 +1040,12 @@
     "web_encoding": "Compact 1280×720 / 24 fps H.264 derivative; identical interval and contact annotations."
   },
   "push_opening": {
-    "path": "LUCID_push_opening.mp4",
-    "review_path": "LUCID_review_with_pushes.mp4",
+    "path": "LUCID_push_opening.mp4?v=13",
+    "review_path": "LUCID_web_template.mp4",
     "duration": 15,
-    "review_duration": 191.020996,
-    "presentation_offset": 15,
-    "narration": "Hand pushes. Foot pushes. Downward pressure. These highlights show the same turning policy under added randomized delay. Next, the full continuous take.",
+    "review_duration": 179,
+    "presentation_offset": 0,
+    "narration": "Hand pushes. Foot pushes. Downward pressure. LUCID repeats a turning motion under added randomized delay. The full, uncut take runs alongside our story.",
     "shots": [
       {
         "start": 4.75,
@@ -1157,6 +1134,7 @@
         "source_end": 202.0
       }
     ],
-    "scope": "Six selected excerpts at 1×; not every contact. Edited opening, then the full unchanged 176-second presentation with its 173-second continuous hardware take."
+    "scope": "Six selected excerpts at 1× in the main panel during seconds 0–15. The full 173-second physical take runs concurrently from film time zero at 1× with no internal cuts.",
+    "mode": "integrated"
   }
 }

@@ -1,7 +1,7 @@
 // Review prelude; the main presentation keeps its own unchanged source clock.
 export function createPushOpening(project,{startMain,stopMain,settings,format}){
  const config=project.push_opening;
- if(!config)return null;
+ if(!config||config.mode!=='prelude')return null;
  const $=id=>document.getElementById(id),video=document.createElement('video');
  let active=!new URLSearchParams(location.search).has('t');
  video.id='push-prelude';video.src=config.path;video.poster='media/hardware/push-opening-poster.jpg';

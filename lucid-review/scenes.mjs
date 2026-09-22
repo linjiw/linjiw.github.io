@@ -1,7 +1,7 @@
-import {MOTION,POLICY_LABELS,bones,floorGrid,measuredPlot,referenceWindow,selectedMotion,frameAt} from './motion-viz.mjs';
-import {cinematicHero,processRollout,processController,processClosing} from './process-viz.mjs';
-import {simulationClip} from './media-timeline.mjs';
-import {MAIN,hardwareRect,railScene} from './hardware-layout.mjs';
+import {MOTION,POLICY_LABELS,bones,floorGrid,measuredPlot,referenceWindow,selectedMotion,frameAt} from './motion-viz.mjs?v=13';
+import {cinematicHero,processRollout,processController,processClosing} from './process-viz.mjs?v=13';
+import {simulationClip} from './media-timeline.mjs?v=13';
+import {MAIN,hardwareRect,railScene} from './hardware-layout.mjs?v=13';
 // Pure timeline renderer shared by browser playback and offline MP4 export.
 // No random state, CSS animation timers or external libraries: seek(t) is deterministic.
 export const C={ink:'#263543',muted:'#65717b',blue:'#D9ECFA',purple:'#E9DFF3',yellow:'#FFF2C0',orange:'#FBE0BF',b:'#367db5',p:'#8862a2',y:'#ae831e',o:'#c87c31',paper:'#fbfaf7',line:'#d7dbdc',white:'#ffffff'};
@@ -260,17 +260,10 @@ function closing(t,img){let out=rect(1022,183,508,571,'#eef3f6',22)+floorGrid(12
  out+=rect(77,624,889,128,C.purple,20)+text(105,675,'Policy → low-level controller → G1',36,C.ink,650)+text(105,720,'No encoder or curriculum scheduler onboard',26,C.p,600);
  out+=text(80,802,'Additional representation and curriculum computation stay in training.',25,C.muted);return out;
 }
-function hardwareOpening(){
- return text(72,282,'LUCID',104,C.ink,700)+text(76,335,'Physical Unitree G1',29,C.p,600)
- +multi(76,402,'A turning reference, repeated continuously.',34,C.ink,25,600,1.3)
- +text(76,558,'0–60 ms',55,C.p,700)+text(76,595,'added randomized delay',25,C.muted)
- +text(76,672,'Manual perturbations',28,C.ink,600)+text(76,713,'One continuous recording',25,C.muted)
- +text(570,207,'TURNING · LUCID POLICY · ORIGINAL SPEED',24,C.p,650)
- +text(570,803,'173 s excerpt · source 00:57–03:50 · face blur · annotated pushes',21,C.muted);
-}
+function hardwareOpening(){return '';}
 function hardwareChapter(){
  let out=text(60,202,'SAME CONTINUOUS TAKE · 0–60 ms ADDED DELAY',25,C.p,650)
- +text(60,806,'Looped turning reference · manual perturbations · privacy blur · 1×',23,C.muted);
+ +text(60,806,'Looped turning reference · manual perturbations · 1×',23,C.muted);
  out+=text(1060,217,'SEPARATE PAPER BENCHMARK',23,C.o,650)+line([1060,235],[1530,235]);
  out+=text(1060,277,'+40 ms added FIFO delay',28,C.ink,600)+text(1060,312,'4 motions · 60 trials per method',23,C.muted);
  out+=text(1060,365,'LUCID',23,C.p,600)+text(1060,424,'38/60',61,C.p,700);
@@ -283,28 +276,23 @@ function hardwareChapter(){
  return out;
 }
 function hardwareRail(t,project){
- const q=hardwareRect(t),ended=t>=project.hardware_take.duration,sec=Math.min(t,project.hardware_take.duration),fmt=n=>`${Math.floor(n/60)}:${String(Math.floor(n%60)).padStart(2,'0')}`;
- let out='';
- if(t>=10&&!(t>=144&&t<168)){
-  out+=line([1200,140],[1200,790],C.line,1)+text(1220,158,'PHYSICAL G1 · LUCID',24,C.p,650);
-  if(ended)out+=rect(q.x,q.y,q.w,q.h,C.purple,0)+text(1400,265,'Continuous excerpt',25,C.p,600,'middle')+text(1400,306,'completed',29,C.p,650,'middle');
-  out+=text(1220,425,ended?'173 s shown continuously':'Continuous take · 1×',25,C.ink,600)
-  +text(1220,474,`${fmt(sec)} / 2:53`,42,C.p,650)
-  +rect(1220,496,360,4,'#ded9e4',0)+rect(1220,496,360*sec/173,4,C.p,0)
-  +text(1220,545,'0–60 ms added delay',25,C.ink,600)+text(1220,581,'Randomized · author-confirmed',20,C.muted)
-  +((project.hardware_take.events||[]).filter(e=>t>=e.start&&t<e.end).length
-    ?(project.hardware_take.events||[]).filter(e=>t>=e.start&&t<e.end).map((e,i)=>text(1220,636+i*36,`${e.id} · ${e.kind==='hand'?'Hand':'Foot'} push`,26,e.kind==='hand'?C.p:C.o,650)).join('')
-    :text(1220,636,'Turning reference repeats',23,C.ink,500)+text(1220,672,'Manual perturbations',23,C.ink,500))
-  +text(1220,736,'Face blur · limbs remain visible',20,C.muted)+text(1220,770,'Source 00:57–03:50',20,C.muted);
- }else if(t<9)out+=text(1530,207,fmt(sec)+' / 2:53',23,C.muted,500,'end');
- else if(t>=144&&t<168)out+=text(1020,202,fmt(sec)+' / 2:53',22,C.muted,500,'end');
+ const q=hardwareRect(t,project),end=project.hardware_take.duration,ended=t>=end,sec=Math.min(t,end),fmt=n=>`${Math.floor(n/60)}:${String(Math.floor(n%60)).padStart(2,'0')}`;
+ const chapter=project.scenes.find(s=>s.id==='hardware');
+ if(t>=chapter.start&&t<chapter.end)return text(1020,202,fmt(sec)+' / 2:53',22,C.muted,500,'end');
+ let out=line([1200,140],[1200,760],C.line,1)+text(1220,158,'PHYSICAL G1 · LUCID',24,C.p,650);
+ if(ended)out+=rect(q.x,q.y,q.w,q.h,C.purple,0)+text(1400,269,'2:53 continuous take',25,C.p,600,'middle')+text(1400,312,'completed',29,C.p,650,'middle');
+ out+=text(1220,428,ended?'Full take shown':'Uncut take · 1×',27,C.ink,600)+text(1220,478,`${fmt(sec)} / 2:53`,38,C.p,650)
+ +rect(1220,500,360,4,'#ded9e4',0)+rect(1220,500,360*sec/end,4,C.p,0)
+ +text(1220,551,'0–60 ms added delay',25,C.ink,600)+text(1220,584,'Randomized command delay',21,C.muted);
+ const active=project.hardware_take.events.filter(e=>t>=e.start&&t<e.end);
+ out+=active.map((e,i)=>text(1220,644+i*36,`${e.id} · ${e.kind==='hand'?'Hand':'Foot'} push`,26,e.kind==='hand'?C.p:C.o,650)).join('');
  return out;
 }
 export function renderSVG(time,project,options={}){
  Object.assign(C,project.palette||{});
  const t=Math.min(project.duration-1e-4,Math.max(0,time));let s=project.scenes.find(s=>s.start<=t&&t<s.end)||project.scenes.at(-1),local=t-s.start,img=options.image||'assets/g1-official.png';
  const starts=(options.cues||[]).filter(c=>c.scene===s.id).map(c=>c.start-s.start);
- let body='';switch(s.id){case'intro':body=project.process_design?cinematicHero(local):project.parallel_visualization?parallelHero(local):hero(local,img);break;case'gap':body=gap(local,options.motion);break;case'pretrain':body=pretrain(local,starts[1]??8.25);break;case'rollout':body=project.process_design?processRollout(local,[starts[1]??5.63,starts[2]??9.13,14]):rollout(local);break;case'controller':body=project.process_design?processController(local,[starts[1]??6,starts[2]??10]):controller(local);break;case'evaluation':body=project.parallel_visualization?parallelEvaluation(local):evaluation(local);break;case'results':body=results(local);break;case'ablation':body=allocation(local);break;case'simulation':body=project.simulation_gallery?simulation(local,project):demos(local,s.id,project.demo_slots,img);break;case'hardware':body=physicalEvidence(local,project.demo_slots,starts[2]??17);break;case'closing':body=project.process_design?.placements.some(m=>m.id==='process_finale')?processClosing(local):closing(local,img);break;}
+ let body='';switch(s.id){case'intro':body=project.process_design?cinematicHero(local):project.parallel_visualization?parallelHero(local):hero(local,img);break;case'gap':body=gap(local,options.motion);break;case'pretrain':body=pretrain(local,starts[1]??8.25);break;case'rollout':body=project.process_design?processRollout(local,[starts[1]??5.63,starts[2]??9.13,13.5]):rollout(local);break;case'controller':body=project.process_design?processController(local,[starts[1]??6,starts[2]??10]):controller(local);break;case'evaluation':body=project.parallel_visualization?parallelEvaluation(local):evaluation(local);break;case'results':body=results(local);break;case'ablation':body=allocation(local);break;case'simulation':body=project.simulation_gallery?simulation(local,project):demos(local,s.id,project.demo_slots,img);break;case'hardware':body=physicalEvidence(local,project.demo_slots,starts[2]??17);break;case'closing':body=project.process_design?.placements.some(m=>m.id==='process_finale')?processClosing(local):closing(local,img);break;}
  if(project.hardware_take&&s.id==='intro')body=hardwareOpening();
  if(project.hardware_take&&s.id==='hardware')body=hardwareChapter();
  let subtitle='';if(options.captions!==false){let cue=(options.cues||[]).find(c=>c.start<=t&&t<c.end);if(cue)subtitle=words(cue.text,110).map((l,i)=>text(800,851+i*29,l,23,C.ink,400,'middle')).join('')}

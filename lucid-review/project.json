@@ -708,7 +708,7 @@
     ],
     "scope": "Context evaluation replay and choreographed closing letter formation. Not comparison footage, measured formation-control performance or a recorded training update."
   },
-  "revision": "continuous-hardware-face-annotations-20260922-v11",
+  "revision": "push-montage-review-20260922-v12",
   "hardware_take": {
     "path": "LUCID_G1_continuous_take.mp4",
     "source_name": "IMG_7323.MOV",
@@ -1061,5 +1061,102 @@
     ],
     "annotation_scope": "Numbered visible contact intervals, including sustained hand-contact sequences. These are visual annotations, not instrumented impulse counts. Arrow direction is schematic in the camera view.",
     "web_encoding": "Compact 1280×720 / 24 fps H.264 derivative; identical interval and contact annotations."
+  },
+  "push_opening": {
+    "path": "LUCID_push_opening.mp4",
+    "review_path": "LUCID_review_with_pushes.mp4",
+    "duration": 15,
+    "review_duration": 191.020996,
+    "presentation_offset": 15,
+    "narration": "Hand pushes. Foot pushes. Downward pressure. These highlights show the same turning policy under added randomized delay. Next, the full continuous take.",
+    "shots": [
+      {
+        "start": 4.75,
+        "frames": 54,
+        "label": "Upper-body push",
+        "direction": "View left",
+        "events": [
+          "P02"
+        ],
+        "kind": "hand",
+        "montage_start": 0.0,
+        "montage_end": 2.25,
+        "source_start": 61.75,
+        "source_end": 64.0
+      },
+      {
+        "start": 16.25,
+        "frames": 54,
+        "label": "Leg push",
+        "direction": "View left",
+        "events": [
+          "P03"
+        ],
+        "kind": "foot",
+        "montage_start": 2.25,
+        "montage_end": 4.5,
+        "source_start": 73.25,
+        "source_end": 75.5
+      },
+      {
+        "start": 43,
+        "frames": 54,
+        "label": "Downward pressure",
+        "direction": "View down",
+        "events": [
+          "P07"
+        ],
+        "kind": "hand",
+        "montage_start": 4.5,
+        "montage_end": 6.75,
+        "source_start": 100,
+        "source_end": 102.25
+      },
+      {
+        "start": 55.5,
+        "frames": 54,
+        "label": "Hand and foot contact",
+        "direction": "View right",
+        "events": [
+          "P09",
+          "P10"
+        ],
+        "kind": "combined",
+        "montage_start": 6.75,
+        "montage_end": 9.0,
+        "source_start": 112.5,
+        "source_end": 114.75
+      },
+      {
+        "start": 105.25,
+        "frames": 54,
+        "label": "Combined perturbation",
+        "direction": "View right",
+        "events": [
+          "P18",
+          "P19"
+        ],
+        "kind": "combined",
+        "montage_start": 9.0,
+        "montage_end": 11.25,
+        "source_start": 162.25,
+        "source_end": 164.5
+      },
+      {
+        "start": 142.75,
+        "frames": 54,
+        "label": "Later leg push",
+        "direction": "View left",
+        "events": [
+          "P27"
+        ],
+        "kind": "foot",
+        "montage_start": 11.25,
+        "montage_end": 13.5,
+        "source_start": 199.75,
+        "source_end": 202.0
+      }
+    ],
+    "scope": "Six selected excerpts at 1×; not every contact. Edited opening, then the full unchanged 176-second presentation with its 173-second continuous hardware take."
   }
 }

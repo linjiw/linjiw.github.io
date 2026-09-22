@@ -1,5 +1,5 @@
 {
-  "revision": "continuous-hardware-face-annotations-20260922-v11",
+  "revision": "push-montage-review-20260922-v12",
   "url": "https://linjiw.github.io/lucid-review/",
   "review_url": "https://linjiw.github.io/lucid-review/review.html",
   "scope": "Static review copy. The local editable studio remains the production source.",
@@ -28,8 +28,8 @@
     },
     {
       "path": "HARDWARE_STORY.md",
-      "bytes": 4817,
-      "sha256": "c913eb12d3da90ede37474acd629db02011da829095b01f4d29131a44d069140"
+      "bytes": 6233,
+      "sha256": "3691296a71260b77742f9ef354ab04586c2260fa21c84ebd0beca399d829416a"
     },
     {
       "path": "LUCID_G1_continuous_take.mp4",
@@ -62,6 +62,16 @@
       "sha256": "ca87a227c3fe14f017700d8246e52767ace6fa5a124d0b686cb1125a8cfd4716"
     },
     {
+      "path": "LUCID_push_opening.mp4",
+      "bytes": 3544604,
+      "sha256": "117825b713bbae8cc433f05b69dec0261593a59e36bba56b617ef1aa811b2083"
+    },
+    {
+      "path": "LUCID_review_with_pushes.mp4",
+      "bytes": 22056609,
+      "sha256": "91e382bd6ce0a223554691dd73808a6527f5abf02861dc064531371e573274c3"
+    },
+    {
       "path": "LUCID_simulation_showcase.mp4",
       "bytes": 2563650,
       "sha256": "f282648473b8824864d24d46419e2cb08e79296171d0142fdae97fe327423253"
@@ -70,6 +80,11 @@
       "path": "LUCID_web_template.mp4",
       "bytes": 18541891,
       "sha256": "9859acb2069d38c938f62e37cc6fa6569abce5e126e06fd4ae5a6597b281b93c"
+    },
+    {
+      "path": "REVIEW_TRANSCRIPT.md",
+      "bytes": 3262,
+      "sha256": "f2b8dc116b33fda28b2e6a1b284727c6a86e4aadebe0588950c4807417ecb509"
     },
     {
       "path": "STORYBOARD.png",
@@ -88,8 +103,8 @@
     },
     {
       "path": "app.mjs",
-      "bytes": 20830,
-      "sha256": "7df7f5403013a6c34434b861a17ebdf4aee137807e031419abf6a6218298708a"
+      "bytes": 22505,
+      "sha256": "1eeb286c56accfe8bc738949fd054e1c0923dda1ac2e1b2e787661520f38f19f"
     },
     {
       "path": "assets/cues.json",
@@ -228,8 +243,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 20097,
-      "sha256": "e88f2ff180d6c0a5e6ce4c075cf8c9c620f4fa0210f49ebdb415a6f20fa9c87a"
+      "bytes": 20306,
+      "sha256": "a8fb7b973babe4490b8e1ed3de148a3d213cb4496eec782fff695dd4e1b19e1a"
     },
     {
       "path": "media/hardware/poster.jpg",
@@ -240,6 +255,16 @@
       "path": "media/hardware/push-events.json",
       "bytes": 10041,
       "sha256": "97e7abcb480fbef0fdeb74b44f3464ab267f4ce847559ca4839ce5b8cff97d5f"
+    },
+    {
+      "path": "media/hardware/push-opening-poster.jpg",
+      "bytes": 196652,
+      "sha256": "d8493048c5c61af36c6994e28f494a561f4ecd6f7dca0c410a315a3f947c5328"
+    },
+    {
+      "path": "media/hardware/push-opening.json",
+      "bytes": 3209,
+      "sha256": "5f2151400bb50a76c1da6312be5e388db17ca63b1b2120f10f398e4d444bac64"
     },
     {
       "path": "media/parallel/manifest.json",
@@ -463,13 +488,23 @@
     },
     {
       "path": "project.json",
-      "bytes": 37663,
-      "sha256": "910b5fbcace69f46c5985094925782256d5cb2ee7318d4015f4e351c5c8daaa7"
+      "bytes": 40196,
+      "sha256": "23c415907de8671f82405638f411cc5ac1041df0be61647b54d7cc7bd7066de1"
+    },
+    {
+      "path": "push-opening.mjs",
+      "bytes": 3067,
+      "sha256": "b5507c87017e4312787cb355a3242465045f8aba4a238e04c94943b38e3586b8"
+    },
+    {
+      "path": "review-captions.srt",
+      "bytes": 2978,
+      "sha256": "f51a5909d640e7b50ca16a4798be11d476fc5dd3b5d83c3f04e94116fc5b905b"
     },
     {
       "path": "review.html",
-      "bytes": 14553,
-      "sha256": "8eb4502850faac03bb7cafe47db238d07a27dafe5cd3322fcc36c02e8b9fd0fc"
+      "bytes": 16055,
+      "sha256": "dca6bea71d7e6cb9635cb27bca575d4015303770df694eac72f2793fc1a3f3da"
     },
     {
       "path": "scenes.mjs",
@@ -478,9 +513,9 @@
     },
     {
       "path": "style.css",
-      "bytes": 21718,
-      "sha256": "68e7816ebbe0000d834b0ce9a7871c2abf6cb65bc943f332909ea2454c9a0935"
+      "bytes": 22227,
+      "sha256": "54f34a4a620e0cff7648ac8d1e2fec7a2edd1f750d521af94d5afacaa036c597"
     }
   ],
-  "total_bytes": 274880215
+  "total_bytes": 300698440
 }

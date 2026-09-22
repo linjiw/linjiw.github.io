@@ -40,3 +40,11 @@ All other method and result narration is preserved. `TRANSCRIPT.md` and `caption
 The **0–60 ms qualitative take** is visually distinct from the paper’s **fixed +40 ms aggregate benchmark** (38/60 LUCID, 23/60 filtered-error PI, +25 pp, paired 95% CI [11.8, 38.2] pp). This one take is not a trial success-rate estimate. Sustained upright motion does not establish reference-tracking accuracy, and no synthetic tracking-error trace is drawn over it.
 
 The existing MuJoCo failures remain identified as **filtered-error PI simulation outcomes**, with their original conditions and timing. No physical fall or counterfactual hardware failure is fabricated. The web library additionally offers the complete annotated 173-second take for uninterrupted large-format inspection.
+
+## Revision 12 — push highlights before the full take
+
+The professor-review cut adds a **15-second opening**: six 2.25-second selected excerpts followed by a 1.5-second transition. The highlights show hand, foot, downward and combined contacts from the same face-blurred source, with the existing numbered direction annotations. The image is labeled **edited push montage**, and each shot shows its original source time. These are selected moments, not every contact or measured force magnitudes.
+
+The unchanged 176-second presentation then plays in full. Its 173-second physical take starts at review time **0:15**, remains continuous at 1×, and ends at **3:08**. The complete review movie is **3:11**. Its physical enlargement is at **2:39–3:03**, and the robot-lettering close is **3:03–3:11**. Add 15 seconds to all main-film timestamps above when reading the extended review cut.
+
+`LUCID_review_with_pushes.mp4` is the extended professor-review cut. `LUCID_web_template.mp4` remains the 2:56, 18.54 MB submission cut; the longer review copy is not the submission file. `media/hardware/push-opening.json` records the source intervals, narration and hashes. `tools/build-push-opening.py` regenerates the montage from the annotated derivative and copies the existing presentation's encoded video frames into the extended cut. `REVIEW_TRANSCRIPT.md` and `review-captions.srt` use the extended review clock.

@@ -1,0 +1,113 @@
+{
+  "revision": "push-montage-review-v12",
+  "path": "LUCID_push_opening.mp4",
+  "review_path": "LUCID_review_with_pushes.mp4",
+  "duration": 15,
+  "review_duration": 191.020996,
+  "presentation_offset": 15,
+  "presentation_duration": 176,
+  "shots": [
+    {
+      "start": 4.75,
+      "frames": 54,
+      "label": "Upper-body push",
+      "direction": "View left",
+      "events": [
+        "P02"
+      ],
+      "kind": "hand",
+      "montage_start": 0.0,
+      "montage_end": 2.25,
+      "source_start": 61.75,
+      "source_end": 64.0
+    },
+    {
+      "start": 16.25,
+      "frames": 54,
+      "label": "Leg push",
+      "direction": "View left",
+      "events": [
+        "P03"
+      ],
+      "kind": "foot",
+      "montage_start": 2.25,
+      "montage_end": 4.5,
+      "source_start": 73.25,
+      "source_end": 75.5
+    },
+    {
+      "start": 43,
+      "frames": 54,
+      "label": "Downward pressure",
+      "direction": "View down",
+      "events": [
+        "P07"
+      ],
+      "kind": "hand",
+      "montage_start": 4.5,
+      "montage_end": 6.75,
+      "source_start": 100,
+      "source_end": 102.25
+    },
+    {
+      "start": 55.5,
+      "frames": 54,
+      "label": "Hand and foot contact",
+      "direction": "View right",
+      "events": [
+        "P09",
+        "P10"
+      ],
+      "kind": "combined",
+      "montage_start": 6.75,
+      "montage_end": 9.0,
+      "source_start": 112.5,
+      "source_end": 114.75
+    },
+    {
+      "start": 105.25,
+      "frames": 54,
+      "label": "Combined perturbation",
+      "direction": "View right",
+      "events": [
+        "P18",
+        "P19"
+      ],
+      "kind": "combined",
+      "montage_start": 9.0,
+      "montage_end": 11.25,
+      "source_start": 162.25,
+      "source_end": 164.5
+    },
+    {
+      "start": 142.75,
+      "frames": 54,
+      "label": "Later leg push",
+      "direction": "View left",
+      "events": [
+        "P27"
+      ],
+      "kind": "foot",
+      "montage_start": 11.25,
+      "montage_end": 13.5,
+      "source_start": 199.75,
+      "source_end": 202.0
+    }
+  ],
+  "narration": "Hand pushes. Foot pushes. Downward pressure. These highlights show the same turning policy under added randomized delay. Next, the full continuous take.",
+  "voice": "en-US-AvaMultilingualNeural",
+  "voice_rate": "-5%",
+  "spoken_seconds": 11.568,
+  "scope": "Six selected excerpts at 1\u00d7; not every contact. Edited opening, then the full unchanged 176-second presentation with its 173-second continuous hardware take.",
+  "direction_scope": "Approximate image-plane annotations, not measured force magnitudes or calibrated 3D vectors.",
+  "source": "media/hardware/g1_lucid_continuous_annotated.mp4",
+  "source_sha256": "87b33dd8d09f59d1c78c0fd35df77c84a9252e50b49e32278b2e579ed73ad937",
+  "submission_file": "LUCID_web_template.mp4",
+  "submission_sha256": "9859acb2069d38c938f62e37cc6fa6569abce5e126e06fd4ae5a6597b281b93c",
+  "opening_sha256": "117825b713bbae8cc433f05b69dec0261593a59e36bba56b617ef1aa811b2083",
+  "review_sha256": "91e382bd6ce0a223554691dd73808a6527f5abf02861dc064531371e573274c3",
+  "opening_bytes": 3544604,
+  "review_bytes": 22056609,
+  "submission_duration": 176,
+  "review_is_submission": false
+}

@@ -1,0 +1,1065 @@
+{
+  "title": "LUCID: Latent-Understanding Curriculum for Informed Domain Randomization in Humanoid Motion Tracking",
+  "duration": 176,
+  "fps": 24,
+  "width": 1600,
+  "height": 900,
+  "export_width": 1280,
+  "export_height": 720,
+  "voice": "en-US-AvaMultilingualNeural",
+  "voice_rate": "-5%",
+  "palette": {
+    "blue": "#D9ECFA",
+    "purple": "#E9DFF3",
+    "yellow": "#FFF2C0",
+    "orange": "#FBE0BF",
+    "ink": "#263543"
+  },
+  "scenes": [
+    {
+      "id": "intro",
+      "start": 0,
+      "end": 10,
+      "title": "A turning policy under real disturbances.",
+      "eyebrow": "LUCID / CONTINUOUS PHYSICAL DEPLOYMENT",
+      "cues": [
+        "This G one repeats a turning motion under manual pushes and zero-to-sixty-millisecond added delay."
+      ]
+    },
+    {
+      "id": "gap",
+      "start": 10,
+      "end": 27,
+      "title": "Which feedback should set training difficulty?",
+      "eyebrow": "01 / DOMAIN RANDOMIZATION AS A FEEDBACK PROBLEM",
+      "cues": [
+        "Randomization must balance exposure against learnability.",
+        "Joint error mixes execution mismatch with torque-generating offsets.",
+        "LUCID compares command and execution histories in a learned temporal space."
+      ]
+    },
+    {
+      "id": "rollout",
+      "start": 27,
+      "end": 43,
+      "title": "Compare histories. Guide the next training block.",
+      "eyebrow": "02 / THE CORE IDEA · FIGURE 1",
+      "cues": [
+        "Issued commands pass through simulated delay and dynamics.",
+        "Command and execution histories enter the same frozen encoder.",
+        "Their normalized latent discrepancy guides the next training block."
+      ]
+    },
+    {
+      "id": "pretrain",
+      "start": 43,
+      "end": 57,
+      "title": "Learn the comparison before policy training.",
+      "eyebrow": "03 / OFFLINE DENOISING PRETRAINING",
+      "cues": [
+        "First, a denoising temporal V A E learns to reconstruct clean motion from noisy windows.",
+        "We freeze its encoder, keeping the comparison fixed as the policy learns."
+      ]
+    },
+    {
+      "id": "controller",
+      "start": 57,
+      "end": 76,
+      "title": "Adapt exposure across six training channels.",
+      "eyebrow": "04 / CLOSED-LOOP DOMAIN RANDOMIZATION",
+      "cues": [
+        "Bounded P I adjusts intensity using the learned gap and accumulated error.",
+        "Two low-return blocks trigger a separate backoff.",
+        "One intensity sets all six training ranges for the next block."
+      ]
+    },
+    {
+      "id": "evaluation",
+      "start": 76,
+      "end": 90,
+      "title": "Stress-test beyond the training delay range.",
+      "eyebrow": "05 / FROZEN-POLICY EVALUATION",
+      "cues": [
+        "Training uses up to forty milliseconds of added delay.",
+        "Frozen policies face sixty milliseconds on full held-out motions, fifty percent above the training maximum."
+      ]
+    },
+    {
+      "id": "results",
+      "start": 90,
+      "end": 108,
+      "title": "Unseen delay. Higher completion.",
+      "eyebrow": "06 / +60 ms ADDED DELAY · NOMINAL DYNAMICS",
+      "cues": [
+        "Under unseen sixty-millisecond delay, completion rises from fifty-two point one percent with filtered-error P I to seventy-three point eight with LUCID.",
+        "That is a twenty-one point seven percentage-point gain."
+      ]
+    },
+    {
+      "id": "ablation",
+      "start": 108,
+      "end": 120,
+      "title": "The representation and feedback matter.",
+      "eyebrow": "07 / TEST THE REPRESENTATION AND LIVE FEEDBACK",
+      "cues": [
+        "Denoising raises completion over ordinary reconstruction.",
+        "Live feedback also improves on one donor’s replayed schedule."
+      ]
+    },
+    {
+      "id": "simulation",
+      "start": 120,
+      "end": 144,
+      "title": "Inspect delay and push responses.",
+      "eyebrow": "08 / SELECTED +40 ms DEMONSTRATIONS",
+      "cues": [
+        "These selected demonstrations combine forty milliseconds of added delay with scheduled pushes.",
+        "LUCID is on the left; filtered-error P I is on the right.",
+        "They show behavior under perturbation. Aggregate completion comes from separate benchmark trials."
+      ]
+    },
+    {
+      "id": "hardware",
+      "start": 144,
+      "end": 168,
+      "title": "Continuous deployment, separate benchmark.",
+      "eyebrow": "09 / PHYSICAL G1 · CONTINUOUS TAKE + PAPER EVIDENCE",
+      "cues": [
+        "The same hardware recording has continued throughout this presentation.",
+        "Separately, the paper’s matched forty-millisecond test reports thirty-eight of sixty completions for LUCID, versus twenty-three for filtered-error P I.",
+        "Only the policy and low-level controller run onboard."
+      ]
+    },
+    {
+      "id": "closing",
+      "start": 168,
+      "end": 176,
+      "title": "Train with feedback. Deploy the policy.",
+      "eyebrow": "LUCID / DEPLOYMENT TAKEAWAY",
+      "cues": [
+        "Learn robustness during training. Deploy only the policy and low-level controller."
+      ]
+    }
+  ],
+  "demo_slots": [
+    {
+      "id": "hardware_lucid",
+      "domain": "hardware",
+      "method": "LUCID",
+      "path": null,
+      "trim_start": 0,
+      "condition": "Add verified condition and motion labels to footage",
+      "speed": 1
+    },
+    {
+      "id": "hardware_filtered",
+      "domain": "hardware",
+      "method": "Filtered-error PI",
+      "path": null,
+      "trim_start": 0,
+      "condition": "Add verified condition and motion labels to footage",
+      "speed": 1
+    }
+  ],
+  "simulation_gallery": {
+    "source_bundle": "expanded_motion_comparisons_20260917",
+    "policy_identity_status": "confirmed",
+    "policy_labels": {
+      "left": "LUCID",
+      "reference": "Reference motion",
+      "right": "Filtered-error PI"
+    },
+    "supplied_readme_labels": {
+      "left": "LUCID",
+      "right": "filtered-error PI"
+    },
+    "identity_note": "Panel identities follow the supplied comparison bundle and author confirmation: LUCID on the left, synchronized reference in the center, filtered-error PI on the right. The fixed/off raw capture keys correspond to those same left/right tracks.",
+    "added_delay_ms": 40,
+    "push_delta_v_mps": 1.5,
+    "push_multiplier": 3,
+    "clips": [
+      {
+        "id": "mujoco_01_walking",
+        "simulator": "mujoco",
+        "title": "Walking",
+        "path": "media/simulation/mujoco_01_walking.mp4",
+        "poster": "media/simulation/mujoco_01_walking.jpg",
+        "source_duration": 3.24,
+        "start": 3,
+        "end": 6.25,
+        "frames": 78,
+        "crop": [
+          0,
+          176,
+          1920,
+          584
+        ],
+        "fall_confirmation_s": {
+          "fixed": null,
+          "off": 2.94
+        },
+        "push_count_shown": 1,
+        "note": "No LUCID height fall reported within the original 6 s.",
+        "sha256": "a46e5f170114683c63543099b5db85e60dde7c7788cdba56c385f4f3205d92d7",
+        "receipt": {
+          "motion": "walk_ff_start_270_R_slow_002__A444",
+          "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+          "failure_confirmation_seconds": {
+            "fixed": null,
+            "off": 2.94
+          },
+          "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+          "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+          "latency_ms": 40,
+          "push_delta_v_mps": 1.5,
+          "push_baseline_multiplier": 3,
+          "video_sha256": "a46e5f170114683c63543099b5db85e60dde7c7788cdba56c385f4f3205d92d7",
+          "duration_seconds": 3.24,
+          "frames": 162
+        },
+        "film_path": "media/simulation/mujoco_01_walking_film.mp4",
+        "full_path": "media/simulation/mujoco_01_walking_full.mp4",
+        "full_duration": 6,
+        "film_start": 3
+      },
+      {
+        "id": "mujoco_02_turning",
+        "simulator": "mujoco",
+        "title": "Turning",
+        "path": "media/simulation/mujoco_02_turning.mp4",
+        "poster": "media/simulation/mujoco_02_turning.jpg",
+        "source_duration": 4.86,
+        "start": 6.25,
+        "end": 11.125,
+        "frames": 117,
+        "crop": [
+          0,
+          176,
+          1920,
+          584
+        ],
+        "fall_confirmation_s": {
+          "fixed": null,
+          "off": 4.56
+        },
+        "push_count_shown": 2,
+        "note": "No LUCID height fall reported within the original 6 s; tracking drift is visible.",
+        "sha256": "f44efd5e3e6eaebe1acb41790f9b5c0477ad945d62e7922c5be93ff3add07777",
+        "receipt": {
+          "motion": "walk_arc_cw_stop_001__A047",
+          "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+          "failure_confirmation_seconds": {
+            "fixed": null,
+            "off": 4.56
+          },
+          "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+          "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+          "latency_ms": 40,
+          "push_delta_v_mps": 1.5,
+          "push_baseline_multiplier": 3,
+          "video_sha256": "f44efd5e3e6eaebe1acb41790f9b5c0477ad945d62e7922c5be93ff3add07777",
+          "duration_seconds": 4.86,
+          "frames": 243
+        },
+        "film_path": "media/simulation/mujoco_02_turning_film.mp4",
+        "full_path": "media/simulation/mujoco_02_turning_full.mp4",
+        "full_duration": 6,
+        "film_start": 12
+      },
+      {
+        "id": "mujoco_04_side_stepping",
+        "simulator": "mujoco",
+        "title": "Side-stepping",
+        "path": "media/simulation/mujoco_04_side_stepping.mp4",
+        "poster": "media/simulation/mujoco_04_side_stepping.jpg",
+        "source_duration": 3.3,
+        "start": 11.125,
+        "end": 14.416666666666666,
+        "frames": 79,
+        "crop": [
+          0,
+          176,
+          1920,
+          584
+        ],
+        "fall_confirmation_s": {
+          "fixed": 4.18,
+          "off": 3
+        },
+        "push_count_shown": 1,
+        "note": "LUCID also falls later, at 4.18 s in the original recording.",
+        "sha256": "437bc3037e0d321e7712ee9330370e49c501dce8b369fbdc956e5985dcd5449c",
+        "receipt": {
+          "motion": "walk_sideway_left_loop_004__A031",
+          "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+          "failure_confirmation_seconds": {
+            "fixed": 4.18,
+            "off": 3
+          },
+          "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+          "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+          "latency_ms": 40,
+          "push_delta_v_mps": 1.5,
+          "push_baseline_multiplier": 3,
+          "video_sha256": "437bc3037e0d321e7712ee9330370e49c501dce8b369fbdc956e5985dcd5449c",
+          "duration_seconds": 3.3,
+          "frames": 165
+        },
+        "film_path": "media/simulation/mujoco_04_side_stepping_film.mp4"
+      },
+      {
+        "id": "isaaclab_03_squatting",
+        "simulator": "isaaclab",
+        "title": "Crouch hold",
+        "path": "media/simulation/isaaclab_03_squatting.mp4",
+        "poster": "media/simulation/isaaclab_03_squatting.jpg",
+        "source_duration": 1.44,
+        "start": 14.416666666666666,
+        "end": 15.875,
+        "frames": 35,
+        "crop": [
+          0,
+          176,
+          1920,
+          584
+        ],
+        "fall_confirmation_s": {
+          "fixed": 1.7,
+          "off": 1.22
+        },
+        "push_count_shown": 0,
+        "note": "Before the first push. LUCID also falls later, at 1.70 s.",
+        "sha256": "f8cfb8d2ba1b7db31f83a2843d6381538701f0196995c5465f6f12739dd52df2",
+        "receipt": {
+          "motion": "crouch_idle_004__A246",
+          "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+          "failure_confirmation_seconds": {
+            "fixed": 1.7,
+            "off": 1.22
+          },
+          "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+          "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+          "latency_ms": 40,
+          "push_delta_v_mps": 1.5,
+          "push_baseline_multiplier": 3,
+          "video_sha256": "f8cfb8d2ba1b7db31f83a2843d6381538701f0196995c5465f6f12739dd52df2",
+          "duration_seconds": 1.44,
+          "frames": 72
+        },
+        "film_path": "media/simulation/isaaclab_03_squatting_film.mp4"
+      },
+      {
+        "id": "isaaclab_04_side_stepping",
+        "simulator": "isaaclab",
+        "title": "Side-stepping",
+        "path": "media/simulation/isaaclab_04_side_stepping.mp4",
+        "poster": "media/simulation/isaaclab_04_side_stepping.jpg",
+        "source_duration": 3.5,
+        "start": 15.875,
+        "end": 19.375,
+        "frames": 84,
+        "crop": [
+          0,
+          176,
+          1920,
+          584
+        ],
+        "fall_confirmation_s": {
+          "fixed": 4.74,
+          "off": 3.2
+        },
+        "push_count_shown": 1,
+        "note": "LUCID also falls later, at 4.74 s in the original recording.",
+        "sha256": "f04c65b0cf930e9ff946ebef06e04ac61232b7e20b9b9defbbf77b75c3442fde",
+        "receipt": {
+          "motion": "walk_sideway_left_loop_004__A031",
+          "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+          "failure_confirmation_seconds": {
+            "fixed": 4.74,
+            "off": 3.2
+          },
+          "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+          "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+          "latency_ms": 40,
+          "push_delta_v_mps": 1.5,
+          "push_baseline_multiplier": 3,
+          "video_sha256": "f04c65b0cf930e9ff946ebef06e04ac61232b7e20b9b9defbbf77b75c3442fde",
+          "duration_seconds": 3.5,
+          "frames": 175
+        },
+        "film_path": "media/simulation/isaaclab_04_side_stepping_film.mp4"
+      }
+    ],
+    "selection_audit": {
+      "all_eight_comparisons": [
+        {
+          "simulator": "mujoco",
+          "motion": "01_walking",
+          "fall_confirmation_s": {
+            "fixed": null,
+            "off": 2.94
+          },
+          "selected": true,
+          "end_seconds": 3.24,
+          "visible_post_failure_seconds": 0.3,
+          "fixed_min_up_cos_after_other_fall": 0.9731929234914068,
+          "fixed_later_falls": false,
+          "push_count_shown": 1
+        },
+        {
+          "simulator": "mujoco",
+          "motion": "02_turning",
+          "fall_confirmation_s": {
+            "fixed": null,
+            "off": 4.56
+          },
+          "selected": true,
+          "end_seconds": 4.86,
+          "visible_post_failure_seconds": 0.3,
+          "fixed_min_up_cos_after_other_fall": 0.7004910900182539,
+          "fixed_later_falls": false,
+          "push_count_shown": 2
+        },
+        {
+          "simulator": "mujoco",
+          "motion": "03_squatting",
+          "fall_confirmation_s": {
+            "fixed": 2.72,
+            "off": 2.74
+          },
+          "selected": false,
+          "reason": "No sustained post-failure interval with fixed above the height threshold"
+        },
+        {
+          "simulator": "mujoco",
+          "motion": "04_side_stepping",
+          "fall_confirmation_s": {
+            "fixed": 4.18,
+            "off": 3
+          },
+          "selected": true,
+          "end_seconds": 3.3,
+          "visible_post_failure_seconds": 0.3,
+          "fixed_min_up_cos_after_other_fall": 0.9552019922194951,
+          "fixed_later_falls": true,
+          "push_count_shown": 1
+        },
+        {
+          "simulator": "isaaclab",
+          "motion": "01_walking",
+          "fall_confirmation_s": {
+            "fixed": 3.12,
+            "off": 2.88
+          },
+          "selected": false,
+          "reason": "No sustained post-failure interval with fixed above the height threshold"
+        },
+        {
+          "simulator": "isaaclab",
+          "motion": "02_turning",
+          "fall_confirmation_s": {
+            "fixed": 3.02,
+            "off": null
+          },
+          "selected": false,
+          "reason": "No sustained post-failure interval with fixed above the height threshold"
+        },
+        {
+          "simulator": "isaaclab",
+          "motion": "03_squatting",
+          "fall_confirmation_s": {
+            "fixed": 1.7,
+            "off": 1.22
+          },
+          "selected": true,
+          "end_seconds": 1.44,
+          "visible_post_failure_seconds": 0.22,
+          "fixed_min_up_cos_after_other_fall": 0.7475098218982303,
+          "fixed_later_falls": true,
+          "push_count_shown": 0
+        },
+        {
+          "simulator": "isaaclab",
+          "motion": "04_side_stepping",
+          "fall_confirmation_s": {
+            "fixed": 4.74,
+            "off": 3.2
+          },
+          "selected": true,
+          "end_seconds": 3.5,
+          "visible_post_failure_seconds": 0.3,
+          "fixed_min_up_cos_after_other_fall": 0.9865568429883648,
+          "fixed_later_falls": true,
+          "push_count_shown": 1
+        }
+      ],
+      "policy": "Post-hoc balance excerpts; end 0.30 s after off fall, earlier if needed to keep fixed upright; require 0.20 s visible advantage.",
+      "full_length_sources_retained": true,
+      "minimum_fixed_up_cosine": 0.7,
+      "fall_rule": "pelvis below 60% target for 5 consecutive frames",
+      "policy_names_in_video": false
+    },
+    "timing_note": "Film: walking 123–129 s, outcome 129–132 s, turning 132–138 s, outcome 138–144 s. Each full capture plays once at 1×. The original five short excerpts remain in the website library.",
+    "identity_evidence": {
+      "path": "policy-identity.json",
+      "basis": "Supplied comparison README, method folders, annotation receipts, and explicit author correction on September 18, 2026.",
+      "track_mapping": {
+        "fixed": "LUCID",
+        "reference": "Reference motion",
+        "off": "Filtered-error PI"
+      },
+      "verification_scope": "Panel and track identities are from the supplied bundle and author confirmation. This is not an independent checkpoint or training-log audit."
+    },
+    "film_clips": [
+      {
+        "id": "mujoco_01_walking_full",
+        "simulator": "mujoco",
+        "title": "Walking",
+        "path": "media/simulation/mujoco_01_walking_full.mp4",
+        "poster": "media/simulation/mujoco_01_walking.jpg",
+        "source_duration": 6,
+        "start": 3,
+        "end": 9,
+        "frames": 144,
+        "crop": [
+          0,
+          176,
+          1920,
+          584
+        ],
+        "fall_confirmation_s": {
+          "fixed": null,
+          "off": 2.94
+        },
+        "push_count_shown": 2,
+        "note": "Full six-second recording; LUCID remains above the height-failure threshold, with root drift visible.",
+        "sha256": "4990182e9c943684b33b9781ce8b2cd99699e10351a38680065123d7e973e2bf",
+        "film_path": "media/simulation/mujoco_01_walking_full_film.mp4",
+        "source_remote": "/home/linjiw/lucid-sonic/artifacts/submission_four_motion_20260917/motion_comparisons/comparisons/01_walking/comparison.mp4",
+        "source_scope": "Original full capture corresponding to the author-confirmed LUCID/reference/filtered-error PI comparison.",
+        "excerpt_receipt": {
+          "motion": "walk_ff_start_270_R_slow_002__A444",
+          "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+          "failure_confirmation_seconds": {
+            "fixed": null,
+            "off": 2.94
+          },
+          "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+          "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+          "latency_ms": 40,
+          "push_delta_v_mps": 1.5,
+          "push_baseline_multiplier": 3,
+          "video_sha256": "a46e5f170114683c63543099b5db85e60dde7c7788cdba56c385f4f3205d92d7",
+          "duration_seconds": 3.24,
+          "frames": 162
+        }
+      },
+      {
+        "id": "mujoco_02_turning_full",
+        "simulator": "mujoco",
+        "title": "Turning",
+        "path": "media/simulation/mujoco_02_turning_full.mp4",
+        "poster": "media/simulation/mujoco_02_turning.jpg",
+        "source_duration": 6,
+        "start": 12,
+        "end": 18,
+        "frames": 144,
+        "crop": [
+          0,
+          176,
+          1920,
+          584
+        ],
+        "fall_confirmation_s": {
+          "fixed": null,
+          "off": 4.56
+        },
+        "push_count_shown": 2,
+        "note": "Full six-second recording; LUCID remains above the height-failure threshold, with root drift visible.",
+        "sha256": "d5f36b50eda51e4773ed7d2e09ac23a7e4ea3390a4b33e053f87fe96495d0ee7",
+        "film_path": "media/simulation/mujoco_02_turning_full_film.mp4",
+        "source_remote": "/home/linjiw/lucid-sonic/artifacts/submission_four_motion_20260917/motion_comparisons/comparisons/02_turning/comparison.mp4",
+        "source_scope": "Original full capture corresponding to the author-confirmed LUCID/reference/filtered-error PI comparison.",
+        "excerpt_receipt": {
+          "motion": "walk_arc_cw_stop_001__A047",
+          "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+          "failure_confirmation_seconds": {
+            "fixed": null,
+            "off": 4.56
+          },
+          "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+          "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+          "latency_ms": 40,
+          "push_delta_v_mps": 1.5,
+          "push_baseline_multiplier": 3,
+          "video_sha256": "f44efd5e3e6eaebe1acb41790f9b5c0477ad945d62e7922c5be93ff3add07777",
+          "duration_seconds": 4.86,
+          "frames": 243
+        }
+      }
+    ]
+  },
+  "parallel_visualization": {
+    "title": "Parallel evaluation, made visible",
+    "path": "media/parallel/parallel_evaluation.mp4",
+    "original_path": "media/parallel/parallel_evaluation_original.mp4",
+    "poster": "media/parallel/parallel_evaluation.jpg",
+    "source_name": "download.mp4",
+    "source_sha256": "4ef32484f56592b3397bb3f722d8f7855b5817752e3670e471604153f32ab5b0",
+    "web_sha256": "3bda5b1be6e6b437d6afc1fad43f09f3e506581609ef90b3c331c4a83858d206",
+    "duration": 24,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "simulation_playback_rate": 0.25,
+    "environment_count": 1024,
+    "provenance": "User-supplied visualization; descriptions below are transcribed from its visible overlays.",
+    "source_labels": [
+      "1,024 robots / parallel evaluation",
+      "Frozen policy; no resets",
+      "IsaacLab physics / state replay",
+      "Playback 0.25x",
+      "Actuator delay 0–40 ms",
+      "Randomized physics and pushes",
+      "Red remains after first native failure"
+    ],
+    "interpretation": "An evaluation replay illustrating parallel rollouts. No training update is shown. Green means no failure yet, not completed-trial success. Paper benchmark results are shown separately.",
+    "placements": [
+      {
+        "id": "parallel_evaluation",
+        "scene": "evaluation",
+        "start": 76,
+        "end": 90,
+        "trim_start": 0,
+        "x": 70,
+        "y": 220,
+        "w": 960,
+        "h": 540
+      }
+    ]
+  },
+  "recorded_motion": {
+    "path": "assets/motion/recorded-g1.json",
+    "fps": 50,
+    "motions": 3,
+    "frames_per_motion": 300,
+    "tracks": [
+      "reference",
+      "fixed",
+      "off"
+    ],
+    "source": "Exact G1 model forward kinematics from captured qpos; matching synchronized source references. No new dynamics rollouts.",
+    "display_alignment": "XY pelvis translation removed independently for each skeleton; height and orientation retained. Root error computed in original world coordinates.",
+    "window_display": "6 named leg joints from the 29-DOF demonstration reference; paper architecture remains 25x23. No assertion that these clips are the paper encoder training split.",
+    "policy_identity": "policy-identity.json",
+    "track_labels": {
+      "fixed": "LUCID",
+      "reference": "Reference motion",
+      "off": "Filtered-error PI"
+    }
+  },
+  "voice_engine": "edge-tts",
+  "voice_pause_seconds": 0.24,
+  "process_design": {
+    "source_bundle": "lucid_process_film_20260918",
+    "provenance": "media/process/import.json",
+    "master": "media/process/method_film_90s.mp4",
+    "duration": 90,
+    "placements": [
+      {
+        "id": "process_world",
+        "scene": "intro",
+        "path": "media/process/01_world_film.mp4",
+        "start": 0,
+        "end": 4,
+        "trim_start": 0,
+        "x": 610,
+        "y": 245,
+        "w": 920,
+        "h": 324,
+        "source_duration": 4
+      },
+      {
+        "id": "process_focus",
+        "scene": "intro",
+        "path": "media/process/02_focus_film.mp4",
+        "start": 4,
+        "end": 10,
+        "trim_start": 0,
+        "x": 610,
+        "y": 245,
+        "w": 920,
+        "h": 324,
+        "source_duration": 6
+      },
+      {
+        "id": "process_finale",
+        "scene": "closing",
+        "path": "media/process/10_finale_film.mp4",
+        "start": 168,
+        "end": 176,
+        "trim_start": 0,
+        "x": 70,
+        "y": 184,
+        "w": 1460,
+        "h": 412,
+        "source_duration": 8
+      }
+    ],
+    "scope": "Context evaluation replay and choreographed closing letter formation. Not comparison footage, measured formation-control performance or a recorded training update."
+  },
+  "revision": "continuous-hardware-face-annotations-20260922-v11",
+  "hardware_take": {
+    "path": "LUCID_G1_continuous_take.mp4",
+    "source_name": "IMG_7323.MOV",
+    "source_sha256": "ccfe9176763963d6eb3a45d9c0992481425737d892db1d101866846e45f4d716",
+    "source_start": 57,
+    "source_end": 230,
+    "duration": 173,
+    "speed": 1,
+    "method": "LUCID",
+    "motion": "Looped turning reference",
+    "added_delay_ms": [
+      0,
+      60
+    ],
+    "condition_provenance": "Author confirmed LUCID policy and randomized added command delay 0–60 ms in this conversation. Author identified approximate deployment interval 57–230 s.",
+    "presentation_scope": "One selected qualitative continuous excerpt. Separate from the paper fixed +40 ms matched aggregate benchmark. Manual perturbation forces are not measured.",
+    "privacy": "Face-only blur; room, operator limbs, robot and contact remain visible. Source audio and identifying metadata removed.",
+    "status": "author-confirmed",
+    "events": [
+      {
+        "id": "P01",
+        "start": 1.2,
+        "end": 2.4,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P02",
+        "start": 4.8,
+        "end": 6.7,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P03",
+        "start": 16.4,
+        "end": 17.7,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P04",
+        "start": 21.4,
+        "end": 25.5,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P05",
+        "start": 28.6,
+        "end": 29.8,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P06",
+        "start": 30.4,
+        "end": 32.3,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P07",
+        "start": 39.6,
+        "end": 45.8,
+        "kind": "hand",
+        "direction": "down",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P08",
+        "start": 47.8,
+        "end": 50.1,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P09",
+        "start": 55.0,
+        "end": 58.6,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P10",
+        "start": 56.0,
+        "end": 57.2,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P11",
+        "start": 64.0,
+        "end": 65.6,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P12",
+        "start": 77.9,
+        "end": 79.2,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P13",
+        "start": 80.1,
+        "end": 82.3,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P14",
+        "start": 85.1,
+        "end": 89.0,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "start": 87.5,
+        "end": 88.9,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction",
+        "id": "P15"
+      },
+      {
+        "id": "P16",
+        "start": 90.4,
+        "end": 91.5,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P17",
+        "start": 93.6,
+        "end": 97.3,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P18",
+        "start": 102.3,
+        "end": 107.1,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P19",
+        "start": 105.7,
+        "end": 106.9,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P20",
+        "start": 115.6,
+        "end": 117.0,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P21",
+        "start": 122.2,
+        "end": 125.5,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P22",
+        "start": 127.4,
+        "end": 131.7,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "start": 128.4,
+        "end": 129.7,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction",
+        "id": "P23"
+      },
+      {
+        "id": "P24",
+        "start": 132.3,
+        "end": 136.5,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P25",
+        "start": 134.3,
+        "end": 135.5,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P26",
+        "start": 140.4,
+        "end": 141.7,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P27",
+        "start": 143.1,
+        "end": 144.4,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P28",
+        "start": 147.4,
+        "end": 151.5,
+        "kind": "hand",
+        "direction": "down",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P29",
+        "start": 155.1,
+        "end": 158.3,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P30",
+        "start": 158.3,
+        "end": 159.4,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P31",
+        "start": 159.4,
+        "end": 160.4,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P32",
+        "start": 163.5,
+        "end": 165.7,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P33",
+        "start": 169.3,
+        "end": 172.7,
+        "kind": "hand",
+        "direction": "down",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      }
+    ],
+    "annotation_scope": "Numbered visible contact intervals, including sustained hand-contact sequences. These are visual annotations, not instrumented impulse counts. Arrow direction is schematic in the camera view.",
+    "web_encoding": "Compact 1280×720 / 24 fps H.264 derivative; identical interval and contact annotations."
+  }
+}

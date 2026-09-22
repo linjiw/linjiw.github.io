@@ -1,0 +1,438 @@
+{
+  "source_bundle": "expanded_motion_comparisons_20260917",
+  "policy_identity_status": "confirmed",
+  "policy_labels": {
+    "left": "LUCID",
+    "reference": "Reference motion",
+    "right": "Filtered-error PI"
+  },
+  "supplied_readme_labels": {
+    "left": "LUCID",
+    "right": "filtered-error PI"
+  },
+  "identity_note": "Panel identities follow the supplied comparison bundle and author confirmation: LUCID on the left, synchronized reference in the center, filtered-error PI on the right. The fixed/off raw capture keys correspond to those same left/right tracks.",
+  "added_delay_ms": 40,
+  "push_delta_v_mps": 1.5,
+  "push_multiplier": 3,
+  "clips": [
+    {
+      "id": "mujoco_01_walking",
+      "simulator": "mujoco",
+      "title": "Walking",
+      "path": "media/simulation/mujoco_01_walking.mp4",
+      "poster": "media/simulation/mujoco_01_walking.jpg",
+      "source_duration": 3.24,
+      "start": 3,
+      "end": 6.25,
+      "frames": 78,
+      "crop": [
+        0,
+        176,
+        1920,
+        584
+      ],
+      "fall_confirmation_s": {
+        "fixed": null,
+        "off": 2.94
+      },
+      "push_count_shown": 1,
+      "note": "No LUCID height fall reported within the original 6 s.",
+      "sha256": "a46e5f170114683c63543099b5db85e60dde7c7788cdba56c385f4f3205d92d7",
+      "receipt": {
+        "motion": "walk_ff_start_270_R_slow_002__A444",
+        "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+        "failure_confirmation_seconds": {
+          "fixed": null,
+          "off": 2.94
+        },
+        "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+        "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+        "latency_ms": 40,
+        "push_delta_v_mps": 1.5,
+        "push_baseline_multiplier": 3,
+        "video_sha256": "a46e5f170114683c63543099b5db85e60dde7c7788cdba56c385f4f3205d92d7",
+        "duration_seconds": 3.24,
+        "frames": 162
+      },
+      "film_path": "media/simulation/mujoco_01_walking_film.mp4",
+      "full_path": "media/simulation/mujoco_01_walking_full.mp4",
+      "full_duration": 6,
+      "film_start": 3
+    },
+    {
+      "id": "mujoco_02_turning",
+      "simulator": "mujoco",
+      "title": "Turning",
+      "path": "media/simulation/mujoco_02_turning.mp4",
+      "poster": "media/simulation/mujoco_02_turning.jpg",
+      "source_duration": 4.86,
+      "start": 6.25,
+      "end": 11.125,
+      "frames": 117,
+      "crop": [
+        0,
+        176,
+        1920,
+        584
+      ],
+      "fall_confirmation_s": {
+        "fixed": null,
+        "off": 4.56
+      },
+      "push_count_shown": 2,
+      "note": "No LUCID height fall reported within the original 6 s; tracking drift is visible.",
+      "sha256": "f44efd5e3e6eaebe1acb41790f9b5c0477ad945d62e7922c5be93ff3add07777",
+      "receipt": {
+        "motion": "walk_arc_cw_stop_001__A047",
+        "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+        "failure_confirmation_seconds": {
+          "fixed": null,
+          "off": 4.56
+        },
+        "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+        "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+        "latency_ms": 40,
+        "push_delta_v_mps": 1.5,
+        "push_baseline_multiplier": 3,
+        "video_sha256": "f44efd5e3e6eaebe1acb41790f9b5c0477ad945d62e7922c5be93ff3add07777",
+        "duration_seconds": 4.86,
+        "frames": 243
+      },
+      "film_path": "media/simulation/mujoco_02_turning_film.mp4",
+      "full_path": "media/simulation/mujoco_02_turning_full.mp4",
+      "full_duration": 6,
+      "film_start": 12
+    },
+    {
+      "id": "mujoco_04_side_stepping",
+      "simulator": "mujoco",
+      "title": "Side-stepping",
+      "path": "media/simulation/mujoco_04_side_stepping.mp4",
+      "poster": "media/simulation/mujoco_04_side_stepping.jpg",
+      "source_duration": 3.3,
+      "start": 11.125,
+      "end": 14.416666666666666,
+      "frames": 79,
+      "crop": [
+        0,
+        176,
+        1920,
+        584
+      ],
+      "fall_confirmation_s": {
+        "fixed": 4.18,
+        "off": 3
+      },
+      "push_count_shown": 1,
+      "note": "LUCID also falls later, at 4.18 s in the original recording.",
+      "sha256": "437bc3037e0d321e7712ee9330370e49c501dce8b369fbdc956e5985dcd5449c",
+      "receipt": {
+        "motion": "walk_sideway_left_loop_004__A031",
+        "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+        "failure_confirmation_seconds": {
+          "fixed": 4.18,
+          "off": 3
+        },
+        "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+        "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+        "latency_ms": 40,
+        "push_delta_v_mps": 1.5,
+        "push_baseline_multiplier": 3,
+        "video_sha256": "437bc3037e0d321e7712ee9330370e49c501dce8b369fbdc956e5985dcd5449c",
+        "duration_seconds": 3.3,
+        "frames": 165
+      },
+      "film_path": "media/simulation/mujoco_04_side_stepping_film.mp4"
+    },
+    {
+      "id": "isaaclab_03_squatting",
+      "simulator": "isaaclab",
+      "title": "Crouch hold",
+      "path": "media/simulation/isaaclab_03_squatting.mp4",
+      "poster": "media/simulation/isaaclab_03_squatting.jpg",
+      "source_duration": 1.44,
+      "start": 14.416666666666666,
+      "end": 15.875,
+      "frames": 35,
+      "crop": [
+        0,
+        176,
+        1920,
+        584
+      ],
+      "fall_confirmation_s": {
+        "fixed": 1.7,
+        "off": 1.22
+      },
+      "push_count_shown": 0,
+      "note": "Before the first push. LUCID also falls later, at 1.70 s.",
+      "sha256": "f8cfb8d2ba1b7db31f83a2843d6381538701f0196995c5465f6f12739dd52df2",
+      "receipt": {
+        "motion": "crouch_idle_004__A246",
+        "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+        "failure_confirmation_seconds": {
+          "fixed": 1.7,
+          "off": 1.22
+        },
+        "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+        "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+        "latency_ms": 40,
+        "push_delta_v_mps": 1.5,
+        "push_baseline_multiplier": 3,
+        "video_sha256": "f8cfb8d2ba1b7db31f83a2843d6381538701f0196995c5465f6f12739dd52df2",
+        "duration_seconds": 1.44,
+        "frames": 72
+      },
+      "film_path": "media/simulation/isaaclab_03_squatting_film.mp4"
+    },
+    {
+      "id": "isaaclab_04_side_stepping",
+      "simulator": "isaaclab",
+      "title": "Side-stepping",
+      "path": "media/simulation/isaaclab_04_side_stepping.mp4",
+      "poster": "media/simulation/isaaclab_04_side_stepping.jpg",
+      "source_duration": 3.5,
+      "start": 15.875,
+      "end": 19.375,
+      "frames": 84,
+      "crop": [
+        0,
+        176,
+        1920,
+        584
+      ],
+      "fall_confirmation_s": {
+        "fixed": 4.74,
+        "off": 3.2
+      },
+      "push_count_shown": 1,
+      "note": "LUCID also falls later, at 4.74 s in the original recording.",
+      "sha256": "f04c65b0cf930e9ff946ebef06e04ac61232b7e20b9b9defbbf77b75c3442fde",
+      "receipt": {
+        "motion": "walk_sideway_left_loop_004__A031",
+        "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+        "failure_confirmation_seconds": {
+          "fixed": 4.74,
+          "off": 3.2
+        },
+        "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+        "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+        "latency_ms": 40,
+        "push_delta_v_mps": 1.5,
+        "push_baseline_multiplier": 3,
+        "video_sha256": "f04c65b0cf930e9ff946ebef06e04ac61232b7e20b9b9defbbf77b75c3442fde",
+        "duration_seconds": 3.5,
+        "frames": 175
+      },
+      "film_path": "media/simulation/isaaclab_04_side_stepping_film.mp4"
+    }
+  ],
+  "selection_audit": {
+    "all_eight_comparisons": [
+      {
+        "simulator": "mujoco",
+        "motion": "01_walking",
+        "fall_confirmation_s": {
+          "fixed": null,
+          "off": 2.94
+        },
+        "selected": true,
+        "end_seconds": 3.24,
+        "visible_post_failure_seconds": 0.3,
+        "fixed_min_up_cos_after_other_fall": 0.9731929234914068,
+        "fixed_later_falls": false,
+        "push_count_shown": 1
+      },
+      {
+        "simulator": "mujoco",
+        "motion": "02_turning",
+        "fall_confirmation_s": {
+          "fixed": null,
+          "off": 4.56
+        },
+        "selected": true,
+        "end_seconds": 4.86,
+        "visible_post_failure_seconds": 0.3,
+        "fixed_min_up_cos_after_other_fall": 0.7004910900182539,
+        "fixed_later_falls": false,
+        "push_count_shown": 2
+      },
+      {
+        "simulator": "mujoco",
+        "motion": "03_squatting",
+        "fall_confirmation_s": {
+          "fixed": 2.72,
+          "off": 2.74
+        },
+        "selected": false,
+        "reason": "No sustained post-failure interval with fixed above the height threshold"
+      },
+      {
+        "simulator": "mujoco",
+        "motion": "04_side_stepping",
+        "fall_confirmation_s": {
+          "fixed": 4.18,
+          "off": 3
+        },
+        "selected": true,
+        "end_seconds": 3.3,
+        "visible_post_failure_seconds": 0.3,
+        "fixed_min_up_cos_after_other_fall": 0.9552019922194951,
+        "fixed_later_falls": true,
+        "push_count_shown": 1
+      },
+      {
+        "simulator": "isaaclab",
+        "motion": "01_walking",
+        "fall_confirmation_s": {
+          "fixed": 3.12,
+          "off": 2.88
+        },
+        "selected": false,
+        "reason": "No sustained post-failure interval with fixed above the height threshold"
+      },
+      {
+        "simulator": "isaaclab",
+        "motion": "02_turning",
+        "fall_confirmation_s": {
+          "fixed": 3.02,
+          "off": null
+        },
+        "selected": false,
+        "reason": "No sustained post-failure interval with fixed above the height threshold"
+      },
+      {
+        "simulator": "isaaclab",
+        "motion": "03_squatting",
+        "fall_confirmation_s": {
+          "fixed": 1.7,
+          "off": 1.22
+        },
+        "selected": true,
+        "end_seconds": 1.44,
+        "visible_post_failure_seconds": 0.22,
+        "fixed_min_up_cos_after_other_fall": 0.7475098218982303,
+        "fixed_later_falls": true,
+        "push_count_shown": 0
+      },
+      {
+        "simulator": "isaaclab",
+        "motion": "04_side_stepping",
+        "fall_confirmation_s": {
+          "fixed": 4.74,
+          "off": 3.2
+        },
+        "selected": true,
+        "end_seconds": 3.5,
+        "visible_post_failure_seconds": 0.3,
+        "fixed_min_up_cos_after_other_fall": 0.9865568429883648,
+        "fixed_later_falls": true,
+        "push_count_shown": 1
+      }
+    ],
+    "policy": "Post-hoc balance excerpts; end 0.30 s after off fall, earlier if needed to keep fixed upright; require 0.20 s visible advantage.",
+    "full_length_sources_retained": true,
+    "minimum_fixed_up_cosine": 0.7,
+    "fall_rule": "pelvis below 60% target for 5 consecutive frames",
+    "policy_names_in_video": false
+  },
+  "timing_note": "Film: walking 123–129 s, outcome 129–132 s, turning 132–138 s, outcome 138–144 s. Each full capture plays once at 1×. The original five short excerpts remain in the website library.",
+  "identity_evidence": {
+    "path": "policy-identity.json",
+    "basis": "Supplied comparison README, method folders, annotation receipts, and explicit author correction on September 18, 2026.",
+    "track_mapping": {
+      "fixed": "LUCID",
+      "reference": "Reference motion",
+      "off": "Filtered-error PI"
+    },
+    "verification_scope": "Panel and track identities are from the supplied bundle and author confirmation. This is not an independent checkpoint or training-log audit."
+  },
+  "film_clips": [
+    {
+      "id": "mujoco_01_walking_full",
+      "simulator": "mujoco",
+      "title": "Walking",
+      "path": "media/simulation/mujoco_01_walking_full.mp4",
+      "poster": "media/simulation/mujoco_01_walking.jpg",
+      "source_duration": 6,
+      "start": 3,
+      "end": 9,
+      "frames": 144,
+      "crop": [
+        0,
+        176,
+        1920,
+        584
+      ],
+      "fall_confirmation_s": {
+        "fixed": null,
+        "off": 2.94
+      },
+      "push_count_shown": 2,
+      "note": "Full six-second recording; LUCID remains above the height-failure threshold, with root drift visible.",
+      "sha256": "4990182e9c943684b33b9781ce8b2cd99699e10351a38680065123d7e973e2bf",
+      "film_path": "media/simulation/mujoco_01_walking_full_film.mp4",
+      "source_remote": "/home/linjiw/lucid-sonic/artifacts/submission_four_motion_20260917/motion_comparisons/comparisons/01_walking/comparison.mp4",
+      "source_scope": "Original full capture corresponding to the author-confirmed LUCID/reference/filtered-error PI comparison.",
+      "excerpt_receipt": {
+        "motion": "walk_ff_start_270_R_slow_002__A444",
+        "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+        "failure_confirmation_seconds": {
+          "fixed": null,
+          "off": 2.94
+        },
+        "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+        "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+        "latency_ms": 40,
+        "push_delta_v_mps": 1.5,
+        "push_baseline_multiplier": 3,
+        "video_sha256": "a46e5f170114683c63543099b5db85e60dde7c7788cdba56c385f4f3205d92d7",
+        "duration_seconds": 3.24,
+        "frames": 162
+      }
+    },
+    {
+      "id": "mujoco_02_turning_full",
+      "simulator": "mujoco",
+      "title": "Turning",
+      "path": "media/simulation/mujoco_02_turning_full.mp4",
+      "poster": "media/simulation/mujoco_02_turning.jpg",
+      "source_duration": 6,
+      "start": 12,
+      "end": 18,
+      "frames": 144,
+      "crop": [
+        0,
+        176,
+        1920,
+        584
+      ],
+      "fall_confirmation_s": {
+        "fixed": null,
+        "off": 4.56
+      },
+      "push_count_shown": 2,
+      "note": "Full six-second recording; LUCID remains above the height-failure threshold, with root drift visible.",
+      "sha256": "d5f36b50eda51e4773ed7d2e09ac23a7e4ea3390a4b33e053f87fe96495d0ee7",
+      "film_path": "media/simulation/mujoco_02_turning_full_film.mp4",
+      "source_remote": "/home/linjiw/lucid-sonic/artifacts/submission_four_motion_20260917/motion_comparisons/comparisons/02_turning/comparison.mp4",
+      "source_scope": "Original full capture corresponding to the author-confirmed LUCID/reference/filtered-error PI comparison.",
+      "excerpt_receipt": {
+        "motion": "walk_arc_cw_stop_001__A047",
+        "selection": "LUCID above failure threshold in selected interval; filtered-error PI crosses it",
+        "failure_confirmation_seconds": {
+          "fixed": null,
+          "off": 4.56
+        },
+        "reference": "source motion, synchronized frame k+1, center panel, no dynamics",
+        "arrows": "world-frame velocity impulse direction; 0.2-second visual flash only",
+        "latency_ms": 40,
+        "push_delta_v_mps": 1.5,
+        "push_baseline_multiplier": 3,
+        "video_sha256": "f44efd5e3e6eaebe1acb41790f9b5c0477ad945d62e7922c5be93ff3add07777",
+        "duration_seconds": 4.86,
+        "frames": 243
+      }
+    }
+  ]
+}

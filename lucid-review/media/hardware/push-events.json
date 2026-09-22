@@ -1,0 +1,336 @@
+{
+  "source_offset": 57,
+  "annotation_scope": "Numbered visible contact intervals, including sustained hand-contact sequences. These are visual annotations, not instrumented impulse counts. Arrow direction is schematic in the camera view.",
+  "events": [
+    {
+      "id": "P01",
+      "start": 1.2,
+      "end": 2.4,
+      "kind": "hand",
+      "direction": "right",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P02",
+      "start": 4.8,
+      "end": 6.7,
+      "kind": "hand",
+      "direction": "left",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P03",
+      "start": 16.4,
+      "end": 17.7,
+      "kind": "foot",
+      "direction": "left",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P04",
+      "start": 21.4,
+      "end": 25.5,
+      "kind": "hand",
+      "direction": "left",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P05",
+      "start": 28.6,
+      "end": 29.8,
+      "kind": "foot",
+      "direction": "left",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P06",
+      "start": 30.4,
+      "end": 32.3,
+      "kind": "hand",
+      "direction": "left",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P07",
+      "start": 39.6,
+      "end": 45.8,
+      "kind": "hand",
+      "direction": "down",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P08",
+      "start": 47.8,
+      "end": 50.1,
+      "kind": "hand",
+      "direction": "right",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P09",
+      "start": 55.0,
+      "end": 58.6,
+      "kind": "hand",
+      "direction": "right",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P10",
+      "start": 56.0,
+      "end": 57.2,
+      "kind": "foot",
+      "direction": "right",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P11",
+      "start": 64.0,
+      "end": 65.6,
+      "kind": "foot",
+      "direction": "right",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P12",
+      "start": 77.9,
+      "end": 79.2,
+      "kind": "foot",
+      "direction": "right",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P13",
+      "start": 80.1,
+      "end": 82.3,
+      "kind": "hand",
+      "direction": "right",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P14",
+      "start": 85.1,
+      "end": 89.0,
+      "kind": "hand",
+      "direction": "right",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "start": 87.5,
+      "end": 88.9,
+      "kind": "foot",
+      "direction": "right",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction",
+      "id": "P15"
+    },
+    {
+      "id": "P16",
+      "start": 90.4,
+      "end": 91.5,
+      "kind": "foot",
+      "direction": "right",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P17",
+      "start": 93.6,
+      "end": 97.3,
+      "kind": "hand",
+      "direction": "left",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P18",
+      "start": 102.3,
+      "end": 107.1,
+      "kind": "hand",
+      "direction": "right",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P19",
+      "start": 105.7,
+      "end": 106.9,
+      "kind": "foot",
+      "direction": "right",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P20",
+      "start": 115.6,
+      "end": 117.0,
+      "kind": "foot",
+      "direction": "right",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P21",
+      "start": 122.2,
+      "end": 125.5,
+      "kind": "hand",
+      "direction": "right",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P22",
+      "start": 127.4,
+      "end": 131.7,
+      "kind": "hand",
+      "direction": "right",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "start": 128.4,
+      "end": 129.7,
+      "kind": "foot",
+      "direction": "right",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction",
+      "id": "P23"
+    },
+    {
+      "id": "P24",
+      "start": 132.3,
+      "end": 136.5,
+      "kind": "hand",
+      "direction": "left",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P25",
+      "start": 134.3,
+      "end": 135.5,
+      "kind": "foot",
+      "direction": "left",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P26",
+      "start": 140.4,
+      "end": 141.7,
+      "kind": "foot",
+      "direction": "left",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P27",
+      "start": 143.1,
+      "end": 144.4,
+      "kind": "foot",
+      "direction": "left",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P28",
+      "start": 147.4,
+      "end": 151.5,
+      "kind": "hand",
+      "direction": "down",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P29",
+      "start": 155.1,
+      "end": 158.3,
+      "kind": "hand",
+      "direction": "left",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P30",
+      "start": 158.3,
+      "end": 159.4,
+      "kind": "foot",
+      "direction": "left",
+      "contact": "Leg",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P31",
+      "start": 159.4,
+      "end": 160.4,
+      "kind": "hand",
+      "direction": "left",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P32",
+      "start": 163.5,
+      "end": 165.7,
+      "kind": "hand",
+      "direction": "left",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    },
+    {
+      "id": "P33",
+      "start": 169.3,
+      "end": 172.7,
+      "kind": "hand",
+      "direction": "down",
+      "contact": "Upper body",
+      "status": "visual_annotation",
+      "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "scene": "intro",
+    "start": 0.25,
+    "end": 7.282,
+    "text": "This G one repeats a turning motion under manual pushes and zero-to-sixty-millisecond added delay."
+  },
+  {
+    "scene": "gap",
+    "start": 10.25,
+    "end": 14.426,
+    "text": "Randomization must balance exposure against learnability."
+  },
+  {
+    "scene": "gap",
+    "start": 14.666,
+    "end": 19.874000000000002,
+    "text": "Joint error mixes execution mismatch with torque-generating offsets."
+  },
+  {
+    "scene": "gap",
+    "start": 20.114,
+    "end": 25.562,
+    "text": "LUCID compares command and execution histories in a learned temporal space."
+  },
+  {
+    "scene": "rollout",
+    "start": 27.25,
+    "end": 31.738,
+    "text": "Issued commands pass through simulated delay and dynamics."
+  },
+  {
+    "scene": "rollout",
+    "start": 31.978,
+    "end": 36.49,
+    "text": "Command and execution histories enter the same frozen encoder."
+  },
+  {
+    "scene": "rollout",
+    "start": 36.730000000000004,
+    "end": 40.93000000000001,
+    "text": "Their normalized latent discrepancy guides the next training block."
+  },
+  {
+    "scene": "pretrain",
+    "start": 43.25,
+    "end": 50.498,
+    "text": "First, a denoising temporal V A E learns to reconstruct clean motion from noisy windows."
+  },
+  {
+    "scene": "pretrain",
+    "start": 50.738,
+    "end": 56.018,
+    "text": "We freeze its encoder, keeping the comparison fixed as the policy learns."
+  },
+  {
+    "scene": "controller",
+    "start": 57.25,
+    "end": 63.01,
+    "text": "Bounded P I adjusts intensity using the learned gap and accumulated error."
+  },
+  {
+    "scene": "controller",
+    "start": 63.25,
+    "end": 66.562,
+    "text": "Two low-return blocks trigger a separate backoff."
+  },
+  {
+    "scene": "controller",
+    "start": 66.80199999999999,
+    "end": 71.24199999999999,
+    "text": "One intensity sets all six training ranges for the next block."
+  },
+  {
+    "scene": "evaluation",
+    "start": 76.25,
+    "end": 80.018,
+    "text": "Training uses up to forty milliseconds of added delay."
+  },
+  {
+    "scene": "evaluation",
+    "start": 80.258,
+    "end": 88.178,
+    "text": "Frozen policies face sixty milliseconds on full held-out motions, fifty percent above the training maximum."
+  },
+  {
+    "scene": "results",
+    "start": 90.25,
+    "end": 100.522,
+    "text": "Under unseen sixty-millisecond delay, completion rises from fifty-two point one percent with filtered-error P I to seventy-three point eight with LUCID."
+  },
+  {
+    "scene": "results",
+    "start": 100.762,
+    "end": 104.194,
+    "text": "That is a twenty-one point seven percentage-point gain."
+  },
+  {
+    "scene": "ablation",
+    "start": 108.25,
+    "end": 112.354,
+    "text": "Denoising raises completion over ordinary reconstruction."
+  },
+  {
+    "scene": "ablation",
+    "start": 112.594,
+    "end": 117.05799999999999,
+    "text": "Live feedback also improves on one donor\u2019s replayed schedule."
+  },
+  {
+    "scene": "simulation",
+    "start": 120.25,
+    "end": 126.49,
+    "text": "These selected demonstrations combine forty milliseconds of added delay with scheduled pushes."
+  },
+  {
+    "scene": "simulation",
+    "start": 126.73,
+    "end": 131.14600000000002,
+    "text": "LUCID is on the left; filtered-error P I is on the right."
+  },
+  {
+    "scene": "simulation",
+    "start": 131.386,
+    "end": 137.962,
+    "text": "They show behavior under perturbation. Aggregate completion comes from separate benchmark trials."
+  },
+  {
+    "scene": "hardware",
+    "start": 144.25,
+    "end": 148.594,
+    "text": "The same hardware recording has continued throughout this presentation."
+  },
+  {
+    "scene": "hardware",
+    "start": 148.834,
+    "end": 158.626,
+    "text": "Separately, the paper\u2019s matched forty-millisecond test reports thirty-eight of sixty completions for LUCID, versus twenty-three for filtered-error P I."
+  },
+  {
+    "scene": "hardware",
+    "start": 158.866,
+    "end": 162.65800000000002,
+    "text": "Only the policy and low-level controller run onboard."
+  },
+  {
+    "scene": "closing",
+    "start": 168.25,
+    "end": 174.082,
+    "text": "Learn robustness during training. Deploy only the policy and low-level controller."
+  }
+]

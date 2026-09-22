@@ -1,0 +1,61 @@
+{
+  "source_bundle": "lucid_process_film_20260918",
+  "clips": [
+    {
+      "id": "01_world",
+      "source": "01_world.mp4",
+      "original_path": "media/process/01_world_source.mp4",
+      "original_sha256": "6fb60973d2c71771d3792766dff2c8f9e35bd488cd540bd9de1e5b64188110e5",
+      "path": "media/process/01_world_film.mp4",
+      "sha256": "ea81cc65eab7b4f67aa0281d08c756c555057b041c3d327c1b031b2f59c9d080",
+      "trim_seconds": 4,
+      "duration": 4,
+      "crop_xywh": [
+        0,
+        268,
+        1920,
+        676
+      ],
+      "playback_speed": 1
+    },
+    {
+      "id": "02_focus",
+      "source": "02_focus.mp4",
+      "original_path": "media/process/02_focus_source.mp4",
+      "original_sha256": "785b796828ccaeb13dd3cbf5b20495c73d8f2bee383d6c7b5e508f5bf1b69a35",
+      "path": "media/process/02_focus_film.mp4",
+      "sha256": "b2181013d76c6692456fd6e0a02ad2693b31f7f06eb5428fdf91858d8bfb2e97",
+      "trim_seconds": 4,
+      "duration": 6,
+      "crop_xywh": [
+        0,
+        268,
+        1920,
+        676
+      ],
+      "playback_speed": 1
+    },
+    {
+      "id": "10_finale",
+      "source": "10_finale.mp4",
+      "original_path": "media/process/10_finale_source.mp4",
+      "original_sha256": "54d549a8b1eb19f22116b9aaf66077973d8a6e3b9edab696a9163fe20502e47b",
+      "path": "media/process/10_finale_film.mp4",
+      "sha256": "646af508e1867724e2127e5bc2194bf6b5328bedb25d828f3e2125ba1bb234c2",
+      "trim_seconds": 0,
+      "moving_source_seconds": 5.5,
+      "freeze_tail_seconds": 2.5,
+      "duration": 8,
+      "crop_xywh": [
+        0,
+        300,
+        1920,
+        540
+      ],
+      "playback_speed": 1,
+      "interpretation": "Choreographed letter formation using G1 visuals. Display positions arranged for the word LUCID; not learned formation control. Final pose held for the narration ending."
+    }
+  ],
+  "interpretation": "Illustrative edits of recorded frozen-policy evaluation. No learning is shown; the reference ghost is representative. Method histories, latent geometry and controller examples are illustrative, not capture-derived measurements.",
+  "method_master_sha256": "8c80b231d1772a8490af6a62036a3672426c9fec14ead67bacd46ebf55d62fd9"
+}

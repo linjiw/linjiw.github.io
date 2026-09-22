@@ -1,0 +1,100 @@
+{
+  "videos": {
+    "comparisons/mujoco/01_walking/comparison.mp4": {
+      "duration": 3.24,
+      "sha256": "a46e5f170114683c63543099b5db85e60dde7c7788cdba56c385f4f3205d92d7"
+    },
+    "LUCID/mujoco/01_walking.mp4": {
+      "duration": 3.24,
+      "sha256": "b9a7f3f655ce22680959dcbb0cb8c12737236230b6b0cfb61d8bbc51115b1dc6"
+    },
+    "reference_motions/mujoco/01_walking.mp4": {
+      "duration": 3.24,
+      "sha256": "0b49e97eb0cf2c64a7dbb3ed2eab65e5f8ecf212199fc59e497d6f012a13c5e0"
+    },
+    "filtered-error PI/mujoco/01_walking.mp4": {
+      "duration": 3.24,
+      "sha256": "8786400b68dbd0fec224b997242010b745ea5cc941706c4f678a8bad5095063b"
+    },
+    "comparisons/mujoco/02_turning/comparison.mp4": {
+      "duration": 4.86,
+      "sha256": "f44efd5e3e6eaebe1acb41790f9b5c0477ad945d62e7922c5be93ff3add07777"
+    },
+    "LUCID/mujoco/02_turning.mp4": {
+      "duration": 4.86,
+      "sha256": "0e9283cb09da5ad65b778319d7b23fb144d0ebfe797458b365505f0e46b6344b"
+    },
+    "reference_motions/mujoco/02_turning.mp4": {
+      "duration": 4.86,
+      "sha256": "500585dc81beab60bce4145f7146430fce1c7ac59b49e986056686a9add2c73c"
+    },
+    "filtered-error PI/mujoco/02_turning.mp4": {
+      "duration": 4.86,
+      "sha256": "01d6a1fb62ecb54ee6ac69e65929e3119eac5e9b37b0aae3d71c83f476e9838e"
+    },
+    "comparisons/mujoco/04_side_stepping/comparison.mp4": {
+      "duration": 3.3,
+      "sha256": "437bc3037e0d321e7712ee9330370e49c501dce8b369fbdc956e5985dcd5449c"
+    },
+    "LUCID/mujoco/04_side_stepping.mp4": {
+      "duration": 3.3,
+      "sha256": "5cdc82b028ca604403fb72359aea0dbb748dfb06c15b60245b36e395f9eeba3f"
+    },
+    "reference_motions/mujoco/04_side_stepping.mp4": {
+      "duration": 3.3,
+      "sha256": "7b27716c7431b9e32967afce8bc751d78b3ee487860ecf39fccd9773dc3391bf"
+    },
+    "filtered-error PI/mujoco/04_side_stepping.mp4": {
+      "duration": 3.3,
+      "sha256": "a5d0e4f2c942751105d6af18ca1eabf3957f95f54f5ab9da10a5bec142b8900b"
+    },
+    "comparisons/isaaclab/03_squatting/comparison.mp4": {
+      "duration": 1.44,
+      "sha256": "f8cfb8d2ba1b7db31f83a2843d6381538701f0196995c5465f6f12739dd52df2"
+    },
+    "LUCID/isaaclab/03_squatting.mp4": {
+      "duration": 1.44,
+      "sha256": "4bc2638a63646694653d75e615886d75c340c10539cb0cb2349356ae0319bf38"
+    },
+    "reference_motions/isaaclab/03_squatting.mp4": {
+      "duration": 1.44,
+      "sha256": "4bcab6510bbba690b76c2fa513774bf89b9027025626790041b9f46c833eb310"
+    },
+    "filtered-error PI/isaaclab/03_squatting.mp4": {
+      "duration": 1.44,
+      "sha256": "5271214419b8d981f0fe46232596ec15047300986b640046244b5a63b4d4583e"
+    },
+    "comparisons/isaaclab/04_side_stepping/comparison.mp4": {
+      "duration": 3.5,
+      "sha256": "f04c65b0cf930e9ff946ebef06e04ac61232b7e20b9b9defbbf77b75c3442fde"
+    },
+    "LUCID/isaaclab/04_side_stepping.mp4": {
+      "duration": 3.5,
+      "sha256": "9910a4a9f541c1e4a2cecd7bc6ba6b19bce4decca9bc982f35667b76e06ea7d7"
+    },
+    "reference_motions/isaaclab/04_side_stepping.mp4": {
+      "duration": 3.5,
+      "sha256": "ec22f33663d59b4ba803477ac06f3b616c1c3ab914d1cb1ca78ccdc35fa41d63"
+    },
+    "filtered-error PI/isaaclab/04_side_stepping.mp4": {
+      "duration": 3.5,
+      "sha256": "3dac684fc9259098f84e1b2ae62ebd8021fe59b8a0177692864bfbc846234e6b"
+    },
+    "comparisons/motion_highlights_expanded.mp4": {
+      "duration": 16.340000000000003,
+      "sha256": "fa5ec4b85db5285909be8218e5b9a969a0f472855da39f9d2f12d6648f3a8638"
+    }
+  },
+  "full_decode": "passed",
+  "visual_review": {
+    "status": "All five final frames inspected",
+    "contact_sheet": "review/endpoint_review.jpg",
+    "checks": [
+      "No policy names in frames",
+      "filtered-error PI red and down at every cutoff",
+      "LUCID above the height threshold and within tilt cutoff",
+      "Synchronized reference and original HUD retained",
+      "IsaacLab uses recorded mean body error; MuJoCo uses recorded root error"
+    ]
+  }
+}

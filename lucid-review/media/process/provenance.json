@@ -1,0 +1,18 @@
+{
+  "paper_sha256": "9320b69ed7578abe820301e3a3c10598b6b65cb7b4d8e6b59d968b8da066e4a3",
+  "capture_source": "/home/linjiw/lucid-sonic/artifacts/crowd_movie_20260917/movie/h4000/capture.npz",
+  "motion_source": "earlier frozen-policy evaluation; illustrative replay only",
+  "paper_figures_used": [
+    "Fig. 1 method",
+    "Fig. 2 palette",
+    "Table I DR ranges",
+    "Table III simulation results",
+    "Table VII hardware results"
+  ],
+  "new_training": false,
+  "new_evaluation": false,
+  "native_capture_environments": 1024,
+  "paper_environments": 4096,
+  "source_visual_joints": 29,
+  "paper_active_joints": 23
+}

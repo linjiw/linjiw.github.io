@@ -1,0 +1,99 @@
+1
+00:00:00,250 --> 00:00:07,282
+This G one repeats a turning motion under manual pushes and zero-to-sixty-millisecond added delay.
+
+2
+00:00:10,250 --> 00:00:14,426
+Randomization must balance exposure against learnability.
+
+3
+00:00:14,666 --> 00:00:19,874
+Joint error mixes execution mismatch with torque-generating offsets.
+
+4
+00:00:20,114 --> 00:00:25,562
+LUCID compares command and execution histories in a learned temporal space.
+
+5
+00:00:27,250 --> 00:00:31,738
+Issued commands pass through simulated delay and dynamics.
+
+6
+00:00:31,978 --> 00:00:36,490
+Command and execution histories enter the same frozen encoder.
+
+7
+00:00:36,730 --> 00:00:40,930
+Their normalized latent discrepancy guides the next training block.
+
+8
+00:00:43,250 --> 00:00:50,498
+First, a denoising temporal V A E learns to reconstruct clean motion from noisy windows.
+
+9
+00:00:50,738 --> 00:00:56,018
+We freeze its encoder, keeping the comparison fixed as the policy learns.
+
+10
+00:00:57,250 --> 00:01:03,010
+Bounded P I adjusts intensity using the learned gap and accumulated error.
+
+11
+00:01:03,250 --> 00:01:06,562
+Two low-return blocks trigger a separate backoff.
+
+12
+00:01:06,802 --> 00:01:11,242
+One intensity sets all six training ranges for the next block.
+
+13
+00:01:16,250 --> 00:01:20,018
+Training uses up to forty milliseconds of added delay.
+
+14
+00:01:20,258 --> 00:01:28,178
+Frozen policies face sixty milliseconds on full held-out motions, fifty percent above the training maximum.
+
+15
+00:01:30,250 --> 00:01:40,522
+Under unseen sixty-millisecond delay, completion rises from fifty-two point one percent with filtered-error P I to seventy-three point eight with LUCID.
+
+16
+00:01:40,762 --> 00:01:44,194
+That is a twenty-one point seven percentage-point gain.
+
+17
+00:01:48,250 --> 00:01:52,354
+Denoising raises completion over ordinary reconstruction.
+
+18
+00:01:52,594 --> 00:01:57,058
+Live feedback also improves on one donor’s replayed schedule.
+
+19
+00:02:00,250 --> 00:02:06,490
+These selected demonstrations combine forty milliseconds of added delay with scheduled pushes.
+
+20
+00:02:06,730 --> 00:02:11,146
+LUCID is on the left; filtered-error P I is on the right.
+
+21
+00:02:11,386 --> 00:02:17,962
+They show behavior under perturbation. Aggregate completion comes from separate benchmark trials.
+
+22
+00:02:24,250 --> 00:02:28,594
+The same hardware recording has continued throughout this presentation.
+
+23
+00:02:28,834 --> 00:02:38,626
+Separately, the paper’s matched forty-millisecond test reports thirty-eight of sixty completions for LUCID, versus twenty-three for filtered-error P I.
+
+24
+00:02:38,866 --> 00:02:42,658
+Only the policy and low-level controller run onboard.
+
+25
+00:02:48,250 --> 00:02:54,082
+Learn robustness during training. Deploy only the policy and low-level controller.

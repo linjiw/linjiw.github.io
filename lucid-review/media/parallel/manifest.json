@@ -1,0 +1,39 @@
+{
+  "title": "Parallel evaluation, made visible",
+  "path": "media/parallel/parallel_evaluation.mp4",
+  "original_path": "media/parallel/parallel_evaluation_original.mp4",
+  "poster": "media/parallel/parallel_evaluation.jpg",
+  "source_name": "download.mp4",
+  "source_sha256": "4ef32484f56592b3397bb3f722d8f7855b5817752e3670e471604153f32ab5b0",
+  "web_sha256": "3bda5b1be6e6b437d6afc1fad43f09f3e506581609ef90b3c331c4a83858d206",
+  "duration": 24,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "simulation_playback_rate": 0.25,
+  "environment_count": 1024,
+  "provenance": "User-supplied visualization; descriptions below are transcribed from its visible overlays.",
+  "source_labels": [
+    "1,024 robots / parallel evaluation",
+    "Frozen policy; no resets",
+    "IsaacLab physics / state replay",
+    "Playback 0.25x",
+    "Actuator delay 0\u201340 ms",
+    "Randomized physics and pushes",
+    "Red remains after first native failure"
+  ],
+  "interpretation": "An evaluation replay illustrating parallel rollouts. No training update is shown. Green means no failure yet, not completed-trial success. Paper benchmark results are shown separately.",
+  "placements": [
+    {
+      "id": "parallel_evaluation",
+      "scene": "evaluation",
+      "start": 76,
+      "end": 90,
+      "trim_start": 0,
+      "x": 70,
+      "y": 220,
+      "w": 960,
+      "h": 540
+    }
+  ]
+}

@@ -1,0 +1,477 @@
+{
+  "image_source": "https://www.unitree.com/g1/",
+  "image_url": "https://www.unitree.com/images/87d23aa3708e4677aba22b14352bb779_2000x1470.png",
+  "image_role": "Retained manufacturer source asset and inactive fallback; active motion and closing chapters use recorded G1 FK and link-mesh envelopes.",
+  "figure_source": "ICRA_2027_LUCID_finalpass/figures/framework.tex; figures/evidence.pdf; figures/hardware.pdf",
+  "skeleton": "Exact G1 MuJoCo forward kinematics of recorded 29-DOF qpos and matching reference motions; source hashes, topology, samples and processing in assets/motion/recorded-g1.json. Head marker is the head mesh centroid.",
+  "simulation_footage": {
+    "source": "expanded_motion_comparisons_20260917",
+    "manifest": "media/simulation_manifest.json",
+    "identities": "Panel identities follow the supplied comparison bundle and author confirmation: LUCID on the left, synchronized reference in the center, filtered-error PI on the right. The fixed/off raw capture keys correspond to those same left/right tracks.",
+    "originals": "Five supplied excerpts plus complete six-second walking and turning originals, with SHA-256 provenance.",
+    "presentation_edits": "Crop, ordinary 50-to-24 fps conversion, rebuilt labels, unchanged 1x movement timing, explicit selection limitations.",
+    "identity_evidence": "policy-identity.json"
+  },
+  "parallel_evaluation": {
+    "source_name": "download.mp4",
+    "source_sha256": "4ef32484f56592b3397bb3f722d8f7855b5817752e3670e471604153f32ab5b0",
+    "path": "media/parallel/parallel_evaluation.mp4",
+    "original_path": "media/parallel/parallel_evaluation_original.mp4",
+    "provenance": "User-supplied visualization; descriptions below are transcribed from its visible overlays.",
+    "interpretation": "An evaluation replay illustrating parallel rollouts. No training update is shown. Green means no failure yet, not completed-trial success. Paper benchmark results are shown separately.",
+    "placements": [
+      {
+        "id": "parallel_evaluation",
+        "scene": "evaluation",
+        "start": 80,
+        "end": 92,
+        "trim_start": 0,
+        "x": 70,
+        "y": 220,
+        "w": 960,
+        "h": 540
+      }
+    ],
+    "current_film_placements": [
+      {
+        "id": "parallel_evaluation",
+        "scene": "evaluation",
+        "start": 76,
+        "end": 90,
+        "trim_start": 0,
+        "x": 70,
+        "y": 220,
+        "w": 960,
+        "h": 540
+      }
+    ]
+  },
+  "recorded_motion": {
+    "path": "assets/motion/recorded-g1.json",
+    "fps": 50,
+    "motions": 3,
+    "frames_per_motion": 300,
+    "tracks": [
+      "reference",
+      "fixed",
+      "off"
+    ],
+    "source": "Exact G1 model forward kinematics from captured qpos; matching synchronized source references. No new dynamics rollouts.",
+    "display_alignment": "XY pelvis translation removed independently for each skeleton; height and orientation retained. Root error computed in original world coordinates.",
+    "window_display": "6 named leg joints from the 29-DOF demonstration reference; paper architecture remains 25x23. No assertion that these clips are the paper encoder training split.",
+    "mesh_checksums": "assets/motion/model-mesh-hashes.json",
+    "policy_identity": "policy-identity.json",
+    "track_labels": {
+      "fixed": "LUCID",
+      "reference": "Reference motion",
+      "off": "Filtered-error PI"
+    }
+  },
+  "process_film": {
+    "source": "lucid_process_film_20260918",
+    "import": "media/process/import.json",
+    "source_provenance": "media/process/provenance.json",
+    "placements": [
+      {
+        "id": "process_world",
+        "scene": "intro",
+        "path": "media/process/01_world_film.mp4",
+        "start": 0,
+        "end": 4,
+        "trim_start": 0,
+        "x": 610,
+        "y": 245,
+        "w": 920,
+        "h": 324,
+        "source_duration": 4
+      },
+      {
+        "id": "process_focus",
+        "scene": "intro",
+        "path": "media/process/02_focus_film.mp4",
+        "start": 4,
+        "end": 10,
+        "trim_start": 0,
+        "x": 610,
+        "y": 245,
+        "w": 920,
+        "h": 324,
+        "source_duration": 6
+      },
+      {
+        "id": "process_finale",
+        "scene": "closing",
+        "path": "media/process/10_finale_film.mp4",
+        "start": 168,
+        "end": 176,
+        "trim_start": 0,
+        "x": 70,
+        "y": 184,
+        "w": 1460,
+        "h": 412,
+        "source_duration": 8
+      }
+    ],
+    "method_diagrams": "Editable vector adaptations. Histories and latent geometry are schematic. PI inputs and return ratios are illustrative. Rules and ranges follow the manuscript. September 22: six channel cards use recorded G1 poses and schematic perturbation marks.",
+    "interpretation": "Original optional study retained. Opening uses real physical G1 in revision 11. Only choreographed finale appears in the current film.",
+    "closing": "Choreographed G1 lettering; display origins arranged into LUCID. Source 0\u20135.5 s at 1x, followed by 2.5 s hold; no learned formation-control claim."
+  },
+  "continuous_physical_hardware": {
+    "path": "media/hardware/g1_lucid_continuous_annotated.mp4",
+    "source_name": "IMG_7323.MOV",
+    "source_sha256": "ccfe9176763963d6eb3a45d9c0992481425737d892db1d101866846e45f4d716",
+    "source_start": 57,
+    "source_end": 230,
+    "duration": 173,
+    "speed": 1,
+    "method": "LUCID",
+    "motion": "Looped turning reference",
+    "added_delay_ms": [
+      0,
+      60
+    ],
+    "condition_provenance": "Author confirmed LUCID policy and randomized added command delay 0\u201360 ms in this conversation. Author identified approximate deployment interval 57\u2013230 s.",
+    "presentation_scope": "One selected qualitative continuous excerpt. Separate from the paper fixed +40 ms matched aggregate benchmark. Manual perturbation forces are not measured.",
+    "privacy": "Face-only blur; room, operator limbs, robot and contact remain visible. Source audio and identifying metadata removed.",
+    "status": "author-confirmed",
+    "events": [
+      {
+        "id": "P01",
+        "start": 1.2,
+        "end": 2.4,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P02",
+        "start": 4.8,
+        "end": 6.7,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P03",
+        "start": 16.4,
+        "end": 17.7,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P04",
+        "start": 21.4,
+        "end": 25.5,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P05",
+        "start": 28.6,
+        "end": 29.8,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P06",
+        "start": 30.4,
+        "end": 32.3,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P07",
+        "start": 39.6,
+        "end": 45.8,
+        "kind": "hand",
+        "direction": "down",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P08",
+        "start": 47.8,
+        "end": 50.1,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P09",
+        "start": 55.0,
+        "end": 58.6,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P10",
+        "start": 56.0,
+        "end": 57.2,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P11",
+        "start": 64.0,
+        "end": 65.6,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P12",
+        "start": 77.9,
+        "end": 79.2,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P13",
+        "start": 80.1,
+        "end": 82.3,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P14",
+        "start": 85.1,
+        "end": 89.0,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "start": 87.5,
+        "end": 88.9,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction",
+        "id": "P15"
+      },
+      {
+        "id": "P16",
+        "start": 90.4,
+        "end": 91.5,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P17",
+        "start": 93.6,
+        "end": 97.3,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P18",
+        "start": 102.3,
+        "end": 107.1,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P19",
+        "start": 105.7,
+        "end": 106.9,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P20",
+        "start": 115.6,
+        "end": 117.0,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P21",
+        "start": 122.2,
+        "end": 125.5,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P22",
+        "start": 127.4,
+        "end": 131.7,
+        "kind": "hand",
+        "direction": "right",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "start": 128.4,
+        "end": 129.7,
+        "kind": "foot",
+        "direction": "right",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction",
+        "id": "P23"
+      },
+      {
+        "id": "P24",
+        "start": 132.3,
+        "end": 136.5,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P25",
+        "start": 134.3,
+        "end": 135.5,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P26",
+        "start": 140.4,
+        "end": 141.7,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P27",
+        "start": 143.1,
+        "end": 144.4,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P28",
+        "start": 147.4,
+        "end": 151.5,
+        "kind": "hand",
+        "direction": "down",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P29",
+        "start": 155.1,
+        "end": 158.3,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P30",
+        "start": 158.3,
+        "end": 159.4,
+        "kind": "foot",
+        "direction": "left",
+        "contact": "Leg",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P31",
+        "start": 159.4,
+        "end": 160.4,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P32",
+        "start": 163.5,
+        "end": 165.7,
+        "kind": "hand",
+        "direction": "left",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      },
+      {
+        "id": "P33",
+        "start": 169.3,
+        "end": 172.7,
+        "kind": "hand",
+        "direction": "down",
+        "contact": "Upper body",
+        "status": "visual_annotation",
+        "direction_scope": "Approximate image-plane projection; no force magnitude or calibrated 3D direction"
+      }
+    ],
+    "annotation_scope": "Visual contact intervals, not instrumented impulse counts; approximate image-plane directions, no measured magnitude.",
+    "output_sha256": "87b33dd8d09f59d1c78c0fd35df77c84a9252e50b49e32278b2e579ed73ad937",
+    "bytes": 63585303,
+    "processing": "173 seconds at 1x; face-only blur; original room and limbs retained; qualitative numbered contact arrows. No internal cuts, no repeated footage, no speed changes. Source audio and identifying metadata removed.",
+    "annotations": "push-events.json",
+    "face_track": "face-track.json",
+    "annotation_count": 33
+  }
+}

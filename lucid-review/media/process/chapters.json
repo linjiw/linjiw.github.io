@@ -1,0 +1,72 @@
+[
+  {
+    "start": 0,
+    "end": 8,
+    "title": "A world of possibilities.",
+    "subtitle": "1,024 simulated humanoids. Diverse motions. Different perturbations.",
+    "file": "scenes/01_world.mp4"
+  },
+  {
+    "start": 8,
+    "end": 18,
+    "title": "When execution falls behind.",
+    "subtitle": "Move from the population to one struggling robot.",
+    "file": "scenes/02_focus.mp4"
+  },
+  {
+    "start": 18,
+    "end": 28,
+    "title": "Listen to the motion.",
+    "subtitle": "Issued commands and measured positions form separate causal histories.",
+    "file": "scenes/03_histories.mp4"
+  },
+  {
+    "start": 28,
+    "end": 38,
+    "title": "A shared language for movement.",
+    "subtitle": "One frozen temporal encoder compares both histories in latent space.",
+    "file": "scenes/04_latent.mp4"
+  },
+  {
+    "start": 38,
+    "end": 51,
+    "title": "The teacher paces the challenge.",
+    "subtitle": "A bounded PI controller chooses the next shared DR intensity.",
+    "file": "scenes/05_pi.mp4"
+  },
+  {
+    "start": 51,
+    "end": 62,
+    "title": "New ranges. A new training block.",
+    "subtitle": "Hold intensity fixed within the block; preserve each sampling clock.",
+    "file": "scenes/06_ranges.mp4"
+  },
+  {
+    "start": 62,
+    "end": 70,
+    "title": "Protect learning when returns fall.",
+    "subtitle": "Two consecutive low-return blocks trigger a separate backoff.",
+    "file": "scenes/07_guard.mp4"
+  },
+  {
+    "start": 70,
+    "end": 78,
+    "title": "Practice. Observe. Adapt.",
+    "subtitle": "Repeat the feedback loop as the student learns.",
+    "file": "scenes/08_loop.mp4"
+  },
+  {
+    "start": 78,
+    "end": 84,
+    "title": "From adaptive practice to robustness.",
+    "subtitle": "Selected results reported in the supplied manuscript.",
+    "file": "scenes/09_results.mp4"
+  },
+  {
+    "start": 84,
+    "end": 90,
+    "title": "LUCID",
+    "subtitle": "Latent-Understanding Curriculum for Informed Domain Randomization",
+    "file": "scenes/10_finale.mp4"
+  }
+]

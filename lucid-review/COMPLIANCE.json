@@ -1,0 +1,53 @@
+{
+  "file": "LUCID_web_template.mp4",
+  "bytes": 18541891,
+  "duration_seconds": 176,
+  "width": 1280,
+  "height": 720,
+  "fps": 24,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "scan": "progressive",
+  "checks": {
+    "size": true,
+    "duration": true,
+    "height": true,
+    "frame_rate": true,
+    "progressive": true,
+    "h264": true,
+    "aac": true,
+    "yuv420p": true,
+    "mp4": true
+  },
+  "all_pass": true,
+  "placeholder_slots": [],
+  "simulation_clips": 2,
+  "parallel_visualization": {
+    "environments": 1024,
+    "source_seconds": 24,
+    "simulation_playback_rate": 0.25,
+    "placements": [
+      {
+        "scene": "evaluation",
+        "start": 76,
+        "end": 90,
+        "source_start": 0
+      }
+    ]
+  },
+  "continuous_hardware": {
+    "duration": 173,
+    "source_start": 57,
+    "source_end": 230,
+    "method": "LUCID",
+    "added_delay_ms": [
+      0,
+      60
+    ],
+    "privacy": "Face-only blur; room, operator limbs, robot and contact remain visible. Source audio and identifying metadata removed.",
+    "annotation_intervals": 33,
+    "speed": 1
+  },
+  "policy_identity_status": "confirmed",
+  "requirements_source": "https://2027.ieee-icra.org/contribute/call-for-icra-2027-papers-now-accepting-submissions/"
+}

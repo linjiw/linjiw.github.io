@@ -1,0 +1,109 @@
+{
+  "all_eight_comparisons": [
+    {
+      "simulator": "mujoco",
+      "motion": "01_walking",
+      "fall_confirmation_s": {
+        "fixed": null,
+        "off": 2.94
+      },
+      "selected": true,
+      "end_seconds": 3.24,
+      "visible_post_failure_seconds": 0.3,
+      "fixed_min_up_cos_after_other_fall": 0.9731929234914068,
+      "fixed_later_falls": false,
+      "push_count_shown": 1
+    },
+    {
+      "simulator": "mujoco",
+      "motion": "02_turning",
+      "fall_confirmation_s": {
+        "fixed": null,
+        "off": 4.56
+      },
+      "selected": true,
+      "end_seconds": 4.86,
+      "visible_post_failure_seconds": 0.3,
+      "fixed_min_up_cos_after_other_fall": 0.7004910900182539,
+      "fixed_later_falls": false,
+      "push_count_shown": 2
+    },
+    {
+      "simulator": "mujoco",
+      "motion": "03_squatting",
+      "fall_confirmation_s": {
+        "fixed": 2.72,
+        "off": 2.74
+      },
+      "selected": false,
+      "reason": "No sustained post-failure interval with fixed above the height threshold"
+    },
+    {
+      "simulator": "mujoco",
+      "motion": "04_side_stepping",
+      "fall_confirmation_s": {
+        "fixed": 4.18,
+        "off": 3.0
+      },
+      "selected": true,
+      "end_seconds": 3.3,
+      "visible_post_failure_seconds": 0.3,
+      "fixed_min_up_cos_after_other_fall": 0.9552019922194951,
+      "fixed_later_falls": true,
+      "push_count_shown": 1
+    },
+    {
+      "simulator": "isaaclab",
+      "motion": "01_walking",
+      "fall_confirmation_s": {
+        "fixed": 3.12,
+        "off": 2.88
+      },
+      "selected": false,
+      "reason": "No sustained post-failure interval with fixed above the height threshold"
+    },
+    {
+      "simulator": "isaaclab",
+      "motion": "02_turning",
+      "fall_confirmation_s": {
+        "fixed": 3.02,
+        "off": null
+      },
+      "selected": false,
+      "reason": "No sustained post-failure interval with fixed above the height threshold"
+    },
+    {
+      "simulator": "isaaclab",
+      "motion": "03_squatting",
+      "fall_confirmation_s": {
+        "fixed": 1.7,
+        "off": 1.22
+      },
+      "selected": true,
+      "end_seconds": 1.44,
+      "visible_post_failure_seconds": 0.22,
+      "fixed_min_up_cos_after_other_fall": 0.7475098218982303,
+      "fixed_later_falls": true,
+      "push_count_shown": 0
+    },
+    {
+      "simulator": "isaaclab",
+      "motion": "04_side_stepping",
+      "fall_confirmation_s": {
+        "fixed": 4.74,
+        "off": 3.2
+      },
+      "selected": true,
+      "end_seconds": 3.5,
+      "visible_post_failure_seconds": 0.3,
+      "fixed_min_up_cos_after_other_fall": 0.9865568429883648,
+      "fixed_later_falls": true,
+      "push_count_shown": 1
+    }
+  ],
+  "policy": "Post-hoc balance excerpts; end 0.30 s after off fall, earlier if needed to keep fixed upright; require 0.20 s visible advantage.",
+  "full_length_sources_retained": true,
+  "minimum_fixed_up_cosine": 0.7,
+  "fall_rule": "pelvis below 60% target for 5 consecutive frames",
+  "policy_names_in_video": false
+}

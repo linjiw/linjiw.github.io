@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "confirmed_by": "Author clarification in this conversation, September 18, 2026; consistent with supplied bundle README, policy folders and annotation receipts.",
+  "panel_labels": {
+    "left": "LUCID",
+    "reference": "Reference motion",
+    "right": "Filtered-error PI"
+  },
+  "track_labels": {
+    "fixed": "LUCID",
+    "reference": "Reference motion",
+    "off": "Filtered-error PI"
+  },
+  "track_panels": {
+    "fixed": "left",
+    "reference": "center",
+    "off": "right"
+  },
+  "source_readme": "media/simulation/source_bundle_README.md",
+  "source_readme_sha256": "6c8711816fb5f444ef1c2cd3ad28ddd34435a67cf01c40d43edf15b023513650",
+  "source_verification": "media/simulation/source_bundle_verification.json",
+  "verification_scope": "Panel and track identities are from the supplied bundle and author confirmation. This is not an independent checkpoint or training-log audit.",
+  "raw_key_note": "fixed and off are preserved raw capture keys for traceability; presentation labels use the explicit author-confirmed mapping above.",
+  "correction_note": "The previous presentation incorrectly promoted upstream fixed/off experiment metadata to the supplied footage identity. That presentation labeling decision is withdrawn."
+}

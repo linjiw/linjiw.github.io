@@ -1,0 +1,76 @@
+{
+  "script_hash": "4e000d7bc56d650fb627b8fd2b170b2ce52345796822b52f193dbafefbb62807",
+  "voice": "en-US-AvaMultilingualNeural",
+  "voice_rate": "-5%",
+  "voice_engine": "edge-tts",
+  "voice_pause_seconds": 0.24,
+  "synthetic": true,
+  "timings": [
+    {
+      "scene": "intro",
+      "narration_end": 7.282,
+      "budget": 10,
+      "quiet_tail": 2.718
+    },
+    {
+      "scene": "gap",
+      "narration_end": 15.562,
+      "budget": 17,
+      "quiet_tail": 1.438
+    },
+    {
+      "scene": "rollout",
+      "narration_end": 13.93,
+      "budget": 16,
+      "quiet_tail": 2.07
+    },
+    {
+      "scene": "pretrain",
+      "narration_end": 13.018,
+      "budget": 14,
+      "quiet_tail": 0.982
+    },
+    {
+      "scene": "controller",
+      "narration_end": 14.242,
+      "budget": 19,
+      "quiet_tail": 4.758
+    },
+    {
+      "scene": "evaluation",
+      "narration_end": 12.178,
+      "budget": 14,
+      "quiet_tail": 1.822
+    },
+    {
+      "scene": "results",
+      "narration_end": 14.194,
+      "budget": 18,
+      "quiet_tail": 3.806
+    },
+    {
+      "scene": "ablation",
+      "narration_end": 9.058,
+      "budget": 12,
+      "quiet_tail": 2.942
+    },
+    {
+      "scene": "simulation",
+      "narration_end": 17.962,
+      "budget": 24,
+      "quiet_tail": 6.038
+    },
+    {
+      "scene": "hardware",
+      "narration_end": 18.658,
+      "budget": 24,
+      "quiet_tail": 5.342
+    },
+    {
+      "scene": "closing",
+      "narration_end": 6.082,
+      "budget": 8,
+      "quiet_tail": 1.918
+    }
+  ]
+}
